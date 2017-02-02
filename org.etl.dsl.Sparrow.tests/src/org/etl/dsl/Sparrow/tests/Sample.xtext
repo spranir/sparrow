@@ -1,0 +1,527 @@
+grammar Dsl with org.eclipse.xtext.xbase.Xbase //org.eclipse.xtext.common.Terminals
+generate dsl "http://juno.com/dsl"
+
+Process:
+	'process' name=STRING
+	'{'
+	   (action+=Action)*
+	'}';
+
+Action:
+	PigScript;
+
+PigScript:
+	'callpig' name=STRING ?'if'? if=STRING? 'on' on=STRING 'using'
+	'{'
+	   value+=PigQuery
+	'}';
+
+PigQuery:
+	(elements+=Statement)*;
+
+Statement:
+	(DefineStatement
+	| LoadStatement
+	| (ForeachStatement
+	| FilterStatement
+	| GroupByStatement
+	| OrderStatement
+	| LimitStatement
+	| DistinctStatement
+	| CrossStatement
+	| JoinStatement
+	| CoGroupByStatement
+	| StreamStatement) ParallelClause?
+	| MrStatement
+	| SplitStatement
+	| UnionStatement
+	| SampleStatement
+	| StoreStatement
+	| DumpStatement
+	| DescribeStatement
+	| ExplainStatement) ';'
+	| DeclareClause ';'?
+	| CommentStatement;
+
+DefineStatement:
+	RegisterClause
+	| DefineClause
+	| DefaultClause;
+
+LoadStatement:
+
+	name=Alias '=' 'LOAD' STRING
+	('USING' ('JsonLoader'
+	| 'PigStorage'
+	| 'TextLoader'
+	| 'org.apache.pig.piggybank.storage.CSVLoader'
+	| 'org.apache.pig.piggybank.storage.HadoopJobHistoryLoader'
+	| 'org.apache.pig.piggybank.storage.MyRegExLoader'
+	| 'org.apache.pig.piggybank.storage.PigStorageSchema'
+	| 'org.apache.pig.piggybank.storage.RegExLoader'
+	| 'org.apache.pig.piggybank.storage.SequenceFileLoader'
+	| 'org.apache.pig.piggybank.storage.XMLLoader'
+	| 'org.apache.pig.piggybank.storage.apachelog.CombinedLogLoader'
+	| 'org.apache.pig.piggybank.storage.apachelog.CommonLogLoader'
+	| FuncName) '(' STRING? (',' STRING)* ')')?
+	AsClause?;
+
+ForeachStatement:
+	name=Alias '=' 'FOREACH' type=AliasType
+	(items+=NestedBlock ';'? | items+=GenerateClause);
+
+FilterStatement:
+	name=Alias '=' 'FILTER' type=AliasType
+	'BY' cond=Condition;
+
+GroupByStatement:
+	name=Alias '=' 'GROUP' type=AliasType
+	items=GroupItemList ('USING' GroupType)? PartitionClause?;
+
+CoGroupByStatement:
+	name=Alias '=' 'COGROUP' aliases=JoinSubClause ('USING' COGROUP_TYPE)? PartitionClause?;
+
+OrderStatement:
+	name=Alias '=' 'ORDER' type=AliasType 'BY' OrderByClause;
+
+CrossStatement:
+	name=Alias '=' 'CROSS' aliases=RelationList PartitionClause?;
+
+UnionStatement:
+	name=Alias '=' 'UNION' 'ON' aliases=RelationList;
+
+JoinStatement:
+	name=Alias '=' 'JOIN' aliases=JoinSubClause ('USING' JoinType)? PartitionClause?;
+
+LimitStatement:
+	name=Alias '=' 'LIMIT' type=AliasType ScalarInteger;
+
+SampleStatement:
+	name=Alias '=' 'SAMPLE' type=AliasType DOUBLENUMBER;
+
+DistinctStatement:
+	name=Alias '=' 'DISTINCT' type=AliasType PartitionClause?;
+
+StreamStatement:
+	name=Alias '=' 'STREAM' type=AliasType 'THROUGH' (EXECCOMMAND | Identifier) AsClause?;
+
+MrStatement:
+	name=Alias '=' 'MAPREDUCE' STRING store=StoreStatement load=LoadStatement EXECCOMMAND?;
+
+SplitStatement:
+	name=Alias '=' 'SPLIT' type=AliasType 'INTO' branches+=SplitBranch (',' branches+=SplitBranch)+;
+
+StoreStatement:
+	'STORE' type=AliasType 'INTO' STRING ('USING' FuncClause)?;
+
+DescribeStatement:
+	'DESCRIBE' type=AliasType;
+
+ExplainStatement:
+	'EXPLAIN' type=AliasType;
+
+DumpStatement:
+	'DUMP' type=AliasType;
+
+Identifier:
+	ID //LETTER ( DIGIT | LETTER | SPECIALCHAR )*
+;
+
+Condition returns Condition:
+	('(' Type ')')? OrCondition;
+
+OrCondition returns Condition:
+	AndCondition ({OrCondition.left=current} 'OR' right=AndCondition)*;
+
+AndCondition returns Condition:
+	UnaryCondition ({AndCondition.left=current} 'AND' right=UnaryCondition)*;
+
+UnaryCondition returns Condition:
+// - / % + 0.0
+	'(' condition=Condition ('?' leftExp=Condition ':' rightExp=Condition)? ')' ({UnaryCondition.left=current} '+'
+	right=Condition)? |
+	//null_check_cond | // to LL refactor
+	NullableExpression ({UnaryCondition.left=current} RelationalOperation right=NullableExpression)?;
+
+NullableExpression returns Condition:
+	Expression ('IS' 'NOT'? 'NULL')?;
+
+EvalFunction:
+	('ABS' | 'ACOS' | 'ARITY' | 'ASIN' | 'ATAN' | 'AVG' | 'Bloom' | 'CBRT' | 'CEIL' | 'CONCAT' | 'COR' | 'COS' | 'COSH' |
+	'COUNT' | 'COUNT_STAR' | 'COV' | 'DIFF' | 'EXP' | 'FLATTEN' | 'FLOOR' | 'INDEXOF' | 'InvokeForDouble' |
+	'InvokeForFloat' | 'InvokeForInt' | 'InvokeForLong' | 'InvokeForString' | 'IsEmpty' | 'LAST_INDEX_OF' | 'LCFIRST' |
+	'LOG' | 'LOG10' | 'LOWER' | 'MAX' | 'MIN' | 'RANDOM' | 'REGEX_EXTRACT' | 'REGEX_EXTRACT_ALL' | 'REPLACE' | 'ROUND' |
+	'SIN' | 'SINH' | 'SIZE' | 'SQRT' | 'STRSPLIT' | 'SUBSTRING' | 'SUM' | 'TAN' | 'TANH' | 'TOBAG' | 'TOKENIZE' | 'TOMAP'
+	| 'TOP' | 'TOTUPLE' | 'TRIM' | 'UCFIRST' | 'UPPER' | 'org.apache.pig.piggybank.evaluation.ExtremalTupleByNthField' |
+	'org.apache.pig.piggybank.evaluation.MaxTupleBy1stField' | 'org.apache.pig.piggybank.evaluation.datetime.DiffDate' |
+	'org.apache.pig.piggybank.evaluation.datetime.convert.CustomFormatToISO' |
+	'org.apache.pig.piggybank.evaluation.datetime.convert.ISOToUnix' |
+	'org.apache.pig.piggybank.evaluation.datetime.convert.UnixToISO' |
+	'org.apache.pig.piggybank.evaluation.datetime.diff.ISODaysBetween' |
+	'org.apache.pig.piggybank.evaluation.datetime.diff.ISOHoursBetween' |
+	'org.apache.pig.piggybank.evaluation.datetime.diff.ISOMinutesBetween' |
+	'org.apache.pig.piggybank.evaluation.datetime.diff.ISOMonthsBetween' |
+	'org.apache.pig.piggybank.evaluation.datetime.diff.ISOSecondsBetween' |
+	'org.apache.pig.piggybank.evaluation.datetime.diff.ISOYearsBetween' |
+	'org.apache.pig.piggybank.evaluation.datetime.truncate.ISOToDay' |
+	'org.apache.pig.piggybank.evaluation.datetime.truncate.ISOToHour' |
+	'org.apache.pig.piggybank.evaluation.datetime.truncate.ISOToMinute' |
+	'org.apache.pig.piggybank.evaluation.datetime.truncate.ISOToMonth' |
+	'org.apache.pig.piggybank.evaluation.datetime.truncate.ISOToSecond' |
+	'org.apache.pig.piggybank.evaluation.datetime.truncate.ISOToWeek' |
+	'org.apache.pig.piggybank.evaluation.datetime.truncate.ISOToYear' |
+	'org.apache.pig.piggybank.evaluation.util.apachelogparser.DateExtractor' |
+	'org.apache.pig.piggybank.evaluation.util.apachelogparser.HostExtractor' |
+	'org.apache.pig.piggybank.evaluation.util.apachelogparser.SearchEngineExtractor' |
+	'org.apache.pig.piggybank.evaluation.util.apachelogparser.SearchTermExtractor' | FuncName) {func_name} '('
+	arg_list=RealArgList? ')';
+
+RealArgList:
+	args+=RealArg (',' args+=RealArg)*;
+
+RealArg:
+	condition=Condition | condition_star=STAR;
+
+Expression returns Expression:
+	'NOT'? AddExpression;
+
+AddExpression returns Expression:
+	MultiplyExpression ((Plus | Minus) mul_exp+=MultiplyExpression)*;
+
+MultiplyExpression returns Expression:
+	CastExpression ((STAR | Division | Percent) mul_cast+=CastExpression)*;
+
+CastExpression returns Expression:
+	UnaryExpression;
+
+UnaryExpression returns Expression:
+	EvalExpression | NegExpression;
+
+EvalExpression returns Expression:
+	ConstantExpression {ConstantExpression} | VarExpression;
+
+VarExpression:
+	ProjectableExpression (DotProjection | PoundProjection)*;
+
+ProjectableExpression:
+	EvalFunction | ColumnReference {ProjectableExpression};
+
+DotProjection:
+	('.' | '::') (ColAliasOrIndex);
+
+ColAliasOrIndex:
+	ColAlias | ColIndex;
+
+ColAlias:
+	Identifier;
+
+ColIndex:
+	DOLLAR (DIGIT | INT);
+
+PoundProjection:
+	Pound (STRING | 'NULL');
+
+BinExpression:
+	'(' condition=Condition '?' leftExp=Expression ':' rightExp=Expression ')';
+
+NegExpression returns Expression:
+	'-' CastExpression;
+
+RelationalOperation:
+	RelationalOperationEq | RelationalOperationNe | RelationalOperationGt | RelationalOperationGte | RelationalOperationLt
+	| RelationalOperationLte | 'MATCHES';
+
+RelationalOperationEq:
+	StringOperationEq | NumericOperationEq;
+
+RelationalOperationNe:
+	StringOperationNe | NumericOperationNe;
+
+RelationalOperationGt:
+	StringOperationGt | NumericOperationGt;
+
+RelationalOperationGte:
+	StringOperationGte | NumericOperationGte;
+
+RelationalOperationLt:
+	StringOperationLt | NumericOperationLt;
+
+RelationalOperationLte:
+	StringOperationLte | NumericOperationLte;
+
+FlattenGeneratedItem:
+	(Condition | '*' | FIELD_BY_INDEX) ('AS' (FieldDef | FieldFefList))?;
+
+CommentStatement:
+	SL_COMMENT;
+
+Alias:
+	ID;
+
+ParallelClause:
+	'PARALLEL' ScalarInteger;
+
+RegisterClause:
+	'REGISTER' PathClause;
+
+DefaultClause:
+	'%DEFAULT' name=Alias STRING;
+
+DeclareClause:
+	'%DECLARE' name=Alias (STRING | EXECCOMMAND);
+
+DefineClause:
+	'DEFINE' name=Alias FuncClause;
+
+FuncClause:
+	FuncName '(' STRING? (',' STRING)* ')';
+
+FuncName:
+	(ID | '.' | '$')+;
+
+PathClause:
+	("'")? ('ALL' | Scalar | ID | '.' | '$' | '/' | '\\' | '-')+ ("'")?;
+
+AsClause:
+	'AS' (AliasDef | AliasDefList);
+
+AliasDef:
+	Alias (':' Type)?;
+
+AliasDefList:
+	'(' AliasDef (',' AliasDef)* ')';
+
+FieldDef:
+	Identifier (':' Type)?;
+
+FieldFefList:
+	'(' FieldDef (',' FieldDef)* ')';
+
+Type:
+	SimpleType | TupleType | MapType | BagType;
+
+AliasType:
+	referenced=[Statement];
+
+SimpleType:
+	'INT' | 'LONG' | 'FLOAT' | 'DOUBLE' | 'CHARARRAY' | 'BYTEARRAY';
+
+TupleType:
+	'TUPLE'? AliasDefList;
+
+BagType:
+	'BAG'? '{' ((Identifier ':')? TupleType | MapType)? '}';
+
+MapType:
+	'MAP[]';
+
+Command:
+	EXECCOMMAND //( ship_clause | cache_caluse | input_clause | output_clause | error_clause )*
+;
+
+StringOperationEq:
+	'EQ';
+
+StringOperationGt:
+	'GT';
+
+StringOperationLt:
+	'LT';
+
+StringOperationGte:
+	'GTE';
+
+StringOperationLte:
+	'LTE';
+
+StringOperationNe:
+	'NEQ';
+
+StringOperationMatches:
+	'MATCHES';
+
+NumericOperationEq:
+	'==';
+
+NumericOperationLt:
+	'<';
+
+NumericOperationLte:
+	'<=';
+
+NumericOperationGt:
+	'>';
+
+NumericOperationGte:
+	'>=';
+
+NumericOperationNe:
+	'!=';
+
+SemiColon:
+	';';
+
+Pound:
+	'#';
+
+Comma:
+	',';
+
+Division:
+	'/';
+
+Percent:
+	'%';
+
+Plus:
+	'+';
+
+Minus:
+	'-';
+
+terminal FIELD_BY_INDEX:
+	('$') ('0'..'9')+;
+
+terminal SL_COMMENT:
+	'--' !('\n' | '\r')* ('\r'? '\n')?;
+
+terminal DIGIT:
+	'0'..'9';
+
+terminal LETTER:
+	'A'..'Z';
+
+terminal SPECIALCHAR:
+	'_';
+
+terminal FLOATINGPOINT:
+	DIGIT+ '.' DIGIT+;
+
+terminal LONGINTEGER:
+	INT ('L') //? INT with > N digits
+;
+
+terminal DOUBLENUMBER:
+	FLOATINGPOINT ('E' ('-' | '+')? INT)?;
+
+terminal EXECCOMMAND:
+	'`' (!('`'))* '`';
+
+terminal COGROUP_TYPE:
+	"'" (('merge')) "'";
+
+STAR:
+	'*';
+
+COLON:
+	':';
+
+DOLLAR:
+	'$';
+
+GroupType:
+	STRING;
+
+GroupItemList:
+	GroupItem (Comma items+=GroupItem)*;
+
+OrderByClause:
+	STAR ('ASC' | 'DESC')? | OrderColList;
+
+OrderColList:
+	OrderCol (',' OrderCol)*;
+
+OrderCol:
+	ColumnReference ('ASC' | 'DESC')? | '(' ColumnReference ('ASC' | 'DESC')? ')';
+
+PartitionClause:
+	'PARTITION' 'BY' FuncName;
+
+RelationList:
+	type+=AliasType (',' type+=AliasType)*;
+
+JoinType:
+	STRING;
+
+JoinSubClause:
+	JoinItem ('LEFT' | 'RIGHT' | 'FULL')? 'OUTER'? (',' others+=JoinItem)+;
+
+JoinItem:
+	type=AliasType expressions=JoinGroupByClause;
+
+GroupItem:
+	('BY' JoinGroupByExprList | 'ALL' | 'ANY') ('INNER' | 'OUTER')?;
+
+JoinGroupByClause:
+	'BY' JoinGroupByExprList;
+
+JoinGroupByExprList:
+	JoinGroupByExpression | '(' left=JoinGroupByExpression (',' expressions+=JoinGroupByExpression)* ')';
+
+JoinGroupByExpression:
+	Expression | STAR {JoinGroupByExpression};
+
+NestedBlock:
+	'{' NestedCommandList clauses=GenerateClause ';' '}';
+
+GenerateClause:
+	'GENERATE' items+=FlattenGeneratedItem (',' items+=FlattenGeneratedItem)*;
+
+NestedCommandList:
+	{NestedCommandList} (cmds+=NestedCommand SemiColon)*;
+
+NestedAliasType:
+	referenced=[NestedCommand];
+
+NestedCommand:
+	name=Alias '=' operations=NestedOperation;
+
+NestedOperation: // TODO some warning comes from here
+	NestedFilter |
+	NestedSort |
+	NestedDistinct |
+	NestedLimit |
+	NestedForeach |
+	('(' Type ')')? AddExpression;
+
+NestedFilter:
+	'FILTER' exp=VarExpression 'BY' cond=Condition;
+
+NestedSort:
+	'ORDER' VarExpression 'BY' OrderByClause;
+
+NestedDistinct:
+	'DISTINCT' VarExpression;
+
+NestedLimit:
+	'LIMIT' VarExpression (INT | LONGINTEGER);
+
+NestedForeach:
+	'FOREACH' type=NestedAliasType gen=GenerateClause;
+
+SplitBranch:
+	Identifier 'IF' Condition;
+
+ColumnReference:
+	AliasColumnReference | DollarColumnReference;
+
+AliasColumnReference:
+	'GROUP' | Identifier;
+
+DollarColumnReference:
+	DOLLAR INT;
+
+ConstantExpression:
+	Literal;
+
+Literal:
+	Scalar | STRING | '\\u' | 'NULL' //| map | bag | tuple // const type?
+;
+
+Scalar:
+	FLOATINGPOINT | ScalarInteger //INTEGER | LONGINTEGER | FLOATNUMBER | DOUBLENUMBER | MYQUOTEDSTRING | NULL
+;
+
+ScalarInteger:
+	DIGIT | INT | LONGINTEGER | ('$' ID) // TODO warning
+;
