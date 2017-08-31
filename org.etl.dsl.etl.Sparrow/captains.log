@@ -1,0 +1,69 @@
+Status of setting up the machine
+1. Fixed the sudo apt-get update had issue - throwing core dump
+	https://askubuntu.com/questions/943463/library-corruption-error-during-apt-get-update
+2. Unable to access lock issue
+	https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process
+3. Installing full screen support
+	https://askubuntu.com/questions/788161/how-to-set-the-screen-resolution-in-ubuntu-16-04-64-bit-running-under-vmware-wor
+4. Installing cairo dock
+	http://linuxpitstop.com/install-cairo-dock-on-ubuntu-15-04/5
+5. 10 things to install after installing ubuntu
+	https://www.tecmint.com/things-you-mostly-need-to-do-after-installing-ubuntu-16-04/2/
+
+
+Slush
+1. Uses sparrow to rely on building the propreitary processes
+2. Sparrow not only will host the dsl code, but also will have the runtime environment
+3. Slush will host only the processes meaent for chimera project
+4. Slush will also host any propreitary java code meant for slush integration
+5. Slush will also use the utilities project available under jpvelsamy to build the management console to manage both sparrow and chimera instances
+6. Checkout slush also into sparrow workspace
+7. Build a new eclipse plugin and import it into usual java ide using text ide
+
+For now I will make sure that I have enough grammar support to deal with our current requirements
+1. Run the sequence of sql steps to execute the demand forecast table
+2. perform audit related activities
+3. Run google caltendar integration work
+
+
+Required actions
+1. readrow
+2. callprocess
+3. transform
+4. publishevent
+5. writeaudit
+6. writecsv
+
+
+August 31
+Currently this is what I have done
+1. Setting up the virtual machine
+2. Installing necessary components - Mariadb is still missing though.
+3. ce more went through my external dsl video
+4. Setup the sparrow codebase
+5. Created a new project called slush in chimera's codebase
+6. Created a new branch for sparrow
+7. Created a new branch for Slush
+8. Added scala nature to the sparrow pom
+9. Adding scala plugin to eclipse
+10. Installed both xtext and java ide
+11. I have installed mariadb 
+
+
+Mariadb installation
+http://idroot.net/linux/install-mariadb-ubuntu-16-04/ 		
+
+Issue with root having not access
+http://nixmash.com/post/fix-for-mysql-rootlocalhost-access-denied-on-new-installs	
+
+
+Added restlet to the pom - Had issue in discovering the binary as it was not found in standard repositories
+
+https://stackoverflow.com/questions/11173761/restlet-maven-dependencies
+
+I am little confused with respect to choosing the right logging solution. Will determine what's best eventually.
+But for now, I am going to stick to typesafe's offering - scala logging. Though I do not like the fact that it 
+looks like inherting the logger, for now I shall live with it.
+
+
+I have come really a long distance today and with the following status update, I am signing off for today

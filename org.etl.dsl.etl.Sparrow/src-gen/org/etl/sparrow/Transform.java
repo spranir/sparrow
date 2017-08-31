@@ -7,22 +7,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Executescript</b></em>'.
+ * A representation of the model object '<em><b>Transform</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.Executescript#getUsing <em>Using</em>}</li>
- *   <li>{@link org.etl.sparrow.Executescript#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.Transform#getUsing <em>Using</em>}</li>
+ *   <li>{@link org.etl.sparrow.Transform#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.etl.sparrow.SparrowPackage#getExecutescript()
+ * @see org.etl.sparrow.SparrowPackage#getTransform()
  * @model
  * @generated
  */
-public interface Executescript extends Action
+public interface Transform extends Action
 {
   /**
    * Returns the value of the '<em><b>Using</b></em>' attribute.
@@ -34,14 +34,14 @@ public interface Executescript extends Action
    * <!-- end-user-doc -->
    * @return the value of the '<em>Using</em>' attribute.
    * @see #setUsing(String)
-   * @see org.etl.sparrow.SparrowPackage#getExecutescript_Using()
+   * @see org.etl.sparrow.SparrowPackage#getTransform_Using()
    * @model
    * @generated
    */
   String getUsing();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.Executescript#getUsing <em>Using</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.Transform#getUsing <em>Using</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Using</em>' attribute.
@@ -60,10 +60,10 @@ public interface Executescript extends Action
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute list.
-   * @see org.etl.sparrow.SparrowPackage#getExecutescript_Value()
+   * @see org.etl.sparrow.SparrowPackage#getTransform_Value()
    * @model unique="false"
    * @generated
    */
   EList<String> getValue();
 
-} // Executescript
+} // Transform

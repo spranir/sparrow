@@ -86,13 +86,87 @@ public interface SparrowPackage extends EPackage
   int PROCESS__ACTION = 1;
 
   /**
+   * The feature id for the '<em><b>On Error</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCESS__ON_ERROR = 2;
+
+  /**
+   * The feature id for the '<em><b>Finally</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCESS__FINALLY = 3;
+
+  /**
    * The number of structural features of the '<em>Process</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROCESS_FEATURE_COUNT = 2;
+  int PROCESS_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.FinallyImpl <em>Finally</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.FinallyImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getFinally()
+   * @generated
+   */
+  int FINALLY = 1;
+
+  /**
+   * The feature id for the '<em><b>Action</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINALLY__ACTION = 0;
+
+  /**
+   * The number of structural features of the '<em>Finally</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINALLY_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.OnErrorImpl <em>On Error</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.OnErrorImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getOnError()
+   * @generated
+   */
+  int ON_ERROR = 2;
+
+  /**
+   * The feature id for the '<em><b>Action</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ON_ERROR__ACTION = 0;
+
+  /**
+   * The number of structural features of the '<em>On Error</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ON_ERROR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.ActionImpl <em>Action</em>}' class.
@@ -102,7 +176,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getAction()
    * @generated
    */
-  int ACTION = 1;
+  int ACTION = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -123,6 +197,299 @@ public interface SparrowPackage extends EPackage
   int ACTION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.CallprocessImpl <em>Callprocess</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.CallprocessImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
+   * @generated
+   */
+  int CALLPROCESS = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALLPROCESS__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALLPROCESS__TARGET = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALLPROCESS__VALUE = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Callprocess</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALLPROCESS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.UpdatedauditImpl <em>Updatedaudit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.UpdatedauditImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
+   * @generated
+   */
+  int UPDATEDAUDIT = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATEDAUDIT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Logsink</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATEDAUDIT__LOGSINK = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATEDAUDIT__VALUE = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Updatedaudit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATEDAUDIT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.SmsImpl <em>Sms</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.SmsImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
+   * @generated
+   */
+  int SMS = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMS__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMS__TARGET = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMS__VALUE = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Sms</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.SlackImpl <em>Slack</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.SlackImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlack()
+   * @generated
+   */
+  int SLACK = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLACK__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Team</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLACK__TEAM = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Channel</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLACK__CHANNEL = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLACK__VALUE = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Slack</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLACK_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.GooglecalImpl <em>Googlecal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.GooglecalImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecal()
+   * @generated
+   */
+  int GOOGLECAL = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Calid</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__CALID = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Authstore</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__AUTHSTORE = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Useraccount</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__USERACCOUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__TITLE = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Start</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__START = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__END = ACTION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Notify</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__NOTIFY = ACTION_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__VALUE = ACTION_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>Googlecal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 8;
+
+  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.CopydataImpl <em>Copydata</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,7 +497,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 2;
+  int COPYDATA = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -185,7 +552,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 3;
+  int WRITE_CSV = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -249,7 +616,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 4;
+  int LOAD_CSV = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -306,14 +673,14 @@ public interface SparrowPackage extends EPackage
   int LOAD_CSV_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link org.etl.sparrow.impl.ExecutescriptImpl <em>Executescript</em>}' class.
+   * The meta object id for the '{@link org.etl.sparrow.impl.TransformImpl <em>Transform</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.etl.sparrow.impl.ExecutescriptImpl
-   * @see org.etl.sparrow.impl.SparrowPackageImpl#getExecutescript()
+   * @see org.etl.sparrow.impl.TransformImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int EXECUTESCRIPT = 5;
+  int TRANSFORM = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -322,7 +689,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXECUTESCRIPT__NAME = ACTION__NAME;
+  int TRANSFORM__NAME = ACTION__NAME;
 
   /**
    * The feature id for the '<em><b>Using</b></em>' attribute.
@@ -331,7 +698,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXECUTESCRIPT__USING = ACTION_FEATURE_COUNT + 0;
+  int TRANSFORM__USING = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -340,16 +707,16 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXECUTESCRIPT__VALUE = ACTION_FEATURE_COUNT + 1;
+  int TRANSFORM__VALUE = ACTION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Executescript</em>' class.
+   * The number of structural features of the '<em>Transform</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXECUTESCRIPT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+  int TRANSFORM_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
 
   /**
@@ -385,6 +752,70 @@ public interface SparrowPackage extends EPackage
   EReference getProcess_Action();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.etl.sparrow.Process#getOnError <em>On Error</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>On Error</em>'.
+   * @see org.etl.sparrow.Process#getOnError()
+   * @see #getProcess()
+   * @generated
+   */
+  EReference getProcess_OnError();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.etl.sparrow.Process#getFinally <em>Finally</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Finally</em>'.
+   * @see org.etl.sparrow.Process#getFinally()
+   * @see #getProcess()
+   * @generated
+   */
+  EReference getProcess_Finally();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Finally <em>Finally</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Finally</em>'.
+   * @see org.etl.sparrow.Finally
+   * @generated
+   */
+  EClass getFinally();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.etl.sparrow.Finally#getAction <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Action</em>'.
+   * @see org.etl.sparrow.Finally#getAction()
+   * @see #getFinally()
+   * @generated
+   */
+  EReference getFinally_Action();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.OnError <em>On Error</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>On Error</em>'.
+   * @see org.etl.sparrow.OnError
+   * @generated
+   */
+  EClass getOnError();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.etl.sparrow.OnError#getAction <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Action</em>'.
+   * @see org.etl.sparrow.OnError#getAction()
+   * @see #getOnError()
+   * @generated
+   */
+  EReference getOnError_Action();
+
+  /**
    * Returns the meta object for class '{@link org.etl.sparrow.Action <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -404,6 +835,243 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getAction_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Callprocess <em>Callprocess</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Callprocess</em>'.
+   * @see org.etl.sparrow.Callprocess
+   * @generated
+   */
+  EClass getCallprocess();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Callprocess#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target</em>'.
+   * @see org.etl.sparrow.Callprocess#getTarget()
+   * @see #getCallprocess()
+   * @generated
+   */
+  EAttribute getCallprocess_Target();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Callprocess#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.Callprocess#getValue()
+   * @see #getCallprocess()
+   * @generated
+   */
+  EAttribute getCallprocess_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Updatedaudit <em>Updatedaudit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Updatedaudit</em>'.
+   * @see org.etl.sparrow.Updatedaudit
+   * @generated
+   */
+  EClass getUpdatedaudit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Updatedaudit#getLogsink <em>Logsink</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Logsink</em>'.
+   * @see org.etl.sparrow.Updatedaudit#getLogsink()
+   * @see #getUpdatedaudit()
+   * @generated
+   */
+  EAttribute getUpdatedaudit_Logsink();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Updatedaudit#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.Updatedaudit#getValue()
+   * @see #getUpdatedaudit()
+   * @generated
+   */
+  EAttribute getUpdatedaudit_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Sms <em>Sms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sms</em>'.
+   * @see org.etl.sparrow.Sms
+   * @generated
+   */
+  EClass getSms();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Sms#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target</em>'.
+   * @see org.etl.sparrow.Sms#getTarget()
+   * @see #getSms()
+   * @generated
+   */
+  EAttribute getSms_Target();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Sms#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.Sms#getValue()
+   * @see #getSms()
+   * @generated
+   */
+  EAttribute getSms_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Slack <em>Slack</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Slack</em>'.
+   * @see org.etl.sparrow.Slack
+   * @generated
+   */
+  EClass getSlack();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Slack#getTeam <em>Team</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Team</em>'.
+   * @see org.etl.sparrow.Slack#getTeam()
+   * @see #getSlack()
+   * @generated
+   */
+  EAttribute getSlack_Team();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Slack#getChannel <em>Channel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Channel</em>'.
+   * @see org.etl.sparrow.Slack#getChannel()
+   * @see #getSlack()
+   * @generated
+   */
+  EAttribute getSlack_Channel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Slack#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.Slack#getValue()
+   * @see #getSlack()
+   * @generated
+   */
+  EAttribute getSlack_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Googlecal <em>Googlecal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Googlecal</em>'.
+   * @see org.etl.sparrow.Googlecal
+   * @generated
+   */
+  EClass getGooglecal();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getCalid <em>Calid</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Calid</em>'.
+   * @see org.etl.sparrow.Googlecal#getCalid()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Calid();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getAuthstore <em>Authstore</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Authstore</em>'.
+   * @see org.etl.sparrow.Googlecal#getAuthstore()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Authstore();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getUseraccount <em>Useraccount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Useraccount</em>'.
+   * @see org.etl.sparrow.Googlecal#getUseraccount()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Useraccount();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see org.etl.sparrow.Googlecal#getTitle()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Title();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getStart <em>Start</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Start</em>'.
+   * @see org.etl.sparrow.Googlecal#getStart()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Start();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getEnd <em>End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>End</em>'.
+   * @see org.etl.sparrow.Googlecal#getEnd()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_End();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getNotify <em>Notify</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Notify</em>'.
+   * @see org.etl.sparrow.Googlecal#getNotify()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Notify();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.Googlecal#getValue()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Copydata <em>Copydata</em>}'.
@@ -557,36 +1225,36 @@ public interface SparrowPackage extends EPackage
   EAttribute getLoadCsv_Value();
 
   /**
-   * Returns the meta object for class '{@link org.etl.sparrow.Executescript <em>Executescript</em>}'.
+   * Returns the meta object for class '{@link org.etl.sparrow.Transform <em>Transform</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Executescript</em>'.
-   * @see org.etl.sparrow.Executescript
+   * @return the meta object for class '<em>Transform</em>'.
+   * @see org.etl.sparrow.Transform
    * @generated
    */
-  EClass getExecutescript();
+  EClass getTransform();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Executescript#getUsing <em>Using</em>}'.
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Transform#getUsing <em>Using</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Using</em>'.
-   * @see org.etl.sparrow.Executescript#getUsing()
-   * @see #getExecutescript()
+   * @see org.etl.sparrow.Transform#getUsing()
+   * @see #getTransform()
    * @generated
    */
-  EAttribute getExecutescript_Using();
+  EAttribute getTransform_Using();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.etl.sparrow.Executescript#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute list '{@link org.etl.sparrow.Transform#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Value</em>'.
-   * @see org.etl.sparrow.Executescript#getValue()
-   * @see #getExecutescript()
+   * @see org.etl.sparrow.Transform#getValue()
+   * @see #getTransform()
    * @generated
    */
-  EAttribute getExecutescript_Value();
+  EAttribute getTransform_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -638,6 +1306,58 @@ public interface SparrowPackage extends EPackage
     EReference PROCESS__ACTION = eINSTANCE.getProcess_Action();
 
     /**
+     * The meta object literal for the '<em><b>On Error</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROCESS__ON_ERROR = eINSTANCE.getProcess_OnError();
+
+    /**
+     * The meta object literal for the '<em><b>Finally</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROCESS__FINALLY = eINSTANCE.getProcess_Finally();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.FinallyImpl <em>Finally</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.FinallyImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getFinally()
+     * @generated
+     */
+    EClass FINALLY = eINSTANCE.getFinally();
+
+    /**
+     * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FINALLY__ACTION = eINSTANCE.getFinally_Action();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.OnErrorImpl <em>On Error</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.OnErrorImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getOnError()
+     * @generated
+     */
+    EClass ON_ERROR = eINSTANCE.getOnError();
+
+    /**
+     * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ON_ERROR__ACTION = eINSTANCE.getOnError_Action();
+
+    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.ActionImpl <em>Action</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -654,6 +1374,192 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.CallprocessImpl <em>Callprocess</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.CallprocessImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
+     * @generated
+     */
+    EClass CALLPROCESS = eINSTANCE.getCallprocess();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CALLPROCESS__TARGET = eINSTANCE.getCallprocess_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CALLPROCESS__VALUE = eINSTANCE.getCallprocess_Value();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.UpdatedauditImpl <em>Updatedaudit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.UpdatedauditImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
+     * @generated
+     */
+    EClass UPDATEDAUDIT = eINSTANCE.getUpdatedaudit();
+
+    /**
+     * The meta object literal for the '<em><b>Logsink</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UPDATEDAUDIT__LOGSINK = eINSTANCE.getUpdatedaudit_Logsink();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UPDATEDAUDIT__VALUE = eINSTANCE.getUpdatedaudit_Value();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.SmsImpl <em>Sms</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.SmsImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
+     * @generated
+     */
+    EClass SMS = eINSTANCE.getSms();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SMS__TARGET = eINSTANCE.getSms_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SMS__VALUE = eINSTANCE.getSms_Value();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.SlackImpl <em>Slack</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.SlackImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlack()
+     * @generated
+     */
+    EClass SLACK = eINSTANCE.getSlack();
+
+    /**
+     * The meta object literal for the '<em><b>Team</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SLACK__TEAM = eINSTANCE.getSlack_Team();
+
+    /**
+     * The meta object literal for the '<em><b>Channel</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SLACK__CHANNEL = eINSTANCE.getSlack_Channel();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SLACK__VALUE = eINSTANCE.getSlack_Value();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecalImpl <em>Googlecal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.GooglecalImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecal()
+     * @generated
+     */
+    EClass GOOGLECAL = eINSTANCE.getGooglecal();
+
+    /**
+     * The meta object literal for the '<em><b>Calid</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__CALID = eINSTANCE.getGooglecal_Calid();
+
+    /**
+     * The meta object literal for the '<em><b>Authstore</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__AUTHSTORE = eINSTANCE.getGooglecal_Authstore();
+
+    /**
+     * The meta object literal for the '<em><b>Useraccount</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__USERACCOUNT = eINSTANCE.getGooglecal_Useraccount();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__TITLE = eINSTANCE.getGooglecal_Title();
+
+    /**
+     * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__START = eINSTANCE.getGooglecal_Start();
+
+    /**
+     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__END = eINSTANCE.getGooglecal_End();
+
+    /**
+     * The meta object literal for the '<em><b>Notify</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__NOTIFY = eINSTANCE.getGooglecal_Notify();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__VALUE = eINSTANCE.getGooglecal_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.CopydataImpl <em>Copydata</em>}' class.
@@ -774,14 +1680,14 @@ public interface SparrowPackage extends EPackage
     EAttribute LOAD_CSV__VALUE = eINSTANCE.getLoadCsv_Value();
 
     /**
-     * The meta object literal for the '{@link org.etl.sparrow.impl.ExecutescriptImpl <em>Executescript</em>}' class.
+     * The meta object literal for the '{@link org.etl.sparrow.impl.TransformImpl <em>Transform</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.etl.sparrow.impl.ExecutescriptImpl
-     * @see org.etl.sparrow.impl.SparrowPackageImpl#getExecutescript()
+     * @see org.etl.sparrow.impl.TransformImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
      * @generated
      */
-    EClass EXECUTESCRIPT = eINSTANCE.getExecutescript();
+    EClass TRANSFORM = eINSTANCE.getTransform();
 
     /**
      * The meta object literal for the '<em><b>Using</b></em>' attribute feature.
@@ -789,7 +1695,7 @@ public interface SparrowPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXECUTESCRIPT__USING = eINSTANCE.getExecutescript_Using();
+    EAttribute TRANSFORM__USING = eINSTANCE.getTransform_Using();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
@@ -797,7 +1703,7 @@ public interface SparrowPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXECUTESCRIPT__VALUE = eINSTANCE.getExecutescript_Value();
+    EAttribute TRANSFORM__VALUE = eINSTANCE.getTransform_Value();
 
   }
 

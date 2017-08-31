@@ -11,11 +11,18 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.etl.sparrow.Action;
+import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Copydata;
-import org.etl.sparrow.Executescript;
+import org.etl.sparrow.Finally;
+import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.OnError;
+import org.etl.sparrow.Slack;
+import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowFactory;
 import org.etl.sparrow.SparrowPackage;
+import org.etl.sparrow.Transform;
+import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
 /**
@@ -38,7 +45,56 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass finallyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass onErrorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass callprocessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass updatedauditEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass smsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass slackEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass googlecalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +122,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass executescriptEClass = null;
+  private EClass transformEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -166,6 +222,66 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getProcess_OnError()
+  {
+    return (EReference)processEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProcess_Finally()
+  {
+    return (EReference)processEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFinally()
+  {
+    return finallyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFinally_Action()
+  {
+    return (EReference)finallyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOnError()
+  {
+    return onErrorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOnError_Action()
+  {
+    return (EReference)onErrorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAction()
   {
     return actionEClass;
@@ -179,6 +295,226 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getAction_Name()
   {
     return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCallprocess()
+  {
+    return callprocessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCallprocess_Target()
+  {
+    return (EAttribute)callprocessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCallprocess_Value()
+  {
+    return (EAttribute)callprocessEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUpdatedaudit()
+  {
+    return updatedauditEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUpdatedaudit_Logsink()
+  {
+    return (EAttribute)updatedauditEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUpdatedaudit_Value()
+  {
+    return (EAttribute)updatedauditEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSms()
+  {
+    return smsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSms_Target()
+  {
+    return (EAttribute)smsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSms_Value()
+  {
+    return (EAttribute)smsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSlack()
+  {
+    return slackEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSlack_Team()
+  {
+    return (EAttribute)slackEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSlack_Channel()
+  {
+    return (EAttribute)slackEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSlack_Value()
+  {
+    return (EAttribute)slackEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGooglecal()
+  {
+    return googlecalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_Calid()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_Authstore()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_Useraccount()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_Title()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_Start()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_End()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_Notify()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecal_Value()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -326,9 +662,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExecutescript()
+  public EClass getTransform()
   {
-    return executescriptEClass;
+    return transformEClass;
   }
 
   /**
@@ -336,9 +672,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExecutescript_Using()
+  public EAttribute getTransform_Using()
   {
-    return (EAttribute)executescriptEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)transformEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -346,9 +682,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExecutescript_Value()
+  public EAttribute getTransform_Value()
   {
-    return (EAttribute)executescriptEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)transformEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -384,9 +720,44 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     processEClass = createEClass(PROCESS);
     createEAttribute(processEClass, PROCESS__NAME);
     createEReference(processEClass, PROCESS__ACTION);
+    createEReference(processEClass, PROCESS__ON_ERROR);
+    createEReference(processEClass, PROCESS__FINALLY);
+
+    finallyEClass = createEClass(FINALLY);
+    createEReference(finallyEClass, FINALLY__ACTION);
+
+    onErrorEClass = createEClass(ON_ERROR);
+    createEReference(onErrorEClass, ON_ERROR__ACTION);
 
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
+
+    callprocessEClass = createEClass(CALLPROCESS);
+    createEAttribute(callprocessEClass, CALLPROCESS__TARGET);
+    createEAttribute(callprocessEClass, CALLPROCESS__VALUE);
+
+    updatedauditEClass = createEClass(UPDATEDAUDIT);
+    createEAttribute(updatedauditEClass, UPDATEDAUDIT__LOGSINK);
+    createEAttribute(updatedauditEClass, UPDATEDAUDIT__VALUE);
+
+    smsEClass = createEClass(SMS);
+    createEAttribute(smsEClass, SMS__TARGET);
+    createEAttribute(smsEClass, SMS__VALUE);
+
+    slackEClass = createEClass(SLACK);
+    createEAttribute(slackEClass, SLACK__TEAM);
+    createEAttribute(slackEClass, SLACK__CHANNEL);
+    createEAttribute(slackEClass, SLACK__VALUE);
+
+    googlecalEClass = createEClass(GOOGLECAL);
+    createEAttribute(googlecalEClass, GOOGLECAL__CALID);
+    createEAttribute(googlecalEClass, GOOGLECAL__AUTHSTORE);
+    createEAttribute(googlecalEClass, GOOGLECAL__USERACCOUNT);
+    createEAttribute(googlecalEClass, GOOGLECAL__TITLE);
+    createEAttribute(googlecalEClass, GOOGLECAL__START);
+    createEAttribute(googlecalEClass, GOOGLECAL__END);
+    createEAttribute(googlecalEClass, GOOGLECAL__NOTIFY);
+    createEAttribute(googlecalEClass, GOOGLECAL__VALUE);
 
     copydataEClass = createEClass(COPYDATA);
     createEAttribute(copydataEClass, COPYDATA__SOURCE);
@@ -405,9 +776,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(loadCsvEClass, LOAD_CSV__DELIM);
     createEAttribute(loadCsvEClass, LOAD_CSV__VALUE);
 
-    executescriptEClass = createEClass(EXECUTESCRIPT);
-    createEAttribute(executescriptEClass, EXECUTESCRIPT__USING);
-    createEAttribute(executescriptEClass, EXECUTESCRIPT__VALUE);
+    transformEClass = createEClass(TRANSFORM);
+    createEAttribute(transformEClass, TRANSFORM__USING);
+    createEAttribute(transformEClass, TRANSFORM__VALUE);
   }
 
   /**
@@ -439,18 +810,58 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    callprocessEClass.getESuperTypes().add(this.getAction());
+    updatedauditEClass.getESuperTypes().add(this.getAction());
+    smsEClass.getESuperTypes().add(this.getAction());
+    slackEClass.getESuperTypes().add(this.getAction());
+    googlecalEClass.getESuperTypes().add(this.getAction());
     copydataEClass.getESuperTypes().add(this.getAction());
     writeCsvEClass.getESuperTypes().add(this.getAction());
     loadCsvEClass.getESuperTypes().add(this.getAction());
-    executescriptEClass.getESuperTypes().add(this.getAction());
+    transformEClass.getESuperTypes().add(this.getAction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(processEClass, org.etl.sparrow.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProcess_Action(), this.getAction(), null, "action", null, 0, -1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcess_OnError(), this.getOnError(), null, "onError", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcess_Finally(), this.getFinally(), null, "finally", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(finallyEClass, Finally.class, "Finally", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFinally_Action(), this.getAction(), null, "action", null, 0, -1, Finally.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(onErrorEClass, OnError.class, "OnError", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOnError_Action(), this.getAction(), null, "action", null, 0, -1, OnError.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(callprocessEClass, Callprocess.class, "Callprocess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCallprocess_Target(), ecorePackage.getEString(), "target", null, 0, 1, Callprocess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCallprocess_Value(), ecorePackage.getEString(), "value", null, 0, 1, Callprocess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(updatedauditEClass, Updatedaudit.class, "Updatedaudit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUpdatedaudit_Logsink(), ecorePackage.getEString(), "logsink", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUpdatedaudit_Value(), ecorePackage.getEString(), "value", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(smsEClass, Sms.class, "Sms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSms_Target(), ecorePackage.getEString(), "target", null, 0, 1, Sms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSms_Value(), ecorePackage.getEString(), "value", null, 0, 1, Sms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(slackEClass, Slack.class, "Slack", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSlack_Team(), ecorePackage.getEString(), "team", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSlack_Channel(), ecorePackage.getEString(), "channel", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSlack_Value(), ecorePackage.getEString(), "value", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(googlecalEClass, Googlecal.class, "Googlecal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGooglecal_Calid(), ecorePackage.getEString(), "calid", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Authstore(), ecorePackage.getEString(), "authstore", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Useraccount(), ecorePackage.getEString(), "useraccount", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Title(), ecorePackage.getEString(), "title", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Start(), ecorePackage.getEString(), "start", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_End(), ecorePackage.getEString(), "end", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Notify(), ecorePackage.getEString(), "notify", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Value(), ecorePackage.getEString(), "value", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(copydataEClass, Copydata.class, "Copydata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCopydata_Source(), ecorePackage.getEString(), "source", null, 0, 1, Copydata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -469,9 +880,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getLoadCsv_Delim(), ecorePackage.getEString(), "delim", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLoadCsv_Value(), ecorePackage.getEString(), "value", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(executescriptEClass, Executescript.class, "Executescript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExecutescript_Using(), ecorePackage.getEString(), "using", null, 0, 1, Executescript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExecutescript_Value(), ecorePackage.getEString(), "value", null, 0, -1, Executescript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(transformEClass, Transform.class, "Transform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTransform_Using(), ecorePackage.getEString(), "using", null, 0, 1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTransform_Value(), ecorePackage.getEString(), "value", null, 0, -1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

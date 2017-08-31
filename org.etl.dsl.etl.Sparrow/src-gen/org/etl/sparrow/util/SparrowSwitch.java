@@ -9,10 +9,17 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.etl.sparrow.Action;
+import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Copydata;
-import org.etl.sparrow.Executescript;
+import org.etl.sparrow.Finally;
+import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.OnError;
+import org.etl.sparrow.Slack;
+import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
+import org.etl.sparrow.Transform;
+import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
 /**
@@ -85,10 +92,64 @@ public class SparrowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SparrowPackage.FINALLY:
+      {
+        Finally finally_ = (Finally)theEObject;
+        T result = caseFinally(finally_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.ON_ERROR:
+      {
+        OnError onError = (OnError)theEObject;
+        T result = caseOnError(onError);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SparrowPackage.ACTION:
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.CALLPROCESS:
+      {
+        Callprocess callprocess = (Callprocess)theEObject;
+        T result = caseCallprocess(callprocess);
+        if (result == null) result = caseAction(callprocess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.UPDATEDAUDIT:
+      {
+        Updatedaudit updatedaudit = (Updatedaudit)theEObject;
+        T result = caseUpdatedaudit(updatedaudit);
+        if (result == null) result = caseAction(updatedaudit);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.SMS:
+      {
+        Sms sms = (Sms)theEObject;
+        T result = caseSms(sms);
+        if (result == null) result = caseAction(sms);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.SLACK:
+      {
+        Slack slack = (Slack)theEObject;
+        T result = caseSlack(slack);
+        if (result == null) result = caseAction(slack);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.GOOGLECAL:
+      {
+        Googlecal googlecal = (Googlecal)theEObject;
+        T result = caseGooglecal(googlecal);
+        if (result == null) result = caseAction(googlecal);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -116,11 +177,11 @@ public class SparrowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SparrowPackage.EXECUTESCRIPT:
+      case SparrowPackage.TRANSFORM:
       {
-        Executescript executescript = (Executescript)theEObject;
-        T result = caseExecutescript(executescript);
-        if (result == null) result = caseAction(executescript);
+        Transform transform = (Transform)theEObject;
+        T result = caseTransform(transform);
+        if (result == null) result = caseAction(transform);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,6 +206,38 @@ public class SparrowSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Finally</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Finally</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFinally(Finally object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>On Error</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>On Error</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOnError(OnError object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -156,6 +249,86 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Callprocess</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Callprocess</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCallprocess(Callprocess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Updatedaudit</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Updatedaudit</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUpdatedaudit(Updatedaudit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sms</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sms</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSms(Sms object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Slack</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Slack</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSlack(Slack object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Googlecal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Googlecal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGooglecal(Googlecal object)
   {
     return null;
   }
@@ -209,17 +382,17 @@ public class SparrowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Executescript</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Transform</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Executescript</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Transform</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExecutescript(Executescript object)
+  public T caseTransform(Transform object)
   {
     return null;
   }

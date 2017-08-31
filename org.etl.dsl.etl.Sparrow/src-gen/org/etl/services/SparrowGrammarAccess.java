@@ -32,16 +32,22 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cActionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cActionActionParserRuleCall_3_0 = (RuleCall)cActionAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cOnErrorAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cOnErrorOnErrorParserRuleCall_4_0 = (RuleCall)cOnErrorAssignment_4.eContents().get(0);
+		private final Assignment cFinallyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cFinallyFinallyParserRuleCall_5_0 = (RuleCall)cFinallyAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Process:
 		//	'process' name=STRING
 		//	'{'
 		//	action+=Action*
+		//	onError=OnError
+		//	finally=Finally
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'process' name=STRING '{' action+=Action* '}'
+		//'process' name=STRING '{' action+=Action* onError=OnError finally=Finally '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'process'
@@ -62,8 +68,64 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//Action
 		public RuleCall getActionActionParserRuleCall_3_0() { return cActionActionParserRuleCall_3_0; }
 		
+		//onError=OnError
+		public Assignment getOnErrorAssignment_4() { return cOnErrorAssignment_4; }
+		
+		//OnError
+		public RuleCall getOnErrorOnErrorParserRuleCall_4_0() { return cOnErrorOnErrorParserRuleCall_4_0; }
+		
+		//finally=Finally
+		public Assignment getFinallyAssignment_5() { return cFinallyAssignment_5; }
+		
+		//Finally
+		public RuleCall getFinallyFinallyParserRuleCall_5_0() { return cFinallyFinallyParserRuleCall_5_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class FinallyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Finally");
+		private final Assignment cActionAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cActionActionParserRuleCall_0 = (RuleCall)cActionAssignment.eContents().get(0);
+		
+		//Finally:
+		//	action+=Action*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//action+=Action*
+		public Assignment getActionAssignment() { return cActionAssignment; }
+		
+		//Action
+		public RuleCall getActionActionParserRuleCall_0() { return cActionActionParserRuleCall_0; }
+	}
+	public class OnErrorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.OnError");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cActionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cActionActionParserRuleCall_1_0 = (RuleCall)cActionAssignment_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//OnError:
+		//	'{'
+		//	action+=Action*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'{' action+=Action* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//action+=Action*
+		public Assignment getActionAssignment_1() { return cActionAssignment_1; }
+		
+		//Action
+		public RuleCall getActionActionParserRuleCall_1_0() { return cActionActionParserRuleCall_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
 	public class ActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Action");
@@ -71,16 +133,26 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCopydataParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLoadCsvParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cWriteCsvParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cExecutescriptParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cTransformParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cGooglecalParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cSlackParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cSmsParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cUpdatedauditParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cCallprocessParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
 		//Action:
 		//	Copydata
 		//	| LoadCsv
 		//	| WriteCsv
-		//	| Executescript;
+		//	| Transform
+		//	| Googlecal
+		//	| Slack
+		//	| Sms
+		//	| Updatedaudit
+		//	| Callprocess;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Copydata | LoadCsv | WriteCsv | Executescript
+		//Copydata | LoadCsv | WriteCsv | Transform | Googlecal | Slack | Sms | Updatedaudit | Callprocess
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Copydata
@@ -92,8 +164,347 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//WriteCsv
 		public RuleCall getWriteCsvParserRuleCall_2() { return cWriteCsvParserRuleCall_2; }
 		
-		//Executescript
-		public RuleCall getExecutescriptParserRuleCall_3() { return cExecutescriptParserRuleCall_3; }
+		//Transform
+		public RuleCall getTransformParserRuleCall_3() { return cTransformParserRuleCall_3; }
+		
+		//Googlecal
+		public RuleCall getGooglecalParserRuleCall_4() { return cGooglecalParserRuleCall_4; }
+		
+		//Slack
+		public RuleCall getSlackParserRuleCall_5() { return cSlackParserRuleCall_5; }
+		
+		//Sms
+		public RuleCall getSmsParserRuleCall_6() { return cSmsParserRuleCall_6; }
+		
+		//Updatedaudit
+		public RuleCall getUpdatedauditParserRuleCall_7() { return cUpdatedauditParserRuleCall_7; }
+		
+		//Callprocess
+		public RuleCall getCallprocessParserRuleCall_8() { return cCallprocessParserRuleCall_8; }
+	}
+	public class CallprocessElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Callprocess");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCallprocessKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTargetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetSTRINGTerminalRuleCall_2_0 = (RuleCall)cTargetAssignment_2.eContents().get(0);
+		private final Keyword cUsingKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValueSelectStatementParserRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Callprocess:
+		//	'callprocess' name=STRING target=STRING 'using'
+		//	'{'
+		//	value=SelectStatement
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'callprocess' name=STRING target=STRING 'using' '{' value=SelectStatement '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'callprocess'
+		public Keyword getCallprocessKeyword_0() { return cCallprocessKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//target=STRING
+		public Assignment getTargetAssignment_2() { return cTargetAssignment_2; }
+		
+		//STRING
+		public RuleCall getTargetSTRINGTerminalRuleCall_2_0() { return cTargetSTRINGTerminalRuleCall_2_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_3() { return cUsingKeyword_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//value=SelectStatement
+		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
+		
+		//SelectStatement
+		public RuleCall getValueSelectStatementParserRuleCall_5_0() { return cValueSelectStatementParserRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class UpdatedauditElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Updatedaudit");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLogKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cLogsinkAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLogsinkSTRINGTerminalRuleCall_2_0 = (RuleCall)cLogsinkAssignment_2.eContents().get(0);
+		private final Keyword cUsingKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValueSelectStatementParserRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Updatedaudit:
+		//	'log' name=STRING logsink=STRING 'using'
+		//	'{'
+		//	value=SelectStatement
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'log' name=STRING logsink=STRING 'using' '{' value=SelectStatement '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'log'
+		public Keyword getLogKeyword_0() { return cLogKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//logsink=STRING
+		public Assignment getLogsinkAssignment_2() { return cLogsinkAssignment_2; }
+		
+		//STRING
+		public RuleCall getLogsinkSTRINGTerminalRuleCall_2_0() { return cLogsinkSTRINGTerminalRuleCall_2_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_3() { return cUsingKeyword_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//value=SelectStatement
+		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
+		
+		//SelectStatement
+		public RuleCall getValueSelectStatementParserRuleCall_5_0() { return cValueSelectStatementParserRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class SmsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Sms");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSmsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTargetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetSTRINGTerminalRuleCall_2_0 = (RuleCall)cTargetAssignment_2.eContents().get(0);
+		private final Keyword cUsingKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValueSTRINGTerminalRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Sms:
+		//	'sms' name=STRING target=STRING 'using'
+		//	'{'
+		//	value=STRING
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'sms' name=STRING target=STRING 'using' '{' value=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'sms'
+		public Keyword getSmsKeyword_0() { return cSmsKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//target=STRING
+		public Assignment getTargetAssignment_2() { return cTargetAssignment_2; }
+		
+		//STRING
+		public RuleCall getTargetSTRINGTerminalRuleCall_2_0() { return cTargetSTRINGTerminalRuleCall_2_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_3() { return cUsingKeyword_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_5_0() { return cValueSTRINGTerminalRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class SlackElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Slack");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSlackKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTeamAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTeamSTRINGTerminalRuleCall_2_0 = (RuleCall)cTeamAssignment_2.eContents().get(0);
+		private final Assignment cChannelAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cChannelSTRINGTerminalRuleCall_3_0 = (RuleCall)cChannelAssignment_3.eContents().get(0);
+		private final Keyword cUsingKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cValueAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cValueSTRINGTerminalRuleCall_6_0 = (RuleCall)cValueAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//Slack:
+		//	'slack' name=STRING team=STRING channel=STRING 'using'
+		//	'{'
+		//	value=STRING
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'slack' name=STRING team=STRING channel=STRING 'using' '{' value=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'slack'
+		public Keyword getSlackKeyword_0() { return cSlackKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//team=STRING
+		public Assignment getTeamAssignment_2() { return cTeamAssignment_2; }
+		
+		//STRING
+		public RuleCall getTeamSTRINGTerminalRuleCall_2_0() { return cTeamSTRINGTerminalRuleCall_2_0; }
+		
+		//channel=STRING
+		public Assignment getChannelAssignment_3() { return cChannelAssignment_3; }
+		
+		//STRING
+		public RuleCall getChannelSTRINGTerminalRuleCall_3_0() { return cChannelSTRINGTerminalRuleCall_3_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_4() { return cUsingKeyword_4; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_6() { return cValueAssignment_6; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_6_0() { return cValueSTRINGTerminalRuleCall_6_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+	}
+	public class GooglecalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Googlecal");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGooglecalKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cCalidAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCalidSTRINGTerminalRuleCall_2_0 = (RuleCall)cCalidAssignment_2.eContents().get(0);
+		private final Assignment cAuthstoreAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAuthstoreSTRINGTerminalRuleCall_3_0 = (RuleCall)cAuthstoreAssignment_3.eContents().get(0);
+		private final Assignment cUseraccountAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cUseraccountSTRINGTerminalRuleCall_4_0 = (RuleCall)cUseraccountAssignment_4.eContents().get(0);
+		private final Assignment cTitleAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_5_0 = (RuleCall)cTitleAssignment_5.eContents().get(0);
+		private final Assignment cStartAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStartSTRINGTerminalRuleCall_6_0 = (RuleCall)cStartAssignment_6.eContents().get(0);
+		private final Assignment cEndAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cEndSTRINGTerminalRuleCall_7_0 = (RuleCall)cEndAssignment_7.eContents().get(0);
+		private final Assignment cNotifyAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cNotifySTRINGTerminalRuleCall_8_0 = (RuleCall)cNotifyAssignment_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cValueAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cValueSTRINGTerminalRuleCall_10_0 = (RuleCall)cValueAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		
+		//Googlecal:
+		//	'googlecal' name=STRING calid=STRING authstore=STRING useraccount=STRING title=STRING start=STRING end=STRING
+		//	notify=STRING
+		//	'{'
+		//	value=STRING
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'googlecal' name=STRING calid=STRING authstore=STRING useraccount=STRING title=STRING start=STRING end=STRING
+		//notify=STRING '{' value=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'googlecal'
+		public Keyword getGooglecalKeyword_0() { return cGooglecalKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//calid=STRING
+		public Assignment getCalidAssignment_2() { return cCalidAssignment_2; }
+		
+		//STRING
+		public RuleCall getCalidSTRINGTerminalRuleCall_2_0() { return cCalidSTRINGTerminalRuleCall_2_0; }
+		
+		//authstore=STRING
+		public Assignment getAuthstoreAssignment_3() { return cAuthstoreAssignment_3; }
+		
+		//STRING
+		public RuleCall getAuthstoreSTRINGTerminalRuleCall_3_0() { return cAuthstoreSTRINGTerminalRuleCall_3_0; }
+		
+		//useraccount=STRING
+		public Assignment getUseraccountAssignment_4() { return cUseraccountAssignment_4; }
+		
+		//STRING
+		public RuleCall getUseraccountSTRINGTerminalRuleCall_4_0() { return cUseraccountSTRINGTerminalRuleCall_4_0; }
+		
+		//title=STRING
+		public Assignment getTitleAssignment_5() { return cTitleAssignment_5; }
+		
+		//STRING
+		public RuleCall getTitleSTRINGTerminalRuleCall_5_0() { return cTitleSTRINGTerminalRuleCall_5_0; }
+		
+		//start=STRING
+		public Assignment getStartAssignment_6() { return cStartAssignment_6; }
+		
+		//STRING
+		public RuleCall getStartSTRINGTerminalRuleCall_6_0() { return cStartSTRINGTerminalRuleCall_6_0; }
+		
+		//end=STRING
+		public Assignment getEndAssignment_7() { return cEndAssignment_7; }
+		
+		//STRING
+		public RuleCall getEndSTRINGTerminalRuleCall_7_0() { return cEndSTRINGTerminalRuleCall_7_0; }
+		
+		//notify=STRING
+		public Assignment getNotifyAssignment_8() { return cNotifyAssignment_8; }
+		
+		//STRING
+		public RuleCall getNotifySTRINGTerminalRuleCall_8_0() { return cNotifySTRINGTerminalRuleCall_8_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_10() { return cValueAssignment_10; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_10_0() { return cValueSTRINGTerminalRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class CopydataElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Copydata");
@@ -305,10 +716,10 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
-	public class ExecutescriptElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Executescript");
+	public class TransformElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Transform");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cExecutescriptKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTransformKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cUsingAssignment_2 = (Assignment)cGroup.eContents().get(2);
@@ -319,18 +730,18 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueNonSelectStatementParserRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//Executescript:
-		//	'executescript' name=STRING using=STRING 'using'
+		//Transform:
+		//	'transform' name=STRING using=STRING 'using'
 		//	'{'
 		//	value+=NonSelectStatement
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'executescript' name=STRING using=STRING 'using' '{' value+=NonSelectStatement '}'
+		//'transform' name=STRING using=STRING 'using' '{' value+=NonSelectStatement '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'executescript'
-		public Keyword getExecutescriptKeyword_0() { return cExecutescriptKeyword_0; }
+		//'transform'
+		public Keyword getTransformKeyword_0() { return cTransformKeyword_0; }
 		
 		//name=STRING
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -384,11 +795,18 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final ProcessElements pProcess;
+	private final FinallyElements pFinally;
+	private final OnErrorElements pOnError;
 	private final ActionElements pAction;
+	private final CallprocessElements pCallprocess;
+	private final UpdatedauditElements pUpdatedaudit;
+	private final SmsElements pSms;
+	private final SlackElements pSlack;
+	private final GooglecalElements pGooglecal;
 	private final CopydataElements pCopydata;
 	private final WriteCsvElements pWriteCsv;
 	private final LoadCsvElements pLoadCsv;
-	private final ExecutescriptElements pExecutescript;
+	private final TransformElements pTransform;
 	private final SelectStatementElements pSelectStatement;
 	private final NonSelectStatementElements pNonSelectStatement;
 	
@@ -406,11 +824,18 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaXbase = gaXbase;
 		this.gaXtype = gaXtype;
 		this.pProcess = new ProcessElements();
+		this.pFinally = new FinallyElements();
+		this.pOnError = new OnErrorElements();
 		this.pAction = new ActionElements();
+		this.pCallprocess = new CallprocessElements();
+		this.pUpdatedaudit = new UpdatedauditElements();
+		this.pSms = new SmsElements();
+		this.pSlack = new SlackElements();
+		this.pGooglecal = new GooglecalElements();
 		this.pCopydata = new CopydataElements();
 		this.pWriteCsv = new WriteCsvElements();
 		this.pLoadCsv = new LoadCsvElements();
-		this.pExecutescript = new ExecutescriptElements();
+		this.pTransform = new TransformElements();
 		this.pSelectStatement = new SelectStatementElements();
 		this.pNonSelectStatement = new NonSelectStatementElements();
 	}
@@ -450,6 +875,8 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'process' name=STRING
 	//	'{'
 	//	action+=Action*
+	//	onError=OnError
+	//	finally=Finally
 	//	'}';
 	public ProcessElements getProcessAccess() {
 		return pProcess;
@@ -459,17 +886,110 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		return getProcessAccess().getRule();
 	}
 	
+	//Finally:
+	//	action+=Action*;
+	public FinallyElements getFinallyAccess() {
+		return pFinally;
+	}
+	
+	public ParserRule getFinallyRule() {
+		return getFinallyAccess().getRule();
+	}
+	
+	//OnError:
+	//	'{'
+	//	action+=Action*
+	//	'}';
+	public OnErrorElements getOnErrorAccess() {
+		return pOnError;
+	}
+	
+	public ParserRule getOnErrorRule() {
+		return getOnErrorAccess().getRule();
+	}
+	
 	//Action:
 	//	Copydata
 	//	| LoadCsv
 	//	| WriteCsv
-	//	| Executescript;
+	//	| Transform
+	//	| Googlecal
+	//	| Slack
+	//	| Sms
+	//	| Updatedaudit
+	//	| Callprocess;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+	
+	//Callprocess:
+	//	'callprocess' name=STRING target=STRING 'using'
+	//	'{'
+	//	value=SelectStatement
+	//	'}';
+	public CallprocessElements getCallprocessAccess() {
+		return pCallprocess;
+	}
+	
+	public ParserRule getCallprocessRule() {
+		return getCallprocessAccess().getRule();
+	}
+	
+	//Updatedaudit:
+	//	'log' name=STRING logsink=STRING 'using'
+	//	'{'
+	//	value=SelectStatement
+	//	'}';
+	public UpdatedauditElements getUpdatedauditAccess() {
+		return pUpdatedaudit;
+	}
+	
+	public ParserRule getUpdatedauditRule() {
+		return getUpdatedauditAccess().getRule();
+	}
+	
+	//Sms:
+	//	'sms' name=STRING target=STRING 'using'
+	//	'{'
+	//	value=STRING
+	//	'}';
+	public SmsElements getSmsAccess() {
+		return pSms;
+	}
+	
+	public ParserRule getSmsRule() {
+		return getSmsAccess().getRule();
+	}
+	
+	//Slack:
+	//	'slack' name=STRING team=STRING channel=STRING 'using'
+	//	'{'
+	//	value=STRING
+	//	'}';
+	public SlackElements getSlackAccess() {
+		return pSlack;
+	}
+	
+	public ParserRule getSlackRule() {
+		return getSlackAccess().getRule();
+	}
+	
+	//Googlecal:
+	//	'googlecal' name=STRING calid=STRING authstore=STRING useraccount=STRING title=STRING start=STRING end=STRING
+	//	notify=STRING
+	//	'{'
+	//	value=STRING
+	//	'}';
+	public GooglecalElements getGooglecalAccess() {
+		return pGooglecal;
+	}
+	
+	public ParserRule getGooglecalRule() {
+		return getGooglecalAccess().getRule();
 	}
 	
 	//Copydata:
@@ -511,17 +1031,17 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		return getLoadCsvAccess().getRule();
 	}
 	
-	//Executescript:
-	//	'executescript' name=STRING using=STRING 'using'
+	//Transform:
+	//	'transform' name=STRING using=STRING 'using'
 	//	'{'
 	//	value+=NonSelectStatement
 	//	'}';
-	public ExecutescriptElements getExecutescriptAccess() {
-		return pExecutescript;
+	public TransformElements getTransformAccess() {
+		return pTransform;
 	}
 	
-	public ParserRule getExecutescriptRule() {
-		return getExecutescriptAccess().getRule();
+	public ParserRule getTransformRule() {
+		return getTransformAccess().getRule();
 	}
 	
 	//SelectStatement:

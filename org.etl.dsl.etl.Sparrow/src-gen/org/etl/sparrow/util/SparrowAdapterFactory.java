@@ -11,10 +11,17 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.etl.sparrow.Action;
+import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Copydata;
-import org.etl.sparrow.Executescript;
+import org.etl.sparrow.Finally;
+import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.OnError;
+import org.etl.sparrow.Slack;
+import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
+import org.etl.sparrow.Transform;
+import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
 /**
@@ -86,9 +93,44 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
         return createProcessAdapter();
       }
       @Override
+      public Adapter caseFinally(Finally object)
+      {
+        return createFinallyAdapter();
+      }
+      @Override
+      public Adapter caseOnError(OnError object)
+      {
+        return createOnErrorAdapter();
+      }
+      @Override
       public Adapter caseAction(Action object)
       {
         return createActionAdapter();
+      }
+      @Override
+      public Adapter caseCallprocess(Callprocess object)
+      {
+        return createCallprocessAdapter();
+      }
+      @Override
+      public Adapter caseUpdatedaudit(Updatedaudit object)
+      {
+        return createUpdatedauditAdapter();
+      }
+      @Override
+      public Adapter caseSms(Sms object)
+      {
+        return createSmsAdapter();
+      }
+      @Override
+      public Adapter caseSlack(Slack object)
+      {
+        return createSlackAdapter();
+      }
+      @Override
+      public Adapter caseGooglecal(Googlecal object)
+      {
+        return createGooglecalAdapter();
       }
       @Override
       public Adapter caseCopydata(Copydata object)
@@ -106,9 +148,9 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
         return createLoadCsvAdapter();
       }
       @Override
-      public Adapter caseExecutescript(Executescript object)
+      public Adapter caseTransform(Transform object)
       {
-        return createExecutescriptAdapter();
+        return createTransformAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -148,6 +190,36 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Finally <em>Finally</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Finally
+   * @generated
+   */
+  public Adapter createFinallyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.OnError <em>On Error</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.OnError
+   * @generated
+   */
+  public Adapter createOnErrorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.etl.sparrow.Action <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -158,6 +230,81 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Callprocess <em>Callprocess</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Callprocess
+   * @generated
+   */
+  public Adapter createCallprocessAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Updatedaudit <em>Updatedaudit</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Updatedaudit
+   * @generated
+   */
+  public Adapter createUpdatedauditAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Sms <em>Sms</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Sms
+   * @generated
+   */
+  public Adapter createSmsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Slack <em>Slack</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Slack
+   * @generated
+   */
+  public Adapter createSlackAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Googlecal <em>Googlecal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Googlecal
+   * @generated
+   */
+  public Adapter createGooglecalAdapter()
   {
     return null;
   }
@@ -208,16 +355,16 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Executescript <em>Executescript</em>}'.
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Transform <em>Transform</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.etl.sparrow.Executescript
+   * @see org.etl.sparrow.Transform
    * @generated
    */
-  public Adapter createExecutescriptAdapter()
+  public Adapter createTransformAdapter()
   {
     return null;
   }

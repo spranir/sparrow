@@ -12,11 +12,18 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.etl.sparrow.Action;
+import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Copydata;
-import org.etl.sparrow.Executescript;
+import org.etl.sparrow.Finally;
+import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.OnError;
+import org.etl.sparrow.Slack;
+import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowFactory;
 import org.etl.sparrow.SparrowPackage;
+import org.etl.sparrow.Transform;
+import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
 /**
@@ -72,11 +79,18 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
     switch (eClass.getClassifierID())
     {
       case SparrowPackage.PROCESS: return createProcess();
+      case SparrowPackage.FINALLY: return createFinally();
+      case SparrowPackage.ON_ERROR: return createOnError();
       case SparrowPackage.ACTION: return createAction();
+      case SparrowPackage.CALLPROCESS: return createCallprocess();
+      case SparrowPackage.UPDATEDAUDIT: return createUpdatedaudit();
+      case SparrowPackage.SMS: return createSms();
+      case SparrowPackage.SLACK: return createSlack();
+      case SparrowPackage.GOOGLECAL: return createGooglecal();
       case SparrowPackage.COPYDATA: return createCopydata();
       case SparrowPackage.WRITE_CSV: return createWriteCsv();
       case SparrowPackage.LOAD_CSV: return createLoadCsv();
-      case SparrowPackage.EXECUTESCRIPT: return createExecutescript();
+      case SparrowPackage.TRANSFORM: return createTransform();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -98,10 +112,87 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Finally createFinally()
+  {
+    FinallyImpl finally_ = new FinallyImpl();
+    return finally_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OnError createOnError()
+  {
+    OnErrorImpl onError = new OnErrorImpl();
+    return onError;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Action createAction()
   {
     ActionImpl action = new ActionImpl();
     return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Callprocess createCallprocess()
+  {
+    CallprocessImpl callprocess = new CallprocessImpl();
+    return callprocess;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Updatedaudit createUpdatedaudit()
+  {
+    UpdatedauditImpl updatedaudit = new UpdatedauditImpl();
+    return updatedaudit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Sms createSms()
+  {
+    SmsImpl sms = new SmsImpl();
+    return sms;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Slack createSlack()
+  {
+    SlackImpl slack = new SlackImpl();
+    return slack;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Googlecal createGooglecal()
+  {
+    GooglecalImpl googlecal = new GooglecalImpl();
+    return googlecal;
   }
 
   /**
@@ -142,10 +233,10 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Executescript createExecutescript()
+  public Transform createTransform()
   {
-    ExecutescriptImpl executescript = new ExecutescriptImpl();
-    return executescript;
+    TransformImpl transform = new TransformImpl();
+    return transform;
   }
 
   /**

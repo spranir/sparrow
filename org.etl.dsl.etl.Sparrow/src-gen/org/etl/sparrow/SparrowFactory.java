@@ -33,6 +33,24 @@ public interface SparrowFactory extends EFactory
   Process createProcess();
 
   /**
+   * Returns a new object of class '<em>Finally</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Finally</em>'.
+   * @generated
+   */
+  Finally createFinally();
+
+  /**
+   * Returns a new object of class '<em>On Error</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>On Error</em>'.
+   * @generated
+   */
+  OnError createOnError();
+
+  /**
    * Returns a new object of class '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -40,6 +58,51 @@ public interface SparrowFactory extends EFactory
    * @generated
    */
   Action createAction();
+
+  /**
+   * Returns a new object of class '<em>Callprocess</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Callprocess</em>'.
+   * @generated
+   */
+  Callprocess createCallprocess();
+
+  /**
+   * Returns a new object of class '<em>Updatedaudit</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Updatedaudit</em>'.
+   * @generated
+   */
+  Updatedaudit createUpdatedaudit();
+
+  /**
+   * Returns a new object of class '<em>Sms</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sms</em>'.
+   * @generated
+   */
+  Sms createSms();
+
+  /**
+   * Returns a new object of class '<em>Slack</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Slack</em>'.
+   * @generated
+   */
+  Slack createSlack();
+
+  /**
+   * Returns a new object of class '<em>Googlecal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Googlecal</em>'.
+   * @generated
+   */
+  Googlecal createGooglecal();
 
   /**
    * Returns a new object of class '<em>Copydata</em>'.
@@ -69,13 +132,13 @@ public interface SparrowFactory extends EFactory
   LoadCsv createLoadCsv();
 
   /**
-   * Returns a new object of class '<em>Executescript</em>'.
+   * Returns a new object of class '<em>Transform</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Executescript</em>'.
+   * @return a new object of class '<em>Transform</em>'.
    * @generated
    */
-  Executescript createExecutescript();
+  Transform createTransform();
 
   /**
    * Returns the package supported by this factory.

@@ -3,73 +3,77 @@
  */
 package org.etl.sparrow.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-
-import org.etl.sparrow.Executescript;
+import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.SparrowPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Executescript</b></em>'.
+ * An implementation of the model object '<em><b>Callprocess</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.impl.ExecutescriptImpl#getUsing <em>Using</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.ExecutescriptImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.CallprocessImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.CallprocessImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExecutescriptImpl extends ActionImpl implements Executescript
+public class CallprocessImpl extends ActionImpl implements Callprocess
 {
   /**
-   * The default value of the '{@link #getUsing() <em>Using</em>}' attribute.
+   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsing()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected static final String USING_EDEFAULT = null;
+  protected static final String TARGET_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getUsing() <em>Using</em>}' attribute.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsing()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected String using = USING_EDEFAULT;
+  protected String target = TARGET_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValue()
    * @generated
    * @ordered
    */
-  protected EList<String> value;
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExecutescriptImpl()
+  protected CallprocessImpl()
   {
     super();
   }
@@ -82,7 +86,7 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
   @Override
   protected EClass eStaticClass()
   {
-    return SparrowPackage.Literals.EXECUTESCRIPT;
+    return SparrowPackage.Literals.CALLPROCESS;
   }
 
   /**
@@ -90,9 +94,9 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUsing()
+  public String getTarget()
   {
-    return using;
+    return target;
   }
 
   /**
@@ -100,12 +104,12 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUsing(String newUsing)
+  public void setTarget(String newTarget)
   {
-    String oldUsing = using;
-    using = newUsing;
+    String oldTarget = target;
+    target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.EXECUTESCRIPT__USING, oldUsing, using));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.CALLPROCESS__TARGET, oldTarget, target));
   }
 
   /**
@@ -113,13 +117,22 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getValue()
+  public String getValue()
   {
-    if (value == null)
-    {
-      value = new EDataTypeEList<String>(String.class, this, SparrowPackage.EXECUTESCRIPT__VALUE);
-    }
     return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(String newValue)
+  {
+    String oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.CALLPROCESS__VALUE, oldValue, value));
   }
 
   /**
@@ -132,9 +145,9 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
   {
     switch (featureID)
     {
-      case SparrowPackage.EXECUTESCRIPT__USING:
-        return getUsing();
-      case SparrowPackage.EXECUTESCRIPT__VALUE:
+      case SparrowPackage.CALLPROCESS__TARGET:
+        return getTarget();
+      case SparrowPackage.CALLPROCESS__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -145,18 +158,16 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SparrowPackage.EXECUTESCRIPT__USING:
-        setUsing((String)newValue);
+      case SparrowPackage.CALLPROCESS__TARGET:
+        setTarget((String)newValue);
         return;
-      case SparrowPackage.EXECUTESCRIPT__VALUE:
-        getValue().clear();
-        getValue().addAll((Collection<? extends String>)newValue);
+      case SparrowPackage.CALLPROCESS__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,11 +183,11 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
   {
     switch (featureID)
     {
-      case SparrowPackage.EXECUTESCRIPT__USING:
-        setUsing(USING_EDEFAULT);
+      case SparrowPackage.CALLPROCESS__TARGET:
+        setTarget(TARGET_EDEFAULT);
         return;
-      case SparrowPackage.EXECUTESCRIPT__VALUE:
-        getValue().clear();
+      case SparrowPackage.CALLPROCESS__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -192,10 +203,10 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
   {
     switch (featureID)
     {
-      case SparrowPackage.EXECUTESCRIPT__USING:
-        return USING_EDEFAULT == null ? using != null : !USING_EDEFAULT.equals(using);
-      case SparrowPackage.EXECUTESCRIPT__VALUE:
-        return value != null && !value.isEmpty();
+      case SparrowPackage.CALLPROCESS__TARGET:
+        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+      case SparrowPackage.CALLPROCESS__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
@@ -211,12 +222,12 @@ public class ExecutescriptImpl extends ActionImpl implements Executescript
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (using: ");
-    result.append(using);
+    result.append(" (target: ");
+    result.append(target);
     result.append(", value: ");
     result.append(value);
     result.append(')');
     return result.toString();
   }
 
-} //ExecutescriptImpl
+} //CallprocessImpl

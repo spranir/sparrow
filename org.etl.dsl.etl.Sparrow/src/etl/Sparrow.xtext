@@ -7,14 +7,67 @@ Process:
 	'process' name=STRING
 	'{'
 	   (action+=Action)*
+	   onError=OnError
+	   finally=Finally
+	   	
 	'}';
+
+Finally:
+	(action+=Action)*
+;
+
+OnError:
+	'{'
+		(action+=Action)*
+	'}'
+;
 
 Action:
 	(Copydata
 	|LoadCsv
 	|WriteCsv
-	|Executescript
+	|Transform
+	|Googlecal
+	|Slack
+	|Sms
+	|Updatedaudit 
+	|Callprocess
 	)
+;
+
+Callprocess:
+	'callprocess' name=STRING target=STRING 'using'
+	'{'
+		value=SelectStatement
+	'}'
+;
+
+Updatedaudit:
+	'log' name=STRING logsink=STRING 'using'
+	'{'
+		value=SelectStatement
+	'}' 
+;
+
+Sms:
+	'sms' name=STRING target=STRING 'using'
+	'{'
+		value=STRING
+	'}'
+;
+
+Slack:
+	'slack' name=STRING team=STRING channel=STRING 'using'
+	'{'
+		value=STRING
+	'}'
+;
+
+Googlecal:
+	'googlecal' name=STRING calid=STRING authstore=STRING useraccount=STRING title=STRING start=STRING end=STRING notify=STRING
+	'{'
+		value=STRING
+	'}'
 ;
 	
 Copydata:
@@ -39,8 +92,8 @@ LoadCsv:
 	'}'
 ;
 
-Executescript:
-	'executescript' name= STRING using= STRING 'using'
+Transform:
+	'transform' name= STRING using= STRING 'using'
 	 '{'
 		value+=NonSelectStatement
 	'}'

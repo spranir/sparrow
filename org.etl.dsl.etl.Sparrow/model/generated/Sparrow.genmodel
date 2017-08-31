@@ -9,9 +9,44 @@
     <genClasses ecoreClass="Sparrow.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Process/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/onError"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/finally"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Finally">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Finally/action"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//OnError">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//OnError/action"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Callprocess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Updatedaudit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/logsink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Sms">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Slack">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/team"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/channel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Googlecal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/calid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/authstore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/useraccount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/notify"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Copydata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/source"/>
@@ -30,9 +65,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/delim"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/value"/>
     </genClasses>
-    <genClasses ecoreClass="Sparrow.ecore#//Executescript">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Executescript/using"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Executescript/value"/>
+    <genClasses ecoreClass="Sparrow.ecore#//Transform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/using"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

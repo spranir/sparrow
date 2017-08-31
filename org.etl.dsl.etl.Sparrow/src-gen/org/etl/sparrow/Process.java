@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.etl.sparrow.Process#getName <em>Name</em>}</li>
  *   <li>{@link org.etl.sparrow.Process#getAction <em>Action</em>}</li>
+ *   <li>{@link org.etl.sparrow.Process#getOnError <em>On Error</em>}</li>
+ *   <li>{@link org.etl.sparrow.Process#getFinally <em>Finally</em>}</li>
  * </ul>
  *
  * @see org.etl.sparrow.SparrowPackage#getProcess()
@@ -67,5 +69,57 @@ public interface Process extends EObject
    * @generated
    */
   EList<Action> getAction();
+
+  /**
+   * Returns the value of the '<em><b>On Error</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>On Error</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>On Error</em>' containment reference.
+   * @see #setOnError(OnError)
+   * @see org.etl.sparrow.SparrowPackage#getProcess_OnError()
+   * @model containment="true"
+   * @generated
+   */
+  OnError getOnError();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.Process#getOnError <em>On Error</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>On Error</em>' containment reference.
+   * @see #getOnError()
+   * @generated
+   */
+  void setOnError(OnError value);
+
+  /**
+   * Returns the value of the '<em><b>Finally</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Finally</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Finally</em>' containment reference.
+   * @see #setFinally(Finally)
+   * @see org.etl.sparrow.SparrowPackage#getProcess_Finally()
+   * @model containment="true"
+   * @generated
+   */
+  Finally getFinally();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.Process#getFinally <em>Finally</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Finally</em>' containment reference.
+   * @see #getFinally()
+   * @generated
+   */
+  void setFinally(Finally value);
 
 } // Process

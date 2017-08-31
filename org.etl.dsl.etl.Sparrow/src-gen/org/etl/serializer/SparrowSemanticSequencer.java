@@ -60,10 +60,17 @@ import org.eclipse.xtext.xtype.XImportDeclaration;
 import org.eclipse.xtext.xtype.XImportSection;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.etl.services.SparrowGrammarAccess;
+import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Copydata;
-import org.etl.sparrow.Executescript;
+import org.etl.sparrow.Finally;
+import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.OnError;
+import org.etl.sparrow.Slack;
+import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
+import org.etl.sparrow.Transform;
+import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
 @SuppressWarnings("all")
@@ -80,17 +87,38 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SparrowPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SparrowPackage.CALLPROCESS:
+				sequence_Callprocess(context, (Callprocess) semanticObject); 
+				return; 
 			case SparrowPackage.COPYDATA:
 				sequence_Copydata(context, (Copydata) semanticObject); 
 				return; 
-			case SparrowPackage.EXECUTESCRIPT:
-				sequence_Executescript(context, (Executescript) semanticObject); 
+			case SparrowPackage.FINALLY:
+				sequence_Finally(context, (Finally) semanticObject); 
+				return; 
+			case SparrowPackage.GOOGLECAL:
+				sequence_Googlecal(context, (Googlecal) semanticObject); 
 				return; 
 			case SparrowPackage.LOAD_CSV:
 				sequence_LoadCsv(context, (LoadCsv) semanticObject); 
 				return; 
+			case SparrowPackage.ON_ERROR:
+				sequence_OnError(context, (OnError) semanticObject); 
+				return; 
 			case SparrowPackage.PROCESS:
 				sequence_Process(context, (org.etl.sparrow.Process) semanticObject); 
+				return; 
+			case SparrowPackage.SLACK:
+				sequence_Slack(context, (Slack) semanticObject); 
+				return; 
+			case SparrowPackage.SMS:
+				sequence_Sms(context, (Sms) semanticObject); 
+				return; 
+			case SparrowPackage.TRANSFORM:
+				sequence_Transform(context, (Transform) semanticObject); 
+				return; 
+			case SparrowPackage.UPDATEDAUDIT:
+				sequence_Updatedaudit(context, (Updatedaudit) semanticObject); 
 				return; 
 			case SparrowPackage.WRITE_CSV:
 				sequence_WriteCsv(context, (WriteCsv) semanticObject); 
@@ -341,6 +369,31 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Action returns Callprocess
+	 *     Callprocess returns Callprocess
+	 *
+	 * Constraint:
+	 *     (name=STRING target=STRING value=SelectStatement)
+	 */
+	protected void sequence_Callprocess(ISerializationContext context, Callprocess semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CALLPROCESS__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CALLPROCESS__TARGET));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CALLPROCESS__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CALLPROCESS__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCallprocessAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCallprocessAccess().getTargetSTRINGTerminalRuleCall_2_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getCallprocessAccess().getValueSelectStatementParserRuleCall_5_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Action returns Copydata
 	 *     Copydata returns Copydata
 	 *
@@ -369,14 +422,66 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Action returns Executescript
-	 *     Executescript returns Executescript
+	 *     Finally returns Finally
 	 *
 	 * Constraint:
-	 *     (name=STRING using=STRING value+=NonSelectStatement)
+	 *     action+=Action+
 	 */
-	protected void sequence_Executescript(ISerializationContext context, Executescript semanticObject) {
+	protected void sequence_Finally(ISerializationContext context, Finally semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Googlecal
+	 *     Googlecal returns Googlecal
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=STRING 
+	 *         calid=STRING 
+	 *         authstore=STRING 
+	 *         useraccount=STRING 
+	 *         title=STRING 
+	 *         start=STRING 
+	 *         end=STRING 
+	 *         notify=STRING 
+	 *         value=STRING
+	 *     )
+	 */
+	protected void sequence_Googlecal(ISerializationContext context, Googlecal semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__CALID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__CALID));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__AUTHSTORE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__AUTHSTORE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__USERACCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__USERACCOUNT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__TITLE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__START));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__END));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__NOTIFY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__NOTIFY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGooglecalAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGooglecalAccess().getCalidSTRINGTerminalRuleCall_2_0(), semanticObject.getCalid());
+		feeder.accept(grammarAccess.getGooglecalAccess().getAuthstoreSTRINGTerminalRuleCall_3_0(), semanticObject.getAuthstore());
+		feeder.accept(grammarAccess.getGooglecalAccess().getUseraccountSTRINGTerminalRuleCall_4_0(), semanticObject.getUseraccount());
+		feeder.accept(grammarAccess.getGooglecalAccess().getTitleSTRINGTerminalRuleCall_5_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getGooglecalAccess().getStartSTRINGTerminalRuleCall_6_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getGooglecalAccess().getEndSTRINGTerminalRuleCall_7_0(), semanticObject.getEnd());
+		feeder.accept(grammarAccess.getGooglecalAccess().getNotifySTRINGTerminalRuleCall_8_0(), semanticObject.getNotify());
+		feeder.accept(grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_10_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -413,13 +518,116 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     OnError returns OnError
+	 *
+	 * Constraint:
+	 *     action+=Action+
+	 */
+	protected void sequence_OnError(ISerializationContext context, OnError semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Process returns Process
 	 *
 	 * Constraint:
-	 *     (name=STRING action+=Action*)
+	 *     (name=STRING action+=Action* onError=OnError finally=Finally)
 	 */
 	protected void sequence_Process(ISerializationContext context, org.etl.sparrow.Process semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Slack
+	 *     Slack returns Slack
+	 *
+	 * Constraint:
+	 *     (name=STRING team=STRING channel=STRING value=STRING)
+	 */
+	protected void sequence_Slack(ISerializationContext context, Slack semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SLACK__TEAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SLACK__TEAM));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SLACK__CHANNEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SLACK__CHANNEL));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SLACK__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SLACK__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSlackAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSlackAccess().getTeamSTRINGTerminalRuleCall_2_0(), semanticObject.getTeam());
+		feeder.accept(grammarAccess.getSlackAccess().getChannelSTRINGTerminalRuleCall_3_0(), semanticObject.getChannel());
+		feeder.accept(grammarAccess.getSlackAccess().getValueSTRINGTerminalRuleCall_6_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Sms
+	 *     Sms returns Sms
+	 *
+	 * Constraint:
+	 *     (name=STRING target=STRING value=STRING)
+	 */
+	protected void sequence_Sms(ISerializationContext context, Sms semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SMS__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__TARGET));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SMS__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSmsAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSmsAccess().getTargetSTRINGTerminalRuleCall_2_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getSmsAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Transform
+	 *     Transform returns Transform
+	 *
+	 * Constraint:
+	 *     (name=STRING using=STRING value+=NonSelectStatement)
+	 */
+	protected void sequence_Transform(ISerializationContext context, Transform semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Updatedaudit
+	 *     Updatedaudit returns Updatedaudit
+	 *
+	 * Constraint:
+	 *     (name=STRING logsink=STRING value=SelectStatement)
+	 */
+	protected void sequence_Updatedaudit(ISerializationContext context, Updatedaudit semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__LOGSINK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__LOGSINK));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getLogsinkSTRINGTerminalRuleCall_2_0(), semanticObject.getLogsink());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_5_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
