@@ -21,6 +21,7 @@
 		<module>org.etl.dsl.etl.Sparrow.feature</module>
 		<module>org.etl.dsl.etl.Sparrow.tests</module>
 		<module>org.etl.dsl.etl.Sparrow.ui.tests</module>
+		<module>sparrow-server</module>
 	</modules>
 	<build>
 		<plugins>
