@@ -67,3 +67,7 @@ looks like inherting the logger, for now I shall live with it.
 
 
 I have come really a long distance today and with the following status update, I am signing off for today
+1. Added grammar support
+2. Added scala support
+3. Added the first iteration of the process runtime
+
