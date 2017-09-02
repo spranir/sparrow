@@ -1,4 +1,4 @@
-grammar org.etl.Sparrow with org.eclipse.xtext.xbase.Xbase
+grammar org.etl.Sparrow with org.eclipse.xtext.common.Terminals
 
 generate sparrow "http://www.junome.in/sparrow"
 
@@ -6,17 +6,28 @@ generate sparrow "http://www.junome.in/sparrow"
 Process:
 	'process' name=STRING
 	'{'
-	   (action+=Action)*
-	   onError=OnError
+	   try=Try
+	   catch=Catch
 	   finally=Finally
 	   	
 	'}';
 
-Finally:
-	(action+=Action)*
+Try :
+	'try' name=ID
+	'{'
+		(action+=Action)*
+	'}'
 ;
 
-OnError:
+Finally:
+	'finally' name=ID
+	'{'
+		(action+=Action)*
+	'}'
+;
+
+Catch:
+	'catch' name=ID
 	'{'
 		(action+=Action)*
 	'}'
@@ -36,42 +47,42 @@ Action:
 ;
 
 Callprocess:
-	'callprocess' name=STRING target=STRING 'using'
+	'callprocess' 'as' name=STRING 'target' target=STRING 'using'
 	'{'
 		value=SelectStatement
 	'}'
 ;
 
 Updatedaudit:
-	'log' name=STRING logsink=STRING 'using'
+	'log' 'as' name=STRING 'logto' logsink=STRING 'using'
 	'{'
 		value=SelectStatement
 	'}' 
 ;
 
 Sms:
-	'sms' name=STRING target=STRING 'using'
+	'sms' 'as' name=STRING 'for' target=STRING 'using'
 	'{'
 		value=STRING
 	'}'
 ;
 
 Slack:
-	'slack' name=STRING team=STRING channel=STRING 'using'
+	'slack' 'as' name=STRING 'to' team=STRING 'on' channel=STRING 'using'
 	'{'
 		value=STRING
 	'}'
 ;
 
 Googlecal:
-	'googlecal' name=STRING calid=STRING authstore=STRING useraccount=STRING title=STRING start=STRING end=STRING notify=STRING
+	'googlecal' 'as' name=STRING 'for-cal' calid=STRING 'secured-by' authstore=STRING 'through-user' useraccount=STRING 'with-title' title=STRING 'from' start=STRING 'to' end=STRING 'repeat' notify=STRING
 	'{'
 		value=STRING
 	'}'
 ;
 	
 Copydata:
-	'copydata' name= STRING source= STRING to= STRING 'using'
+	'copydata' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'using'
 	'{'
 		value=SelectStatement
 	'}'
@@ -79,21 +90,21 @@ Copydata:
 
 
 WriteCsv:
-	'writecsv' name= STRING source= STRING to= STRING 'with'  delim= STRING 'using'
+	'writecsv' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'with'  delim= STRING 'using'
 	'{'
 		value=SelectStatement
 	'}'
 ;
 
 LoadCsv:
-	'loadcsv' name= STRING source= STRING to= STRING 'with'  delim= STRING 'using'
+	'loadcsv' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'with'  delim= STRING 'using'
 	'{'
 		value=SelectStatement
 	'}'
 ;
 
 Transform:
-	'transform' name= STRING using= STRING 'using'
+	'transform' 'as' name= STRING 'on' on= STRING 'using'
 	 '{'
 		value+=NonSelectStatement
 	'}'
