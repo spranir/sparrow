@@ -25,7 +25,7 @@ class StartProcess extends ServerResource {
       runtime.execute(process)
     } catch {
       case ex: Throwable => {
-        val onError = process.getOnError
+        val onError = process.getCatch
       }
     } finally {
       val onFinally = process.getFinally

@@ -5,6 +5,7 @@ package org.etl.sparrow.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import org.etl.sparrow.SparrowPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.etl.sparrow.impl.FinallyImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.FinallyImpl#getAction <em>Action</em>}</li>
  * </ul>
  *
@@ -36,6 +39,26 @@ import org.etl.sparrow.SparrowPackage;
  */
 public class FinallyImpl extends MinimalEObjectImpl.Container implements Finally
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +88,29 @@ public class FinallyImpl extends MinimalEObjectImpl.Container implements Finally
   protected EClass eStaticClass()
   {
     return SparrowPackage.Literals.FINALLY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.FINALLY__NAME, oldName, name));
   }
 
   /**
@@ -107,6 +153,8 @@ public class FinallyImpl extends MinimalEObjectImpl.Container implements Finally
   {
     switch (featureID)
     {
+      case SparrowPackage.FINALLY__NAME:
+        return getName();
       case SparrowPackage.FINALLY__ACTION:
         return getAction();
     }
@@ -124,6 +172,9 @@ public class FinallyImpl extends MinimalEObjectImpl.Container implements Finally
   {
     switch (featureID)
     {
+      case SparrowPackage.FINALLY__NAME:
+        setName((String)newValue);
+        return;
       case SparrowPackage.FINALLY__ACTION:
         getAction().clear();
         getAction().addAll((Collection<? extends Action>)newValue);
@@ -142,6 +193,9 @@ public class FinallyImpl extends MinimalEObjectImpl.Container implements Finally
   {
     switch (featureID)
     {
+      case SparrowPackage.FINALLY__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case SparrowPackage.FINALLY__ACTION:
         getAction().clear();
         return;
@@ -159,10 +213,29 @@ public class FinallyImpl extends MinimalEObjectImpl.Container implements Finally
   {
     switch (featureID)
     {
+      case SparrowPackage.FINALLY__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SparrowPackage.FINALLY__ACTION:
         return action != null && !action.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //FinallyImpl

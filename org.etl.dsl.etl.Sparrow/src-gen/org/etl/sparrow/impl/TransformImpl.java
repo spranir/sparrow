@@ -26,7 +26,7 @@ import org.etl.sparrow.Transform;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.impl.TransformImpl#getUsing <em>Using</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.TransformImpl#getOn <em>On</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.TransformImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -35,24 +35,24 @@ import org.etl.sparrow.Transform;
 public class TransformImpl extends ActionImpl implements Transform
 {
   /**
-   * The default value of the '{@link #getUsing() <em>Using</em>}' attribute.
+   * The default value of the '{@link #getOn() <em>On</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsing()
+   * @see #getOn()
    * @generated
    * @ordered
    */
-  protected static final String USING_EDEFAULT = null;
+  protected static final String ON_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getUsing() <em>Using</em>}' attribute.
+   * The cached value of the '{@link #getOn() <em>On</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsing()
+   * @see #getOn()
    * @generated
    * @ordered
    */
-  protected String using = USING_EDEFAULT;
+  protected String on = ON_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
@@ -90,9 +90,9 @@ public class TransformImpl extends ActionImpl implements Transform
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUsing()
+  public String getOn()
   {
-    return using;
+    return on;
   }
 
   /**
@@ -100,12 +100,12 @@ public class TransformImpl extends ActionImpl implements Transform
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUsing(String newUsing)
+  public void setOn(String newOn)
   {
-    String oldUsing = using;
-    using = newUsing;
+    String oldOn = on;
+    on = newOn;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRANSFORM__USING, oldUsing, using));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRANSFORM__ON, oldOn, on));
   }
 
   /**
@@ -132,8 +132,8 @@ public class TransformImpl extends ActionImpl implements Transform
   {
     switch (featureID)
     {
-      case SparrowPackage.TRANSFORM__USING:
-        return getUsing();
+      case SparrowPackage.TRANSFORM__ON:
+        return getOn();
       case SparrowPackage.TRANSFORM__VALUE:
         return getValue();
     }
@@ -151,8 +151,8 @@ public class TransformImpl extends ActionImpl implements Transform
   {
     switch (featureID)
     {
-      case SparrowPackage.TRANSFORM__USING:
-        setUsing((String)newValue);
+      case SparrowPackage.TRANSFORM__ON:
+        setOn((String)newValue);
         return;
       case SparrowPackage.TRANSFORM__VALUE:
         getValue().clear();
@@ -172,8 +172,8 @@ public class TransformImpl extends ActionImpl implements Transform
   {
     switch (featureID)
     {
-      case SparrowPackage.TRANSFORM__USING:
-        setUsing(USING_EDEFAULT);
+      case SparrowPackage.TRANSFORM__ON:
+        setOn(ON_EDEFAULT);
         return;
       case SparrowPackage.TRANSFORM__VALUE:
         getValue().clear();
@@ -192,8 +192,8 @@ public class TransformImpl extends ActionImpl implements Transform
   {
     switch (featureID)
     {
-      case SparrowPackage.TRANSFORM__USING:
-        return USING_EDEFAULT == null ? using != null : !USING_EDEFAULT.equals(using);
+      case SparrowPackage.TRANSFORM__ON:
+        return ON_EDEFAULT == null ? on != null : !ON_EDEFAULT.equals(on);
       case SparrowPackage.TRANSFORM__VALUE:
         return value != null && !value.isEmpty();
     }
@@ -211,8 +211,8 @@ public class TransformImpl extends ActionImpl implements Transform
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (using: ");
-    result.append(using);
+    result.append(" (on: ");
+    result.append(on);
     result.append(", value: ");
     result.append(value);
     result.append(')');

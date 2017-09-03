@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.Transform#getUsing <em>Using</em>}</li>
+ *   <li>{@link org.etl.sparrow.Transform#getOn <em>On</em>}</li>
  *   <li>{@link org.etl.sparrow.Transform#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -25,30 +25,30 @@ import org.eclipse.emf.common.util.EList;
 public interface Transform extends Action
 {
   /**
-   * Returns the value of the '<em><b>Using</b></em>' attribute.
+   * Returns the value of the '<em><b>On</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Using</em>' attribute isn't clear,
+   * If the meaning of the '<em>On</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Using</em>' attribute.
-   * @see #setUsing(String)
-   * @see org.etl.sparrow.SparrowPackage#getTransform_Using()
+   * @return the value of the '<em>On</em>' attribute.
+   * @see #setOn(String)
+   * @see org.etl.sparrow.SparrowPackage#getTransform_On()
    * @model
    * @generated
    */
-  String getUsing();
+  String getOn();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.Transform#getUsing <em>Using</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.Transform#getOn <em>On</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Using</em>' attribute.
-   * @see #getUsing()
+   * @param value the new value of the '<em>On</em>' attribute.
+   * @see #getOn()
    * @generated
    */
-  void setUsing(String value);
+  void setOn(String value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute list.

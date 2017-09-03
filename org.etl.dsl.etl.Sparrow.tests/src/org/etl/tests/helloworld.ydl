@@ -1,6 +1,6 @@
 process "hellworld.process"
 {
-	copydata "helloworld"  source "$sourcejndi" to "$targetjndi" using {
+	copydata as "helloworld"  source "$sourcejndi" to "$targetjndi" using {
 		"SELECT * FROM employees"
 	}
 	

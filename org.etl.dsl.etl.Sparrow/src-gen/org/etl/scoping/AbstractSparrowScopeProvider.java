@@ -3,7 +3,7 @@
  */
 package org.etl.scoping;
 
-import org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider;
+import org.eclipse.xtext.scoping.impl.DelegatingScopeProvider;
 
-public abstract class AbstractSparrowScopeProvider extends XbaseBatchScopeProvider {
+public abstract class AbstractSparrowScopeProvider extends DelegatingScopeProvider {
 }

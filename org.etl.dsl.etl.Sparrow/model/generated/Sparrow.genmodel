@@ -8,15 +8,21 @@
       fileExtensions="spw" ecorePackage="Sparrow.ecore#/">
     <genClasses ecoreClass="Sparrow.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Process/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/action"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/onError"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/try"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/catch"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Process/finally"/>
     </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Try">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Try/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Try/action"/>
+    </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Finally">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Finally/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Finally/action"/>
     </genClasses>
-    <genClasses ecoreClass="Sparrow.ecore#//OnError">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//OnError/action"/>
+    <genClasses ecoreClass="Sparrow.ecore#//Catch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Catch/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Catch/action"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
@@ -66,7 +72,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Transform">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/using"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/on"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/value"/>
     </genClasses>
   </genPackages>

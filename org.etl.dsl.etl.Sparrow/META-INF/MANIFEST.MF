@@ -27,5 +27,6 @@ Export-Package: org.etl.sparrow.util,
  org.etl.jvmmodel,
  org.etl.parser.antlr.internal,
  org.etl.scoping,
- org.etl
+ org.etl,
+ org.etl.generator
 Import-Package: org.apache.log4j

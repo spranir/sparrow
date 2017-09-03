@@ -3,8 +3,6 @@
  */
 package org.etl.sparrow;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.etl.sparrow.Process#getName <em>Name</em>}</li>
- *   <li>{@link org.etl.sparrow.Process#getAction <em>Action</em>}</li>
- *   <li>{@link org.etl.sparrow.Process#getOnError <em>On Error</em>}</li>
+ *   <li>{@link org.etl.sparrow.Process#getTry <em>Try</em>}</li>
+ *   <li>{@link org.etl.sparrow.Process#getCatch <em>Catch</em>}</li>
  *   <li>{@link org.etl.sparrow.Process#getFinally <em>Finally</em>}</li>
  * </ul>
  *
@@ -55,46 +53,56 @@ public interface Process extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Action</b></em>' containment reference list.
-   * The list contents are of type {@link org.etl.sparrow.Action}.
+   * Returns the value of the '<em><b>Try</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Action</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Try</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Action</em>' containment reference list.
-   * @see org.etl.sparrow.SparrowPackage#getProcess_Action()
+   * @return the value of the '<em>Try</em>' containment reference.
+   * @see #setTry(Try)
+   * @see org.etl.sparrow.SparrowPackage#getProcess_Try()
    * @model containment="true"
    * @generated
    */
-  EList<Action> getAction();
+  Try getTry();
 
   /**
-   * Returns the value of the '<em><b>On Error</b></em>' containment reference.
+   * Sets the value of the '{@link org.etl.sparrow.Process#getTry <em>Try</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Try</em>' containment reference.
+   * @see #getTry()
+   * @generated
+   */
+  void setTry(Try value);
+
+  /**
+   * Returns the value of the '<em><b>Catch</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>On Error</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Catch</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>On Error</em>' containment reference.
-   * @see #setOnError(OnError)
-   * @see org.etl.sparrow.SparrowPackage#getProcess_OnError()
+   * @return the value of the '<em>Catch</em>' containment reference.
+   * @see #setCatch(Catch)
+   * @see org.etl.sparrow.SparrowPackage#getProcess_Catch()
    * @model containment="true"
    * @generated
    */
-  OnError getOnError();
+  Catch getCatch();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.Process#getOnError <em>On Error</em>}' containment reference.
+   * Sets the value of the '{@link org.etl.sparrow.Process#getCatch <em>Catch</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>On Error</em>' containment reference.
-   * @see #getOnError()
+   * @param value the new value of the '<em>Catch</em>' containment reference.
+   * @see #getCatch()
    * @generated
    */
-  void setOnError(OnError value);
+  void setCatch(Catch value);
 
   /**
    * Returns the value of the '<em><b>Finally</b></em>' containment reference.

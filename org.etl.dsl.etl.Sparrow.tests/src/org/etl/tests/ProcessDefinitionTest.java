@@ -17,6 +17,7 @@ import org.etl.SparrowStandaloneSetup;
 import org.etl.parser.antlr.SparrowParser;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Copydata;
+import org.etl.sparrow.Googlecal;
 import org.junit.Test;
 
 import com.google.inject.Injector;
@@ -25,7 +26,7 @@ public class ProcessDefinitionTest {
 
 	@Test
 	public void test() throws IOException {
-		String path = this.getClass().getResource("helloworld.ydl").getPath();
+		String path = this.getClass().getResource("publishcalendar.spw").getPath();
 		String model = readFromFile(path);
 		Injector guiceInjector =new SparrowStandaloneSetup().createInjectorAndDoEMFRegistration();
 		IParser parser = guiceInjector.getInstance(SparrowParser.class);
@@ -33,15 +34,15 @@ public class ProcessDefinitionTest {
 		EObject eRoot = result.getRootASTElement();
 		org.etl.sparrow.Process root = (org.etl.sparrow.Process) eRoot;
 		
-		List<Action> actionList1 = root.getAction();
+		List<Action> actionList1 = root.getTry().getAction();
 		System.out.println("What is the process name="+root.getName()+", action list="+actionList1);
 		for (Action action : actionList1) {
 			System.out.println(action.getClass()+","+action.eContainmentFeature().getName()+","
 					+action.eClass().getName());
-			if(action.eClass().getName().equals("Copydata"))
+			if(action.eClass().getName().equals("Googlecal"))
 			{
-				Command adapter = new CopydataAdapter(action);
-				adapter.execute();
+				Googlecal calAction = (Googlecal) action;
+				System.out.println(calAction);
 				
 			}
 		}

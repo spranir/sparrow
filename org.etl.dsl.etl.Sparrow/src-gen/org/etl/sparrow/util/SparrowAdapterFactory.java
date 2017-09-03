@@ -12,15 +12,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
+import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
-import org.etl.sparrow.OnError;
 import org.etl.sparrow.Slack;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
+import org.etl.sparrow.Try;
 import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
@@ -93,14 +94,19 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
         return createProcessAdapter();
       }
       @Override
+      public Adapter caseTry(Try object)
+      {
+        return createTryAdapter();
+      }
+      @Override
       public Adapter caseFinally(Finally object)
       {
         return createFinallyAdapter();
       }
       @Override
-      public Adapter caseOnError(OnError object)
+      public Adapter caseCatch(Catch object)
       {
-        return createOnErrorAdapter();
+        return createCatchAdapter();
       }
       @Override
       public Adapter caseAction(Action object)
@@ -190,6 +196,21 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Try <em>Try</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Try
+   * @generated
+   */
+  public Adapter createTryAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.etl.sparrow.Finally <em>Finally</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -205,16 +226,16 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.etl.sparrow.OnError <em>On Error</em>}'.
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Catch <em>Catch</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.etl.sparrow.OnError
+   * @see org.etl.sparrow.Catch
    * @generated
    */
-  public Adapter createOnErrorAdapter()
+  public Adapter createCatchAdapter()
   {
     return null;
   }

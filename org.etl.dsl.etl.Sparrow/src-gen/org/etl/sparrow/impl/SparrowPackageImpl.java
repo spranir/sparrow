@@ -12,16 +12,17 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
+import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
-import org.etl.sparrow.OnError;
 import org.etl.sparrow.Slack;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowFactory;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
+import org.etl.sparrow.Try;
 import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
@@ -45,6 +46,13 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass tryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass finallyEClass = null;
 
   /**
@@ -52,7 +60,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass onErrorEClass = null;
+  private EClass catchEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -212,7 +220,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProcess_Action()
+  public EReference getProcess_Try()
   {
     return (EReference)processEClass.getEStructuralFeatures().get(1);
   }
@@ -222,7 +230,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProcess_OnError()
+  public EReference getProcess_Catch()
   {
     return (EReference)processEClass.getEStructuralFeatures().get(2);
   }
@@ -242,6 +250,36 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getTry()
+  {
+    return tryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTry_Name()
+  {
+    return (EAttribute)tryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTry_Action()
+  {
+    return (EReference)tryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFinally()
   {
     return finallyEClass;
@@ -252,9 +290,19 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getFinally_Name()
+  {
+    return (EAttribute)finallyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getFinally_Action()
   {
-    return (EReference)finallyEClass.getEStructuralFeatures().get(0);
+    return (EReference)finallyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -262,9 +310,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOnError()
+  public EClass getCatch()
   {
-    return onErrorEClass;
+    return catchEClass;
   }
 
   /**
@@ -272,9 +320,19 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOnError_Action()
+  public EAttribute getCatch_Name()
   {
-    return (EReference)onErrorEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)catchEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCatch_Action()
+  {
+    return (EReference)catchEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -672,7 +730,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTransform_Using()
+  public EAttribute getTransform_On()
   {
     return (EAttribute)transformEClass.getEStructuralFeatures().get(0);
   }
@@ -719,15 +777,21 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Create classes and their features
     processEClass = createEClass(PROCESS);
     createEAttribute(processEClass, PROCESS__NAME);
-    createEReference(processEClass, PROCESS__ACTION);
-    createEReference(processEClass, PROCESS__ON_ERROR);
+    createEReference(processEClass, PROCESS__TRY);
+    createEReference(processEClass, PROCESS__CATCH);
     createEReference(processEClass, PROCESS__FINALLY);
 
+    tryEClass = createEClass(TRY);
+    createEAttribute(tryEClass, TRY__NAME);
+    createEReference(tryEClass, TRY__ACTION);
+
     finallyEClass = createEClass(FINALLY);
+    createEAttribute(finallyEClass, FINALLY__NAME);
     createEReference(finallyEClass, FINALLY__ACTION);
 
-    onErrorEClass = createEClass(ON_ERROR);
-    createEReference(onErrorEClass, ON_ERROR__ACTION);
+    catchEClass = createEClass(CATCH);
+    createEAttribute(catchEClass, CATCH__NAME);
+    createEReference(catchEClass, CATCH__ACTION);
 
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
@@ -777,7 +841,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(loadCsvEClass, LOAD_CSV__VALUE);
 
     transformEClass = createEClass(TRANSFORM);
-    createEAttribute(transformEClass, TRANSFORM__USING);
+    createEAttribute(transformEClass, TRANSFORM__ON);
     createEAttribute(transformEClass, TRANSFORM__VALUE);
   }
 
@@ -823,15 +887,21 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Initialize classes and features; add operations and parameters
     initEClass(processEClass, org.etl.sparrow.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProcess_Action(), this.getAction(), null, "action", null, 0, -1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProcess_OnError(), this.getOnError(), null, "onError", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcess_Try(), this.getTry(), null, "try", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcess_Catch(), this.getCatch(), null, "catch", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProcess_Finally(), this.getFinally(), null, "finally", null, 0, 1, org.etl.sparrow.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(tryEClass, Try.class, "Try", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTry_Name(), ecorePackage.getEString(), "name", null, 0, 1, Try.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTry_Action(), this.getAction(), null, "action", null, 0, -1, Try.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(finallyEClass, Finally.class, "Finally", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFinally_Name(), ecorePackage.getEString(), "name", null, 0, 1, Finally.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFinally_Action(), this.getAction(), null, "action", null, 0, -1, Finally.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(onErrorEClass, OnError.class, "OnError", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOnError_Action(), this.getAction(), null, "action", null, 0, -1, OnError.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(catchEClass, Catch.class, "Catch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCatch_Name(), ecorePackage.getEString(), "name", null, 0, 1, Catch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCatch_Action(), this.getAction(), null, "action", null, 0, -1, Catch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -881,7 +951,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getLoadCsv_Value(), ecorePackage.getEString(), "value", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(transformEClass, Transform.class, "Transform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTransform_Using(), ecorePackage.getEString(), "using", null, 0, 1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTransform_On(), ecorePackage.getEString(), "on", null, 0, 1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTransform_Value(), ecorePackage.getEString(), "value", null, 0, -1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

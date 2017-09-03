@@ -3,12 +3,8 @@
  */
 package org.etl.sparrow.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -16,13 +12,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.etl.sparrow.Action;
+import org.etl.sparrow.Catch;
 import org.etl.sparrow.Finally;
-import org.etl.sparrow.OnError;
 import org.etl.sparrow.SparrowPackage;
+import org.etl.sparrow.Try;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +26,8 @@ import org.etl.sparrow.SparrowPackage;
  * </p>
  * <ul>
  *   <li>{@link org.etl.sparrow.impl.ProcessImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.ProcessImpl#getAction <em>Action</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.ProcessImpl#getOnError <em>On Error</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.ProcessImpl#getTry <em>Try</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.ProcessImpl#getCatch <em>Catch</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.ProcessImpl#getFinally <em>Finally</em>}</li>
  * </ul>
  *
@@ -63,24 +56,24 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
+   * The cached value of the '{@link #getTry() <em>Try</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAction()
+   * @see #getTry()
    * @generated
    * @ordered
    */
-  protected EList<Action> action;
+  protected Try try_;
 
   /**
-   * The cached value of the '{@link #getOnError() <em>On Error</em>}' containment reference.
+   * The cached value of the '{@link #getCatch() <em>Catch</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOnError()
+   * @see #getCatch()
    * @generated
    * @ordered
    */
-  protected OnError onError;
+  protected Catch catch_;
 
   /**
    * The cached value of the '{@link #getFinally() <em>Finally</em>}' containment reference.
@@ -141,13 +134,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Action> getAction()
+  public Try getTry()
   {
-    if (action == null)
-    {
-      action = new EObjectContainmentEList<Action>(Action.class, this, SparrowPackage.PROCESS__ACTION);
-    }
-    return action;
+    return try_;
   }
 
   /**
@@ -155,23 +144,13 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
    * <!-- end-user-doc -->
    * @generated
    */
-  public OnError getOnError()
+  public NotificationChain basicSetTry(Try newTry, NotificationChain msgs)
   {
-    return onError;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOnError(OnError newOnError, NotificationChain msgs)
-  {
-    OnError oldOnError = onError;
-    onError = newOnError;
+    Try oldTry = try_;
+    try_ = newTry;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SparrowPackage.PROCESS__ON_ERROR, oldOnError, newOnError);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SparrowPackage.PROCESS__TRY, oldTry, newTry);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -182,20 +161,68 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOnError(OnError newOnError)
+  public void setTry(Try newTry)
   {
-    if (newOnError != onError)
+    if (newTry != try_)
     {
       NotificationChain msgs = null;
-      if (onError != null)
-        msgs = ((InternalEObject)onError).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.PROCESS__ON_ERROR, null, msgs);
-      if (newOnError != null)
-        msgs = ((InternalEObject)newOnError).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.PROCESS__ON_ERROR, null, msgs);
-      msgs = basicSetOnError(newOnError, msgs);
+      if (try_ != null)
+        msgs = ((InternalEObject)try_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.PROCESS__TRY, null, msgs);
+      if (newTry != null)
+        msgs = ((InternalEObject)newTry).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.PROCESS__TRY, null, msgs);
+      msgs = basicSetTry(newTry, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.PROCESS__ON_ERROR, newOnError, newOnError));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.PROCESS__TRY, newTry, newTry));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Catch getCatch()
+  {
+    return catch_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCatch(Catch newCatch, NotificationChain msgs)
+  {
+    Catch oldCatch = catch_;
+    catch_ = newCatch;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SparrowPackage.PROCESS__CATCH, oldCatch, newCatch);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCatch(Catch newCatch)
+  {
+    if (newCatch != catch_)
+    {
+      NotificationChain msgs = null;
+      if (catch_ != null)
+        msgs = ((InternalEObject)catch_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.PROCESS__CATCH, null, msgs);
+      if (newCatch != null)
+        msgs = ((InternalEObject)newCatch).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.PROCESS__CATCH, null, msgs);
+      msgs = basicSetCatch(newCatch, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.PROCESS__CATCH, newCatch, newCatch));
   }
 
   /**
@@ -256,10 +283,10 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
   {
     switch (featureID)
     {
-      case SparrowPackage.PROCESS__ACTION:
-        return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
-      case SparrowPackage.PROCESS__ON_ERROR:
-        return basicSetOnError(null, msgs);
+      case SparrowPackage.PROCESS__TRY:
+        return basicSetTry(null, msgs);
+      case SparrowPackage.PROCESS__CATCH:
+        return basicSetCatch(null, msgs);
       case SparrowPackage.PROCESS__FINALLY:
         return basicSetFinally(null, msgs);
     }
@@ -278,10 +305,10 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
     {
       case SparrowPackage.PROCESS__NAME:
         return getName();
-      case SparrowPackage.PROCESS__ACTION:
-        return getAction();
-      case SparrowPackage.PROCESS__ON_ERROR:
-        return getOnError();
+      case SparrowPackage.PROCESS__TRY:
+        return getTry();
+      case SparrowPackage.PROCESS__CATCH:
+        return getCatch();
       case SparrowPackage.PROCESS__FINALLY:
         return getFinally();
     }
@@ -293,7 +320,6 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -302,12 +328,11 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
       case SparrowPackage.PROCESS__NAME:
         setName((String)newValue);
         return;
-      case SparrowPackage.PROCESS__ACTION:
-        getAction().clear();
-        getAction().addAll((Collection<? extends Action>)newValue);
+      case SparrowPackage.PROCESS__TRY:
+        setTry((Try)newValue);
         return;
-      case SparrowPackage.PROCESS__ON_ERROR:
-        setOnError((OnError)newValue);
+      case SparrowPackage.PROCESS__CATCH:
+        setCatch((Catch)newValue);
         return;
       case SparrowPackage.PROCESS__FINALLY:
         setFinally((Finally)newValue);
@@ -329,11 +354,11 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
       case SparrowPackage.PROCESS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SparrowPackage.PROCESS__ACTION:
-        getAction().clear();
+      case SparrowPackage.PROCESS__TRY:
+        setTry((Try)null);
         return;
-      case SparrowPackage.PROCESS__ON_ERROR:
-        setOnError((OnError)null);
+      case SparrowPackage.PROCESS__CATCH:
+        setCatch((Catch)null);
         return;
       case SparrowPackage.PROCESS__FINALLY:
         setFinally((Finally)null);
@@ -354,10 +379,10 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements org.etl
     {
       case SparrowPackage.PROCESS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SparrowPackage.PROCESS__ACTION:
-        return action != null && !action.isEmpty();
-      case SparrowPackage.PROCESS__ON_ERROR:
-        return onError != null;
+      case SparrowPackage.PROCESS__TRY:
+        return try_ != null;
+      case SparrowPackage.PROCESS__CATCH:
+        return catch_ != null;
       case SparrowPackage.PROCESS__FINALLY:
         return finally_ != null;
     }

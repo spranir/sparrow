@@ -33,6 +33,15 @@ public interface SparrowFactory extends EFactory
   Process createProcess();
 
   /**
+   * Returns a new object of class '<em>Try</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Try</em>'.
+   * @generated
+   */
+  Try createTry();
+
+  /**
    * Returns a new object of class '<em>Finally</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -42,13 +51,13 @@ public interface SparrowFactory extends EFactory
   Finally createFinally();
 
   /**
-   * Returns a new object of class '<em>On Error</em>'.
+   * Returns a new object of class '<em>Catch</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>On Error</em>'.
+   * @return a new object of class '<em>Catch</em>'.
    * @generated
    */
-  OnError createOnError();
+  Catch createCatch();
 
   /**
    * Returns a new object of class '<em>Action</em>'.

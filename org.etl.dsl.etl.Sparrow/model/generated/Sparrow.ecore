@@ -3,18 +3,24 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sparrow" nsURI="http://www.junome.in/sparrow" nsPrefix="sparrow">
   <eClassifiers xsi:type="ecore:EClass" name="Process">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
-        eType="#//Action" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="onError" eType="#//OnError"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="try" eType="#//Try" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="catch" eType="#//Catch"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="finally" eType="#//Finally"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Finally">
+  <eClassifiers xsi:type="ecore:EClass" name="Try">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
         eType="#//Action" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OnError">
+  <eClassifiers xsi:type="ecore:EClass" name="Finally">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="#//Action" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Catch">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
         eType="#//Action" containment="true"/>
   </eClassifiers>
@@ -66,7 +72,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transform" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="using" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="on" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

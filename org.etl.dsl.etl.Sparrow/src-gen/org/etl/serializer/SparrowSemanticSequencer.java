@@ -10,71 +10,27 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.common.types.JvmFormalParameter;
-import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
-import org.eclipse.xtext.common.types.JvmInnerTypeReference;
-import org.eclipse.xtext.common.types.JvmLowerBound;
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
-import org.eclipse.xtext.common.types.JvmTypeParameter;
-import org.eclipse.xtext.common.types.JvmUpperBound;
-import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
-import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
+import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.eclipse.xtext.xbase.XAssignment;
-import org.eclipse.xtext.xbase.XBasicForLoopExpression;
-import org.eclipse.xtext.xbase.XBinaryOperation;
-import org.eclipse.xtext.xbase.XBlockExpression;
-import org.eclipse.xtext.xbase.XBooleanLiteral;
-import org.eclipse.xtext.xbase.XCasePart;
-import org.eclipse.xtext.xbase.XCastedExpression;
-import org.eclipse.xtext.xbase.XCatchClause;
-import org.eclipse.xtext.xbase.XClosure;
-import org.eclipse.xtext.xbase.XConstructorCall;
-import org.eclipse.xtext.xbase.XDoWhileExpression;
-import org.eclipse.xtext.xbase.XFeatureCall;
-import org.eclipse.xtext.xbase.XForLoopExpression;
-import org.eclipse.xtext.xbase.XIfExpression;
-import org.eclipse.xtext.xbase.XInstanceOfExpression;
-import org.eclipse.xtext.xbase.XListLiteral;
-import org.eclipse.xtext.xbase.XMemberFeatureCall;
-import org.eclipse.xtext.xbase.XNullLiteral;
-import org.eclipse.xtext.xbase.XNumberLiteral;
-import org.eclipse.xtext.xbase.XPostfixOperation;
-import org.eclipse.xtext.xbase.XReturnExpression;
-import org.eclipse.xtext.xbase.XSetLiteral;
-import org.eclipse.xtext.xbase.XStringLiteral;
-import org.eclipse.xtext.xbase.XSwitchExpression;
-import org.eclipse.xtext.xbase.XSynchronizedExpression;
-import org.eclipse.xtext.xbase.XThrowExpression;
-import org.eclipse.xtext.xbase.XTryCatchFinallyExpression;
-import org.eclipse.xtext.xbase.XTypeLiteral;
-import org.eclipse.xtext.xbase.XUnaryOperation;
-import org.eclipse.xtext.xbase.XVariableDeclaration;
-import org.eclipse.xtext.xbase.XWhileExpression;
-import org.eclipse.xtext.xbase.XbasePackage;
-import org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer;
-import org.eclipse.xtext.xtype.XFunctionTypeRef;
-import org.eclipse.xtext.xtype.XImportDeclaration;
-import org.eclipse.xtext.xtype.XImportSection;
-import org.eclipse.xtext.xtype.XtypePackage;
 import org.etl.services.SparrowGrammarAccess;
 import org.etl.sparrow.Callprocess;
+import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
-import org.etl.sparrow.OnError;
 import org.etl.sparrow.Slack;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
+import org.etl.sparrow.Try;
 import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
 @SuppressWarnings("all")
-public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
+public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 
 	@Inject
 	private SparrowGrammarAccess grammarAccess;
@@ -90,6 +46,9 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 			case SparrowPackage.CALLPROCESS:
 				sequence_Callprocess(context, (Callprocess) semanticObject); 
 				return; 
+			case SparrowPackage.CATCH:
+				sequence_Catch(context, (Catch) semanticObject); 
+				return; 
 			case SparrowPackage.COPYDATA:
 				sequence_Copydata(context, (Copydata) semanticObject); 
 				return; 
@@ -101,9 +60,6 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				return; 
 			case SparrowPackage.LOAD_CSV:
 				sequence_LoadCsv(context, (LoadCsv) semanticObject); 
-				return; 
-			case SparrowPackage.ON_ERROR:
-				sequence_OnError(context, (OnError) semanticObject); 
 				return; 
 			case SparrowPackage.PROCESS:
 				sequence_Process(context, (org.etl.sparrow.Process) semanticObject); 
@@ -117,250 +73,14 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 			case SparrowPackage.TRANSFORM:
 				sequence_Transform(context, (Transform) semanticObject); 
 				return; 
+			case SparrowPackage.TRY:
+				sequence_Try(context, (Try) semanticObject); 
+				return; 
 			case SparrowPackage.UPDATEDAUDIT:
 				sequence_Updatedaudit(context, (Updatedaudit) semanticObject); 
 				return; 
 			case SparrowPackage.WRITE_CSV:
 				sequence_WriteCsv(context, (WriteCsv) semanticObject); 
-				return; 
-			}
-		else if (epackage == TypesPackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case TypesPackage.JVM_FORMAL_PARAMETER:
-				if (rule == grammarAccess.getFullJvmFormalParameterRule()) {
-					sequence_FullJvmFormalParameter(context, (JvmFormalParameter) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getJvmFormalParameterRule()) {
-					sequence_JvmFormalParameter(context, (JvmFormalParameter) semanticObject); 
-					return; 
-				}
-				else break;
-			case TypesPackage.JVM_GENERIC_ARRAY_TYPE_REFERENCE:
-				sequence_JvmTypeReference(context, (JvmGenericArrayTypeReference) semanticObject); 
-				return; 
-			case TypesPackage.JVM_INNER_TYPE_REFERENCE:
-				sequence_JvmParameterizedTypeReference(context, (JvmInnerTypeReference) semanticObject); 
-				return; 
-			case TypesPackage.JVM_LOWER_BOUND:
-				if (rule == grammarAccess.getJvmLowerBoundAndedRule()) {
-					sequence_JvmLowerBoundAnded(context, (JvmLowerBound) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getJvmLowerBoundRule()) {
-					sequence_JvmLowerBound(context, (JvmLowerBound) semanticObject); 
-					return; 
-				}
-				else break;
-			case TypesPackage.JVM_PARAMETERIZED_TYPE_REFERENCE:
-				if (action == grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0()) {
-					sequence_JvmParameterizedTypeReference_JvmInnerTypeReference_1_4_0_0_0(context, (JvmParameterizedTypeReference) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getJvmTypeReferenceRule()
-						|| action == grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0()
-						|| rule == grammarAccess.getJvmParameterizedTypeReferenceRule()
-						|| rule == grammarAccess.getJvmArgumentTypeReferenceRule()) {
-					sequence_JvmParameterizedTypeReference(context, (JvmParameterizedTypeReference) semanticObject); 
-					return; 
-				}
-				else break;
-			case TypesPackage.JVM_TYPE_PARAMETER:
-				sequence_JvmTypeParameter(context, (JvmTypeParameter) semanticObject); 
-				return; 
-			case TypesPackage.JVM_UPPER_BOUND:
-				if (rule == grammarAccess.getJvmUpperBoundAndedRule()) {
-					sequence_JvmUpperBoundAnded(context, (JvmUpperBound) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getJvmUpperBoundRule()) {
-					sequence_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
-					return; 
-				}
-				else break;
-			case TypesPackage.JVM_WILDCARD_TYPE_REFERENCE:
-				sequence_JvmWildcardTypeReference(context, (JvmWildcardTypeReference) semanticObject); 
-				return; 
-			}
-		else if (epackage == XbasePackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case XbasePackage.XASSIGNMENT:
-				sequence_XAssignment_XMemberFeatureCall(context, (XAssignment) semanticObject); 
-				return; 
-			case XbasePackage.XBASIC_FOR_LOOP_EXPRESSION:
-				sequence_XBasicForLoopExpression(context, (XBasicForLoopExpression) semanticObject); 
-				return; 
-			case XbasePackage.XBINARY_OPERATION:
-				sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
-				return; 
-			case XbasePackage.XBLOCK_EXPRESSION:
-				if (rule == grammarAccess.getXExpressionRule()
-						|| rule == grammarAccess.getXAssignmentRule()
-						|| action == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
-						|| rule == grammarAccess.getXOrExpressionRule()
-						|| action == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXAndExpressionRule()
-						|| action == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXEqualityExpressionRule()
-						|| action == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXRelationalExpressionRule()
-						|| action == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0()
-						|| action == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
-						|| rule == grammarAccess.getXOtherOperatorExpressionRule()
-						|| action == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXAdditiveExpressionRule()
-						|| action == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXMultiplicativeExpressionRule()
-						|| action == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXUnaryOperationRule()
-						|| rule == grammarAccess.getXCastedExpressionRule()
-						|| action == grammarAccess.getXCastedExpressionAccess().getXCastedExpressionTargetAction_1_0_0_0()
-						|| rule == grammarAccess.getXPostfixOperationRule()
-						|| action == grammarAccess.getXPostfixOperationAccess().getXPostfixOperationOperandAction_1_0_0()
-						|| rule == grammarAccess.getXMemberFeatureCallRule()
-						|| action == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0()
-						|| action == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0()
-						|| rule == grammarAccess.getXPrimaryExpressionRule()
-						|| rule == grammarAccess.getXParenthesizedExpressionRule()
-						|| rule == grammarAccess.getXBlockExpressionRule()
-						|| rule == grammarAccess.getXExpressionOrVarDeclarationRule()) {
-					sequence_XBlockExpression(context, (XBlockExpression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getXExpressionInClosureRule()) {
-					sequence_XExpressionInClosure(context, (XBlockExpression) semanticObject); 
-					return; 
-				}
-				else break;
-			case XbasePackage.XBOOLEAN_LITERAL:
-				sequence_XBooleanLiteral(context, (XBooleanLiteral) semanticObject); 
-				return; 
-			case XbasePackage.XCASE_PART:
-				sequence_XCasePart(context, (XCasePart) semanticObject); 
-				return; 
-			case XbasePackage.XCASTED_EXPRESSION:
-				sequence_XCastedExpression(context, (XCastedExpression) semanticObject); 
-				return; 
-			case XbasePackage.XCATCH_CLAUSE:
-				sequence_XCatchClause(context, (XCatchClause) semanticObject); 
-				return; 
-			case XbasePackage.XCLOSURE:
-				if (rule == grammarAccess.getXExpressionRule()
-						|| rule == grammarAccess.getXAssignmentRule()
-						|| action == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
-						|| rule == grammarAccess.getXOrExpressionRule()
-						|| action == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXAndExpressionRule()
-						|| action == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXEqualityExpressionRule()
-						|| action == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXRelationalExpressionRule()
-						|| action == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0()
-						|| action == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
-						|| rule == grammarAccess.getXOtherOperatorExpressionRule()
-						|| action == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXAdditiveExpressionRule()
-						|| action == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXMultiplicativeExpressionRule()
-						|| action == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
-						|| rule == grammarAccess.getXUnaryOperationRule()
-						|| rule == grammarAccess.getXCastedExpressionRule()
-						|| action == grammarAccess.getXCastedExpressionAccess().getXCastedExpressionTargetAction_1_0_0_0()
-						|| rule == grammarAccess.getXPostfixOperationRule()
-						|| action == grammarAccess.getXPostfixOperationAccess().getXPostfixOperationOperandAction_1_0_0()
-						|| rule == grammarAccess.getXMemberFeatureCallRule()
-						|| action == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0()
-						|| action == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0()
-						|| rule == grammarAccess.getXPrimaryExpressionRule()
-						|| rule == grammarAccess.getXLiteralRule()
-						|| rule == grammarAccess.getXClosureRule()
-						|| rule == grammarAccess.getXParenthesizedExpressionRule()
-						|| rule == grammarAccess.getXExpressionOrVarDeclarationRule()) {
-					sequence_XClosure(context, (XClosure) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getXShortClosureRule()) {
-					sequence_XShortClosure(context, (XClosure) semanticObject); 
-					return; 
-				}
-				else break;
-			case XbasePackage.XCONSTRUCTOR_CALL:
-				sequence_XConstructorCall(context, (XConstructorCall) semanticObject); 
-				return; 
-			case XbasePackage.XDO_WHILE_EXPRESSION:
-				sequence_XDoWhileExpression(context, (XDoWhileExpression) semanticObject); 
-				return; 
-			case XbasePackage.XFEATURE_CALL:
-				sequence_XFeatureCall(context, (XFeatureCall) semanticObject); 
-				return; 
-			case XbasePackage.XFOR_LOOP_EXPRESSION:
-				sequence_XForLoopExpression(context, (XForLoopExpression) semanticObject); 
-				return; 
-			case XbasePackage.XIF_EXPRESSION:
-				sequence_XIfExpression(context, (XIfExpression) semanticObject); 
-				return; 
-			case XbasePackage.XINSTANCE_OF_EXPRESSION:
-				sequence_XRelationalExpression(context, (XInstanceOfExpression) semanticObject); 
-				return; 
-			case XbasePackage.XLIST_LITERAL:
-				sequence_XListLiteral(context, (XListLiteral) semanticObject); 
-				return; 
-			case XbasePackage.XMEMBER_FEATURE_CALL:
-				sequence_XMemberFeatureCall(context, (XMemberFeatureCall) semanticObject); 
-				return; 
-			case XbasePackage.XNULL_LITERAL:
-				sequence_XNullLiteral(context, (XNullLiteral) semanticObject); 
-				return; 
-			case XbasePackage.XNUMBER_LITERAL:
-				sequence_XNumberLiteral(context, (XNumberLiteral) semanticObject); 
-				return; 
-			case XbasePackage.XPOSTFIX_OPERATION:
-				sequence_XPostfixOperation(context, (XPostfixOperation) semanticObject); 
-				return; 
-			case XbasePackage.XRETURN_EXPRESSION:
-				sequence_XReturnExpression(context, (XReturnExpression) semanticObject); 
-				return; 
-			case XbasePackage.XSET_LITERAL:
-				sequence_XSetLiteral(context, (XSetLiteral) semanticObject); 
-				return; 
-			case XbasePackage.XSTRING_LITERAL:
-				sequence_XStringLiteral(context, (XStringLiteral) semanticObject); 
-				return; 
-			case XbasePackage.XSWITCH_EXPRESSION:
-				sequence_XSwitchExpression(context, (XSwitchExpression) semanticObject); 
-				return; 
-			case XbasePackage.XSYNCHRONIZED_EXPRESSION:
-				sequence_XSynchronizedExpression(context, (XSynchronizedExpression) semanticObject); 
-				return; 
-			case XbasePackage.XTHROW_EXPRESSION:
-				sequence_XThrowExpression(context, (XThrowExpression) semanticObject); 
-				return; 
-			case XbasePackage.XTRY_CATCH_FINALLY_EXPRESSION:
-				sequence_XTryCatchFinallyExpression(context, (XTryCatchFinallyExpression) semanticObject); 
-				return; 
-			case XbasePackage.XTYPE_LITERAL:
-				sequence_XTypeLiteral(context, (XTypeLiteral) semanticObject); 
-				return; 
-			case XbasePackage.XUNARY_OPERATION:
-				sequence_XUnaryOperation(context, (XUnaryOperation) semanticObject); 
-				return; 
-			case XbasePackage.XVARIABLE_DECLARATION:
-				sequence_XVariableDeclaration(context, (XVariableDeclaration) semanticObject); 
-				return; 
-			case XbasePackage.XWHILE_EXPRESSION:
-				sequence_XWhileExpression(context, (XWhileExpression) semanticObject); 
-				return; 
-			}
-		else if (epackage == XtypePackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case XtypePackage.XFUNCTION_TYPE_REF:
-				sequence_XFunctionTypeRef(context, (XFunctionTypeRef) semanticObject); 
-				return; 
-			case XtypePackage.XIMPORT_DECLARATION:
-				sequence_XImportDeclaration(context, (XImportDeclaration) semanticObject); 
-				return; 
-			case XtypePackage.XIMPORT_SECTION:
-				sequence_XImportSection(context, (XImportSection) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -385,10 +105,22 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CALLPROCESS__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCallprocessAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCallprocessAccess().getTargetSTRINGTerminalRuleCall_2_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getCallprocessAccess().getValueSelectStatementParserRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getCallprocessAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCallprocessAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getCallprocessAccess().getValueSelectStatementParserRuleCall_7_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Catch returns Catch
+	 *
+	 * Constraint:
+	 *     (name=ID action+=Action*)
+	 */
+	protected void sequence_Catch(ISerializationContext context, Catch semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -412,10 +144,10 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.COPYDATA__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCopydataAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCopydataAccess().getSourceSTRINGTerminalRuleCall_2_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getCopydataAccess().getToSTRINGTerminalRuleCall_3_0(), semanticObject.getTo());
-		feeder.accept(grammarAccess.getCopydataAccess().getValueSelectStatementParserRuleCall_6_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getCopydataAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCopydataAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getCopydataAccess().getToSTRINGTerminalRuleCall_6_0(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getCopydataAccess().getValueSelectStatementParserRuleCall_9_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -425,7 +157,7 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 	 *     Finally returns Finally
 	 *
 	 * Constraint:
-	 *     action+=Action+
+	 *     (name=ID action+=Action*)
 	 */
 	protected void sequence_Finally(ISerializationContext context, Finally semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -472,15 +204,15 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGooglecalAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGooglecalAccess().getCalidSTRINGTerminalRuleCall_2_0(), semanticObject.getCalid());
-		feeder.accept(grammarAccess.getGooglecalAccess().getAuthstoreSTRINGTerminalRuleCall_3_0(), semanticObject.getAuthstore());
-		feeder.accept(grammarAccess.getGooglecalAccess().getUseraccountSTRINGTerminalRuleCall_4_0(), semanticObject.getUseraccount());
-		feeder.accept(grammarAccess.getGooglecalAccess().getTitleSTRINGTerminalRuleCall_5_0(), semanticObject.getTitle());
-		feeder.accept(grammarAccess.getGooglecalAccess().getStartSTRINGTerminalRuleCall_6_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getGooglecalAccess().getEndSTRINGTerminalRuleCall_7_0(), semanticObject.getEnd());
-		feeder.accept(grammarAccess.getGooglecalAccess().getNotifySTRINGTerminalRuleCall_8_0(), semanticObject.getNotify());
-		feeder.accept(grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_10_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getGooglecalAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGooglecalAccess().getCalidSTRINGTerminalRuleCall_4_0(), semanticObject.getCalid());
+		feeder.accept(grammarAccess.getGooglecalAccess().getAuthstoreSTRINGTerminalRuleCall_6_0(), semanticObject.getAuthstore());
+		feeder.accept(grammarAccess.getGooglecalAccess().getUseraccountSTRINGTerminalRuleCall_8_0(), semanticObject.getUseraccount());
+		feeder.accept(grammarAccess.getGooglecalAccess().getTitleSTRINGTerminalRuleCall_10_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getGooglecalAccess().getStartSTRINGTerminalRuleCall_12_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getGooglecalAccess().getEndSTRINGTerminalRuleCall_14_0(), semanticObject.getEnd());
+		feeder.accept(grammarAccess.getGooglecalAccess().getNotifySTRINGTerminalRuleCall_16_0(), semanticObject.getNotify());
+		feeder.accept(grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_19_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -507,24 +239,12 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.LOAD_CSV__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLoadCsvAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getLoadCsvAccess().getSourceSTRINGTerminalRuleCall_2_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getLoadCsvAccess().getToSTRINGTerminalRuleCall_3_0(), semanticObject.getTo());
-		feeder.accept(grammarAccess.getLoadCsvAccess().getDelimSTRINGTerminalRuleCall_5_0(), semanticObject.getDelim());
-		feeder.accept(grammarAccess.getLoadCsvAccess().getValueSelectStatementParserRuleCall_8_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getLoadCsvAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLoadCsvAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getLoadCsvAccess().getToSTRINGTerminalRuleCall_6_0(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getLoadCsvAccess().getDelimSTRINGTerminalRuleCall_8_0(), semanticObject.getDelim());
+		feeder.accept(grammarAccess.getLoadCsvAccess().getValueSelectStatementParserRuleCall_11_0(), semanticObject.getValue());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     OnError returns OnError
-	 *
-	 * Constraint:
-	 *     action+=Action+
-	 */
-	protected void sequence_OnError(ISerializationContext context, OnError semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -533,10 +253,25 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 	 *     Process returns Process
 	 *
 	 * Constraint:
-	 *     (name=STRING action+=Action* onError=OnError finally=Finally)
+	 *     (name=STRING try=Try catch=Catch finally=Finally)
 	 */
 	protected void sequence_Process(ISerializationContext context, org.etl.sparrow.Process semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.PROCESS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.PROCESS__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.PROCESS__TRY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.PROCESS__TRY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.PROCESS__CATCH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.PROCESS__CATCH));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.PROCESS__FINALLY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.PROCESS__FINALLY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProcessAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getProcessAccess().getTryTryParserRuleCall_3_0(), semanticObject.getTry());
+		feeder.accept(grammarAccess.getProcessAccess().getCatchCatchParserRuleCall_4_0(), semanticObject.getCatch());
+		feeder.accept(grammarAccess.getProcessAccess().getFinallyFinallyParserRuleCall_5_0(), semanticObject.getFinally());
+		feeder.finish();
 	}
 	
 	
@@ -560,10 +295,10 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SLACK__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSlackAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSlackAccess().getTeamSTRINGTerminalRuleCall_2_0(), semanticObject.getTeam());
-		feeder.accept(grammarAccess.getSlackAccess().getChannelSTRINGTerminalRuleCall_3_0(), semanticObject.getChannel());
-		feeder.accept(grammarAccess.getSlackAccess().getValueSTRINGTerminalRuleCall_6_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getSlackAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSlackAccess().getTeamSTRINGTerminalRuleCall_4_0(), semanticObject.getTeam());
+		feeder.accept(grammarAccess.getSlackAccess().getChannelSTRINGTerminalRuleCall_6_0(), semanticObject.getChannel());
+		feeder.accept(grammarAccess.getSlackAccess().getValueSTRINGTerminalRuleCall_9_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -586,9 +321,9 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSmsAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSmsAccess().getTargetSTRINGTerminalRuleCall_2_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getSmsAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getSmsAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSmsAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getSmsAccess().getValueSTRINGTerminalRuleCall_7_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -599,9 +334,21 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 	 *     Transform returns Transform
 	 *
 	 * Constraint:
-	 *     (name=STRING using=STRING value+=NonSelectStatement)
+	 *     (name=STRING on=STRING value+=NonSelectStatement)
 	 */
 	protected void sequence_Transform(ISerializationContext context, Transform semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Try returns Try
+	 *
+	 * Constraint:
+	 *     (name=ID action+=Action*)
+	 */
+	protected void sequence_Try(ISerializationContext context, Try semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -624,9 +371,9 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUpdatedauditAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUpdatedauditAccess().getLogsinkSTRINGTerminalRuleCall_2_0(), semanticObject.getLogsink());
-		feeder.accept(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getLogsinkSTRINGTerminalRuleCall_4_0(), semanticObject.getLogsink());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_7_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -653,11 +400,11 @@ public class SparrowSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.WRITE_CSV__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWriteCsvAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getWriteCsvAccess().getSourceSTRINGTerminalRuleCall_2_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getWriteCsvAccess().getToSTRINGTerminalRuleCall_3_0(), semanticObject.getTo());
-		feeder.accept(grammarAccess.getWriteCsvAccess().getDelimSTRINGTerminalRuleCall_5_0(), semanticObject.getDelim());
-		feeder.accept(grammarAccess.getWriteCsvAccess().getValueSelectStatementParserRuleCall_8_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getWriteCsvAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getWriteCsvAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getWriteCsvAccess().getToSTRINGTerminalRuleCall_6_0(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getWriteCsvAccess().getDelimSTRINGTerminalRuleCall_8_0(), semanticObject.getDelim());
+		feeder.accept(grammarAccess.getWriteCsvAccess().getValueSelectStatementParserRuleCall_11_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

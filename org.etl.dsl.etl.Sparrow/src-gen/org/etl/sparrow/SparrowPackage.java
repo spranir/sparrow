@@ -77,22 +77,22 @@ public interface SparrowPackage extends EPackage
   int PROCESS__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Action</b></em>' containment reference list.
+   * The feature id for the '<em><b>Try</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROCESS__ACTION = 1;
+  int PROCESS__TRY = 1;
 
   /**
-   * The feature id for the '<em><b>On Error</b></em>' containment reference.
+   * The feature id for the '<em><b>Catch</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROCESS__ON_ERROR = 2;
+  int PROCESS__CATCH = 2;
 
   /**
    * The feature id for the '<em><b>Finally</b></em>' containment reference.
@@ -113,14 +113,23 @@ public interface SparrowPackage extends EPackage
   int PROCESS_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link org.etl.sparrow.impl.FinallyImpl <em>Finally</em>}' class.
+   * The meta object id for the '{@link org.etl.sparrow.impl.TryImpl <em>Try</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.etl.sparrow.impl.FinallyImpl
-   * @see org.etl.sparrow.impl.SparrowPackageImpl#getFinally()
+   * @see org.etl.sparrow.impl.TryImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getTry()
    * @generated
    */
-  int FINALLY = 1;
+  int TRY = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference list.
@@ -129,7 +138,44 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FINALLY__ACTION = 0;
+  int TRY__ACTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Try</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.FinallyImpl <em>Finally</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.FinallyImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getFinally()
+   * @generated
+   */
+  int FINALLY = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINALLY__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Action</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINALLY__ACTION = 1;
 
   /**
    * The number of structural features of the '<em>Finally</em>' class.
@@ -138,17 +184,26 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FINALLY_FEATURE_COUNT = 1;
+  int FINALLY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.etl.sparrow.impl.OnErrorImpl <em>On Error</em>}' class.
+   * The meta object id for the '{@link org.etl.sparrow.impl.CatchImpl <em>Catch</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.etl.sparrow.impl.OnErrorImpl
-   * @see org.etl.sparrow.impl.SparrowPackageImpl#getOnError()
+   * @see org.etl.sparrow.impl.CatchImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getCatch()
    * @generated
    */
-  int ON_ERROR = 2;
+  int CATCH = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CATCH__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference list.
@@ -157,16 +212,16 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ON_ERROR__ACTION = 0;
+  int CATCH__ACTION = 1;
 
   /**
-   * The number of structural features of the '<em>On Error</em>' class.
+   * The number of structural features of the '<em>Catch</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ON_ERROR_FEATURE_COUNT = 1;
+  int CATCH_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.ActionImpl <em>Action</em>}' class.
@@ -176,7 +231,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getAction()
    * @generated
    */
-  int ACTION = 3;
+  int ACTION = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,7 +259,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 4;
+  int CALLPROCESS = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +305,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 5;
+  int UPDATEDAUDIT = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -296,7 +351,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
    * @generated
    */
-  int SMS = 6;
+  int SMS = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -342,7 +397,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlack()
    * @generated
    */
-  int SLACK = 7;
+  int SLACK = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -397,7 +452,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecal()
    * @generated
    */
-  int GOOGLECAL = 8;
+  int GOOGLECAL = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -497,7 +552,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 9;
+  int COPYDATA = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -552,7 +607,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 10;
+  int WRITE_CSV = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -616,7 +671,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 11;
+  int LOAD_CSV = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -680,7 +735,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 12;
+  int TRANSFORM = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -692,13 +747,13 @@ public interface SparrowPackage extends EPackage
   int TRANSFORM__NAME = ACTION__NAME;
 
   /**
-   * The feature id for the '<em><b>Using</b></em>' attribute.
+   * The feature id for the '<em><b>On</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSFORM__USING = ACTION_FEATURE_COUNT + 0;
+  int TRANSFORM__ON = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -741,26 +796,26 @@ public interface SparrowPackage extends EPackage
   EAttribute getProcess_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.etl.sparrow.Process#getAction <em>Action</em>}'.
+   * Returns the meta object for the containment reference '{@link org.etl.sparrow.Process#getTry <em>Try</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Action</em>'.
-   * @see org.etl.sparrow.Process#getAction()
+   * @return the meta object for the containment reference '<em>Try</em>'.
+   * @see org.etl.sparrow.Process#getTry()
    * @see #getProcess()
    * @generated
    */
-  EReference getProcess_Action();
+  EReference getProcess_Try();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.etl.sparrow.Process#getOnError <em>On Error</em>}'.
+   * Returns the meta object for the containment reference '{@link org.etl.sparrow.Process#getCatch <em>Catch</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>On Error</em>'.
-   * @see org.etl.sparrow.Process#getOnError()
+   * @return the meta object for the containment reference '<em>Catch</em>'.
+   * @see org.etl.sparrow.Process#getCatch()
    * @see #getProcess()
    * @generated
    */
-  EReference getProcess_OnError();
+  EReference getProcess_Catch();
 
   /**
    * Returns the meta object for the containment reference '{@link org.etl.sparrow.Process#getFinally <em>Finally</em>}'.
@@ -774,6 +829,38 @@ public interface SparrowPackage extends EPackage
   EReference getProcess_Finally();
 
   /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Try <em>Try</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Try</em>'.
+   * @see org.etl.sparrow.Try
+   * @generated
+   */
+  EClass getTry();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Try#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.etl.sparrow.Try#getName()
+   * @see #getTry()
+   * @generated
+   */
+  EAttribute getTry_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.etl.sparrow.Try#getAction <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Action</em>'.
+   * @see org.etl.sparrow.Try#getAction()
+   * @see #getTry()
+   * @generated
+   */
+  EReference getTry_Action();
+
+  /**
    * Returns the meta object for class '{@link org.etl.sparrow.Finally <em>Finally</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -782,6 +869,17 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EClass getFinally();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Finally#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.etl.sparrow.Finally#getName()
+   * @see #getFinally()
+   * @generated
+   */
+  EAttribute getFinally_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.etl.sparrow.Finally#getAction <em>Action</em>}'.
@@ -795,25 +893,36 @@ public interface SparrowPackage extends EPackage
   EReference getFinally_Action();
 
   /**
-   * Returns the meta object for class '{@link org.etl.sparrow.OnError <em>On Error</em>}'.
+   * Returns the meta object for class '{@link org.etl.sparrow.Catch <em>Catch</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>On Error</em>'.
-   * @see org.etl.sparrow.OnError
+   * @return the meta object for class '<em>Catch</em>'.
+   * @see org.etl.sparrow.Catch
    * @generated
    */
-  EClass getOnError();
+  EClass getCatch();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.etl.sparrow.OnError#getAction <em>Action</em>}'.
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Catch#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.etl.sparrow.Catch#getName()
+   * @see #getCatch()
+   * @generated
+   */
+  EAttribute getCatch_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.etl.sparrow.Catch#getAction <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Action</em>'.
-   * @see org.etl.sparrow.OnError#getAction()
-   * @see #getOnError()
+   * @see org.etl.sparrow.Catch#getAction()
+   * @see #getCatch()
    * @generated
    */
-  EReference getOnError_Action();
+  EReference getCatch_Action();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Action <em>Action</em>}'.
@@ -1235,15 +1344,15 @@ public interface SparrowPackage extends EPackage
   EClass getTransform();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Transform#getUsing <em>Using</em>}'.
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Transform#getOn <em>On</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Using</em>'.
-   * @see org.etl.sparrow.Transform#getUsing()
+   * @return the meta object for the attribute '<em>On</em>'.
+   * @see org.etl.sparrow.Transform#getOn()
    * @see #getTransform()
    * @generated
    */
-  EAttribute getTransform_Using();
+  EAttribute getTransform_On();
 
   /**
    * Returns the meta object for the attribute list '{@link org.etl.sparrow.Transform#getValue <em>Value</em>}'.
@@ -1298,20 +1407,20 @@ public interface SparrowPackage extends EPackage
     EAttribute PROCESS__NAME = eINSTANCE.getProcess_Name();
 
     /**
-     * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Try</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROCESS__ACTION = eINSTANCE.getProcess_Action();
+    EReference PROCESS__TRY = eINSTANCE.getProcess_Try();
 
     /**
-     * The meta object literal for the '<em><b>On Error</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Catch</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROCESS__ON_ERROR = eINSTANCE.getProcess_OnError();
+    EReference PROCESS__CATCH = eINSTANCE.getProcess_Catch();
 
     /**
      * The meta object literal for the '<em><b>Finally</b></em>' containment reference feature.
@@ -1320,6 +1429,32 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EReference PROCESS__FINALLY = eINSTANCE.getProcess_Finally();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.TryImpl <em>Try</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.TryImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getTry()
+     * @generated
+     */
+    EClass TRY = eINSTANCE.getTry();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRY__NAME = eINSTANCE.getTry_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRY__ACTION = eINSTANCE.getTry_Action();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.FinallyImpl <em>Finally</em>}' class.
@@ -1332,6 +1467,14 @@ public interface SparrowPackage extends EPackage
     EClass FINALLY = eINSTANCE.getFinally();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FINALLY__NAME = eINSTANCE.getFinally_Name();
+
+    /**
      * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1340,14 +1483,22 @@ public interface SparrowPackage extends EPackage
     EReference FINALLY__ACTION = eINSTANCE.getFinally_Action();
 
     /**
-     * The meta object literal for the '{@link org.etl.sparrow.impl.OnErrorImpl <em>On Error</em>}' class.
+     * The meta object literal for the '{@link org.etl.sparrow.impl.CatchImpl <em>Catch</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.etl.sparrow.impl.OnErrorImpl
-     * @see org.etl.sparrow.impl.SparrowPackageImpl#getOnError()
+     * @see org.etl.sparrow.impl.CatchImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getCatch()
      * @generated
      */
-    EClass ON_ERROR = eINSTANCE.getOnError();
+    EClass CATCH = eINSTANCE.getCatch();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CATCH__NAME = eINSTANCE.getCatch_Name();
 
     /**
      * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
@@ -1355,7 +1506,7 @@ public interface SparrowPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ON_ERROR__ACTION = eINSTANCE.getOnError_Action();
+    EReference CATCH__ACTION = eINSTANCE.getCatch_Action();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.ActionImpl <em>Action</em>}' class.
@@ -1690,12 +1841,12 @@ public interface SparrowPackage extends EPackage
     EClass TRANSFORM = eINSTANCE.getTransform();
 
     /**
-     * The meta object literal for the '<em><b>Using</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>On</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRANSFORM__USING = eINSTANCE.getTransform_Using();
+    EAttribute TRANSFORM__ON = eINSTANCE.getTransform_On();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.

@@ -75,7 +75,8 @@ Slack:
 ;
 
 Googlecal:
-	'googlecal' 'as' name=STRING 'for-cal' calid=STRING 'secured-by' authstore=STRING 'through-user' useraccount=STRING 'with-title' title=STRING 'from' start=STRING 'to' end=STRING 'repeat' notify=STRING
+	'googlecal' 'as' name=STRING 'for-cal' calid=STRING 'secured-by' authstore=STRING 'through-user' useraccount=STRING 'with-title' title=STRING 'from' start=STRING 'to' end=STRING 'repeat' 
+	notify=STRING 'using'
 	'{'
 		value=STRING
 	'}'

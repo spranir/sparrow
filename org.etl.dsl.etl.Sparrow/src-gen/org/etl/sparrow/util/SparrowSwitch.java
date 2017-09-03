@@ -10,15 +10,16 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
+import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
-import org.etl.sparrow.OnError;
 import org.etl.sparrow.Slack;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
+import org.etl.sparrow.Try;
 import org.etl.sparrow.Updatedaudit;
 import org.etl.sparrow.WriteCsv;
 
@@ -92,6 +93,13 @@ public class SparrowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SparrowPackage.TRY:
+      {
+        Try try_ = (Try)theEObject;
+        T result = caseTry(try_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SparrowPackage.FINALLY:
       {
         Finally finally_ = (Finally)theEObject;
@@ -99,10 +107,10 @@ public class SparrowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SparrowPackage.ON_ERROR:
+      case SparrowPackage.CATCH:
       {
-        OnError onError = (OnError)theEObject;
-        T result = caseOnError(onError);
+        Catch catch_ = (Catch)theEObject;
+        T result = caseCatch(catch_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -206,6 +214,22 @@ public class SparrowSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Try</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Try</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTry(Try object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Finally</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -222,17 +246,17 @@ public class SparrowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>On Error</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Catch</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>On Error</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Catch</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOnError(OnError object)
+  public T caseCatch(Catch object)
   {
     return null;
   }
