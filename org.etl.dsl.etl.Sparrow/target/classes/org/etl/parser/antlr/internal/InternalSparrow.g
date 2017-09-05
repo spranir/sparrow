@@ -466,6 +466,113 @@ ruleAction returns [EObject current=null]
 			$current = $this_Callprocess_8.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getFetchParserRuleCall_9());
+		}
+		this_Fetch_9=ruleFetch
+		{
+			$current = $this_Fetch_9.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleFetch
+entryRuleFetch returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFetchRule()); }
+	iv_ruleFetch=ruleFetch
+	{ $current=$iv_ruleFetch.current; }
+	EOF;
+
+// Rule Fetch
+ruleFetch returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='assign'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFetchAccess().getAssignKeyword_0());
+		}
+		otherlv_1='as'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getFetchAccess().getAsKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getFetchAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFetchRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='source'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getFetchAccess().getSourceKeyword_3());
+		}
+		(
+			(
+				lv_source_4_0=RULE_STRING
+				{
+					newLeafNode(lv_source_4_0, grammarAccess.getFetchAccess().getSourceSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFetchRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"source",
+						lv_source_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_5='using'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getFetchAccess().getUsingKeyword_5());
+		}
+		otherlv_6='{'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getFetchAccess().getLeftCurlyBracketKeyword_6());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0());
+				}
+				lv_value_7_0=ruleSelectStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFetchRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_7_0,
+						"org.etl.Sparrow.SelectStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_8='}'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getFetchAccess().getRightCurlyBracketKeyword_8());
+		}
 	)
 ;
 
