@@ -18,3 +18,12 @@ CREATE TABLE `spw_process_config` (
   `variable` varchar(150) DEFAULT NULL,
   `value` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+ALTER TABLE `spw_common_config`
+	ADD COLUMN `active` ENUM('Y','N') NULL AFTER `value`;
+
+ALTER TABLE `spw_instance_config`
+	ADD COLUMN `active` ENUM('Y','N') NULL DEFAULT NULL AFTER `value`;	
+
+ALTER TABLE `spw_process_config`
+	ADD COLUMN `active` ENUM('Y','N') NULL DEFAULT NULL AFTER `value`;	

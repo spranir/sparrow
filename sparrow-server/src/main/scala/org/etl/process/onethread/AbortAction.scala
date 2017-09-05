@@ -10,6 +10,10 @@ class AbortAction extends org.etl.command.Action with LazyLogging {
     ???
   }
 
+  def executeIf(context: Context, action: org.etl.sparrow.Action): Boolean = {
+    ???
+  }
+
   
 
   

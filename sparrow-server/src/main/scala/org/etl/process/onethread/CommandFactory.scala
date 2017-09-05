@@ -10,7 +10,7 @@ object CommandFactory {
       case "abort" =>  new AbortAction
       case "googlecal" => new GoogleCalendarAction
       case "transform" => new TransformAction
-      case "assign" => new FetchVariable
+      case "assign" => new FetchVariableAction
     }
   }
 }

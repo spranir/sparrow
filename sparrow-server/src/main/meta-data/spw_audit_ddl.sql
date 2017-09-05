@@ -33,3 +33,10 @@ CREATE TABLE `statement_audit` (
   `rows_read` int(11) DEFAULT NULL,
   PRIMARY KEY (`statement_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+ALTER TABLE `command_audit`
+	ADD COLUMN `status` SMALLINT NULL AFTER `command_config`;
+ALTER TABLE `instance_audit`
+	ADD COLUMN `status` SMALLINT NULL AFTER `file`;
+ALTER TABLE `statement_audit`
+	ADD COLUMN `status` SMALLINT NULL DEFAULT NULL AFTER `rows_read`;	
