@@ -1,16 +1,18 @@
 package org.etl.server
 
+import org.etl.process.onethread.UniThreadProcessRuntime
+
 object ProcessRuntimeFactory {
   
   def create(mode:String):ProcessRuntime = {
     
-    if(mode.equals("onethread"))
+    if(mode.equals("org.etl.process.onethread"))
     {
-      new OneThreadProcessRuntime
+      new UniThreadProcessRuntime
     }
     else
     {
-      new OneThreadProcessRuntime
+      new UniThreadProcessRuntime
     }
   }
 }

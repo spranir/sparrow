@@ -6,25 +6,27 @@ import com.typesafe.scalalogging.LazyLogging
 import org.restlet.Component
 import org.restlet.data.Protocol
 import org.restlet.routing.Router
+import org.etl.parser.antlr.SparrowParser
+import java.io.FileReader
 
 
 object SparrowServer extends Application with LazyLogging{
   def main(args:Array[String]){
     
-    logger.info("Starting the restlet server to take in commands")
+    logger.info("Starting the restlet server to take in commands, at port"+args.apply(0))
     val component = new Component()
     component.getServers().add(Protocol.HTTP, 8080)
     // Attach the sample application.
     component.getDefaultHost().attach(this)
-    // Start the component.
+    // Start the component.    
     component.start()
     
   }
   override def createInboundRoot: Router = {
     val router = new Router(getContext())
-    router.attach("/process/{processname}/start",classOf[StartProcess])
+    router.attach("/process/{instance}/start",classOf[StartProcess])
     router.attach("/",classOf[ListProcess])
-    router.attach("/process/{processname}/{id}/stop", classOf[StopProcess])
+    router.attach("/process/{id}/stop", classOf[StopProcess])
     router
 }
 }
