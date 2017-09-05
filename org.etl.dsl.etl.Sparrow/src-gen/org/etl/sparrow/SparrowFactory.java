@@ -69,6 +69,15 @@ public interface SparrowFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>Fetch</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fetch</em>'.
+   * @generated
+   */
+  Fetch createFetch();
+
+  /**
    * Returns a new object of class '<em>Callprocess</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

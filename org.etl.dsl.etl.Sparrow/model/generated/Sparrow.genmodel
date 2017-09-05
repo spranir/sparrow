@@ -27,6 +27,10 @@
     <genClasses ecoreClass="Sparrow.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
     </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Fetch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/value"/>
+    </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Callprocess">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/value"/>

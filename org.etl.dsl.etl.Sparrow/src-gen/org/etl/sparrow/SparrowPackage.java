@@ -252,6 +252,52 @@ public interface SparrowPackage extends EPackage
   int ACTION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.FetchImpl <em>Fetch</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.FetchImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
+   * @generated
+   */
+  int FETCH = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH__SOURCE = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH__VALUE = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Fetch</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.CallprocessImpl <em>Callprocess</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -259,7 +305,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 5;
+  int CALLPROCESS = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -305,7 +351,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 6;
+  int UPDATEDAUDIT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -351,7 +397,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
    * @generated
    */
-  int SMS = 7;
+  int SMS = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -397,7 +443,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlack()
    * @generated
    */
-  int SLACK = 8;
+  int SLACK = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -452,7 +498,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecal()
    * @generated
    */
-  int GOOGLECAL = 9;
+  int GOOGLECAL = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -552,7 +598,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 10;
+  int COPYDATA = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -607,7 +653,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 11;
+  int WRITE_CSV = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -671,7 +717,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 12;
+  int LOAD_CSV = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -735,7 +781,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 13;
+  int TRANSFORM = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -944,6 +990,38 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getAction_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Fetch <em>Fetch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Fetch</em>'.
+   * @see org.etl.sparrow.Fetch
+   * @generated
+   */
+  EClass getFetch();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Fetch#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source</em>'.
+   * @see org.etl.sparrow.Fetch#getSource()
+   * @see #getFetch()
+   * @generated
+   */
+  EAttribute getFetch_Source();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Fetch#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.Fetch#getValue()
+   * @see #getFetch()
+   * @generated
+   */
+  EAttribute getFetch_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Callprocess <em>Callprocess</em>}'.
@@ -1525,6 +1603,32 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.FetchImpl <em>Fetch</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.FetchImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
+     * @generated
+     */
+    EClass FETCH = eINSTANCE.getFetch();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FETCH__SOURCE = eINSTANCE.getFetch_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FETCH__VALUE = eINSTANCE.getFetch_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.CallprocessImpl <em>Callprocess</em>}' class.

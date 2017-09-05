@@ -15,6 +15,7 @@ import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
+import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
@@ -84,6 +85,7 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.FINALLY: return createFinally();
       case SparrowPackage.CATCH: return createCatch();
       case SparrowPackage.ACTION: return createAction();
+      case SparrowPackage.FETCH: return createFetch();
       case SparrowPackage.CALLPROCESS: return createCallprocess();
       case SparrowPackage.UPDATEDAUDIT: return createUpdatedaudit();
       case SparrowPackage.SMS: return createSms();
@@ -151,6 +153,17 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     ActionImpl action = new ActionImpl();
     return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Fetch createFetch()
+  {
+    FetchImpl fetch = new FetchImpl();
+    return fetch;
   }
 
   /**

@@ -3,8 +3,11 @@ mysql= {
   driver = com.mysql.jdbc.Driver
   user=root
   passwd=password
-  batch_sql="select key_, value from batch_global_config"
-  process_sql="select key_, value from batch_process_config where process_fqn=?"
-  key_process_sql="select value from batch_process_config where process_fqn=? and key_=?"
-  key_global_sql="select value from batch_global_config where key_=?"
+  batch_sql="select variable, value from spw_common_config"
+  process_sql="select variable, value from spw_process_config where process=?"
+  instance_sql="select variable, value from spw_instance_config where instance=?"
+  
+  key_global_sql="select value from spw_common_config where key_=?"
+  key_process_sql="select value from spw_process_config where process=? and variable=?"
+  key_instance_sql="select value from spw_instance_config where alias =?"
 }

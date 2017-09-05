@@ -43,7 +43,15 @@ Action:
 	|Sms
 	|Updatedaudit 
 	|Callprocess
+	|Fetch
 	)
+;
+
+Fetch:
+	'assign' 'as' name=STRING 'source' source=STRING 'using'
+	'{'
+		value=SelectStatement
+	'}'
 ;
 
 Callprocess:

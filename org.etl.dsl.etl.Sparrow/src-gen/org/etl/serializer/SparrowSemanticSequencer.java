@@ -18,6 +18,7 @@ import org.etl.services.SparrowGrammarAccess;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
+import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
@@ -51,6 +52,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SparrowPackage.COPYDATA:
 				sequence_Copydata(context, (Copydata) semanticObject); 
+				return; 
+			case SparrowPackage.FETCH:
+				sequence_Fetch(context, (Fetch) semanticObject); 
 				return; 
 			case SparrowPackage.FINALLY:
 				sequence_Finally(context, (Finally) semanticObject); 
@@ -148,6 +152,31 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getCopydataAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
 		feeder.accept(grammarAccess.getCopydataAccess().getToSTRINGTerminalRuleCall_6_0(), semanticObject.getTo());
 		feeder.accept(grammarAccess.getCopydataAccess().getValueSelectStatementParserRuleCall_9_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Fetch
+	 *     Fetch returns Fetch
+	 *
+	 * Constraint:
+	 *     (name=STRING source=STRING value=SelectStatement)
+	 */
+	protected void sequence_Fetch(ISerializationContext context, Fetch semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FETCH__SOURCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FETCH__SOURCE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FETCH__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FETCH__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFetchAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFetchAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

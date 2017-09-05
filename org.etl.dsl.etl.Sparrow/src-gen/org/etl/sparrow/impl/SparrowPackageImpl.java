@@ -14,6 +14,7 @@ import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
+import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
@@ -68,6 +69,13 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * @generated
    */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fetchEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -353,6 +361,36 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getAction_Name()
   {
     return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFetch()
+  {
+    return fetchEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFetch_Source()
+  {
+    return (EAttribute)fetchEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFetch_Value()
+  {
+    return (EAttribute)fetchEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -796,6 +834,10 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
 
+    fetchEClass = createEClass(FETCH);
+    createEAttribute(fetchEClass, FETCH__SOURCE);
+    createEAttribute(fetchEClass, FETCH__VALUE);
+
     callprocessEClass = createEClass(CALLPROCESS);
     createEAttribute(callprocessEClass, CALLPROCESS__TARGET);
     createEAttribute(callprocessEClass, CALLPROCESS__VALUE);
@@ -874,6 +916,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    fetchEClass.getESuperTypes().add(this.getAction());
     callprocessEClass.getESuperTypes().add(this.getAction());
     updatedauditEClass.getESuperTypes().add(this.getAction());
     smsEClass.getESuperTypes().add(this.getAction());
@@ -905,6 +948,10 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fetchEClass, Fetch.class, "Fetch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFetch_Source(), ecorePackage.getEString(), "source", null, 0, 1, Fetch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFetch_Value(), ecorePackage.getEString(), "value", null, 0, 1, Fetch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(callprocessEClass, Callprocess.class, "Callprocess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCallprocess_Target(), ecorePackage.getEString(), "target", null, 0, 1, Callprocess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

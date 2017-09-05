@@ -12,6 +12,7 @@ import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
+import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.Googlecal;
 import org.etl.sparrow.LoadCsv;
@@ -118,6 +119,14 @@ public class SparrowSwitch<T> extends Switch<T>
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.FETCH:
+      {
+        Fetch fetch = (Fetch)theEObject;
+        T result = caseFetch(fetch);
+        if (result == null) result = caseAction(fetch);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -273,6 +282,22 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Fetch</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Fetch</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFetch(Fetch object)
   {
     return null;
   }
