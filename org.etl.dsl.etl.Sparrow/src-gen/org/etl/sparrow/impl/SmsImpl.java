@@ -22,6 +22,7 @@ import org.etl.sparrow.SparrowPackage;
  * <ul>
  *   <li>{@link org.etl.sparrow.impl.SmsImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.SmsImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.SmsImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +68,26 @@ public class SmsImpl extends ActionImpl implements Sms
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONDITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,6 +161,29 @@ public class SmsImpl extends ActionImpl implements Sms
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(String newCondition)
+  {
+    String oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.SMS__CONDITION, oldCondition, condition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -149,6 +193,8 @@ public class SmsImpl extends ActionImpl implements Sms
         return getTarget();
       case SparrowPackage.SMS__VALUE:
         return getValue();
+      case SparrowPackage.SMS__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,6 +214,9 @@ public class SmsImpl extends ActionImpl implements Sms
         return;
       case SparrowPackage.SMS__VALUE:
         setValue((String)newValue);
+        return;
+      case SparrowPackage.SMS__CONDITION:
+        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -189,6 +238,9 @@ public class SmsImpl extends ActionImpl implements Sms
       case SparrowPackage.SMS__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case SparrowPackage.SMS__CONDITION:
+        setCondition(CONDITION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -207,6 +259,8 @@ public class SmsImpl extends ActionImpl implements Sms
         return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
       case SparrowPackage.SMS__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case SparrowPackage.SMS__CONDITION:
+        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -226,6 +280,8 @@ public class SmsImpl extends ActionImpl implements Sms
     result.append(target);
     result.append(", value: ");
     result.append(value);
+    result.append(", condition: ");
+    result.append(condition);
     result.append(')');
     return result.toString();
   }

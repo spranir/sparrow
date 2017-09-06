@@ -28,6 +28,7 @@ import org.etl.sparrow.SparrowPackage;
  *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getEnd <em>End</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getNotify <em>Notify</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -193,6 +194,26 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONDITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -404,6 +425,29 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(String newCondition)
+  {
+    String oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__CONDITION, oldCondition, condition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -425,6 +469,8 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
         return getNotify();
       case SparrowPackage.GOOGLECAL__VALUE:
         return getValue();
+      case SparrowPackage.GOOGLECAL__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -462,6 +508,9 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
         return;
       case SparrowPackage.GOOGLECAL__VALUE:
         setValue((String)newValue);
+        return;
+      case SparrowPackage.GOOGLECAL__CONDITION:
+        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -501,6 +550,9 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
       case SparrowPackage.GOOGLECAL__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case SparrowPackage.GOOGLECAL__CONDITION:
+        setCondition(CONDITION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -531,6 +583,8 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
         return NOTIFY_EDEFAULT == null ? notify != null : !NOTIFY_EDEFAULT.equals(notify);
       case SparrowPackage.GOOGLECAL__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case SparrowPackage.GOOGLECAL__CONDITION:
+        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -562,6 +616,8 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
     result.append(notify);
     result.append(", value: ");
     result.append(value);
+    result.append(", condition: ");
+    result.append(condition);
     result.append(')');
     return result.toString();
   }

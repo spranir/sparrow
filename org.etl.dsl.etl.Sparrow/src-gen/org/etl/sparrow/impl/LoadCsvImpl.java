@@ -24,6 +24,7 @@ import org.etl.sparrow.SparrowPackage;
  *   <li>{@link org.etl.sparrow.impl.LoadCsvImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.LoadCsvImpl#getDelim <em>Delim</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.LoadCsvImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.LoadCsvImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,6 +110,26 @@ public class LoadCsvImpl extends ActionImpl implements LoadCsv
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONDITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -228,6 +249,29 @@ public class LoadCsvImpl extends ActionImpl implements LoadCsv
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(String newCondition)
+  {
+    String oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.LOAD_CSV__CONDITION, oldCondition, condition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -241,6 +285,8 @@ public class LoadCsvImpl extends ActionImpl implements LoadCsv
         return getDelim();
       case SparrowPackage.LOAD_CSV__VALUE:
         return getValue();
+      case SparrowPackage.LOAD_CSV__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -266,6 +312,9 @@ public class LoadCsvImpl extends ActionImpl implements LoadCsv
         return;
       case SparrowPackage.LOAD_CSV__VALUE:
         setValue((String)newValue);
+        return;
+      case SparrowPackage.LOAD_CSV__CONDITION:
+        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -293,6 +342,9 @@ public class LoadCsvImpl extends ActionImpl implements LoadCsv
       case SparrowPackage.LOAD_CSV__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case SparrowPackage.LOAD_CSV__CONDITION:
+        setCondition(CONDITION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -315,6 +367,8 @@ public class LoadCsvImpl extends ActionImpl implements LoadCsv
         return DELIM_EDEFAULT == null ? delim != null : !DELIM_EDEFAULT.equals(delim);
       case SparrowPackage.LOAD_CSV__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case SparrowPackage.LOAD_CSV__CONDITION:
+        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -338,6 +392,8 @@ public class LoadCsvImpl extends ActionImpl implements LoadCsv
     result.append(delim);
     result.append(", value: ");
     result.append(value);
+    result.append(", condition: ");
+    result.append(condition);
     result.append(')');
     return result.toString();
   }

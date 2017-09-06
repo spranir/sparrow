@@ -398,6 +398,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getFetch_Condition()
+  {
+    return (EAttribute)fetchEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCallprocess()
   {
     return callprocessEClass;
@@ -421,6 +431,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getCallprocess_Value()
   {
     return (EAttribute)callprocessEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCallprocess_Condition()
+  {
+    return (EAttribute)callprocessEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -488,6 +508,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSms_Condition()
+  {
+    return (EAttribute)smsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSlack()
   {
     return slackEClass;
@@ -521,6 +551,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getSlack_Value()
   {
     return (EAttribute)slackEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSlack_Condition()
+  {
+    return (EAttribute)slackEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -618,6 +658,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getGooglecal_Condition()
+  {
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCopydata()
   {
     return copydataEClass;
@@ -651,6 +701,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getCopydata_Value()
   {
     return (EAttribute)copydataEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCopydata_Condition()
+  {
+    return (EAttribute)copydataEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -708,6 +768,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getWriteCsv_Condition()
+  {
+    return (EAttribute)writeCsvEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getLoadCsv()
   {
     return loadCsvEClass;
@@ -758,6 +828,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getLoadCsv_Condition()
+  {
+    return (EAttribute)loadCsvEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTransform()
   {
     return transformEClass;
@@ -781,6 +861,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getTransform_Value()
   {
     return (EAttribute)transformEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTransform_Condition()
+  {
+    return (EAttribute)transformEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -837,10 +927,12 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     fetchEClass = createEClass(FETCH);
     createEAttribute(fetchEClass, FETCH__SOURCE);
     createEAttribute(fetchEClass, FETCH__VALUE);
+    createEAttribute(fetchEClass, FETCH__CONDITION);
 
     callprocessEClass = createEClass(CALLPROCESS);
     createEAttribute(callprocessEClass, CALLPROCESS__TARGET);
     createEAttribute(callprocessEClass, CALLPROCESS__VALUE);
+    createEAttribute(callprocessEClass, CALLPROCESS__CONDITION);
 
     updatedauditEClass = createEClass(UPDATEDAUDIT);
     createEAttribute(updatedauditEClass, UPDATEDAUDIT__LOGSINK);
@@ -849,11 +941,13 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     smsEClass = createEClass(SMS);
     createEAttribute(smsEClass, SMS__TARGET);
     createEAttribute(smsEClass, SMS__VALUE);
+    createEAttribute(smsEClass, SMS__CONDITION);
 
     slackEClass = createEClass(SLACK);
     createEAttribute(slackEClass, SLACK__TEAM);
     createEAttribute(slackEClass, SLACK__CHANNEL);
     createEAttribute(slackEClass, SLACK__VALUE);
+    createEAttribute(slackEClass, SLACK__CONDITION);
 
     googlecalEClass = createEClass(GOOGLECAL);
     createEAttribute(googlecalEClass, GOOGLECAL__CALID);
@@ -864,27 +958,32 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(googlecalEClass, GOOGLECAL__END);
     createEAttribute(googlecalEClass, GOOGLECAL__NOTIFY);
     createEAttribute(googlecalEClass, GOOGLECAL__VALUE);
+    createEAttribute(googlecalEClass, GOOGLECAL__CONDITION);
 
     copydataEClass = createEClass(COPYDATA);
     createEAttribute(copydataEClass, COPYDATA__SOURCE);
     createEAttribute(copydataEClass, COPYDATA__TO);
     createEAttribute(copydataEClass, COPYDATA__VALUE);
+    createEAttribute(copydataEClass, COPYDATA__CONDITION);
 
     writeCsvEClass = createEClass(WRITE_CSV);
     createEAttribute(writeCsvEClass, WRITE_CSV__SOURCE);
     createEAttribute(writeCsvEClass, WRITE_CSV__TO);
     createEAttribute(writeCsvEClass, WRITE_CSV__DELIM);
     createEAttribute(writeCsvEClass, WRITE_CSV__VALUE);
+    createEAttribute(writeCsvEClass, WRITE_CSV__CONDITION);
 
     loadCsvEClass = createEClass(LOAD_CSV);
     createEAttribute(loadCsvEClass, LOAD_CSV__SOURCE);
     createEAttribute(loadCsvEClass, LOAD_CSV__TO);
     createEAttribute(loadCsvEClass, LOAD_CSV__DELIM);
     createEAttribute(loadCsvEClass, LOAD_CSV__VALUE);
+    createEAttribute(loadCsvEClass, LOAD_CSV__CONDITION);
 
     transformEClass = createEClass(TRANSFORM);
     createEAttribute(transformEClass, TRANSFORM__ON);
     createEAttribute(transformEClass, TRANSFORM__VALUE);
+    createEAttribute(transformEClass, TRANSFORM__CONDITION);
   }
 
   /**
@@ -952,10 +1051,12 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEClass(fetchEClass, Fetch.class, "Fetch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFetch_Source(), ecorePackage.getEString(), "source", null, 0, 1, Fetch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFetch_Value(), ecorePackage.getEString(), "value", null, 0, 1, Fetch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFetch_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Fetch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(callprocessEClass, Callprocess.class, "Callprocess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCallprocess_Target(), ecorePackage.getEString(), "target", null, 0, 1, Callprocess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCallprocess_Value(), ecorePackage.getEString(), "value", null, 0, 1, Callprocess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCallprocess_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Callprocess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(updatedauditEClass, Updatedaudit.class, "Updatedaudit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUpdatedaudit_Logsink(), ecorePackage.getEString(), "logsink", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -964,11 +1065,13 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEClass(smsEClass, Sms.class, "Sms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSms_Target(), ecorePackage.getEString(), "target", null, 0, 1, Sms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSms_Value(), ecorePackage.getEString(), "value", null, 0, 1, Sms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSms_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Sms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(slackEClass, Slack.class, "Slack", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSlack_Team(), ecorePackage.getEString(), "team", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSlack_Channel(), ecorePackage.getEString(), "channel", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSlack_Value(), ecorePackage.getEString(), "value", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSlack_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(googlecalEClass, Googlecal.class, "Googlecal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGooglecal_Calid(), ecorePackage.getEString(), "calid", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -979,27 +1082,32 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getGooglecal_End(), ecorePackage.getEString(), "end", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGooglecal_Notify(), ecorePackage.getEString(), "notify", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGooglecal_Value(), ecorePackage.getEString(), "value", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(copydataEClass, Copydata.class, "Copydata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCopydata_Source(), ecorePackage.getEString(), "source", null, 0, 1, Copydata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCopydata_To(), ecorePackage.getEString(), "to", null, 0, 1, Copydata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCopydata_Value(), ecorePackage.getEString(), "value", null, 0, 1, Copydata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCopydata_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Copydata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(writeCsvEClass, WriteCsv.class, "WriteCsv", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWriteCsv_Source(), ecorePackage.getEString(), "source", null, 0, 1, WriteCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWriteCsv_To(), ecorePackage.getEString(), "to", null, 0, 1, WriteCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWriteCsv_Delim(), ecorePackage.getEString(), "delim", null, 0, 1, WriteCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWriteCsv_Value(), ecorePackage.getEString(), "value", null, 0, 1, WriteCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWriteCsv_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, WriteCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(loadCsvEClass, LoadCsv.class, "LoadCsv", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLoadCsv_Source(), ecorePackage.getEString(), "source", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLoadCsv_To(), ecorePackage.getEString(), "to", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLoadCsv_Delim(), ecorePackage.getEString(), "delim", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLoadCsv_Value(), ecorePackage.getEString(), "value", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLoadCsv_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, LoadCsv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(transformEClass, Transform.class, "Transform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTransform_On(), ecorePackage.getEString(), "on", null, 0, 1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTransform_Value(), ecorePackage.getEString(), "value", null, 0, -1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTransform_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

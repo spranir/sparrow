@@ -283,15 +283,18 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cValueSelectStatementParserRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cOnConditionKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cConditionAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_10_0 = (RuleCall)cConditionAssignment_10.eContents().get(0);
 		
 		//Fetch:
 		//	'assign' 'as' name=STRING 'source' source=STRING 'using'
 		//	'{'
 		//	value=SelectStatement
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'assign' 'as' name=STRING 'source' source=STRING 'using' '{' value=SelectStatement '}'
+		//'assign' 'as' name=STRING 'source' source=STRING 'using' '{' value=SelectStatement '}' 'on-condition' condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'assign'
@@ -329,6 +332,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_9() { return cOnConditionKeyword_9; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_10() { return cConditionAssignment_10; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_10_0() { return cConditionSTRINGTerminalRuleCall_10_0; }
 	}
 	public class CallprocessElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Callprocess");
@@ -345,15 +357,19 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cValueSelectStatementParserRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cOnConditionKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cConditionAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_10_0 = (RuleCall)cConditionAssignment_10.eContents().get(0);
 		
 		//Callprocess:
 		//	'callprocess' 'as' name=STRING 'target' target=STRING 'using'
 		//	'{'
 		//	value=SelectStatement
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'callprocess' 'as' name=STRING 'target' target=STRING 'using' '{' value=SelectStatement '}'
+		//'callprocess' 'as' name=STRING 'target' target=STRING 'using' '{' value=SelectStatement '}' 'on-condition'
+		//condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'callprocess'
@@ -391,6 +407,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_9() { return cOnConditionKeyword_9; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_10() { return cConditionAssignment_10; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_10_0() { return cConditionSTRINGTerminalRuleCall_10_0; }
 	}
 	public class UpdatedauditElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Updatedaudit");
@@ -469,15 +494,18 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cValueSTRINGTerminalRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cOnConditionKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cConditionAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_10_0 = (RuleCall)cConditionAssignment_10.eContents().get(0);
 		
 		//Sms:
 		//	'sms' 'as' name=STRING 'for' target=STRING 'using'
 		//	'{'
 		//	value=STRING
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'sms' 'as' name=STRING 'for' target=STRING 'using' '{' value=STRING '}'
+		//'sms' 'as' name=STRING 'for' target=STRING 'using' '{' value=STRING '}' 'on-condition' condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'sms'
@@ -515,6 +543,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_9() { return cOnConditionKeyword_9; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_10() { return cConditionAssignment_10; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_10_0() { return cConditionSTRINGTerminalRuleCall_10_0; }
 	}
 	public class SlackElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Slack");
@@ -534,15 +571,19 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cValueSTRINGTerminalRuleCall_9_0 = (RuleCall)cValueAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cOnConditionKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cConditionAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_12_0 = (RuleCall)cConditionAssignment_12.eContents().get(0);
 		
 		//Slack:
 		//	'slack' 'as' name=STRING 'to' team=STRING 'on' channel=STRING 'using'
 		//	'{'
 		//	value=STRING
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'slack' 'as' name=STRING 'to' team=STRING 'on' channel=STRING 'using' '{' value=STRING '}'
+		//'slack' 'as' name=STRING 'to' team=STRING 'on' channel=STRING 'using' '{' value=STRING '}' 'on-condition'
+		//condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'slack'
@@ -589,6 +630,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_11() { return cOnConditionKeyword_11; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_12() { return cConditionAssignment_12; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_12_0() { return cConditionSTRINGTerminalRuleCall_12_0; }
 	}
 	public class GooglecalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Googlecal");
@@ -623,6 +673,9 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_19 = (Assignment)cGroup.eContents().get(19);
 		private final RuleCall cValueSTRINGTerminalRuleCall_19_0 = (RuleCall)cValueAssignment_19.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Keyword cOnConditionKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Assignment cConditionAssignment_22 = (Assignment)cGroup.eContents().get(22);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_22_0 = (RuleCall)cConditionAssignment_22.eContents().get(0);
 		
 		//Googlecal:
 		//	'googlecal' 'as' name=STRING 'for-cal' calid=STRING 'secured-by' authstore=STRING 'through-user' useraccount=STRING
@@ -630,11 +683,12 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//	notify=STRING 'using'
 		//	'{'
 		//	value=STRING
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'googlecal' 'as' name=STRING 'for-cal' calid=STRING 'secured-by' authstore=STRING 'through-user' useraccount=STRING
 		//'with-title' title=STRING 'from' start=STRING 'to' end=STRING 'repeat' notify=STRING 'using' '{' value=STRING '}'
+		//'on-condition' condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'googlecal'
@@ -726,6 +780,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_20() { return cRightCurlyBracketKeyword_20; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_21() { return cOnConditionKeyword_21; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_22() { return cConditionAssignment_22; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_22_0() { return cConditionSTRINGTerminalRuleCall_22_0; }
 	}
 	public class CopydataElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Copydata");
@@ -745,15 +808,19 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cValueSelectStatementParserRuleCall_9_0 = (RuleCall)cValueAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cOnConditionKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cConditionAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_12_0 = (RuleCall)cConditionAssignment_12.eContents().get(0);
 		
 		//Copydata:
 		//	'copydata' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'using'
 		//	'{'
 		//	value=SelectStatement
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'copydata' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'using' '{' value=SelectStatement '}'
+		//'copydata' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'using' '{' value=SelectStatement '}' 'on-condition'
+		//condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'copydata'
@@ -800,6 +867,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_11() { return cOnConditionKeyword_11; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_12() { return cConditionAssignment_12; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_12_0() { return cConditionSTRINGTerminalRuleCall_12_0; }
 	}
 	public class WriteCsvElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.WriteCsv");
@@ -822,16 +898,19 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cValueSelectStatementParserRuleCall_11_0 = (RuleCall)cValueAssignment_11.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cOnConditionKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cConditionAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_14_0 = (RuleCall)cConditionAssignment_14.eContents().get(0);
 		
 		//WriteCsv:
 		//	'writecsv' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'with' delim=STRING 'using'
 		//	'{'
 		//	value=SelectStatement
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'writecsv' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'with' delim=STRING 'using' '{' value=SelectStatement
-		//'}'
+		//'}' 'on-condition' condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'writecsv'
@@ -887,6 +966,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_13() { return cOnConditionKeyword_13; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_14() { return cConditionAssignment_14; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_14_0() { return cConditionSTRINGTerminalRuleCall_14_0; }
 	}
 	public class LoadCsvElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.LoadCsv");
@@ -909,15 +997,19 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cValueSelectStatementParserRuleCall_11_0 = (RuleCall)cValueAssignment_11.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cOnConditionKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cConditionAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_14_0 = (RuleCall)cConditionAssignment_14.eContents().get(0);
 		
 		//LoadCsv:
 		//	'loadcsv' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'with' delim=STRING 'using'
 		//	'{'
 		//	value=SelectStatement
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'loadcsv' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'with' delim=STRING 'using' '{' value=SelectStatement '}'
+		//'on-condition' condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'loadcsv'
@@ -973,6 +1065,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_13() { return cOnConditionKeyword_13; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_14() { return cConditionAssignment_14; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_14_0() { return cConditionSTRINGTerminalRuleCall_14_0; }
 	}
 	public class TransformElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Transform");
@@ -989,15 +1090,18 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cValueNonSelectStatementParserRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cOnConditionKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cConditionAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_10_0 = (RuleCall)cConditionAssignment_10.eContents().get(0);
 		
 		//Transform:
 		//	'transform' 'as' name=STRING 'on' on=STRING 'using'
 		//	'{'
 		//	value+=NonSelectStatement
-		//	'}';
+		//	'}' 'on-condition' condition=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'transform' 'as' name=STRING 'on' on=STRING 'using' '{' value+=NonSelectStatement '}'
+		//'transform' 'as' name=STRING 'on' on=STRING 'using' '{' value+=NonSelectStatement '}' 'on-condition' condition=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'transform'
@@ -1035,6 +1139,15 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_9() { return cOnConditionKeyword_9; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_10() { return cConditionAssignment_10; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_10_0() { return cConditionSTRINGTerminalRuleCall_10_0; }
 	}
 	public class SelectStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.SelectStatement");
@@ -1210,7 +1323,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'assign' 'as' name=STRING 'source' source=STRING 'using'
 	//	'{'
 	//	value=SelectStatement
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public FetchElements getFetchAccess() {
 		return pFetch;
 	}
@@ -1223,7 +1336,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'callprocess' 'as' name=STRING 'target' target=STRING 'using'
 	//	'{'
 	//	value=SelectStatement
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public CallprocessElements getCallprocessAccess() {
 		return pCallprocess;
 	}
@@ -1249,7 +1362,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'sms' 'as' name=STRING 'for' target=STRING 'using'
 	//	'{'
 	//	value=STRING
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public SmsElements getSmsAccess() {
 		return pSms;
 	}
@@ -1262,7 +1375,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'slack' 'as' name=STRING 'to' team=STRING 'on' channel=STRING 'using'
 	//	'{'
 	//	value=STRING
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public SlackElements getSlackAccess() {
 		return pSlack;
 	}
@@ -1277,7 +1390,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	notify=STRING 'using'
 	//	'{'
 	//	value=STRING
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public GooglecalElements getGooglecalAccess() {
 		return pGooglecal;
 	}
@@ -1290,7 +1403,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'copydata' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'using'
 	//	'{'
 	//	value=SelectStatement
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public CopydataElements getCopydataAccess() {
 		return pCopydata;
 	}
@@ -1303,7 +1416,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'writecsv' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'with' delim=STRING 'using'
 	//	'{'
 	//	value=SelectStatement
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public WriteCsvElements getWriteCsvAccess() {
 		return pWriteCsv;
 	}
@@ -1316,7 +1429,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'loadcsv' 'as' name=STRING 'from' source=STRING 'to' to=STRING 'with' delim=STRING 'using'
 	//	'{'
 	//	value=SelectStatement
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public LoadCsvElements getLoadCsvAccess() {
 		return pLoadCsv;
 	}
@@ -1329,7 +1442,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	'transform' 'as' name=STRING 'on' on=STRING 'using'
 	//	'{'
 	//	value+=NonSelectStatement
-	//	'}';
+	//	'}' 'on-condition' condition=STRING;
 	public TransformElements getTransformAccess() {
 		return pTransform;
 	}

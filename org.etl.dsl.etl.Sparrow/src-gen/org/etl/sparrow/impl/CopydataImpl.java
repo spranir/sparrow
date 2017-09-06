@@ -23,6 +23,7 @@ import org.etl.sparrow.SparrowPackage;
  *   <li>{@link org.etl.sparrow.impl.CopydataImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.CopydataImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.CopydataImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.CopydataImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +89,26 @@ public class CopydataImpl extends ActionImpl implements Copydata
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONDITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,6 +205,29 @@ public class CopydataImpl extends ActionImpl implements Copydata
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(String newCondition)
+  {
+    String oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.COPYDATA__CONDITION, oldCondition, condition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -195,6 +239,8 @@ public class CopydataImpl extends ActionImpl implements Copydata
         return getTo();
       case SparrowPackage.COPYDATA__VALUE:
         return getValue();
+      case SparrowPackage.COPYDATA__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -217,6 +263,9 @@ public class CopydataImpl extends ActionImpl implements Copydata
         return;
       case SparrowPackage.COPYDATA__VALUE:
         setValue((String)newValue);
+        return;
+      case SparrowPackage.COPYDATA__CONDITION:
+        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -241,6 +290,9 @@ public class CopydataImpl extends ActionImpl implements Copydata
       case SparrowPackage.COPYDATA__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case SparrowPackage.COPYDATA__CONDITION:
+        setCondition(CONDITION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -261,6 +313,8 @@ public class CopydataImpl extends ActionImpl implements Copydata
         return TO_EDEFAULT == null ? to != null : !TO_EDEFAULT.equals(to);
       case SparrowPackage.COPYDATA__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case SparrowPackage.COPYDATA__CONDITION:
+        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -282,6 +336,8 @@ public class CopydataImpl extends ActionImpl implements Copydata
     result.append(to);
     result.append(", value: ");
     result.append(value);
+    result.append(", condition: ");
+    result.append(condition);
     result.append(')');
     return result.toString();
   }

@@ -23,6 +23,7 @@ import org.etl.sparrow.SparrowPackage;
  *   <li>{@link org.etl.sparrow.impl.SlackImpl#getTeam <em>Team</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.SlackImpl#getChannel <em>Channel</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.SlackImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.SlackImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +89,26 @@ public class SlackImpl extends ActionImpl implements Slack
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONDITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,6 +205,29 @@ public class SlackImpl extends ActionImpl implements Slack
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(String newCondition)
+  {
+    String oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.SLACK__CONDITION, oldCondition, condition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -195,6 +239,8 @@ public class SlackImpl extends ActionImpl implements Slack
         return getChannel();
       case SparrowPackage.SLACK__VALUE:
         return getValue();
+      case SparrowPackage.SLACK__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -217,6 +263,9 @@ public class SlackImpl extends ActionImpl implements Slack
         return;
       case SparrowPackage.SLACK__VALUE:
         setValue((String)newValue);
+        return;
+      case SparrowPackage.SLACK__CONDITION:
+        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -241,6 +290,9 @@ public class SlackImpl extends ActionImpl implements Slack
       case SparrowPackage.SLACK__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case SparrowPackage.SLACK__CONDITION:
+        setCondition(CONDITION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -261,6 +313,8 @@ public class SlackImpl extends ActionImpl implements Slack
         return CHANNEL_EDEFAULT == null ? channel != null : !CHANNEL_EDEFAULT.equals(channel);
       case SparrowPackage.SLACK__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case SparrowPackage.SLACK__CONDITION:
+        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -282,6 +336,8 @@ public class SlackImpl extends ActionImpl implements Slack
     result.append(channel);
     result.append(", value: ");
     result.append(value);
+    result.append(", condition: ");
+    result.append(condition);
     result.append(')');
     return result.toString();
   }

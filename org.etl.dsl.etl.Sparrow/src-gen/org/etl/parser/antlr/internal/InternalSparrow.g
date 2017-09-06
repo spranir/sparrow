@@ -573,6 +573,28 @@ ruleFetch returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getFetchAccess().getRightCurlyBracketKeyword_8());
 		}
+		otherlv_9='on-condition'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getFetchAccess().getOnConditionKeyword_9());
+		}
+		(
+			(
+				lv_condition_10_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_10_0, grammarAccess.getFetchAccess().getConditionSTRINGTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFetchRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_10_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -671,6 +693,28 @@ ruleCallprocess returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getCallprocessAccess().getRightCurlyBracketKeyword_8());
 		}
+		otherlv_9='on-condition'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getCallprocessAccess().getOnConditionKeyword_9());
+		}
+		(
+			(
+				lv_condition_10_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_10_0, grammarAccess.getCallprocessAccess().getConditionSTRINGTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCallprocessRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_10_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -866,6 +910,28 @@ ruleSms returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getSmsAccess().getRightCurlyBracketKeyword_8());
 		}
+		otherlv_9='on-condition'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getSmsAccess().getOnConditionKeyword_9());
+		}
+		(
+			(
+				lv_condition_10_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_10_0, grammarAccess.getSmsAccess().getConditionSTRINGTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_10_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -985,6 +1051,28 @@ ruleSlack returns [EObject current=null]
 		{
 			newLeafNode(otherlv_10, grammarAccess.getSlackAccess().getRightCurlyBracketKeyword_10());
 		}
+		otherlv_11='on-condition'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getSlackAccess().getOnConditionKeyword_11());
+		}
+		(
+			(
+				lv_condition_12_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_12_0, grammarAccess.getSlackAccess().getConditionSTRINGTerminalRuleCall_12_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSlackRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_12_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -1214,6 +1302,28 @@ ruleGooglecal returns [EObject current=null]
 		{
 			newLeafNode(otherlv_20, grammarAccess.getGooglecalAccess().getRightCurlyBracketKeyword_20());
 		}
+		otherlv_21='on-condition'
+		{
+			newLeafNode(otherlv_21, grammarAccess.getGooglecalAccess().getOnConditionKeyword_21());
+		}
+		(
+			(
+				lv_condition_22_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_22_0, grammarAccess.getGooglecalAccess().getConditionSTRINGTerminalRuleCall_22_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecalRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_22_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -1334,6 +1444,28 @@ ruleCopydata returns [EObject current=null]
 		{
 			newLeafNode(otherlv_10, grammarAccess.getCopydataAccess().getRightCurlyBracketKeyword_10());
 		}
+		otherlv_11='on-condition'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getCopydataAccess().getOnConditionKeyword_11());
+		}
+		(
+			(
+				lv_condition_12_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_12_0, grammarAccess.getCopydataAccess().getConditionSTRINGTerminalRuleCall_12_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCopydataRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_12_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -1476,6 +1608,28 @@ ruleWriteCsv returns [EObject current=null]
 		{
 			newLeafNode(otherlv_12, grammarAccess.getWriteCsvAccess().getRightCurlyBracketKeyword_12());
 		}
+		otherlv_13='on-condition'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getWriteCsvAccess().getOnConditionKeyword_13());
+		}
+		(
+			(
+				lv_condition_14_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_14_0, grammarAccess.getWriteCsvAccess().getConditionSTRINGTerminalRuleCall_14_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWriteCsvRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_14_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -1618,6 +1772,28 @@ ruleLoadCsv returns [EObject current=null]
 		{
 			newLeafNode(otherlv_12, grammarAccess.getLoadCsvAccess().getRightCurlyBracketKeyword_12());
 		}
+		otherlv_13='on-condition'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getLoadCsvAccess().getOnConditionKeyword_13());
+		}
+		(
+			(
+				lv_condition_14_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_14_0, grammarAccess.getLoadCsvAccess().getConditionSTRINGTerminalRuleCall_14_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLoadCsvRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_14_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
@@ -1716,6 +1892,28 @@ ruleTransform returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getTransformAccess().getRightCurlyBracketKeyword_8());
 		}
+		otherlv_9='on-condition'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getTransformAccess().getOnConditionKeyword_9());
+		}
+		(
+			(
+				lv_condition_10_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_10_0, grammarAccess.getTransformAccess().getConditionSTRINGTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTransformRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_10_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 

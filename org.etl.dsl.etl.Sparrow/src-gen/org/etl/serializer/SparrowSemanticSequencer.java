@@ -97,7 +97,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Callprocess returns Callprocess
 	 *
 	 * Constraint:
-	 *     (name=STRING target=STRING value=SelectStatement)
+	 *     (name=STRING target=STRING value=SelectStatement condition=STRING)
 	 */
 	protected void sequence_Callprocess(ISerializationContext context, Callprocess semanticObject) {
 		if (errorAcceptor != null) {
@@ -107,11 +107,14 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CALLPROCESS__TARGET));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CALLPROCESS__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CALLPROCESS__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CALLPROCESS__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CALLPROCESS__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCallprocessAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getCallprocessAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getCallprocessAccess().getValueSelectStatementParserRuleCall_7_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getCallprocessAccess().getConditionSTRINGTerminalRuleCall_10_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -134,7 +137,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Copydata returns Copydata
 	 *
 	 * Constraint:
-	 *     (name=STRING source=STRING to=STRING value=SelectStatement)
+	 *     (name=STRING source=STRING to=STRING value=SelectStatement condition=STRING)
 	 */
 	protected void sequence_Copydata(ISerializationContext context, Copydata semanticObject) {
 		if (errorAcceptor != null) {
@@ -146,12 +149,15 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.COPYDATA__TO));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.COPYDATA__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.COPYDATA__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.COPYDATA__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.COPYDATA__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCopydataAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getCopydataAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
 		feeder.accept(grammarAccess.getCopydataAccess().getToSTRINGTerminalRuleCall_6_0(), semanticObject.getTo());
 		feeder.accept(grammarAccess.getCopydataAccess().getValueSelectStatementParserRuleCall_9_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getCopydataAccess().getConditionSTRINGTerminalRuleCall_12_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -162,7 +168,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Fetch returns Fetch
 	 *
 	 * Constraint:
-	 *     (name=STRING source=STRING value=SelectStatement)
+	 *     (name=STRING source=STRING value=SelectStatement condition=STRING)
 	 */
 	protected void sequence_Fetch(ISerializationContext context, Fetch semanticObject) {
 		if (errorAcceptor != null) {
@@ -172,11 +178,14 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FETCH__SOURCE));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FETCH__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FETCH__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FETCH__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FETCH__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFetchAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getFetchAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
 		feeder.accept(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFetchAccess().getConditionSTRINGTerminalRuleCall_10_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -208,7 +217,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         start=STRING 
 	 *         end=STRING 
 	 *         notify=STRING 
-	 *         value=STRING
+	 *         value=STRING 
+	 *         condition=STRING
 	 *     )
 	 */
 	protected void sequence_Googlecal(ISerializationContext context, Googlecal semanticObject) {
@@ -231,6 +241,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__NOTIFY));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGooglecalAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
@@ -242,6 +254,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getGooglecalAccess().getEndSTRINGTerminalRuleCall_14_0(), semanticObject.getEnd());
 		feeder.accept(grammarAccess.getGooglecalAccess().getNotifySTRINGTerminalRuleCall_16_0(), semanticObject.getNotify());
 		feeder.accept(grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_19_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getGooglecalAccess().getConditionSTRINGTerminalRuleCall_22_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -252,7 +265,14 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     LoadCsv returns LoadCsv
 	 *
 	 * Constraint:
-	 *     (name=STRING source=STRING to=STRING delim=STRING value=SelectStatement)
+	 *     (
+	 *         name=STRING 
+	 *         source=STRING 
+	 *         to=STRING 
+	 *         delim=STRING 
+	 *         value=SelectStatement 
+	 *         condition=STRING
+	 *     )
 	 */
 	protected void sequence_LoadCsv(ISerializationContext context, LoadCsv semanticObject) {
 		if (errorAcceptor != null) {
@@ -266,6 +286,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.LOAD_CSV__DELIM));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.LOAD_CSV__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.LOAD_CSV__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.LOAD_CSV__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.LOAD_CSV__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLoadCsvAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
@@ -273,6 +295,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getLoadCsvAccess().getToSTRINGTerminalRuleCall_6_0(), semanticObject.getTo());
 		feeder.accept(grammarAccess.getLoadCsvAccess().getDelimSTRINGTerminalRuleCall_8_0(), semanticObject.getDelim());
 		feeder.accept(grammarAccess.getLoadCsvAccess().getValueSelectStatementParserRuleCall_11_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getLoadCsvAccess().getConditionSTRINGTerminalRuleCall_14_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -310,7 +333,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Slack returns Slack
 	 *
 	 * Constraint:
-	 *     (name=STRING team=STRING channel=STRING value=STRING)
+	 *     (name=STRING team=STRING channel=STRING value=STRING condition=STRING)
 	 */
 	protected void sequence_Slack(ISerializationContext context, Slack semanticObject) {
 		if (errorAcceptor != null) {
@@ -322,12 +345,15 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SLACK__CHANNEL));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SLACK__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SLACK__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SLACK__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SLACK__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSlackAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSlackAccess().getTeamSTRINGTerminalRuleCall_4_0(), semanticObject.getTeam());
 		feeder.accept(grammarAccess.getSlackAccess().getChannelSTRINGTerminalRuleCall_6_0(), semanticObject.getChannel());
 		feeder.accept(grammarAccess.getSlackAccess().getValueSTRINGTerminalRuleCall_9_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getSlackAccess().getConditionSTRINGTerminalRuleCall_12_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -338,7 +364,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Sms returns Sms
 	 *
 	 * Constraint:
-	 *     (name=STRING target=STRING value=STRING)
+	 *     (name=STRING target=STRING value=STRING condition=STRING)
 	 */
 	protected void sequence_Sms(ISerializationContext context, Sms semanticObject) {
 		if (errorAcceptor != null) {
@@ -348,11 +374,14 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__TARGET));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SMS__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SMS__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSmsAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSmsAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getSmsAccess().getValueSTRINGTerminalRuleCall_7_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getSmsAccess().getConditionSTRINGTerminalRuleCall_10_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -363,7 +392,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Transform returns Transform
 	 *
 	 * Constraint:
-	 *     (name=STRING on=STRING value+=NonSelectStatement)
+	 *     (name=STRING on=STRING value+=NonSelectStatement condition=STRING)
 	 */
 	protected void sequence_Transform(ISerializationContext context, Transform semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -413,7 +442,14 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     WriteCsv returns WriteCsv
 	 *
 	 * Constraint:
-	 *     (name=STRING source=STRING to=STRING delim=STRING value=SelectStatement)
+	 *     (
+	 *         name=STRING 
+	 *         source=STRING 
+	 *         to=STRING 
+	 *         delim=STRING 
+	 *         value=SelectStatement 
+	 *         condition=STRING
+	 *     )
 	 */
 	protected void sequence_WriteCsv(ISerializationContext context, WriteCsv semanticObject) {
 		if (errorAcceptor != null) {
@@ -427,6 +463,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.WRITE_CSV__DELIM));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.WRITE_CSV__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.WRITE_CSV__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.WRITE_CSV__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.WRITE_CSV__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getWriteCsvAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
@@ -434,6 +472,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getWriteCsvAccess().getToSTRINGTerminalRuleCall_6_0(), semanticObject.getTo());
 		feeder.accept(grammarAccess.getWriteCsvAccess().getDelimSTRINGTerminalRuleCall_8_0(), semanticObject.getDelim());
 		feeder.accept(grammarAccess.getWriteCsvAccess().getValueSelectStatementParserRuleCall_11_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getWriteCsvAccess().getConditionSTRINGTerminalRuleCall_14_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	

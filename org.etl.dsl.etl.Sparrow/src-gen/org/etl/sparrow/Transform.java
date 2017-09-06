@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.etl.sparrow.Transform#getOn <em>On</em>}</li>
  *   <li>{@link org.etl.sparrow.Transform#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.Transform#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see org.etl.sparrow.SparrowPackage#getTransform()
@@ -65,5 +66,31 @@ public interface Transform extends Action
    * @generated
    */
   EList<String> getValue();
+
+  /**
+   * Returns the value of the '<em><b>Condition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Condition</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Condition</em>' attribute.
+   * @see #setCondition(String)
+   * @see org.etl.sparrow.SparrowPackage#getTransform_Condition()
+   * @model
+   * @generated
+   */
+  String getCondition();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.Transform#getCondition <em>Condition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Condition</em>' attribute.
+   * @see #getCondition()
+   * @generated
+   */
+  void setCondition(String value);
 
 } // Transform

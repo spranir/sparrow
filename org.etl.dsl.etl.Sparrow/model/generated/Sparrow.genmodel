@@ -30,10 +30,12 @@
     <genClasses ecoreClass="Sparrow.ecore#//Fetch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Callprocess">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Updatedaudit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/logsink"/>
@@ -42,11 +44,13 @@
     <genClasses ecoreClass="Sparrow.ecore#//Sms">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Slack">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/team"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/channel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Googlecal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/calid"/>
@@ -57,27 +61,32 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/end"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/notify"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Copydata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//WriteCsv">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/delim"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//LoadCsv">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/delim"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Transform">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/on"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/condition"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
