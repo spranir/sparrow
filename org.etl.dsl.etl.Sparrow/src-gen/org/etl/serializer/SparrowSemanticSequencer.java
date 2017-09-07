@@ -210,13 +210,10 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         name=STRING 
-	 *         calid=STRING 
 	 *         authstore=STRING 
+	 *         key=STRING 
 	 *         useraccount=STRING 
-	 *         title=STRING 
-	 *         start=STRING 
-	 *         end=STRING 
-	 *         notify=STRING 
+	 *         source=STRING 
 	 *         value=STRING 
 	 *         condition=STRING
 	 *     )
@@ -225,20 +222,14 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__CALID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__CALID));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__AUTHSTORE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__AUTHSTORE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__KEY));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__USERACCOUNT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__USERACCOUNT));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__TITLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__TITLE));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__START) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__START));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__END) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__END));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__NOTIFY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__NOTIFY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__SOURCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__SOURCE));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL__VALUE));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL__CONDITION) == ValueTransient.YES)
@@ -246,15 +237,12 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGooglecalAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGooglecalAccess().getCalidSTRINGTerminalRuleCall_4_0(), semanticObject.getCalid());
-		feeder.accept(grammarAccess.getGooglecalAccess().getAuthstoreSTRINGTerminalRuleCall_6_0(), semanticObject.getAuthstore());
+		feeder.accept(grammarAccess.getGooglecalAccess().getAuthstoreSTRINGTerminalRuleCall_4_0(), semanticObject.getAuthstore());
+		feeder.accept(grammarAccess.getGooglecalAccess().getKeySTRINGTerminalRuleCall_6_0(), semanticObject.getKey());
 		feeder.accept(grammarAccess.getGooglecalAccess().getUseraccountSTRINGTerminalRuleCall_8_0(), semanticObject.getUseraccount());
-		feeder.accept(grammarAccess.getGooglecalAccess().getTitleSTRINGTerminalRuleCall_10_0(), semanticObject.getTitle());
-		feeder.accept(grammarAccess.getGooglecalAccess().getStartSTRINGTerminalRuleCall_12_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getGooglecalAccess().getEndSTRINGTerminalRuleCall_14_0(), semanticObject.getEnd());
-		feeder.accept(grammarAccess.getGooglecalAccess().getNotifySTRINGTerminalRuleCall_16_0(), semanticObject.getNotify());
-		feeder.accept(grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_19_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getGooglecalAccess().getConditionSTRINGTerminalRuleCall_22_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getGooglecalAccess().getSourceSTRINGTerminalRuleCall_10_0(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_13_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getGooglecalAccess().getConditionSTRINGTerminalRuleCall_16_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	

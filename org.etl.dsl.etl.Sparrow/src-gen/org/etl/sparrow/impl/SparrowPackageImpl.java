@@ -578,7 +578,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGooglecal_Calid()
+  public EAttribute getGooglecal_Authstore()
   {
     return (EAttribute)googlecalEClass.getEStructuralFeatures().get(0);
   }
@@ -588,7 +588,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGooglecal_Authstore()
+  public EAttribute getGooglecal_Key()
   {
     return (EAttribute)googlecalEClass.getEStructuralFeatures().get(1);
   }
@@ -608,7 +608,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGooglecal_Title()
+  public EAttribute getGooglecal_Source()
   {
     return (EAttribute)googlecalEClass.getEStructuralFeatures().get(3);
   }
@@ -618,7 +618,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGooglecal_Start()
+  public EAttribute getGooglecal_Value()
   {
     return (EAttribute)googlecalEClass.getEStructuralFeatures().get(4);
   }
@@ -628,39 +628,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGooglecal_End()
-  {
-    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGooglecal_Notify()
-  {
-    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGooglecal_Value()
-  {
-    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getGooglecal_Condition()
   {
-    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)googlecalEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -950,13 +920,10 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(slackEClass, SLACK__CONDITION);
 
     googlecalEClass = createEClass(GOOGLECAL);
-    createEAttribute(googlecalEClass, GOOGLECAL__CALID);
     createEAttribute(googlecalEClass, GOOGLECAL__AUTHSTORE);
+    createEAttribute(googlecalEClass, GOOGLECAL__KEY);
     createEAttribute(googlecalEClass, GOOGLECAL__USERACCOUNT);
-    createEAttribute(googlecalEClass, GOOGLECAL__TITLE);
-    createEAttribute(googlecalEClass, GOOGLECAL__START);
-    createEAttribute(googlecalEClass, GOOGLECAL__END);
-    createEAttribute(googlecalEClass, GOOGLECAL__NOTIFY);
+    createEAttribute(googlecalEClass, GOOGLECAL__SOURCE);
     createEAttribute(googlecalEClass, GOOGLECAL__VALUE);
     createEAttribute(googlecalEClass, GOOGLECAL__CONDITION);
 
@@ -1074,13 +1041,10 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getSlack_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Slack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(googlecalEClass, Googlecal.class, "Googlecal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGooglecal_Calid(), ecorePackage.getEString(), "calid", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGooglecal_Authstore(), ecorePackage.getEString(), "authstore", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Key(), ecorePackage.getEString(), "key", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGooglecal_Useraccount(), ecorePackage.getEString(), "useraccount", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecal_Title(), ecorePackage.getEString(), "title", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecal_Start(), ecorePackage.getEString(), "start", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecal_End(), ecorePackage.getEString(), "end", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecal_Notify(), ecorePackage.getEString(), "notify", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecal_Source(), ecorePackage.getEString(), "source", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGooglecal_Value(), ecorePackage.getEString(), "value", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGooglecal_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Googlecal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

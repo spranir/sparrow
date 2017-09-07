@@ -1118,37 +1118,15 @@ ruleGooglecal returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='for-cal'
+		otherlv_3='secured-by'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getGooglecalAccess().getForCalKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getGooglecalAccess().getSecuredByKeyword_3());
 		}
 		(
 			(
-				lv_calid_4_0=RULE_STRING
+				lv_authstore_4_0=RULE_STRING
 				{
-					newLeafNode(lv_calid_4_0, grammarAccess.getGooglecalAccess().getCalidSTRINGTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGooglecalRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"calid",
-						lv_calid_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_5='secured-by'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getGooglecalAccess().getSecuredByKeyword_5());
-		}
-		(
-			(
-				lv_authstore_6_0=RULE_STRING
-				{
-					newLeafNode(lv_authstore_6_0, grammarAccess.getGooglecalAccess().getAuthstoreSTRINGTerminalRuleCall_6_0());
+					newLeafNode(lv_authstore_4_0, grammarAccess.getGooglecalAccess().getAuthstoreSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -1157,7 +1135,29 @@ ruleGooglecal returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"authstore",
-						lv_authstore_6_0,
+						lv_authstore_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_5='with-key'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getGooglecalAccess().getWithKeyKeyword_5());
+		}
+		(
+			(
+				lv_key_6_0=RULE_STRING
+				{
+					newLeafNode(lv_key_6_0, grammarAccess.getGooglecalAccess().getKeySTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecalRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"key",
+						lv_key_6_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -1184,15 +1184,15 @@ ruleGooglecal returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_9='with-title'
+		otherlv_9='from-source'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getGooglecalAccess().getWithTitleKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getGooglecalAccess().getFromSourceKeyword_9());
 		}
 		(
 			(
-				lv_title_10_0=RULE_STRING
+				lv_source_10_0=RULE_STRING
 				{
-					newLeafNode(lv_title_10_0, grammarAccess.getGooglecalAccess().getTitleSTRINGTerminalRuleCall_10_0());
+					newLeafNode(lv_source_10_0, grammarAccess.getGooglecalAccess().getSourceSTRINGTerminalRuleCall_10_0());
 				}
 				{
 					if ($current==null) {
@@ -1200,91 +1200,25 @@ ruleGooglecal returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"title",
-						lv_title_10_0,
+						"source",
+						lv_source_10_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_11='from'
+		otherlv_11='using'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getGooglecalAccess().getFromKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getGooglecalAccess().getUsingKeyword_11());
+		}
+		otherlv_12='{'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getGooglecalAccess().getLeftCurlyBracketKeyword_12());
 		}
 		(
 			(
-				lv_start_12_0=RULE_STRING
+				lv_value_13_0=RULE_STRING
 				{
-					newLeafNode(lv_start_12_0, grammarAccess.getGooglecalAccess().getStartSTRINGTerminalRuleCall_12_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGooglecalRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"start",
-						lv_start_12_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_13='to'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getGooglecalAccess().getToKeyword_13());
-		}
-		(
-			(
-				lv_end_14_0=RULE_STRING
-				{
-					newLeafNode(lv_end_14_0, grammarAccess.getGooglecalAccess().getEndSTRINGTerminalRuleCall_14_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGooglecalRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"end",
-						lv_end_14_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_15='repeat'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getGooglecalAccess().getRepeatKeyword_15());
-		}
-		(
-			(
-				lv_notify_16_0=RULE_STRING
-				{
-					newLeafNode(lv_notify_16_0, grammarAccess.getGooglecalAccess().getNotifySTRINGTerminalRuleCall_16_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGooglecalRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"notify",
-						lv_notify_16_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_17='using'
-		{
-			newLeafNode(otherlv_17, grammarAccess.getGooglecalAccess().getUsingKeyword_17());
-		}
-		otherlv_18='{'
-		{
-			newLeafNode(otherlv_18, grammarAccess.getGooglecalAccess().getLeftCurlyBracketKeyword_18());
-		}
-		(
-			(
-				lv_value_19_0=RULE_STRING
-				{
-					newLeafNode(lv_value_19_0, grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_19_0());
+					newLeafNode(lv_value_13_0, grammarAccess.getGooglecalAccess().getValueSTRINGTerminalRuleCall_13_0());
 				}
 				{
 					if ($current==null) {
@@ -1293,24 +1227,24 @@ ruleGooglecal returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_19_0,
+						lv_value_13_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_20='}'
+		otherlv_14='}'
 		{
-			newLeafNode(otherlv_20, grammarAccess.getGooglecalAccess().getRightCurlyBracketKeyword_20());
+			newLeafNode(otherlv_14, grammarAccess.getGooglecalAccess().getRightCurlyBracketKeyword_14());
 		}
-		otherlv_21='on-condition'
+		otherlv_15='on-condition'
 		{
-			newLeafNode(otherlv_21, grammarAccess.getGooglecalAccess().getOnConditionKeyword_21());
+			newLeafNode(otherlv_15, grammarAccess.getGooglecalAccess().getOnConditionKeyword_15());
 		}
 		(
 			(
-				lv_condition_22_0=RULE_STRING
+				lv_condition_16_0=RULE_STRING
 				{
-					newLeafNode(lv_condition_22_0, grammarAccess.getGooglecalAccess().getConditionSTRINGTerminalRuleCall_22_0());
+					newLeafNode(lv_condition_16_0, grammarAccess.getGooglecalAccess().getConditionSTRINGTerminalRuleCall_16_0());
 				}
 				{
 					if ($current==null) {
@@ -1319,7 +1253,7 @@ ruleGooglecal returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"condition",
-						lv_condition_22_0,
+						lv_condition_16_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)

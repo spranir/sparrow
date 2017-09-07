@@ -8,38 +8,62 @@ import org.etl.command.FinallyContext
 import org.etl.command.TryContext
 import org.etl.sparrow.Catch
 import org.etl.sparrow.Finally
+import org.etl.sparrow.Action
+import java.util.function.Consumer
+
+case class AbortException(reason:String) extends Exception
 
 class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
   
   def execute(process:org.etl.sparrow.Process, context:Context)={
-    var errotContext:ErrorContext=null
+    var errorContext:ErrorContext=null
     try {
-     
+     executeChain(process.getTry.getAction, context)
     } catch {
-      case ex: Throwable => {
-        val onError = process.getCatch
-        errotContext=executeCatch(onError, context.asInstanceOf[TryContext])
+      case ex: AbortException =>{
         logError(ex)
       }
+      case ex: Throwable => {
+        logError(ex)
+        val onError = process.getCatch
+        errorContext=executeCatch(onError, context.asInstanceOf[TryContext])
+      }
+      
     } finally {
       val onFinally = process.getFinally
-      executeFinally(onFinally, errotContext)
+      executeFinally(onFinally, errorContext)
     }
   }
   
+  @throws(classOf[Exception])
+  def executeChain(actionList:java.util.List[Action], context:Context)={
+    
+    val iterator = actionList.iterator()
+    while(iterator.hasNext())
+    {
+      val action = iterator.next
+      val actionRuntime = CommandFactory.create(action.eClass.getName)
+      if(actionRuntime.executeIf(context, action))
+      {
+        actionRuntime.execute(context, action)
+      }
+    }
+    
+  }
   def logError(ex: Throwable) = {
     logger.error("Error executing process", ex)  
   }
 
   def executeCatch(onError: Catch, context:TryContext):ErrorContext = {
     val errorContext:ErrorContext = new ErrorContext(context)
-    //put the error handling code in here
+    executeChain(onError.getAction, errorContext)
     errorContext
   }
 
-  def executeFinally(onFinally: Finally, errotContext: ErrorContext) = {
-    //add the stub meant for finallyContext
+  def executeFinally(onFinally: Finally, errotContext: ErrorContext):FinallyContext = {
     val finallyContext:FinallyContext = new FinallyContext(errotContext)
+    executeChain(onFinally.getAction, finallyContext)
+    finallyContext
   }
 
 

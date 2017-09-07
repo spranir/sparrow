@@ -131,5 +131,27 @@ PreferredAuthentications publickey
 IdentitiesOnly yes
 IdentityFile /c/Users/Sandeep/.ssh/junome_key
 
+jSON choices
+https://manuel.bernhardt.io/2015/11/06/a-quick-tour-of-json-libraries-in-scala/
+https://github.com/lift/lift/tree/master/framework/lift-base/lift-json/
+
+So far I have made sure that the ProcessRuntime in the single thread
+model is complete till the time the process gets fired. Now I need to
+turn my focus towards getting both the actions implemented
+
+I have found a good reference to the maven directory structure article
+
+https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
 
 
+Google calendar recurrence
+https://developers.google.com/google-apps/calendar/recurringevents#creating_recurring_events
+
+Issue List
+1. Need to organize the database resource names under roof
+	- config-store - system
+	- audit-store - system
+	- chimera_lms - app
+	
+	
+	

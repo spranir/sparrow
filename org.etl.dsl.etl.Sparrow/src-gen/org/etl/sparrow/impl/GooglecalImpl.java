@@ -20,13 +20,10 @@ import org.etl.sparrow.SparrowPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getCalid <em>Calid</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getAuthstore <em>Authstore</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getUseraccount <em>Useraccount</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getStart <em>Start</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getEnd <em>End</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getNotify <em>Notify</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalImpl#getCondition <em>Condition</em>}</li>
  * </ul>
@@ -35,26 +32,6 @@ import org.etl.sparrow.SparrowPackage;
  */
 public class GooglecalImpl extends ActionImpl implements Googlecal
 {
-  /**
-   * The default value of the '{@link #getCalid() <em>Calid</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCalid()
-   * @generated
-   * @ordered
-   */
-  protected static final String CALID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCalid() <em>Calid</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCalid()
-   * @generated
-   * @ordered
-   */
-  protected String calid = CALID_EDEFAULT;
-
   /**
    * The default value of the '{@link #getAuthstore() <em>Authstore</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +51,26 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
    * @ordered
    */
   protected String authstore = AUTHSTORE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKey()
+   * @generated
+   * @ordered
+   */
+  protected static final String KEY_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKey()
+   * @generated
+   * @ordered
+   */
+  protected String key = KEY_EDEFAULT;
 
   /**
    * The default value of the '{@link #getUseraccount() <em>Useraccount</em>}' attribute.
@@ -96,84 +93,24 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
   protected String useraccount = USERACCOUNT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTitle()
+   * @see #getSource()
    * @generated
    * @ordered
    */
-  protected static final String TITLE_EDEFAULT = null;
+  protected static final String SOURCE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTitle()
+   * @see #getSource()
    * @generated
    * @ordered
    */
-  protected String title = TITLE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStart()
-   * @generated
-   * @ordered
-   */
-  protected static final String START_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStart()
-   * @generated
-   * @ordered
-   */
-  protected String start = START_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEnd()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEnd()
-   * @generated
-   * @ordered
-   */
-  protected String end = END_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getNotify() <em>Notify</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNotify()
-   * @generated
-   * @ordered
-   */
-  protected static final String NOTIFY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNotify() <em>Notify</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNotify()
-   * @generated
-   * @ordered
-   */
-  protected String notify = NOTIFY_EDEFAULT;
+  protected String source = SOURCE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -241,29 +178,6 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCalid()
-  {
-    return calid;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCalid(String newCalid)
-  {
-    String oldCalid = calid;
-    calid = newCalid;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__CALID, oldCalid, calid));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getAuthstore()
   {
     return authstore;
@@ -280,6 +194,29 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
     authstore = newAuthstore;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__AUTHSTORE, oldAuthstore, authstore));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getKey()
+  {
+    return key;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setKey(String newKey)
+  {
+    String oldKey = key;
+    key = newKey;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__KEY, oldKey, key));
   }
 
   /**
@@ -310,9 +247,9 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTitle()
+  public String getSource()
   {
-    return title;
+    return source;
   }
 
   /**
@@ -320,81 +257,12 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTitle(String newTitle)
+  public void setSource(String newSource)
   {
-    String oldTitle = title;
-    title = newTitle;
+    String oldSource = source;
+    source = newSource;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__TITLE, oldTitle, title));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getStart()
-  {
-    return start;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStart(String newStart)
-  {
-    String oldStart = start;
-    start = newStart;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__START, oldStart, start));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getEnd()
-  {
-    return end;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEnd(String newEnd)
-  {
-    String oldEnd = end;
-    end = newEnd;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__END, oldEnd, end));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getNotify()
-  {
-    return notify;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNotify(String newNotify)
-  {
-    String oldNotify = notify;
-    notify = newNotify;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__NOTIFY, oldNotify, notify));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL__SOURCE, oldSource, source));
   }
 
   /**
@@ -453,20 +321,14 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL__CALID:
-        return getCalid();
       case SparrowPackage.GOOGLECAL__AUTHSTORE:
         return getAuthstore();
+      case SparrowPackage.GOOGLECAL__KEY:
+        return getKey();
       case SparrowPackage.GOOGLECAL__USERACCOUNT:
         return getUseraccount();
-      case SparrowPackage.GOOGLECAL__TITLE:
-        return getTitle();
-      case SparrowPackage.GOOGLECAL__START:
-        return getStart();
-      case SparrowPackage.GOOGLECAL__END:
-        return getEnd();
-      case SparrowPackage.GOOGLECAL__NOTIFY:
-        return getNotify();
+      case SparrowPackage.GOOGLECAL__SOURCE:
+        return getSource();
       case SparrowPackage.GOOGLECAL__VALUE:
         return getValue();
       case SparrowPackage.GOOGLECAL__CONDITION:
@@ -485,26 +347,17 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL__CALID:
-        setCalid((String)newValue);
-        return;
       case SparrowPackage.GOOGLECAL__AUTHSTORE:
         setAuthstore((String)newValue);
+        return;
+      case SparrowPackage.GOOGLECAL__KEY:
+        setKey((String)newValue);
         return;
       case SparrowPackage.GOOGLECAL__USERACCOUNT:
         setUseraccount((String)newValue);
         return;
-      case SparrowPackage.GOOGLECAL__TITLE:
-        setTitle((String)newValue);
-        return;
-      case SparrowPackage.GOOGLECAL__START:
-        setStart((String)newValue);
-        return;
-      case SparrowPackage.GOOGLECAL__END:
-        setEnd((String)newValue);
-        return;
-      case SparrowPackage.GOOGLECAL__NOTIFY:
-        setNotify((String)newValue);
+      case SparrowPackage.GOOGLECAL__SOURCE:
+        setSource((String)newValue);
         return;
       case SparrowPackage.GOOGLECAL__VALUE:
         setValue((String)newValue);
@@ -526,26 +379,17 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL__CALID:
-        setCalid(CALID_EDEFAULT);
-        return;
       case SparrowPackage.GOOGLECAL__AUTHSTORE:
         setAuthstore(AUTHSTORE_EDEFAULT);
+        return;
+      case SparrowPackage.GOOGLECAL__KEY:
+        setKey(KEY_EDEFAULT);
         return;
       case SparrowPackage.GOOGLECAL__USERACCOUNT:
         setUseraccount(USERACCOUNT_EDEFAULT);
         return;
-      case SparrowPackage.GOOGLECAL__TITLE:
-        setTitle(TITLE_EDEFAULT);
-        return;
-      case SparrowPackage.GOOGLECAL__START:
-        setStart(START_EDEFAULT);
-        return;
-      case SparrowPackage.GOOGLECAL__END:
-        setEnd(END_EDEFAULT);
-        return;
-      case SparrowPackage.GOOGLECAL__NOTIFY:
-        setNotify(NOTIFY_EDEFAULT);
+      case SparrowPackage.GOOGLECAL__SOURCE:
+        setSource(SOURCE_EDEFAULT);
         return;
       case SparrowPackage.GOOGLECAL__VALUE:
         setValue(VALUE_EDEFAULT);
@@ -567,20 +411,14 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL__CALID:
-        return CALID_EDEFAULT == null ? calid != null : !CALID_EDEFAULT.equals(calid);
       case SparrowPackage.GOOGLECAL__AUTHSTORE:
         return AUTHSTORE_EDEFAULT == null ? authstore != null : !AUTHSTORE_EDEFAULT.equals(authstore);
+      case SparrowPackage.GOOGLECAL__KEY:
+        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
       case SparrowPackage.GOOGLECAL__USERACCOUNT:
         return USERACCOUNT_EDEFAULT == null ? useraccount != null : !USERACCOUNT_EDEFAULT.equals(useraccount);
-      case SparrowPackage.GOOGLECAL__TITLE:
-        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-      case SparrowPackage.GOOGLECAL__START:
-        return START_EDEFAULT == null ? start != null : !START_EDEFAULT.equals(start);
-      case SparrowPackage.GOOGLECAL__END:
-        return END_EDEFAULT == null ? end != null : !END_EDEFAULT.equals(end);
-      case SparrowPackage.GOOGLECAL__NOTIFY:
-        return NOTIFY_EDEFAULT == null ? notify != null : !NOTIFY_EDEFAULT.equals(notify);
+      case SparrowPackage.GOOGLECAL__SOURCE:
+        return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
       case SparrowPackage.GOOGLECAL__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case SparrowPackage.GOOGLECAL__CONDITION:
@@ -600,20 +438,14 @@ public class GooglecalImpl extends ActionImpl implements Googlecal
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (calid: ");
-    result.append(calid);
-    result.append(", authstore: ");
+    result.append(" (authstore: ");
     result.append(authstore);
+    result.append(", key: ");
+    result.append(key);
     result.append(", useraccount: ");
     result.append(useraccount);
-    result.append(", title: ");
-    result.append(title);
-    result.append(", start: ");
-    result.append(start);
-    result.append(", end: ");
-    result.append(end);
-    result.append(", notify: ");
-    result.append(notify);
+    result.append(", source: ");
+    result.append(source);
     result.append(", value: ");
     result.append(value);
     result.append(", condition: ");

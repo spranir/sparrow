@@ -13,13 +13,10 @@ package org.etl.sparrow;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.Googlecal#getCalid <em>Calid</em>}</li>
  *   <li>{@link org.etl.sparrow.Googlecal#getAuthstore <em>Authstore</em>}</li>
+ *   <li>{@link org.etl.sparrow.Googlecal#getKey <em>Key</em>}</li>
  *   <li>{@link org.etl.sparrow.Googlecal#getUseraccount <em>Useraccount</em>}</li>
- *   <li>{@link org.etl.sparrow.Googlecal#getTitle <em>Title</em>}</li>
- *   <li>{@link org.etl.sparrow.Googlecal#getStart <em>Start</em>}</li>
- *   <li>{@link org.etl.sparrow.Googlecal#getEnd <em>End</em>}</li>
- *   <li>{@link org.etl.sparrow.Googlecal#getNotify <em>Notify</em>}</li>
+ *   <li>{@link org.etl.sparrow.Googlecal#getSource <em>Source</em>}</li>
  *   <li>{@link org.etl.sparrow.Googlecal#getValue <em>Value</em>}</li>
  *   <li>{@link org.etl.sparrow.Googlecal#getCondition <em>Condition</em>}</li>
  * </ul>
@@ -30,32 +27,6 @@ package org.etl.sparrow;
  */
 public interface Googlecal extends Action
 {
-  /**
-   * Returns the value of the '<em><b>Calid</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Calid</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Calid</em>' attribute.
-   * @see #setCalid(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecal_Calid()
-   * @model
-   * @generated
-   */
-  String getCalid();
-
-  /**
-   * Sets the value of the '{@link org.etl.sparrow.Googlecal#getCalid <em>Calid</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Calid</em>' attribute.
-   * @see #getCalid()
-   * @generated
-   */
-  void setCalid(String value);
-
   /**
    * Returns the value of the '<em><b>Authstore</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -81,6 +52,32 @@ public interface Googlecal extends Action
    * @generated
    */
   void setAuthstore(String value);
+
+  /**
+   * Returns the value of the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Key</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Key</em>' attribute.
+   * @see #setKey(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecal_Key()
+   * @model
+   * @generated
+   */
+  String getKey();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.Googlecal#getKey <em>Key</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Key</em>' attribute.
+   * @see #getKey()
+   * @generated
+   */
+  void setKey(String value);
 
   /**
    * Returns the value of the '<em><b>Useraccount</b></em>' attribute.
@@ -109,108 +106,30 @@ public interface Googlecal extends Action
   void setUseraccount(String value);
 
   /**
-   * Returns the value of the '<em><b>Title</b></em>' attribute.
+   * Returns the value of the '<em><b>Source</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Title</em>' attribute isn't clear,
+   * If the meaning of the '<em>Source</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Title</em>' attribute.
-   * @see #setTitle(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecal_Title()
+   * @return the value of the '<em>Source</em>' attribute.
+   * @see #setSource(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecal_Source()
    * @model
    * @generated
    */
-  String getTitle();
+  String getSource();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.Googlecal#getTitle <em>Title</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.Googlecal#getSource <em>Source</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Title</em>' attribute.
-   * @see #getTitle()
+   * @param value the new value of the '<em>Source</em>' attribute.
+   * @see #getSource()
    * @generated
    */
-  void setTitle(String value);
-
-  /**
-   * Returns the value of the '<em><b>Start</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Start</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Start</em>' attribute.
-   * @see #setStart(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecal_Start()
-   * @model
-   * @generated
-   */
-  String getStart();
-
-  /**
-   * Sets the value of the '{@link org.etl.sparrow.Googlecal#getStart <em>Start</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Start</em>' attribute.
-   * @see #getStart()
-   * @generated
-   */
-  void setStart(String value);
-
-  /**
-   * Returns the value of the '<em><b>End</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>End</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>End</em>' attribute.
-   * @see #setEnd(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecal_End()
-   * @model
-   * @generated
-   */
-  String getEnd();
-
-  /**
-   * Sets the value of the '{@link org.etl.sparrow.Googlecal#getEnd <em>End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>End</em>' attribute.
-   * @see #getEnd()
-   * @generated
-   */
-  void setEnd(String value);
-
-  /**
-   * Returns the value of the '<em><b>Notify</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Notify</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Notify</em>' attribute.
-   * @see #setNotify(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecal_Notify()
-   * @model
-   * @generated
-   */
-  String getNotify();
-
-  /**
-   * Sets the value of the '{@link org.etl.sparrow.Googlecal#getNotify <em>Notify</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Notify</em>' attribute.
-   * @see #getNotify()
-   * @generated
-   */
-  void setNotify(String value);
+  void setSource(String value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

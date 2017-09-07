@@ -83,7 +83,7 @@ Slack:
 ;
 
 Googlecal:
-	'googlecal' 'as' name=STRING 'secured-by' authstore=STRING 'through-user' useraccount=STRING 'using'
+	'googlecal' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING 'from-source' source=STRING 'using'
 	'{'
 		value=STRING
 	'}' 'on-condition' condition=STRING

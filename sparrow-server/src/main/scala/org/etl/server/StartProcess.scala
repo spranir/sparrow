@@ -36,6 +36,7 @@ class StartProcess extends ServerResource with LazyLogging {
     val tryContext = new TryContext(config)
     
     try {
+      //TODO - change to create(config.get("runmode"))
       val runtime = ProcessRuntimeFactory.create("org.etl.process.onethread")
       runtime.execute(process, tryContext)
     } catch {

@@ -6,7 +6,7 @@ object CommandFactory {
                   
   def create(name:String) :Action={
       
-    name match {
+    name.toLowerCase match {
       case "abort" =>  new AbortAction
       case "googlecal" => new GoogleCalendarAction
       case "transform" => new TransformAction

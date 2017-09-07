@@ -546,22 +546,22 @@ public interface SparrowPackage extends EPackage
   int GOOGLECAL__NAME = ACTION__NAME;
 
   /**
-   * The feature id for the '<em><b>Calid</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL__CALID = ACTION_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Authstore</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOOGLECAL__AUTHSTORE = ACTION_FEATURE_COUNT + 1;
+  int GOOGLECAL__AUTHSTORE = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL__KEY = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Useraccount</b></em>' attribute.
@@ -573,40 +573,13 @@ public interface SparrowPackage extends EPackage
   int GOOGLECAL__USERACCOUNT = ACTION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * The feature id for the '<em><b>Source</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOOGLECAL__TITLE = ACTION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Start</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL__START = ACTION_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>End</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL__END = ACTION_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Notify</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL__NOTIFY = ACTION_FEATURE_COUNT + 6;
+  int GOOGLECAL__SOURCE = ACTION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -615,7 +588,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOOGLECAL__VALUE = ACTION_FEATURE_COUNT + 7;
+  int GOOGLECAL__VALUE = ACTION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
@@ -624,7 +597,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOOGLECAL__CONDITION = ACTION_FEATURE_COUNT + 8;
+  int GOOGLECAL__CONDITION = ACTION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Googlecal</em>' class.
@@ -633,7 +606,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOOGLECAL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 9;
+  int GOOGLECAL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.CopydataImpl <em>Copydata</em>}' class.
@@ -1298,17 +1271,6 @@ public interface SparrowPackage extends EPackage
   EClass getGooglecal();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getCalid <em>Calid</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Calid</em>'.
-   * @see org.etl.sparrow.Googlecal#getCalid()
-   * @see #getGooglecal()
-   * @generated
-   */
-  EAttribute getGooglecal_Calid();
-
-  /**
    * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getAuthstore <em>Authstore</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1318,6 +1280,17 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getGooglecal_Authstore();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see org.etl.sparrow.Googlecal#getKey()
+   * @see #getGooglecal()
+   * @generated
+   */
+  EAttribute getGooglecal_Key();
 
   /**
    * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getUseraccount <em>Useraccount</em>}'.
@@ -1331,48 +1304,15 @@ public interface SparrowPackage extends EPackage
   EAttribute getGooglecal_Useraccount();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getTitle <em>Title</em>}'.
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see org.etl.sparrow.Googlecal#getTitle()
+   * @return the meta object for the attribute '<em>Source</em>'.
+   * @see org.etl.sparrow.Googlecal#getSource()
    * @see #getGooglecal()
    * @generated
    */
-  EAttribute getGooglecal_Title();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getStart <em>Start</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Start</em>'.
-   * @see org.etl.sparrow.Googlecal#getStart()
-   * @see #getGooglecal()
-   * @generated
-   */
-  EAttribute getGooglecal_Start();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getEnd <em>End</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>End</em>'.
-   * @see org.etl.sparrow.Googlecal#getEnd()
-   * @see #getGooglecal()
-   * @generated
-   */
-  EAttribute getGooglecal_End();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getNotify <em>Notify</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Notify</em>'.
-   * @see org.etl.sparrow.Googlecal#getNotify()
-   * @see #getGooglecal()
-   * @generated
-   */
-  EAttribute getGooglecal_Notify();
+  EAttribute getGooglecal_Source();
 
   /**
    * Returns the meta object for the attribute '{@link org.etl.sparrow.Googlecal#getValue <em>Value</em>}'.
@@ -1965,20 +1905,20 @@ public interface SparrowPackage extends EPackage
     EClass GOOGLECAL = eINSTANCE.getGooglecal();
 
     /**
-     * The meta object literal for the '<em><b>Calid</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL__CALID = eINSTANCE.getGooglecal_Calid();
-
-    /**
      * The meta object literal for the '<em><b>Authstore</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute GOOGLECAL__AUTHSTORE = eINSTANCE.getGooglecal_Authstore();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL__KEY = eINSTANCE.getGooglecal_Key();
 
     /**
      * The meta object literal for the '<em><b>Useraccount</b></em>' attribute feature.
@@ -1989,36 +1929,12 @@ public interface SparrowPackage extends EPackage
     EAttribute GOOGLECAL__USERACCOUNT = eINSTANCE.getGooglecal_Useraccount();
 
     /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GOOGLECAL__TITLE = eINSTANCE.getGooglecal_Title();
-
-    /**
-     * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL__START = eINSTANCE.getGooglecal_Start();
-
-    /**
-     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL__END = eINSTANCE.getGooglecal_End();
-
-    /**
-     * The meta object literal for the '<em><b>Notify</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL__NOTIFY = eINSTANCE.getGooglecal_Notify();
+    EAttribute GOOGLECAL__SOURCE = eINSTANCE.getGooglecal_Source();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.

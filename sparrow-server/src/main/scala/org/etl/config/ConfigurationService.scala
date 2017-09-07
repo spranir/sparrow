@@ -15,8 +15,9 @@ import com.typesafe.scalalogging.LazyLogging
     TODO I would like to use immutable map instead of mutable map
     
  */
+case class Resource(configType:String, auth_info:String, url:String, name:String)
 object ConfigurationService extends LazyLogging {
-  
+  //config_type, auth_info, resource_url   
   private val conf = ConfigFactory.parseResources("configstore.props")
   logger.info("Initializing the config store from config file"+ conf.origin().url())
   private val url = conf.getString("mysql.url")
@@ -29,6 +30,7 @@ object ConfigurationService extends LazyLogging {
   private val allQueryBatch = conf.getString("mysql.batch_sql")
   private val allQueryProcess= conf.getString("mysql.process_sql")
   private val allQueryInstance= conf.getString("mysql.instance_sql")
+  private val resourceConfig = conf.getString("mysql.resource_sql")
   
   
   Class.forName(driver)  
@@ -200,7 +202,28 @@ private  def getAllInstanceConfigValue(conn:Connection, instanceFqn:String):scal
  }
 
   def findProcessName(instanceName: String) = {
-    instanceName.substring(0, instanceName.lastIndexOf(0))
+    instanceName.substring(0, instanceName.lastIndexOf("#"))
+  }
+  
+  def getResourceConfig(name:String) :Resource = {
+    val conn = DriverManager.getConnection(url,user, password) 
+    val stmt = conn.prepareStatement(resourceConfig)
+   
+      try {
+        stmt.setString(1, name)
+        val rs = stmt.executeQuery()        
+        try {
+          rs.next()
+          Resource(rs.getString(1), rs.getString(2), rs.getString(3),name)
+        }
+        finally {
+          rs.close()
+        }
+      }
+      finally{
+        stmt.closeOnCompletion()
+      }
+     
   }
 
 }

@@ -53,13 +53,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Slack/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Googlecal">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/calid"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/authstore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/useraccount"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/start"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/end"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/notify"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Googlecal/condition"/>
     </genClasses>
