@@ -4,7 +4,7 @@ package org.etl.command
 
 import org.etl.util.ParameterisationEngine
 
-class TryContext(val config:Map[String,String]) extends Context {
+class TryContext(val config:Map[String,String], val instanceName:String) extends Context {
   
   def getValue(variable: String): String = {
     val input = config.get(variable).get

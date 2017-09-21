@@ -33,7 +33,7 @@ class StartProcess extends ServerResource with LazyLogging {
     val result = parser.parse(new FileReader(path));
     val eRoot = result.getRootASTElement();
     val process: org.etl.sparrow.Process = eRoot.asInstanceOf[org.etl.sparrow.Process]
-    val tryContext = new TryContext(config)
+    val tryContext = new TryContext(config, instanceName)
     
     try {
       //TODO - change to create(config.get("runmode"))

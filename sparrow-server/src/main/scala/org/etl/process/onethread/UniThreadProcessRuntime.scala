@@ -10,6 +10,8 @@ import org.etl.sparrow.Catch
 import org.etl.sparrow.Finally
 import org.etl.sparrow.Action
 import java.util.function.Consumer
+import org.etl.audit.AuditService
+import java.net.Inet4Address
 
 case class AbortException(reason:String) extends Exception
 
@@ -18,6 +20,7 @@ class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
   def execute(process:org.etl.sparrow.Process, context:Context)={
     var errorContext:ErrorContext=null
     try {
+      //AuditService.insertInstanceAudit(instanceName, "onethread","" , "")
      executeChain(process.getTry.getAction, context)
     } catch {
       case ex: AbortException =>{

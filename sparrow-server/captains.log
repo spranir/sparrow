@@ -153,5 +153,18 @@ Issue List
 	- audit-store - system
 	- chimera_lms - app
 	
+2. Need to further enrich the SQL statement grammar
+3. Need to start working on the actor model
+4. Need to complete the surrounding environment support
+5. Need to provide the environment to my team 
 	
-	
+callprocess as "run-through-all-calendars"
+with-target "publish.individual.calendar.process"
+from-file "calendar/publish.eventprocess.spw"
+using 
+
+{
+	"
+		SELECT calender_id as cal_id FROM calendar_master
+	"
+}	

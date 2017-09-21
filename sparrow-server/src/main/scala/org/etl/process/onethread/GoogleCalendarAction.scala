@@ -77,7 +77,7 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
       event.setDescription(description)
       
       val endDateForRecur = endDate.replaceAll("-", "")+"T170000Z"
-      println("Final date set for recurrence="+endDateForRecur)
+      logger.info("Final date set for recurrence="+endDateForRecur)
       event.setRecurrence(Arrays.asList("RRULE:FREQ=WEEKLY;UNTIL="+endDateForRecur));
 
       
