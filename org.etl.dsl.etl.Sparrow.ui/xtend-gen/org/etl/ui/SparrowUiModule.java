@@ -13,7 +13,7 @@ import org.etl.ui.AbstractSparrowUiModule;
 @FinalFieldsConstructor
 @SuppressWarnings("all")
 public class SparrowUiModule extends AbstractSparrowUiModule {
-  public SparrowUiModule(final AbstractUIPlugin plugin) {
-    super(plugin);
+  public SparrowUiModule(final AbstractUIPlugin arg0) {
+    super(arg0);
   }
 }

@@ -11,6 +11,7 @@ object CommandFactory {
       case "googlecal" => new GoogleCalendarAction
       case "transform" => new TransformAction
       case "assign" => new FetchVariableAction
+      case "callprocess" => new CallProcessAction
     }
   }
 }

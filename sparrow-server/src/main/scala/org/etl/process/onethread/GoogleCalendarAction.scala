@@ -1,24 +1,25 @@
 package org.etl.process.onethread
 
-import com.typesafe.scalalogging.LazyLogging
+import java.io.File
+import java.util.Arrays
+import java.util.Collections
+import java.util.Date
+import java.util.TimeZone
+
 import org.etl.command.Context
 import org.etl.sparrow.Action
-import org.etl.sparrow.Googlecal
+import org.etl.sparrow.GooglecalPUT
 import org.etl.util.ResourceAccess
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport
-import com.google.api.client.util.store.FileDataStoreFactory
+
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport
 import com.google.api.client.json.JsonFactory
 import com.google.api.client.json.jackson2.JacksonFactory
-import java.io.File
-import java.util.Collections
+import com.google.api.client.util.DateTime
+import com.google.api.client.util.store.FileDataStoreFactory
 import com.google.api.services.calendar.model.Event
 import com.google.api.services.calendar.model.EventDateTime
-import java.util.Date
-import com.google.api.client.util.DateTime
-import java.util.TimeZone
-import com.google.api.services.calendar.model.Event.Reminders
-import java.util.Arrays
+import com.typesafe.scalalogging.LazyLogging
 
 class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
   
@@ -29,7 +30,7 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
   
   val CALENDAR_SCOPE="https://www.googleapis.com/auth/calendar"
   def execute(context: Context, action: Action): Context = {
-    val cal:Googlecal = action.asInstanceOf[Googlecal]
+    val cal:GooglecalPUT = action.asInstanceOf[GooglecalPUT]
     val dbSrc = cal.getSource
     val mail = cal.getUseraccount
     val relativePath = cal.getAuthstore

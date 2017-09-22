@@ -202,6 +202,7 @@ private  def getAllInstanceConfigValue(conn:Connection, instanceFqn:String):scal
  }
 
   def findProcessName(instanceName: String) = {
+    
     instanceName.substring(0, instanceName.lastIndexOf("#"))
   }
   

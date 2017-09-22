@@ -1,23 +1,18 @@
 package org.etl.tests;
 
-import static org.junit.Assert.*;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.IParseResult;
 import org.eclipse.xtext.parser.IParser;
 import org.etl.SparrowStandaloneSetup;
 import org.etl.parser.antlr.SparrowParser;
 import org.etl.sparrow.Action;
-import org.etl.sparrow.Copydata;
-import org.etl.sparrow.Googlecal;
+import org.etl.sparrow.GooglecalPUT;
 import org.junit.Test;
 
 import com.google.inject.Injector;
@@ -41,7 +36,7 @@ public class ProcessDefinitionTest {
 					+action.eClass().getName());
 			if(action.eClass().getName().equals("Googlecal"))
 			{
-				Googlecal calAction = (Googlecal) action;
+				GooglecalPUT calAction = (GooglecalPUT) action;
 				System.out.println(calAction);
 				
 			}

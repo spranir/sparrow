@@ -103,8 +103,9 @@ I will just do
 mvn clean compile install -Dmaven.test.skip=true
 
 On the fatjar item, I have decided to use alchemi option
-http://davidb.github.io/scala-maven-plugi
+http://davidb.github.io/scala-maven-plugin
 
+mvn scala:run -Dlauncher=spw
 
 I got stuck on the second item for nearlly four hours !
 For now I have decided not pursue querulous because of lack of complete support
@@ -157,14 +158,13 @@ Issue List
 3. Need to start working on the actor model
 4. Need to complete the surrounding environment support
 5. Need to provide the environment to my team 
-	
-callprocess as "run-through-all-calendars"
-with-target "publish.individual.calendar.process"
-from-file "calendar/publish.eventprocess.spw"
-using 
+6. Need to further add support for auditing
+7. Refactor Start process code and call process code
+8. Need to add executeif support	
 
-{
-	"
-		SELECT calender_id as cal_id FROM calendar_master
-	"
-}	
+Fixed the scala ide issue by following the below thread
+https://groups.google.com/forum/#!topic/scala-ide-user/kqLyBUsuxbw
+
+
+Fixed the junit issue by following the below thread
+https://stackoverflow.com/questions/31469417/eclipse-throws-java-lang-nullpointerexception-when-running-spring-junit

@@ -4,7 +4,7 @@ package org.etl.command
 
 import org.etl.util.ParameterisationEngine
 
-class TryContext(val config:Map[String,String], val instanceName:String) extends Context {
+class TryContext(var config:Map[String,String], val instanceName:String) extends Context {
   
   def getValue(variable: String): String = {
     val input = config.get(variable).get
@@ -18,5 +18,13 @@ class TryContext(val config:Map[String,String], val instanceName:String) extends
       configMap.put(t._1, t._2)
     })
     configMap
+  }
+  
+  def getMeAsIs():Map[String, String] = {
+    config
+  }
+
+  def addValue(key: String, value: String): Unit = {
+    config +=((key, value))
   }
 }

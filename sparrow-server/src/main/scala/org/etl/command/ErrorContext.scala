@@ -8,4 +8,10 @@ class ErrorContext(val tryContext:Context) extends Context {
   def getMe():java.util.Map[String,String] = {
     tryContext.getMe
   }
+  def getMeAsIs():Map[String, String] = {
+    tryContext.getMeAsIs
+  }
+  def addValue(key: String, value: String): Unit = {
+    
+  }
 }

@@ -16,6 +16,8 @@ import org.etl.command.ErrorContext
 import org.etl.sparrow.Finally
 import org.etl.command.FinallyContext
 import org.etl.command.FinallyContext
+import org.etl.audit.AuditService
+import java.net.InetAddress
 
 
 class StartProcess extends ServerResource with LazyLogging {
@@ -26,7 +28,11 @@ class StartProcess extends ServerResource with LazyLogging {
     val inboundValue = getRequest().getAttributes().get("instance");
     val instanceName: String = inboundValue.asInstanceOf[String]
     val config:Map[String, String] = ConfigurationService.getAllConfig(instanceName)
-    val path = PathResolver.resolvePath(instanceName, config)
+    val fileRelativePath = config.get("filepath").get;
+    println("filepath="+fileRelativePath)
+    val basePath = config.get("basepath").get;
+    println("basepath="+basePath)
+    val path = PathResolver.resolvePath(instanceName, fileRelativePath, basePath)
     val sparrowHero = new SparrowStandaloneSetup
     val guiceInjector = sparrowHero.createInjectorAndDoEMFRegistration
     val parser = guiceInjector.getInstance(classOf[SparrowParser]);
@@ -37,7 +43,10 @@ class StartProcess extends ServerResource with LazyLogging {
     
     try {
       //TODO - change to create(config.get("runmode"))
-      val runtime = ProcessRuntimeFactory.create("org.etl.process.onethread")
+      val runMode = "org.etl.process.onethread"
+      val machine = InetAddress.getLocalHost.getHostAddress      
+      val instanceId = AuditService.insertInstanceAudit(instanceName, runMode, machine, path)
+      val runtime = ProcessRuntimeFactory.create(runMode)
       runtime.execute(process, tryContext)
     } catch {
       case ex: Throwable => {
@@ -46,6 +55,7 @@ class StartProcess extends ServerResource with LazyLogging {
     } finally {
       val onFinally = process.getFinally
       handleFinally()
+      //AuditService.updateProcessAudit(processId, status, contextLog)
     }
     ""
   }

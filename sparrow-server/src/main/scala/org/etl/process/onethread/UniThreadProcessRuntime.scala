@@ -20,7 +20,7 @@ class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
   def execute(process:org.etl.sparrow.Process, context:Context)={
     var errorContext:ErrorContext=null
     try {
-      //AuditService.insertInstanceAudit(instanceName, "onethread","" , "")
+      
      executeChain(process.getTry.getAction, context)
     } catch {
       case ex: AbortException =>{
@@ -48,7 +48,9 @@ class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
       val actionRuntime = CommandFactory.create(action.eClass.getName)
       if(actionRuntime.executeIf(context, action))
       {
+        //AuditService.insertCommandAudit(instanceId, actionName, processName)
         actionRuntime.execute(context, action)
+        //AuditService.updateCommandAudit(actionId, status)
       }
     }
     
