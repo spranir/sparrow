@@ -18,7 +18,7 @@ case class AbortException(reason:String) extends Exception
 class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
   
   def execute(process:org.etl.sparrow.Process, context:Context)={
-    var errorContext:ErrorContext=null
+    var errorContext:ErrorContext=new ErrorContext(context.asInstanceOf[TryContext])
     try {
       
      executeChain(process.getTry.getAction, context)

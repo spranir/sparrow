@@ -11,10 +11,7 @@ import org.etl.server.ProcessRuntimeFactory
 class CallProcessTest {
   
   @Test def runProcess()={
-    System.currentTimeMillis()
-    val urla = this.getClass.getClassLoader.getResource("auth/Dhuruva-BMS-fa750e3a8102.p12")
-    println(urla)
-    val url = this.getClass.getClassLoader.getResource("configstore.props")
+    
     val instanceName = "test.callprocess.process#1" 
     val config:Map[String, String] = ConfigurationService.getAllConfig(instanceName)
     val fileRelativePath = config.get("filepath").get;

@@ -20,6 +20,7 @@ import com.google.api.client.util.store.FileDataStoreFactory
 import com.google.api.services.calendar.model.Event
 import com.google.api.services.calendar.model.EventDateTime
 import com.typesafe.scalalogging.LazyLogging
+import org.etl.command.CommandProxy
 
 class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
   
@@ -30,7 +31,8 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
   
   val CALENDAR_SCOPE="https://www.googleapis.com/auth/calendar"
   def execute(context: Context, action: Action): Context = {
-    val cal:GooglecalPUT = action.asInstanceOf[GooglecalPUT]
+    val calAsIs:GooglecalPUT = action.asInstanceOf[GooglecalPUT]
+    val cal:org.etl.sparrow.GooglecalPUT = CommandProxy.createProxy(calAsIs, classOf[org.etl.sparrow.GooglecalPUT], context)
     val dbSrc = cal.getSource
     val mail = cal.getUseraccount
     val relativePath = cal.getAuthstore
