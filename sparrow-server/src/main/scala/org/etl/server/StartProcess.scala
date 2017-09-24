@@ -22,12 +22,14 @@ import java.net.InetAddress
 
 class StartProcess extends ServerResource with LazyLogging {
   val runMode = "org.etl.process.onethread"
-  //sample url - http://localhost:8080/publish.demandforecast.process.1/start
+  //sample url - http://localhost:8080/process/publish.demandforecast.process#1/start
   
   @Get("application/json")
   def represent(): String = {
     val inboundValue = getRequest().getAttributes().get("instance");
-    val instanceName: String = inboundValue.asInstanceOf[String]
+    val alias = getRequest().getAttributes().get("alias");
+    val instanceName: String = inboundValue.asInstanceOf[String]+"#"+alias.asInstanceOf[String]
+    logger.info("Starting the process="+ instanceName)
     val runtimeContext = ProcessAST.loadProcessAST(instanceName)
     
     try {
@@ -39,19 +41,18 @@ class StartProcess extends ServerResource with LazyLogging {
         handleError(ex)
       }
     } finally {
-      val onFinally = runtimeContext.process.getFinally
-      handleFinally()
-      //AuditService.updateProcessAudit(processId, status, contextLog)
+      
+      handleFinally()      
     }
-    ""
+    "{\"start_status\": \"SUCCESS\"}"
   }
 
   
   def handleError(ex: Throwable) = {
-    ???
+    ex.printStackTrace()
   }
 
   def handleFinally() = {
-    ???
+    println("Processing the request completed")
   }
 }

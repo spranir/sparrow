@@ -13,7 +13,7 @@ import java.io.FileReader
 object SparrowServer extends Application with LazyLogging{
   def main(args:Array[String]){
     
-    logger.info("Starting the restlet server to take in commands, at port"+args.apply(0))
+    logger.info("Starting the restlet server to take in commands, at port "+args.apply(0))
     val component = new Component()
     component.getServers().add(Protocol.HTTP, 8080)
     // Attach the sample application.
@@ -24,7 +24,7 @@ object SparrowServer extends Application with LazyLogging{
   }
   override def createInboundRoot: Router = {
     val router = new Router(getContext())
-    router.attach("/process/{instance}/start",classOf[StartProcess])
+    router.attach("/process/{instance}/{alias}/start",classOf[StartProcess])
     router.attach("/",classOf[ListProcess])
     router.attach("/process/{id}/stop", classOf[StopProcess])
     router

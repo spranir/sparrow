@@ -166,12 +166,13 @@ Issue List
 	- Relevant context for action
 10. exception handling
 11. Boundary case issues
-12. Appropriate logging
+12. Appropriate logging - properly using the scala logging formats
 13. Documentation
 14. Dockerization
 15. Push execute mode the REST path	
 16. Dont start the process if there is existing process that did not complete correctly
 17. Need to add the root instance id to the audit trail
+
 
 	
 
