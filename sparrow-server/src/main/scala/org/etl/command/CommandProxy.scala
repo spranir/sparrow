@@ -3,6 +3,7 @@ import java.lang.reflect.{ Method, InvocationHandler, Proxy }
 import org.eclipse.emf.ecore.util.EDataTypeEList
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.common.util.BasicEList
+import org.etl.util.ParameterisationEngine
 
 
 object CommandProxy {
@@ -20,15 +21,15 @@ object CommandProxy {
             val output = new BasicEList[String]
             val iter = interim.iterator            
             while (iter.hasNext) {
-              val value = iter.next              
-              output.add(context.getValue(value))
+              val value = iter.next       
+              val result = ParameterisationEngine.resolve(value, context)
+              output.add(result)
             }
             output
           }
           case _ => {
-            val result = context.getValue(
-              method.invoke(proxee, args: _*).asInstanceOf[String])
-
+            val inputString = method.invoke(proxee, args: _*).asInstanceOf[String]
+            val result = ParameterisationEngine.resolve(inputString, context)
             result
           }
 

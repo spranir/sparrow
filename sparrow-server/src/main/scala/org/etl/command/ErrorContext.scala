@@ -1,7 +1,11 @@
 package org.etl.command
 
+import java.io.StringWriter
+import java.io.PrintWriter
+
 class ErrorContext(val tryContext:Context) extends Context {
   
+  private[this] var executionException:Throwable=null 
   def getValue(variable: String): String = {
     tryContext.getValue(variable)
   }
@@ -12,6 +16,20 @@ class ErrorContext(val tryContext:Context) extends Context {
     tryContext.getMeAsIs
   }
   def addValue(key: String, value: String): Unit = {
+    tryContext.addValue(key, value)
+  }
+  def exception = executionException
+  def exception_=(t:Throwable) {
+    // write require condition if you need require(0 <= x && x < 60)
+    executionException=t
+  }
+  
+  def completeStackTrace():String={
+    val errors = new StringWriter();
+    val print = new PrintWriter(errors)
+    if(executionException!=null) executionException.printStackTrace(print) else print.print("NONE");
+    errors.toString();
     
   }
+  
 }

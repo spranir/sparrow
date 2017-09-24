@@ -1,13 +1,9 @@
-import org.junit.Test
-import org.etl.config.ConfigurationService
-import org.etl.server.PathResolver
-import org.etl.SparrowStandaloneSetup
-import org.etl.command.TryContext
-import org.etl.parser.antlr.SparrowParser
-import java.io.FileReader
-import org.etl.server.ProcessExecutor
-import org.etl.server.ProcessAST
+package org.etl.dsl.singlethread
 
+
+import org.etl.server.ProcessAST
+import org.junit.Test
+import org.etl.server.ProcessExecutor
 
 class CallProcessTest {
   

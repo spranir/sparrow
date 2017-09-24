@@ -15,7 +15,7 @@ import java.net.Inet4Address
 
 case class AbortException(reason:String) extends Exception
 
-class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
+class UniThreadProcessRuntime(name:String, id:Int) extends ProcessRuntime with LazyLogging{
   
   def execute(process:org.etl.sparrow.Process, context:Context)={
     var errorContext:ErrorContext=new ErrorContext(context.asInstanceOf[TryContext])
@@ -30,6 +30,7 @@ class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
         logError(ex)
         val onError = process.getCatch
         errorContext=executeCatch(onError, context.asInstanceOf[TryContext])
+        errorContext.exception=ex
       }
       
     } finally {
@@ -48,9 +49,10 @@ class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
       val actionRuntime = CommandFactory.create(action.eClass.getName)
       if(actionRuntime.executeIf(context, action))
       {
-        //AuditService.insertCommandAudit(instanceId, actionName, processName)
+        val actionId = AuditService.insertCommandAudit(id, action.eClass().getName+"->"+action.getName, name)
         actionRuntime.execute(context, action)
-        //AuditService.updateCommandAudit(actionId, status)
+        //TODO still need to fix the status part
+        AuditService.updateCommandAudit(actionId, 1)
       }
     }
     
@@ -65,9 +67,13 @@ class UniThreadProcessRuntime extends ProcessRuntime with LazyLogging{
     errorContext
   }
 
-  def executeFinally(onFinally: Finally, errotContext: ErrorContext):FinallyContext = {
-    val finallyContext:FinallyContext = new FinallyContext(errotContext)
+  def executeFinally(onFinally: Finally, errorContext: ErrorContext):FinallyContext = {
+    val finallyContext:FinallyContext = new FinallyContext(errorContext)
     executeChain(onFinally.getAction, finallyContext)
+    val processId:String = errorContext.getValue("process-id")
+    val contextLog:String = errorContext.completeStackTrace
+    val status:Int = if(contextLog.isEmpty) 1 else -1
+    AuditService.updateProcessAudit(Integer.parseInt(processId), status, contextLog)
     finallyContext
   }
 

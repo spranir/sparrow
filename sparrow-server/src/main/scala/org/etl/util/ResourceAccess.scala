@@ -20,6 +20,7 @@ object ResourceAccess {
     val conn = DriverManager.
       getConnection(connResource.url,
         userPass.user, userPass.password)
+    
     conn
   }
 }

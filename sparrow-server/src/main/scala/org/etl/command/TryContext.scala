@@ -13,7 +13,7 @@ class TryContext(var config: Map[String, String], val instanceName: String) exte
       }
       else
       {
-        ParameterisationEngine.resolve(variable, this)
+        ""
       }      
       output
   }

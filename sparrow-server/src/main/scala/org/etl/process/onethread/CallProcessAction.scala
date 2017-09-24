@@ -33,7 +33,7 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
     val rs = stmt.executeQuery(sql)
     val columnCount = rs.getMetaData.getColumnCount
 
-    val runtimeContext = ProcessAST.loadProcessAST(processName, fileRelativePath, context)
+    
     
     while (rs.next()) {
 
@@ -43,8 +43,9 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
         context.addValue(key, value)
 
       }
-
-      val tryContext = new TryContext(context.getMeAsIs, processName)
+      
+      val runtimeContext = ProcessAST.loadProcessAST(processName, fileRelativePath, context)
+      
       try {
         //TODO - change to create(config.get("runmode"))
         val runtime = ProcessExecutor.execute("org.etl.process.onethread", runtimeContext)
