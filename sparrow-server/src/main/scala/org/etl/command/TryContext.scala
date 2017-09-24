@@ -7,7 +7,15 @@ import org.etl.util.ParameterisationEngine
 class TryContext(var config: Map[String, String], val instanceName: String) extends Context {
 
   def getValue(variable: String): String = {
-      ParameterisationEngine.resolve(variable, this)
+      val output = if(config.contains(variable)) {
+        val value = config.get(variable).get
+        ParameterisationEngine.resolve(value, this)
+      }
+      else
+      {
+        ParameterisationEngine.resolve(variable, this)
+      }      
+      output
   }
 
   def getMe(): java.util.Map[String, String] = {

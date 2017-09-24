@@ -5,34 +5,21 @@ import org.etl.SparrowStandaloneSetup
 import org.etl.command.TryContext
 import org.etl.parser.antlr.SparrowParser
 import java.io.FileReader
-import org.etl.server.ProcessRuntimeFactory
+import org.etl.server.ProcessExecutor
+import org.etl.server.ProcessAST
 
 
 class PublishDemandForecast {
   
   @Test def runProcess()={
     System.currentTimeMillis()
-    val urla = this.getClass.getClassLoader.getResource("auth/Dhuruva-BMS-fa750e3a8102.p12")
-    println(urla)
-    val url = this.getClass.getClassLoader.getResource("configstore.props")
+   
     val instanceName = "publish.demandforecast.process#1" 
-    val config:Map[String, String] = ConfigurationService.getAllConfig(instanceName)
-    val fileRelativePath = config.get("filepath").get;
-    println("filepath="+fileRelativePath)
-    val basePath = config.get("basepath").get;
-    println("basepath="+basePath)
-    val path = PathResolver.resolvePath(instanceName, fileRelativePath, basePath)
-    val sparrowHero = new SparrowStandaloneSetup
-    val guiceInjector = sparrowHero.createInjectorAndDoEMFRegistration
-    val parser = guiceInjector.getInstance(classOf[SparrowParser]);
-    val result = parser.parse(new FileReader(path));
-    val eRoot = result.getRootASTElement();
-    val process: org.etl.sparrow.Process = eRoot.asInstanceOf[org.etl.sparrow.Process]
-    val tryContext = new TryContext(config, instanceName)
+    val runtimeContext = ProcessAST.loadProcessAST(instanceName)
     try {
       //TODO - change to create(config.get("runmode"))
-      val runtime = ProcessRuntimeFactory.create("org.etl.process.onethread")
-      runtime.execute(process, tryContext)
+      val runtime = ProcessExecutor.execute("org.etl.process.onethread", runtimeContext)
+
     } catch {
       case ex: Throwable => {
         ex.printStackTrace()

@@ -21,33 +21,25 @@ import java.net.InetAddress
 
 
 class StartProcess extends ServerResource with LazyLogging {
-
+  val runMode = "org.etl.process.onethread"
   //sample url - http://localhost:8080/publish.demandforecast.process.1/start
   
   @Get("application/json")
   def represent(): String = {
     val inboundValue = getRequest().getAttributes().get("instance");
     val instanceName: String = inboundValue.asInstanceOf[String]
-    val loadedTuple = ProcessAST.loadProcessAST(instanceName)
-    
-    val process = loadedTuple._3
-    val config  = loadedTuple._1
-    val path = loadedTuple._2
-    val tryContext = new TryContext(config, instanceName)
+    val runtimeContext = ProcessAST.loadProcessAST(instanceName)
     
     try {
-      //TODO - change to create(config.get("runmode"))
-      val runMode = "org.etl.process.onethread"
-      val machine = InetAddress.getLocalHost.getHostAddress      
-      val instanceId = AuditService.insertInstanceAudit(instanceName, runMode, machine, path)
-      val runtime = ProcessRuntimeFactory.create(runMode)
-      runtime.execute(process, tryContext)
+      //TODO - defer the execution mode to the caller
+       ProcessExecutor.execute(runMode, runtimeContext)
+      
     } catch {
       case ex: Throwable => {
         handleError(ex)
       }
     } finally {
-      val onFinally = process.getFinally
+      val onFinally = runtimeContext.process.getFinally
       handleFinally()
       //AuditService.updateProcessAudit(processId, status, contextLog)
     }

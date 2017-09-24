@@ -10,26 +10,20 @@ import org.etl.SparrowStandaloneSetup
 import org.etl.command.TryContext
 import org.etl.parser.antlr.SparrowParser
 import java.io.FileReader
-import org.etl.server.ProcessRuntimeFactory
+import org.etl.server.ProcessExecutor
 import org.etl.command.CommandProxy
 import org.etl.server.ProcessAST
 
 class CallProcessAction extends org.etl.command.Action with LazyLogging {
 
-  def handleError(ex: Throwable) = {
-    logger.info("Error section of call process")
-  }
-
-  def handleFinally() = {
-    logger.info("Finally section of call process")
-  }
+  
 
   def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
 
     val callProcessAsIs: org.etl.sparrow.Callprocess = action.asInstanceOf[org.etl.sparrow.Callprocess]
     val callProcess: org.etl.sparrow.Callprocess = CommandProxy.createProxy(callProcessAsIs, classOf[org.etl.sparrow.Callprocess], context)
 
-    val definition: String = callProcess.getSource
+    val fileRelativePath: String = callProcess.getSource
     val processName: String = callProcess.getTarget
     val dbSrc = callProcess.getDatasource
     val sql = callProcess.getValue.replaceAll("\"", "")
@@ -39,11 +33,8 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
     val rs = stmt.executeQuery(sql)
     val columnCount = rs.getMetaData.getColumnCount
 
-    val astTuple = ProcessAST.loadProcessAST(processName)
-    val process = astTuple._3
-    val config = astTuple._1
-    val path = astTuple._2
-
+    val runtimeContext = ProcessAST.loadProcessAST(processName, fileRelativePath, context)
+    
     while (rs.next()) {
 
       for (i <- 1 until columnCount) {
@@ -56,14 +47,14 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
       val tryContext = new TryContext(context.getMeAsIs, processName)
       try {
         //TODO - change to create(config.get("runmode"))
-        val runtime = ProcessRuntimeFactory.create("org.etl.process.onethread")
-        runtime.execute(process, tryContext)
+        val runtime = ProcessExecutor.execute("org.etl.process.onethread", runtimeContext)
+        
       } catch {
         case ex: Throwable => {
           handleError(ex)
         }
       } finally {
-        val onFinally = process.getFinally
+        val onFinally = runtimeContext.process.getFinally
         handleFinally()
       }
     }
@@ -72,6 +63,14 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
 
   def executeIf(context: org.etl.command.Context, action: org.etl.sparrow.Action): Boolean = {
     true
+  }
+  
+  def handleError(ex: Throwable) = {
+    logger.info("Error section of call process")
+  }
+
+  def handleFinally() = {
+    logger.info("Finally section of call process")
   }
 
 }

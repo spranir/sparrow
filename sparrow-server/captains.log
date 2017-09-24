@@ -169,7 +169,7 @@ Issue List
 12. Appropriate logging
 13. Documentation
 14. Dockerization
-	
+15. Push execute mode the REST path	
 	
 
 Fixed the scala ide issue by following the below thread

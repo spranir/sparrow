@@ -203,7 +203,7 @@ private  def getAllInstanceConfigValue(conn:Connection, instanceFqn:String):scal
 
   def findProcessName(instanceName: String) = {
     
-    instanceName.substring(0, instanceName.lastIndexOf("#"))
+    if(instanceName.contains("#")) instanceName.substring(0, instanceName.lastIndexOf("#")) else instanceName
   }
   
   def getResourceConfig(name:String) :Resource = {
