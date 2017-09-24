@@ -23,22 +23,16 @@ import java.net.InetAddress
 class StartProcess extends ServerResource with LazyLogging {
 
   //sample url - http://localhost:8080/publish.demandforecast.process.1/start
+  
   @Get("application/json")
   def represent(): String = {
     val inboundValue = getRequest().getAttributes().get("instance");
     val instanceName: String = inboundValue.asInstanceOf[String]
-    val config:Map[String, String] = ConfigurationService.getAllConfig(instanceName)
-    val fileRelativePath = config.get("filepath").get;
-    println("filepath="+fileRelativePath)
-    val basePath = config.get("basepath").get;
-    println("basepath="+basePath)
-    val path = PathResolver.resolvePath(instanceName, fileRelativePath, basePath)
-    val sparrowHero = new SparrowStandaloneSetup
-    val guiceInjector = sparrowHero.createInjectorAndDoEMFRegistration
-    val parser = guiceInjector.getInstance(classOf[SparrowParser]);
-    val result = parser.parse(new FileReader(path));
-    val eRoot = result.getRootASTElement();
-    val process: org.etl.sparrow.Process = eRoot.asInstanceOf[org.etl.sparrow.Process]
+    val loadedTuple = ProcessAST.loadProcessAST(instanceName)
+    
+    val process = loadedTuple._3
+    val config  = loadedTuple._1
+    val path = loadedTuple._2
     val tryContext = new TryContext(config, instanceName)
     
     try {
@@ -60,6 +54,7 @@ class StartProcess extends ServerResource with LazyLogging {
     ""
   }
 
+  
   def handleError(ex: Throwable) = {
     ???
   }
@@ -67,7 +62,4 @@ class StartProcess extends ServerResource with LazyLogging {
   def handleFinally() = {
     ???
   }
-
-    
-
 }

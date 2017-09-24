@@ -161,6 +161,16 @@ Issue List
 6. Need to further add support for auditing
 7. Refactor Start process code and call process code
 8. Need to add executeif support	
+9. Auditing invocation
+	- Context persistence for process
+	- Relevant context for action
+10. exception handling
+11. Boundary case issues
+12. Appropriate logging
+13. Documentation
+14. Dockerization
+	
+	
 
 Fixed the scala ide issue by following the below thread
 https://groups.google.com/forum/#!topic/scala-ide-user/kqLyBUsuxbw
