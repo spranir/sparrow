@@ -223,6 +223,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFetchParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cTrelloPUTParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		private final RuleCall cTrelloGETParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
+		private final RuleCall cRestParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		
 		//Action:
 		//	Copydata
@@ -236,11 +237,12 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//	| Callprocess
 		//	| Fetch
 		//	| TrelloPUT
-		//	| TrelloGET;
+		//	| TrelloGET
+		//	| Rest;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Copydata | LoadCsv | WriteCsv | Transform | GooglecalPUT | SlackPUT | Sms | Updatedaudit | Callprocess | Fetch |
-		//TrelloPUT | TrelloGET
+		//TrelloPUT | TrelloGET | Rest
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Copydata
@@ -278,6 +280,190 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//TrelloGET
 		public RuleCall getTrelloGETParserRuleCall_11() { return cTrelloGETParserRuleCall_11; }
+		
+		//Rest
+		public RuleCall getRestParserRuleCall_12() { return cRestParserRuleCall_12; }
+	}
+	public class RestElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Rest");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRestKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cSecuredByKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAuthtokenAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAuthtokenSTRINGTerminalRuleCall_4_0 = (RuleCall)cAuthtokenAssignment_4.eContents().get(0);
+		private final Keyword cWithUrlKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cUrlAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cUrlSTRINGTerminalRuleCall_6_0 = (RuleCall)cUrlAssignment_6.eContents().get(0);
+		private final Keyword cAndMethodAsKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cMethodAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cMethodSTRINGTerminalRuleCall_8_0 = (RuleCall)cMethodAssignment_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cUpdateHeaderWithKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cHeaderdataAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cHeaderdataSelectStatementParserRuleCall_12_0 = (RuleCall)cHeaderdataAssignment_12.eContents().get(0);
+		private final Keyword cFromKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cHeaderdatafromAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cHeaderdatafromSTRINGTerminalRuleCall_14_0 = (RuleCall)cHeaderdatafromAssignment_14.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cUpdateBodyWithKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cLeftCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cPostdataAssignment_18 = (Assignment)cGroup.eContents().get(18);
+		private final RuleCall cPostdataSelectStatementParserRuleCall_18_0 = (RuleCall)cPostdataAssignment_18.eContents().get(0);
+		private final Keyword cFromKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Assignment cPostdatafromAssignment_20 = (Assignment)cGroup.eContents().get(20);
+		private final RuleCall cPostdatafromSTRINGTerminalRuleCall_20_0 = (RuleCall)cPostdatafromAssignment_20.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Keyword cStoreAckAtKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Keyword cLeftCurlyBracketKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final Assignment cAckdataAssignment_24 = (Assignment)cGroup.eContents().get(24);
+		private final RuleCall cAckdataSelectStatementParserRuleCall_24_0 = (RuleCall)cAckdataAssignment_24.eContents().get(0);
+		private final Keyword cIntoKeyword_25 = (Keyword)cGroup.eContents().get(25);
+		private final Assignment cAckdatatoAssignment_26 = (Assignment)cGroup.eContents().get(26);
+		private final RuleCall cAckdatatoSTRINGTerminalRuleCall_26_0 = (RuleCall)cAckdatatoAssignment_26.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_27 = (Keyword)cGroup.eContents().get(27);
+		private final Keyword cRightCurlyBracketKeyword_28 = (Keyword)cGroup.eContents().get(28);
+		
+		//Rest:
+		//	'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING
+		//	'{'
+		//	'update-header-with' '{'
+		//	headerdata=SelectStatement 'from' headerdatafrom=STRING
+		//	'}'
+		//	'update-body-with' '{'
+		//	postdata=SelectStatement 'from' postdatafrom=STRING
+		//	'}'
+		//	'store-ack-at' '{'
+		//	ackdata=SelectStatement 'into' ackdatato=STRING
+		//	'}'
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING '{'
+		//'update-header-with' '{' headerdata=SelectStatement 'from' headerdatafrom=STRING '}' 'update-body-with' '{'
+		//postdata=SelectStatement 'from' postdatafrom=STRING '}' 'store-ack-at' '{' ackdata=SelectStatement 'into'
+		//ackdatato=STRING '}' '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'rest'
+		public Keyword getRestKeyword_0() { return cRestKeyword_0; }
+		
+		//'as'
+		public Keyword getAsKeyword_1() { return cAsKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'secured-by'
+		public Keyword getSecuredByKeyword_3() { return cSecuredByKeyword_3; }
+		
+		//authtoken=STRING
+		public Assignment getAuthtokenAssignment_4() { return cAuthtokenAssignment_4; }
+		
+		//STRING
+		public RuleCall getAuthtokenSTRINGTerminalRuleCall_4_0() { return cAuthtokenSTRINGTerminalRuleCall_4_0; }
+		
+		//'with-url'
+		public Keyword getWithUrlKeyword_5() { return cWithUrlKeyword_5; }
+		
+		//url=STRING
+		public Assignment getUrlAssignment_6() { return cUrlAssignment_6; }
+		
+		//STRING
+		public RuleCall getUrlSTRINGTerminalRuleCall_6_0() { return cUrlSTRINGTerminalRuleCall_6_0; }
+		
+		//'and-method-as'
+		public Keyword getAndMethodAsKeyword_7() { return cAndMethodAsKeyword_7; }
+		
+		//method=STRING
+		public Assignment getMethodAssignment_8() { return cMethodAssignment_8; }
+		
+		//STRING
+		public RuleCall getMethodSTRINGTerminalRuleCall_8_0() { return cMethodSTRINGTerminalRuleCall_8_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+		
+		//'update-header-with'
+		public Keyword getUpdateHeaderWithKeyword_10() { return cUpdateHeaderWithKeyword_10; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
+		
+		//headerdata=SelectStatement
+		public Assignment getHeaderdataAssignment_12() { return cHeaderdataAssignment_12; }
+		
+		//SelectStatement
+		public RuleCall getHeaderdataSelectStatementParserRuleCall_12_0() { return cHeaderdataSelectStatementParserRuleCall_12_0; }
+		
+		//'from'
+		public Keyword getFromKeyword_13() { return cFromKeyword_13; }
+		
+		//headerdatafrom=STRING
+		public Assignment getHeaderdatafromAssignment_14() { return cHeaderdatafromAssignment_14; }
+		
+		//STRING
+		public RuleCall getHeaderdatafromSTRINGTerminalRuleCall_14_0() { return cHeaderdatafromSTRINGTerminalRuleCall_14_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+		
+		//'update-body-with'
+		public Keyword getUpdateBodyWithKeyword_16() { return cUpdateBodyWithKeyword_16; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_17() { return cLeftCurlyBracketKeyword_17; }
+		
+		//postdata=SelectStatement
+		public Assignment getPostdataAssignment_18() { return cPostdataAssignment_18; }
+		
+		//SelectStatement
+		public RuleCall getPostdataSelectStatementParserRuleCall_18_0() { return cPostdataSelectStatementParserRuleCall_18_0; }
+		
+		//'from'
+		public Keyword getFromKeyword_19() { return cFromKeyword_19; }
+		
+		//postdatafrom=STRING
+		public Assignment getPostdatafromAssignment_20() { return cPostdatafromAssignment_20; }
+		
+		//STRING
+		public RuleCall getPostdatafromSTRINGTerminalRuleCall_20_0() { return cPostdatafromSTRINGTerminalRuleCall_20_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_21() { return cRightCurlyBracketKeyword_21; }
+		
+		//'store-ack-at'
+		public Keyword getStoreAckAtKeyword_22() { return cStoreAckAtKeyword_22; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_23() { return cLeftCurlyBracketKeyword_23; }
+		
+		//ackdata=SelectStatement
+		public Assignment getAckdataAssignment_24() { return cAckdataAssignment_24; }
+		
+		//SelectStatement
+		public RuleCall getAckdataSelectStatementParserRuleCall_24_0() { return cAckdataSelectStatementParserRuleCall_24_0; }
+		
+		//'into'
+		public Keyword getIntoKeyword_25() { return cIntoKeyword_25; }
+		
+		//ackdatato=STRING
+		public Assignment getAckdatatoAssignment_26() { return cAckdatatoAssignment_26; }
+		
+		//STRING
+		public RuleCall getAckdatatoSTRINGTerminalRuleCall_26_0() { return cAckdatatoSTRINGTerminalRuleCall_26_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_27() { return cRightCurlyBracketKeyword_27; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_28() { return cRightCurlyBracketKeyword_28; }
 	}
 	public class TrelloGETElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.TrelloGET");
@@ -1425,6 +1611,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	private final FinallyElements pFinally;
 	private final CatchElements pCatch;
 	private final ActionElements pAction;
+	private final RestElements pRest;
 	private final TrelloGETElements pTrelloGET;
 	private final TrelloPUTElements pTrelloPUT;
 	private final FetchElements pFetch;
@@ -1454,6 +1641,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFinally = new FinallyElements();
 		this.pCatch = new CatchElements();
 		this.pAction = new ActionElements();
+		this.pRest = new RestElements();
 		this.pTrelloGET = new TrelloGETElements();
 		this.pTrelloPUT = new TrelloPUTElements();
 		this.pFetch = new FetchElements();
@@ -1563,13 +1751,35 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	| Callprocess
 	//	| Fetch
 	//	| TrelloPUT
-	//	| TrelloGET;
+	//	| TrelloGET
+	//	| Rest;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+	
+	//Rest:
+	//	'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING
+	//	'{'
+	//	'update-header-with' '{'
+	//	headerdata=SelectStatement 'from' headerdatafrom=STRING
+	//	'}'
+	//	'update-body-with' '{'
+	//	postdata=SelectStatement 'from' postdatafrom=STRING
+	//	'}'
+	//	'store-ack-at' '{'
+	//	ackdata=SelectStatement 'into' ackdatato=STRING
+	//	'}'
+	//	'}';
+	public RestElements getRestAccess() {
+		return pRest;
+	}
+	
+	public ParserRule getRestRule() {
+		return getRestAccess().getRule();
 	}
 	
 	//TrelloGET:

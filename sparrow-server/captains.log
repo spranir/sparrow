@@ -182,3 +182,15 @@ https://groups.google.com/forum/#!topic/scala-ide-user/kqLyBUsuxbw
 
 Fixed the junit issue by following the below thread
 https://stackoverflow.com/questions/31469417/eclipse-throws-java-lang-nullpointerexception-when-running-spring-junit
+
+http://danielkummer.github.io/git-flow-cheatsheet/
+http://nvie.com/posts/a-successful-git-branching-model/
+
+
+Mariadb JSON format
+https://mariadb.com/kb/en/library/connect-json-table-type/
+https://mariadb.com/kb/en/library/json-functions/
+http://serge.frezefond.com/2016/01/mariadb-and-native-json-support/
+
+Flat json produce right out of mariadb
+http://serge.frezefond.com/2015/04/select-from-a-mariadb-table-into-json-format/

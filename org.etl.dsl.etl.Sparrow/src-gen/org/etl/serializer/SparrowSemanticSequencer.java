@@ -22,6 +22,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.Rest;
 import org.etl.sparrow.SlackPUT;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
@@ -69,6 +70,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SparrowPackage.PROCESS:
 				sequence_Process(context, (org.etl.sparrow.Process) semanticObject); 
+				return; 
+			case SparrowPackage.REST:
+				sequence_Rest(context, (Rest) semanticObject); 
 				return; 
 			case SparrowPackage.SLACK_PUT:
 				sequence_SlackPUT(context, (SlackPUT) semanticObject); 
@@ -332,6 +336,63 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getProcessAccess().getTryTryParserRuleCall_3_0(), semanticObject.getTry());
 		feeder.accept(grammarAccess.getProcessAccess().getCatchCatchParserRuleCall_4_0(), semanticObject.getCatch());
 		feeder.accept(grammarAccess.getProcessAccess().getFinallyFinallyParserRuleCall_5_0(), semanticObject.getFinally());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Rest
+	 *     Rest returns Rest
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=STRING 
+	 *         authtoken=STRING 
+	 *         url=STRING 
+	 *         method=STRING 
+	 *         headerdata=SelectStatement 
+	 *         headerdatafrom=STRING 
+	 *         postdata=SelectStatement 
+	 *         postdatafrom=STRING 
+	 *         ackdata=SelectStatement 
+	 *         ackdatato=STRING
+	 *     )
+	 */
+	protected void sequence_Rest(ISerializationContext context, Rest semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__AUTHTOKEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__AUTHTOKEN));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__URL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__URL));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__METHOD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__METHOD));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__HEADERDATA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__HEADERDATA));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__HEADERDATAFROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__HEADERDATAFROM));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__POSTDATA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__POSTDATA));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__POSTDATAFROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__POSTDATAFROM));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__ACKDATA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__ACKDATA));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.REST__ACKDATATO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.REST__ACKDATATO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRestAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRestAccess().getAuthtokenSTRINGTerminalRuleCall_4_0(), semanticObject.getAuthtoken());
+		feeder.accept(grammarAccess.getRestAccess().getUrlSTRINGTerminalRuleCall_6_0(), semanticObject.getUrl());
+		feeder.accept(grammarAccess.getRestAccess().getMethodSTRINGTerminalRuleCall_8_0(), semanticObject.getMethod());
+		feeder.accept(grammarAccess.getRestAccess().getHeaderdataSelectStatementParserRuleCall_12_0(), semanticObject.getHeaderdata());
+		feeder.accept(grammarAccess.getRestAccess().getHeaderdatafromSTRINGTerminalRuleCall_14_0(), semanticObject.getHeaderdatafrom());
+		feeder.accept(grammarAccess.getRestAccess().getPostdataSelectStatementParserRuleCall_18_0(), semanticObject.getPostdata());
+		feeder.accept(grammarAccess.getRestAccess().getPostdatafromSTRINGTerminalRuleCall_20_0(), semanticObject.getPostdatafrom());
+		feeder.accept(grammarAccess.getRestAccess().getAckdataSelectStatementParserRuleCall_24_0(), semanticObject.getAckdata());
+		feeder.accept(grammarAccess.getRestAccess().getAckdatatoSTRINGTerminalRuleCall_26_0(), semanticObject.getAckdatato());
 		feeder.finish();
 	}
 	

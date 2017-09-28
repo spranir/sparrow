@@ -493,6 +493,293 @@ ruleAction returns [EObject current=null]
 			$current = $this_TrelloGET_11.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getRestParserRuleCall_12());
+		}
+		this_Rest_12=ruleRest
+		{
+			$current = $this_Rest_12.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleRest
+entryRuleRest returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRestRule()); }
+	iv_ruleRest=ruleRest
+	{ $current=$iv_ruleRest.current; }
+	EOF;
+
+// Rule Rest
+ruleRest returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='rest'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRestAccess().getRestKeyword_0());
+		}
+		otherlv_1='as'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRestAccess().getAsKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getRestAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRestRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='secured-by'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getRestAccess().getSecuredByKeyword_3());
+		}
+		(
+			(
+				lv_authtoken_4_0=RULE_STRING
+				{
+					newLeafNode(lv_authtoken_4_0, grammarAccess.getRestAccess().getAuthtokenSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRestRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"authtoken",
+						lv_authtoken_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_5='with-url'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getRestAccess().getWithUrlKeyword_5());
+		}
+		(
+			(
+				lv_url_6_0=RULE_STRING
+				{
+					newLeafNode(lv_url_6_0, grammarAccess.getRestAccess().getUrlSTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRestRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"url",
+						lv_url_6_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_7='and-method-as'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getRestAccess().getAndMethodAsKeyword_7());
+		}
+		(
+			(
+				lv_method_8_0=RULE_STRING
+				{
+					newLeafNode(lv_method_8_0, grammarAccess.getRestAccess().getMethodSTRINGTerminalRuleCall_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRestRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"method",
+						lv_method_8_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_9='{'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_9());
+		}
+		otherlv_10='update-header-with'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getRestAccess().getUpdateHeaderWithKeyword_10());
+		}
+		otherlv_11='{'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_11());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRestAccess().getHeaderdataSelectStatementParserRuleCall_12_0());
+				}
+				lv_headerdata_12_0=ruleSelectStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRestRule());
+					}
+					set(
+						$current,
+						"headerdata",
+						lv_headerdata_12_0,
+						"org.etl.Sparrow.SelectStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_13='from'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getRestAccess().getFromKeyword_13());
+		}
+		(
+			(
+				lv_headerdatafrom_14_0=RULE_STRING
+				{
+					newLeafNode(lv_headerdatafrom_14_0, grammarAccess.getRestAccess().getHeaderdatafromSTRINGTerminalRuleCall_14_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRestRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"headerdatafrom",
+						lv_headerdatafrom_14_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_15='}'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getRestAccess().getRightCurlyBracketKeyword_15());
+		}
+		otherlv_16='update-body-with'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getRestAccess().getUpdateBodyWithKeyword_16());
+		}
+		otherlv_17='{'
+		{
+			newLeafNode(otherlv_17, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_17());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRestAccess().getPostdataSelectStatementParserRuleCall_18_0());
+				}
+				lv_postdata_18_0=ruleSelectStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRestRule());
+					}
+					set(
+						$current,
+						"postdata",
+						lv_postdata_18_0,
+						"org.etl.Sparrow.SelectStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_19='from'
+		{
+			newLeafNode(otherlv_19, grammarAccess.getRestAccess().getFromKeyword_19());
+		}
+		(
+			(
+				lv_postdatafrom_20_0=RULE_STRING
+				{
+					newLeafNode(lv_postdatafrom_20_0, grammarAccess.getRestAccess().getPostdatafromSTRINGTerminalRuleCall_20_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRestRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"postdatafrom",
+						lv_postdatafrom_20_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_21='}'
+		{
+			newLeafNode(otherlv_21, grammarAccess.getRestAccess().getRightCurlyBracketKeyword_21());
+		}
+		otherlv_22='store-ack-at'
+		{
+			newLeafNode(otherlv_22, grammarAccess.getRestAccess().getStoreAckAtKeyword_22());
+		}
+		otherlv_23='{'
+		{
+			newLeafNode(otherlv_23, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_23());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRestAccess().getAckdataSelectStatementParserRuleCall_24_0());
+				}
+				lv_ackdata_24_0=ruleSelectStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRestRule());
+					}
+					set(
+						$current,
+						"ackdata",
+						lv_ackdata_24_0,
+						"org.etl.Sparrow.SelectStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_25='into'
+		{
+			newLeafNode(otherlv_25, grammarAccess.getRestAccess().getIntoKeyword_25());
+		}
+		(
+			(
+				lv_ackdatato_26_0=RULE_STRING
+				{
+					newLeafNode(lv_ackdatato_26_0, grammarAccess.getRestAccess().getAckdatatoSTRINGTerminalRuleCall_26_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRestRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"ackdatato",
+						lv_ackdatato_26_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_27='}'
+		{
+			newLeafNode(otherlv_27, grammarAccess.getRestAccess().getRightCurlyBracketKeyword_27());
+		}
+		otherlv_28='}'
+		{
+			newLeafNode(otherlv_28, grammarAccess.getRestAccess().getRightCurlyBracketKeyword_28());
+		}
 	)
 ;
 

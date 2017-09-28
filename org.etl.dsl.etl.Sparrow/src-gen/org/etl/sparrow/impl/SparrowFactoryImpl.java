@@ -19,6 +19,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.Rest;
 import org.etl.sparrow.SlackPUT;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowFactory;
@@ -87,6 +88,7 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.FINALLY: return createFinally();
       case SparrowPackage.CATCH: return createCatch();
       case SparrowPackage.ACTION: return createAction();
+      case SparrowPackage.REST: return createRest();
       case SparrowPackage.TRELLO_GET: return createTrelloGET();
       case SparrowPackage.TRELLO_PUT: return createTrelloPUT();
       case SparrowPackage.FETCH: return createFetch();
@@ -157,6 +159,17 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     ActionImpl action = new ActionImpl();
     return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Rest createRest()
+  {
+    RestImpl rest = new RestImpl();
+    return rest;
   }
 
   /**

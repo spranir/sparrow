@@ -36,6 +36,7 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTryAccess().getGroup(), "rule__Try__Group__0");
 					put(grammarAccess.getFinallyAccess().getGroup(), "rule__Finally__Group__0");
 					put(grammarAccess.getCatchAccess().getGroup(), "rule__Catch__Group__0");
+					put(grammarAccess.getRestAccess().getGroup(), "rule__Rest__Group__0");
 					put(grammarAccess.getTrelloGETAccess().getGroup(), "rule__TrelloGET__Group__0");
 					put(grammarAccess.getTrelloPUTAccess().getGroup(), "rule__TrelloPUT__Group__0");
 					put(grammarAccess.getFetchAccess().getGroup(), "rule__Fetch__Group__0");
@@ -58,6 +59,16 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFinallyAccess().getActionAssignment_3(), "rule__Finally__ActionAssignment_3");
 					put(grammarAccess.getCatchAccess().getNameAssignment_1(), "rule__Catch__NameAssignment_1");
 					put(grammarAccess.getCatchAccess().getActionAssignment_3(), "rule__Catch__ActionAssignment_3");
+					put(grammarAccess.getRestAccess().getNameAssignment_2(), "rule__Rest__NameAssignment_2");
+					put(grammarAccess.getRestAccess().getAuthtokenAssignment_4(), "rule__Rest__AuthtokenAssignment_4");
+					put(grammarAccess.getRestAccess().getUrlAssignment_6(), "rule__Rest__UrlAssignment_6");
+					put(grammarAccess.getRestAccess().getMethodAssignment_8(), "rule__Rest__MethodAssignment_8");
+					put(grammarAccess.getRestAccess().getHeaderdataAssignment_12(), "rule__Rest__HeaderdataAssignment_12");
+					put(grammarAccess.getRestAccess().getHeaderdatafromAssignment_14(), "rule__Rest__HeaderdatafromAssignment_14");
+					put(grammarAccess.getRestAccess().getPostdataAssignment_18(), "rule__Rest__PostdataAssignment_18");
+					put(grammarAccess.getRestAccess().getPostdatafromAssignment_20(), "rule__Rest__PostdatafromAssignment_20");
+					put(grammarAccess.getRestAccess().getAckdataAssignment_24(), "rule__Rest__AckdataAssignment_24");
+					put(grammarAccess.getRestAccess().getAckdatatoAssignment_26(), "rule__Rest__AckdatatoAssignment_26");
 					put(grammarAccess.getTrelloGETAccess().getNameAssignment_2(), "rule__TrelloGET__NameAssignment_2");
 					put(grammarAccess.getTrelloGETAccess().getAuthtokenAssignment_4(), "rule__TrelloGET__AuthtokenAssignment_4");
 					put(grammarAccess.getTrelloGETAccess().getKeyAssignment_6(), "rule__TrelloGET__KeyAssignment_6");

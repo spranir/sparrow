@@ -18,6 +18,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.Rest;
 import org.etl.sparrow.SlackPUT;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowFactory;
@@ -71,6 +72,13 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * @generated
    */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass restEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -377,6 +385,106 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getAction_Name()
   {
     return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRest()
+  {
+    return restEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Authtoken()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Url()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Method()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Headerdata()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Headerdatafrom()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Postdata()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Postdatafrom()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Ackdata()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Ackdatato()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -1090,6 +1198,17 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
 
+    restEClass = createEClass(REST);
+    createEAttribute(restEClass, REST__AUTHTOKEN);
+    createEAttribute(restEClass, REST__URL);
+    createEAttribute(restEClass, REST__METHOD);
+    createEAttribute(restEClass, REST__HEADERDATA);
+    createEAttribute(restEClass, REST__HEADERDATAFROM);
+    createEAttribute(restEClass, REST__POSTDATA);
+    createEAttribute(restEClass, REST__POSTDATAFROM);
+    createEAttribute(restEClass, REST__ACKDATA);
+    createEAttribute(restEClass, REST__ACKDATATO);
+
     trelloGETEClass = createEClass(TRELLO_GET);
     createEAttribute(trelloGETEClass, TRELLO_GET__AUTHTOKEN);
     createEAttribute(trelloGETEClass, TRELLO_GET__KEY);
@@ -1198,6 +1317,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    restEClass.getESuperTypes().add(this.getAction());
     trelloGETEClass.getESuperTypes().add(this.getAction());
     trelloPUTEClass.getESuperTypes().add(this.getAction());
     fetchEClass.getESuperTypes().add(this.getAction());
@@ -1232,6 +1352,17 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(restEClass, Rest.class, "Rest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRest_Authtoken(), ecorePackage.getEString(), "authtoken", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Url(), ecorePackage.getEString(), "url", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Method(), ecorePackage.getEString(), "method", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Headerdata(), ecorePackage.getEString(), "headerdata", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Headerdatafrom(), ecorePackage.getEString(), "headerdatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Postdata(), ecorePackage.getEString(), "postdata", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Postdatafrom(), ecorePackage.getEString(), "postdatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Ackdata(), ecorePackage.getEString(), "ackdata", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Ackdatato(), ecorePackage.getEString(), "ackdatato", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(trelloGETEClass, TrelloGET.class, "TrelloGET", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTrelloGET_Authtoken(), ecorePackage.getEString(), "authtoken", null, 0, 1, TrelloGET.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

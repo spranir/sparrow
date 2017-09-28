@@ -46,7 +46,23 @@ Action:
 	|Fetch
 	|TrelloPUT
 	|TrelloGET
+	|Rest
 	)
+;
+
+Rest:
+	'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING
+	'{'
+		'update-header-with' '{'
+				headerdata=SelectStatement 'from' headerdatafrom=STRING
+			'}'
+		'update-body-with' '{'
+				postdata=SelectStatement 'from' postdatafrom=STRING
+		'}'
+		'store-ack-at' '{'
+				ackdata=SelectStatement 'into' ackdatato=STRING
+		'}'
+	'}'
 ;
 
 TrelloGET:

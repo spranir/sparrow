@@ -16,6 +16,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.Rest;
 import org.etl.sparrow.SlackPUT;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
@@ -121,6 +122,14 @@ public class SparrowSwitch<T> extends Switch<T>
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.REST:
+      {
+        Rest rest = (Rest)theEObject;
+        T result = caseRest(rest);
+        if (result == null) result = caseAction(rest);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -300,6 +309,22 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rest</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rest</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRest(Rest object)
   {
     return null;
   }

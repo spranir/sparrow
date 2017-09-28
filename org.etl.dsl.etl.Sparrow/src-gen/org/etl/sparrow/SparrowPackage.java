@@ -252,6 +252,115 @@ public interface SparrowPackage extends EPackage
   int ACTION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.RestImpl <em>Rest</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.RestImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getRest()
+   * @generated
+   */
+  int REST = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Authtoken</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__AUTHTOKEN = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__URL = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Method</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__METHOD = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Headerdata</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__HEADERDATA = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Headerdatafrom</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__HEADERDATAFROM = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Postdata</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__POSTDATA = ACTION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Postdatafrom</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__POSTDATAFROM = ACTION_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Ackdata</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__ACKDATA = ACTION_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Ackdatato</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__ACKDATATO = ACTION_FEATURE_COUNT + 8;
+
+  /**
+   * The number of structural features of the '<em>Rest</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 9;
+
+  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.TrelloGETImpl <em>Trello GET</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -259,7 +368,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloGET()
    * @generated
    */
-  int TRELLO_GET = 5;
+  int TRELLO_GET = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,7 +459,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloPUT()
    * @generated
    */
-  int TRELLO_PUT = 6;
+  int TRELLO_PUT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -441,7 +550,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
    * @generated
    */
-  int FETCH = 7;
+  int FETCH = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -496,7 +605,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 8;
+  int CALLPROCESS = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -569,7 +678,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 9;
+  int UPDATEDAUDIT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -615,7 +724,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
    * @generated
    */
-  int SMS = 10;
+  int SMS = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -670,7 +779,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlackPUT()
    * @generated
    */
-  int SLACK_PUT = 11;
+  int SLACK_PUT = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -734,7 +843,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
    * @generated
    */
-  int GOOGLECAL_PUT = 12;
+  int GOOGLECAL_PUT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -816,7 +925,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 13;
+  int COPYDATA = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -880,7 +989,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 14;
+  int WRITE_CSV = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -953,7 +1062,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 15;
+  int LOAD_CSV = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1026,7 +1135,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 16;
+  int TRANSFORM = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1244,6 +1353,115 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getAction_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Rest <em>Rest</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rest</em>'.
+   * @see org.etl.sparrow.Rest
+   * @generated
+   */
+  EClass getRest();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getAuthtoken <em>Authtoken</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Authtoken</em>'.
+   * @see org.etl.sparrow.Rest#getAuthtoken()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Authtoken();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see org.etl.sparrow.Rest#getUrl()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Url();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getMethod <em>Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Method</em>'.
+   * @see org.etl.sparrow.Rest#getMethod()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Method();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getHeaderdata <em>Headerdata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Headerdata</em>'.
+   * @see org.etl.sparrow.Rest#getHeaderdata()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Headerdata();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getHeaderdatafrom <em>Headerdatafrom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Headerdatafrom</em>'.
+   * @see org.etl.sparrow.Rest#getHeaderdatafrom()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Headerdatafrom();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getPostdata <em>Postdata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Postdata</em>'.
+   * @see org.etl.sparrow.Rest#getPostdata()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Postdata();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getPostdatafrom <em>Postdatafrom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Postdatafrom</em>'.
+   * @see org.etl.sparrow.Rest#getPostdatafrom()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Postdatafrom();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getAckdata <em>Ackdata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ackdata</em>'.
+   * @see org.etl.sparrow.Rest#getAckdata()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Ackdata();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getAckdatato <em>Ackdatato</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ackdatato</em>'.
+   * @see org.etl.sparrow.Rest#getAckdatato()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Ackdatato();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.TrelloGET <em>Trello GET</em>}'.
@@ -2119,6 +2337,88 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.RestImpl <em>Rest</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.RestImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getRest()
+     * @generated
+     */
+    EClass REST = eINSTANCE.getRest();
+
+    /**
+     * The meta object literal for the '<em><b>Authtoken</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__AUTHTOKEN = eINSTANCE.getRest_Authtoken();
+
+    /**
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__URL = eINSTANCE.getRest_Url();
+
+    /**
+     * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__METHOD = eINSTANCE.getRest_Method();
+
+    /**
+     * The meta object literal for the '<em><b>Headerdata</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__HEADERDATA = eINSTANCE.getRest_Headerdata();
+
+    /**
+     * The meta object literal for the '<em><b>Headerdatafrom</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__HEADERDATAFROM = eINSTANCE.getRest_Headerdatafrom();
+
+    /**
+     * The meta object literal for the '<em><b>Postdata</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__POSTDATA = eINSTANCE.getRest_Postdata();
+
+    /**
+     * The meta object literal for the '<em><b>Postdatafrom</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__POSTDATAFROM = eINSTANCE.getRest_Postdatafrom();
+
+    /**
+     * The meta object literal for the '<em><b>Ackdata</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__ACKDATA = eINSTANCE.getRest_Ackdata();
+
+    /**
+     * The meta object literal for the '<em><b>Ackdatato</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__ACKDATATO = eINSTANCE.getRest_Ackdatato();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.TrelloGETImpl <em>Trello GET</em>}' class.

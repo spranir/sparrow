@@ -69,6 +69,15 @@ public interface SparrowFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>Rest</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rest</em>'.
+   * @generated
+   */
+  Rest createRest();
+
+  /**
    * Returns a new object of class '<em>Trello GET</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

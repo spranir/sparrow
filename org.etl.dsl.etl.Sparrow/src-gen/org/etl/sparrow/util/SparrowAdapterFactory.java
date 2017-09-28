@@ -18,6 +18,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.LoadCsv;
+import org.etl.sparrow.Rest;
 import org.etl.sparrow.SlackPUT;
 import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
@@ -115,6 +116,11 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAction(Action object)
       {
         return createActionAdapter();
+      }
+      @Override
+      public Adapter caseRest(Rest object)
+      {
+        return createRestAdapter();
       }
       @Override
       public Adapter caseTrelloGET(TrelloGET object)
@@ -269,6 +275,21 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Rest <em>Rest</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Rest
+   * @generated
+   */
+  public Adapter createRestAdapter()
   {
     return null;
   }
