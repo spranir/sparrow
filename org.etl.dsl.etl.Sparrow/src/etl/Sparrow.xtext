@@ -47,22 +47,37 @@ Action:
 	|TrelloPUT
 	|TrelloGET
 	|Rest
+	|Doozle
 	)
 ;
+
+Doozle:
+	'doozle' 'as' name=STRING 'in-table' target=STRING 'on' on=STRING 'using'
+	'{'
+		value=CreateStatement
+	'}'
+;
+
+
 
 Rest:
 	'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING
 	'{'
-		'update-header-with' '{'
-				headerdata=SelectStatement 'from' headerdatafrom=STRING
+		'from' headerdatafrom=STRING 'update-header-with' '{'
+				headerdata=SelectStatement  
 			'}'
-		'update-body-with' '{'
-				postdata=SelectStatement 'from' postdatafrom=STRING
+		'from' postdatafrom=STRING 'update-body-with' '{'
+				'parent' 'as' parentName=STRING parentdata=SelectStatement 
+				parts+=(RestPart)*
 		'}'
-		'store-ack-at' '{'
-				ackdata=SelectStatement 'into' ackdatato=STRING
+		'into' ackdatato=STRING 'store-ack-at' '{'
+				ackdata=SelectStatement 
 		'}'
 	'}'
+;
+
+RestPart:
+	'part' 'as' partName=STRING 'with' partData=SelectStatement
 ;
 
 TrelloGET:
@@ -160,3 +175,8 @@ SelectStatement:
 NonSelectStatement:
 	STRING
 ;
+
+CreateStatement:
+	STRING
+;
+

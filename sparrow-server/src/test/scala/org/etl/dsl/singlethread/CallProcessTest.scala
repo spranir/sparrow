@@ -10,7 +10,7 @@ class CallProcessTest {
   @Test def runProcess()={
     
     val instanceName = "test.callprocess.process#1" 
-    val runtimeContext = ProcessAST.loadProcessAST(instanceName)
+    val runtimeContext = ProcessAST.loadProcessAST(instanceName,"{}")
     try {
       
       val runtime = ProcessExecutor.execute("org.etl.process.onethread", runtimeContext)
