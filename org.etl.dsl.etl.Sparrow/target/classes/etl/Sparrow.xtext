@@ -48,7 +48,12 @@ Action:
 	|TrelloGET
 	|Rest
 	|Doozle
+	|Dropfile
 	)
+;
+
+Dropfile:
+	'dropfile' 'as' name=STRING 'in-path' target=STRING
 ;
 
 Doozle:

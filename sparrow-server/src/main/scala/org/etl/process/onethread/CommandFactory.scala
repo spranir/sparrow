@@ -12,6 +12,9 @@ object CommandFactory {
       case "transform" => new TransformAction
       case "assign" => new FetchVariableAction
       case "callprocess" => new CallProcessAction
+      case "doozle"=>new DoozleAction
+      case "rest"=>new RestAction
+      
     }
   }
 }

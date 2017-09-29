@@ -1,3 +1,5 @@
+From 29 th onwards I am going to call the framework as doozle instead of sparrow
+
 Status of setting up the machine
 1. Fixed the sudo apt-get update had issue - throwing core dump
 	https://askubuntu.com/questions/943463/library-corruption-error-during-apt-get-update
@@ -172,7 +174,11 @@ Issue List
 15. Push execute mode the REST path	
 16. Dont start the process if there is existing process that did not complete correctly
 17. Need to add the root instance id to the audit trail
-
+18. Try being empty cannot be forgiven
+19. Catch and Finally being empty should be forgiven
+20. Conn close has not been done in a lot of actions
+21. Authenticationt to make a rest call to doozle framework is not yet done
+22. Need to add drop file support
 
 	
 
@@ -238,7 +244,8 @@ https://mariadb.com/kb/en/library/creating-and-dropping-connect-tables/
 
 https://www.slideshare.net/KangarootLinux/maria-db-sergefrezefondconnectstorageenginepdf
 
-
+Invalid path
+https://stackoverflow.com/questions/9834776/java-nio-file-path-issue
 
 
 CREATE TABLE `config_audit` (

@@ -21,7 +21,7 @@ class TransformAction extends org.etl.command.Action with LazyLogging {
       val sqlWithoutQuotes = iter.next.replaceAll("\"", "")
       val sqlList = sqlWithoutQuotes.split(";")
       sqlList.foreach { sql =>
-        if (!sql.isEmpty()) {
+        if (!sql.trim.isEmpty()) {
           logger.info("Executing script ="+sql.trim)
           stmt.execute(sql.trim)
         }

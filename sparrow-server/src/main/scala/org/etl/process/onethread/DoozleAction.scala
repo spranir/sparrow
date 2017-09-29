@@ -20,15 +20,16 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
    val dbSrc= doozle.getOn
    val table = doozle.getTarget
    val name = doozle.getName
-   val ddlSql = doozle.getValue
+   val ddlSql = doozle.getValue.replaceAll("\"", "")
    
    val incomingJson = context.getValue("myjson")
    val storagePath = context.getValue("json.storagepath")
    storeJson(incomingJson, storagePath, table)
    
-   
+   logger.info("Sql="+ ddlSql)
    val conn = ResourceAccess.rdbmsConn(dbSrc)
    val stmt = conn.createStatement
+   
    stmt.execute(ddlSql)
    
    context
@@ -39,7 +40,7 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
  }
 
   def storeJson(incomingJson: String, storagePath: String, name: String) = {
-   val finalPath = storagePath +"/"+name
+   val finalPath = storagePath +"/"+name+".json"
    Files.write(Paths.get(finalPath), incomingJson.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE)
  }
 }

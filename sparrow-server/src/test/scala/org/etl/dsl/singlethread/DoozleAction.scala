@@ -13,7 +13,9 @@ class DoozleTest {
   @Test def runProcess()={
     
     val instanceName = "test.doozle.process#1"
-    val json = new String(Files.readAllBytes(Paths.get(this.getClass.getResource("sample.json").getPath)), UTF_8)
+    val filePath = this.getClass.getResource("sample.json").getPath.toString
+    val osAppropriatePath = if (System.getProperty( "os.name" ).contains( "indow" ))  filePath.substring(1) else filePath
+    val json = new String(Files.readAllBytes(Paths.get(osAppropriatePath)), UTF_8)
     val runtimeContext = ProcessAST.loadProcessAST(instanceName,json)
     try {
       
