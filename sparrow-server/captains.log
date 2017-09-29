@@ -194,3 +194,132 @@ http://serge.frezefond.com/2016/01/mariadb-and-native-json-support/
 
 Flat json produce right out of mariadb
 http://serge.frezefond.com/2015/04/select-from-a-mariadb-table-into-json-format/
+
+http://www.wagonhq.com/sql-tutorial/values-from-nested-json
+
+
+Installing the connect engine
+https://mariadb.com/kb/en/library/loading-the-connect-storage-engine/
+https://mariadb.com/kb/en/library/loading-the-connect-storage-engine/
+
+INSTALL SONAME 'ha_connect.dll';
+
+Finding the version of mariadb
+SHOW STORAGE ENGINES;
+SELECT VERSION();
+
+
+Connect file path
+https://mariadb.com/kb/en/library/connect-table-types-data-files/
+
+
+Changing the data directory
+https://stackoverflow.com/questions/1795176/how-to-change-mysql-data-directory
+
+jdbc table type
+https://mariadb.com/kb/en/library/connect-jdbc-table-type-accessing-tables-from-another-dbms/
+
+
+The trick is to move the json file into the folder in which the mariadb schema is present
+
+DROP TABLE 1234_COLLECTION_DATA;
+
+CREATE TABLE 1234_COLLECTION_DATA(
+Label char(128) field_format='fields:[X]:fieldLabel',
+Value char(128) field_format='fields:[X]:fieldValue'
+)engine=CONNECT table_type=JSON File_name='Inbound-Spoors-Collection-form.json';
+
+SELECT COUNT(*) FROM 1234_COLLECTION_DATA;
+SELECT Label, Value from 1234_COLLECTION_DATA;
+
+
+
+https://mariadb.com/kb/en/library/creating-and-dropping-connect-tables/
+
+https://www.slideshare.net/KangarootLinux/maria-db-sergefrezefondconnectstorageenginepdf
+
+
+
+
+CREATE TABLE `config_audit` (
+	`config_type` VARCHAR(50) NULL DEFAULT NULL,
+	`variable` VARCHAR(150) NULL DEFAULT NULL,
+	`value` VARCHAR(500) NULL DEFAULT NULL,
+	`process` VARCHAR(500) NULL DEFAULT NULL,
+	`instance` VARCHAR(500) NULL DEFAULT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
+CREATE TABLE `spw_common_config` (
+	`variable` VARCHAR(150) NULL DEFAULT NULL,
+	`value` VARCHAR(500) NULL DEFAULT NULL,
+	`active` ENUM('Y','N') NULL DEFAULT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+CREATE TABLE `spw_instance_config` (
+	`instance` VARCHAR(150) NULL DEFAULT NULL,
+	`process` VARCHAR(150) NULL DEFAULT NULL,
+	`variable` VARCHAR(150) NULL DEFAULT NULL,
+	`value` VARCHAR(500) NULL DEFAULT NULL,
+	`active` ENUM('Y','N') NULL DEFAULT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
+CREATE TABLE `spw_process_config` (
+	`process` VARCHAR(150) NULL DEFAULT NULL,
+	`variable` VARCHAR(150) NULL DEFAULT NULL,
+	`value` VARCHAR(500) NULL DEFAULT NULL,
+	`active` ENUM('Y','N') NULL DEFAULT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
+CREATE TABLE `spw_resource_config` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`config_type` VARCHAR(50) NULL DEFAULT NULL,
+	`config_name` VARCHAR(50) NULL DEFAULT NULL,
+	`auth_info` VARCHAR(1000) NULL DEFAULT NULL,
+	`resource_url` VARCHAR(1000) NULL DEFAULT NULL,
+	`active` ENUM('Y','N') NULL DEFAULT NULL,
+	`created_date` TIMESTAMP NULL DEFAULT '',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=3
+;
+
+REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (1, '1', 'oltp/chimera-lms', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/chimera_lms?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 17:22:05');
+REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (2, '1', 'audit/chimera-audit', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/spw_audit?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 18:42:29');
+
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'google-cal-auth-file', 'auth/Dhuruva-BMS-516dab070732.p12', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'google-svs-user-email-id', '59413973790-compute@developer.gserviceaccount.com', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'google-id', 'fa750e3a810282157696228d85ef83aca58d6340', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'filepath', 'publish.demandforecast.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.callprocess.process', 'filepath', 'test.callprocess.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.dooxle.process', 'filepath', 'test.doozle.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.rest.process', 'filepath', 'test.rest.process.spq', 'Y');
+
+
+REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process#1', 'publish.demandforecast.process', 'lms', 'oltp/chimera_lms', 'Y');
+REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.callprocess.process#1', 'test.callprocess.process', 'lms', 'oltp/chimera_lms', 'Y');
+REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.rest.process#1', 'test.rest.process', 'lms', 'oltp/chimera-lms', 'Y');
+REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.doozle.process#1', 'test.doozle.process', 'lms', 'oltp/chimera_lms', 'Y');
+
+
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('basepath', 'root', 'Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('runmode', 'single', 'Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('audit', 'audit/chimera-audit', 'Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', 'C:/Program Files/MariaDB 10.2/data/chimera_lms', 'Y');
+
