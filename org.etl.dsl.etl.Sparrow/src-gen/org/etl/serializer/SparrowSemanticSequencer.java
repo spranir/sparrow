@@ -19,6 +19,7 @@ import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
+import org.etl.sparrow.Dropfile;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -60,6 +61,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SparrowPackage.DOOZLE:
 				sequence_Doozle(context, (Doozle) semanticObject); 
+				return; 
+			case SparrowPackage.DROPFILE:
+				sequence_Dropfile(context, (Dropfile) semanticObject); 
 				return; 
 			case SparrowPackage.FETCH:
 				sequence_Fetch(context, (Fetch) semanticObject); 
@@ -219,6 +223,28 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getDoozleAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getDoozleAccess().getOnSTRINGTerminalRuleCall_6_0(), semanticObject.getOn());
 		feeder.accept(grammarAccess.getDoozleAccess().getValueCreateStatementParserRuleCall_9_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Dropfile
+	 *     Dropfile returns Dropfile
+	 *
+	 * Constraint:
+	 *     (name=STRING target=STRING)
+	 */
+	protected void sequence_Dropfile(ISerializationContext context, Dropfile semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.DROPFILE__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.DROPFILE__TARGET));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDropfileAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDropfileAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
 		feeder.finish();
 	}
 	

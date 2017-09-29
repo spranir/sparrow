@@ -248,6 +248,8 @@ Invalid path
 https://stackoverflow.com/questions/9834776/java-nio-file-path-issue
 
 
+https://jsonformatter.org
+
 CREATE TABLE `config_audit` (
 	`config_type` VARCHAR(50) NULL DEFAULT NULL,
 	`variable` VARCHAR(150) NULL DEFAULT NULL,
@@ -330,3 +332,12 @@ REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('runmod
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('audit', 'audit/chimera-audit', 'Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', 'C:/Program Files/MariaDB 10.2/data/chimera_lms', 'Y');
 
+
+
+Rest client pending work
+Authentication
+-There is standard basic authentication
+-And there is mifos properietary authentication
+
+I will first implement the mifos way completely and then shall await spoor's support
+I also understand the future challenges will be authentication more than anything else

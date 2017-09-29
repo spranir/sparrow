@@ -225,6 +225,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTrelloGETParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
 		private final RuleCall cRestParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		private final RuleCall cDoozleParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
+		private final RuleCall cDropfileParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		
 		//Action:
 		//	Copydata
@@ -240,11 +241,12 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//	| TrelloPUT
 		//	| TrelloGET
 		//	| Rest
-		//	| Doozle;
+		//	| Doozle
+		//	| Dropfile;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Copydata | LoadCsv | WriteCsv | Transform | GooglecalPUT | SlackPUT | Sms | Updatedaudit | Callprocess | Fetch |
-		//TrelloPUT | TrelloGET | Rest | Doozle
+		//TrelloPUT | TrelloGET | Rest | Doozle | Dropfile
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Copydata
@@ -288,6 +290,48 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Doozle
 		public RuleCall getDoozleParserRuleCall_13() { return cDoozleParserRuleCall_13; }
+		
+		//Dropfile
+		public RuleCall getDropfileParserRuleCall_14() { return cDropfileParserRuleCall_14; }
+	}
+	public class DropfileElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Dropfile");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDropfileKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cInPathKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTargetSTRINGTerminalRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
+		
+		//Dropfile:
+		//	'dropfile' 'as' name=STRING 'in-path' target=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'dropfile' 'as' name=STRING 'in-path' target=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'dropfile'
+		public Keyword getDropfileKeyword_0() { return cDropfileKeyword_0; }
+		
+		//'as'
+		public Keyword getAsKeyword_1() { return cAsKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'in-path'
+		public Keyword getInPathKeyword_3() { return cInPathKeyword_3; }
+		
+		//target=STRING
+		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
+		
+		//STRING
+		public RuleCall getTargetSTRINGTerminalRuleCall_4_0() { return cTargetSTRINGTerminalRuleCall_4_0; }
 	}
 	public class DoozleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Doozle");
@@ -1765,6 +1809,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	private final FinallyElements pFinally;
 	private final CatchElements pCatch;
 	private final ActionElements pAction;
+	private final DropfileElements pDropfile;
 	private final DoozleElements pDoozle;
 	private final RestElements pRest;
 	private final RestPartElements pRestPart;
@@ -1798,6 +1843,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFinally = new FinallyElements();
 		this.pCatch = new CatchElements();
 		this.pAction = new ActionElements();
+		this.pDropfile = new DropfileElements();
 		this.pDoozle = new DoozleElements();
 		this.pRest = new RestElements();
 		this.pRestPart = new RestPartElements();
@@ -1913,13 +1959,24 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	| TrelloPUT
 	//	| TrelloGET
 	//	| Rest
-	//	| Doozle;
+	//	| Doozle
+	//	| Dropfile;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+	
+	//Dropfile:
+	//	'dropfile' 'as' name=STRING 'in-path' target=STRING;
+	public DropfileElements getDropfileAccess() {
+		return pDropfile;
+	}
+	
+	public ParserRule getDropfileRule() {
+		return getDropfileAccess().getRule();
 	}
 	
 	//Doozle:

@@ -69,6 +69,15 @@ public interface SparrowFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>Dropfile</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dropfile</em>'.
+   * @generated
+   */
+  Dropfile createDropfile();
+
+  /**
    * Returns a new object of class '<em>Doozle</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

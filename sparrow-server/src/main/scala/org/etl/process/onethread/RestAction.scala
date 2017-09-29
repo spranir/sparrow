@@ -90,7 +90,7 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       jsonPayload.put(name, partArray)
     }
     val jsonObject = jsonPayload.toString
-    val restClient = new ChimeraRestClient(url, authResource, authResource, authResource)
+    val restClient = new ChimeraRestClient(url,authResource)
     restClient.createAuthToken
     val output = restClient.post(url, jsonObject)
 

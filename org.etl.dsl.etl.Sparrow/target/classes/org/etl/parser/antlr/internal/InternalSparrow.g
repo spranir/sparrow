@@ -511,6 +511,82 @@ ruleAction returns [EObject current=null]
 			$current = $this_Doozle_13.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getDropfileParserRuleCall_14());
+		}
+		this_Dropfile_14=ruleDropfile
+		{
+			$current = $this_Dropfile_14.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleDropfile
+entryRuleDropfile returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDropfileRule()); }
+	iv_ruleDropfile=ruleDropfile
+	{ $current=$iv_ruleDropfile.current; }
+	EOF;
+
+// Rule Dropfile
+ruleDropfile returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='dropfile'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDropfileAccess().getDropfileKeyword_0());
+		}
+		otherlv_1='as'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getDropfileAccess().getAsKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getDropfileAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDropfileRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='in-path'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getDropfileAccess().getInPathKeyword_3());
+		}
+		(
+			(
+				lv_target_4_0=RULE_STRING
+				{
+					newLeafNode(lv_target_4_0, grammarAccess.getDropfileAccess().getTargetSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDropfileRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"target",
+						lv_target_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 

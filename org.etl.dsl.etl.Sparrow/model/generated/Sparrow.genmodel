@@ -27,6 +27,9 @@
     <genClasses ecoreClass="Sparrow.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
     </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Dropfile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Dropfile/target"/>
+    </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Doozle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Doozle/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Doozle/on"/>

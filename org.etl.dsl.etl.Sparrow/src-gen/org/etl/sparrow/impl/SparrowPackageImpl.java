@@ -15,6 +15,7 @@ import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
+import org.etl.sparrow.Dropfile;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -74,6 +75,13 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * @generated
    */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dropfileEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -401,6 +409,26 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getAction_Name()
   {
     return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDropfile()
+  {
+    return dropfileEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDropfile_Target()
+  {
+    return (EAttribute)dropfileEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1304,6 +1332,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
 
+    dropfileEClass = createEClass(DROPFILE);
+    createEAttribute(dropfileEClass, DROPFILE__TARGET);
+
     doozleEClass = createEClass(DOOZLE);
     createEAttribute(doozleEClass, DOOZLE__TARGET);
     createEAttribute(doozleEClass, DOOZLE__ON);
@@ -1434,6 +1465,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    dropfileEClass.getESuperTypes().add(this.getAction());
     doozleEClass.getESuperTypes().add(this.getAction());
     restEClass.getESuperTypes().add(this.getAction());
     trelloGETEClass.getESuperTypes().add(this.getAction());
@@ -1470,6 +1502,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dropfileEClass, Dropfile.class, "Dropfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDropfile_Target(), ecorePackage.getEString(), "target", null, 0, 1, Dropfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(doozleEClass, Doozle.class, "Doozle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDoozle_Target(), ecorePackage.getEString(), "target", null, 0, 1, Doozle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

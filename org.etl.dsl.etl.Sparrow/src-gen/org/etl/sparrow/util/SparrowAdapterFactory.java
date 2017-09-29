@@ -15,6 +15,7 @@ import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
+import org.etl.sparrow.Dropfile;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -118,6 +119,11 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAction(Action object)
       {
         return createActionAdapter();
+      }
+      @Override
+      public Adapter caseDropfile(Dropfile object)
+      {
+        return createDropfileAdapter();
       }
       @Override
       public Adapter caseDoozle(Doozle object)
@@ -287,6 +293,21 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Dropfile <em>Dropfile</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Dropfile
+   * @generated
+   */
+  public Adapter createDropfileAdapter()
   {
     return null;
   }

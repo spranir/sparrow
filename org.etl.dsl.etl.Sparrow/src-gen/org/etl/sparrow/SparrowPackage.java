@@ -252,6 +252,43 @@ public interface SparrowPackage extends EPackage
   int ACTION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.DropfileImpl <em>Dropfile</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.DropfileImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getDropfile()
+   * @generated
+   */
+  int DROPFILE = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROPFILE__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROPFILE__TARGET = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Dropfile</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROPFILE_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.DoozleImpl <em>Doozle</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -259,7 +296,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDoozle()
    * @generated
    */
-  int DOOZLE = 5;
+  int DOOZLE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -314,7 +351,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRest()
    * @generated
    */
-  int REST = 6;
+  int REST = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -441,7 +478,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRestPart()
    * @generated
    */
-  int REST_PART = 7;
+  int REST_PART = 8;
 
   /**
    * The feature id for the '<em><b>Part Name</b></em>' attribute.
@@ -478,7 +515,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloGET()
    * @generated
    */
-  int TRELLO_GET = 8;
+  int TRELLO_GET = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -569,7 +606,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloPUT()
    * @generated
    */
-  int TRELLO_PUT = 9;
+  int TRELLO_PUT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -660,7 +697,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
    * @generated
    */
-  int FETCH = 10;
+  int FETCH = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -715,7 +752,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 11;
+  int CALLPROCESS = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -788,7 +825,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 12;
+  int UPDATEDAUDIT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -834,7 +871,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
    * @generated
    */
-  int SMS = 13;
+  int SMS = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -889,7 +926,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlackPUT()
    * @generated
    */
-  int SLACK_PUT = 14;
+  int SLACK_PUT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -953,7 +990,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
    * @generated
    */
-  int GOOGLECAL_PUT = 15;
+  int GOOGLECAL_PUT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1035,7 +1072,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 16;
+  int COPYDATA = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1099,7 +1136,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 17;
+  int WRITE_CSV = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1172,7 +1209,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 18;
+  int LOAD_CSV = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1245,7 +1282,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 19;
+  int TRANSFORM = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1463,6 +1500,27 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getAction_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Dropfile <em>Dropfile</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dropfile</em>'.
+   * @see org.etl.sparrow.Dropfile
+   * @generated
+   */
+  EClass getDropfile();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Dropfile#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target</em>'.
+   * @see org.etl.sparrow.Dropfile#getTarget()
+   * @see #getDropfile()
+   * @generated
+   */
+  EAttribute getDropfile_Target();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Doozle <em>Doozle</em>}'.
@@ -2544,6 +2602,24 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.DropfileImpl <em>Dropfile</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.DropfileImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getDropfile()
+     * @generated
+     */
+    EClass DROPFILE = eINSTANCE.getDropfile();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DROPFILE__TARGET = eINSTANCE.getDropfile_Target();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.DoozleImpl <em>Doozle</em>}' class.

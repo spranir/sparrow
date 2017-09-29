@@ -36,6 +36,7 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTryAccess().getGroup(), "rule__Try__Group__0");
 					put(grammarAccess.getFinallyAccess().getGroup(), "rule__Finally__Group__0");
 					put(grammarAccess.getCatchAccess().getGroup(), "rule__Catch__Group__0");
+					put(grammarAccess.getDropfileAccess().getGroup(), "rule__Dropfile__Group__0");
 					put(grammarAccess.getDoozleAccess().getGroup(), "rule__Doozle__Group__0");
 					put(grammarAccess.getRestAccess().getGroup(), "rule__Rest__Group__0");
 					put(grammarAccess.getRestPartAccess().getGroup(), "rule__RestPart__Group__0");
@@ -61,6 +62,8 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFinallyAccess().getActionAssignment_3(), "rule__Finally__ActionAssignment_3");
 					put(grammarAccess.getCatchAccess().getNameAssignment_1(), "rule__Catch__NameAssignment_1");
 					put(grammarAccess.getCatchAccess().getActionAssignment_3(), "rule__Catch__ActionAssignment_3");
+					put(grammarAccess.getDropfileAccess().getNameAssignment_2(), "rule__Dropfile__NameAssignment_2");
+					put(grammarAccess.getDropfileAccess().getTargetAssignment_4(), "rule__Dropfile__TargetAssignment_4");
 					put(grammarAccess.getDoozleAccess().getNameAssignment_2(), "rule__Doozle__NameAssignment_2");
 					put(grammarAccess.getDoozleAccess().getTargetAssignment_4(), "rule__Doozle__TargetAssignment_4");
 					put(grammarAccess.getDoozleAccess().getOnAssignment_6(), "rule__Doozle__OnAssignment_6");
