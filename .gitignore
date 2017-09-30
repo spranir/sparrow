@@ -15,3 +15,4 @@ hs_err_pid*
 .settings/
 sparrow-server/.cache-tests
 sparrow-server/.settings/org.scala-ide.sdt.core.prefs
+sparrow-server/.cache-main
