@@ -341,3 +341,80 @@ Authentication
 
 I will first implement the mifos way completely and then shall await spoor's support
 I also understand the future challenges will be authentication more than anything else
+
+
+
+Google calendar investigation work
+This is the second file in the series to track all the code changes that we do to this system
+
+Calender function
+	- Decided to go with Goolgle calender api for now as I do not see a proper support for calendar api support in Zoho
+	- Need to define the interfaces in such a way so that I can plugin in Zoho api eventually
+
+
+Google calender api urls
+	- https://developers.google.com/api-client-library/java/apis/calendar/v3
+	- https://developers.google.com/api-client-library/java/google-api-java-client/dev-guide
+	- https://github.com/google/google-api-java-client-samples
+
+
+Google calendar service accout needed for server to server oauth integration
+	- https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#using
+	- https://developers.google.com/identity/protocols/OAuth2ServiceAccount - this might be required when we onboard to Linode
+
+
+Google service account api
+	- https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples/blob/master/storage-serviceaccount-cmdline-sample/src/main/java/StorageServiceAccountSample.java
+	- https://developers.google.com/identity/protocols/googlescopes#calendarv3	
+
+References
+	- https://github.com/google/google-api-java-client-samples/blob/master/oauth2-cmdline-sample/src/main/java/com/google/api/services/samples/oauth2/cmdline/OAuth2Sample.java
+	- Getting starterd guide
+		https://developers.google.com/api-client-library/java/google-api-java-client/dev-guide
+	- Git hub code base
+		https://github.com/google/google-api-java-client-samples
+	- Calendar api REST API reference
+		https://developers.google.com/apis-explorer/#p/calendar/v3/
+	- Authoring calendar requests
+		https://developers.google.com/google-apps/calendar/auth
+	- Service account refernece
+		https://developers.google.com/identity/protocols/OAuth2ServiceAccount
+		https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes
+	- iOs reference
+		https://stackoverflow.com/questions/34573041/access-google-calendar-in-ios-using-service-account
+	- Java api - Oauth 2
+		https://developers.google.com/api-client-library/java/google-api-java-client/oauth2
+	- Permissions and privileges
+		https://developers.google.com/identity/protocols/googlescopes#calendarv3
+	- erlang - adding private key from json as pem
+		https://github.com/potatosalad/erlang-jose/issues/13
+	- diamto
+		http://www.daimto.com/google-service-accounts-with-json-file/
+	- reading from a string and creating a private key
+		http://www.javased.com/index.php?api=java.security.PrivateKey
+	- Impersonating gmail account
+		https://stackoverflow.com/questions/39510138/google-oauth2-impersonate-service-account-with-usergmail-com/39534420#39534420
+
+	- inserting-google-calendar-entries-with-service-account(this basically addressed the issue)
+		https://stackoverflow.com/questions/26064095/inserting-google-calendar-entries-with-service-account
+
+Code snippet required for service account authentication
+
+	Stub that could be important
+	 // authorization
+	      GoogleCredential credential = new GoogleCredential.Builder().setTransport(httpTransport).
+	          setJsonFactory(JSON_FACTORY).
+	          setServiceAccountId(SERVICE_ACCOUNT_EMAIL).
+	          setServiceAccountPrivateKeyId("fa750e3a810282157696228d85ef83aca58d6340").
+	          setServiceAccountPrivateKeyFromP12File(new File("C:\\Users\\Sandeep\\Downloads\\Dhuruva-BMS-fa750e3a8102.p12")).
+	          setServiceAccountScopes(Collections.singleton(CALENDAR_SCOPE)).   
+	          setServiceAccountUser("lasalle.su@gmail.com").
+	          build();
+
+
+Having issues setting up the sample
+	C:\Users\Sandeep\Desktop\gradle\wrapper\gradle-wrapper.properties to gradle-2.2-all.zip		
+
+
+ Chimera calendar id - 
+ 0n0ki3ca5mgecad17drako13fs@group.calendar.google.com

@@ -49,7 +49,15 @@ Action:
 	|Rest
 	|Doozle
 	|Dropfile
+	|FBCLead
 	)
+;
+
+FBCLead:
+	'fblc' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING 'from-source' source=STRING 'using'
+	'{'
+		value=STRING
+	'}' 'on-condition' condition=STRING
 ;
 
 Dropfile:
