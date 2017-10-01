@@ -73,7 +73,7 @@ class UniThreadProcessRuntime(name:String, id:Int) extends ProcessRuntime with L
     val processId:String = errorContext.getValue("process-id")
     val contextLog:String = errorContext.completeStackTrace
     val status:Int = if(contextLog.isEmpty) 1 else -1
-    AuditService.updateProcessAudit(Integer.parseInt(processId), status, contextLog)
+    AuditService.updateProcessAudit(Integer.parseInt(processId), status, contextLog, name)
     finallyContext
   }
 

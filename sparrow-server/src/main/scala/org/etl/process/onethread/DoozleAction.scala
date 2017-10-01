@@ -21,6 +21,9 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
    val table = doozle.getTarget
    val name = doozle.getName
    val ddlSql = doozle.getValue.replaceAll("\"", "")
+   val id=context.getValue("process-id")
+   
+   logger.info("Doozle id#{}, name#{}, table#{}, db=#{}",id, name, table, dbSrc)
    
    val incomingJson = context.getValue("myjson")
    val storagePath = context.getValue("json.storagepath")
@@ -31,7 +34,7 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
    val stmt = conn.createStatement
    
    stmt.execute(ddlSql)
-   
+   logger.info("Completed doozle id#{}, name#{}, table#{}, db=#{}",id, name, table, dbSrc)
    context
  }
  

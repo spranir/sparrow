@@ -6,8 +6,9 @@ import org.eclipse.emf.common.util.BasicEList
 import org.etl.util.ParameterisationEngine
 import org.etl.sparrow.RestPart
 import org.eclipse.emf.ecore.util.EObjectContainmentEList
+import com.typesafe.scalalogging.LazyLogging
 
-object CommandProxy {
+object CommandProxy extends LazyLogging{
   //val eList = classOf[EList[String]].getName
   def createProxy[I](proxee: I, interfaceClass: Class[I], context: Context): I = {
 
@@ -20,12 +21,14 @@ object CommandProxy {
           case "org.eclipse.emf.common.util.EList" => {
             method.getName match {
               case "getParts" => {
+                logger.info("Invoking method in  action #{}",method.getName)
                 method.invoke(proxee, args: _*)
                   .asInstanceOf[EObjectContainmentEList[RestPart]]
               }
               case _ => {
                 val interim = method.invoke(proxee, args: _*)
                   .asInstanceOf[EDataTypeEList[String]]
+                logger.info("Invoking method in  action #{}",method.getName)
                 val output = new BasicEList[String]
                 val iter = interim.iterator
                 while (iter.hasNext) {

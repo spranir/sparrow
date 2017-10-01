@@ -23,10 +23,14 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
     val callProcessAsIs: org.etl.sparrow.Callprocess = action.asInstanceOf[org.etl.sparrow.Callprocess]
     val callProcess: org.etl.sparrow.Callprocess = CommandProxy.createProxy(callProcessAsIs, classOf[org.etl.sparrow.Callprocess], context)
 
+    val name = callProcess.getName
     val fileRelativePath: String = callProcess.getSource
     val processName: String = callProcess.getTarget
     val dbSrc = callProcess.getDatasource
     val sql = callProcess.getValue.replaceAll("\"", "")
+    val id=context.getValue("process-id")
+    
+    logger.info("Callprocess id#{}, name#{}, calledprocess#{}, calledfile#{}, db=#{}",id, name, processName, fileRelativePath, dbSrc)
     
     val conn = ResourceAccess.rdbmsConn(dbSrc)
     val stmt = conn.createStatement
@@ -59,6 +63,7 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
         handleFinally()
       }
     }
+    logger.info("Completed callprocess name#{}, calledprocess#{}, calledfile#{}, db=#{}",name, processName, fileRelativePath, dbSrc)
     context
   }
 

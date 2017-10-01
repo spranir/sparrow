@@ -1,0 +1,16 @@
+process "test.doozle.process"
+{
+	try{
+		doozle as "doozle-collection" in-table "${process-id}_collection" on "oltp/chimera-lms" using
+		{
+			"CREATE TABLE ${process-id}_COLLECTION_DATA(
+			Label char(128) field_format='fields:[X]:fieldLabel',
+			Value char(128) field_format='fields:[X]:fieldValue'
+			)engine=CONNECT table_type=JSON File_name='${process-id}_collection.json';
+			"
+		}
+	}
+	catch{}
+	finally{}
+	
+}

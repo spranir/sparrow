@@ -4,26 +4,29 @@ import org.etl.config.ConfigurationService
 import java.sql.DriverManager
 import java.sql.Statement
 import org.etl.util.ResourceAccess
+import com.typesafe.scalalogging.LazyLogging
 
-object AuditService {
+object AuditService extends LazyLogging{
 
   val auditService = ConfigurationService.getGlobalconfig().getOrElse("audit", "audit/spw-audit")
   
   def insertInstanceAudit(instanceName: String, runMode: String, machine: String, file: String): Integer = {
 
     val conn = ResourceAccess.rdbmsConn(auditService)
-    
+    logger.info("Obtained Connection for handle ={} for inserting the audit for process {}", auditService, instanceName)
     val st = conn.prepareStatement("INSERT INTO instance_audit (instance_name, mode, start, hostname, file, status) VALUES (?, ?, NOW(), ?, ?, 1);", Statement.RETURN_GENERATED_KEYS)
     try {
       st.setString(1, instanceName)
       st.setString(2, runMode)
       st.setString(3, machine)
       st.setString(4, file)
+      
       val rowsUpdated = st.executeUpdate()
       
       val rs = st.getGeneratedKeys
       rs.next
       val pk = rs.getInt(1)
+      logger.info("Retrieved process id post process start as {} for process {} with file {}", pk, instanceName, file)
       rs.close()
       pk
     } catch {
@@ -36,9 +39,9 @@ object AuditService {
     }
   }
 
-  def updateProcessAudit(processId: Integer, status: Int, contextLog: String): Unit = {
+  def updateProcessAudit(processId: Integer, status: Int, contextLog: String, instanceName:String): Unit = {
     val conn = ResourceAccess.rdbmsConn(auditService)
-    
+    logger.info("Obtained Connection for handle #{} for updating the audit for processid #{} for process #{} ", auditService, processId, instanceName)
     val st = conn.prepareStatement("update instance_audit set end=now(), status=?, context_log=? where instance_id=?")
     try {
       st.setInt(1, status)
@@ -48,16 +51,20 @@ object AuditService {
       
     } catch {
       case t: Throwable =>
-        t.printStackTrace()
+        logger.error("Error performing updating the proces audit with process id ={}, for process#{}",processId,instanceName)
+        logger.error("Error stack trace#",t)
+        
     } finally {
       st.close();
       conn.close()
+      logger.info("Completed update for processid #{} for process #{} ", processId, instanceName)
     }
   }
 
   def insertCommandAudit(instanceId: Int, actionName: String, processName: String): Integer = {
     val conn = ResourceAccess.rdbmsConn(auditService)
     val st = conn.prepareStatement("INSERT INTO command_audit (instance_id, start, action_name, process_name, status) VALUES (?, NOW(), ?, ?, '1')", Statement.RETURN_GENERATED_KEYS)
+    logger.info("Insert for command #{} for process #{} for processid#{}", actionName, processName,instanceId)
     try {
       st.setInt(1, instanceId)
       st.setString(2, actionName)
@@ -68,19 +75,23 @@ object AuditService {
       rs.next
       val pk = rs.getInt(1)
       rs.close()
+      logger.info("Completed Insert for command #{} for process #{} for processid#{} with id#{}", actionName, processName,instanceId,pk)
       pk
     } catch {
       case t: Throwable =>
-        t.printStackTrace()
+        logger.error("Error performing updating the proces audit with process id ={}, for process#{}, for action#{}",instanceId,processName, actionName)
+        logger.error("Error stack trace#",t)
         0
     } finally {
       st.close();
       conn.close()
+      
     }
   }
 
   def updateCommandAudit(actionId: Integer, status: Integer): Unit = {
     val conn = ResourceAccess.rdbmsConn(auditService)
+    logger.info("Obtained Connection for actionid #{} with status #{} ", actionId, status)
     val st = conn.prepareStatement("update command_audit set end=now(), status=?  where command_id=?")
     try {
       st.setInt(1, status)

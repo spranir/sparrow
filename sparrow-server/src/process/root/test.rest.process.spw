@@ -1,0 +1,45 @@
+process "test.rest.process"
+{
+	try{
+		transform as "create-test-tables" on "oltp/chimera-lms" using
+		{
+			"DROP TABLE IF EXISTS ack_data;
+			CREATE TABLE ack_data (
+			processid INT(11) NULL DEFAULT NULL,
+			json_response VARCHAR(500) NULL DEFAULT NULL
+			)COLLATE='utf8_general_ci' ENGINE=InnoDB;
+			
+			DROP TABLE IF EXISTS client_data;
+			CREATE TABLE client_data (
+			clientid INT(11) NULL DEFAULT NULL,
+			attendanceid INT(11) NULL DEFAULT NULL,
+			loanid INT(11) NULL DEFAULT NULL,
+			amount INT(11) NULL DEFAULT NULL,
+			processid INT(11) NULL DEFAULT NULL
+			) COLLATE='utf8_general_ci' ENGINE=InnoDB;
+			
+			INSERT INTO client_data (clientid, attendanceid, loanid, amount, processid) VALUES (2634, 1, 2510, 335, ${process-id});
+			"			
+		}
+			
+		rest as "lms-client" secured-by "Mifos:duruva@@639001:chimeraauth:default" with-url "https://lab.lasalle.in" and-method-as "POST" {
+			from "oltp/chimera-lms" update-header-with {
+				"SELECT key_, value from header_data;" 
+			}
+			from "oltp/chimera-lms" update-body-with {
+				parent as "collectionSheet" with "SELECT 'dd MMMM yyyy' as dateFormat, 'en' as locale, 157 as calendarId, '25 December 2016' as transactionDate, '11 December 2016' as actualDisbursementDate;"
+				part as "clientsAttendance" with "SELECT clientid as clientId, attendanceid as attendanceType from client_data where processid=${process-id};"
+				part as "bulkRepaymentTransactions" with "SELECT loanid as loanId, amount as transactionAmount from client_data where processid=${process-id};"						 			 
+				
+			}
+			into "oltp/chimera-lms" store-ack-at {
+				"insert into ack_data values (${process_id}, '${ack_response}');"
+			}		
+		}
+	}
+	catch{}
+	finally{}
+	
+	
+	
+}
