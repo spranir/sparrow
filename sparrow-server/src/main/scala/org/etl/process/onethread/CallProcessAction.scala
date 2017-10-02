@@ -38,7 +38,7 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
 
     while (rs.next()) {
 
-      for (i <- 1 until columnCount) {
+      for (i <- 1 until columnCount+1) {
         val key = rs.getMetaData.getColumnLabel(i)
         val value = rs.getString(i)
         context.addValue(key, value)

@@ -69,7 +69,7 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     val jsonPayload = new JSONObject
 
     val parentColumnCount = bodyResultset.getMetaData.getColumnCount
-    for (i <- 1 until parentColumnCount) {
+    for (i <- 1 until parentColumnCount+1) {
       val key = bodyResultset.getMetaData.getColumnLabel(i)
       val value = bodyResultset.getString(i)
       jsonPayload.put(key, value)
