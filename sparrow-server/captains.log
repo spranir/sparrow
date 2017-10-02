@@ -250,6 +250,22 @@ https://stackoverflow.com/questions/9834776/java-nio-file-path-issue
 
 https://jsonformatter.org
 
+CREATE DATABASE chimera_lms;
+
+CREATE TABLE `header_data` (
+    `key_` VARCHAR(50) NULL DEFAULT NULL,
+    `value` VARCHAR(50) NULL DEFAULT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+INSERT INTO `header_data` (`key_`, `value`) VALUES ('host', 'lab.lasalle.in');
+
+INSERT INTO `header_data` (`key_`, `value`) VALUES ('Accept', 'application/json, text/plain, */*');
+
+INSERT INTO `header_data` (`key_`, `value`) VALUES ('Fineract-Platform-TenantId', 'default');
+
 CREATE TABLE `config_audit` (
 	`config_type` VARCHAR(50) NULL DEFAULT NULL,
 	`variable` VARCHAR(150) NULL DEFAULT NULL,
