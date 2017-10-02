@@ -25,7 +25,6 @@ import org.etl.sparrow.SparrowPackage;
  *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getUseraccount <em>Useraccount</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,26 +130,6 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONDITION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -293,29 +272,6 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCondition()
-  {
-    return condition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCondition(String newCondition)
-  {
-    String oldCondition = condition;
-    condition = newCondition;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__CONDITION, oldCondition, condition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -331,8 +287,6 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
         return getSource();
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         return getValue();
-      case SparrowPackage.GOOGLECAL_PUT__CONDITION:
-        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -361,9 +315,6 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
         return;
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         setValue((String)newValue);
-        return;
-      case SparrowPackage.GOOGLECAL_PUT__CONDITION:
-        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -394,9 +345,6 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
-      case SparrowPackage.GOOGLECAL_PUT__CONDITION:
-        setCondition(CONDITION_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -421,8 +369,6 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
         return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case SparrowPackage.GOOGLECAL_PUT__CONDITION:
-        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -448,8 +394,6 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
     result.append(source);
     result.append(", value: ");
     result.append(value);
-    result.append(", condition: ");
-    result.append(condition);
     result.append(')');
     return result.toString();
   }

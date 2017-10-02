@@ -16,6 +16,8 @@ import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
+import org.etl.sparrow.Expression;
+import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -121,6 +123,11 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
         return createActionAdapter();
       }
       @Override
+      public Adapter caseFBCLead(FBCLead object)
+      {
+        return createFBCLeadAdapter();
+      }
+      @Override
       public Adapter caseDropfile(Dropfile object)
       {
         return createDropfileAdapter();
@@ -199,6 +206,11 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTransform(Transform object)
       {
         return createTransformAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -293,6 +305,21 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.FBCLead <em>FBC Lead</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.FBCLead
+   * @generated
+   */
+  public Adapter createFBCLeadAdapter()
   {
     return null;
   }
@@ -533,6 +560,21 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTransformAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
   {
     return null;
   }

@@ -32,10 +32,12 @@ public class SparrowParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getActionAccess().getAlternatives(), "rule__Action__Alternatives");
+					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 					put(grammarAccess.getProcessAccess().getGroup(), "rule__Process__Group__0");
 					put(grammarAccess.getTryAccess().getGroup(), "rule__Try__Group__0");
 					put(grammarAccess.getFinallyAccess().getGroup(), "rule__Finally__Group__0");
 					put(grammarAccess.getCatchAccess().getGroup(), "rule__Catch__Group__0");
+					put(grammarAccess.getFBCLeadAccess().getGroup(), "rule__FBCLead__Group__0");
 					put(grammarAccess.getDropfileAccess().getGroup(), "rule__Dropfile__Group__0");
 					put(grammarAccess.getDoozleAccess().getGroup(), "rule__Doozle__Group__0");
 					put(grammarAccess.getRestAccess().getGroup(), "rule__Rest__Group__0");
@@ -52,6 +54,7 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getWriteCsvAccess().getGroup(), "rule__WriteCsv__Group__0");
 					put(grammarAccess.getLoadCsvAccess().getGroup(), "rule__LoadCsv__Group__0");
 					put(grammarAccess.getTransformAccess().getGroup(), "rule__Transform__Group__0");
+					put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
 					put(grammarAccess.getProcessAccess().getNameAssignment_1(), "rule__Process__NameAssignment_1");
 					put(grammarAccess.getProcessAccess().getTryAssignment_3(), "rule__Process__TryAssignment_3");
 					put(grammarAccess.getProcessAccess().getCatchAssignment_4(), "rule__Process__CatchAssignment_4");
@@ -62,12 +65,21 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFinallyAccess().getActionAssignment_3(), "rule__Finally__ActionAssignment_3");
 					put(grammarAccess.getCatchAccess().getNameAssignment_1(), "rule__Catch__NameAssignment_1");
 					put(grammarAccess.getCatchAccess().getActionAssignment_3(), "rule__Catch__ActionAssignment_3");
+					put(grammarAccess.getFBCLeadAccess().getNameAssignment_2(), "rule__FBCLead__NameAssignment_2");
+					put(grammarAccess.getFBCLeadAccess().getAuthstoreAssignment_4(), "rule__FBCLead__AuthstoreAssignment_4");
+					put(grammarAccess.getFBCLeadAccess().getKeyAssignment_6(), "rule__FBCLead__KeyAssignment_6");
+					put(grammarAccess.getFBCLeadAccess().getUseraccountAssignment_8(), "rule__FBCLead__UseraccountAssignment_8");
+					put(grammarAccess.getFBCLeadAccess().getSourceAssignment_10(), "rule__FBCLead__SourceAssignment_10");
+					put(grammarAccess.getFBCLeadAccess().getValueAssignment_13(), "rule__FBCLead__ValueAssignment_13");
+					put(grammarAccess.getFBCLeadAccess().getConditionAssignment_16(), "rule__FBCLead__ConditionAssignment_16");
 					put(grammarAccess.getDropfileAccess().getNameAssignment_2(), "rule__Dropfile__NameAssignment_2");
 					put(grammarAccess.getDropfileAccess().getTargetAssignment_4(), "rule__Dropfile__TargetAssignment_4");
+					put(grammarAccess.getDropfileAccess().getConditionAssignment_6(), "rule__Dropfile__ConditionAssignment_6");
 					put(grammarAccess.getDoozleAccess().getNameAssignment_2(), "rule__Doozle__NameAssignment_2");
 					put(grammarAccess.getDoozleAccess().getTargetAssignment_4(), "rule__Doozle__TargetAssignment_4");
 					put(grammarAccess.getDoozleAccess().getOnAssignment_6(), "rule__Doozle__OnAssignment_6");
 					put(grammarAccess.getDoozleAccess().getValueAssignment_9(), "rule__Doozle__ValueAssignment_9");
+					put(grammarAccess.getDoozleAccess().getConditionAssignment_12(), "rule__Doozle__ConditionAssignment_12");
 					put(grammarAccess.getRestAccess().getNameAssignment_2(), "rule__Rest__NameAssignment_2");
 					put(grammarAccess.getRestAccess().getAuthtokenAssignment_4(), "rule__Rest__AuthtokenAssignment_4");
 					put(grammarAccess.getRestAccess().getUrlAssignment_6(), "rule__Rest__UrlAssignment_6");
@@ -80,6 +92,7 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRestAccess().getPartsAssignment_24(), "rule__Rest__PartsAssignment_24");
 					put(grammarAccess.getRestAccess().getAckdatatoAssignment_27(), "rule__Rest__AckdatatoAssignment_27");
 					put(grammarAccess.getRestAccess().getAckdataAssignment_30(), "rule__Rest__AckdataAssignment_30");
+					put(grammarAccess.getRestAccess().getConditionAssignment_34(), "rule__Rest__ConditionAssignment_34");
 					put(grammarAccess.getRestPartAccess().getPartNameAssignment_2(), "rule__RestPart__PartNameAssignment_2");
 					put(grammarAccess.getRestPartAccess().getPartDataAssignment_4(), "rule__RestPart__PartDataAssignment_4");
 					put(grammarAccess.getTrelloGETAccess().getNameAssignment_2(), "rule__TrelloGET__NameAssignment_2");
@@ -111,6 +124,7 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUpdatedauditAccess().getNameAssignment_2(), "rule__Updatedaudit__NameAssignment_2");
 					put(grammarAccess.getUpdatedauditAccess().getLogsinkAssignment_4(), "rule__Updatedaudit__LogsinkAssignment_4");
 					put(grammarAccess.getUpdatedauditAccess().getValueAssignment_7(), "rule__Updatedaudit__ValueAssignment_7");
+					put(grammarAccess.getUpdatedauditAccess().getConditionAssignment_10(), "rule__Updatedaudit__ConditionAssignment_10");
 					put(grammarAccess.getSmsAccess().getNameAssignment_2(), "rule__Sms__NameAssignment_2");
 					put(grammarAccess.getSmsAccess().getTargetAssignment_4(), "rule__Sms__TargetAssignment_4");
 					put(grammarAccess.getSmsAccess().getValueAssignment_7(), "rule__Sms__ValueAssignment_7");
@@ -148,6 +162,9 @@ public class SparrowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTransformAccess().getOnAssignment_4(), "rule__Transform__OnAssignment_4");
 					put(grammarAccess.getTransformAccess().getValueAssignment_7(), "rule__Transform__ValueAssignment_7");
 					put(grammarAccess.getTransformAccess().getConditionAssignment_10(), "rule__Transform__ConditionAssignment_10");
+					put(grammarAccess.getExpressionAccess().getLhsAssignment_1(), "rule__Expression__LhsAssignment_1");
+					put(grammarAccess.getExpressionAccess().getOperatorAssignment_2(), "rule__Expression__OperatorAssignment_2");
+					put(grammarAccess.getExpressionAccess().getRhsAssignment_3(), "rule__Expression__RhsAssignment_3");
 				}
 			};
 		}

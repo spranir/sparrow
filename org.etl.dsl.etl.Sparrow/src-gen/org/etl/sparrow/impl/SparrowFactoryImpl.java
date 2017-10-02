@@ -17,6 +17,8 @@ import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
+import org.etl.sparrow.Expression;
+import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -91,6 +93,7 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.FINALLY: return createFinally();
       case SparrowPackage.CATCH: return createCatch();
       case SparrowPackage.ACTION: return createAction();
+      case SparrowPackage.FBC_LEAD: return createFBCLead();
       case SparrowPackage.DROPFILE: return createDropfile();
       case SparrowPackage.DOOZLE: return createDoozle();
       case SparrowPackage.REST: return createRest();
@@ -107,6 +110,7 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.WRITE_CSV: return createWriteCsv();
       case SparrowPackage.LOAD_CSV: return createLoadCsv();
       case SparrowPackage.TRANSFORM: return createTransform();
+      case SparrowPackage.EXPRESSION: return createExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -165,6 +169,17 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     ActionImpl action = new ActionImpl();
     return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FBCLead createFBCLead()
+  {
+    FBCLeadImpl fbcLead = new FBCLeadImpl();
+    return fbcLead;
   }
 
   /**
@@ -341,6 +356,17 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     TransformImpl transform = new TransformImpl();
     return transform;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**

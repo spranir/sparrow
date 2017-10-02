@@ -26,6 +26,14 @@
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Action/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//FBCLead">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/authstore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/useraccount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Dropfile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Dropfile/target"/>
@@ -59,7 +67,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloGET/board"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloGET/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloGET/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloGET/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//TrelloPUT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloPUT/authtoken"/>
@@ -68,19 +75,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloPUT/list"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloPUT/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloPUT/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//TrelloPUT/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Fetch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Fetch/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Callprocess">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/datasource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Callprocess/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Updatedaudit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/logsink"/>
@@ -89,13 +93,11 @@
     <genClasses ecoreClass="Sparrow.ecore#//Sms">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//SlackPUT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SlackPUT/team"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SlackPUT/channel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SlackPUT/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SlackPUT/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//GooglecalPUT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/authstore"/>
@@ -103,32 +105,32 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/useraccount"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Copydata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//WriteCsv">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/delim"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//WriteCsv/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//LoadCsv">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/delim"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//LoadCsv/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Transform">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/on"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Transform/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Expression/lhs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Expression/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Expression/rhs"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -26,7 +26,6 @@ import org.etl.sparrow.TrelloPUT;
  *   <li>{@link org.etl.sparrow.impl.TrelloPUTImpl#getList <em>List</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.TrelloPUTImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.TrelloPUTImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.TrelloPUTImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -152,26 +151,6 @@ public class TrelloPUTImpl extends ActionImpl implements TrelloPUT
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONDITION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -337,29 +316,6 @@ public class TrelloPUTImpl extends ActionImpl implements TrelloPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCondition()
-  {
-    return condition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCondition(String newCondition)
-  {
-    String oldCondition = condition;
-    condition = newCondition;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRELLO_PUT__CONDITION, oldCondition, condition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -377,8 +333,6 @@ public class TrelloPUTImpl extends ActionImpl implements TrelloPUT
         return getSource();
       case SparrowPackage.TRELLO_PUT__VALUE:
         return getValue();
-      case SparrowPackage.TRELLO_PUT__CONDITION:
-        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -410,9 +364,6 @@ public class TrelloPUTImpl extends ActionImpl implements TrelloPUT
         return;
       case SparrowPackage.TRELLO_PUT__VALUE:
         setValue((String)newValue);
-        return;
-      case SparrowPackage.TRELLO_PUT__CONDITION:
-        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -446,9 +397,6 @@ public class TrelloPUTImpl extends ActionImpl implements TrelloPUT
       case SparrowPackage.TRELLO_PUT__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
-      case SparrowPackage.TRELLO_PUT__CONDITION:
-        setCondition(CONDITION_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -475,8 +423,6 @@ public class TrelloPUTImpl extends ActionImpl implements TrelloPUT
         return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
       case SparrowPackage.TRELLO_PUT__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case SparrowPackage.TRELLO_PUT__CONDITION:
-        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -504,8 +450,6 @@ public class TrelloPUTImpl extends ActionImpl implements TrelloPUT
     result.append(source);
     result.append(", value: ");
     result.append(value);
-    result.append(", condition: ");
-    result.append(condition);
     result.append(')');
     return result.toString();
   }

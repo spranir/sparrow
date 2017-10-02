@@ -69,6 +69,15 @@ public interface SparrowFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>FBC Lead</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>FBC Lead</em>'.
+   * @generated
+   */
+  FBCLead createFBCLead();
+
+  /**
    * Returns a new object of class '<em>Dropfile</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -211,6 +220,15 @@ public interface SparrowFactory extends EFactory
    * @generated
    */
   Transform createTransform();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
 
   /**
    * Returns the package supported by this factory.

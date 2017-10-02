@@ -16,7 +16,6 @@ package org.etl.sparrow;
  *   <li>{@link org.etl.sparrow.SlackPUT#getTeam <em>Team</em>}</li>
  *   <li>{@link org.etl.sparrow.SlackPUT#getChannel <em>Channel</em>}</li>
  *   <li>{@link org.etl.sparrow.SlackPUT#getValue <em>Value</em>}</li>
- *   <li>{@link org.etl.sparrow.SlackPUT#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see org.etl.sparrow.SparrowPackage#getSlackPUT()
@@ -102,31 +101,5 @@ public interface SlackPUT extends Action
    * @generated
    */
   void setValue(String value);
-
-  /**
-   * Returns the value of the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Condition</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Condition</em>' attribute.
-   * @see #setCondition(String)
-   * @see org.etl.sparrow.SparrowPackage#getSlackPUT_Condition()
-   * @model
-   * @generated
-   */
-  String getCondition();
-
-  /**
-   * Sets the value of the '{@link org.etl.sparrow.SlackPUT#getCondition <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Condition</em>' attribute.
-   * @see #getCondition()
-   * @generated
-   */
-  void setCondition(String value);
 
 } // SlackPUT

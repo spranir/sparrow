@@ -24,7 +24,6 @@ import org.etl.sparrow.WriteCsv;
  *   <li>{@link org.etl.sparrow.impl.WriteCsvImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.WriteCsvImpl#getDelim <em>Delim</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.WriteCsvImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.WriteCsvImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,26 +109,6 @@ public class WriteCsvImpl extends ActionImpl implements WriteCsv
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONDITION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -249,29 +228,6 @@ public class WriteCsvImpl extends ActionImpl implements WriteCsv
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCondition()
-  {
-    return condition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCondition(String newCondition)
-  {
-    String oldCondition = condition;
-    condition = newCondition;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.WRITE_CSV__CONDITION, oldCondition, condition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -285,8 +241,6 @@ public class WriteCsvImpl extends ActionImpl implements WriteCsv
         return getDelim();
       case SparrowPackage.WRITE_CSV__VALUE:
         return getValue();
-      case SparrowPackage.WRITE_CSV__CONDITION:
-        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -312,9 +266,6 @@ public class WriteCsvImpl extends ActionImpl implements WriteCsv
         return;
       case SparrowPackage.WRITE_CSV__VALUE:
         setValue((String)newValue);
-        return;
-      case SparrowPackage.WRITE_CSV__CONDITION:
-        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -342,9 +293,6 @@ public class WriteCsvImpl extends ActionImpl implements WriteCsv
       case SparrowPackage.WRITE_CSV__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
-      case SparrowPackage.WRITE_CSV__CONDITION:
-        setCondition(CONDITION_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -367,8 +315,6 @@ public class WriteCsvImpl extends ActionImpl implements WriteCsv
         return DELIM_EDEFAULT == null ? delim != null : !DELIM_EDEFAULT.equals(delim);
       case SparrowPackage.WRITE_CSV__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case SparrowPackage.WRITE_CSV__CONDITION:
-        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -392,8 +338,6 @@ public class WriteCsvImpl extends ActionImpl implements WriteCsv
     result.append(delim);
     result.append(", value: ");
     result.append(value);
-    result.append(", condition: ");
-    result.append(condition);
     result.append(')');
     return result.toString();
   }

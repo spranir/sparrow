@@ -9,48 +9,47 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.SparrowPackage;
-import org.etl.sparrow.TrelloGET;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Trello GET</b></em>'.
+ * An implementation of the model object '<em><b>FBC Lead</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.impl.TrelloGETImpl#getAuthtoken <em>Authtoken</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.TrelloGETImpl#getKey <em>Key</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.TrelloGETImpl#getUseraccount <em>Useraccount</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.TrelloGETImpl#getBoard <em>Board</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.TrelloGETImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.TrelloGETImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.FBCLeadImpl#getAuthstore <em>Authstore</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.FBCLeadImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.FBCLeadImpl#getUseraccount <em>Useraccount</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.FBCLeadImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.FBCLeadImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TrelloGETImpl extends ActionImpl implements TrelloGET
+public class FBCLeadImpl extends ActionImpl implements FBCLead
 {
   /**
-   * The default value of the '{@link #getAuthtoken() <em>Authtoken</em>}' attribute.
+   * The default value of the '{@link #getAuthstore() <em>Authstore</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAuthtoken()
+   * @see #getAuthstore()
    * @generated
    * @ordered
    */
-  protected static final String AUTHTOKEN_EDEFAULT = null;
+  protected static final String AUTHSTORE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAuthtoken() <em>Authtoken</em>}' attribute.
+   * The cached value of the '{@link #getAuthstore() <em>Authstore</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAuthtoken()
+   * @see #getAuthstore()
    * @generated
    * @ordered
    */
-  protected String authtoken = AUTHTOKEN_EDEFAULT;
+  protected String authstore = AUTHSTORE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
@@ -93,44 +92,24 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
   protected String useraccount = USERACCOUNT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getBoard() <em>Board</em>}' attribute.
+   * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBoard()
+   * @see #getSource()
    * @generated
    * @ordered
    */
-  protected static final String BOARD_EDEFAULT = null;
+  protected static final String SOURCE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getBoard() <em>Board</em>}' attribute.
+   * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBoard()
+   * @see #getSource()
    * @generated
    * @ordered
    */
-  protected String board = BOARD_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
-  protected static final String TARGET_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
-  protected String target = TARGET_EDEFAULT;
+  protected String source = SOURCE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -157,7 +136,7 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TrelloGETImpl()
+  protected FBCLeadImpl()
   {
     super();
   }
@@ -170,7 +149,7 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
   @Override
   protected EClass eStaticClass()
   {
-    return SparrowPackage.Literals.TRELLO_GET;
+    return SparrowPackage.Literals.FBC_LEAD;
   }
 
   /**
@@ -178,9 +157,9 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAuthtoken()
+  public String getAuthstore()
   {
-    return authtoken;
+    return authstore;
   }
 
   /**
@@ -188,12 +167,12 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAuthtoken(String newAuthtoken)
+  public void setAuthstore(String newAuthstore)
   {
-    String oldAuthtoken = authtoken;
-    authtoken = newAuthtoken;
+    String oldAuthstore = authstore;
+    authstore = newAuthstore;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRELLO_GET__AUTHTOKEN, oldAuthtoken, authtoken));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.FBC_LEAD__AUTHSTORE, oldAuthstore, authstore));
   }
 
   /**
@@ -216,7 +195,7 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
     String oldKey = key;
     key = newKey;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRELLO_GET__KEY, oldKey, key));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.FBC_LEAD__KEY, oldKey, key));
   }
 
   /**
@@ -239,7 +218,7 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
     String oldUseraccount = useraccount;
     useraccount = newUseraccount;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRELLO_GET__USERACCOUNT, oldUseraccount, useraccount));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.FBC_LEAD__USERACCOUNT, oldUseraccount, useraccount));
   }
 
   /**
@@ -247,9 +226,9 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getBoard()
+  public String getSource()
   {
-    return board;
+    return source;
   }
 
   /**
@@ -257,35 +236,12 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBoard(String newBoard)
+  public void setSource(String newSource)
   {
-    String oldBoard = board;
-    board = newBoard;
+    String oldSource = source;
+    source = newSource;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRELLO_GET__BOARD, oldBoard, board));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getTarget()
-  {
-    return target;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTarget(String newTarget)
-  {
-    String oldTarget = target;
-    target = newTarget;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRELLO_GET__TARGET, oldTarget, target));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.FBC_LEAD__SOURCE, oldSource, source));
   }
 
   /**
@@ -308,7 +264,7 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRELLO_GET__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.FBC_LEAD__VALUE, oldValue, value));
   }
 
   /**
@@ -321,17 +277,15 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
   {
     switch (featureID)
     {
-      case SparrowPackage.TRELLO_GET__AUTHTOKEN:
-        return getAuthtoken();
-      case SparrowPackage.TRELLO_GET__KEY:
+      case SparrowPackage.FBC_LEAD__AUTHSTORE:
+        return getAuthstore();
+      case SparrowPackage.FBC_LEAD__KEY:
         return getKey();
-      case SparrowPackage.TRELLO_GET__USERACCOUNT:
+      case SparrowPackage.FBC_LEAD__USERACCOUNT:
         return getUseraccount();
-      case SparrowPackage.TRELLO_GET__BOARD:
-        return getBoard();
-      case SparrowPackage.TRELLO_GET__TARGET:
-        return getTarget();
-      case SparrowPackage.TRELLO_GET__VALUE:
+      case SparrowPackage.FBC_LEAD__SOURCE:
+        return getSource();
+      case SparrowPackage.FBC_LEAD__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -347,22 +301,19 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
   {
     switch (featureID)
     {
-      case SparrowPackage.TRELLO_GET__AUTHTOKEN:
-        setAuthtoken((String)newValue);
+      case SparrowPackage.FBC_LEAD__AUTHSTORE:
+        setAuthstore((String)newValue);
         return;
-      case SparrowPackage.TRELLO_GET__KEY:
+      case SparrowPackage.FBC_LEAD__KEY:
         setKey((String)newValue);
         return;
-      case SparrowPackage.TRELLO_GET__USERACCOUNT:
+      case SparrowPackage.FBC_LEAD__USERACCOUNT:
         setUseraccount((String)newValue);
         return;
-      case SparrowPackage.TRELLO_GET__BOARD:
-        setBoard((String)newValue);
+      case SparrowPackage.FBC_LEAD__SOURCE:
+        setSource((String)newValue);
         return;
-      case SparrowPackage.TRELLO_GET__TARGET:
-        setTarget((String)newValue);
-        return;
-      case SparrowPackage.TRELLO_GET__VALUE:
+      case SparrowPackage.FBC_LEAD__VALUE:
         setValue((String)newValue);
         return;
     }
@@ -379,22 +330,19 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
   {
     switch (featureID)
     {
-      case SparrowPackage.TRELLO_GET__AUTHTOKEN:
-        setAuthtoken(AUTHTOKEN_EDEFAULT);
+      case SparrowPackage.FBC_LEAD__AUTHSTORE:
+        setAuthstore(AUTHSTORE_EDEFAULT);
         return;
-      case SparrowPackage.TRELLO_GET__KEY:
+      case SparrowPackage.FBC_LEAD__KEY:
         setKey(KEY_EDEFAULT);
         return;
-      case SparrowPackage.TRELLO_GET__USERACCOUNT:
+      case SparrowPackage.FBC_LEAD__USERACCOUNT:
         setUseraccount(USERACCOUNT_EDEFAULT);
         return;
-      case SparrowPackage.TRELLO_GET__BOARD:
-        setBoard(BOARD_EDEFAULT);
+      case SparrowPackage.FBC_LEAD__SOURCE:
+        setSource(SOURCE_EDEFAULT);
         return;
-      case SparrowPackage.TRELLO_GET__TARGET:
-        setTarget(TARGET_EDEFAULT);
-        return;
-      case SparrowPackage.TRELLO_GET__VALUE:
+      case SparrowPackage.FBC_LEAD__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -411,17 +359,15 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
   {
     switch (featureID)
     {
-      case SparrowPackage.TRELLO_GET__AUTHTOKEN:
-        return AUTHTOKEN_EDEFAULT == null ? authtoken != null : !AUTHTOKEN_EDEFAULT.equals(authtoken);
-      case SparrowPackage.TRELLO_GET__KEY:
+      case SparrowPackage.FBC_LEAD__AUTHSTORE:
+        return AUTHSTORE_EDEFAULT == null ? authstore != null : !AUTHSTORE_EDEFAULT.equals(authstore);
+      case SparrowPackage.FBC_LEAD__KEY:
         return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-      case SparrowPackage.TRELLO_GET__USERACCOUNT:
+      case SparrowPackage.FBC_LEAD__USERACCOUNT:
         return USERACCOUNT_EDEFAULT == null ? useraccount != null : !USERACCOUNT_EDEFAULT.equals(useraccount);
-      case SparrowPackage.TRELLO_GET__BOARD:
-        return BOARD_EDEFAULT == null ? board != null : !BOARD_EDEFAULT.equals(board);
-      case SparrowPackage.TRELLO_GET__TARGET:
-        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
-      case SparrowPackage.TRELLO_GET__VALUE:
+      case SparrowPackage.FBC_LEAD__SOURCE:
+        return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
+      case SparrowPackage.FBC_LEAD__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
@@ -438,20 +384,18 @@ public class TrelloGETImpl extends ActionImpl implements TrelloGET
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (authtoken: ");
-    result.append(authtoken);
+    result.append(" (authstore: ");
+    result.append(authstore);
     result.append(", key: ");
     result.append(key);
     result.append(", useraccount: ");
     result.append(useraccount);
-    result.append(", board: ");
-    result.append(board);
-    result.append(", target: ");
-    result.append(target);
+    result.append(", source: ");
+    result.append(source);
     result.append(", value: ");
     result.append(value);
     result.append(')');
     return result.toString();
   }
 
-} //TrelloGETImpl
+} //FBCLeadImpl

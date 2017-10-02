@@ -6,25 +6,25 @@ package org.etl.sparrow;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Googlecal PUT</b></em>'.
+ * A representation of the model object '<em><b>FBC Lead</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getAuthstore <em>Authstore</em>}</li>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getKey <em>Key</em>}</li>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getUseraccount <em>Useraccount</em>}</li>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getSource <em>Source</em>}</li>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getValue <em>Value</em>}</li>
+ *   <li>{@link org.etl.sparrow.FBCLead#getAuthstore <em>Authstore</em>}</li>
+ *   <li>{@link org.etl.sparrow.FBCLead#getKey <em>Key</em>}</li>
+ *   <li>{@link org.etl.sparrow.FBCLead#getUseraccount <em>Useraccount</em>}</li>
+ *   <li>{@link org.etl.sparrow.FBCLead#getSource <em>Source</em>}</li>
+ *   <li>{@link org.etl.sparrow.FBCLead#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT()
+ * @see org.etl.sparrow.SparrowPackage#getFBCLead()
  * @model
  * @generated
  */
-public interface GooglecalPUT extends Action
+public interface FBCLead extends Action
 {
   /**
    * Returns the value of the '<em><b>Authstore</b></em>' attribute.
@@ -36,14 +36,14 @@ public interface GooglecalPUT extends Action
    * <!-- end-user-doc -->
    * @return the value of the '<em>Authstore</em>' attribute.
    * @see #setAuthstore(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Authstore()
+   * @see org.etl.sparrow.SparrowPackage#getFBCLead_Authstore()
    * @model
    * @generated
    */
   String getAuthstore();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getAuthstore <em>Authstore</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.FBCLead#getAuthstore <em>Authstore</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Authstore</em>' attribute.
@@ -62,14 +62,14 @@ public interface GooglecalPUT extends Action
    * <!-- end-user-doc -->
    * @return the value of the '<em>Key</em>' attribute.
    * @see #setKey(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Key()
+   * @see org.etl.sparrow.SparrowPackage#getFBCLead_Key()
    * @model
    * @generated
    */
   String getKey();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getKey <em>Key</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.FBCLead#getKey <em>Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Key</em>' attribute.
@@ -88,14 +88,14 @@ public interface GooglecalPUT extends Action
    * <!-- end-user-doc -->
    * @return the value of the '<em>Useraccount</em>' attribute.
    * @see #setUseraccount(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Useraccount()
+   * @see org.etl.sparrow.SparrowPackage#getFBCLead_Useraccount()
    * @model
    * @generated
    */
   String getUseraccount();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getUseraccount <em>Useraccount</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.FBCLead#getUseraccount <em>Useraccount</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Useraccount</em>' attribute.
@@ -114,14 +114,14 @@ public interface GooglecalPUT extends Action
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source</em>' attribute.
    * @see #setSource(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Source()
+   * @see org.etl.sparrow.SparrowPackage#getFBCLead_Source()
    * @model
    * @generated
    */
   String getSource();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getSource <em>Source</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.FBCLead#getSource <em>Source</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Source</em>' attribute.
@@ -140,14 +140,14 @@ public interface GooglecalPUT extends Action
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Value()
+   * @see org.etl.sparrow.SparrowPackage#getFBCLead_Value()
    * @model
    * @generated
    */
   String getValue();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.FBCLead#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -156,4 +156,4 @@ public interface GooglecalPUT extends Action
    */
   void setValue(String value);
 
-} // GooglecalPUT
+} // FBCLead

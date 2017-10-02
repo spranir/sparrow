@@ -28,7 +28,6 @@ import org.etl.sparrow.Transform;
  * <ul>
  *   <li>{@link org.etl.sparrow.impl.TransformImpl#getOn <em>On</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.TransformImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.TransformImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,26 +63,6 @@ public class TransformImpl extends ActionImpl implements Transform
    * @ordered
    */
   protected EList<String> value;
-
-  /**
-   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONDITION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -148,29 +127,6 @@ public class TransformImpl extends ActionImpl implements Transform
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCondition()
-  {
-    return condition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCondition(String newCondition)
-  {
-    String oldCondition = condition;
-    condition = newCondition;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.TRANSFORM__CONDITION, oldCondition, condition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -180,8 +136,6 @@ public class TransformImpl extends ActionImpl implements Transform
         return getOn();
       case SparrowPackage.TRANSFORM__VALUE:
         return getValue();
-      case SparrowPackage.TRANSFORM__CONDITION:
-        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -204,9 +158,6 @@ public class TransformImpl extends ActionImpl implements Transform
         getValue().clear();
         getValue().addAll((Collection<? extends String>)newValue);
         return;
-      case SparrowPackage.TRANSFORM__CONDITION:
-        setCondition((String)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -227,9 +178,6 @@ public class TransformImpl extends ActionImpl implements Transform
       case SparrowPackage.TRANSFORM__VALUE:
         getValue().clear();
         return;
-      case SparrowPackage.TRANSFORM__CONDITION:
-        setCondition(CONDITION_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -248,8 +196,6 @@ public class TransformImpl extends ActionImpl implements Transform
         return ON_EDEFAULT == null ? on != null : !ON_EDEFAULT.equals(on);
       case SparrowPackage.TRANSFORM__VALUE:
         return value != null && !value.isEmpty();
-      case SparrowPackage.TRANSFORM__CONDITION:
-        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -269,8 +215,6 @@ public class TransformImpl extends ActionImpl implements Transform
     result.append(on);
     result.append(", value: ");
     result.append(value);
-    result.append(", condition: ");
-    result.append(condition);
     result.append(')');
     return result.toString();
   }

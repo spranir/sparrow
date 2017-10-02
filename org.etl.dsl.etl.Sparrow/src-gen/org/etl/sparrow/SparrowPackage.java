@@ -243,13 +243,104 @@ public interface SparrowPackage extends EPackage
   int ACTION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION__CONDITION = 1;
+
+  /**
    * The number of structural features of the '<em>Action</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = 1;
+  int ACTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.FBCLeadImpl <em>FBC Lead</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.FBCLeadImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getFBCLead()
+   * @generated
+   */
+  int FBC_LEAD = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__CONDITION = ACTION__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Authstore</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__AUTHSTORE = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__KEY = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Useraccount</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__USERACCOUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__SOURCE = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__VALUE = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>FBC Lead</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD_FEATURE_COUNT = ACTION_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.DropfileImpl <em>Dropfile</em>}' class.
@@ -259,7 +350,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDropfile()
    * @generated
    */
-  int DROPFILE = 5;
+  int DROPFILE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -269,6 +360,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int DROPFILE__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROPFILE__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -296,7 +396,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDoozle()
    * @generated
    */
-  int DOOZLE = 6;
+  int DOOZLE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -306,6 +406,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int DOOZLE__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOOZLE__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -351,7 +460,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRest()
    * @generated
    */
-  int REST = 7;
+  int REST = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -361,6 +470,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int REST__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Authtoken</b></em>' attribute.
@@ -478,7 +596,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRestPart()
    * @generated
    */
-  int REST_PART = 8;
+  int REST_PART = 9;
 
   /**
    * The feature id for the '<em><b>Part Name</b></em>' attribute.
@@ -515,7 +633,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloGET()
    * @generated
    */
-  int TRELLO_GET = 9;
+  int TRELLO_GET = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -525,6 +643,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int TRELLO_GET__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRELLO_GET__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Authtoken</b></em>' attribute.
@@ -581,22 +708,13 @@ public interface SparrowPackage extends EPackage
   int TRELLO_GET__VALUE = ACTION_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRELLO_GET__CONDITION = ACTION_FEATURE_COUNT + 6;
-
-  /**
    * The number of structural features of the '<em>Trello GET</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRELLO_GET_FEATURE_COUNT = ACTION_FEATURE_COUNT + 7;
+  int TRELLO_GET_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.TrelloPUTImpl <em>Trello PUT</em>}' class.
@@ -606,7 +724,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloPUT()
    * @generated
    */
-  int TRELLO_PUT = 10;
+  int TRELLO_PUT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -616,6 +734,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int TRELLO_PUT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRELLO_PUT__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Authtoken</b></em>' attribute.
@@ -672,22 +799,13 @@ public interface SparrowPackage extends EPackage
   int TRELLO_PUT__VALUE = ACTION_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRELLO_PUT__CONDITION = ACTION_FEATURE_COUNT + 6;
-
-  /**
    * The number of structural features of the '<em>Trello PUT</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRELLO_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 7;
+  int TRELLO_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.FetchImpl <em>Fetch</em>}' class.
@@ -697,7 +815,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
    * @generated
    */
-  int FETCH = 11;
+  int FETCH = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -707,6 +825,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int FETCH__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -727,22 +854,13 @@ public interface SparrowPackage extends EPackage
   int FETCH__VALUE = ACTION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FETCH__CONDITION = ACTION_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Fetch</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FETCH_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
+  int FETCH_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.CallprocessImpl <em>Callprocess</em>}' class.
@@ -752,7 +870,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 12;
+  int CALLPROCESS = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -762,6 +880,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int CALLPROCESS__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALLPROCESS__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -800,22 +927,13 @@ public interface SparrowPackage extends EPackage
   int CALLPROCESS__VALUE = ACTION_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CALLPROCESS__CONDITION = ACTION_FEATURE_COUNT + 4;
-
-  /**
    * The number of structural features of the '<em>Callprocess</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALLPROCESS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 5;
+  int CALLPROCESS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.UpdatedauditImpl <em>Updatedaudit</em>}' class.
@@ -825,7 +943,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 13;
+  int UPDATEDAUDIT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -835,6 +953,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int UPDATEDAUDIT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATEDAUDIT__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Logsink</b></em>' attribute.
@@ -871,7 +998,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
    * @generated
    */
-  int SMS = 14;
+  int SMS = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -881,6 +1008,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int SMS__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMS__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -901,22 +1037,13 @@ public interface SparrowPackage extends EPackage
   int SMS__VALUE = ACTION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SMS__CONDITION = ACTION_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Sms</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SMS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
+  int SMS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.SlackPUTImpl <em>Slack PUT</em>}' class.
@@ -926,7 +1053,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlackPUT()
    * @generated
    */
-  int SLACK_PUT = 15;
+  int SLACK_PUT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -936,6 +1063,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int SLACK_PUT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLACK_PUT__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Team</b></em>' attribute.
@@ -965,22 +1101,13 @@ public interface SparrowPackage extends EPackage
   int SLACK_PUT__VALUE = ACTION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SLACK_PUT__CONDITION = ACTION_FEATURE_COUNT + 3;
-
-  /**
    * The number of structural features of the '<em>Slack PUT</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SLACK_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
+  int SLACK_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.GooglecalPUTImpl <em>Googlecal PUT</em>}' class.
@@ -990,7 +1117,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
    * @generated
    */
-  int GOOGLECAL_PUT = 16;
+  int GOOGLECAL_PUT = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1000,6 +1127,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int GOOGLECAL_PUT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Authstore</b></em>' attribute.
@@ -1047,22 +1183,13 @@ public interface SparrowPackage extends EPackage
   int GOOGLECAL_PUT__VALUE = ACTION_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__CONDITION = ACTION_FEATURE_COUNT + 5;
-
-  /**
    * The number of structural features of the '<em>Googlecal PUT</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOOGLECAL_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
+  int GOOGLECAL_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.CopydataImpl <em>Copydata</em>}' class.
@@ -1072,7 +1199,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 17;
+  int COPYDATA = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1082,6 +1209,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int COPYDATA__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COPYDATA__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -1111,22 +1247,13 @@ public interface SparrowPackage extends EPackage
   int COPYDATA__VALUE = ACTION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COPYDATA__CONDITION = ACTION_FEATURE_COUNT + 3;
-
-  /**
    * The number of structural features of the '<em>Copydata</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COPYDATA_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
+  int COPYDATA_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.WriteCsvImpl <em>Write Csv</em>}' class.
@@ -1136,7 +1263,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 18;
+  int WRITE_CSV = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1146,6 +1273,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int WRITE_CSV__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WRITE_CSV__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -1184,22 +1320,13 @@ public interface SparrowPackage extends EPackage
   int WRITE_CSV__VALUE = ACTION_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WRITE_CSV__CONDITION = ACTION_FEATURE_COUNT + 4;
-
-  /**
    * The number of structural features of the '<em>Write Csv</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WRITE_CSV_FEATURE_COUNT = ACTION_FEATURE_COUNT + 5;
+  int WRITE_CSV_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.LoadCsvImpl <em>Load Csv</em>}' class.
@@ -1209,7 +1336,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 19;
+  int LOAD_CSV = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1219,6 +1346,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int LOAD_CSV__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOAD_CSV__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -1257,22 +1393,13 @@ public interface SparrowPackage extends EPackage
   int LOAD_CSV__VALUE = ACTION_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOAD_CSV__CONDITION = ACTION_FEATURE_COUNT + 4;
-
-  /**
    * The number of structural features of the '<em>Load Csv</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOAD_CSV_FEATURE_COUNT = ACTION_FEATURE_COUNT + 5;
+  int LOAD_CSV_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.TransformImpl <em>Transform</em>}' class.
@@ -1282,7 +1409,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 20;
+  int TRANSFORM = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1292,6 +1419,15 @@ public interface SparrowPackage extends EPackage
    * @ordered
    */
   int TRANSFORM__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSFORM__CONDITION = ACTION__CONDITION;
 
   /**
    * The feature id for the '<em><b>On</b></em>' attribute.
@@ -1312,22 +1448,59 @@ public interface SparrowPackage extends EPackage
   int TRANSFORM__VALUE = ACTION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRANSFORM__CONDITION = ACTION_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Transform</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSFORM_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
+  int TRANSFORM_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.ExpressionImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getExpression()
+   * @generated
+   */
+  int EXPRESSION = 22;
+
+  /**
+   * The feature id for the '<em><b>Lhs</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__LHS = 0;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__OPERATOR = 1;
+
+  /**
+   * The feature id for the '<em><b>Rhs</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__RHS = 2;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = 3;
 
 
   /**
@@ -1500,6 +1673,82 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getAction_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.etl.sparrow.Action#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see org.etl.sparrow.Action#getCondition()
+   * @see #getAction()
+   * @generated
+   */
+  EReference getAction_Condition();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.FBCLead <em>FBC Lead</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>FBC Lead</em>'.
+   * @see org.etl.sparrow.FBCLead
+   * @generated
+   */
+  EClass getFBCLead();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getAuthstore <em>Authstore</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Authstore</em>'.
+   * @see org.etl.sparrow.FBCLead#getAuthstore()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Authstore();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see org.etl.sparrow.FBCLead#getKey()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Key();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getUseraccount <em>Useraccount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Useraccount</em>'.
+   * @see org.etl.sparrow.FBCLead#getUseraccount()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Useraccount();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source</em>'.
+   * @see org.etl.sparrow.FBCLead#getSource()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Source();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.FBCLead#getValue()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Dropfile <em>Dropfile</em>}'.
@@ -1805,17 +2054,6 @@ public interface SparrowPackage extends EPackage
   EAttribute getTrelloGET_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.TrelloGET#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.TrelloGET#getCondition()
-   * @see #getTrelloGET()
-   * @generated
-   */
-  EAttribute getTrelloGET_Condition();
-
-  /**
    * Returns the meta object for class '{@link org.etl.sparrow.TrelloPUT <em>Trello PUT</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1892,17 +2130,6 @@ public interface SparrowPackage extends EPackage
   EAttribute getTrelloPUT_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.TrelloPUT#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.TrelloPUT#getCondition()
-   * @see #getTrelloPUT()
-   * @generated
-   */
-  EAttribute getTrelloPUT_Condition();
-
-  /**
    * Returns the meta object for class '{@link org.etl.sparrow.Fetch <em>Fetch</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1933,17 +2160,6 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getFetch_Value();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Fetch#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.Fetch#getCondition()
-   * @see #getFetch()
-   * @generated
-   */
-  EAttribute getFetch_Condition();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Callprocess <em>Callprocess</em>}'.
@@ -1998,17 +2214,6 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getCallprocess_Value();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Callprocess#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.Callprocess#getCondition()
-   * @see #getCallprocess()
-   * @generated
-   */
-  EAttribute getCallprocess_Condition();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Updatedaudit <em>Updatedaudit</em>}'.
@@ -2075,17 +2280,6 @@ public interface SparrowPackage extends EPackage
   EAttribute getSms_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Sms#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.Sms#getCondition()
-   * @see #getSms()
-   * @generated
-   */
-  EAttribute getSms_Condition();
-
-  /**
    * Returns the meta object for class '{@link org.etl.sparrow.SlackPUT <em>Slack PUT</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2127,17 +2321,6 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getSlackPUT_Value();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.SlackPUT#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.SlackPUT#getCondition()
-   * @see #getSlackPUT()
-   * @generated
-   */
-  EAttribute getSlackPUT_Condition();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.GooglecalPUT <em>Googlecal PUT</em>}'.
@@ -2205,17 +2388,6 @@ public interface SparrowPackage extends EPackage
   EAttribute getGooglecalPUT_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.GooglecalPUT#getCondition()
-   * @see #getGooglecalPUT()
-   * @generated
-   */
-  EAttribute getGooglecalPUT_Condition();
-
-  /**
    * Returns the meta object for class '{@link org.etl.sparrow.Copydata <em>Copydata</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2257,17 +2429,6 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getCopydata_Value();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Copydata#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.Copydata#getCondition()
-   * @see #getCopydata()
-   * @generated
-   */
-  EAttribute getCopydata_Condition();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.WriteCsv <em>Write Csv</em>}'.
@@ -2324,17 +2485,6 @@ public interface SparrowPackage extends EPackage
   EAttribute getWriteCsv_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.WriteCsv#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.WriteCsv#getCondition()
-   * @see #getWriteCsv()
-   * @generated
-   */
-  EAttribute getWriteCsv_Condition();
-
-  /**
    * Returns the meta object for class '{@link org.etl.sparrow.LoadCsv <em>Load Csv</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2389,17 +2539,6 @@ public interface SparrowPackage extends EPackage
   EAttribute getLoadCsv_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.LoadCsv#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.LoadCsv#getCondition()
-   * @see #getLoadCsv()
-   * @generated
-   */
-  EAttribute getLoadCsv_Condition();
-
-  /**
    * Returns the meta object for class '{@link org.etl.sparrow.Transform <em>Transform</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2432,15 +2571,47 @@ public interface SparrowPackage extends EPackage
   EAttribute getTransform_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Transform#getCondition <em>Condition</em>}'.
+   * Returns the meta object for class '{@link org.etl.sparrow.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.etl.sparrow.Transform#getCondition()
-   * @see #getTransform()
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see org.etl.sparrow.Expression
    * @generated
    */
-  EAttribute getTransform_Condition();
+  EClass getExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Expression#getLhs <em>Lhs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Lhs</em>'.
+   * @see org.etl.sparrow.Expression#getLhs()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Lhs();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Expression#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see org.etl.sparrow.Expression#getOperator()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Operator();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Expression#getRhs <em>Rhs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Rhs</em>'.
+   * @see org.etl.sparrow.Expression#getRhs()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Rhs();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2602,6 +2773,64 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION__CONDITION = eINSTANCE.getAction_Condition();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.FBCLeadImpl <em>FBC Lead</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.FBCLeadImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getFBCLead()
+     * @generated
+     */
+    EClass FBC_LEAD = eINSTANCE.getFBCLead();
+
+    /**
+     * The meta object literal for the '<em><b>Authstore</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__AUTHSTORE = eINSTANCE.getFBCLead_Authstore();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__KEY = eINSTANCE.getFBCLead_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Useraccount</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__USERACCOUNT = eINSTANCE.getFBCLead_Useraccount();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__SOURCE = eINSTANCE.getFBCLead_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__VALUE = eINSTANCE.getFBCLead_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.DropfileImpl <em>Dropfile</em>}' class.
@@ -2838,14 +3067,6 @@ public interface SparrowPackage extends EPackage
     EAttribute TRELLO_GET__VALUE = eINSTANCE.getTrelloGET_Value();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TRELLO_GET__CONDITION = eINSTANCE.getTrelloGET_Condition();
-
-    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.TrelloPUTImpl <em>Trello PUT</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2904,14 +3125,6 @@ public interface SparrowPackage extends EPackage
     EAttribute TRELLO_PUT__VALUE = eINSTANCE.getTrelloPUT_Value();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TRELLO_PUT__CONDITION = eINSTANCE.getTrelloPUT_Condition();
-
-    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.FetchImpl <em>Fetch</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2936,14 +3149,6 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute FETCH__VALUE = eINSTANCE.getFetch_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FETCH__CONDITION = eINSTANCE.getFetch_Condition();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.CallprocessImpl <em>Callprocess</em>}' class.
@@ -2986,14 +3191,6 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute CALLPROCESS__VALUE = eINSTANCE.getCallprocess_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CALLPROCESS__CONDITION = eINSTANCE.getCallprocess_Condition();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.UpdatedauditImpl <em>Updatedaudit</em>}' class.
@@ -3048,14 +3245,6 @@ public interface SparrowPackage extends EPackage
     EAttribute SMS__VALUE = eINSTANCE.getSms_Value();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SMS__CONDITION = eINSTANCE.getSms_Condition();
-
-    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.SlackPUTImpl <em>Slack PUT</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3088,14 +3277,6 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute SLACK_PUT__VALUE = eINSTANCE.getSlackPUT_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SLACK_PUT__CONDITION = eINSTANCE.getSlackPUT_Condition();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecalPUTImpl <em>Googlecal PUT</em>}' class.
@@ -3148,14 +3329,6 @@ public interface SparrowPackage extends EPackage
     EAttribute GOOGLECAL_PUT__VALUE = eINSTANCE.getGooglecalPUT_Value();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL_PUT__CONDITION = eINSTANCE.getGooglecalPUT_Condition();
-
-    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.CopydataImpl <em>Copydata</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3188,14 +3361,6 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute COPYDATA__VALUE = eINSTANCE.getCopydata_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COPYDATA__CONDITION = eINSTANCE.getCopydata_Condition();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.WriteCsvImpl <em>Write Csv</em>}' class.
@@ -3240,14 +3405,6 @@ public interface SparrowPackage extends EPackage
     EAttribute WRITE_CSV__VALUE = eINSTANCE.getWriteCsv_Value();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WRITE_CSV__CONDITION = eINSTANCE.getWriteCsv_Condition();
-
-    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.LoadCsvImpl <em>Load Csv</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3290,14 +3447,6 @@ public interface SparrowPackage extends EPackage
     EAttribute LOAD_CSV__VALUE = eINSTANCE.getLoadCsv_Value();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOAD_CSV__CONDITION = eINSTANCE.getLoadCsv_Condition();
-
-    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.TransformImpl <em>Transform</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3324,12 +3473,38 @@ public interface SparrowPackage extends EPackage
     EAttribute TRANSFORM__VALUE = eINSTANCE.getTransform_Value();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.etl.sparrow.impl.ExpressionImpl <em>Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.ExpressionImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getExpression()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Lhs</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRANSFORM__CONDITION = eINSTANCE.getTransform_Condition();
+    EAttribute EXPRESSION__LHS = eINSTANCE.getExpression_Lhs();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__OPERATOR = eINSTANCE.getExpression_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Rhs</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__RHS = eINSTANCE.getExpression_Rhs();
 
   }
 

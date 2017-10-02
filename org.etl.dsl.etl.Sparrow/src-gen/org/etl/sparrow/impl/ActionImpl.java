@@ -4,13 +4,16 @@
 package org.etl.sparrow.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.etl.sparrow.Action;
+import org.etl.sparrow.Expression;
 import org.etl.sparrow.SparrowPackage;
 
 /**
@@ -22,6 +25,7 @@ import org.etl.sparrow.SparrowPackage;
  * </p>
  * <ul>
  *   <li>{@link org.etl.sparrow.impl.ActionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.ActionImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +51,16 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected Expression condition;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +111,70 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expression getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
+  {
+    Expression oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SparrowPackage.ACTION__CONDITION, oldCondition, newCondition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(Expression newCondition)
+  {
+    if (newCondition != condition)
+    {
+      NotificationChain msgs = null;
+      if (condition != null)
+        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.ACTION__CONDITION, null, msgs);
+      if (newCondition != null)
+        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.ACTION__CONDITION, null, msgs);
+      msgs = basicSetCondition(newCondition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.ACTION__CONDITION, newCondition, newCondition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SparrowPackage.ACTION__CONDITION:
+        return basicSetCondition(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +182,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case SparrowPackage.ACTION__NAME:
         return getName();
+      case SparrowPackage.ACTION__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +200,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case SparrowPackage.ACTION__NAME:
         setName((String)newValue);
+        return;
+      case SparrowPackage.ACTION__CONDITION:
+        setCondition((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +221,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case SparrowPackage.ACTION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SparrowPackage.ACTION__CONDITION:
+        setCondition((Expression)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +240,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case SparrowPackage.ACTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SparrowPackage.ACTION__CONDITION:
+        return condition != null;
     }
     return super.eIsSet(featureID);
   }
