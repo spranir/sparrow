@@ -10,6 +10,7 @@ import org.json.JSONArray
 import in.chimera.httpclient.ChimeraRestClient
 import org.eclipse.emf.common.util.EList
 import org.etl.sparrow.RestPart
+import org.etl.util.ParameterisationEngine
 
 /**
  * 1. Authenticate
@@ -100,7 +101,11 @@ class RestAction extends org.etl.command.Action with LazyLogging {
   }
 
   def executeIf(context: org.etl.command.Context, action: org.etl.sparrow.Action): Boolean = {
-    true
+    val restAsIs: org.etl.sparrow.Rest = action.asInstanceOf[org.etl.sparrow.Rest]
+    val rest: org.etl.sparrow.Rest = CommandProxy.createProxy(restAsIs, classOf[org.etl.sparrow.Rest], context)
+
+    val expression = rest.getCondition
+    ParameterisationEngine.doYieldtoTrue(expression)
   }
 
   def append[T](xs: List[T], ys: List[T]): List[T] =

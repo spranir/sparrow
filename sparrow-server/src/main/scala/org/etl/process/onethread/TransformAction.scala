@@ -5,6 +5,7 @@ import org.etl.sparrow.Action
 import org.etl.command.Context
 import org.etl.util.ResourceAccess
 import org.etl.command.CommandProxy
+import org.etl.util.ParameterisationEngine
 
 class TransformAction extends org.etl.command.Action with LazyLogging {
   def execute(context: Context, action: Action): Context = {
@@ -32,7 +33,11 @@ class TransformAction extends org.etl.command.Action with LazyLogging {
   }
 
   def executeIf(context: Context, action: Action): Boolean = {
-    true
+    val transformAsIs = action.asInstanceOf[org.etl.sparrow.Transform]
+    val transform:org.etl.sparrow.Transform = CommandProxy.createProxy(transformAsIs, classOf[org.etl.sparrow.Transform], context)
+    
+    val expression = transform.getCondition
+    ParameterisationEngine.doYieldtoTrue(expression)
   }
 
 }

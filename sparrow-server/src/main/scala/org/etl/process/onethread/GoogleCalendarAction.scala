@@ -21,6 +21,7 @@ import com.google.api.services.calendar.model.Event
 import com.google.api.services.calendar.model.EventDateTime
 import com.typesafe.scalalogging.LazyLogging
 import org.etl.command.CommandProxy
+import org.etl.util.ParameterisationEngine
 
 class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
   
@@ -33,6 +34,7 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
   def execute(context: Context, action: Action): Context = {
     val calAsIs:GooglecalPUT = action.asInstanceOf[GooglecalPUT]
     val cal:org.etl.sparrow.GooglecalPUT = CommandProxy.createProxy(calAsIs, classOf[org.etl.sparrow.GooglecalPUT], context)
+    
     val dbSrc = cal.getSource
     val mail = cal.getUseraccount
     val relativePath = cal.getAuthstore
@@ -90,6 +92,10 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
   }
 
   def executeIf(context: Context, action: Action): Boolean = {
-    true
+    val calAsIs:GooglecalPUT = action.asInstanceOf[GooglecalPUT]
+    val cal:org.etl.sparrow.GooglecalPUT = CommandProxy.createProxy(calAsIs, classOf[org.etl.sparrow.GooglecalPUT], context)
+
+    val expression = cal.getCondition
+    ParameterisationEngine.doYieldtoTrue(expression)
   }
 }
