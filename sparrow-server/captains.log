@@ -477,3 +477,21 @@ Having issues setting up the sample
 
  Chimera calendar id - 
  0n0ki3ca5mgecad17drako13fs@group.calendar.google.com
+
+ 
+ 
+Xtext lsp
+https://typefox.io/xtext-lsp-vs-xtext-web 
+
+10 row issue in maraiadb
+https://jira.mariadb.org/browse/MDEV-7517
+
+DROP TABLE 5678_COLLECTION_DATA;
+
+CREATE TABLE 5678_COLLECTION_DATA(
+fieldLabel char(128) ,
+fieldValue char(128) ,
+uniqueId char(128)
+)engine=CONNECT table_type=JSON File_name='Inbound-Spoors-Collection-form.json' option_list='object=fields';
+
+
