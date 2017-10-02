@@ -76,6 +76,9 @@ Doozle:
 Rest:
 	'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING
 	'{'
+		'from' resourcedatafrom=STRING 'update-url-with' '{'
+				urldata=SelectStatement
+		'}'
 		'from' headerdatafrom=STRING 'update-header-with' '{'
 				headerdata=SelectStatement  
 			'}'

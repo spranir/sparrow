@@ -47,6 +47,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/authtoken"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/url"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/resourcedatafrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/urldata"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/headerdatafrom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/headerdata"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/postdatafrom"/>

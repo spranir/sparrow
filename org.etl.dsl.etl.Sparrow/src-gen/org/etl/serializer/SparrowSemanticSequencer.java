@@ -517,6 +517,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         authtoken=STRING 
 	 *         url=STRING 
 	 *         method=STRING 
+	 *         resourcedatafrom=STRING 
+	 *         urldata=SelectStatement 
 	 *         headerdatafrom=STRING 
 	 *         headerdata=SelectStatement 
 	 *         postdatafrom=STRING 

@@ -35,6 +35,14 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     val method = rest.getMethod
     val authResource = rest.getAuthtoken
 
+    val restDbSrc = rest.getResourcedatafrom
+    val restResSql = rest.getUrldata
+    val restDbConn = ResourceAccess.rdbmsConn(restDbSrc)
+    val restStmt = restDbConn.createStatement
+    val restRs = restStmt.executeQuery(restResSql.replaceAll("\"",""))
+    restRs.next
+    val restUrl = restRs.getString(1)
+    
     val headerDbSrc = rest.getHeaderdatafrom
     val headerSql = rest.getHeaderdata
     val headerConn = ResourceAccess.rdbmsConn(headerDbSrc)
@@ -91,9 +99,10 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       jsonPayload.put(name, partArray)
     }
     val jsonObject = jsonPayload.toString
+    logger.info("outbound json object #{}", jsonObject.toString());
     val restClient = new ChimeraRestClient(url,authResource)
     restClient.createAuthToken
-    val output = restClient.post(url, jsonObject)
+    val output = restClient.post(restUrl, jsonObject)
 
     val ackSql = rest.getAckdata
     val ackTarget = rest.getAckdatato

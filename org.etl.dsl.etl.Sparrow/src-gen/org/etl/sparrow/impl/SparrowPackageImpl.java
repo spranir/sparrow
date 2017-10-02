@@ -602,7 +602,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Headerdatafrom()
+  public EAttribute getRest_Resourcedatafrom()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(3);
   }
@@ -612,7 +612,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Headerdata()
+  public EAttribute getRest_Urldata()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(4);
   }
@@ -622,7 +622,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Postdatafrom()
+  public EAttribute getRest_Headerdatafrom()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(5);
   }
@@ -632,7 +632,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_ParentName()
+  public EAttribute getRest_Headerdata()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(6);
   }
@@ -642,7 +642,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Parentdata()
+  public EAttribute getRest_Postdatafrom()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(7);
   }
@@ -652,9 +652,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRest_Parts()
+  public EAttribute getRest_ParentName()
   {
-    return (EReference)restEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)restEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -662,7 +662,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Ackdatato()
+  public EAttribute getRest_Parentdata()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(9);
   }
@@ -672,9 +672,29 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getRest_Parts()
+  {
+    return (EReference)restEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Ackdatato()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getRest_Ackdata()
   {
-    return (EAttribute)restEClass.getEStructuralFeatures().get(10);
+    return (EAttribute)restEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -1368,6 +1388,8 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(restEClass, REST__AUTHTOKEN);
     createEAttribute(restEClass, REST__URL);
     createEAttribute(restEClass, REST__METHOD);
+    createEAttribute(restEClass, REST__RESOURCEDATAFROM);
+    createEAttribute(restEClass, REST__URLDATA);
     createEAttribute(restEClass, REST__HEADERDATAFROM);
     createEAttribute(restEClass, REST__HEADERDATA);
     createEAttribute(restEClass, REST__POSTDATAFROM);
@@ -1542,6 +1564,8 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getRest_Authtoken(), ecorePackage.getEString(), "authtoken", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Url(), ecorePackage.getEString(), "url", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Method(), ecorePackage.getEString(), "method", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Resourcedatafrom(), ecorePackage.getEString(), "resourcedatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Urldata(), ecorePackage.getEString(), "urldata", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Headerdatafrom(), ecorePackage.getEString(), "headerdatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Headerdata(), ecorePackage.getEString(), "headerdata", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Postdatafrom(), ecorePackage.getEString(), "postdatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

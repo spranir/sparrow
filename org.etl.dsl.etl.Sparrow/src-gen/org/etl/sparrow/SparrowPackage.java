@@ -508,13 +508,31 @@ public interface SparrowPackage extends EPackage
   int REST__METHOD = ACTION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Resourcedatafrom</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__RESOURCEDATAFROM = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Urldata</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__URLDATA = ACTION_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Headerdatafrom</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REST__HEADERDATAFROM = ACTION_FEATURE_COUNT + 3;
+  int REST__HEADERDATAFROM = ACTION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Headerdata</b></em>' attribute.
@@ -523,7 +541,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__HEADERDATA = ACTION_FEATURE_COUNT + 4;
+  int REST__HEADERDATA = ACTION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Postdatafrom</b></em>' attribute.
@@ -532,7 +550,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__POSTDATAFROM = ACTION_FEATURE_COUNT + 5;
+  int REST__POSTDATAFROM = ACTION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Parent Name</b></em>' attribute.
@@ -541,7 +559,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__PARENT_NAME = ACTION_FEATURE_COUNT + 6;
+  int REST__PARENT_NAME = ACTION_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Parentdata</b></em>' attribute.
@@ -550,7 +568,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__PARENTDATA = ACTION_FEATURE_COUNT + 7;
+  int REST__PARENTDATA = ACTION_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -559,7 +577,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__PARTS = ACTION_FEATURE_COUNT + 8;
+  int REST__PARTS = ACTION_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Ackdatato</b></em>' attribute.
@@ -568,7 +586,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__ACKDATATO = ACTION_FEATURE_COUNT + 9;
+  int REST__ACKDATATO = ACTION_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Ackdata</b></em>' attribute.
@@ -577,7 +595,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__ACKDATA = ACTION_FEATURE_COUNT + 10;
+  int REST__ACKDATA = ACTION_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>Rest</em>' class.
@@ -586,7 +604,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 11;
+  int REST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 13;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.RestPartImpl <em>Rest Part</em>}' class.
@@ -1858,6 +1876,28 @@ public interface SparrowPackage extends EPackage
   EAttribute getRest_Method();
 
   /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getResourcedatafrom <em>Resourcedatafrom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Resourcedatafrom</em>'.
+   * @see org.etl.sparrow.Rest#getResourcedatafrom()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Resourcedatafrom();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getUrldata <em>Urldata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Urldata</em>'.
+   * @see org.etl.sparrow.Rest#getUrldata()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Urldata();
+
+  /**
    * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getHeaderdatafrom <em>Headerdatafrom</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2917,6 +2957,22 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute REST__METHOD = eINSTANCE.getRest_Method();
+
+    /**
+     * The meta object literal for the '<em><b>Resourcedatafrom</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__RESOURCEDATAFROM = eINSTANCE.getRest_Resourcedatafrom();
+
+    /**
+     * The meta object literal for the '<em><b>Urldata</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__URLDATA = eINSTANCE.getRest_Urldata();
 
     /**
      * The meta object literal for the '<em><b>Headerdatafrom</b></em>' attribute feature.
