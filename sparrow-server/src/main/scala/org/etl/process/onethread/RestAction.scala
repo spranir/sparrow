@@ -34,7 +34,10 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     val url = rest.getUrl
     val method = rest.getMethod
     val authResource = rest.getAuthtoken
-
+    val id = context.getValue("process-id")
+    
+    logger.info("Rest id#{}, name#{}, url#{}, method#{}, autinfo#{}", id, name, method)
+    
     val restDbSrc = rest.getResourcedatafrom
     val restResSql = rest.getUrldata
     val restDbConn = ResourceAccess.rdbmsConn(restDbSrc)
@@ -43,6 +46,8 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     restRs.next
     val restUrl = restRs.getString(1)
     
+    logger.info("Rest id#{}, restdbsrc#{}, resturl#{}, sql#{}",id,restDbSrc, restUrl, restResSql)
+
     val headerDbSrc = rest.getHeaderdatafrom
     val headerSql = rest.getHeaderdata
     val headerConn = ResourceAccess.rdbmsConn(headerDbSrc)
@@ -51,16 +56,22 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     val headerColumnCount = headerRs.getMetaData.getColumnCount
     val headerMap: java.util.Map[String, String] = new java.util.HashMap[String, String]
 
+    
+    
     while (headerRs.next()) {
       val headerKey = headerRs.getString(1)
       val headerValue = headerRs.getString(2)
       headerMap.put(headerKey, headerValue)
 
     }
+    
+    logger.info("Rest id#{}, headerDbSrc#{}, headerSql#{}, headerMap#{}",id,headerDbSrc, headerSql, headerMap)
     val parentName = rest.getParentName
     val bodyDbSrc = rest.getPostdatafrom
     val parentData = rest.getParentdata
 
+    logger.info("Rest id#{}, bodyDbSrc#{}, parentName#{}, parentDataSql#{}", id, bodyDbSrc, parentName, parentData)
+    
     val bodayConn = ResourceAccess.rdbmsConn(bodyDbSrc)
     val bodyStmt = bodayConn.createStatement
     val bodyResultset = bodyStmt.executeQuery(parentData.replaceAll("\"", ""))
@@ -86,6 +97,7 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       val partRs = bodyStmt.executeQuery(query.replaceAll("\"", ""))
       val partColCount = partRs.getMetaData.getColumnCount
       val partArray = new JSONArray;
+      logger.info("Rest id#{}, partSrc#{}, partName#{}, partSql#{}", id, partSrc, name, query)
       while (partRs.next) {
         val partObj = new JSONObject
         for (j <- 1 until partColCount+1) {
@@ -99,7 +111,7 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       jsonPayload.put(name, partArray)
     }
     val jsonObject = jsonPayload.toString
-    logger.info("outbound json object #{}", jsonObject.toString());
+    logger.info("Rest id#{}, outbound json object #{}", id, jsonObject.toString());
     val restClient = new ChimeraRestClient(url,authResource)
     restClient.createAuthToken
     val output = restClient.post(restUrl, jsonObject)
