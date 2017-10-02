@@ -14,6 +14,7 @@ import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
+import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -125,6 +126,14 @@ public class SparrowSwitch<T> extends Switch<T>
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.FBC_LEAD:
+      {
+        FBCLead fbcLead = (FBCLead)theEObject;
+        T result = caseFBCLead(fbcLead);
+        if (result == null) result = caseAction(fbcLead);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -335,6 +344,22 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>FBC Lead</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>FBC Lead</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFBCLead(FBCLead object)
   {
     return null;
   }

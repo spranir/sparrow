@@ -27,6 +27,14 @@
     <genClasses ecoreClass="Sparrow.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
     </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//FBCLead">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/authstore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/useraccount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/condition"/>
+    </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Dropfile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Dropfile/target"/>
     </genClasses>
@@ -39,6 +47,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/authtoken"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/url"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/resourcedatafrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/urldata"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/headerdatafrom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/headerdata"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Rest/postdatafrom"/>

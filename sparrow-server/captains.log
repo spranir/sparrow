@@ -301,7 +301,7 @@ CREATE TABLE `spw_resource_config` (
 	`auth_info` VARCHAR(1000) NULL DEFAULT NULL,
 	`resource_url` VARCHAR(1000) NULL DEFAULT NULL,
 	`active` ENUM('Y','N') NULL DEFAULT NULL,
-	`created_date` TIMESTAMP NULL DEFAULT '',
+	`created_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`)
 )
 COLLATE='utf8_general_ci'
@@ -317,8 +317,9 @@ REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VAL
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'google-id', 'fa750e3a810282157696228d85ef83aca58d6340', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'filepath', 'publish.demandforecast.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.callprocess.process', 'filepath', 'test.callprocess.process.spw', 'Y');
-REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.dooxle.process', 'filepath', 'test.doozle.process.spw', 'Y');
-REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.rest.process', 'filepath', 'test.rest.process.spq', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.doozle.process', 'filepath', 'test.doozle.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.rest.process', 'filepath', 'test.rest.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.collection.process', 'filepath', 'inbound.collection.process.spw', 'Y');
 
 
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process#1', 'publish.demandforecast.process', 'lms', 'oltp/chimera_lms', 'Y');
@@ -330,7 +331,7 @@ REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, 
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('basepath', 'root', 'Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('runmode', 'single', 'Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('audit', 'audit/chimera-audit', 'Y');
-REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', 'C:/Program Files/MariaDB 10.2/data/chimera_lms', 'Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', 'F:/mariadb/data/chimera_lms', 'Y');
 
 
 

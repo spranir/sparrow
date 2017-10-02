@@ -33,6 +33,8 @@ import org.etl.sparrow.SparrowPackage;
  *   <li>{@link org.etl.sparrow.impl.RestImpl#getAuthtoken <em>Authtoken</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.RestImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.RestImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.RestImpl#getResourcedatafrom <em>Resourcedatafrom</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.RestImpl#getUrldata <em>Urldata</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.RestImpl#getHeaderdatafrom <em>Headerdatafrom</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.RestImpl#getHeaderdata <em>Headerdata</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.RestImpl#getPostdatafrom <em>Postdatafrom</em>}</li>
@@ -106,6 +108,46 @@ public class RestImpl extends ActionImpl implements Rest
    * @ordered
    */
   protected String method = METHOD_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getResourcedatafrom() <em>Resourcedatafrom</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResourcedatafrom()
+   * @generated
+   * @ordered
+   */
+  protected static final String RESOURCEDATAFROM_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getResourcedatafrom() <em>Resourcedatafrom</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResourcedatafrom()
+   * @generated
+   * @ordered
+   */
+  protected String resourcedatafrom = RESOURCEDATAFROM_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getUrldata() <em>Urldata</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUrldata()
+   * @generated
+   * @ordered
+   */
+  protected static final String URLDATA_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getUrldata() <em>Urldata</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUrldata()
+   * @generated
+   * @ordered
+   */
+  protected String urldata = URLDATA_EDEFAULT;
 
   /**
    * The default value of the '{@link #getHeaderdatafrom() <em>Headerdatafrom</em>}' attribute.
@@ -352,6 +394,52 @@ public class RestImpl extends ActionImpl implements Rest
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getResourcedatafrom()
+  {
+    return resourcedatafrom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setResourcedatafrom(String newResourcedatafrom)
+  {
+    String oldResourcedatafrom = resourcedatafrom;
+    resourcedatafrom = newResourcedatafrom;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.REST__RESOURCEDATAFROM, oldResourcedatafrom, resourcedatafrom));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getUrldata()
+  {
+    return urldata;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUrldata(String newUrldata)
+  {
+    String oldUrldata = urldata;
+    urldata = newUrldata;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.REST__URLDATA, oldUrldata, urldata));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getHeaderdatafrom()
   {
     return headerdatafrom;
@@ -554,6 +642,10 @@ public class RestImpl extends ActionImpl implements Rest
         return getUrl();
       case SparrowPackage.REST__METHOD:
         return getMethod();
+      case SparrowPackage.REST__RESOURCEDATAFROM:
+        return getResourcedatafrom();
+      case SparrowPackage.REST__URLDATA:
+        return getUrldata();
       case SparrowPackage.REST__HEADERDATAFROM:
         return getHeaderdatafrom();
       case SparrowPackage.REST__HEADERDATA:
@@ -593,6 +685,12 @@ public class RestImpl extends ActionImpl implements Rest
         return;
       case SparrowPackage.REST__METHOD:
         setMethod((String)newValue);
+        return;
+      case SparrowPackage.REST__RESOURCEDATAFROM:
+        setResourcedatafrom((String)newValue);
+        return;
+      case SparrowPackage.REST__URLDATA:
+        setUrldata((String)newValue);
         return;
       case SparrowPackage.REST__HEADERDATAFROM:
         setHeaderdatafrom((String)newValue);
@@ -642,6 +740,12 @@ public class RestImpl extends ActionImpl implements Rest
       case SparrowPackage.REST__METHOD:
         setMethod(METHOD_EDEFAULT);
         return;
+      case SparrowPackage.REST__RESOURCEDATAFROM:
+        setResourcedatafrom(RESOURCEDATAFROM_EDEFAULT);
+        return;
+      case SparrowPackage.REST__URLDATA:
+        setUrldata(URLDATA_EDEFAULT);
+        return;
       case SparrowPackage.REST__HEADERDATAFROM:
         setHeaderdatafrom(HEADERDATAFROM_EDEFAULT);
         return;
@@ -686,6 +790,10 @@ public class RestImpl extends ActionImpl implements Rest
         return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
       case SparrowPackage.REST__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
+      case SparrowPackage.REST__RESOURCEDATAFROM:
+        return RESOURCEDATAFROM_EDEFAULT == null ? resourcedatafrom != null : !RESOURCEDATAFROM_EDEFAULT.equals(resourcedatafrom);
+      case SparrowPackage.REST__URLDATA:
+        return URLDATA_EDEFAULT == null ? urldata != null : !URLDATA_EDEFAULT.equals(urldata);
       case SparrowPackage.REST__HEADERDATAFROM:
         return HEADERDATAFROM_EDEFAULT == null ? headerdatafrom != null : !HEADERDATAFROM_EDEFAULT.equals(headerdatafrom);
       case SparrowPackage.REST__HEADERDATA:
@@ -723,6 +831,10 @@ public class RestImpl extends ActionImpl implements Rest
     result.append(url);
     result.append(", method: ");
     result.append(method);
+    result.append(", resourcedatafrom: ");
+    result.append(resourcedatafrom);
+    result.append(", urldata: ");
+    result.append(urldata);
     result.append(", headerdatafrom: ");
     result.append(headerdatafrom);
     result.append(", headerdata: ");

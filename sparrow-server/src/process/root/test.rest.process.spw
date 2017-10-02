@@ -22,7 +22,10 @@ process "test.rest.process"
 			"			
 		}
 			
-		rest as "lms-client" secured-by "Mifos:duruva@@639001:chimeraauth:default" with-url "https://lab.lasalle.in" and-method-as "POST" {
+		rest as "lms-client" secured-by "Mifos:duruv@@639001:chimeraauth:default" with-url "https://lab.lasalle.in/fineract-provider/api/v1" and-method-as "POST" {
+			from "oltp/chimera-lms" update-url-with {
+				"SELECT '/groups/312?command=saveCollectionSheet' as groupUrl;"
+			}
 			from "oltp/chimera-lms" update-header-with {
 				"SELECT key_, value from header_data;" 
 			}

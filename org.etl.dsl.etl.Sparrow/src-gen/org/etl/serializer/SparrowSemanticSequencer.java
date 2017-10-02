@@ -20,6 +20,7 @@ import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
+import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -64,6 +65,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SparrowPackage.DROPFILE:
 				sequence_Dropfile(context, (Dropfile) semanticObject); 
+				return; 
+			case SparrowPackage.FBC_LEAD:
+				sequence_FBCLead(context, (FBCLead) semanticObject); 
 				return; 
 			case SparrowPackage.FETCH:
 				sequence_Fetch(context, (Fetch) semanticObject); 
@@ -245,6 +249,51 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDropfileAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getDropfileAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns FBCLead
+	 *     FBCLead returns FBCLead
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=STRING 
+	 *         authstore=STRING 
+	 *         key=STRING 
+	 *         useraccount=STRING 
+	 *         source=STRING 
+	 *         value=STRING 
+	 *         condition=STRING
+	 *     )
+	 */
+	protected void sequence_FBCLead(ISerializationContext context, FBCLead semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FBC_LEAD__AUTHSTORE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FBC_LEAD__AUTHSTORE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FBC_LEAD__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FBC_LEAD__KEY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FBC_LEAD__USERACCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FBC_LEAD__USERACCOUNT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FBC_LEAD__SOURCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FBC_LEAD__SOURCE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FBC_LEAD__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FBC_LEAD__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.FBC_LEAD__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.FBC_LEAD__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFBCLeadAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFBCLeadAccess().getAuthstoreSTRINGTerminalRuleCall_4_0(), semanticObject.getAuthstore());
+		feeder.accept(grammarAccess.getFBCLeadAccess().getKeySTRINGTerminalRuleCall_6_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getFBCLeadAccess().getUseraccountSTRINGTerminalRuleCall_8_0(), semanticObject.getUseraccount());
+		feeder.accept(grammarAccess.getFBCLeadAccess().getSourceSTRINGTerminalRuleCall_10_0(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getFBCLeadAccess().getValueSTRINGTerminalRuleCall_13_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFBCLeadAccess().getConditionSTRINGTerminalRuleCall_16_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -434,6 +483,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         authtoken=STRING 
 	 *         url=STRING 
 	 *         method=STRING 
+	 *         resourcedatafrom=STRING 
+	 *         urldata=SelectStatement 
 	 *         headerdatafrom=STRING 
 	 *         headerdata=SelectStatement 
 	 *         postdatafrom=STRING 

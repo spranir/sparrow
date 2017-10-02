@@ -16,6 +16,7 @@ import org.etl.sparrow.Catch;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
+import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
@@ -75,6 +76,13 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * @generated
    */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fbcLeadEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -416,6 +424,76 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFBCLead()
+  {
+    return fbcLeadEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFBCLead_Authstore()
+  {
+    return (EAttribute)fbcLeadEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFBCLead_Key()
+  {
+    return (EAttribute)fbcLeadEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFBCLead_Useraccount()
+  {
+    return (EAttribute)fbcLeadEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFBCLead_Source()
+  {
+    return (EAttribute)fbcLeadEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFBCLead_Value()
+  {
+    return (EAttribute)fbcLeadEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFBCLead_Condition()
+  {
+    return (EAttribute)fbcLeadEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDropfile()
   {
     return dropfileEClass;
@@ -516,7 +594,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Headerdatafrom()
+  public EAttribute getRest_Resourcedatafrom()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(3);
   }
@@ -526,7 +604,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Headerdata()
+  public EAttribute getRest_Urldata()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(4);
   }
@@ -536,7 +614,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Postdatafrom()
+  public EAttribute getRest_Headerdatafrom()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(5);
   }
@@ -546,7 +624,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_ParentName()
+  public EAttribute getRest_Headerdata()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(6);
   }
@@ -556,7 +634,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Parentdata()
+  public EAttribute getRest_Postdatafrom()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(7);
   }
@@ -566,9 +644,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRest_Parts()
+  public EAttribute getRest_ParentName()
   {
-    return (EReference)restEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)restEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -576,7 +654,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRest_Ackdatato()
+  public EAttribute getRest_Parentdata()
   {
     return (EAttribute)restEClass.getEStructuralFeatures().get(9);
   }
@@ -586,9 +664,29 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getRest_Parts()
+  {
+    return (EReference)restEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRest_Ackdatato()
+  {
+    return (EAttribute)restEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getRest_Ackdata()
   {
-    return (EAttribute)restEClass.getEStructuralFeatures().get(10);
+    return (EAttribute)restEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -1332,6 +1430,14 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
 
+    fbcLeadEClass = createEClass(FBC_LEAD);
+    createEAttribute(fbcLeadEClass, FBC_LEAD__AUTHSTORE);
+    createEAttribute(fbcLeadEClass, FBC_LEAD__KEY);
+    createEAttribute(fbcLeadEClass, FBC_LEAD__USERACCOUNT);
+    createEAttribute(fbcLeadEClass, FBC_LEAD__SOURCE);
+    createEAttribute(fbcLeadEClass, FBC_LEAD__VALUE);
+    createEAttribute(fbcLeadEClass, FBC_LEAD__CONDITION);
+
     dropfileEClass = createEClass(DROPFILE);
     createEAttribute(dropfileEClass, DROPFILE__TARGET);
 
@@ -1344,6 +1450,8 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(restEClass, REST__AUTHTOKEN);
     createEAttribute(restEClass, REST__URL);
     createEAttribute(restEClass, REST__METHOD);
+    createEAttribute(restEClass, REST__RESOURCEDATAFROM);
+    createEAttribute(restEClass, REST__URLDATA);
     createEAttribute(restEClass, REST__HEADERDATAFROM);
     createEAttribute(restEClass, REST__HEADERDATA);
     createEAttribute(restEClass, REST__POSTDATAFROM);
@@ -1465,6 +1573,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    fbcLeadEClass.getESuperTypes().add(this.getAction());
     dropfileEClass.getESuperTypes().add(this.getAction());
     doozleEClass.getESuperTypes().add(this.getAction());
     restEClass.getESuperTypes().add(this.getAction());
@@ -1503,6 +1612,14 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(fbcLeadEClass, FBCLead.class, "FBCLead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFBCLead_Authstore(), ecorePackage.getEString(), "authstore", null, 0, 1, FBCLead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFBCLead_Key(), ecorePackage.getEString(), "key", null, 0, 1, FBCLead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFBCLead_Useraccount(), ecorePackage.getEString(), "useraccount", null, 0, 1, FBCLead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFBCLead_Source(), ecorePackage.getEString(), "source", null, 0, 1, FBCLead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFBCLead_Value(), ecorePackage.getEString(), "value", null, 0, 1, FBCLead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFBCLead_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, FBCLead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(dropfileEClass, Dropfile.class, "Dropfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDropfile_Target(), ecorePackage.getEString(), "target", null, 0, 1, Dropfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1515,6 +1632,8 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getRest_Authtoken(), ecorePackage.getEString(), "authtoken", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Url(), ecorePackage.getEString(), "url", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Method(), ecorePackage.getEString(), "method", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Resourcedatafrom(), ecorePackage.getEString(), "resourcedatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRest_Urldata(), ecorePackage.getEString(), "urldata", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Headerdatafrom(), ecorePackage.getEString(), "headerdatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Headerdata(), ecorePackage.getEString(), "headerdata", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRest_Postdatafrom(), ecorePackage.getEString(), "postdatafrom", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

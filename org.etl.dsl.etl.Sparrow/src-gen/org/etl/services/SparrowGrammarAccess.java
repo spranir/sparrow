@@ -226,6 +226,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRestParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		private final RuleCall cDoozleParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cDropfileParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
+		private final RuleCall cFBCLeadParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
 		
 		//Action:
 		//	Copydata
@@ -242,11 +243,12 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//	| TrelloGET
 		//	| Rest
 		//	| Doozle
-		//	| Dropfile;
+		//	| Dropfile
+		//	| FBCLead;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Copydata | LoadCsv | WriteCsv | Transform | GooglecalPUT | SlackPUT | Sms | Updatedaudit | Callprocess | Fetch |
-		//TrelloPUT | TrelloGET | Rest | Doozle | Dropfile
+		//TrelloPUT | TrelloGET | Rest | Doozle | Dropfile | FBCLead
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Copydata
@@ -293,6 +295,121 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Dropfile
 		public RuleCall getDropfileParserRuleCall_14() { return cDropfileParserRuleCall_14; }
+		
+		//FBCLead
+		public RuleCall getFBCLeadParserRuleCall_15() { return cFBCLeadParserRuleCall_15; }
+	}
+	public class FBCLeadElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.FBCLead");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFblcKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cSecuredByKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAuthstoreAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAuthstoreSTRINGTerminalRuleCall_4_0 = (RuleCall)cAuthstoreAssignment_4.eContents().get(0);
+		private final Keyword cWithKeyKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cKeyAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cKeySTRINGTerminalRuleCall_6_0 = (RuleCall)cKeyAssignment_6.eContents().get(0);
+		private final Keyword cThroughUserKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cUseraccountAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cUseraccountSTRINGTerminalRuleCall_8_0 = (RuleCall)cUseraccountAssignment_8.eContents().get(0);
+		private final Keyword cFromSourceKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cSourceAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cSourceSTRINGTerminalRuleCall_10_0 = (RuleCall)cSourceAssignment_10.eContents().get(0);
+		private final Keyword cUsingKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cValueAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cValueSTRINGTerminalRuleCall_13_0 = (RuleCall)cValueAssignment_13.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cOnConditionKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cConditionAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_16_0 = (RuleCall)cConditionAssignment_16.eContents().get(0);
+		
+		//FBCLead:
+		//	'fblc' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING
+		//	'from-source' source=STRING 'using'
+		//	'{'
+		//	value=STRING
+		//	'}' 'on-condition' condition=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'fblc' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING
+		//'from-source' source=STRING 'using' '{' value=STRING '}' 'on-condition' condition=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'fblc'
+		public Keyword getFblcKeyword_0() { return cFblcKeyword_0; }
+		
+		//'as'
+		public Keyword getAsKeyword_1() { return cAsKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'secured-by'
+		public Keyword getSecuredByKeyword_3() { return cSecuredByKeyword_3; }
+		
+		//authstore=STRING
+		public Assignment getAuthstoreAssignment_4() { return cAuthstoreAssignment_4; }
+		
+		//STRING
+		public RuleCall getAuthstoreSTRINGTerminalRuleCall_4_0() { return cAuthstoreSTRINGTerminalRuleCall_4_0; }
+		
+		//'with-key'
+		public Keyword getWithKeyKeyword_5() { return cWithKeyKeyword_5; }
+		
+		//key=STRING
+		public Assignment getKeyAssignment_6() { return cKeyAssignment_6; }
+		
+		//STRING
+		public RuleCall getKeySTRINGTerminalRuleCall_6_0() { return cKeySTRINGTerminalRuleCall_6_0; }
+		
+		//'through-user'
+		public Keyword getThroughUserKeyword_7() { return cThroughUserKeyword_7; }
+		
+		//useraccount=STRING
+		public Assignment getUseraccountAssignment_8() { return cUseraccountAssignment_8; }
+		
+		//STRING
+		public RuleCall getUseraccountSTRINGTerminalRuleCall_8_0() { return cUseraccountSTRINGTerminalRuleCall_8_0; }
+		
+		//'from-source'
+		public Keyword getFromSourceKeyword_9() { return cFromSourceKeyword_9; }
+		
+		//source=STRING
+		public Assignment getSourceAssignment_10() { return cSourceAssignment_10; }
+		
+		//STRING
+		public RuleCall getSourceSTRINGTerminalRuleCall_10_0() { return cSourceSTRINGTerminalRuleCall_10_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_11() { return cUsingKeyword_11; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_13() { return cValueAssignment_13; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_13_0() { return cValueSTRINGTerminalRuleCall_13_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_15() { return cOnConditionKeyword_15; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_16() { return cConditionAssignment_16; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_16_0() { return cConditionSTRINGTerminalRuleCall_16_0; }
 	}
 	public class DropfileElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Dropfile");
@@ -425,40 +542,51 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMethodSTRINGTerminalRuleCall_8_0 = (RuleCall)cMethodAssignment_8.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cFromKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cHeaderdatafromAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cHeaderdatafromSTRINGTerminalRuleCall_11_0 = (RuleCall)cHeaderdatafromAssignment_11.eContents().get(0);
-		private final Keyword cUpdateHeaderWithKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cResourcedatafromAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cResourcedatafromSTRINGTerminalRuleCall_11_0 = (RuleCall)cResourcedatafromAssignment_11.eContents().get(0);
+		private final Keyword cUpdateUrlWithKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Keyword cLeftCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Assignment cHeaderdataAssignment_14 = (Assignment)cGroup.eContents().get(14);
-		private final RuleCall cHeaderdataSelectStatementParserRuleCall_14_0 = (RuleCall)cHeaderdataAssignment_14.eContents().get(0);
+		private final Assignment cUrldataAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cUrldataSelectStatementParserRuleCall_14_0 = (RuleCall)cUrldataAssignment_14.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cFromKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Assignment cPostdatafromAssignment_17 = (Assignment)cGroup.eContents().get(17);
-		private final RuleCall cPostdatafromSTRINGTerminalRuleCall_17_0 = (RuleCall)cPostdatafromAssignment_17.eContents().get(0);
-		private final Keyword cUpdateBodyWithKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cHeaderdatafromAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cHeaderdatafromSTRINGTerminalRuleCall_17_0 = (RuleCall)cHeaderdatafromAssignment_17.eContents().get(0);
+		private final Keyword cUpdateHeaderWithKeyword_18 = (Keyword)cGroup.eContents().get(18);
 		private final Keyword cLeftCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
-		private final Keyword cParentKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Keyword cAsKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Assignment cParentNameAssignment_22 = (Assignment)cGroup.eContents().get(22);
-		private final RuleCall cParentNameSTRINGTerminalRuleCall_22_0 = (RuleCall)cParentNameAssignment_22.eContents().get(0);
-		private final Assignment cParentdataAssignment_23 = (Assignment)cGroup.eContents().get(23);
-		private final RuleCall cParentdataSelectStatementParserRuleCall_23_0 = (RuleCall)cParentdataAssignment_23.eContents().get(0);
-		private final Assignment cPartsAssignment_24 = (Assignment)cGroup.eContents().get(24);
-		private final RuleCall cPartsRestPartParserRuleCall_24_0 = (RuleCall)cPartsAssignment_24.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_25 = (Keyword)cGroup.eContents().get(25);
-		private final Keyword cIntoKeyword_26 = (Keyword)cGroup.eContents().get(26);
-		private final Assignment cAckdatatoAssignment_27 = (Assignment)cGroup.eContents().get(27);
-		private final RuleCall cAckdatatoSTRINGTerminalRuleCall_27_0 = (RuleCall)cAckdatatoAssignment_27.eContents().get(0);
-		private final Keyword cStoreAckAtKeyword_28 = (Keyword)cGroup.eContents().get(28);
-		private final Keyword cLeftCurlyBracketKeyword_29 = (Keyword)cGroup.eContents().get(29);
-		private final Assignment cAckdataAssignment_30 = (Assignment)cGroup.eContents().get(30);
-		private final RuleCall cAckdataSelectStatementParserRuleCall_30_0 = (RuleCall)cAckdataAssignment_30.eContents().get(0);
+		private final Assignment cHeaderdataAssignment_20 = (Assignment)cGroup.eContents().get(20);
+		private final RuleCall cHeaderdataSelectStatementParserRuleCall_20_0 = (RuleCall)cHeaderdataAssignment_20.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Keyword cFromKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Assignment cPostdatafromAssignment_23 = (Assignment)cGroup.eContents().get(23);
+		private final RuleCall cPostdatafromSTRINGTerminalRuleCall_23_0 = (RuleCall)cPostdatafromAssignment_23.eContents().get(0);
+		private final Keyword cUpdateBodyWithKeyword_24 = (Keyword)cGroup.eContents().get(24);
+		private final Keyword cLeftCurlyBracketKeyword_25 = (Keyword)cGroup.eContents().get(25);
+		private final Keyword cParentKeyword_26 = (Keyword)cGroup.eContents().get(26);
+		private final Keyword cAsKeyword_27 = (Keyword)cGroup.eContents().get(27);
+		private final Assignment cParentNameAssignment_28 = (Assignment)cGroup.eContents().get(28);
+		private final RuleCall cParentNameSTRINGTerminalRuleCall_28_0 = (RuleCall)cParentNameAssignment_28.eContents().get(0);
+		private final Assignment cParentdataAssignment_29 = (Assignment)cGroup.eContents().get(29);
+		private final RuleCall cParentdataSelectStatementParserRuleCall_29_0 = (RuleCall)cParentdataAssignment_29.eContents().get(0);
+		private final Assignment cPartsAssignment_30 = (Assignment)cGroup.eContents().get(30);
+		private final RuleCall cPartsRestPartParserRuleCall_30_0 = (RuleCall)cPartsAssignment_30.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_31 = (Keyword)cGroup.eContents().get(31);
-		private final Keyword cRightCurlyBracketKeyword_32 = (Keyword)cGroup.eContents().get(32);
+		private final Keyword cIntoKeyword_32 = (Keyword)cGroup.eContents().get(32);
+		private final Assignment cAckdatatoAssignment_33 = (Assignment)cGroup.eContents().get(33);
+		private final RuleCall cAckdatatoSTRINGTerminalRuleCall_33_0 = (RuleCall)cAckdatatoAssignment_33.eContents().get(0);
+		private final Keyword cStoreAckAtKeyword_34 = (Keyword)cGroup.eContents().get(34);
+		private final Keyword cLeftCurlyBracketKeyword_35 = (Keyword)cGroup.eContents().get(35);
+		private final Assignment cAckdataAssignment_36 = (Assignment)cGroup.eContents().get(36);
+		private final RuleCall cAckdataSelectStatementParserRuleCall_36_0 = (RuleCall)cAckdataAssignment_36.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_37 = (Keyword)cGroup.eContents().get(37);
+		private final Keyword cRightCurlyBracketKeyword_38 = (Keyword)cGroup.eContents().get(38);
 		
 		//Rest:
 		//	'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING
 		//	'{'
+		//	'from' resourcedatafrom=STRING 'update-url-with' '{'
+		//	urldata=SelectStatement
+		//	'}'
 		//	'from' headerdatafrom=STRING 'update-header-with' '{'
 		//	headerdata=SelectStatement
 		//	'}'
@@ -473,9 +601,10 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING '{' 'from'
-		//headerdatafrom=STRING 'update-header-with' '{' headerdata=SelectStatement '}' 'from' postdatafrom=STRING
-		//'update-body-with' '{' 'parent' 'as' parentName=STRING parentdata=SelectStatement parts+=RestPart* '}' 'into'
-		//ackdatato=STRING 'store-ack-at' '{' ackdata=SelectStatement '}' '}'
+		//resourcedatafrom=STRING 'update-url-with' '{' urldata=SelectStatement '}' 'from' headerdatafrom=STRING
+		//'update-header-with' '{' headerdata=SelectStatement '}' 'from' postdatafrom=STRING 'update-body-with' '{' 'parent' 'as'
+		//parentName=STRING parentdata=SelectStatement parts+=RestPart* '}' 'into' ackdatato=STRING 'store-ack-at' '{'
+		//ackdata=SelectStatement '}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'rest'
@@ -523,23 +652,23 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//'from'
 		public Keyword getFromKeyword_10() { return cFromKeyword_10; }
 		
-		//headerdatafrom=STRING
-		public Assignment getHeaderdatafromAssignment_11() { return cHeaderdatafromAssignment_11; }
+		//resourcedatafrom=STRING
+		public Assignment getResourcedatafromAssignment_11() { return cResourcedatafromAssignment_11; }
 		
 		//STRING
-		public RuleCall getHeaderdatafromSTRINGTerminalRuleCall_11_0() { return cHeaderdatafromSTRINGTerminalRuleCall_11_0; }
+		public RuleCall getResourcedatafromSTRINGTerminalRuleCall_11_0() { return cResourcedatafromSTRINGTerminalRuleCall_11_0; }
 		
-		//'update-header-with'
-		public Keyword getUpdateHeaderWithKeyword_12() { return cUpdateHeaderWithKeyword_12; }
+		//'update-url-with'
+		public Keyword getUpdateUrlWithKeyword_12() { return cUpdateUrlWithKeyword_12; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_13() { return cLeftCurlyBracketKeyword_13; }
 		
-		//headerdata=SelectStatement
-		public Assignment getHeaderdataAssignment_14() { return cHeaderdataAssignment_14; }
+		//urldata=SelectStatement
+		public Assignment getUrldataAssignment_14() { return cUrldataAssignment_14; }
 		
 		//SelectStatement
-		public RuleCall getHeaderdataSelectStatementParserRuleCall_14_0() { return cHeaderdataSelectStatementParserRuleCall_14_0; }
+		public RuleCall getUrldataSelectStatementParserRuleCall_14_0() { return cUrldataSelectStatementParserRuleCall_14_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
@@ -547,71 +676,95 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//'from'
 		public Keyword getFromKeyword_16() { return cFromKeyword_16; }
 		
-		//postdatafrom=STRING
-		public Assignment getPostdatafromAssignment_17() { return cPostdatafromAssignment_17; }
+		//headerdatafrom=STRING
+		public Assignment getHeaderdatafromAssignment_17() { return cHeaderdatafromAssignment_17; }
 		
 		//STRING
-		public RuleCall getPostdatafromSTRINGTerminalRuleCall_17_0() { return cPostdatafromSTRINGTerminalRuleCall_17_0; }
+		public RuleCall getHeaderdatafromSTRINGTerminalRuleCall_17_0() { return cHeaderdatafromSTRINGTerminalRuleCall_17_0; }
 		
-		//'update-body-with'
-		public Keyword getUpdateBodyWithKeyword_18() { return cUpdateBodyWithKeyword_18; }
+		//'update-header-with'
+		public Keyword getUpdateHeaderWithKeyword_18() { return cUpdateHeaderWithKeyword_18; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_19() { return cLeftCurlyBracketKeyword_19; }
 		
-		//'parent'
-		public Keyword getParentKeyword_20() { return cParentKeyword_20; }
-		
-		//'as'
-		public Keyword getAsKeyword_21() { return cAsKeyword_21; }
-		
-		//parentName=STRING
-		public Assignment getParentNameAssignment_22() { return cParentNameAssignment_22; }
-		
-		//STRING
-		public RuleCall getParentNameSTRINGTerminalRuleCall_22_0() { return cParentNameSTRINGTerminalRuleCall_22_0; }
-		
-		//parentdata=SelectStatement
-		public Assignment getParentdataAssignment_23() { return cParentdataAssignment_23; }
+		//headerdata=SelectStatement
+		public Assignment getHeaderdataAssignment_20() { return cHeaderdataAssignment_20; }
 		
 		//SelectStatement
-		public RuleCall getParentdataSelectStatementParserRuleCall_23_0() { return cParentdataSelectStatementParserRuleCall_23_0; }
-		
-		//parts+=RestPart*
-		public Assignment getPartsAssignment_24() { return cPartsAssignment_24; }
-		
-		//RestPart
-		public RuleCall getPartsRestPartParserRuleCall_24_0() { return cPartsRestPartParserRuleCall_24_0; }
+		public RuleCall getHeaderdataSelectStatementParserRuleCall_20_0() { return cHeaderdataSelectStatementParserRuleCall_20_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_25() { return cRightCurlyBracketKeyword_25; }
+		public Keyword getRightCurlyBracketKeyword_21() { return cRightCurlyBracketKeyword_21; }
 		
-		//'into'
-		public Keyword getIntoKeyword_26() { return cIntoKeyword_26; }
+		//'from'
+		public Keyword getFromKeyword_22() { return cFromKeyword_22; }
 		
-		//ackdatato=STRING
-		public Assignment getAckdatatoAssignment_27() { return cAckdatatoAssignment_27; }
+		//postdatafrom=STRING
+		public Assignment getPostdatafromAssignment_23() { return cPostdatafromAssignment_23; }
 		
 		//STRING
-		public RuleCall getAckdatatoSTRINGTerminalRuleCall_27_0() { return cAckdatatoSTRINGTerminalRuleCall_27_0; }
+		public RuleCall getPostdatafromSTRINGTerminalRuleCall_23_0() { return cPostdatafromSTRINGTerminalRuleCall_23_0; }
 		
-		//'store-ack-at'
-		public Keyword getStoreAckAtKeyword_28() { return cStoreAckAtKeyword_28; }
+		//'update-body-with'
+		public Keyword getUpdateBodyWithKeyword_24() { return cUpdateBodyWithKeyword_24; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_29() { return cLeftCurlyBracketKeyword_29; }
+		public Keyword getLeftCurlyBracketKeyword_25() { return cLeftCurlyBracketKeyword_25; }
 		
-		//ackdata=SelectStatement
-		public Assignment getAckdataAssignment_30() { return cAckdataAssignment_30; }
+		//'parent'
+		public Keyword getParentKeyword_26() { return cParentKeyword_26; }
+		
+		//'as'
+		public Keyword getAsKeyword_27() { return cAsKeyword_27; }
+		
+		//parentName=STRING
+		public Assignment getParentNameAssignment_28() { return cParentNameAssignment_28; }
+		
+		//STRING
+		public RuleCall getParentNameSTRINGTerminalRuleCall_28_0() { return cParentNameSTRINGTerminalRuleCall_28_0; }
+		
+		//parentdata=SelectStatement
+		public Assignment getParentdataAssignment_29() { return cParentdataAssignment_29; }
 		
 		//SelectStatement
-		public RuleCall getAckdataSelectStatementParserRuleCall_30_0() { return cAckdataSelectStatementParserRuleCall_30_0; }
+		public RuleCall getParentdataSelectStatementParserRuleCall_29_0() { return cParentdataSelectStatementParserRuleCall_29_0; }
+		
+		//parts+=RestPart*
+		public Assignment getPartsAssignment_30() { return cPartsAssignment_30; }
+		
+		//RestPart
+		public RuleCall getPartsRestPartParserRuleCall_30_0() { return cPartsRestPartParserRuleCall_30_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_31() { return cRightCurlyBracketKeyword_31; }
 		
+		//'into'
+		public Keyword getIntoKeyword_32() { return cIntoKeyword_32; }
+		
+		//ackdatato=STRING
+		public Assignment getAckdatatoAssignment_33() { return cAckdatatoAssignment_33; }
+		
+		//STRING
+		public RuleCall getAckdatatoSTRINGTerminalRuleCall_33_0() { return cAckdatatoSTRINGTerminalRuleCall_33_0; }
+		
+		//'store-ack-at'
+		public Keyword getStoreAckAtKeyword_34() { return cStoreAckAtKeyword_34; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_35() { return cLeftCurlyBracketKeyword_35; }
+		
+		//ackdata=SelectStatement
+		public Assignment getAckdataAssignment_36() { return cAckdataAssignment_36; }
+		
+		//SelectStatement
+		public RuleCall getAckdataSelectStatementParserRuleCall_36_0() { return cAckdataSelectStatementParserRuleCall_36_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_32() { return cRightCurlyBracketKeyword_32; }
+		public Keyword getRightCurlyBracketKeyword_37() { return cRightCurlyBracketKeyword_37; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_38() { return cRightCurlyBracketKeyword_38; }
 	}
 	public class RestPartElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.RestPart");
@@ -1809,6 +1962,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	private final FinallyElements pFinally;
 	private final CatchElements pCatch;
 	private final ActionElements pAction;
+	private final FBCLeadElements pFBCLead;
 	private final DropfileElements pDropfile;
 	private final DoozleElements pDoozle;
 	private final RestElements pRest;
@@ -1843,6 +1997,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFinally = new FinallyElements();
 		this.pCatch = new CatchElements();
 		this.pAction = new ActionElements();
+		this.pFBCLead = new FBCLeadElements();
 		this.pDropfile = new DropfileElements();
 		this.pDoozle = new DoozleElements();
 		this.pRest = new RestElements();
@@ -1960,13 +2115,28 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	| TrelloGET
 	//	| Rest
 	//	| Doozle
-	//	| Dropfile;
+	//	| Dropfile
+	//	| FBCLead;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+	
+	//FBCLead:
+	//	'fblc' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING
+	//	'from-source' source=STRING 'using'
+	//	'{'
+	//	value=STRING
+	//	'}' 'on-condition' condition=STRING;
+	public FBCLeadElements getFBCLeadAccess() {
+		return pFBCLead;
+	}
+	
+	public ParserRule getFBCLeadRule() {
+		return getFBCLeadAccess().getRule();
 	}
 	
 	//Dropfile:
@@ -1995,6 +2165,9 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//Rest:
 	//	'rest' 'as' name=STRING 'secured-by' authtoken=STRING 'with-url' url=STRING 'and-method-as' method=STRING
 	//	'{'
+	//	'from' resourcedatafrom=STRING 'update-url-with' '{'
+	//	urldata=SelectStatement
+	//	'}'
 	//	'from' headerdatafrom=STRING 'update-header-with' '{'
 	//	headerdata=SelectStatement
 	//	'}'

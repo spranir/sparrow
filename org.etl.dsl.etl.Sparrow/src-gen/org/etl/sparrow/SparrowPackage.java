@@ -252,6 +252,88 @@ public interface SparrowPackage extends EPackage
   int ACTION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.FBCLeadImpl <em>FBC Lead</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.FBCLeadImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getFBCLead()
+   * @generated
+   */
+  int FBC_LEAD = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Authstore</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__AUTHSTORE = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__KEY = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Useraccount</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__USERACCOUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__SOURCE = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__VALUE = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD__CONDITION = ACTION_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>FBC Lead</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FBC_LEAD_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
+
+  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.DropfileImpl <em>Dropfile</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -259,7 +341,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDropfile()
    * @generated
    */
-  int DROPFILE = 5;
+  int DROPFILE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -296,7 +378,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDoozle()
    * @generated
    */
-  int DOOZLE = 6;
+  int DOOZLE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -351,7 +433,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRest()
    * @generated
    */
-  int REST = 7;
+  int REST = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -390,13 +472,31 @@ public interface SparrowPackage extends EPackage
   int REST__METHOD = ACTION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Resourcedatafrom</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__RESOURCEDATAFROM = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Urldata</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REST__URLDATA = ACTION_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Headerdatafrom</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REST__HEADERDATAFROM = ACTION_FEATURE_COUNT + 3;
+  int REST__HEADERDATAFROM = ACTION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Headerdata</b></em>' attribute.
@@ -405,7 +505,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__HEADERDATA = ACTION_FEATURE_COUNT + 4;
+  int REST__HEADERDATA = ACTION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Postdatafrom</b></em>' attribute.
@@ -414,7 +514,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__POSTDATAFROM = ACTION_FEATURE_COUNT + 5;
+  int REST__POSTDATAFROM = ACTION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Parent Name</b></em>' attribute.
@@ -423,7 +523,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__PARENT_NAME = ACTION_FEATURE_COUNT + 6;
+  int REST__PARENT_NAME = ACTION_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Parentdata</b></em>' attribute.
@@ -432,7 +532,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__PARENTDATA = ACTION_FEATURE_COUNT + 7;
+  int REST__PARENTDATA = ACTION_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -441,7 +541,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__PARTS = ACTION_FEATURE_COUNT + 8;
+  int REST__PARTS = ACTION_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Ackdatato</b></em>' attribute.
@@ -450,7 +550,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__ACKDATATO = ACTION_FEATURE_COUNT + 9;
+  int REST__ACKDATATO = ACTION_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Ackdata</b></em>' attribute.
@@ -459,7 +559,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST__ACKDATA = ACTION_FEATURE_COUNT + 10;
+  int REST__ACKDATA = ACTION_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>Rest</em>' class.
@@ -468,7 +568,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 11;
+  int REST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 13;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.RestPartImpl <em>Rest Part</em>}' class.
@@ -478,7 +578,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRestPart()
    * @generated
    */
-  int REST_PART = 8;
+  int REST_PART = 9;
 
   /**
    * The feature id for the '<em><b>Part Name</b></em>' attribute.
@@ -515,7 +615,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloGET()
    * @generated
    */
-  int TRELLO_GET = 9;
+  int TRELLO_GET = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -606,7 +706,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloPUT()
    * @generated
    */
-  int TRELLO_PUT = 10;
+  int TRELLO_PUT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -697,7 +797,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
    * @generated
    */
-  int FETCH = 11;
+  int FETCH = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -752,7 +852,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 12;
+  int CALLPROCESS = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -825,7 +925,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 13;
+  int UPDATEDAUDIT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -871,7 +971,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
    * @generated
    */
-  int SMS = 14;
+  int SMS = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -926,7 +1026,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlackPUT()
    * @generated
    */
-  int SLACK_PUT = 15;
+  int SLACK_PUT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -990,7 +1090,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
    * @generated
    */
-  int GOOGLECAL_PUT = 16;
+  int GOOGLECAL_PUT = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1072,7 +1172,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 17;
+  int COPYDATA = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1136,7 +1236,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 18;
+  int WRITE_CSV = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1209,7 +1309,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 19;
+  int LOAD_CSV = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1282,7 +1382,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 20;
+  int TRANSFORM = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1502,6 +1602,82 @@ public interface SparrowPackage extends EPackage
   EAttribute getAction_Name();
 
   /**
+   * Returns the meta object for class '{@link org.etl.sparrow.FBCLead <em>FBC Lead</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>FBC Lead</em>'.
+   * @see org.etl.sparrow.FBCLead
+   * @generated
+   */
+  EClass getFBCLead();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getAuthstore <em>Authstore</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Authstore</em>'.
+   * @see org.etl.sparrow.FBCLead#getAuthstore()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Authstore();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see org.etl.sparrow.FBCLead#getKey()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Key();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getUseraccount <em>Useraccount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Useraccount</em>'.
+   * @see org.etl.sparrow.FBCLead#getUseraccount()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Useraccount();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source</em>'.
+   * @see org.etl.sparrow.FBCLead#getSource()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Source();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.FBCLead#getValue()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.FBCLead#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition</em>'.
+   * @see org.etl.sparrow.FBCLead#getCondition()
+   * @see #getFBCLead()
+   * @generated
+   */
+  EAttribute getFBCLead_Condition();
+
+  /**
    * Returns the meta object for class '{@link org.etl.sparrow.Dropfile <em>Dropfile</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1607,6 +1783,28 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getRest_Method();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getResourcedatafrom <em>Resourcedatafrom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Resourcedatafrom</em>'.
+   * @see org.etl.sparrow.Rest#getResourcedatafrom()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Resourcedatafrom();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getUrldata <em>Urldata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Urldata</em>'.
+   * @see org.etl.sparrow.Rest#getUrldata()
+   * @see #getRest()
+   * @generated
+   */
+  EAttribute getRest_Urldata();
 
   /**
    * Returns the meta object for the attribute '{@link org.etl.sparrow.Rest#getHeaderdatafrom <em>Headerdatafrom</em>}'.
@@ -2604,6 +2802,64 @@ public interface SparrowPackage extends EPackage
     EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
 
     /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.FBCLeadImpl <em>FBC Lead</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.FBCLeadImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getFBCLead()
+     * @generated
+     */
+    EClass FBC_LEAD = eINSTANCE.getFBCLead();
+
+    /**
+     * The meta object literal for the '<em><b>Authstore</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__AUTHSTORE = eINSTANCE.getFBCLead_Authstore();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__KEY = eINSTANCE.getFBCLead_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Useraccount</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__USERACCOUNT = eINSTANCE.getFBCLead_Useraccount();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__SOURCE = eINSTANCE.getFBCLead_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__VALUE = eINSTANCE.getFBCLead_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FBC_LEAD__CONDITION = eINSTANCE.getFBCLead_Condition();
+
+    /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.DropfileImpl <em>Dropfile</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2688,6 +2944,22 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute REST__METHOD = eINSTANCE.getRest_Method();
+
+    /**
+     * The meta object literal for the '<em><b>Resourcedatafrom</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__RESOURCEDATAFROM = eINSTANCE.getRest_Resourcedatafrom();
+
+    /**
+     * The meta object literal for the '<em><b>Urldata</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REST__URLDATA = eINSTANCE.getRest_Urldata();
 
     /**
      * The meta object literal for the '<em><b>Headerdatafrom</b></em>' attribute feature.

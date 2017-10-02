@@ -17,6 +17,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.etl.sparrow.Rest#getAuthtoken <em>Authtoken</em>}</li>
  *   <li>{@link org.etl.sparrow.Rest#getUrl <em>Url</em>}</li>
  *   <li>{@link org.etl.sparrow.Rest#getMethod <em>Method</em>}</li>
+ *   <li>{@link org.etl.sparrow.Rest#getResourcedatafrom <em>Resourcedatafrom</em>}</li>
+ *   <li>{@link org.etl.sparrow.Rest#getUrldata <em>Urldata</em>}</li>
  *   <li>{@link org.etl.sparrow.Rest#getHeaderdatafrom <em>Headerdatafrom</em>}</li>
  *   <li>{@link org.etl.sparrow.Rest#getHeaderdata <em>Headerdata</em>}</li>
  *   <li>{@link org.etl.sparrow.Rest#getPostdatafrom <em>Postdatafrom</em>}</li>
@@ -110,6 +112,58 @@ public interface Rest extends Action
    * @generated
    */
   void setMethod(String value);
+
+  /**
+   * Returns the value of the '<em><b>Resourcedatafrom</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Resourcedatafrom</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Resourcedatafrom</em>' attribute.
+   * @see #setResourcedatafrom(String)
+   * @see org.etl.sparrow.SparrowPackage#getRest_Resourcedatafrom()
+   * @model
+   * @generated
+   */
+  String getResourcedatafrom();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.Rest#getResourcedatafrom <em>Resourcedatafrom</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Resourcedatafrom</em>' attribute.
+   * @see #getResourcedatafrom()
+   * @generated
+   */
+  void setResourcedatafrom(String value);
+
+  /**
+   * Returns the value of the '<em><b>Urldata</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Urldata</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Urldata</em>' attribute.
+   * @see #setUrldata(String)
+   * @see org.etl.sparrow.SparrowPackage#getRest_Urldata()
+   * @model
+   * @generated
+   */
+  String getUrldata();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.Rest#getUrldata <em>Urldata</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Urldata</em>' attribute.
+   * @see #getUrldata()
+   * @generated
+   */
+  void setUrldata(String value);
 
   /**
    * Returns the value of the '<em><b>Headerdatafrom</b></em>' attribute.
