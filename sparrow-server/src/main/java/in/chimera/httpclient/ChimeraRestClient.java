@@ -138,7 +138,7 @@ public class ChimeraRestClient implements RestClient {
 			} catch (IOException e) {
 				throw new IllegalStateException(e);
 			}
-		} else if (authType.equals("basic")) {
+		} else if (authType.equals("basicauth")) {
 			String authString = userName + ":" + password;
 			authToken = new String(Base64.encodeBase64(authString.getBytes()));
 		}
