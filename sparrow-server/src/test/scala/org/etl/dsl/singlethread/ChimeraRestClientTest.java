@@ -1,6 +1,8 @@
 package org.etl.dsl.singlethread;
 import java.io.IOException;
-
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.junit.Test;
 
@@ -23,6 +25,21 @@ public class ChimeraRestClientTest {
 		client.post(path, payload);
 		
 		
+	}
+	
+	@Test
+	public void testSpoors() throws IOException {
+		String baseURL="http://nd.spoors.in/effort5-2016/api/createWork?tzo=-330";
+		String userName = "Lasalle@Lasalle.in";
+		String password = "Lasalle@1";
+		
+		
+		String filePath = this.getClass().getResource("spoors.test.json").getPath();
+		String osAppropriatePath = System.getProperty( "os.name" ).contains( "indow" ) ? filePath.substring(1) : filePath;
+		String payload =new String(Files.readAllBytes(Paths.get(osAppropriatePath)), StandardCharsets.UTF_8);
+		ChimeraRestClient client = new ChimeraRestClient(baseURL, userName+":"+password+":basicauth:default");
+		client.createAuthToken();
+		client.post("", payload);
 	}
 	
 	
