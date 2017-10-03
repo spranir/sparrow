@@ -108,8 +108,9 @@ class RestAction extends org.etl.command.Action with LazyLogging {
         }
         partArray.put(partObj)
       }
-      if(parentName.contains(".")){        
-        val partHolder = parentName.split(".").apply(1)
+      if(parentName.contains(".")){ 
+        val parentArr = parentName.split("\\.")
+        val partHolder = parentArr.apply(1)
         logger.info("Rest id#{}, adding shell holder as {}", partHolder)
         val jsonPartHolderPayload = new JSONObject
         jsonPartHolderPayload.put(partName,partArray)
