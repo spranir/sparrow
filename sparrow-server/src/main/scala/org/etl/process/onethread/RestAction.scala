@@ -92,12 +92,12 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       val partSrc = iter.next()
       val partAsIs: org.etl.sparrow.RestPart = partSrc.asInstanceOf[org.etl.sparrow.RestPart]
       val part: org.etl.sparrow.RestPart = CommandProxy.createProxy(partAsIs, classOf[org.etl.sparrow.RestPart], context)
-      val name = part.getPartName
+      val partName = part.getPartName
       val query = part.getPartData
       val partRs = bodyStmt.executeQuery(query.replaceAll("\"", ""))
       val partColCount = partRs.getMetaData.getColumnCount
       val partArray = new JSONArray;
-      logger.info("Rest id#{}, partSrc#{}, partName#{}, partSql#{}", id, partSrc, name, query)
+      logger.info("Rest id#{}, partSrc#{}, partName#{}, partSql#{}", id, partSrc, partName, query)
       while (partRs.next) {
         val partObj = new JSONObject
         for (j <- 1 until partColCount+1) {
@@ -108,7 +108,18 @@ class RestAction extends org.etl.command.Action with LazyLogging {
         }
         partArray.put(partObj)
       }
-      jsonPayload.put(name, partArray)
+      if(parentName.contains(".")){        
+        val partHolder = parentName.split(".").apply(1)
+        logger.info("Rest id#{}, adding shell holder as {}", partHolder)
+        val jsonPartHolderPayload = new JSONObject
+        jsonPartHolderPayload.put(partName,partArray)
+        jsonPayload.put(partHolder, jsonPartHolderPayload)
+      }
+      else
+      {
+        logger.info("Rest id#{}, adding adding array as is to parent")
+        jsonPayload.put(partName, partArray)
+      }
     }
     val jsonObject = jsonPayload.toString
     logger.info("Rest id#{}, outbound json object #{}", id, jsonObject.toString());
