@@ -15,7 +15,7 @@ object SparrowServer extends Application with LazyLogging{
     
     logger.info("Starting the restlet server to take in commands, at port "+args.apply(0))
     val component = new Component()
-    component.getServers().add(Protocol.HTTP, 8080)
+    component.getServers().add(Protocol.HTTP, 9733)
     // Attach the sample application.
     component.getDefaultHost().attach(this)
     // Start the component.    
