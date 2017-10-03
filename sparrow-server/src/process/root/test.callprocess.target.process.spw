@@ -2,7 +2,7 @@ process "test.callprocess.target.process"
 {
 	try
 	{
-		transform as "create-table" on "oltp/chimera-lms" using
+		transform as "create-table" on "oltp/chimera-intg" using
 		{
 			"INSERT INTO test_call_process values ('var1-target','${var1}');"
 		}

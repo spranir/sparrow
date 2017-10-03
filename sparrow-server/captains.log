@@ -325,7 +325,7 @@ ENGINE=InnoDB
 AUTO_INCREMENT=3
 ;
 
-REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (1, '1', 'oltp/chimera-lms', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/chimera_lms?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 17:22:05');
+REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (1, '1', 'oltp/chimera-intg', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/chimera_lms?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 17:22:05');
 REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (2, '1', 'audit/chimera-audit', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/spw_audit?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 18:42:29');
 
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'google-cal-auth-file', 'auth/Dhuruva-BMS-516dab070732.p12', 'Y');
@@ -336,11 +336,12 @@ REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VAL
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.doozle.process', 'filepath', 'test.doozle.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.rest.process', 'filepath', 'test.rest.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.collection.process', 'filepath', 'inbound.collection.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'filepath', 'outbound.collection.process.spw', 'Y');
 
 
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process#1', 'publish.demandforecast.process', 'lms', 'oltp/chimera_lms', 'Y');
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.callprocess.process#1', 'test.callprocess.process', 'lms', 'oltp/chimera_lms', 'Y');
-REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.rest.process#1', 'test.rest.process', 'lms', 'oltp/chimera-lms', 'Y');
+REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.rest.process#1', 'test.rest.process', 'lms', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.doozle.process#1', 'test.doozle.process', 'lms', 'oltp/chimera_lms', 'Y');
 
 

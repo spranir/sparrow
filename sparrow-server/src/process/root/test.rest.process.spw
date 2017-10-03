@@ -1,7 +1,7 @@
 process "test.rest.process"
 {
 	try{
-		transform as "create-test-tables" on "oltp/chimera-lms" using
+		transform as "create-test-tables" on "oltp/chimera-intg" using
 		{
 			"DROP TABLE IF EXISTS ack_data;
 			CREATE TABLE ack_data (
@@ -22,20 +22,20 @@ process "test.rest.process"
 			"			
 		}
 			
-		rest as "lms-client" secured-by "Mifos:duruv@@639001:chimeraauth:default" with-url "https://lab.lasalle.in/fineract-provider/api/v1" and-method-as "POST" {
-			from "oltp/chimera-lms" update-url-with {
+		rest as "lms-client" secured-by "Mifos:duruva123:chimeraauth:default" with-url "https://lab.lasalle.in/fineract-provider/api/v1" and-method-as "POST" {
+			from "oltp/chimera-intg" update-url-with {
 				"SELECT '/groups/312?command=saveCollectionSheet' as groupUrl;"
 			}
-			from "oltp/chimera-lms" update-header-with {
+			from "oltp/chimera-intg" update-header-with {
 				"SELECT key_, value from header_data;" 
 			}
-			from "oltp/chimera-lms" update-body-with {
+			from "oltp/chimera-intg" update-body-with {
 				parent as "collectionSheet" with "SELECT 'dd MMMM yyyy' as dateFormat, 'en' as locale, 157 as calendarId, '25 December 2016' as transactionDate, '11 December 2016' as actualDisbursementDate;"
 				part as "clientsAttendance" with "SELECT clientid as clientId, attendanceid as attendanceType from client_data where processid=${process-id};"
 				part as "bulkRepaymentTransactions" with "SELECT loanid as loanId, amount as transactionAmount from client_data where processid=${process-id};"						 			 
 				
 			}
-			into "oltp/chimera-lms" store-ack-at {
+			into "oltp/chimera-intg" store-ack-at {
 				"insert into ack_data values (${process_id}, '${ack_response}');"
 			}		
 		}
