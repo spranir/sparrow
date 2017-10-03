@@ -15,11 +15,13 @@ class TransformAction extends org.etl.command.Action with LazyLogging {
     
     val dbSrc = transform.getOn
     val name = transform.getName
+    val id = context.getValue("process-id")
+    val sqlList = transform.getValue
+    logger.info("Transform id#{}, name#{}, dbSrc#{}, sqlList#{}", id, name, dbSrc)
+    
     val conn = ResourceAccess.rdbmsConn(dbSrc)
     conn.setAutoCommit(false)
-    val sqlList = transform.getValue
-    val id = context.getValue("process-id")
-    logger.info("Transform id#{}, name#{}, dbSrc#{}, sqlList#{}", id, name, dbSrc)
+        
     val stmt = conn.createStatement
     val iter = sqlList.iterator
     while (iter.hasNext) {
@@ -33,6 +35,7 @@ class TransformAction extends org.etl.command.Action with LazyLogging {
       }
     }
     conn.commit
+    logger.info("Completed Transform id#{}, name#{}, dbSrc#{}, sqlList#{}", id, name, dbSrc,sqlList)
     context
   }
 
