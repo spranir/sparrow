@@ -46,6 +46,10 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     restRs.next
     val restUrl = restRs.getString(1)
     
+    restRs.close
+    restStmt.close
+    restDbConn.close
+     
     logger.info("Rest id#{}, restdbsrc#{}, resturl#{}, sql#{}",id,restDbSrc, restUrl, restResSql)
 
     val headerDbSrc = rest.getHeaderdatafrom
@@ -64,6 +68,9 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       headerMap.put(headerKey, headerValue)
 
     }
+    headerRs.close
+    headerStmt.close
+    headerConn.close
     
     logger.info("Rest id#{}, headerDbSrc#{}, headerSql#{}, headerMap#{}",id,headerDbSrc, headerSql, headerMap)
     val parentName = rest.getParentName
@@ -86,6 +93,9 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       jsonPayload.put(key, value)
     }
 
+    bodyResultset.close
+    
+    
     val parts:EList[RestPart] = rest.getParts
     val iter = parts.iterator()
     while (iter.hasNext) {
@@ -121,7 +131,10 @@ class RestAction extends org.etl.command.Action with LazyLogging {
         logger.info("Rest id#{}, adding adding array as is to parent")
         jsonPayload.put(partName, partArray)
       }
+      partRs.close
     }
+    bodyStmt.close
+    bodayConn.close
     val jsonObject = jsonPayload.toString
     logger.info("Rest id#{}, outbound json object #{}", id, jsonObject.toString());
     val restClient = new ChimeraRestClient(url,authResource)
@@ -130,6 +143,8 @@ class RestAction extends org.etl.command.Action with LazyLogging {
 
     val ackSql = rest.getAckdata
     val ackTarget = rest.getAckdatato
+    
+    
     context
   }
 

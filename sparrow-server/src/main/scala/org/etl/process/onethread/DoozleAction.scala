@@ -32,9 +32,13 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
     logger.info("Sql=" + ddlSql)
     val conn = ResourceAccess.rdbmsConn(dbSrc)
     val stmt = conn.createStatement
-
-    stmt.execute(ddlSql)
-    logger.info("Completed doozle id#{}, name#{}, table#{}, db=#{}", id, name, table, dbSrc)
+    try {
+      stmt.execute(ddlSql)
+      logger.info("Completed doozle id#{}, name#{}, table#{}, db=#{}", id, name, table, dbSrc)
+    } finally {
+      stmt.close
+      conn.close
+    }
     context
   }
 
@@ -46,10 +50,10 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
     ParameterisationEngine.doYieldtoTrue(expression)
   }
 
-  def storeJson(incomingJson: String, storagePath: String, name: String, id:String) = {
+  def storeJson(incomingJson: String, storagePath: String, name: String, id: String) = {
     val finalPath = storagePath + "/" + name + ".json"
     Files.write(Paths.get(finalPath), incomingJson.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE)
-    logger.info("File stored for doozle id#{}, path#{}", id, finalPath )
+    logger.info("File stored for doozle id#{}, path#{}", id, finalPath)
   }
-  
+
 }

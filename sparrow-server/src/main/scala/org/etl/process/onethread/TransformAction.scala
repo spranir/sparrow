@@ -36,6 +36,9 @@ class TransformAction extends org.etl.command.Action with LazyLogging {
     }
     conn.commit
     logger.info("Completed Transform id#{}, name#{}, dbSrc#{}, sqlList#{}", id, name, dbSrc,sqlList)
+    
+    stmt.close
+    conn.close
     context
   }
 
