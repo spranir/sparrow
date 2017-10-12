@@ -210,6 +210,8 @@ https://mariadb.com/kb/en/library/loading-the-connect-storage-engine/
 
 INSTALL SONAME 'ha_connect.dll';
 
+sudo apt-get install mariadb-plugin-connect
+
 Finding the version of mariadb
 SHOW STORAGE ENGINES;
 SELECT VERSION();
@@ -252,6 +254,23 @@ https://jsonformatter.org
 
 CREATE DATABASE chimera_integration;
 
+use chimera_integration;
+
+CREATE TABLE `PARENT_DATA` (
+  `calendarId` int(11) DEFAULT NULL,
+  `transactionDate` varchar(25) DEFAULT NULL,
+  `actualDisbursementDate` varchar(25) DEFAULT NULL,
+  `processid` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `CLIENT_DATA` (
+  `clientid` int(11) DEFAULT NULL,
+  `attendanceid` int(11) DEFAULT NULL,
+  `loanid` int(11) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `processid` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `spoors_header_data` (
     `key_` VARCHAR(50) NULL DEFAULT NULL,
     `value` VARCHAR(50) NULL DEFAULT NULL
@@ -278,7 +297,11 @@ INSERT INTO `header_data` (`key_`, `value`) VALUES ('Accept', 'application/json,
 
 INSERT INTO `header_data` (`key_`, `value`) VALUES ('Fineract-Platform-TenantId', 'default');
 
-CREATE DATABASE spw_audit;
+CREATE DATABASE audit;
+
+
+
+use audit;
 
 
 
@@ -299,7 +322,6 @@ CREATE TABLE `command_audit` (
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=98
 ;
 
 
@@ -323,7 +345,7 @@ CREATE TABLE `instance_audit` (
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=67
+
 ;
 
 
@@ -347,8 +369,86 @@ CREATE TABLE `statement_audit` (
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=2
 ;
+
+CREATE DATABASE spw_audit;
+
+
+
+use spw_audit;
+
+
+
+CREATE TABLE `command_audit` (
+	`command_id` INT(11) NOT NULL AUTO_INCREMENT,
+
+	`instance_id` INT(11) NULL DEFAULT '0',
+	`start` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+
+	`end` DATETIME NULL DEFAULT NULL,
+	`action_name` VARCHAR(150) NULL DEFAULT NULL,
+
+	`process_name` VARCHAR(150) NULL DEFAULT NULL,
+	`command_config` TEXT NULL DEFAULT NULL,
+
+	`status` SMALLINT(6) NULL DEFAULT NULL,
+	PRIMARY KEY (`command_id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
+
+CREATE TABLE `instance_audit` (
+	`instance_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`instance_name` VARCHAR(150) NOT NULL DEFAULT '0',
+
+	`mode` VARCHAR(100) NOT NULL DEFAULT '0',
+	`start` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`end` DATETIME NULL DEFAULT NULL,
+
+	`hostname` VARCHAR(50) NULL DEFAULT NULL,
+	`file` VARCHAR(500) NULL DEFAULT NULL,
+	`status` SMALLINT(6) NULL DEFAULT NULL,
+
+	`context_log` TEXT NULL DEFAULT NULL,
+	`root_ref_id` INT(11) NULL DEFAULT NULL,
+
+	PRIMARY KEY (`instance_id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+
+;
+
+
+
+CREATE TABLE `statement_audit` (
+	`statement_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`action_id` INT(11) NULL DEFAULT '0',
+
+	`action_name` VARCHAR(50) NULL DEFAULT '0',
+	`process_name` VARCHAR(50) NULL DEFAULT '0',
+	`start` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+
+	`end` DATETIME NULL DEFAULT NULL,
+	`rows_written` INT(11) NULL DEFAULT NULL,
+	`statement_config` TEXT NULL DEFAULT NULL,
+
+	`rows_read` INT(11) NULL DEFAULT NULL,
+	`status` SMALLINT(6) NULL DEFAULT NULL,
+	
+	PRIMARY KEY (`statement_id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
+CREATE DATABASE spw_config;
+
+use spw_config;
 
 
 CREATE TABLE `spw_common_config` (
@@ -398,7 +498,7 @@ ENGINE=InnoDB
 AUTO_INCREMENT=3
 ;
 
-REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (1, '1', 'oltp/chimera-intg', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/chimera-integration?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 17:22:05');
+REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (1, '1', 'oltp/chimera-intg', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/chimera_integration?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 17:22:05');
 REPLACE INTO `spw_resource_config` (`id`, `config_type`, `config_name`, `auth_info`, `resource_url`, `active`, `created_date`) VALUES (2, '1', 'audit/chimera-audit', '{ "user": "root", "password": "password"}', 'jdbc:mysql://localhost:3306/spw_audit?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true', 'Y', '2017-09-24 18:42:29');
 
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process', 'google-cal-auth-file', 'auth/Dhuruva-BMS-516dab070732.p12', 'Y');
@@ -411,6 +511,11 @@ REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VAL
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.collection.process', 'filepath', 'inbound.collection.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'filepath', 'outbound.collection.process.spw', 'Y');
 
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.collection.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'integration-schema', 'chimera_integration', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'lms-schema', 'mifostenant-default', 'Y');
+
 
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process#1', 'publish.demandforecast.process', 'lms', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('test.callprocess.process#1', 'test.callprocess.process', 'lms', 'oltp/chimera-intg', 'Y');
@@ -421,8 +526,53 @@ REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, 
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('basepath', 'root', 'Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('runmode', 'single', 'Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('audit', 'audit/chimera-audit', 'Y');
-REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', '/var/lib/mysql/chimera-integration', 'Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('integration-db','oltp/chimera-intg','Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('integration-schema','chimera_integration','Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('lms-schema','mifostenant-default','Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', 'F:/mariadb/data/chimera_integration', 'Y');
 
+
+drop table demand_forecast_overall;
+
+create table demand_forecast_overall as
+select 
+o.name AS 'office_name',
+o.id AS 'office_id',
+c.display_name as 'client_name',
+c.id as 'client_id',
+m.display_name AS 'group_name',
+m.id as 'group_id',
+m.parent_id as 'centre_id',
+r.duedate AS 'due_date',
+r.installment AS 'due_no',
+s.display_name AS 'loan_officer_name',
+s.id as 'loan_officer_id',
+l.disbursedon_date as 'actual_disbursed_date',
+(r.interest_amount + r.principal_amount) AS 'collection_amount',
+l.id as 'loan_id'
+from m_office o 
+join m_group m on m.office_id = o.id
+join m_loan l on l.group_id = m.id 
+join m_client c on c.id = l.client_id
+join m_loan_repayment_schedule r on r.loan_id = l.id
+join m_staff s on s.id = l.loan_officer_id
+where l.loan_status_id = 300
+
+
+ALTER TABLE  demand_forecast_overall add column calendar_id INT;
+
+alter table demand_forecast_overall add index idx_centre_id(centre_id);
+
+ALTER TABLE demand_forecast_overall ADD INDEX (client_id);
+
+
+UPDATE demand_forecast_overall , m_calendar_instance  inner join demand_forecast_overall
+ on demand_forecast_overall.group_id=m_calendar_instance.entity_type_id 
+ SET demand_forecast_overall.calendar_id=m_calendar_instance.calendar_id WHERE m_calendar_instance.entity_type_enum=4;
+
+
+ UPDATE demand_forecast_overall, m_calendar_instance SET demand_forecast_overall.calendar_id = m_calendar_instance.calendar_id 
+ WHERE demand_forecast_overall.centre_id=m_calendar_instance.entity_id  AND m_calendar_instance.entity_type_enum=4;
 
 
 Rest client pending work

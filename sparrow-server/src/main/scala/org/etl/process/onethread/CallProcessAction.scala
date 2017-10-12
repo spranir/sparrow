@@ -55,15 +55,21 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
         case ex: Throwable => {
           handleError(ex)
         }
-      } finally {
+      }finally
+      {
         val onFinally = runtimeContext.process.getFinally
         handleFinally()
+      }
+    }
+    try{
+      logger.info("Completed callprocess name#{}, calledprocess#{}, calledfile#{}, db=#{}", name, processName, fileRelativePath, dbSrc)
+    }finally {
+        
         rs.close
         stmt.close
         conn.close
       }
-    }
-    logger.info("Completed callprocess name#{}, calledprocess#{}, calledfile#{}, db=#{}", name, processName, fileRelativePath, dbSrc)
+    
     context
   }
 
