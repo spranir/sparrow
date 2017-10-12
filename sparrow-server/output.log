@@ -1,0 +1,205 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.etl.dsl.etl.Sparrow:sparrow-server:jar:1.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin net.alchim31.maven:scala-maven-plugin @ line 255, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sparrow-server 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> scala-maven-plugin:3.2.1:run (default-cli) > test-compile @ sparrow-server >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sparrow-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/spoors/sparrow/sparrow-server/src/main/resources/common
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sparrow-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:compile (default) @ sparrow-server ---
+[WARNING]  Expected all dependencies to require Scala version: 2.11.11
+[WARNING]  net.liftweb:lift-json_2.11:3.0.1 requires scala version: 2.11.7
+[WARNING] Multiple versions of scala libraries detected!
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sparrow-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/spoors/sparrow/sparrow-server/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sparrow-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:testCompile (default) @ sparrow-server ---
+[WARNING]  Expected all dependencies to require Scala version: 2.11.11
+[WARNING]  net.liftweb:lift-json_2.11:3.0.1 requires scala version: 2.11.7
+[WARNING] Multiple versions of scala libraries detected!
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< scala-maven-plugin:3.2.1:run (default-cli) < test-compile @ sparrow-server <<<
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.1:run (default-cli) @ sparrow-server ---
+[WARNING]  Expected all dependencies to require Scala version: 2.11.11
+[WARNING]  net.liftweb:lift-json_2.11:3.0.1 requires scala version: 2.11.7
+[WARNING] Multiple versions of scala libraries detected!
+[INFO] launcher 'spw' selected => org.etl.server.SparrowServer
+21:14:13.850 [main] INFO  org.etl.server.SparrowServer$ - Starting the restlet server to take in commands, at port 9377
+21:15:05.945 [Restlet-333362446] INFO  org.etl.server.StartProcess - Starting the process=inbound.collection.process#1, with incoming json=[text/plain,UTF-8]
+21:15:08.662 [Restlet-333362446] INFO  org.etl.config.ConfigurationService$ - Initializing the config store from config filefile:/home/spoors/sparrow/sparrow-server/target/classes/configstore.props
+21:15:09.299 [Restlet-333362446] INFO  org.etl.server.ProcessAST$ - filepath=inbound.collection.process.spw
+21:15:09.299 [Restlet-333362446] INFO  org.etl.server.ProcessAST$ - basepath=root
+fullpath=root/inbound.collection.process.spw
+21:15:09.614 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Obtained Connection for handle =audit/chimera-audit for inserting the audit for process inbound.collection.process#1
+21:15:09.639 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Retrieved process id post process start as 2 for process inbound.collection.process#1 with file /home/spoors/sparrow/sparrow-server/target/classes/root/inbound.collection.process.spw
+21:15:09.696 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Insert for command #Doozle->doozle-collection for process #inbound.collection.process#1 for processid#2
+21:15:09.704 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Completed Insert for command #Doozle->doozle-collection for process #inbound.collection.process#1 for processid#2 with id#2
+21:15:09.715 [Restlet-333362446] INFO  o.etl.process.onethread.DoozleAction - Doozle id#2, name#doozle-collection, table#2_collection, db=#oltp/chimera-intg
+21:15:09.730 [Restlet-333362446] INFO  o.etl.process.onethread.DoozleAction - File stored for doozle id#2, path#/var/lib/mysql/chimera_integration/2_collection.json
+21:15:09.731 [Restlet-333362446] INFO  o.etl.process.onethread.DoozleAction - Sql=CREATE TABLE 2_COLLECTION_DATA(
+			fieldLabel char(128) ,
+			fieldValue char(128) ,
+			uniqueId char(128)
+			)engine=CONNECT table_type=JSON File_name='2_collection.json' option_list='object=fields';
+21:15:09.760 [Restlet-333362446] INFO  o.etl.process.onethread.DoozleAction - Completed doozle id#2, name#doozle-collection, table#2_collection, db=#oltp/chimera-intg
+21:15:09.789 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Obtained Connection for actionid #2 with status #1 
+21:15:09.826 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Insert for command #Transform->create-staging_data for process #inbound.collection.process#1 for processid#2
+21:15:09.829 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Completed Insert for command #Transform->create-staging_data for process #inbound.collection.process#1 for processid#2 with id#3
+21:15:09.830 [Restlet-333362446] INFO  org.etl.command.CommandProxy$ - Invoking method in  action #getValue
+21:15:09.830 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, name#create-staging_data, dbSrc#oltp/chimera-intg, sqlList#{}
+21:15:09.854 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, executing script DROP TABLE IF EXISTS 2_CLIENT_DATA
+21:15:09.857 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, executing script CREATE TABLE 2_CLIENT_DATA (
+			clientid INT(11) NULL DEFAULT NULL,
+			attendanceid INT(11) NULL DEFAULT NULL,
+			loanid INT(11) NULL DEFAULT NULL,
+			amount INT(11) NULL DEFAULT NULL,
+			processid INT(11) NULL DEFAULT NULL,
+			parentid INT(11) NULL DEFAULT NULL
+			) COLLATE='utf8_general_ci' ENGINE=InnoDB
+21:15:09.864 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, executing script DROP TABLE IF EXISTS 2_PARENT_DATA
+21:15:09.866 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, executing script CREATE TABLE 2_PARENT_DATA (
+			calendarId INT(11) NULL DEFAULT NULL,
+			transactionDate varchar(25),
+			actualDisbursementDate varchar(25),
+			processid INT(11) NULL DEFAULT NULL,
+			parentid INT(11) NULL DEFAULT NULL
+			) COLLATE='utf8_general_ci' ENGINE=InnoDB
+21:15:09.884 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Completed Transform id#2, name#create-staging_data, dbSrc#oltp/chimera-intg, sqlList#["DROP TABLE IF EXISTS 2_CLIENT_DATA;
+			CREATE TABLE 2_CLIENT_DATA (
+			clientid INT(11) NULL DEFAULT NULL,
+			attendanceid INT(11) NULL DEFAULT NULL,
+			loanid INT(11) NULL DEFAULT NULL,
+			amount INT(11) NULL DEFAULT NULL,
+			processid INT(11) NULL DEFAULT NULL,
+			parentid INT(11) NULL DEFAULT NULL
+			) COLLATE='utf8_general_ci' ENGINE=InnoDB;
+			
+			DROP TABLE IF EXISTS 2_PARENT_DATA;
+			CREATE TABLE 2_PARENT_DATA (
+			calendarId INT(11) NULL DEFAULT NULL,
+			transactionDate varchar(25),
+			actualDisbursementDate varchar(25),
+			processid INT(11) NULL DEFAULT NULL,
+			parentid INT(11) NULL DEFAULT NULL
+			) COLLATE='utf8_general_ci' ENGINE=InnoDB;
+			"]
+21:15:09.900 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Obtained Connection for actionid #3 with status #1 
+21:15:09.933 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Insert for command #Transform->insert-staging_data for process #inbound.collection.process#1 for processid#2
+21:15:09.938 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Completed Insert for command #Transform->insert-staging_data for process #inbound.collection.process#1 for processid#2 with id#4
+21:15:09.939 [Restlet-333362446] INFO  org.etl.command.CommandProxy$ - Invoking method in  action #getValue
+21:15:09.939 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, name#insert-staging_data, dbSrc#oltp/chimera-intg, sqlList#{}
+21:15:09.952 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, executing script INSERT INTO 2_PARENT_DATA (calendarId,processid, parentid) SELECT fieldValue, 2, 2 FROM 2_COLLECTION_DATA where fieldLabel='CalendarId'
+21:15:09.980 [Restlet-333362446] INFO  o.e.p.onethread.TransformAction - Transform id#2, executing script UPDATE 2_PARENT_DATA SET transactionDate=(select fieldValue from 2_collection_data WHERE fieldLabel='Transaction Date')
+21:15:09.994 [Restlet-333362446] ERROR o.e.p.o.UniThreadProcessRuntime - Error executing process
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'chimera_integration.2_collection_data' doesn't exist
+
+Query being executed when exception was thrown:
+UPDATE 2_PARENT_DATA SET transactionDate=(select fieldValue from 2_collection_data WHERE fieldLabel='Transaction Date')
+
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2441)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:845)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:745)
+	at org.etl.process.onethread.TransformAction$$anonfun$execute$1.apply(TransformAction.scala:33)
+	at org.etl.process.onethread.TransformAction$$anonfun$execute$1.apply(TransformAction.scala:30)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at org.etl.process.onethread.TransformAction.execute(TransformAction.scala:30)
+	at org.etl.process.onethread.UniThreadProcessRuntime.executeChain(UniThreadProcessRuntime.scala:53)
+	at org.etl.process.onethread.UniThreadProcessRuntime.execute(UniThreadProcessRuntime.scala:24)
+	at org.etl.server.ProcessExecutor$.execute(ProcessExecutor.scala:24)
+	at org.etl.server.StartProcess.acceptAndReturnJson(StartProcess.scala:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.restlet.resource.ServerResource.doHandle(ServerResource.java:508)
+	at org.restlet.resource.ServerResource.post(ServerResource.java:1341)
+	at org.restlet.resource.ServerResource.doHandle(ServerResource.java:606)
+	at org.restlet.resource.ServerResource.doNegotiatedHandle(ServerResource.java:662)
+	at org.restlet.resource.ServerResource.doConditionalHandle(ServerResource.java:348)
+	at org.restlet.resource.ServerResource.handle(ServerResource.java:1020)
+	at org.restlet.resource.Finder.handle(Finder.java:236)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.routing.Router.doHandle(Router.java:422)
+	at org.restlet.routing.Router.handle(Router.java:641)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:140)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:202)
+	at org.restlet.engine.application.ApplicationHelper.handle(ApplicationHelper.java:77)
+	at org.restlet.Application.handle(Application.java:385)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.routing.Router.doHandle(Router.java:422)
+	at org.restlet.routing.Router.handle(Router.java:641)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.routing.Router.doHandle(Router.java:422)
+	at org.restlet.routing.Router.handle(Router.java:641)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:140)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.routing.Filter.doHandle(Filter.java:150)
+	at org.restlet.routing.Filter.handle(Filter.java:197)
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:202)
+	at org.restlet.Component.handle(Component.java:408)
+	at org.restlet.Server.handle(Server.java:507)
+	at org.restlet.engine.connector.ServerHelper.handle(ServerHelper.java:63)
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:143)
+	at org.restlet.engine.connector.HttpServerHelper$1.handle(HttpServerHelper.java:79)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
+	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+21:15:10.004 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Obtained Connection for handle #audit/chimera-audit for updating the audit for processid #2 for process #inbound.collection.process#1 
+21:15:10.025 [Restlet-333362446] INFO  org.etl.audit.AuditService$ - Completed update for processid #2 for process #inbound.collection.process#1 
+Processing the request completed
