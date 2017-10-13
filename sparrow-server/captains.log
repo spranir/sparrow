@@ -510,11 +510,16 @@ REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VAL
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('test.rest.process', 'filepath', 'test.rest.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.collection.process', 'filepath', 'inbound.collection.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'filepath', 'outbound.collection.process.spw', 'Y');
-
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.collection.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'integration-schema', 'chimera_integration', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'lms-schema', 'mifostenant-default', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.denomination.process', 'filepath', 'inbound.denomination.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'filepath', 'outbound.denomination.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.denomination.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'integration-schema', 'chimera_integration', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'lms-schema', 'mifostenant-default', 'Y');
 
 
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process#1', 'publish.demandforecast.process', 'lms', 'oltp/chimera-intg', 'Y');
