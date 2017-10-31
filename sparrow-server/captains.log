@@ -297,6 +297,12 @@ INSERT INTO `header_data` (`key_`, `value`) VALUES ('Accept', 'application/json,
 
 INSERT INTO `header_data` (`key_`, `value`) VALUES ('Fineract-Platform-TenantId', 'default');
 
+CREATE TABLE `CLIENT_FPS_DATA_OVERALL` (
+  `clientid` int(11) DEFAULT NULL,
+  `clientSignature` varchar(100) DEFAULT NULL,
+  `processid` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE DATABASE audit;
 
 
@@ -515,11 +521,36 @@ REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VAL
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.collection.process', 'lms-schema', 'mifostenant-default', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.denomination.process', 'filepath', 'inbound.denomination.process.spw', 'Y');
+
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'filepath', 'outbound.denomination.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.denomination.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'integration-schema', 'chimera_integration', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.denomination.process', 'lms-schema', 'mifostenant-default', 'Y');
+
+
+
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.clientfps.process', 'filepath', 'inbound.clientfps.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.employeefps.process', 'filepath', 'inbound.employeefps.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.clientfps.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.employeefps.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.clientfps.process', 'integration-schema', 'chimera_integration', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.clientfps.process', 'lms-schema', 'mifostenant-default', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.clientfps.process', 'filepath', 'outbound.clientfps.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.clientfps.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.clientfps.process', 'spwaudit-schema', 'spw_audit', 'Y');
+
+
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.employeefps.process', 'integration-schema', 'chimera_integration', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.employeefps.process', 'lms-schema', 'mifostenant-default', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.employeefps.process', 'filepath', 'outbound.employeefps.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.employeefps.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.jlgcollection.process', 'filepath', 'inbound.jlgcollection.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.employeefps.process', 'integration-db', 'oltp/chimera-intg', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.jlgcollection.process', 'integration-schema', 'chimera_integration', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.jlgcollection.process', 'lms-schema', 'mifostenant-default', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.jlgcollection.process', 'filepath', 'outbound.jlgcollection.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.jlgcollection.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 
 
 REPLACE INTO `spw_instance_config` (`instance`, `process`, `variable`, `value`, `active`) VALUES ('publish.demandforecast.process#1', 'publish.demandforecast.process', 'lms', 'oltp/chimera-intg', 'Y');
@@ -534,8 +565,26 @@ REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('audit'
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('integration-db','oltp/chimera-intg','Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('integration-schema','chimera_integration','Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('lms-schema','mifostenant-default','Y');
+REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', '/var/lib/mysql/chimera_integration', 'Y');
 REPLACE INTO `spw_common_config` (`variable`, `value`, `active`) VALUES ('json.storagepath', 'F:/mariadb/data/chimera_integration', 'Y');
 
+
+-------------------------------------------------------------
+				USE SELECT IN WHERE CLAUSE
+-------------------------------------------------------------
+
+select id,DATE(created_date) from `mifostenant-default`.a where NOT EXISTS (select DATE(end) as date from spw_audit.instance_audit where `mifostenant-default`.a.created_date < spw_audit.instance_audit.end  );
+
+-------------------------------------------------------------
+						GROUP CONCAT
+-------------------------------------------------------------
+
+SELECT GROUP_CONCAT(Client_Id) as Client_Id
+   FROM 7_jlg_outbound_collection
+   GROUP BY Group_Id;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 drop table demand_forecast_overall;
 
@@ -575,6 +624,7 @@ UPDATE demand_forecast_overall , m_calendar_instance  inner join demand_forecast
  on demand_forecast_overall.group_id=m_calendar_instance.entity_type_id 
  SET demand_forecast_overall.calendar_id=m_calendar_instance.calendar_id WHERE m_calendar_instance.entity_type_enum=4;
 
+Correct One 
 
  UPDATE demand_forecast_overall, m_calendar_instance SET demand_forecast_overall.calendar_id = m_calendar_instance.calendar_id 
  WHERE demand_forecast_overall.centre_id=m_calendar_instance.entity_id  AND m_calendar_instance.entity_type_enum=4;
