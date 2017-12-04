@@ -223,6 +223,7 @@ private  def getAllInstanceConfigValue(conn:Connection, instanceFqn:String):scal
       }
       finally{
         stmt.closeOnCompletion()
+        conn.close
       }
      
   }

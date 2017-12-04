@@ -303,6 +303,51 @@ CREATE TABLE `CLIENT_FPS_DATA_OVERALL` (
   `processid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `OVERALL_DENOMINATION` (
+	`branch` VARCHAR(25) NULL DEFAULT NULL,
+	`groupid` VARCHAR(25) NULL DEFAULT NULL,
+	`groupname` VARCHAR(25) NULL DEFAULT NULL,
+	`collectiondate` VARCHAR(25) NULL DEFAULT NULL,
+	`disbursementdate` VARCHAR(25) NULL DEFAULT NULL,
+	`calendarid` VARCHAR(25) NULL DEFAULT NULL,
+	`2000_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`500_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`200_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`100_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`50_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`20_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`10_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`5_Note` VARCHAR(25) NULL DEFAULT NULL,
+	`10_Coin` VARCHAR(25) NULL DEFAULT NULL,
+	`5_Coin` VARCHAR(25) NULL DEFAULT NULL,
+	`2_Coin` VARCHAR(25) NULL DEFAULT NULL,
+	`1_Coin` VARCHAR(25) NULL DEFAULT NULL,
+	`Total_Collected_Notes` VARCHAR(25) NULL DEFAULT NULL,
+	`Amount_collected_in_Notes` VARCHAR(25) NULL DEFAULT NULL,
+	`Total_coins_collected` VARCHAR(25) NULL DEFAULT NULL,
+	`Amount_collected_in_Coins` VARCHAR(25) NULL DEFAULT NULL,
+	`Total_Amount_Collected` VARCHAR(25) NULL DEFAULT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+CREATE TABLE `OVERALL_JLGCOLLECTION` (
+	`groupid` VARCHAR(50) NULL DEFAULT NULL,
+	`clientid` VARCHAR(50) NULL DEFAULT NULL,
+	`clientName` VARCHAR(100) NULL DEFAULT NULL,
+	`attendanceid` VARCHAR(50) NULL DEFAULT NULL,
+	`instanceid` VARCHAR(50) NULL DEFAULT NULL,
+	`loanid` VARCHAR(50) NULL DEFAULT NULL,
+	`amount` VARCHAR(50) NULL DEFAULT NULL,
+	`calendarid` VARCHAR(50) NULL DEFAULT NULL,
+	`transactionDate` VARCHAR(50) NULL DEFAULT NULL,
+	`actualDisbursementDate` VARCHAR(50) NULL DEFAULT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
 CREATE DATABASE audit;
 
 
@@ -546,6 +591,7 @@ REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VAL
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.employeefps.process', 'filepath', 'outbound.employeefps.process.spw', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.employeefps.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.jlgcollection.process', 'filepath', 'inbound.jlgcollection.process.spw', 'Y');
+REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.jlgcollection.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('inbound.employeefps.process', 'integration-db', 'oltp/chimera-intg', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.jlgcollection.process', 'integration-schema', 'chimera_integration', 'Y');
 REPLACE INTO `spw_process_config` (`process`, `variable`, `value`, `active`) VALUES ('outbound.jlgcollection.process', 'lms-schema', 'mifostenant-default', 'Y');
@@ -584,7 +630,19 @@ SELECT GROUP_CONCAT(Client_Id) as Client_Id
    GROUP BY Group_Id;
 
 
--------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------
+
+
+--------------------------------------------------------------
+					SET MAX_CONNECTIONS
+--------------------------------------------------------------
+
+SHOW VARIABLES LIKE "MAX_CONNECTIONS";
+
+SET GLOBAL MAX_CONNECTIONS=300;
+
+
+
 
 drop table demand_forecast_overall;
 
