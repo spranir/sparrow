@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
@@ -56,6 +55,8 @@ public class ChimeraRestClient implements RestClient {
 		tenantId = System.getProperty("mifos.tenant.id");
 		authType = "chimeraauth";
 	}
+	
+	
 
 	public ChimeraRestClient(String baseURL, String authInfo) {
 		super();
@@ -108,7 +109,8 @@ public class ChimeraRestClient implements RestClient {
 		String url = baseURL + path;
 		try {
 			SimpleHttpResponse response = new HttpRequestBuilder().withURL(url).withMethod(Method.GET)
-					.addHeader(Header.AUTHORIZATION, "Basic " + authToken).addHeader(Header.MIFOS_TENANT_ID, tenantId)
+					.addHeader(Header.AUTHORIZATION, "Basic " + authToken)
+					.addHeader(Header.MIFOS_TENANT_ID, tenantId)
 					.execute();
 			String content = readContentAndClose(response.getContent());
 			if (response.getStatus() != HttpURLConnection.HTTP_OK) {
@@ -137,13 +139,15 @@ public class ChimeraRestClient implements RestClient {
 				System.out.println(url);
 			} catch (IOException e) {
 				throw new IllegalStateException(e);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		} else if (authType.equals("basicauth")) {
+		}else if (authType.equals("basicauth")) {
 			String authString = userName + ":" + password;
 			authToken = new String(Base64.encodeBase64(authString.getBytes()));
 		}
-	}
-
+	}	
+		
 	private String readContentAndClose(InputStream content) throws IOException {
 		InputStreamReader stream = new InputStreamReader(content, "UTF-8");
 		BufferedReader reader = new BufferedReader(stream);

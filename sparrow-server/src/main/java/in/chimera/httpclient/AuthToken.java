@@ -11,6 +11,5 @@ public class AuthToken {
 
     public void setBase64EncodedAuthenticationKey(String base64EncodedAuthenticationKey) {
         this.base64EncodedAuthenticationKey = base64EncodedAuthenticationKey;
-    }
-
+    }    
 }

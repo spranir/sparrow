@@ -8,6 +8,7 @@ import org.etl.util.ResourceAccess
 import org.json.JSONObject
 import org.json.JSONArray
 import in.chimera.httpclient.ChimeraRestClient
+import in.chimera.httpclient.SpoorsRestClient
 import org.eclipse.emf.common.util.EList
 import org.etl.sparrow.RestPart
 import org.etl.util.ParameterisationEngine
@@ -137,9 +138,23 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     bodayConn.close
     val jsonObject = jsonPayload.toString
     logger.info("Rest id#{}, outbound json object #{}", id, jsonObject.toString());
+    
+    if(authResource.contains("chimeraauth")){
+    
     val restClient = new ChimeraRestClient(url,authResource)
     restClient.createAuthToken
     val output = restClient.post(restUrl, jsonObject)
+    
+    }
+    else if(authResource.contains("jwt"))
+    {
+    val authArr = authResource.split(":")
+    val restClient = new SpoorsRestClient(url,authArr.apply(1),"jwt")
+    /*restClient.createAuthToken*/
+    val output = restClient.post(restUrl, jsonObject)
+    
+    }
+    
 
     val ackSql = rest.getAckdata
     val ackTarget = rest.getAckdatato

@@ -1,0 +1,218 @@
+{
+  "works": [
+    {
+      "ff_Branch": "Kumbakonam",
+      "ff_Collection_Date": "2017-11-07 00:00:00",
+      "ff_Clients_Name": "39777,39778,39779,39780,39782,39783,39784,39785,39787,39789,39790,39791,39792,39793,39794,39795,39776",
+      "workSpecExternalId": "2812",
+      "ff_Center_Name": "4099",
+      "externalId": "736579784195307215927",
+      "ff_Employee": "9",
+      "ff_Disbursement_Date": "2017-10-16",
+      "ff_Calendar_Id": "1830",
+      "ff_Starts": "2017-11-07 16:26:06"
+    }
+  ],
+  "lists": [
+    {
+      "ef_Installment": "",
+      "entitySpecId": "39385",
+      "ef_Center_Name": "sunflower group",
+      "listNo": "4099",
+      "ef_Loan_Id": "",
+      "ef_Client_Id": "",
+      "ef_EMI_amount": "",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": ""
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39777",
+      "ef_Loan_Id": "44522",
+      "ef_Client_Id": "39777",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "punitha senthil"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39778",
+      "ef_Loan_Id": "44523",
+      "ef_Client_Id": "39778",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "santhi murugan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39779",
+      "ef_Loan_Id": "44524",
+      "ef_Client_Id": "39779",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "mansula kumaravel"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39780",
+      "ef_Loan_Id": "44525",
+      "ef_Client_Id": "39780",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "nalini radhakirishnan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39782",
+      "ef_Loan_Id": "44526",
+      "ef_Client_Id": "39782",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "jeyanthi murugesan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39783",
+      "ef_Loan_Id": "44527",
+      "ef_Client_Id": "39783",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "kalaiselivi nagaraj"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39784",
+      "ef_Loan_Id": "44528",
+      "ef_Client_Id": "39784",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "roobavathy marimuthu"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39785",
+      "ef_Loan_Id": "44529",
+      "ef_Client_Id": "39785",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "rukmani ravi"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39787",
+      "ef_Loan_Id": "44530",
+      "ef_Client_Id": "39787",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "rajamml kannaniyan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39789",
+      "ef_Loan_Id": "44531",
+      "ef_Client_Id": "39789",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "rajammal pannaiyan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39790",
+      "ef_Loan_Id": "44532",
+      "ef_Client_Id": "39790",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "mala ramayan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39791",
+      "ef_Loan_Id": "44533",
+      "ef_Client_Id": "39791",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "vijaya gopalakrishnan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39792",
+      "ef_Loan_Id": "44534",
+      "ef_Client_Id": "39792",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "seetha pazhani"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39793",
+      "ef_Loan_Id": "44535",
+      "ef_Client_Id": "39793",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "tamilvani thiyagarajan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39794",
+      "ef_Loan_Id": "44536",
+      "ef_Client_Id": "39794",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "akila sekar"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39795",
+      "ef_Loan_Id": "44537",
+      "ef_Client_Id": "39795",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "mageshwari murugan"
+    },
+    {
+      "ef_Installment": "3",
+      "entitySpecId": "39388",
+      "ef_Center_Name": "4099",
+      "listNo": "39776",
+      "ef_Loan_Id": "44538",
+      "ef_Client_Id": "39776",
+      "ef_EMI_amount": "335.000000",
+      "ef_Center_Id": "4099",
+      "ef_Client_Name": "deicy ravi"
+    }
+  ],
+  "uniqueidentifier": "27",
+  "timestamp": "2017-11-07 16:26:06.0"
+}
