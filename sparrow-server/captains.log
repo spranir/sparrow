@@ -687,6 +687,22 @@ Correct One
  UPDATE demand_forecast_overall, m_calendar_instance SET demand_forecast_overall.calendar_id = m_calendar_instance.calendar_id 
  WHERE demand_forecast_overall.centre_id=m_calendar_instance.entity_id  AND m_calendar_instance.entity_type_enum=4;
 
+------------------------------------------------------------------
+	IF CONNECTIVITY IR NULL POINTER ERROR IN SPARROW SERVER
+------------------------------------------------------------------
+
+1. When i tried to compile and run the sparrow server it shows connectivity erro so i checked the config.props under the target/classess and the mysql port number was 3307 so i changed it to 3306
+2. Then there was a null pointer error which showed after fixing the port and it was because after i compiled the project it deleted all the files inside /target/classess/ so i had to copy the process/root folder from slush and pasted it in /target/classess
+
+
+
+
+
+
+
+
+
+
 
 Rest client pending work
 Authentication

@@ -1,3 +1,5 @@
+
+DROP DATABASE chimera_integration;
 CREATE DATABASE chimera_integration;
 
 use chimera_integration;
@@ -77,21 +79,23 @@ CREATE TABLE `OVERALL_DENOMINATION` (
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
-CREATE TABLE `OVERALL_JLGCOLLECTION` (
-	`groupid` VARCHAR(50) NULL DEFAULT NULL,
-	`clientid` VARCHAR(50) NULL DEFAULT NULL,
-	`clientName` VARCHAR(100) NULL DEFAULT NULL,
-	`attendanceid` VARCHAR(50) NULL DEFAULT NULL,
-	`instanceid` VARCHAR(50) NULL DEFAULT NULL,
-	`loanid` VARCHAR(50) NULL DEFAULT NULL,
-	`amount` VARCHAR(50) NULL DEFAULT NULL,
-	`calendarid` VARCHAR(50) NULL DEFAULT NULL,
-	`transactionDate` VARCHAR(50) NULL DEFAULT NULL,
-	`actualDisbursementDate` VARCHAR(50) NULL DEFAULT NULL
-)
-COLLATE='utf8_general_ci'
-ENGINE=InnoDB
-;
+
+
+DROP TABLE IF OVERALL_INBOUND_JLGCOLLECTION;
+CREATE TABLE OVERALL_INBOUND_JLGCOLLECTION (
+groupid varchar(100),
+clientid varchar(100),
+clientName varchar(250),
+attendanceid varchar(100),
+instanceid varchar(100),
+loanid varchar(100),
+amount varchar(100),
+calendarid varchar(100), 
+transactionDate varchar(100),
+actualDisbursementDate varchar(100),
+location varchar(250),
+meetingTime varchar(250)
+) COLLATE='utf8_general_ci' ENGINE=InnoDB;
 
 
 CREATE DATABASE audit;
@@ -424,7 +428,7 @@ join m_loan l on l.group_id = m.id
 join m_client c on c.id = l.client_id
 join m_loan_repayment_schedule r on r.loan_id = l.id
 join m_staff s on s.id = l.loan_officer_id
-where l.loan_status_id = 300 and r.duedate<='2018-01-10' and r.obligations_met_on_date is null
+where l.loan_status_id = 300 and r.duedate<=curdate() and r.obligations_met_on_date is null
 GROUP BY l.id,c.id,m.id,r.duedate;
 
 ALTER TABLE  demand_forecast_overall add column calendar_id INT;
@@ -436,6 +440,10 @@ ALTER TABLE demand_forecast_overall ADD INDEX idx_client_id(client_id);
 ALTER TABLE demand_forecast_overall ADD INDEX idx_loan_id(loan_id);
 
 ALTER TABLE demand_forecast_overall ADD INDEX idx_group_id(group_id);
+
+alter table demand_forecast_overall add column deleted varchar(50);
+
+update demand_forecast_overall set deleted = "false";
 
  UPDATE demand_forecast_overall, m_calendar_instance SET demand_forecast_overall.calendar_id = m_calendar_instance.calendar_id 
  WHERE demand_forecast_overall.centre_id=m_calendar_instance.entity_id  AND m_calendar_instance.entity_type_enum=4;
@@ -499,7 +507,7 @@ Correct One
 
 SELECT a.office_name as 'Branch_Name', a.group_id as 'entitySpecId', a.group_name as 'ef_Group_Name', a.group_id as 'ef_Group_Id', 
 a.client_name as 'ef_Client_Name', a.client_id as 'ef_Client_Id', a.loan_officer_name as 'Loan_Officer_Name', 
-a.loan_officer_id as 'ef_Employee_Id', a.due_date as 'Due_Date', a.due_no as 'ef_Installment', a.group_id as 'listNo',
+a.loan_officer_id as 'ef_Employee_Id', a.due_date as 'Due_Date', max(a.due_no) as 'ef_Installment', a.group_id as 'listNo',
 a.actual_disbursed_date as 'ff_Disbursement_Date', sum(a.collection_amount) as 'ef_EMI_amount', a.loan_id as 'ef_Loan_Id', a.calendar_id as 'ff_Calendar_Id' 
 from demand_forecast_overall a where a.due_date <= CURDATE() and dayname(a.due_date)=dayname(curdate())
 group by a.group_id,a.loan_id,a.client_id;
