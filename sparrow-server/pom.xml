@@ -28,6 +28,7 @@
 		<guice.version>3.0</guice.version>
 		<project.http.version>1.19.0</project.http.version>
 		<project.oauth.version>1.19.0</project.oauth.version>
+		<fb.version>2.11.0</fb.version>
 	</properties>
 
 	<repositories>
@@ -67,12 +68,19 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
-	<!-- https://mvnrepository.com/artifact/org.restlet.jee/org.restlet.ext.json -->
-	<dependency>
-		<groupId>org.restlet.jee</groupId>
-		<artifactId>org.restlet.ext.json</artifactId>
-		<version>2.1.2</version>
-	</dependency>
+		<!-- local -->
+		<!-- you need to build the fb code and then install it - choose the version 
+			2.9 --><dependency>
+			<groupId>com.facebook.ads.sdk</groupId>
+			<artifactId>facebook-java-ads-sdk</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.restlet.jee/org.restlet.ext.json -->
+		<dependency>
+			<groupId>org.restlet.jee</groupId>
+			<artifactId>org.restlet.ext.json</artifactId>
+			<version>2.1.2</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 			<groupId>org.json</groupId>
@@ -92,22 +100,22 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.44</version>
 		</dependency>
-		
+
 		<dependency>
-    		 <groupId>io.jsonwebtoken</groupId>
-   			 <artifactId>jjwt</artifactId>
-   			 <version>0.7.0</version>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.7.0</version>
 		</dependency>
 		<dependency>
-   			 <groupId>com.fasterxml.jackson.core</groupId>
-   			 <artifactId>jackson-core</artifactId>
-   			 <version>2.9.3</version> 
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.3</version>
 		</dependency>
-		
+
 		<dependency>
-  			<groupId>com.owlike</groupId>
- 			<artifactId>genson</artifactId>
-  			<version>1.4</version>
+			<groupId>com.owlike</groupId>
+			<artifactId>genson</artifactId>
+			<version>1.4</version>
 		</dependency>
 
 		<dependency>
@@ -152,11 +160,11 @@
 			<artifactId>guice</artifactId>
 			<version>${guice.version}</version>
 		</dependency>
-		
+
 		<dependency>
-    		<groupId>com.auth0</groupId>
-    		<artifactId>java-jwt</artifactId>
-    		<version>3.3.0</version>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>3.3.0</version>
 		</dependency>
 
 		<dependency>

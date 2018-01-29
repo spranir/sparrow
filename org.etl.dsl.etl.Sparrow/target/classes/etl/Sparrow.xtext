@@ -54,7 +54,7 @@ Action:
 ;
 
 FBCLead:
-	'fblc' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING 'from-source' source=STRING 'using'
+	'fblc' 'as' name=STRING 'secured-by' accessToken=STRING 'with-key' appSecret=STRING 'through-user' accountId=STRING 'for-campaign' campaignId=STRING 'into' target=STRING 'using'
 	'{'
 		value=STRING
 	'}' 'on-condition' condition=Expression
