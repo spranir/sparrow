@@ -1,0 +1,16 @@
+process "test.callprocess.target.process"
+{
+	try
+	{
+		transform as "create-table" on "oltp/bonsai" using
+		{
+			"INSERT INTO test_call_process values ('var1-target','${var1}');"
+		}
+	}
+	catch
+	{
+	}
+	finally
+	{
+	}
+}

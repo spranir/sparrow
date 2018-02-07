@@ -1,0 +1,35 @@
+process "publish.demandforecastto.googlecalendar"
+{
+	try
+	{
+		googlecal as "publishevent" for-cal "0n0ki3ca5mgecad17drako13fs@group.calendar.google.com" 
+		secured-by "Dhuruva-BMS-fa750e3a8102.p12" through-user "59413973790-compute@developer.gserviceaccount.com"
+		with-title "Test" from "03-09-2017" to "03-12-2017" repeat "1600" using
+		{
+			"Mariamma center"
+		}
+		
+		googlecal as "publisdemandforecast" secured-by "$authfilepath" through-user "$serviceuser"
+		apinsource "$apiinput"
+		{
+			SELECT centername as title, meeting_date as start_from, 
+			date_add(meeting_date, $grace_period) as end_on, description from demandforecast
+			from api; 
+		}
+		
+		googlecal as "publisdemandforecast" secured-by "$authfilepath" through-user "$serviceuser"
+		dbsource "$chimera-warehouse"
+		{
+			SELECT centername as title, meeting_date as start_from, 
+			date_add(meeting_date, $grace_period) as end_on, description from demandforecast
+			from demandforecast; 
+		}
+		
+	}
+	catch
+	{
+	}
+	finally
+	{
+	}
+}

@@ -1,0 +1,16 @@
+process "hellworld.process"
+{
+	copydata as "helloworld"  source "$sourcejndi" to "$targetjndi" using {
+		"SELECT * FROM employees"
+	}
+	
+	loadcsv name"loadfile" source"somefilepath" to"$targetjndi" with delim"," using
+	{
+		"SELECT columnA as name, columnB as id"
+	}
+	
+	writecsv name"writetofile" source"$sourcejndi" to"$targetfile" with delim"," using
+	{
+		"SELECT * FROM employees"
+	}
+}

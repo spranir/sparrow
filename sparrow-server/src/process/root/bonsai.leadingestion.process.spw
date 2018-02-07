@@ -1,0 +1,23 @@
+process "bonsai.leadingestion.process"
+{
+	try
+	{
+			fblc as "get-leads" secured-by "EAAEhaBeKXKcBAK4jOdwlra5PyORaqGZC1lYgXeiAAZAnaplLqtBnMtn8BUjlrKaphTJSnUeErhaXfndpm06ILZCx1xaSFBz4zZCcXWyCcUsJKh6pjtRO7A67pT0yBPxlf6RRPccWKDh2c87JdYnGVuCxHsnllZA5AuQG7wexL7QZDZD" 
+			with-key "632b2b7e5a1d1a86348aa3ec73606cfd"   
+			through-user "1385910988364458" 
+			for-campaign "6084339776957" into
+			"oltp/bonsai" using
+			{
+					"SELECT email,	full_name,	phone_number,	city,	company_name,	job_title;"
+			} on-condition if  "${runfbcl}"=="true"
+			
+			
+	}
+	catch
+	{
+	}
+	finally
+	{
+		
+	}
+}
