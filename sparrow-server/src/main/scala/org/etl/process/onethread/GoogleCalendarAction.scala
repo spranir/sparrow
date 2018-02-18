@@ -35,27 +35,33 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
     val calAsIs:GooglecalPUT = action.asInstanceOf[GooglecalPUT]
     val cal:org.etl.sparrow.GooglecalPUT = CommandProxy.createProxy(calAsIs, classOf[org.etl.sparrow.GooglecalPUT], context)
     
-    val dbSrc = cal.getSource
-    val mail = cal.getUseraccount
-    val relativePath = cal.getAuthstore
+    val dbSrc = cal.getDbSrc
+    val accountId = cal.getAccount
+    val mail = cal.getImpersonatedUser
+    val relativePath = cal.getPtwelveFile    
+    val key = cal.getPrivateKey
+    val project = cal.getProject
     val authStore = this.getClass.getClassLoader.getResource(relativePath).getPath
-    val key = cal.getKey
     val sql = cal.getValue
     val conn = ResourceAccess.rdbmsConn(dbSrc)
     val stmt = conn.createStatement
     val rs = stmt.executeQuery(sql)
     val httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-    val dataStoreFactory = new FileDataStoreFactory(DATA_STORE_DIR);
-    val credential:GoogleCredential = new GoogleCredential.Builder().setTransport(httpTransport).
+   
+    
+     val credential:GoogleCredential =     new GoogleCredential.Builder().setTransport(httpTransport).
           setJsonFactory(JSON_FACTORY).
-          setServiceAccountId(mail).
+          setServiceAccountId(accountId).
           setServiceAccountPrivateKeyId(key).
           setServiceAccountPrivateKeyFromP12File(new File(authStore)).
-          setServiceAccountScopes(Collections.singleton(CALENDAR_SCOPE)).   
+          setServiceAccountProjectId(project).
+          setServiceAccountScopes(Collections.singleton(CALENDAR_SCOPE)).          
+          setServiceAccountUser(mail).build()
+    
           
-          build();
     val client = new com.google.api.services.calendar.Calendar.Builder(
-          httpTransport, JSON_FACTORY, credential).setApplicationName("sparrow").build();
+          httpTransport, JSON_FACTORY, credential).setApplicationName(project).build();
+          
     while(rs.next())
     {
       val calId = rs.getString("event_calendar_id")
@@ -83,10 +89,15 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
       
       val endDateForRecur = endDate.replaceAll("-", "")+"T170000Z"
       logger.info("Final date set for recurrence="+endDateForRecur)
-      event.setRecurrence(Arrays.asList("RRULE:FREQ=WEEKLY;UNTIL="+endDateForRecur));
+      event.setRecurrence(Arrays.asList("RRULE:FREQ=DAILY;UNTIL="+endDateForRecur));
 
       
       val result = client.events().insert(calId, event).execute();
+    }
+    try {}
+    finally {
+      stmt.close
+      conn.close
     }
     context
   }

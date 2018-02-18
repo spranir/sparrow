@@ -17,6 +17,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.etl.services.SparrowGrammarAccess;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
+import org.etl.sparrow.ClickSendSms;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
@@ -25,11 +26,11 @@ import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
+import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
-import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
 import org.etl.sparrow.TrelloGET;
@@ -58,6 +59,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SparrowPackage.CATCH:
 				sequence_Catch(context, (Catch) semanticObject); 
 				return; 
+			case SparrowPackage.CLICK_SEND_SMS:
+				sequence_ClickSendSms(context, (ClickSendSms) semanticObject); 
+				return; 
 			case SparrowPackage.COPYDATA:
 				sequence_Copydata(context, (Copydata) semanticObject); 
 				return; 
@@ -82,6 +86,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SparrowPackage.GOOGLECAL_PUT:
 				sequence_GooglecalPUT(context, (GooglecalPUT) semanticObject); 
 				return; 
+			case SparrowPackage.GOOGLECONTACT_PUT:
+				sequence_GooglecontactPUT(context, (GooglecontactPUT) semanticObject); 
+				return; 
 			case SparrowPackage.LOAD_CSV:
 				sequence_LoadCsv(context, (LoadCsv) semanticObject); 
 				return; 
@@ -96,9 +103,6 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SparrowPackage.SLACK_PUT:
 				sequence_SlackPUT(context, (SlackPUT) semanticObject); 
-				return; 
-			case SparrowPackage.SMS:
-				sequence_Sms(context, (Sms) semanticObject); 
 				return; 
 			case SparrowPackage.TRANSFORM:
 				sequence_Transform(context, (Transform) semanticObject); 
@@ -173,6 +177,47 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_Catch(ISerializationContext context, Catch semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns ClickSendSms
+	 *     ClickSendSms returns ClickSendSms
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=STRING 
+	 *         userid=STRING 
+	 *         securityKey=STRING 
+	 *         target=STRING 
+	 *         value=STRING 
+	 *         condition=Expression
+	 *     )
+	 */
+	protected void sequence_ClickSendSms(ISerializationContext context, ClickSendSms semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__USERID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__USERID));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__SECURITY_KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__SECURITY_KEY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__TARGET));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.CLICK_SEND_SMS__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getClickSendSmsAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClickSendSmsAccess().getUseridSTRINGTerminalRuleCall_4_0(), semanticObject.getUserid());
+		feeder.accept(grammarAccess.getClickSendSmsAccess().getSecurityKeySTRINGTerminalRuleCall_6_0(), semanticObject.getSecurityKey());
+		feeder.accept(grammarAccess.getClickSendSmsAccess().getTargetSTRINGTerminalRuleCall_8_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getClickSendSmsAccess().getValueSTRINGTerminalRuleCall_11_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getClickSendSmsAccess().getConditionExpressionParserRuleCall_14_0(), semanticObject.getCondition());
+		feeder.finish();
 	}
 	
 	
@@ -384,10 +429,12 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         name=STRING 
-	 *         authstore=STRING 
-	 *         key=STRING 
-	 *         useraccount=STRING 
-	 *         source=STRING 
+	 *         account=STRING 
+	 *         privateKey=STRING 
+	 *         ptwelveFile=STRING 
+	 *         project=STRING 
+	 *         impersonatedUser=STRING 
+	 *         dbSrc=STRING 
 	 *         value=STRING 
 	 *         condition=Expression
 	 *     )
@@ -396,14 +443,18 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__AUTHSTORE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__AUTHSTORE));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__KEY));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__USERACCOUNT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__USERACCOUNT));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__SOURCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__SOURCE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__ACCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__ACCOUNT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__PRIVATE_KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__PRIVATE_KEY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__PTWELVE_FILE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__PTWELVE_FILE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__PROJECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__PROJECT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__IMPERSONATED_USER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__IMPERSONATED_USER));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__DB_SRC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__DB_SRC));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECAL_PUT__VALUE));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
@@ -411,12 +462,67 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGooglecalPUTAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGooglecalPUTAccess().getAuthstoreSTRINGTerminalRuleCall_4_0(), semanticObject.getAuthstore());
-		feeder.accept(grammarAccess.getGooglecalPUTAccess().getKeySTRINGTerminalRuleCall_6_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getGooglecalPUTAccess().getUseraccountSTRINGTerminalRuleCall_8_0(), semanticObject.getUseraccount());
-		feeder.accept(grammarAccess.getGooglecalPUTAccess().getSourceSTRINGTerminalRuleCall_10_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getGooglecalPUTAccess().getValueSTRINGTerminalRuleCall_13_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getGooglecalPUTAccess().getConditionExpressionParserRuleCall_16_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getAccountSTRINGTerminalRuleCall_4_0(), semanticObject.getAccount());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getPrivateKeySTRINGTerminalRuleCall_6_0(), semanticObject.getPrivateKey());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0(), semanticObject.getPtwelveFile());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getProjectSTRINGTerminalRuleCall_10_0(), semanticObject.getProject());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0(), semanticObject.getImpersonatedUser());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getDbSrcSTRINGTerminalRuleCall_14_0(), semanticObject.getDbSrc());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getValueSTRINGTerminalRuleCall_17_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getGooglecalPUTAccess().getConditionExpressionParserRuleCall_20_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns GooglecontactPUT
+	 *     GooglecontactPUT returns GooglecontactPUT
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=STRING 
+	 *         account=STRING 
+	 *         privateKey=STRING 
+	 *         ptwelveFile=STRING 
+	 *         project=STRING 
+	 *         impersonatedUser=STRING 
+	 *         dbSrc=STRING 
+	 *         value=STRING 
+	 *         condition=Expression
+	 *     )
+	 */
+	protected void sequence_GooglecontactPUT(ISerializationContext context, GooglecontactPUT semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__ACCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__ACCOUNT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__PRIVATE_KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__PRIVATE_KEY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__PTWELVE_FILE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__PTWELVE_FILE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__PROJECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__PROJECT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__IMPERSONATED_USER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__IMPERSONATED_USER));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__DB_SRC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__DB_SRC));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_PUT__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getAccountSTRINGTerminalRuleCall_4_0(), semanticObject.getAccount());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getPrivateKeySTRINGTerminalRuleCall_6_0(), semanticObject.getPrivateKey());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0(), semanticObject.getPtwelveFile());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getProjectSTRINGTerminalRuleCall_10_0(), semanticObject.getProject());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0(), semanticObject.getImpersonatedUser());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getDbSrcSTRINGTerminalRuleCall_14_0(), semanticObject.getDbSrc());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getValueSTRINGTerminalRuleCall_17_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getGooglecontactPUTAccess().getConditionExpressionParserRuleCall_20_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -566,34 +672,6 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getSlackPUTAccess().getChannelSTRINGTerminalRuleCall_6_0(), semanticObject.getChannel());
 		feeder.accept(grammarAccess.getSlackPUTAccess().getValueSTRINGTerminalRuleCall_9_0(), semanticObject.getValue());
 		feeder.accept(grammarAccess.getSlackPUTAccess().getConditionExpressionParserRuleCall_12_0(), semanticObject.getCondition());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Action returns Sms
-	 *     Sms returns Sms
-	 *
-	 * Constraint:
-	 *     (name=STRING target=STRING value=STRING condition=Expression)
-	 */
-	protected void sequence_Sms(ISerializationContext context, Sms semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SMS__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__TARGET));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.SMS__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.SMS__VALUE));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSmsAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSmsAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getSmsAccess().getValueSTRINGTerminalRuleCall_7_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getSmsAccess().getConditionExpressionParserRuleCall_10_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	

@@ -806,3 +806,109 @@ uniqueId char(128)
 )engine=CONNECT table_type=JSON File_name='Inbound-Spoors-Collection-form.json' option_list='object=fields';
 
 
+Google contacts
+https://developers.google.com/people/v1/getting-started
+https://developers.google.com/api-client-library/java/apis/people/v1
+https://developers.google.com/people/v1/getting-started?refresh=1&pli=1&authuser=1#project
+https://developers.google.com/gdata/docs/directory
+
+Contact api is replaced by peoples api - https://developers.google.com/people/v1/getting-started?refresh=1&pli=1&authuser=1
+Before you can make requests to the API, you must set up authorization. If you are using a client library, you must also create a service object.
+
+The following code demonstrates how to configure your client and authorize requests using OAuth 2.0 for installed applications.
+
+
+References
+https://github.com/google?page=6
+
+Gdata apis
+Not sure how much the below reference is going to help, nevertheless having it. The gdata api has been deprecated
+Refer to the deprecation list here - https://developers.google.com/gdata/docs/directory. However you can also visit below
+url for further information - https://github.com/google/gdata-java-client
+
+Another reference on gdata deprecation topic
+https://developers.google.com/gdata/docs/client-libraries
+
+
+There are 2 credential creation possibilities in google console(bonsai-crm is the project)
+API Key
+OAuth
+Service account - I know i want this one
+
+Deprecation notice for google contacts was right smack in this url
+https://developers.google.com/google-apps/contacts/v3/
+
+Paralallely
+
+I went and enabled people's api. browser url for reference
+https://console.developers.google.com/apis/api/people.googleapis.com/overview?project=bonsai-crm&authuser=1
+
+Which API are you using?
+Determines what kind of credentials you need.
+Where will you be calling the API from?
+Determines which settings you'll need to configure.
+Anser-  People api
+What data will you be accessing?
+AnswerUser data
+
+Access data belonging to a Google user, with their permission
+Application data
+
+Access data belonging to your own application
+Are you using Google App Engine or Google Compute 
+Engine?
+Yes, I’m using one or both No, I’m not using them 
+
+
+List of all google java api client projects as in github
+https://github.com/google/google-api-java-client
+https://github.com/google/google-api-java-client-samples
+
+Not sure how much the below url is going to help, however I will use it if its needed
+https://stackoverflow.com/questions/16298827/google-contacts-v3-api-oauth-v2-in-java
+
+Service account protocol
+
+https://admin.google.com/tissow.com/AdminHome?chromeless=1#OGX:ManageOauthClients
+https://developers.google.com/identity/protocols/OAuth2ServiceAccount
+
+The trick to making google contact or calander integration work is
+1. You need to have a google app account and not individual gmail account
+2. You need to create service account under your organization(for me its tissow.org)
+3. Your impersonated user should be created under that organization
+4. Also make the service account gain access to the entire domain by choosing "delegate domain wide access"
+5. Dont forget to also enable the people/calendar apis in google cloud for your api to access
+
+Service account id
+bonsai@bonsai-crm-under-tissow-org.iam.gserviceaccount.com
+Service account private key
+8debeae0d4910282754c67cadb177287d3ed8d86
+Service account p12 file
+F:\\google-service-account-keys\\bonsai-crm-under-tissow-org-8debeae0d491.p12
+bonsai-crm-under-tissow-org
+
+
+The blog that made me realize that service account activation and reverse registration of client app inside the admin's cPanel is below,
+http://damon.ghost.io/using-service-account-to-act-on-behalf-of-your-google-apps-users/
+https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority
+
+People service javadoc
+https://developers.google.com/resources/api-libraries/documentation/people/v1/java/latest/com/google/api/services/people/v1/PeopleService.People.html
+
+<h2>Setting up lgpl 5 version in local repo</h2>
+https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html
+
+
+cd /home/jpvel/Software/smartgwt-5.0p
+mvn install:install-file -Dfile=/home/jpvel/Software/smartgwt-5.0p/smartgwt.jar -DpomFile=/home/jpvel/Software/smartgwt-5.0p/maven/pom/smartgwt-lgpl.pom
+
+mvn install:install-file -Dfile=/home/jpvel/Software/smartgwt-5.0p/smartgwt-skins.jar -DpomFile=/home/jpvel/Software/smartgwt-5.0p/maven/pom/smartgwt-skins.pom
+
+<h2>Installing wine </h2>
+http://ubuntuhandbook.org/index.php/2015/12/install-wine-1-8-stable-new-ppa/
+
+
+gcloud compute --project "bonsai-crm" ssh --zone "asia-southeast1-a" "bonsai-crm-instance-1"
+
+
+mvn install:install-file -Dfile=/mnt/f/Workspace/bonsai-stencil/clicksend-java-sdk/target/ClickSend-3.1.0.jar -DgroupId=ClickSend     -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar

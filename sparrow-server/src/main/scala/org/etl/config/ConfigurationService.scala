@@ -215,6 +215,7 @@ private  def getAllInstanceConfigValue(conn:Connection, instanceFqn:String):scal
         val rs = stmt.executeQuery()        
         try {
           rs.next()
+          //TODO need to try catch throw to handle exception scenarios
           Resource(rs.getString(1), rs.getString(2), rs.getString(3),name)
         }
         finally {

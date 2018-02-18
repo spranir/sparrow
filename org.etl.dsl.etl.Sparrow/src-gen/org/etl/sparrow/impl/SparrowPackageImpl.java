@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
+import org.etl.sparrow.ClickSendSms;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
@@ -21,11 +22,11 @@ import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
+import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
-import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowFactory;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
@@ -77,6 +78,20 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * @generated
    */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass googlecontactPUTEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass googlecalPUTEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,7 +168,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass smsEClass = null;
+  private EClass clickSendSmsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -161,13 +176,6 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * @generated
    */
   private EClass slackPUTEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass googlecalPUTEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -435,6 +443,166 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EReference getAction_Condition()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGooglecontactPUT()
+  {
+    return googlecontactPUTEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactPUT_Account()
+  {
+    return (EAttribute)googlecontactPUTEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactPUT_PrivateKey()
+  {
+    return (EAttribute)googlecontactPUTEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactPUT_PtwelveFile()
+  {
+    return (EAttribute)googlecontactPUTEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactPUT_Project()
+  {
+    return (EAttribute)googlecontactPUTEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactPUT_ImpersonatedUser()
+  {
+    return (EAttribute)googlecontactPUTEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactPUT_DbSrc()
+  {
+    return (EAttribute)googlecontactPUTEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactPUT_Value()
+  {
+    return (EAttribute)googlecontactPUTEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGooglecalPUT()
+  {
+    return googlecalPUTEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecalPUT_Account()
+  {
+    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecalPUT_PrivateKey()
+  {
+    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecalPUT_PtwelveFile()
+  {
+    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecalPUT_Project()
+  {
+    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecalPUT_ImpersonatedUser()
+  {
+    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecalPUT_DbSrc()
+  {
+    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecalPUT_Value()
+  {
+    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -992,9 +1160,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSms()
+  public EClass getClickSendSms()
   {
-    return smsEClass;
+    return clickSendSmsEClass;
   }
 
   /**
@@ -1002,9 +1170,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSms_Target()
+  public EAttribute getClickSendSms_Userid()
   {
-    return (EAttribute)smsEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)clickSendSmsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1012,9 +1180,29 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSms_Value()
+  public EAttribute getClickSendSms_SecurityKey()
   {
-    return (EAttribute)smsEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)clickSendSmsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClickSendSms_Target()
+  {
+    return (EAttribute)clickSendSmsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClickSendSms_Value()
+  {
+    return (EAttribute)clickSendSmsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1055,66 +1243,6 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EAttribute getSlackPUT_Value()
   {
     return (EAttribute)slackPUTEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getGooglecalPUT()
-  {
-    return googlecalPUTEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGooglecalPUT_Authstore()
-  {
-    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGooglecalPUT_Key()
-  {
-    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGooglecalPUT_Useraccount()
-  {
-    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGooglecalPUT_Source()
-  {
-    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGooglecalPUT_Value()
-  {
-    return (EAttribute)googlecalPUTEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1379,6 +1507,24 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(actionEClass, ACTION__NAME);
     createEReference(actionEClass, ACTION__CONDITION);
 
+    googlecontactPUTEClass = createEClass(GOOGLECONTACT_PUT);
+    createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__ACCOUNT);
+    createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__PRIVATE_KEY);
+    createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__PTWELVE_FILE);
+    createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__PROJECT);
+    createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__IMPERSONATED_USER);
+    createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__DB_SRC);
+    createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__VALUE);
+
+    googlecalPUTEClass = createEClass(GOOGLECAL_PUT);
+    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__ACCOUNT);
+    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__PRIVATE_KEY);
+    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__PTWELVE_FILE);
+    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__PROJECT);
+    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__IMPERSONATED_USER);
+    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__DB_SRC);
+    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__VALUE);
+
     fbcLeadEClass = createEClass(FBC_LEAD);
     createEAttribute(fbcLeadEClass, FBC_LEAD__ACCESS_TOKEN);
     createEAttribute(fbcLeadEClass, FBC_LEAD__APP_SECRET);
@@ -1444,21 +1590,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(updatedauditEClass, UPDATEDAUDIT__LOGSINK);
     createEAttribute(updatedauditEClass, UPDATEDAUDIT__VALUE);
 
-    smsEClass = createEClass(SMS);
-    createEAttribute(smsEClass, SMS__TARGET);
-    createEAttribute(smsEClass, SMS__VALUE);
+    clickSendSmsEClass = createEClass(CLICK_SEND_SMS);
+    createEAttribute(clickSendSmsEClass, CLICK_SEND_SMS__USERID);
+    createEAttribute(clickSendSmsEClass, CLICK_SEND_SMS__SECURITY_KEY);
+    createEAttribute(clickSendSmsEClass, CLICK_SEND_SMS__TARGET);
+    createEAttribute(clickSendSmsEClass, CLICK_SEND_SMS__VALUE);
 
     slackPUTEClass = createEClass(SLACK_PUT);
     createEAttribute(slackPUTEClass, SLACK_PUT__TEAM);
     createEAttribute(slackPUTEClass, SLACK_PUT__CHANNEL);
     createEAttribute(slackPUTEClass, SLACK_PUT__VALUE);
-
-    googlecalPUTEClass = createEClass(GOOGLECAL_PUT);
-    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__AUTHSTORE);
-    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__KEY);
-    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__USERACCOUNT);
-    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__SOURCE);
-    createEAttribute(googlecalPUTEClass, GOOGLECAL_PUT__VALUE);
 
     copydataEClass = createEClass(COPYDATA);
     createEAttribute(copydataEClass, COPYDATA__SOURCE);
@@ -1516,6 +1657,8 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    googlecontactPUTEClass.getESuperTypes().add(this.getAction());
+    googlecalPUTEClass.getESuperTypes().add(this.getAction());
     fbcLeadEClass.getESuperTypes().add(this.getAction());
     dropfileEClass.getESuperTypes().add(this.getAction());
     doozleEClass.getESuperTypes().add(this.getAction());
@@ -1525,9 +1668,8 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     fetchEClass.getESuperTypes().add(this.getAction());
     callprocessEClass.getESuperTypes().add(this.getAction());
     updatedauditEClass.getESuperTypes().add(this.getAction());
-    smsEClass.getESuperTypes().add(this.getAction());
+    clickSendSmsEClass.getESuperTypes().add(this.getAction());
     slackPUTEClass.getESuperTypes().add(this.getAction());
-    googlecalPUTEClass.getESuperTypes().add(this.getAction());
     copydataEClass.getESuperTypes().add(this.getAction());
     writeCsvEClass.getESuperTypes().add(this.getAction());
     loadCsvEClass.getESuperTypes().add(this.getAction());
@@ -1555,6 +1697,24 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Condition(), this.getExpression(), null, "condition", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(googlecontactPUTEClass, GooglecontactPUT.class, "GooglecontactPUT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGooglecontactPUT_Account(), ecorePackage.getEString(), "account", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactPUT_PrivateKey(), ecorePackage.getEString(), "privateKey", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactPUT_PtwelveFile(), ecorePackage.getEString(), "ptwelveFile", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactPUT_Project(), ecorePackage.getEString(), "project", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactPUT_ImpersonatedUser(), ecorePackage.getEString(), "impersonatedUser", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactPUT_DbSrc(), ecorePackage.getEString(), "dbSrc", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactPUT_Value(), ecorePackage.getEString(), "value", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(googlecalPUTEClass, GooglecalPUT.class, "GooglecalPUT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGooglecalPUT_Account(), ecorePackage.getEString(), "account", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecalPUT_PrivateKey(), ecorePackage.getEString(), "privateKey", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecalPUT_PtwelveFile(), ecorePackage.getEString(), "ptwelveFile", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecalPUT_Project(), ecorePackage.getEString(), "project", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecalPUT_ImpersonatedUser(), ecorePackage.getEString(), "impersonatedUser", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecalPUT_DbSrc(), ecorePackage.getEString(), "dbSrc", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecalPUT_Value(), ecorePackage.getEString(), "value", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fbcLeadEClass, FBCLead.class, "FBCLead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFBCLead_AccessToken(), ecorePackage.getEString(), "accessToken", null, 0, 1, FBCLead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1621,21 +1781,16 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getUpdatedaudit_Logsink(), ecorePackage.getEString(), "logsink", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getUpdatedaudit_Value(), ecorePackage.getEString(), "value", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(smsEClass, Sms.class, "Sms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSms_Target(), ecorePackage.getEString(), "target", null, 0, 1, Sms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSms_Value(), ecorePackage.getEString(), "value", null, 0, 1, Sms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(clickSendSmsEClass, ClickSendSms.class, "ClickSendSms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClickSendSms_Userid(), ecorePackage.getEString(), "userid", null, 0, 1, ClickSendSms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClickSendSms_SecurityKey(), ecorePackage.getEString(), "securityKey", null, 0, 1, ClickSendSms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClickSendSms_Target(), ecorePackage.getEString(), "target", null, 0, 1, ClickSendSms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClickSendSms_Value(), ecorePackage.getEString(), "value", null, 0, 1, ClickSendSms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(slackPUTEClass, SlackPUT.class, "SlackPUT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSlackPUT_Team(), ecorePackage.getEString(), "team", null, 0, 1, SlackPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSlackPUT_Channel(), ecorePackage.getEString(), "channel", null, 0, 1, SlackPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSlackPUT_Value(), ecorePackage.getEString(), "value", null, 0, 1, SlackPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(googlecalPUTEClass, GooglecalPUT.class, "GooglecalPUT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGooglecalPUT_Authstore(), ecorePackage.getEString(), "authstore", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecalPUT_Key(), ecorePackage.getEString(), "key", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecalPUT_Useraccount(), ecorePackage.getEString(), "useraccount", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecalPUT_Source(), ecorePackage.getEString(), "source", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGooglecalPUT_Value(), ecorePackage.getEString(), "value", null, 0, 1, GooglecalPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(copydataEClass, Copydata.class, "Copydata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCopydata_Source(), ecorePackage.getEString(), "source", null, 0, 1, Copydata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

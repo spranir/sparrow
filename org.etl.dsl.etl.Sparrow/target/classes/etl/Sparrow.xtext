@@ -40,7 +40,7 @@ Action:
 	|Transform
 	|GooglecalPUT
 	|SlackPUT
-	|Sms
+	|ClickSendSms
 	|Updatedaudit 
 	|Callprocess
 	|Fetch
@@ -50,7 +50,22 @@ Action:
 	|Doozle
 	|Dropfile
 	|FBCLead
+	|GooglecontactPUT
 	)
+;
+
+GooglecontactPUT:
+	'gcontact' 'as' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key' ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'from-source' dbSrc=STRING 'using'
+	'{'
+		value=STRING
+	'}' 'on-condition' condition=Expression
+;
+
+GooglecalPUT:
+	'gcalendar' 'as' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key' ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'from-source' dbSrc=STRING 'using'
+	'{'
+		value=STRING
+	'}' 'on-condition' condition=Expression
 ;
 
 FBCLead:
@@ -132,8 +147,8 @@ Updatedaudit:
 	'}' 'on-condition' condition=Expression
 ;
 
-Sms:
-	'sms' 'as' name=STRING 'for' target=STRING 'using'
+ClickSendSms:
+	'c2sms' 'as' name=STRING 'with-user' userid=STRING 'secured-by' securityKey=STRING 'from-source' target=STRING 'using'
 	'{'
 		value=STRING
 	'}' 'on-condition' condition=Expression
@@ -146,12 +161,7 @@ SlackPUT:
 	'}' 'on-condition' condition=Expression
 ;
 
-GooglecalPUT:
-	'googlecalput' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING 'from-source' source=STRING 'using'
-	'{'
-		value=STRING
-	'}' 'on-condition' condition=Expression
-;
+
 	
 Copydata:
 	'copydata' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'using'
@@ -184,6 +194,10 @@ Transform:
 ;
 
 
+
+Column:
+	STRING
+;
 SelectStatement:
 	STRING
 ;	

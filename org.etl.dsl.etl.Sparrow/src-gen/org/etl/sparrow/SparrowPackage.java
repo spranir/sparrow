@@ -261,6 +261,206 @@ public interface SparrowPackage extends EPackage
   int ACTION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.GooglecontactPUTImpl <em>Googlecontact PUT</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.GooglecontactPUTImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecontactPUT()
+   * @generated
+   */
+  int GOOGLECONTACT_PUT = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__CONDITION = ACTION__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Account</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__ACCOUNT = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Private Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__PRIVATE_KEY = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Ptwelve File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__PTWELVE_FILE = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Project</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__PROJECT = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Impersonated User</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__IMPERSONATED_USER = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Db Src</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__DB_SRC = ACTION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT__VALUE = ACTION_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Googlecontact PUT</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.GooglecalPUTImpl <em>Googlecal PUT</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.GooglecalPUTImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
+   * @generated
+   */
+  int GOOGLECAL_PUT = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__CONDITION = ACTION__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Account</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__ACCOUNT = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Private Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__PRIVATE_KEY = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Ptwelve File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__PTWELVE_FILE = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Project</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__PROJECT = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Impersonated User</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__IMPERSONATED_USER = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Db Src</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__DB_SRC = ACTION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT__VALUE = ACTION_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Googlecal PUT</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECAL_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 7;
+
+  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.FBCLeadImpl <em>FBC Lead</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -268,7 +468,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFBCLead()
    * @generated
    */
-  int FBC_LEAD = 5;
+  int FBC_LEAD = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -359,7 +559,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDropfile()
    * @generated
    */
-  int DROPFILE = 6;
+  int DROPFILE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -405,7 +605,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDoozle()
    * @generated
    */
-  int DOOZLE = 7;
+  int DOOZLE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -469,7 +669,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRest()
    * @generated
    */
-  int REST = 8;
+  int REST = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -623,7 +823,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRestPart()
    * @generated
    */
-  int REST_PART = 9;
+  int REST_PART = 11;
 
   /**
    * The feature id for the '<em><b>Part Name</b></em>' attribute.
@@ -660,7 +860,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloGET()
    * @generated
    */
-  int TRELLO_GET = 10;
+  int TRELLO_GET = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -751,7 +951,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloPUT()
    * @generated
    */
-  int TRELLO_PUT = 11;
+  int TRELLO_PUT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -842,7 +1042,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
    * @generated
    */
-  int FETCH = 12;
+  int FETCH = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -897,7 +1097,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 13;
+  int CALLPROCESS = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -970,7 +1170,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 14;
+  int UPDATEDAUDIT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1018,14 +1218,14 @@ public interface SparrowPackage extends EPackage
   int UPDATEDAUDIT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.etl.sparrow.impl.SmsImpl <em>Sms</em>}' class.
+   * The meta object id for the '{@link org.etl.sparrow.impl.ClickSendSmsImpl <em>Click Send Sms</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.etl.sparrow.impl.SmsImpl
-   * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
+   * @see org.etl.sparrow.impl.ClickSendSmsImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getClickSendSms()
    * @generated
    */
-  int SMS = 15;
+  int CLICK_SEND_SMS = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1034,7 +1234,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SMS__NAME = ACTION__NAME;
+  int CLICK_SEND_SMS__NAME = ACTION__NAME;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1043,7 +1243,25 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SMS__CONDITION = ACTION__CONDITION;
+  int CLICK_SEND_SMS__CONDITION = ACTION__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Userid</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICK_SEND_SMS__USERID = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Security Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICK_SEND_SMS__SECURITY_KEY = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -1052,7 +1270,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SMS__TARGET = ACTION_FEATURE_COUNT + 0;
+  int CLICK_SEND_SMS__TARGET = ACTION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1061,16 +1279,16 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SMS__VALUE = ACTION_FEATURE_COUNT + 1;
+  int CLICK_SEND_SMS__VALUE = ACTION_FEATURE_COUNT + 3;
 
   /**
-   * The number of structural features of the '<em>Sms</em>' class.
+   * The number of structural features of the '<em>Click Send Sms</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SMS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+  int CLICK_SEND_SMS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.SlackPUTImpl <em>Slack PUT</em>}' class.
@@ -1080,7 +1298,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlackPUT()
    * @generated
    */
-  int SLACK_PUT = 16;
+  int SLACK_PUT = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1137,88 +1355,6 @@ public interface SparrowPackage extends EPackage
   int SLACK_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.etl.sparrow.impl.GooglecalPUTImpl <em>Googlecal PUT</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.etl.sparrow.impl.GooglecalPUTImpl
-   * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
-   * @generated
-   */
-  int GOOGLECAL_PUT = 17;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__NAME = ACTION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__CONDITION = ACTION__CONDITION;
-
-  /**
-   * The feature id for the '<em><b>Authstore</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__AUTHSTORE = ACTION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__KEY = ACTION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Useraccount</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__USERACCOUNT = ACTION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Source</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__SOURCE = ACTION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT__VALUE = ACTION_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>Googlecal PUT</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLECAL_PUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 5;
-
-  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.CopydataImpl <em>Copydata</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1226,7 +1362,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 18;
+  int COPYDATA = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1290,7 +1426,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 19;
+  int WRITE_CSV = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1363,7 +1499,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 20;
+  int LOAD_CSV = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1436,7 +1572,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 21;
+  int TRANSFORM = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1491,7 +1627,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 22;
+  int EXPRESSION = 23;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' attribute.
@@ -1711,6 +1847,180 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EReference getAction_Condition();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.GooglecontactPUT <em>Googlecontact PUT</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Googlecontact PUT</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT
+   * @generated
+   */
+  EClass getGooglecontactPUT();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactPUT#getAccount <em>Account</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Account</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT#getAccount()
+   * @see #getGooglecontactPUT()
+   * @generated
+   */
+  EAttribute getGooglecontactPUT_Account();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactPUT#getPrivateKey <em>Private Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Private Key</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT#getPrivateKey()
+   * @see #getGooglecontactPUT()
+   * @generated
+   */
+  EAttribute getGooglecontactPUT_PrivateKey();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactPUT#getPtwelveFile <em>Ptwelve File</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ptwelve File</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT#getPtwelveFile()
+   * @see #getGooglecontactPUT()
+   * @generated
+   */
+  EAttribute getGooglecontactPUT_PtwelveFile();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactPUT#getProject <em>Project</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Project</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT#getProject()
+   * @see #getGooglecontactPUT()
+   * @generated
+   */
+  EAttribute getGooglecontactPUT_Project();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactPUT#getImpersonatedUser <em>Impersonated User</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Impersonated User</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT#getImpersonatedUser()
+   * @see #getGooglecontactPUT()
+   * @generated
+   */
+  EAttribute getGooglecontactPUT_ImpersonatedUser();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactPUT#getDbSrc <em>Db Src</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Db Src</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT#getDbSrc()
+   * @see #getGooglecontactPUT()
+   * @generated
+   */
+  EAttribute getGooglecontactPUT_DbSrc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactPUT#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.GooglecontactPUT#getValue()
+   * @see #getGooglecontactPUT()
+   * @generated
+   */
+  EAttribute getGooglecontactPUT_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.GooglecalPUT <em>Googlecal PUT</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Googlecal PUT</em>'.
+   * @see org.etl.sparrow.GooglecalPUT
+   * @generated
+   */
+  EClass getGooglecalPUT();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getAccount <em>Account</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Account</em>'.
+   * @see org.etl.sparrow.GooglecalPUT#getAccount()
+   * @see #getGooglecalPUT()
+   * @generated
+   */
+  EAttribute getGooglecalPUT_Account();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getPrivateKey <em>Private Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Private Key</em>'.
+   * @see org.etl.sparrow.GooglecalPUT#getPrivateKey()
+   * @see #getGooglecalPUT()
+   * @generated
+   */
+  EAttribute getGooglecalPUT_PrivateKey();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getPtwelveFile <em>Ptwelve File</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ptwelve File</em>'.
+   * @see org.etl.sparrow.GooglecalPUT#getPtwelveFile()
+   * @see #getGooglecalPUT()
+   * @generated
+   */
+  EAttribute getGooglecalPUT_PtwelveFile();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getProject <em>Project</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Project</em>'.
+   * @see org.etl.sparrow.GooglecalPUT#getProject()
+   * @see #getGooglecalPUT()
+   * @generated
+   */
+  EAttribute getGooglecalPUT_Project();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getImpersonatedUser <em>Impersonated User</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Impersonated User</em>'.
+   * @see org.etl.sparrow.GooglecalPUT#getImpersonatedUser()
+   * @see #getGooglecalPUT()
+   * @generated
+   */
+  EAttribute getGooglecalPUT_ImpersonatedUser();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getDbSrc <em>Db Src</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Db Src</em>'.
+   * @see org.etl.sparrow.GooglecalPUT#getDbSrc()
+   * @see #getGooglecalPUT()
+   * @generated
+   */
+  EAttribute getGooglecalPUT_DbSrc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.GooglecalPUT#getValue()
+   * @see #getGooglecalPUT()
+   * @generated
+   */
+  EAttribute getGooglecalPUT_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.FBCLead <em>FBC Lead</em>}'.
@@ -2308,36 +2618,58 @@ public interface SparrowPackage extends EPackage
   EAttribute getUpdatedaudit_Value();
 
   /**
-   * Returns the meta object for class '{@link org.etl.sparrow.Sms <em>Sms</em>}'.
+   * Returns the meta object for class '{@link org.etl.sparrow.ClickSendSms <em>Click Send Sms</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sms</em>'.
-   * @see org.etl.sparrow.Sms
+   * @return the meta object for class '<em>Click Send Sms</em>'.
+   * @see org.etl.sparrow.ClickSendSms
    * @generated
    */
-  EClass getSms();
+  EClass getClickSendSms();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Sms#getTarget <em>Target</em>}'.
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.ClickSendSms#getUserid <em>Userid</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Userid</em>'.
+   * @see org.etl.sparrow.ClickSendSms#getUserid()
+   * @see #getClickSendSms()
+   * @generated
+   */
+  EAttribute getClickSendSms_Userid();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.ClickSendSms#getSecurityKey <em>Security Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Security Key</em>'.
+   * @see org.etl.sparrow.ClickSendSms#getSecurityKey()
+   * @see #getClickSendSms()
+   * @generated
+   */
+  EAttribute getClickSendSms_SecurityKey();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.ClickSendSms#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Target</em>'.
-   * @see org.etl.sparrow.Sms#getTarget()
-   * @see #getSms()
+   * @see org.etl.sparrow.ClickSendSms#getTarget()
+   * @see #getClickSendSms()
    * @generated
    */
-  EAttribute getSms_Target();
+  EAttribute getClickSendSms_Target();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Sms#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.ClickSendSms#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.etl.sparrow.Sms#getValue()
-   * @see #getSms()
+   * @see org.etl.sparrow.ClickSendSms#getValue()
+   * @see #getClickSendSms()
    * @generated
    */
-  EAttribute getSms_Value();
+  EAttribute getClickSendSms_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.SlackPUT <em>Slack PUT</em>}'.
@@ -2381,71 +2713,6 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getSlackPUT_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.etl.sparrow.GooglecalPUT <em>Googlecal PUT</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Googlecal PUT</em>'.
-   * @see org.etl.sparrow.GooglecalPUT
-   * @generated
-   */
-  EClass getGooglecalPUT();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getAuthstore <em>Authstore</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Authstore</em>'.
-   * @see org.etl.sparrow.GooglecalPUT#getAuthstore()
-   * @see #getGooglecalPUT()
-   * @generated
-   */
-  EAttribute getGooglecalPUT_Authstore();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see org.etl.sparrow.GooglecalPUT#getKey()
-   * @see #getGooglecalPUT()
-   * @generated
-   */
-  EAttribute getGooglecalPUT_Key();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getUseraccount <em>Useraccount</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Useraccount</em>'.
-   * @see org.etl.sparrow.GooglecalPUT#getUseraccount()
-   * @see #getGooglecalPUT()
-   * @generated
-   */
-  EAttribute getGooglecalPUT_Useraccount();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getSource <em>Source</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Source</em>'.
-   * @see org.etl.sparrow.GooglecalPUT#getSource()
-   * @see #getGooglecalPUT()
-   * @generated
-   */
-  EAttribute getGooglecalPUT_Source();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecalPUT#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.etl.sparrow.GooglecalPUT#getValue()
-   * @see #getGooglecalPUT()
-   * @generated
-   */
-  EAttribute getGooglecalPUT_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.Copydata <em>Copydata</em>}'.
@@ -2841,6 +3108,138 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EReference ACTION__CONDITION = eINSTANCE.getAction_Condition();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecontactPUTImpl <em>Googlecontact PUT</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.GooglecontactPUTImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecontactPUT()
+     * @generated
+     */
+    EClass GOOGLECONTACT_PUT = eINSTANCE.getGooglecontactPUT();
+
+    /**
+     * The meta object literal for the '<em><b>Account</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_PUT__ACCOUNT = eINSTANCE.getGooglecontactPUT_Account();
+
+    /**
+     * The meta object literal for the '<em><b>Private Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_PUT__PRIVATE_KEY = eINSTANCE.getGooglecontactPUT_PrivateKey();
+
+    /**
+     * The meta object literal for the '<em><b>Ptwelve File</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_PUT__PTWELVE_FILE = eINSTANCE.getGooglecontactPUT_PtwelveFile();
+
+    /**
+     * The meta object literal for the '<em><b>Project</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_PUT__PROJECT = eINSTANCE.getGooglecontactPUT_Project();
+
+    /**
+     * The meta object literal for the '<em><b>Impersonated User</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_PUT__IMPERSONATED_USER = eINSTANCE.getGooglecontactPUT_ImpersonatedUser();
+
+    /**
+     * The meta object literal for the '<em><b>Db Src</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_PUT__DB_SRC = eINSTANCE.getGooglecontactPUT_DbSrc();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_PUT__VALUE = eINSTANCE.getGooglecontactPUT_Value();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecalPUTImpl <em>Googlecal PUT</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.GooglecalPUTImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
+     * @generated
+     */
+    EClass GOOGLECAL_PUT = eINSTANCE.getGooglecalPUT();
+
+    /**
+     * The meta object literal for the '<em><b>Account</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL_PUT__ACCOUNT = eINSTANCE.getGooglecalPUT_Account();
+
+    /**
+     * The meta object literal for the '<em><b>Private Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL_PUT__PRIVATE_KEY = eINSTANCE.getGooglecalPUT_PrivateKey();
+
+    /**
+     * The meta object literal for the '<em><b>Ptwelve File</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL_PUT__PTWELVE_FILE = eINSTANCE.getGooglecalPUT_PtwelveFile();
+
+    /**
+     * The meta object literal for the '<em><b>Project</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL_PUT__PROJECT = eINSTANCE.getGooglecalPUT_Project();
+
+    /**
+     * The meta object literal for the '<em><b>Impersonated User</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL_PUT__IMPERSONATED_USER = eINSTANCE.getGooglecalPUT_ImpersonatedUser();
+
+    /**
+     * The meta object literal for the '<em><b>Db Src</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL_PUT__DB_SRC = eINSTANCE.getGooglecalPUT_DbSrc();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECAL_PUT__VALUE = eINSTANCE.getGooglecalPUT_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.FBCLeadImpl <em>FBC Lead</em>}' class.
@@ -3303,14 +3702,30 @@ public interface SparrowPackage extends EPackage
     EAttribute UPDATEDAUDIT__VALUE = eINSTANCE.getUpdatedaudit_Value();
 
     /**
-     * The meta object literal for the '{@link org.etl.sparrow.impl.SmsImpl <em>Sms</em>}' class.
+     * The meta object literal for the '{@link org.etl.sparrow.impl.ClickSendSmsImpl <em>Click Send Sms</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.etl.sparrow.impl.SmsImpl
-     * @see org.etl.sparrow.impl.SparrowPackageImpl#getSms()
+     * @see org.etl.sparrow.impl.ClickSendSmsImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getClickSendSms()
      * @generated
      */
-    EClass SMS = eINSTANCE.getSms();
+    EClass CLICK_SEND_SMS = eINSTANCE.getClickSendSms();
+
+    /**
+     * The meta object literal for the '<em><b>Userid</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLICK_SEND_SMS__USERID = eINSTANCE.getClickSendSms_Userid();
+
+    /**
+     * The meta object literal for the '<em><b>Security Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLICK_SEND_SMS__SECURITY_KEY = eINSTANCE.getClickSendSms_SecurityKey();
 
     /**
      * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
@@ -3318,7 +3733,7 @@ public interface SparrowPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SMS__TARGET = eINSTANCE.getSms_Target();
+    EAttribute CLICK_SEND_SMS__TARGET = eINSTANCE.getClickSendSms_Target();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -3326,7 +3741,7 @@ public interface SparrowPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SMS__VALUE = eINSTANCE.getSms_Value();
+    EAttribute CLICK_SEND_SMS__VALUE = eINSTANCE.getClickSendSms_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.SlackPUTImpl <em>Slack PUT</em>}' class.
@@ -3361,56 +3776,6 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute SLACK_PUT__VALUE = eINSTANCE.getSlackPUT_Value();
-
-    /**
-     * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecalPUTImpl <em>Googlecal PUT</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.etl.sparrow.impl.GooglecalPUTImpl
-     * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
-     * @generated
-     */
-    EClass GOOGLECAL_PUT = eINSTANCE.getGooglecalPUT();
-
-    /**
-     * The meta object literal for the '<em><b>Authstore</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL_PUT__AUTHSTORE = eINSTANCE.getGooglecalPUT_Authstore();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL_PUT__KEY = eINSTANCE.getGooglecalPUT_Key();
-
-    /**
-     * The meta object literal for the '<em><b>Useraccount</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL_PUT__USERACCOUNT = eINSTANCE.getGooglecalPUT_Useraccount();
-
-    /**
-     * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL_PUT__SOURCE = eINSTANCE.getGooglecalPUT_Source();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLECAL_PUT__VALUE = eINSTANCE.getGooglecalPUT_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.CopydataImpl <em>Copydata</em>}' class.

@@ -15,6 +15,8 @@ object CommandFactory {
       case "doozle"=>new DoozleAction
       case "rest"=>new RestAction
       case "fbclead"=>new FBLeadCreateAction
+      case "googlecontactput"=>new GContactCreateAction
+      case "googlecalput"=>new GoogleCalendarAction
       
     }
   }

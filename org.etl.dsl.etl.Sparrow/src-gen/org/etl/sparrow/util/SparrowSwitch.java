@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
+import org.etl.sparrow.ClickSendSms;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
@@ -19,11 +20,11 @@ import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
+import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
-import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
 import org.etl.sparrow.TrelloGET;
@@ -130,6 +131,22 @@ public class SparrowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SparrowPackage.GOOGLECONTACT_PUT:
+      {
+        GooglecontactPUT googlecontactPUT = (GooglecontactPUT)theEObject;
+        T result = caseGooglecontactPUT(googlecontactPUT);
+        if (result == null) result = caseAction(googlecontactPUT);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.GOOGLECAL_PUT:
+      {
+        GooglecalPUT googlecalPUT = (GooglecalPUT)theEObject;
+        T result = caseGooglecalPUT(googlecalPUT);
+        if (result == null) result = caseAction(googlecalPUT);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SparrowPackage.FBC_LEAD:
       {
         FBCLead fbcLead = (FBCLead)theEObject;
@@ -209,11 +226,11 @@ public class SparrowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SparrowPackage.SMS:
+      case SparrowPackage.CLICK_SEND_SMS:
       {
-        Sms sms = (Sms)theEObject;
-        T result = caseSms(sms);
-        if (result == null) result = caseAction(sms);
+        ClickSendSms clickSendSms = (ClickSendSms)theEObject;
+        T result = caseClickSendSms(clickSendSms);
+        if (result == null) result = caseAction(clickSendSms);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -222,14 +239,6 @@ public class SparrowSwitch<T> extends Switch<T>
         SlackPUT slackPUT = (SlackPUT)theEObject;
         T result = caseSlackPUT(slackPUT);
         if (result == null) result = caseAction(slackPUT);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SparrowPackage.GOOGLECAL_PUT:
-      {
-        GooglecalPUT googlecalPUT = (GooglecalPUT)theEObject;
-        T result = caseGooglecalPUT(googlecalPUT);
-        if (result == null) result = caseAction(googlecalPUT);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -352,6 +361,38 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Googlecontact PUT</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Googlecontact PUT</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGooglecontactPUT(GooglecontactPUT object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Googlecal PUT</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Googlecal PUT</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGooglecalPUT(GooglecalPUT object)
   {
     return null;
   }
@@ -517,17 +558,17 @@ public class SparrowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sms</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Click Send Sms</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sms</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Click Send Sms</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSms(Sms object)
+  public T caseClickSendSms(ClickSendSms object)
   {
     return null;
   }
@@ -544,22 +585,6 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSlackPUT(SlackPUT object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Googlecal PUT</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Googlecal PUT</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGooglecalPUT(GooglecalPUT object)
   {
     return null;
   }

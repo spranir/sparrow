@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
+import org.etl.sparrow.ClickSendSms;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
@@ -21,11 +22,11 @@ import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
+import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
-import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
 import org.etl.sparrow.TrelloGET;
@@ -123,6 +124,16 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
         return createActionAdapter();
       }
       @Override
+      public Adapter caseGooglecontactPUT(GooglecontactPUT object)
+      {
+        return createGooglecontactPUTAdapter();
+      }
+      @Override
+      public Adapter caseGooglecalPUT(GooglecalPUT object)
+      {
+        return createGooglecalPUTAdapter();
+      }
+      @Override
       public Adapter caseFBCLead(FBCLead object)
       {
         return createFBCLeadAdapter();
@@ -173,19 +184,14 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
         return createUpdatedauditAdapter();
       }
       @Override
-      public Adapter caseSms(Sms object)
+      public Adapter caseClickSendSms(ClickSendSms object)
       {
-        return createSmsAdapter();
+        return createClickSendSmsAdapter();
       }
       @Override
       public Adapter caseSlackPUT(SlackPUT object)
       {
         return createSlackPUTAdapter();
-      }
-      @Override
-      public Adapter caseGooglecalPUT(GooglecalPUT object)
-      {
-        return createGooglecalPUTAdapter();
       }
       @Override
       public Adapter caseCopydata(Copydata object)
@@ -305,6 +311,36 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.GooglecontactPUT <em>Googlecontact PUT</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.GooglecontactPUT
+   * @generated
+   */
+  public Adapter createGooglecontactPUTAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.GooglecalPUT <em>Googlecal PUT</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.GooglecalPUT
+   * @generated
+   */
+  public Adapter createGooglecalPUTAdapter()
   {
     return null;
   }
@@ -460,16 +496,16 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Sms <em>Sms</em>}'.
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.ClickSendSms <em>Click Send Sms</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.etl.sparrow.Sms
+   * @see org.etl.sparrow.ClickSendSms
    * @generated
    */
-  public Adapter createSmsAdapter()
+  public Adapter createClickSendSmsAdapter()
   {
     return null;
   }
@@ -485,21 +521,6 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSlackPUTAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.etl.sparrow.GooglecalPUT <em>Googlecal PUT</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.etl.sparrow.GooglecalPUT
-   * @generated
-   */
-  public Adapter createGooglecalPUTAdapter()
   {
     return null;
   }

@@ -28,6 +28,24 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Action/condition"/>
     </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//GooglecontactPUT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/account"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/privateKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/ptwelveFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/project"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/impersonatedUser"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/dbSrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//GooglecalPUT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/account"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/privateKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/ptwelveFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/project"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/impersonatedUser"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/dbSrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/value"/>
+    </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//FBCLead">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/accessToken"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//FBCLead/appSecret"/>
@@ -93,21 +111,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/logsink"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/value"/>
     </genClasses>
-    <genClasses ecoreClass="Sparrow.ecore#//Sms">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Sms/value"/>
+    <genClasses ecoreClass="Sparrow.ecore#//ClickSendSms">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//ClickSendSms/userid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//ClickSendSms/securityKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//ClickSendSms/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//ClickSendSms/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//SlackPUT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SlackPUT/team"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SlackPUT/channel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SlackPUT/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Sparrow.ecore#//GooglecalPUT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/authstore"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/useraccount"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/source"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecalPUT/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Copydata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Copydata/source"/>

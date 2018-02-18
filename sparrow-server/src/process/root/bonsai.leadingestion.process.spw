@@ -2,27 +2,104 @@ process "bonsai.leadingestion.process"
 {
 	try
 	{
-			fblc as "get-leads" secured-by "EAAEhaBeKXKcBAK4jOdwlra5PyORaqGZC1lYgXeiAAZAnaplLqtBnMtn8BUjlrKaphTJSnUeErhaXfndpm06ILZCx1xaSFBz4zZCcXWyCcUsJKh6pjtRO7A67pT0yBPxlf6RRPccWKDh2c87JdYnGVuCxHsnllZA5AuQG7wexL7QZDZD" 
-			with-key "632b2b7e5a1d1a86348aa3ec73606cfd"   
-			through-user "1385910988364458" 
-			for-campaign "6083587107157" into
-			"oltp/bonsai" using
+			fblc as "get-leads" secured-by "${accesstoken}" 
+			with-key "${secret-key}"   
+			through-user "${user-id}" 
+			for-campaign "${campaign-id-list}" into
+			"${sor-db}" using
 			{
-					"SELECT email,	full_name,	phone_number,	city,	company_name,	job_title;"
+					"SELECT name, email, mobile, alt_mobile, locality, targeted_city, leadsource_campaign, leadsource_channel, company, 
+					leadgen_date, coa_aprox, profession, budget, leadsource_metadata, intent_metadata, batch_id, updated_date"
 			} on-condition if  "${runfbcl}"=="true"
 			
-			transform as "create-table" on "oltp/bonsai" using
+			transform as "cleanup_underscore_on_incoming_leads" on "${sor-db}" using
 			{
-				" INSERT INTO BI_INTENT (NAME, EMAIL, MOBILE, ALT_MOBILE, LOCALITY, TARGETED_CITY, LEADSOURCE_CAMPAIGN, LEADSOURCE_CHANNEL, COMPANY, LEADGEN_DATE, COA_APROX, PROFESSION, BUDGET, LEADSOURCE_METADATA, INTENT_METADATA, BATCH_ID) 
- 					SELECT  A.NAME,  A.EMAIL,  A.MOBILE,  A.ALT_MOBILE,  A.LOCALITY,  A.TARGETED_CITY,  A.LEADSOURCE_CAMPAIGN,  A.LEADSOURCE_CHANNEL,  A.COMPANY,  A.LEADGEN_DATE,  A.COA_APROX,  A.PROFESSION,  A.BUDGET, A.LEADSOURCE_METADATA,  A.INTENT_METADATA,  A.BATCH_ID 
- 					FROM BI_INTENT_FB_SRC A LEFT OUTER JOIN BI_INTENT B ON A.MOBILE=B.MOBILE WHERE B.MOBILE IS NULL;"
+				"update leads_soft set intent_metadata=replace(intent_metadata,'_','') where batch_id=${process-id};"
 			}
+			
+			transform as "add-leads-to-staging" on "${sor-db}" using
+			{
+				   "INSERT INTO leads_syfd (name, email, mobile, alt_mobile, 
+					locality, targeted_city, leadsource_campaign, leadsource_channel, company, leadgen_date, 
+					coa_aprox, profession, budget, leadsource_metadata, intent_metadata, batch_id, updated_date) 					
+					SELECT  a.name,  a.email,  a.mobile,  a.alt_mobile,  a.locality,  a.targeted_city,  
+					a.leadsource_campaign,  a.leadsource_channel,  a.company,  a.leadgen_date,  a.coa_aprox,  
+					a.profession, a.budget, a.leadsource_metadata,  a.intent_metadata,  ${process-id}, now() FROM leads_soft A 
+					LEFT OUTER JOIN leads_syfd B ON a.mobile=b.mobile WHERE b.mobile IS NULL GROUP BY a.mobile having count(*)>=1;"
+			}
+			
+			transform as "cleanup_leadgendate_on_incoming_leads" on "${sor-db}" using
+			{
+				"update leads_syfd set leadgen_date=concat(substr(leadgen_date, 1, 10),' ', substr(leadgen_date, 12,8)) where batch_id=${process-id};"
+			}
+			
+			transform as "add_to_customer" on "${sor-db}" using
+			{
+				"INSERT INTO customer (version, budget, details, email, full_name, lead_campaign, lead_source, leadgen_date, 
+				  location, phone_number, profession, vendor_id, z_id, batch_id) 
+				  SELECT 0, budget, intent_metadata, email, name, leadsource_campaign, leadsource_channel, leadgen_date, locality, mobile, profession, 20, 35, batch_id  
+					FROM leads_syfd where batch_id=${process-id};"
+			}
+			
+			transform as "add_to_order" on "${sor-db}" using
+			{
+				"INSERT INTO order_info ( version, due_date, due_time, paid, state, customer_id, pickup_location_id, z_state, state_string, z_state_string) 
+					SELECT 0, NOW(), NOW(), 0, 0, id, 1, 10, 'NEW','New' FROM customer WHERE batch_id=${process-id};"
+			}
+			
+			gcontact as "update-google-contact"  
+			through-account "${gaccountid}" 
+			secured-by "${gprivatekey}" 
+			with-key "${p12filepath}" 
+			for-project "${gcloud-project-name}" 
+			on-behalf-of "${impersonated-user}" 
+			from-source "${sor-db}" using
+			{
+				"SELECT concat('ZIJ-',full_name) as name, email, location, phone_number as mobile from customer where batch_id=${process-id};"   
+			} on-condition if  "${runcontact}"=="true"
+			
+			transform as "create-calendar-event" on "${sor-db}" using
+			{
+				"INSERT INTO calendar_details (event_interval, event_start, event_end, event_alert_time, event_title, description, event_location, batch_id, updated_date)
+				SELECT 0, leadgen_date as event_start, date_add(leadgen_date, interval 1 day) as event_end, time(leadgen_date) as event_alert_time, 
+				concat('First call for ', name,'-',mobile) as event_title, intent_metadata as description, targeted_city as event_location, ${process-id}, NOW() 
+				FROM leads_syfd where batch_id=${process-id};"				
+			}on-condition if  "${runcalendar}"=="true"
+			
+			gcalendar as "update-google-calendar"  
+			through-account "${gaccountid}" 
+			secured-by "${gprivatekey}" 
+			with-key "${p12filepath}" 
+			for-project "${gcloud-project-name}" 
+			on-behalf-of "${impersonated-user}" 
+			from-source "${sor-db}" using
+			{
+				"select '${calendarid}' as event_calendar_id, event_interval, event_start, event_end, event_alert_time, event_title, description, event_location from calendar_details where batch_id=${process-id};"   
+			} on-condition if  "${runcalendar}"=="true"
+			
 	}
 	catch
 	{
+			transform as "delete_order_customer" on "${sor-db}" using
+			{
+				"set foreign_key_checks=0;
+				delete from order_info where customer_id in (select id from customer where batch_id=${process-id});
+				delete from customer where batch_id=${process-id};"
+			}
+			
+			transform as "delete_systemofrecord" on "${sor-db}" using
+			{
+				"delete from leads_syfd where batch_id=${process-id};"
+			}
+			
+			transform as "delete_from_calendar" on "${sor-db}" using
+			{
+				"delete from calendar_details where batch_id=${process-id};"
+			}
+			
 	}
 	finally
 	{
-		
+			
 	}
 }

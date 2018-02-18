@@ -40,9 +40,9 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
   val BUDGET = 13;
   val LEADSOURCE_METADATA = 14;
   val INTENT_METADATA = 15;
-  val BATCH_ID=16;
+  val BATCH_ID = 16;
 
-  val InsertSql = "INSERT INTO BI_INTENT_FB_SRC (  NAME, EMAIL, MOBILE, ALT_MOBILE, LOCALITY, TARGETED_CITY, LEADSOURCE_CAMPAIGN, LEADSOURCE_CHANNEL, COMPANY, LEADGEN_DATE, COA_APROX, PROFESSION, BUDGET, LEADSOURCE_METADATA, INTENT_METADATA, BATCH_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?,?);"
+  val InsertSql = "replace into leads_soft (  name, email, mobile, alt_mobile, locality, targeted_city, leadsource_campaign, leadsource_channel, company, leadgen_date, coa_aprox, profession, budget, leadsource_metadata, intent_metadata, batch_id, updated_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?,?,now());"
   def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
     val fbAsIs: org.etl.sparrow.FBCLead = action.asInstanceOf[org.etl.sparrow.FBCLead]
     val fb: org.etl.sparrow.FBCLead = CommandProxy.createProxy(fbAsIs, classOf[org.etl.sparrow.FBCLead], context)
@@ -50,106 +50,113 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
     val accessToken = fb.getAccessToken
     val appSecret = fb.getAppSecret
     val accountId = fb.getAccountId
-    val campaignId = fb.getCampaignId
+    val campaignIdList = {
+      if (fb.getCampaignId.contains(","))
+        fb.getCampaignId.split(",")
+      else
+        Array(fb.getCampaignId)
+    }
     val fieldsToSelect = fb.getValue
     val fieldArray = fieldsToSelect.split(",")
     val dbTarget = fb.getTarget
     val tgtConn = ResourceAccess.rdbmsConn(dbTarget)
     val stmt = tgtConn.prepareStatement(InsertSql)
-    
+
     val fbContext = new APIContext(accessToken, appSecret);
     val fbAccount = new AdAccount(accountId, fbContext)
-    val campaign = Campaign.fetchById(campaignId, fbContext)
-    val adList = campaign.getAds.requestNameField().execute()
-    
-    
-    //Need to know how to use the lamba and keep my life simple
-    if (!adList.isEmpty()) {
-      val adListIter = adList.iterator()
-      while (adListIter.hasNext()) {
-        val ad = adListIter.next()
-        
-        val leadList = ad.getLeads.requestAllFields().execute();
-        if (!leadList.isEmpty()) {
-          val leadListIter = leadList.listIterator
-          while (leadListIter.hasNext()) {
 
-            val lead = leadListIter.next
-            val createdAt = lead.getFieldCreatedTime
+    campaignIdList.foreach {
+      campaignId =>
+        {
+          val campaign = Campaign.fetchById(campaignId, fbContext)
+          val adList = campaign.getAds.requestNameField().execute()
 
-            val leadSourceMeta = "ad_id=" + lead.getFieldAdId + ",\\n ad_name=" + lead.getFieldAdName + "\\n, adset_id=" + lead.getFieldAdsetId + 
-                                                              "\\n, adset_name=" + lead.getFieldAdsetName + "\\n, campaign_id=" + lead.getFieldCampaignId + "\\n,form_id=" + 
-                                                              lead.getFieldFormId + "\\n,id=" + lead.getFieldId+"\\n, dailybudget="+0
-            //ad.getFieldAdset.getFieldDailyBudget - will try later                                                             
-            
-            
-            val userGenData = lead.getFieldFieldData
-            
-            val intentMeta = new StringBuilder
-            if (!userGenData.isEmpty) {
-              val usergeniter = userGenData.listIterator
-              while (usergeniter.hasNext()) {
-                val userData = usergeniter.next()
-                val name = userData.getFieldName.trim
-                val value = userData.getFieldValues.toArray().mkString(",")
-                if (name.equals("email")) {
-                  stmt.setString(EMAIL, value)
-                }
-                else if (name.equals("full_name")) {
-                  stmt.setString(NAME, value)
-                } else if (name.equals("city")) {
-                  stmt.setString(TARGETED_CITY, value)
-                  stmt.setString(LOCALITY, value)
-                } else if (name.equals("company_name")) {
-                  stmt.setString(COMPANY, value)
-                } else if (name.equals("phone_number")) {
-                  val prunedValue = {
-                    if (value.length > 10)
-                      value.substring(value.length - 10, value.length)
-                    else
-                      value
+          //Need to know how to use the lamba and keep my life simple
+          if (!adList.isEmpty()) {
+            val adListIter = adList.iterator()
+            while (adListIter.hasNext()) {
+              val ad = adListIter.next()
+
+              val leadList = ad.getLeads.requestAllFields().execute();
+              if (!leadList.isEmpty()) {
+                val leadListIter = leadList.listIterator
+                while (leadListIter.hasNext()) {
+
+                  val lead = leadListIter.next
+                  val createdAt = lead.getFieldCreatedTime
+
+                  val leadSourceMeta = "ad_id=" + lead.getFieldAdId + ",<br/> ad_name=" + lead.getFieldAdName + "<br/>, adset_id=" + lead.getFieldAdsetId +
+                    "<br/>, adset_name=" + lead.getFieldAdsetName + "<br/>, campaign_id=" + lead.getFieldCampaignId + "<br/>,form_id=" +
+                    lead.getFieldFormId + "<br/>,id=" + lead.getFieldId + "<br/>, dailybudget=" + 0
+                  //ad.getFieldAdset.getFieldDailyBudget - will try later
+
+                  val userGenData = lead.getFieldFieldData
+
+                  val intentMeta = new StringBuilder
+                  if (!userGenData.isEmpty) {
+                    val usergeniter = userGenData.listIterator
+                    while (usergeniter.hasNext()) {
+                      val userData = usergeniter.next()
+                      val name = userData.getFieldName.trim
+                      val value = userData.getFieldValues.toArray().mkString(",")
+                      if (name.equals("email")) {
+                        stmt.setString(EMAIL, value)
+                      } else if (name.equals("full_name")) {
+                        stmt.setString(NAME, value)
+                      } else if (name.equals("city")) {
+                        stmt.setString(TARGETED_CITY, value)
+                        stmt.setString(LOCALITY, value)
+                      } else if (name.equals("company_name")) {
+                        stmt.setString(COMPANY, value)
+                      } else if (name.equals("phone_number")) {
+                        val prunedValue = {
+                          if (value.length > 10)
+                            value.substring(value.length - 10, value.length)
+                          else
+                            value
+                        }
+                        stmt.setString(MOBILE, prunedValue)
+                        stmt.setString(ALT_MOBILE, value)
+                      } else if (name.equals("job_title")) {
+                        stmt.setString(PROFESSION, value)
+                      } else {
+                        intentMeta.append(name).append("=").append(value).append("\n")
+                      }
+                      usergeniter.remove
+                    }
                   }
-                  stmt.setString(MOBILE, prunedValue)
-                  stmt.setString(ALT_MOBILE, value)
-                } else if (name.equals("job_title")) {
-                  stmt.setString(PROFESSION, value)
-                }
-                else
-                {
-                  intentMeta.append(name).append("=").append(value).append("\n")                  
-                }
-                usergeniter.remove
-              }
-            }
-            stmt.setString(INTENT_METADATA, intentMeta.toString)
-            stmt.setString(LEADSOURCE_METADATA, leadSourceMeta)
-            stmt.setString(LEADSOURCE_CAMPAIGN, lead.getFieldCampaignName)
-            stmt.setInt(BUDGET, 0)
-            stmt.setInt(COA_APROX, 0)
-            stmt.setString(LEADSOURCE_CHANNEL, "FB")
-            stmt.setString(LEADGEN_DATE, createdAt)
-            val processid = context.getValue("process-id")
-            stmt.setInt(BATCH_ID, Integer.parseInt(processid))
-            stmt.executeUpdate
-            tgtConn.commit
-            leadListIter.remove
-          }//leadList.iterator().hasNext()
-        }//!leadList.isEmpty()
-      }//adListIter.hasNext()
-    }//!adList.isEmpty()
+                  stmt.setString(INTENT_METADATA, intentMeta.toString)
+                  stmt.setString(LEADSOURCE_METADATA, leadSourceMeta)
+                  stmt.setString(LEADSOURCE_CAMPAIGN, lead.getFieldCampaignName)
+                  stmt.setInt(BUDGET, 0)
+                  stmt.setInt(COA_APROX, 0)
+                  stmt.setString(LEADSOURCE_CHANNEL, "FB")
+                  stmt.setString(LEADGEN_DATE, createdAt)
+                  val processid = context.getValue("process-id")
+                  stmt.setInt(BATCH_ID, Integer.parseInt(processid))
+                  stmt.executeUpdate
+                  tgtConn.commit
+                  leadListIter.remove
+                } //leadList.iterator().hasNext()
+              } //!leadList.isEmpty()
+            } //adListIter.hasNext()
+          } //!adList.isEmpty()
 
-    try{}
-    finally {
-      stmt.close
-      tgtConn.close
+          try {}
+          finally {
+            stmt.close
+            tgtConn.close
+          }
+        }
     }
+
     context
   }
-  
+
   def executeIf(context: org.etl.command.Context, action: org.etl.sparrow.Action): Boolean = {
-     val fbAsIs: org.etl.sparrow.FBCLead = action.asInstanceOf[org.etl.sparrow.FBCLead]
+    val fbAsIs: org.etl.sparrow.FBCLead = action.asInstanceOf[org.etl.sparrow.FBCLead]
     val fb: org.etl.sparrow.FBCLead = CommandProxy.createProxy(fbAsIs, classOf[org.etl.sparrow.FBCLead], context)
-     val expression = fb.getCondition
+    val expression = fb.getCondition
     ParameterisationEngine.doYieldtoTrue(expression)
   }
 

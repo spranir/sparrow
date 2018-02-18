@@ -20,10 +20,12 @@ import org.etl.sparrow.SparrowPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getAuthstore <em>Authstore</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getKey <em>Key</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getUseraccount <em>Useraccount</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getAccount <em>Account</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getPrivateKey <em>Private Key</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getPtwelveFile <em>Ptwelve File</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getProject <em>Project</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getImpersonatedUser <em>Impersonated User</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getDbSrc <em>Db Src</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GooglecalPUTImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -32,84 +34,124 @@ import org.etl.sparrow.SparrowPackage;
 public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
 {
   /**
-   * The default value of the '{@link #getAuthstore() <em>Authstore</em>}' attribute.
+   * The default value of the '{@link #getAccount() <em>Account</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAuthstore()
+   * @see #getAccount()
    * @generated
    * @ordered
    */
-  protected static final String AUTHSTORE_EDEFAULT = null;
+  protected static final String ACCOUNT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAuthstore() <em>Authstore</em>}' attribute.
+   * The cached value of the '{@link #getAccount() <em>Account</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAuthstore()
+   * @see #getAccount()
    * @generated
    * @ordered
    */
-  protected String authstore = AUTHSTORE_EDEFAULT;
+  protected String account = ACCOUNT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
+   * The default value of the '{@link #getPrivateKey() <em>Private Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKey()
+   * @see #getPrivateKey()
    * @generated
    * @ordered
    */
-  protected static final String KEY_EDEFAULT = null;
+  protected static final String PRIVATE_KEY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
+   * The cached value of the '{@link #getPrivateKey() <em>Private Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKey()
+   * @see #getPrivateKey()
    * @generated
    * @ordered
    */
-  protected String key = KEY_EDEFAULT;
+  protected String privateKey = PRIVATE_KEY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getUseraccount() <em>Useraccount</em>}' attribute.
+   * The default value of the '{@link #getPtwelveFile() <em>Ptwelve File</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUseraccount()
+   * @see #getPtwelveFile()
    * @generated
    * @ordered
    */
-  protected static final String USERACCOUNT_EDEFAULT = null;
+  protected static final String PTWELVE_FILE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getUseraccount() <em>Useraccount</em>}' attribute.
+   * The cached value of the '{@link #getPtwelveFile() <em>Ptwelve File</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUseraccount()
+   * @see #getPtwelveFile()
    * @generated
    * @ordered
    */
-  protected String useraccount = USERACCOUNT_EDEFAULT;
+  protected String ptwelveFile = PTWELVE_FILE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
+   * The default value of the '{@link #getProject() <em>Project</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSource()
+   * @see #getProject()
    * @generated
    * @ordered
    */
-  protected static final String SOURCE_EDEFAULT = null;
+  protected static final String PROJECT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
+   * The cached value of the '{@link #getProject() <em>Project</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSource()
+   * @see #getProject()
    * @generated
    * @ordered
    */
-  protected String source = SOURCE_EDEFAULT;
+  protected String project = PROJECT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getImpersonatedUser() <em>Impersonated User</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImpersonatedUser()
+   * @generated
+   * @ordered
+   */
+  protected static final String IMPERSONATED_USER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getImpersonatedUser() <em>Impersonated User</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImpersonatedUser()
+   * @generated
+   * @ordered
+   */
+  protected String impersonatedUser = IMPERSONATED_USER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDbSrc() <em>Db Src</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDbSrc()
+   * @generated
+   * @ordered
+   */
+  protected static final String DB_SRC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDbSrc() <em>Db Src</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDbSrc()
+   * @generated
+   * @ordered
+   */
+  protected String dbSrc = DB_SRC_EDEFAULT;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -157,9 +199,9 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAuthstore()
+  public String getAccount()
   {
-    return authstore;
+    return account;
   }
 
   /**
@@ -167,12 +209,12 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAuthstore(String newAuthstore)
+  public void setAccount(String newAccount)
   {
-    String oldAuthstore = authstore;
-    authstore = newAuthstore;
+    String oldAccount = account;
+    account = newAccount;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__AUTHSTORE, oldAuthstore, authstore));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__ACCOUNT, oldAccount, account));
   }
 
   /**
@@ -180,9 +222,9 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getKey()
+  public String getPrivateKey()
   {
-    return key;
+    return privateKey;
   }
 
   /**
@@ -190,12 +232,12 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setKey(String newKey)
+  public void setPrivateKey(String newPrivateKey)
   {
-    String oldKey = key;
-    key = newKey;
+    String oldPrivateKey = privateKey;
+    privateKey = newPrivateKey;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__KEY, oldKey, key));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__PRIVATE_KEY, oldPrivateKey, privateKey));
   }
 
   /**
@@ -203,9 +245,9 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUseraccount()
+  public String getPtwelveFile()
   {
-    return useraccount;
+    return ptwelveFile;
   }
 
   /**
@@ -213,12 +255,12 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUseraccount(String newUseraccount)
+  public void setPtwelveFile(String newPtwelveFile)
   {
-    String oldUseraccount = useraccount;
-    useraccount = newUseraccount;
+    String oldPtwelveFile = ptwelveFile;
+    ptwelveFile = newPtwelveFile;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__USERACCOUNT, oldUseraccount, useraccount));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__PTWELVE_FILE, oldPtwelveFile, ptwelveFile));
   }
 
   /**
@@ -226,9 +268,9 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSource()
+  public String getProject()
   {
-    return source;
+    return project;
   }
 
   /**
@@ -236,12 +278,58 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSource(String newSource)
+  public void setProject(String newProject)
   {
-    String oldSource = source;
-    source = newSource;
+    String oldProject = project;
+    project = newProject;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__SOURCE, oldSource, source));
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__PROJECT, oldProject, project));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getImpersonatedUser()
+  {
+    return impersonatedUser;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImpersonatedUser(String newImpersonatedUser)
+  {
+    String oldImpersonatedUser = impersonatedUser;
+    impersonatedUser = newImpersonatedUser;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__IMPERSONATED_USER, oldImpersonatedUser, impersonatedUser));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getDbSrc()
+  {
+    return dbSrc;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDbSrc(String newDbSrc)
+  {
+    String oldDbSrc = dbSrc;
+    dbSrc = newDbSrc;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLECAL_PUT__DB_SRC, oldDbSrc, dbSrc));
   }
 
   /**
@@ -277,14 +365,18 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL_PUT__AUTHSTORE:
-        return getAuthstore();
-      case SparrowPackage.GOOGLECAL_PUT__KEY:
-        return getKey();
-      case SparrowPackage.GOOGLECAL_PUT__USERACCOUNT:
-        return getUseraccount();
-      case SparrowPackage.GOOGLECAL_PUT__SOURCE:
-        return getSource();
+      case SparrowPackage.GOOGLECAL_PUT__ACCOUNT:
+        return getAccount();
+      case SparrowPackage.GOOGLECAL_PUT__PRIVATE_KEY:
+        return getPrivateKey();
+      case SparrowPackage.GOOGLECAL_PUT__PTWELVE_FILE:
+        return getPtwelveFile();
+      case SparrowPackage.GOOGLECAL_PUT__PROJECT:
+        return getProject();
+      case SparrowPackage.GOOGLECAL_PUT__IMPERSONATED_USER:
+        return getImpersonatedUser();
+      case SparrowPackage.GOOGLECAL_PUT__DB_SRC:
+        return getDbSrc();
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         return getValue();
     }
@@ -301,17 +393,23 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL_PUT__AUTHSTORE:
-        setAuthstore((String)newValue);
+      case SparrowPackage.GOOGLECAL_PUT__ACCOUNT:
+        setAccount((String)newValue);
         return;
-      case SparrowPackage.GOOGLECAL_PUT__KEY:
-        setKey((String)newValue);
+      case SparrowPackage.GOOGLECAL_PUT__PRIVATE_KEY:
+        setPrivateKey((String)newValue);
         return;
-      case SparrowPackage.GOOGLECAL_PUT__USERACCOUNT:
-        setUseraccount((String)newValue);
+      case SparrowPackage.GOOGLECAL_PUT__PTWELVE_FILE:
+        setPtwelveFile((String)newValue);
         return;
-      case SparrowPackage.GOOGLECAL_PUT__SOURCE:
-        setSource((String)newValue);
+      case SparrowPackage.GOOGLECAL_PUT__PROJECT:
+        setProject((String)newValue);
+        return;
+      case SparrowPackage.GOOGLECAL_PUT__IMPERSONATED_USER:
+        setImpersonatedUser((String)newValue);
+        return;
+      case SparrowPackage.GOOGLECAL_PUT__DB_SRC:
+        setDbSrc((String)newValue);
         return;
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         setValue((String)newValue);
@@ -330,17 +428,23 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL_PUT__AUTHSTORE:
-        setAuthstore(AUTHSTORE_EDEFAULT);
+      case SparrowPackage.GOOGLECAL_PUT__ACCOUNT:
+        setAccount(ACCOUNT_EDEFAULT);
         return;
-      case SparrowPackage.GOOGLECAL_PUT__KEY:
-        setKey(KEY_EDEFAULT);
+      case SparrowPackage.GOOGLECAL_PUT__PRIVATE_KEY:
+        setPrivateKey(PRIVATE_KEY_EDEFAULT);
         return;
-      case SparrowPackage.GOOGLECAL_PUT__USERACCOUNT:
-        setUseraccount(USERACCOUNT_EDEFAULT);
+      case SparrowPackage.GOOGLECAL_PUT__PTWELVE_FILE:
+        setPtwelveFile(PTWELVE_FILE_EDEFAULT);
         return;
-      case SparrowPackage.GOOGLECAL_PUT__SOURCE:
-        setSource(SOURCE_EDEFAULT);
+      case SparrowPackage.GOOGLECAL_PUT__PROJECT:
+        setProject(PROJECT_EDEFAULT);
+        return;
+      case SparrowPackage.GOOGLECAL_PUT__IMPERSONATED_USER:
+        setImpersonatedUser(IMPERSONATED_USER_EDEFAULT);
+        return;
+      case SparrowPackage.GOOGLECAL_PUT__DB_SRC:
+        setDbSrc(DB_SRC_EDEFAULT);
         return;
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         setValue(VALUE_EDEFAULT);
@@ -359,14 +463,18 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLECAL_PUT__AUTHSTORE:
-        return AUTHSTORE_EDEFAULT == null ? authstore != null : !AUTHSTORE_EDEFAULT.equals(authstore);
-      case SparrowPackage.GOOGLECAL_PUT__KEY:
-        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-      case SparrowPackage.GOOGLECAL_PUT__USERACCOUNT:
-        return USERACCOUNT_EDEFAULT == null ? useraccount != null : !USERACCOUNT_EDEFAULT.equals(useraccount);
-      case SparrowPackage.GOOGLECAL_PUT__SOURCE:
-        return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
+      case SparrowPackage.GOOGLECAL_PUT__ACCOUNT:
+        return ACCOUNT_EDEFAULT == null ? account != null : !ACCOUNT_EDEFAULT.equals(account);
+      case SparrowPackage.GOOGLECAL_PUT__PRIVATE_KEY:
+        return PRIVATE_KEY_EDEFAULT == null ? privateKey != null : !PRIVATE_KEY_EDEFAULT.equals(privateKey);
+      case SparrowPackage.GOOGLECAL_PUT__PTWELVE_FILE:
+        return PTWELVE_FILE_EDEFAULT == null ? ptwelveFile != null : !PTWELVE_FILE_EDEFAULT.equals(ptwelveFile);
+      case SparrowPackage.GOOGLECAL_PUT__PROJECT:
+        return PROJECT_EDEFAULT == null ? project != null : !PROJECT_EDEFAULT.equals(project);
+      case SparrowPackage.GOOGLECAL_PUT__IMPERSONATED_USER:
+        return IMPERSONATED_USER_EDEFAULT == null ? impersonatedUser != null : !IMPERSONATED_USER_EDEFAULT.equals(impersonatedUser);
+      case SparrowPackage.GOOGLECAL_PUT__DB_SRC:
+        return DB_SRC_EDEFAULT == null ? dbSrc != null : !DB_SRC_EDEFAULT.equals(dbSrc);
       case SparrowPackage.GOOGLECAL_PUT__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
@@ -384,14 +492,18 @@ public class GooglecalPUTImpl extends ActionImpl implements GooglecalPUT
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (authstore: ");
-    result.append(authstore);
-    result.append(", key: ");
-    result.append(key);
-    result.append(", useraccount: ");
-    result.append(useraccount);
-    result.append(", source: ");
-    result.append(source);
+    result.append(" (account: ");
+    result.append(account);
+    result.append(", privateKey: ");
+    result.append(privateKey);
+    result.append(", ptwelveFile: ");
+    result.append(ptwelveFile);
+    result.append(", project: ");
+    result.append(project);
+    result.append(", impersonatedUser: ");
+    result.append(impersonatedUser);
+    result.append(", dbSrc: ");
+    result.append(dbSrc);
     result.append(", value: ");
     result.append(value);
     result.append(')');

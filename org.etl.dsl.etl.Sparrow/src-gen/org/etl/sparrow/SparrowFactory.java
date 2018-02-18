@@ -69,6 +69,24 @@ public interface SparrowFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>Googlecontact PUT</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Googlecontact PUT</em>'.
+   * @generated
+   */
+  GooglecontactPUT createGooglecontactPUT();
+
+  /**
+   * Returns a new object of class '<em>Googlecal PUT</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Googlecal PUT</em>'.
+   * @generated
+   */
+  GooglecalPUT createGooglecalPUT();
+
+  /**
    * Returns a new object of class '<em>FBC Lead</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -159,13 +177,13 @@ public interface SparrowFactory extends EFactory
   Updatedaudit createUpdatedaudit();
 
   /**
-   * Returns a new object of class '<em>Sms</em>'.
+   * Returns a new object of class '<em>Click Send Sms</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sms</em>'.
+   * @return a new object of class '<em>Click Send Sms</em>'.
    * @generated
    */
-  Sms createSms();
+  ClickSendSms createClickSendSms();
 
   /**
    * Returns a new object of class '<em>Slack PUT</em>'.
@@ -175,15 +193,6 @@ public interface SparrowFactory extends EFactory
    * @generated
    */
   SlackPUT createSlackPUT();
-
-  /**
-   * Returns a new object of class '<em>Googlecal PUT</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Googlecal PUT</em>'.
-   * @generated
-   */
-  GooglecalPUT createGooglecalPUT();
 
   /**
    * Returns a new object of class '<em>Copydata</em>'.

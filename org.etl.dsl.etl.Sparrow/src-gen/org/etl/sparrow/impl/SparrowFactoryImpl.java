@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
+import org.etl.sparrow.ClickSendSms;
 import org.etl.sparrow.Copydata;
 import org.etl.sparrow.Doozle;
 import org.etl.sparrow.Dropfile;
@@ -22,11 +23,11 @@ import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
+import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
-import org.etl.sparrow.Sms;
 import org.etl.sparrow.SparrowFactory;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
@@ -93,6 +94,8 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.FINALLY: return createFinally();
       case SparrowPackage.CATCH: return createCatch();
       case SparrowPackage.ACTION: return createAction();
+      case SparrowPackage.GOOGLECONTACT_PUT: return createGooglecontactPUT();
+      case SparrowPackage.GOOGLECAL_PUT: return createGooglecalPUT();
       case SparrowPackage.FBC_LEAD: return createFBCLead();
       case SparrowPackage.DROPFILE: return createDropfile();
       case SparrowPackage.DOOZLE: return createDoozle();
@@ -103,9 +106,8 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.FETCH: return createFetch();
       case SparrowPackage.CALLPROCESS: return createCallprocess();
       case SparrowPackage.UPDATEDAUDIT: return createUpdatedaudit();
-      case SparrowPackage.SMS: return createSms();
+      case SparrowPackage.CLICK_SEND_SMS: return createClickSendSms();
       case SparrowPackage.SLACK_PUT: return createSlackPUT();
-      case SparrowPackage.GOOGLECAL_PUT: return createGooglecalPUT();
       case SparrowPackage.COPYDATA: return createCopydata();
       case SparrowPackage.WRITE_CSV: return createWriteCsv();
       case SparrowPackage.LOAD_CSV: return createLoadCsv();
@@ -169,6 +171,28 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     ActionImpl action = new ActionImpl();
     return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GooglecontactPUT createGooglecontactPUT()
+  {
+    GooglecontactPUTImpl googlecontactPUT = new GooglecontactPUTImpl();
+    return googlecontactPUT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GooglecalPUT createGooglecalPUT()
+  {
+    GooglecalPUTImpl googlecalPUT = new GooglecalPUTImpl();
+    return googlecalPUT;
   }
 
   /**
@@ -286,10 +310,10 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Sms createSms()
+  public ClickSendSms createClickSendSms()
   {
-    SmsImpl sms = new SmsImpl();
-    return sms;
+    ClickSendSmsImpl clickSendSms = new ClickSendSmsImpl();
+    return clickSendSms;
   }
 
   /**
@@ -301,17 +325,6 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     SlackPUTImpl slackPUT = new SlackPUTImpl();
     return slackPUT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public GooglecalPUT createGooglecalPUT()
-  {
-    GooglecalPUTImpl googlecalPUT = new GooglecalPUTImpl();
-    return googlecalPUT;
   }
 
   /**

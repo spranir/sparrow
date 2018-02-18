@@ -13,10 +13,12 @@ package org.etl.sparrow;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getAuthstore <em>Authstore</em>}</li>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getKey <em>Key</em>}</li>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getUseraccount <em>Useraccount</em>}</li>
- *   <li>{@link org.etl.sparrow.GooglecalPUT#getSource <em>Source</em>}</li>
+ *   <li>{@link org.etl.sparrow.GooglecalPUT#getAccount <em>Account</em>}</li>
+ *   <li>{@link org.etl.sparrow.GooglecalPUT#getPrivateKey <em>Private Key</em>}</li>
+ *   <li>{@link org.etl.sparrow.GooglecalPUT#getPtwelveFile <em>Ptwelve File</em>}</li>
+ *   <li>{@link org.etl.sparrow.GooglecalPUT#getProject <em>Project</em>}</li>
+ *   <li>{@link org.etl.sparrow.GooglecalPUT#getImpersonatedUser <em>Impersonated User</em>}</li>
+ *   <li>{@link org.etl.sparrow.GooglecalPUT#getDbSrc <em>Db Src</em>}</li>
  *   <li>{@link org.etl.sparrow.GooglecalPUT#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -27,108 +29,160 @@ package org.etl.sparrow;
 public interface GooglecalPUT extends Action
 {
   /**
-   * Returns the value of the '<em><b>Authstore</b></em>' attribute.
+   * Returns the value of the '<em><b>Account</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Authstore</em>' attribute isn't clear,
+   * If the meaning of the '<em>Account</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Authstore</em>' attribute.
-   * @see #setAuthstore(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Authstore()
+   * @return the value of the '<em>Account</em>' attribute.
+   * @see #setAccount(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Account()
    * @model
    * @generated
    */
-  String getAuthstore();
+  String getAccount();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getAuthstore <em>Authstore</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getAccount <em>Account</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Authstore</em>' attribute.
-   * @see #getAuthstore()
+   * @param value the new value of the '<em>Account</em>' attribute.
+   * @see #getAccount()
    * @generated
    */
-  void setAuthstore(String value);
+  void setAccount(String value);
 
   /**
-   * Returns the value of the '<em><b>Key</b></em>' attribute.
+   * Returns the value of the '<em><b>Private Key</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Key</em>' attribute isn't clear,
+   * If the meaning of the '<em>Private Key</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Key</em>' attribute.
-   * @see #setKey(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Key()
+   * @return the value of the '<em>Private Key</em>' attribute.
+   * @see #setPrivateKey(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_PrivateKey()
    * @model
    * @generated
    */
-  String getKey();
+  String getPrivateKey();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getKey <em>Key</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getPrivateKey <em>Private Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Key</em>' attribute.
-   * @see #getKey()
+   * @param value the new value of the '<em>Private Key</em>' attribute.
+   * @see #getPrivateKey()
    * @generated
    */
-  void setKey(String value);
+  void setPrivateKey(String value);
 
   /**
-   * Returns the value of the '<em><b>Useraccount</b></em>' attribute.
+   * Returns the value of the '<em><b>Ptwelve File</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Useraccount</em>' attribute isn't clear,
+   * If the meaning of the '<em>Ptwelve File</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Useraccount</em>' attribute.
-   * @see #setUseraccount(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Useraccount()
+   * @return the value of the '<em>Ptwelve File</em>' attribute.
+   * @see #setPtwelveFile(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_PtwelveFile()
    * @model
    * @generated
    */
-  String getUseraccount();
+  String getPtwelveFile();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getUseraccount <em>Useraccount</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getPtwelveFile <em>Ptwelve File</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Useraccount</em>' attribute.
-   * @see #getUseraccount()
+   * @param value the new value of the '<em>Ptwelve File</em>' attribute.
+   * @see #getPtwelveFile()
    * @generated
    */
-  void setUseraccount(String value);
+  void setPtwelveFile(String value);
 
   /**
-   * Returns the value of the '<em><b>Source</b></em>' attribute.
+   * Returns the value of the '<em><b>Project</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Source</em>' attribute isn't clear,
+   * If the meaning of the '<em>Project</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Source</em>' attribute.
-   * @see #setSource(String)
-   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Source()
+   * @return the value of the '<em>Project</em>' attribute.
+   * @see #setProject(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_Project()
    * @model
    * @generated
    */
-  String getSource();
+  String getProject();
 
   /**
-   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getSource <em>Source</em>}' attribute.
+   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getProject <em>Project</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source</em>' attribute.
-   * @see #getSource()
+   * @param value the new value of the '<em>Project</em>' attribute.
+   * @see #getProject()
    * @generated
    */
-  void setSource(String value);
+  void setProject(String value);
+
+  /**
+   * Returns the value of the '<em><b>Impersonated User</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Impersonated User</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Impersonated User</em>' attribute.
+   * @see #setImpersonatedUser(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_ImpersonatedUser()
+   * @model
+   * @generated
+   */
+  String getImpersonatedUser();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getImpersonatedUser <em>Impersonated User</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Impersonated User</em>' attribute.
+   * @see #getImpersonatedUser()
+   * @generated
+   */
+  void setImpersonatedUser(String value);
+
+  /**
+   * Returns the value of the '<em><b>Db Src</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Db Src</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Db Src</em>' attribute.
+   * @see #setDbSrc(String)
+   * @see org.etl.sparrow.SparrowPackage#getGooglecalPUT_DbSrc()
+   * @model
+   * @generated
+   */
+  String getDbSrc();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.GooglecalPUT#getDbSrc <em>Db Src</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Db Src</em>' attribute.
+   * @see #getDbSrc()
+   * @generated
+   */
+  void setDbSrc(String value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
