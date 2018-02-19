@@ -912,3 +912,21 @@ gcloud compute --project "bonsai-crm" ssh --zone "asia-southeast1-a" "bonsai-crm
 
 
 mvn install:install-file -Dfile=/mnt/f/Workspace/bonsai-stencil/clicksend-java-sdk/target/ClickSend-3.1.0.jar -DgroupId=ClickSend     -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar
+
+wget -O "start.fb.log" http://localhost:9377/process/bonsai.leadingestion.process/1/start
+
+
+
+Install sequence for connect engine
+backup the databases before you do this, because it wipes of the entire cachet
+sudo apt-get install libodbc1
+sudo apt-get install mariadb-plugin-connect
+sudo service mysql status
+sudo service mysql stop
+sudo mysqld_safe --skip-grant-tables
+UPDATE mysql.user SET authentication_string = PASSWORD('password'), plugin = 'mysql_native_password' WHERE User = 'root' AND Host = 'localhost';
+ps -ef | grep mysql
+kill mysql
+sudo service mysql start
+select version();
+show storage engines;
