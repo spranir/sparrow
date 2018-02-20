@@ -2,7 +2,8 @@ process "candy.uploadcalllog.process.spw"
 {
         try
         {
-                doozle as "doozle-collection" in-table "${process-id}_calllog" on "${parkdb}" using                                                                         {
+                doozle as "doozle-collection" in-table "${process-id}_calllog" on "${parkdb}" using
+                {
                         "CREATE TABLE ${process-id}_call_log(
                          agent char(128) ,
                          callTimeStamp bigint, 
@@ -11,13 +12,14 @@ process "candy.uploadcalllog.process.spw"
                          callStartDate char(128),
                          customerName char(128),                          
                          callType char(128)
-                         )engine=CONNECT table_type=JSON File_name='${process-id}_calllog.json' option_list='object=callLogList';"                                           }
-             	}
+                         )engine=CONNECT table_type=JSON File_name='${process-id}_calllog.json' option_list='object=callLogList';"
+                }
+             	
              	
              	transform as "create-calendar-event" on "${parkdb}" using
 				{
-					"insert into bonsai_crm.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_typ
-					  e, customer_name) select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp, a.callStartDate, 
+					"insert into bonsai_crm.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_type, customer_name) 
+					  select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp, a.callStartDate, 
 					  date_add(STR_TO_DATE(callStartDate, '%d-%m-%Y %h:%i:%s'), interval a.callDuration second), a.callType, c.full_name 
 					  from ${process-id}_call_log a inner join bonsai_crm.customer c on a.callNumber=c.phone_number 
 					  left outer join bonsai_crm.call_log x on a.callTimeStamp=x.call_time_stamp where x.call_time_stamp is null;"
