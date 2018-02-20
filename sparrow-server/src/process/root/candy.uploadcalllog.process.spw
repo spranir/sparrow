@@ -13,7 +13,8 @@ process "candy.uploadcalllog.process.spw"
                          callType char(128)
                          )engine=CONNECT table_type=JSON File_name='${process-id}_calllog.json' option_list='object=callLogList';"                                           }
              	}
-             	transform as "add-to-systemofrecord" on "${parkdb}" using
+             	
+             	transform as "create-calendar-event" on "${parkdb}" using
 				{
 					"insert into bonsai_crm.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_typ
 					  e, customer_name) select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp, a.callStartDate, 
