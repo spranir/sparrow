@@ -12,10 +12,25 @@ process "candy.uploadcalllog.process.spw"
                          customerName char(128),                          
                          callType char(128)
                          )engine=CONNECT table_type=JSON File_name='${process-id}_calllog.json' option_list='object=callLogList';"                                           }
-             }
+             	}
+             	transform as "add-to-systemofrecord" on "${parkdb}" using
+				{
+					"insert into bonsai_crm.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_typ
+					  e, customer_name) select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp, a.callStartDate, 
+					  date_add(STR_TO_DATE(callStartDate, '%d-%m-%Y %h:%i:%s'), interval a.callDuration second), a.callType, c.full_name 
+					  from ${process-id}_call_log a inner join bonsai_crm.customer c on a.callNumber=c.phone_number 
+					  left outer join bonsai_crm.call_log x on a.callTimeStamp=x.call_time_stamp where x.call_time_stamp is null;"
+				}
+	 }
      catch
      {
      		
      }
-    finally{}
+    finally{
+    			transform as "drop-temp-call-log" on "${parkdb}" using
+				{
+					"drop table ${process-id}_call_log;"
+				}
+    }
 }
+
