@@ -1,0 +1,19 @@
+process "candy.uploadcalllog.process.spw"
+{
+        try
+        {
+                doozle as "doozle-collection" in-table "${process-id}_calllog" on "${parkdb}" using                                                                         {
+                        "CREATE TABLE ${process-id}_call_log(
+                         agent char(128) , 
+                         callDuration char(128) ,
+                         callNumber char(128),
+                         callStartDate char(128),
+                         callType char(128)
+                         )engine=CONNECT table_type=JSON File_name='${process-id}-calllog.json' option_list='object=callLogList';"                                           }
+             }
+     catch
+     {
+     		
+     }
+    finally{}
+}
