@@ -4,11 +4,12 @@ process "candy.uploadcalllog.process.spw"
         {
                 doozle as "doozle-collection" in-table "${process-id}_calllog" on "${parkdb}" using                                                                         {
                         "CREATE TABLE ${process-id}_call_log(
-                         agent char(128) , 
+                         agent char(128) ,
+                         callTimeStamp bigint, 
                          callDuration char(128) ,
                          callNumber char(128),
                          callStartDate char(128),
-                          customerName char(128),
+                         customerName char(128),                          
                          callType char(128)
                          )engine=CONNECT table_type=JSON File_name='${process-id}_calllog.json' option_list='object=callLogList';"                                           }
              }
