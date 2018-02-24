@@ -24,8 +24,8 @@ process "bonsai.leadingestion.process"
 					coa_aprox, profession, budget, leadsource_metadata, intent_metadata, batch_id, updated_date) 					
 					SELECT  a.name,  a.email,  a.mobile,  a.alt_mobile,  a.locality,  a.targeted_city,  
 					a.leadsource_campaign,  a.leadsource_channel,  a.company,  a.leadgen_date,  a.coa_aprox,  
-					a.profession, a.budget, a.leadsource_metadata,  a.intent_metadata,  ${process-id}, now() FROM leads_soft A 
-					LEFT OUTER JOIN leads_syfd B ON a.mobile=b.mobile WHERE b.mobile IS NULL GROUP BY a.mobile having count(*)>=1;"
+					a.profession, a.budget, a.leadsource_metadata,  a.intent_metadata,  ${process-id}, now() FROM leads_soft a 
+					LEFT OUTER JOIN leads_syfd b ON a.mobile=b.mobile WHERE b.mobile IS NULL GROUP BY a.mobile having count(*)>=1;"
 			}
 			
 			transform as "cleanup_leadgendate_on_incoming_leads" on "${sor-db}" using
