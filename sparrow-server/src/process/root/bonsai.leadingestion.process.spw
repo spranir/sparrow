@@ -38,13 +38,24 @@ process "bonsai.leadingestion.process"
 				"INSERT INTO customer (version, budget, details, email, full_name, lead_campaign, lead_source, leadgen_date, 
 				  location, phone_number, profession, vendor_id, z_id, batch_id) 
 				  SELECT 0, budget, intent_metadata, email, name, leadsource_campaign, leadsource_channel, leadgen_date, locality, mobile, profession, 20, 35, batch_id  
-					FROM leads_syfd where batch_id=${process-id};"
+				  FROM leads_syfd where batch_id=${process-id};"
 			}
 			
 			transform as "add_to_order" on "${sor-db}" using
 			{
 				"INSERT INTO order_info ( version, due_date, due_time, paid, state, customer_id, pickup_location_id, z_state, state_string, z_state_string) 
 					SELECT 0, NOW(), NOW(), 0, 0, id, 1, 10, 'NEW','New' FROM customer WHERE batch_id=${process-id};"
+			}
+			
+			transform as "update_user_mapping" on "${sor-db}" using
+			{
+					"update customer c inner join agent_location a on c.location=a.location_string 
+					set c.user_id=a.user_id WHERE batch_id=${process-id};
+					update customer set user_id=4 where user_id is null;
+					update customer c inner join user_info u on c.user_id=u.id set c.user_name=u.email;
+					update customer c 
+					set c.search_input=concat(c.full_name,'#',c.phone_number,'#',c.location,'#None#',c.user_name) 
+					where batch_id=${process-id};"
 			}
 			
 			gcontact as "update-google-contact"  
