@@ -2,30 +2,35 @@ process "bonsai.leadingestion.process"
 {
 	try
 	{
-			fblc as "get-leads" secured-by "EAAEhaBeKXKcBAK4jOdwlra5PyORaqGZC1lYgXeiAAZAnaplLqtBnMtn8BUjlrKaphTJSnUeErhaXfndpm06ILZCx1xaSFBz4zZCcXWyCcUsJKh6pjtRO7A67pT0yBPxlf6RRPccWKDh2c87JdYnGVuCxHsnllZA5AuQG7wexL7QZDZD" 
-			with-key "632b2b7e5a1d1a86348aa3ec73606cfd"   
-			through-user "1385910988364458" 
-			for-campaign "6083587107157" into
-			"oltp/bonsai" using
+			assign as "last-ran-time" source  "${sor-db}" using
 			{
-					"SELECT email,	full_name,	phone_number,	city,	company_name,	job_title;"
-			} on-condition if  "${runfbcl}"=="true"
-			
-			transform as "add-leads-to-staging" on "oltp/bonsai" using
-			{
-				" INSERT INTO BI_INTENT (NAME, EMAIL, MOBILE, ALT_MOBILE, LOCALITY, TARGETED_CITY, LEADSOURCE_CAMPAIGN, LEADSOURCE_CHANNEL, COMPANY, LEADGEN_DATE, COA_APROX, PROFESSION, BUDGET, LEADSOURCE_METADATA, INTENT_METADATA, BATCH_ID) 
- 					SELECT  A.NAME,  A.EMAIL,  A.MOBILE,  A.ALT_MOBILE,  A.LOCALITY,  A.TARGETED_CITY,  A.LEADSOURCE_CAMPAIGN,  A.LEADSOURCE_CHANNEL,  A.COMPANY,  A.LEADGEN_DATE,  A.COA_APROX,  A.PROFESSION,  A.BUDGET, A.LEADSOURCE_METADATA,  A.INTENT_METADATA,  A.BATCH_ID 
- 					FROM BI_INTENT_FB_SRC A LEFT OUTER JOIN BI_INTENT B ON A.MOBILE=B.MOBILE WHERE B.MOBILE IS NULL;"
+				"SELECT end_date from instance_audit where instance_name='${instance-name}' order by end_date desc limit 1;"
 			}
-			'gcontact' 'as' name=STRING 'secured-by' accessToken=STRING 'with-key' appSecret=STRING 'for-label' contactLabel=STRING 'from' source=STRING
-			'{'
-				value=STRING
-			'}' 'on-condition' condition=Expression
+	
+			transform as "create-calendar-event" on "${sor-db}" using
+			{
+				"INSERT INTO calendar_details (event_interval, event_start, event_end, event_alert_time, event_title, description, event_location, batch_id, updated_date)
+				SELECT 0, o.due_date as event_start, date_add(o.due_date, interval 1 day) as event_end, o.due_time as event_alert_time, 
+				concat('Followup call for ', c.full_name,'-',c.phone_number) as event_title, c.description as description, c.location as event_location, ${process-id}, NOW() 
+				FROM order_info o inner join customer c on c.customer_id=c.id where o.updated_time=${last-ran-time.status};"				
+			}
 			
-			'googlecalput' 'as' name=STRING 'secured-by' authstore=STRING 'with-key' key=STRING 'through-user' useraccount=STRING 'from-source' source=STRING 'using'
-			'{'
+			gcalendar as "update-google-calendar"  
+			through-account "${gaccountid}" 
+			secured-by "${gprivatekey}" 
+			with-key "${p12filepath}" 
+			for-project "${gcloud-project-name}" 
+			on-behalf-of "${impersonated-user}" 
+			from-source "${sor-db}" using
+			{
+				"select '${calendarid}' as event_calendar_id, event_interval, event_start, event_end, event_alert_time, event_title, description, event_location from calendar_details where batch_id=${process-id};"   
+			} on-condition if  "${runcalendar}"=="true"
+			
+			c2sms as "notify-user" with-user "${c2sms-user-id}" secured-by "${c2sms-key}"  from-source "${sor-db}" using
+			{
 				value=STRING
-			'}' 'on-condition' condition=Expression
+			}on-condition if  "${runsms}"=="true"
+	
 	}
 	catch
 	{
