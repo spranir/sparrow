@@ -185,6 +185,8 @@ Issue List
 Fixed the scala ide issue by following the below thread
 https://groups.google.com/forum/#!topic/scala-ide-user/kqLyBUsuxbw
 
+https://storage.googleapis.com/scalaide_4_6_oxygen/site/
+
 
 Fixed the junit issue by following the below thread
 https://stackoverflow.com/questions/31469417/eclipse-throws-java-lang-nullpointerexception-when-running-spring-junit
