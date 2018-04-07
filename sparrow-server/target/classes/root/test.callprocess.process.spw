@@ -1,0 +1,29 @@
+process "test.callprocess.process"
+{
+	try
+	{
+		transform as "create-table" on "oltp/chimera-intg" using
+		{
+			"CREATE TABLE test_call_process (variable1 VARCHAR(50) NULL, variable2 VARCHAR(50) NULL ) COLLATE='utf8_general_ci' ENGINE=InnoDB;
+			INSERT INTO test_call_process values ('etl','sparrow'), ('process','spw'),('db-target','oltp/chimera_lms');"
+		}
+		
+		callprocess as "test-call-process"
+		with-target "test.callprocess.target.process"
+		from-file "test.callprocess.target.process.spw"
+		using "oltp/chimera-intg" for-every 		
+		{
+			"SELECT variable1 as var1, variable2 as var2 FROM test_call_process;"
+		}	
+	}
+	catch
+	{
+	}
+	finally
+	{
+		transform as "drop-table" on "oltp/chimera-intg" using
+		{
+			"DROP TABLE IF EXISTS test_call_process;"
+		}
+	}
+}
