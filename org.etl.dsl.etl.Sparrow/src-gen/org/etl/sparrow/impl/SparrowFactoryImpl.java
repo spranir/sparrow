@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.etl.sparrow.Abort;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
@@ -24,6 +25,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
+import org.etl.sparrow.GooglecontactSelectAll;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
@@ -94,6 +96,8 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.FINALLY: return createFinally();
       case SparrowPackage.CATCH: return createCatch();
       case SparrowPackage.ACTION: return createAction();
+      case SparrowPackage.ABORT: return createAbort();
+      case SparrowPackage.GOOGLECONTACT_SELECT_ALL: return createGooglecontactSelectAll();
       case SparrowPackage.GOOGLECONTACT_PUT: return createGooglecontactPUT();
       case SparrowPackage.GOOGLECAL_PUT: return createGooglecalPUT();
       case SparrowPackage.FBC_LEAD: return createFBCLead();
@@ -171,6 +175,28 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     ActionImpl action = new ActionImpl();
     return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Abort createAbort()
+  {
+    AbortImpl abort = new AbortImpl();
+    return abort;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GooglecontactSelectAll createGooglecontactSelectAll()
+  {
+    GooglecontactSelectAllImpl googlecontactSelectAll = new GooglecontactSelectAllImpl();
+    return googlecontactSelectAll;
   }
 
   /**

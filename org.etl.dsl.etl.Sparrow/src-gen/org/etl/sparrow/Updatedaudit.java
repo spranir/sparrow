@@ -14,6 +14,7 @@ package org.etl.sparrow;
  * </p>
  * <ul>
  *   <li>{@link org.etl.sparrow.Updatedaudit#getLogsink <em>Logsink</em>}</li>
+ *   <li>{@link org.etl.sparrow.Updatedaudit#getDatasource <em>Datasource</em>}</li>
  *   <li>{@link org.etl.sparrow.Updatedaudit#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -48,6 +49,32 @@ public interface Updatedaudit extends Action
    * @generated
    */
   void setLogsink(String value);
+
+  /**
+   * Returns the value of the '<em><b>Datasource</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Datasource</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Datasource</em>' attribute.
+   * @see #setDatasource(String)
+   * @see org.etl.sparrow.SparrowPackage#getUpdatedaudit_Datasource()
+   * @model
+   * @generated
+   */
+  String getDatasource();
+
+  /**
+   * Sets the value of the '{@link org.etl.sparrow.Updatedaudit#getDatasource <em>Datasource</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Datasource</em>' attribute.
+   * @see #getDatasource()
+   * @generated
+   */
+  void setDatasource(String value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

@@ -261,6 +261,152 @@ public interface SparrowPackage extends EPackage
   int ACTION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.AbortImpl <em>Abort</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.AbortImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getAbort()
+   * @generated
+   */
+  int ABORT = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABORT__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABORT__CONDITION = ACTION__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Message</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABORT__MESSAGE = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Abort</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABORT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.etl.sparrow.impl.GooglecontactSelectAllImpl <em>Googlecontact Select All</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.etl.sparrow.impl.GooglecontactSelectAllImpl
+   * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecontactSelectAll()
+   * @generated
+   */
+  int GOOGLECONTACT_SELECT_ALL = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__CONDITION = ACTION__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Account</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__ACCOUNT = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Private Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__PRIVATE_KEY = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Ptwelve File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__PTWELVE_FILE = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Project</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__PROJECT = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Impersonated User</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__IMPERSONATED_USER = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Db Src</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__DB_SRC = ACTION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL__VALUE = ACTION_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Googlecontact Select All</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLECONTACT_SELECT_ALL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 7;
+
+  /**
    * The meta object id for the '{@link org.etl.sparrow.impl.GooglecontactPUTImpl <em>Googlecontact PUT</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -268,7 +414,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecontactPUT()
    * @generated
    */
-  int GOOGLECONTACT_PUT = 5;
+  int GOOGLECONTACT_PUT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -368,7 +514,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecalPUT()
    * @generated
    */
-  int GOOGLECAL_PUT = 6;
+  int GOOGLECAL_PUT = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -468,7 +614,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFBCLead()
    * @generated
    */
-  int FBC_LEAD = 7;
+  int FBC_LEAD = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -559,7 +705,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDropfile()
    * @generated
    */
-  int DROPFILE = 8;
+  int DROPFILE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -605,7 +751,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getDoozle()
    * @generated
    */
-  int DOOZLE = 9;
+  int DOOZLE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -669,7 +815,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRest()
    * @generated
    */
-  int REST = 10;
+  int REST = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -823,7 +969,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getRestPart()
    * @generated
    */
-  int REST_PART = 11;
+  int REST_PART = 13;
 
   /**
    * The feature id for the '<em><b>Part Name</b></em>' attribute.
@@ -860,7 +1006,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloGET()
    * @generated
    */
-  int TRELLO_GET = 12;
+  int TRELLO_GET = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -951,7 +1097,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTrelloPUT()
    * @generated
    */
-  int TRELLO_PUT = 13;
+  int TRELLO_PUT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1042,7 +1188,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getFetch()
    * @generated
    */
-  int FETCH = 14;
+  int FETCH = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1097,7 +1243,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCallprocess()
    * @generated
    */
-  int CALLPROCESS = 15;
+  int CALLPROCESS = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1170,7 +1316,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getUpdatedaudit()
    * @generated
    */
-  int UPDATEDAUDIT = 16;
+  int UPDATEDAUDIT = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1200,13 +1346,22 @@ public interface SparrowPackage extends EPackage
   int UPDATEDAUDIT__LOGSINK = ACTION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Datasource</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATEDAUDIT__DATASOURCE = ACTION_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UPDATEDAUDIT__VALUE = ACTION_FEATURE_COUNT + 1;
+  int UPDATEDAUDIT__VALUE = ACTION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Updatedaudit</em>' class.
@@ -1215,7 +1370,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UPDATEDAUDIT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+  int UPDATEDAUDIT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.ClickSendSmsImpl <em>Click Send Sms</em>}' class.
@@ -1225,7 +1380,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getClickSendSms()
    * @generated
    */
-  int CLICK_SEND_SMS = 17;
+  int CLICK_SEND_SMS = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1298,7 +1453,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getSlackPUT()
    * @generated
    */
-  int SLACK_PUT = 18;
+  int SLACK_PUT = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1362,7 +1517,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getCopydata()
    * @generated
    */
-  int COPYDATA = 19;
+  int COPYDATA = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1426,7 +1581,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getWriteCsv()
    * @generated
    */
-  int WRITE_CSV = 20;
+  int WRITE_CSV = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1499,7 +1654,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getLoadCsv()
    * @generated
    */
-  int LOAD_CSV = 21;
+  int LOAD_CSV = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1572,7 +1727,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getTransform()
    * @generated
    */
-  int TRANSFORM = 22;
+  int TRANSFORM = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1627,7 +1782,7 @@ public interface SparrowPackage extends EPackage
    * @see org.etl.sparrow.impl.SparrowPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 23;
+  int EXPRESSION = 25;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' attribute.
@@ -1847,6 +2002,114 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EReference getAction_Condition();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.Abort <em>Abort</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Abort</em>'.
+   * @see org.etl.sparrow.Abort
+   * @generated
+   */
+  EClass getAbort();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Abort#getMessage <em>Message</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Message</em>'.
+   * @see org.etl.sparrow.Abort#getMessage()
+   * @see #getAbort()
+   * @generated
+   */
+  EAttribute getAbort_Message();
+
+  /**
+   * Returns the meta object for class '{@link org.etl.sparrow.GooglecontactSelectAll <em>Googlecontact Select All</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Googlecontact Select All</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll
+   * @generated
+   */
+  EClass getGooglecontactSelectAll();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactSelectAll#getAccount <em>Account</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Account</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll#getAccount()
+   * @see #getGooglecontactSelectAll()
+   * @generated
+   */
+  EAttribute getGooglecontactSelectAll_Account();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactSelectAll#getPrivateKey <em>Private Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Private Key</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll#getPrivateKey()
+   * @see #getGooglecontactSelectAll()
+   * @generated
+   */
+  EAttribute getGooglecontactSelectAll_PrivateKey();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactSelectAll#getPtwelveFile <em>Ptwelve File</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ptwelve File</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll#getPtwelveFile()
+   * @see #getGooglecontactSelectAll()
+   * @generated
+   */
+  EAttribute getGooglecontactSelectAll_PtwelveFile();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactSelectAll#getProject <em>Project</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Project</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll#getProject()
+   * @see #getGooglecontactSelectAll()
+   * @generated
+   */
+  EAttribute getGooglecontactSelectAll_Project();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactSelectAll#getImpersonatedUser <em>Impersonated User</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Impersonated User</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll#getImpersonatedUser()
+   * @see #getGooglecontactSelectAll()
+   * @generated
+   */
+  EAttribute getGooglecontactSelectAll_ImpersonatedUser();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactSelectAll#getDbSrc <em>Db Src</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Db Src</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll#getDbSrc()
+   * @see #getGooglecontactSelectAll()
+   * @generated
+   */
+  EAttribute getGooglecontactSelectAll_DbSrc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.GooglecontactSelectAll#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.GooglecontactSelectAll#getValue()
+   * @see #getGooglecontactSelectAll()
+   * @generated
+   */
+  EAttribute getGooglecontactSelectAll_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.GooglecontactPUT <em>Googlecontact PUT</em>}'.
@@ -2607,6 +2870,17 @@ public interface SparrowPackage extends EPackage
   EAttribute getUpdatedaudit_Logsink();
 
   /**
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Updatedaudit#getDatasource <em>Datasource</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Datasource</em>'.
+   * @see org.etl.sparrow.Updatedaudit#getDatasource()
+   * @see #getUpdatedaudit()
+   * @generated
+   */
+  EAttribute getUpdatedaudit_Datasource();
+
+  /**
    * Returns the meta object for the attribute '{@link org.etl.sparrow.Updatedaudit#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3108,6 +3382,90 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EReference ACTION__CONDITION = eINSTANCE.getAction_Condition();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.AbortImpl <em>Abort</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.AbortImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getAbort()
+     * @generated
+     */
+    EClass ABORT = eINSTANCE.getAbort();
+
+    /**
+     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABORT__MESSAGE = eINSTANCE.getAbort_Message();
+
+    /**
+     * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecontactSelectAllImpl <em>Googlecontact Select All</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.etl.sparrow.impl.GooglecontactSelectAllImpl
+     * @see org.etl.sparrow.impl.SparrowPackageImpl#getGooglecontactSelectAll()
+     * @generated
+     */
+    EClass GOOGLECONTACT_SELECT_ALL = eINSTANCE.getGooglecontactSelectAll();
+
+    /**
+     * The meta object literal for the '<em><b>Account</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_SELECT_ALL__ACCOUNT = eINSTANCE.getGooglecontactSelectAll_Account();
+
+    /**
+     * The meta object literal for the '<em><b>Private Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_SELECT_ALL__PRIVATE_KEY = eINSTANCE.getGooglecontactSelectAll_PrivateKey();
+
+    /**
+     * The meta object literal for the '<em><b>Ptwelve File</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_SELECT_ALL__PTWELVE_FILE = eINSTANCE.getGooglecontactSelectAll_PtwelveFile();
+
+    /**
+     * The meta object literal for the '<em><b>Project</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_SELECT_ALL__PROJECT = eINSTANCE.getGooglecontactSelectAll_Project();
+
+    /**
+     * The meta object literal for the '<em><b>Impersonated User</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_SELECT_ALL__IMPERSONATED_USER = eINSTANCE.getGooglecontactSelectAll_ImpersonatedUser();
+
+    /**
+     * The meta object literal for the '<em><b>Db Src</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_SELECT_ALL__DB_SRC = eINSTANCE.getGooglecontactSelectAll_DbSrc();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOOGLECONTACT_SELECT_ALL__VALUE = eINSTANCE.getGooglecontactSelectAll_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecontactPUTImpl <em>Googlecontact PUT</em>}' class.
@@ -3692,6 +4050,14 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute UPDATEDAUDIT__LOGSINK = eINSTANCE.getUpdatedaudit_Logsink();
+
+    /**
+     * The meta object literal for the '<em><b>Datasource</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UPDATEDAUDIT__DATASOURCE = eINSTANCE.getUpdatedaudit_Datasource();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.

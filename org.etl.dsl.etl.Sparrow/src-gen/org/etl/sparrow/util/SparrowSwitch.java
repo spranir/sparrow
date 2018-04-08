@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.etl.sparrow.Abort;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
@@ -21,6 +22,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
+import org.etl.sparrow.GooglecontactSelectAll;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
@@ -128,6 +130,22 @@ public class SparrowSwitch<T> extends Switch<T>
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.ABORT:
+      {
+        Abort abort = (Abort)theEObject;
+        T result = caseAbort(abort);
+        if (result == null) result = caseAction(abort);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.GOOGLECONTACT_SELECT_ALL:
+      {
+        GooglecontactSelectAll googlecontactSelectAll = (GooglecontactSelectAll)theEObject;
+        T result = caseGooglecontactSelectAll(googlecontactSelectAll);
+        if (result == null) result = caseAction(googlecontactSelectAll);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -361,6 +379,38 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abort</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abort</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbort(Abort object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Googlecontact Select All</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Googlecontact Select All</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGooglecontactSelectAll(GooglecontactSelectAll object)
   {
     return null;
   }

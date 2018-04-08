@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.etl.sparrow.Abort;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
@@ -23,6 +24,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
+import org.etl.sparrow.GooglecontactSelectAll;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
@@ -78,6 +80,20 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * @generated
    */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass abortEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass googlecontactSelectAllEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -443,6 +459,106 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
   public EReference getAction_Condition()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAbort()
+  {
+    return abortEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAbort_Message()
+  {
+    return (EAttribute)abortEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGooglecontactSelectAll()
+  {
+    return googlecontactSelectAllEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactSelectAll_Account()
+  {
+    return (EAttribute)googlecontactSelectAllEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactSelectAll_PrivateKey()
+  {
+    return (EAttribute)googlecontactSelectAllEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactSelectAll_PtwelveFile()
+  {
+    return (EAttribute)googlecontactSelectAllEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactSelectAll_Project()
+  {
+    return (EAttribute)googlecontactSelectAllEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactSelectAll_ImpersonatedUser()
+  {
+    return (EAttribute)googlecontactSelectAllEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactSelectAll_DbSrc()
+  {
+    return (EAttribute)googlecontactSelectAllEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGooglecontactSelectAll_Value()
+  {
+    return (EAttribute)googlecontactSelectAllEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1150,9 +1266,19 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUpdatedaudit_Value()
+  public EAttribute getUpdatedaudit_Datasource()
   {
     return (EAttribute)updatedauditEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUpdatedaudit_Value()
+  {
+    return (EAttribute)updatedauditEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1507,6 +1633,18 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(actionEClass, ACTION__NAME);
     createEReference(actionEClass, ACTION__CONDITION);
 
+    abortEClass = createEClass(ABORT);
+    createEAttribute(abortEClass, ABORT__MESSAGE);
+
+    googlecontactSelectAllEClass = createEClass(GOOGLECONTACT_SELECT_ALL);
+    createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__ACCOUNT);
+    createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__PRIVATE_KEY);
+    createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__PTWELVE_FILE);
+    createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__PROJECT);
+    createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__IMPERSONATED_USER);
+    createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__DB_SRC);
+    createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__VALUE);
+
     googlecontactPUTEClass = createEClass(GOOGLECONTACT_PUT);
     createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__ACCOUNT);
     createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__PRIVATE_KEY);
@@ -1588,6 +1726,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
 
     updatedauditEClass = createEClass(UPDATEDAUDIT);
     createEAttribute(updatedauditEClass, UPDATEDAUDIT__LOGSINK);
+    createEAttribute(updatedauditEClass, UPDATEDAUDIT__DATASOURCE);
     createEAttribute(updatedauditEClass, UPDATEDAUDIT__VALUE);
 
     clickSendSmsEClass = createEClass(CLICK_SEND_SMS);
@@ -1657,6 +1796,8 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    abortEClass.getESuperTypes().add(this.getAction());
+    googlecontactSelectAllEClass.getESuperTypes().add(this.getAction());
     googlecontactPUTEClass.getESuperTypes().add(this.getAction());
     googlecalPUTEClass.getESuperTypes().add(this.getAction());
     fbcLeadEClass.getESuperTypes().add(this.getAction());
@@ -1697,6 +1838,18 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Condition(), this.getExpression(), null, "condition", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(abortEClass, Abort.class, "Abort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbort_Message(), ecorePackage.getEString(), "message", null, 0, 1, Abort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(googlecontactSelectAllEClass, GooglecontactSelectAll.class, "GooglecontactSelectAll", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGooglecontactSelectAll_Account(), ecorePackage.getEString(), "account", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactSelectAll_PrivateKey(), ecorePackage.getEString(), "privateKey", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactSelectAll_PtwelveFile(), ecorePackage.getEString(), "ptwelveFile", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactSelectAll_Project(), ecorePackage.getEString(), "project", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactSelectAll_ImpersonatedUser(), ecorePackage.getEString(), "impersonatedUser", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactSelectAll_DbSrc(), ecorePackage.getEString(), "dbSrc", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGooglecontactSelectAll_Value(), ecorePackage.getEString(), "value", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(googlecontactPUTEClass, GooglecontactPUT.class, "GooglecontactPUT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGooglecontactPUT_Account(), ecorePackage.getEString(), "account", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1779,6 +1932,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
 
     initEClass(updatedauditEClass, Updatedaudit.class, "Updatedaudit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUpdatedaudit_Logsink(), ecorePackage.getEString(), "logsink", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUpdatedaudit_Datasource(), ecorePackage.getEString(), "datasource", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getUpdatedaudit_Value(), ecorePackage.getEString(), "value", null, 0, 1, Updatedaudit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(clickSendSmsEClass, ClickSendSms.class, "ClickSendSms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

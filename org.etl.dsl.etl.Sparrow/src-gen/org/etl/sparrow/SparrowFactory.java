@@ -69,6 +69,24 @@ public interface SparrowFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>Abort</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abort</em>'.
+   * @generated
+   */
+  Abort createAbort();
+
+  /**
+   * Returns a new object of class '<em>Googlecontact Select All</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Googlecontact Select All</em>'.
+   * @generated
+   */
+  GooglecontactSelectAll createGooglecontactSelectAll();
+
+  /**
    * Returns a new object of class '<em>Googlecontact PUT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

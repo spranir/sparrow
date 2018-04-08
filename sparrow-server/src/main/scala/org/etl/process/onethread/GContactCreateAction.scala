@@ -80,6 +80,7 @@ class GContactCreateAction extends org.etl.command.Action with LazyLogging {
 
       val contact = peopleService.people.createContact(person)
       val output = contact.execute()
+     logger.info("Adding lead  {} with for number {} from {}", personName, mobile, location)
     }
     try {}
     finally {

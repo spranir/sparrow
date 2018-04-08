@@ -28,6 +28,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Action/condition"/>
     </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//Abort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Abort/message"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//GooglecontactSelectAll">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/account"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/privateKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/ptwelveFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/project"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/impersonatedUser"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/dbSrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/value"/>
+    </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//GooglecontactPUT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/account"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/privateKey"/>
@@ -109,6 +121,7 @@
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Updatedaudit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/logsink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/datasource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Updatedaudit/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//ClickSendSms">

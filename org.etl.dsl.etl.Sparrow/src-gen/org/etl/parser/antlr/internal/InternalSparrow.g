@@ -538,6 +538,332 @@ ruleAction returns [EObject current=null]
 			$current = $this_GooglecontactPUT_16.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_17());
+		}
+		this_GooglecontactSelectAll_17=ruleGooglecontactSelectAll
+		{
+			$current = $this_GooglecontactSelectAll_17.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getAbortParserRuleCall_18());
+		}
+		this_Abort_18=ruleAbort
+		{
+			$current = $this_Abort_18.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleAbort
+entryRuleAbort returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAbortRule()); }
+	iv_ruleAbort=ruleAbort
+	{ $current=$iv_ruleAbort.current; }
+	EOF;
+
+// Rule Abort
+ruleAbort returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='abort'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAbortAccess().getAbortKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAbortRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_message_2_0=RULE_STRING
+				{
+					newLeafNode(lv_message_2_0, grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAbortRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"message",
+						lv_message_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='on-condition'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAbortAccess().getOnConditionKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0());
+				}
+				lv_condition_4_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAbortRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_4_0,
+						"org.etl.Sparrow.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleGooglecontactSelectAll
+entryRuleGooglecontactSelectAll returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGooglecontactSelectAllRule()); }
+	iv_ruleGooglecontactSelectAll=ruleGooglecontactSelectAll
+	{ $current=$iv_ruleGooglecontactSelectAll.current; }
+	EOF;
+
+// Rule GooglecontactSelectAll
+ruleGooglecontactSelectAll returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='gcontact-fetchall'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGooglecontactSelectAllAccess().getGcontactFetchallKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_2='through-account'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_2());
+		}
+		(
+			(
+				lv_account_3_0=RULE_STRING
+				{
+					newLeafNode(lv_account_3_0, grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"account",
+						lv_account_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_4='secured-by'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_4());
+		}
+		(
+			(
+				lv_privateKey_5_0=RULE_STRING
+				{
+					newLeafNode(lv_privateKey_5_0, grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"privateKey",
+						lv_privateKey_5_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_6='with-key'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_6());
+		}
+		(
+			(
+				lv_ptwelveFile_7_0=RULE_STRING
+				{
+					newLeafNode(lv_ptwelveFile_7_0, grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"ptwelveFile",
+						lv_ptwelveFile_7_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_8='for-project'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_8());
+		}
+		(
+			(
+				lv_project_9_0=RULE_STRING
+				{
+					newLeafNode(lv_project_9_0, grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"project",
+						lv_project_9_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_10='on-behalf-of'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_10());
+		}
+		(
+			(
+				lv_impersonatedUser_11_0=RULE_STRING
+				{
+					newLeafNode(lv_impersonatedUser_11_0, grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"impersonatedUser",
+						lv_impersonatedUser_11_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_12='to-target'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_12());
+		}
+		(
+			(
+				lv_dbSrc_13_0=RULE_STRING
+				{
+					newLeafNode(lv_dbSrc_13_0, grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dbSrc",
+						lv_dbSrc_13_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_14='using'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_14());
+		}
+		otherlv_15='{'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_15());
+		}
+		(
+			(
+				lv_value_16_0=RULE_STRING
+				{
+					newLeafNode(lv_value_16_0, grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_16_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_17='}'
+		{
+			newLeafNode(otherlv_17, grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_17());
+		}
+		otherlv_18='on-condition'
+		{
+			newLeafNode(otherlv_18, grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_18());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0());
+				}
+				lv_condition_19_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_19_0,
+						"org.etl.Sparrow.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -2677,20 +3003,42 @@ ruleUpdatedaudit returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5='using'
+		otherlv_5='in'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getUpdatedauditAccess().getUsingKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getUpdatedauditAccess().getInKeyword_5());
 		}
-		otherlv_6='{'
+		(
+			(
+				lv_datasource_6_0=RULE_STRING
+				{
+					newLeafNode(lv_datasource_6_0, grammarAccess.getUpdatedauditAccess().getDatasourceSTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getUpdatedauditRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"datasource",
+						lv_datasource_6_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_7='using'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getUpdatedauditAccess().getLeftCurlyBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getUpdatedauditAccess().getUsingKeyword_7());
+		}
+		otherlv_8='{'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getUpdatedauditAccess().getLeftCurlyBracketKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_9_0());
 				}
-				lv_value_7_0=ruleSelectStatement
+				lv_value_9_0=ruleSelectStatement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUpdatedauditRule());
@@ -2698,26 +3046,26 @@ ruleUpdatedaudit returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_7_0,
+						lv_value_9_0,
 						"org.etl.Sparrow.SelectStatement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_8='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getUpdatedauditAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_10, grammarAccess.getUpdatedauditAccess().getRightCurlyBracketKeyword_10());
 		}
-		otherlv_9='on-condition'
+		otherlv_11='on-condition'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getUpdatedauditAccess().getOnConditionKeyword_9());
+			newLeafNode(otherlv_11, grammarAccess.getUpdatedauditAccess().getOnConditionKeyword_11());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUpdatedauditAccess().getConditionExpressionParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getUpdatedauditAccess().getConditionExpressionParserRuleCall_12_0());
 				}
-				lv_condition_10_0=ruleExpression
+				lv_condition_12_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUpdatedauditRule());
@@ -2725,7 +3073,7 @@ ruleUpdatedaudit returns [EObject current=null]
 					set(
 						$current,
 						"condition",
-						lv_condition_10_0,
+						lv_condition_12_0,
 						"org.etl.Sparrow.Expression");
 					afterParserOrEnumRuleCall();
 				}

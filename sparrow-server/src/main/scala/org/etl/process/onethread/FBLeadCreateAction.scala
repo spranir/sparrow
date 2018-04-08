@@ -7,6 +7,8 @@ import com.facebook.ads.sdk.AdAccount
 import com.facebook.ads.sdk.Campaign
 import org.etl.util.ResourceAccess
 import org.etl.util.ParameterisationEngine
+import java.util.concurrent.atomic.AtomicInteger
+import java.sql.SQLException
 
 /**
  * //https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving/v2.9
@@ -80,11 +82,12 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
               val leadList = ad.getLeads.requestAllFields().execute();
               if (!leadList.isEmpty()) {
                 val leadListIter = leadList.listIterator
+                val leadCounter: AtomicInteger = new AtomicInteger;
                 while (leadListIter.hasNext()) {
 
                   val lead = leadListIter.next
                   val createdAt = lead.getFieldCreatedTime
-
+                  logger.info("inserting data for {} with for campaign {}", leadCounter.incrementAndGet(), campaignId)
                   val leadSourceMeta = "ad_id=" + lead.getFieldAdId + ",<br/> ad_name=" + lead.getFieldAdName + "<br/>, adset_id=" + lead.getFieldAdsetId +
                     "<br/>, adset_name=" + lead.getFieldAdsetName + "<br/>, campaign_id=" + lead.getFieldCampaignId + "<br/>,form_id=" +
                     lead.getFieldFormId + "<br/>,id=" + lead.getFieldId + "<br/>, dailybudget=" + 0
@@ -134,22 +137,29 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   stmt.setString(LEADGEN_DATE, createdAt)
                   val processid = context.getValue("process-id")
                   stmt.setInt(BATCH_ID, Integer.parseInt(processid))
-                  stmt.executeUpdate
-                  tgtConn.commit
-                  leadListIter.remove
+                  try {
+                    stmt.executeUpdate
+                    tgtConn.commit
+                    leadListIter.remove
+                  } catch {
+                    case ex: SQLException => {
+                      logger.error(" SQL Error inserting data for {} with for campaign {}", leadCounter.incrementAndGet(), campaignId, ex)
+                    }
+                    case ex: Throwable => {
+                      logger.error(" General Error inserting data for {} with for campaign {}", leadCounter.incrementAndGet(), campaignId, ex)
+                    }
+                  }
                 } //leadList.iterator().hasNext()
               } //!leadList.isEmpty()
             } //adListIter.hasNext()
           } //!adList.isEmpty()
-
-          try {}
-          finally {
-            stmt.close
-            tgtConn.close
-          }
-        }
+        } //campaign closure
+    }//campaign iteration
+    try {}
+    finally {
+      stmt.close
+      tgtConn.close
     }
-
     context
   }
 
