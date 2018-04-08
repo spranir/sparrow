@@ -1,0 +1,15 @@
+in/chimera/httpclient/ChimeraRestClient$1.class
+in/chimera/httpclient/SpoorsRestClient$Header.class
+in/chimera/httpclient/AuthToken.class
+in/chimera/httpclient/SimpleHttpResponse.class
+in/chimera/httpclient/TrustModifier.class
+in/chimera/httpclient/SimpleHttpRequest$Method.class
+in/chimera/httpclient/TrustModifier$AlwaysTrustManager.class
+in/chimera/httpclient/RestClient.class
+in/chimera/httpclient/TrustModifier$TrustingHostnameVerifier.class
+in/chimera/httpclient/HttpRequestBuilder.class
+in/chimera/httpclient/ChimeraRestClient$Header.class
+in/chimera/httpclient/ChimeraRestClient.class
+in/chimera/httpclient/SpoorsRestClient.class
+in/chimera/httpclient/SimpleHttpRequest.class
+in/chimera/httpclient/TrustModifier$1.class

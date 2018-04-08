@@ -1,0 +1,20 @@
+process "candycrm.wppush.leadingestion"
+
+{
+	try
+	 {
+			transform as "load-data-from-lead" on "oltp/candy_lead-intg" using
+		{
+			"INSERT into LEAD_TRANFORM (wp_post_id) select wp_post_id from LEAD_SOURCE where  wp_post_id = ${id} group by wp_post_id;
+			UPDATE LEAD_TRANFORM set lead_name = (select lead_name_contact from LEAD_SOURCE where lead_meta = '_field_1' and wp_post_id = ${id} group by wp_post_id) where wp_post_id = ${id};
+			UPDATE LEAD_TRANFORM set lead_contact = (select lead_name_contact from LEAD_SOURCE where lead_meta = '_field_21' and wp_post_id = ${id} group by wp_post_id) where wp_post_id = ${id};
+			UPDATE LEAD_TRANFORM set created_date = (select created_date from LEAD_SOURCE where wp_post_id = ${id} group by wp_post_id) where wp_post_id = ${id};"
+		}		
+	}
+	catch
+	{
+	}
+	finally
+	{
+	}	
+}
