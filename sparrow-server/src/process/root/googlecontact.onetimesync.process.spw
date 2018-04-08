@@ -1,0 +1,22 @@
+process "googlecontact.onetimesync.process"
+{
+	try
+	{
+		gcontact as "update-google-contact"  
+			through-account "${gaccountid}" 
+			secured-by "${gprivatekey}" 
+			with-key "${p12filepath}" 
+			for-project "${gcloud-project-name}" 
+			on-behalf-of "${impersonated-user}" 
+			from-source "${sor-db}" using
+			{"
+				SELECT concat('ZIJ-',full_name) as name, email, location, phone_number as mobile from customer where batch_id=149;   
+			"} 
+	}
+	catch
+	{
+	}
+	finally
+	{
+	}
+}

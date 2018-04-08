@@ -28,7 +28,7 @@ class FetchVariableAction  extends org.etl.command.Action with LazyLogging {
       for (i <- 1 until columnCount+1) {
         val key = rs.getMetaData.getColumnLabel(i)
         val value = rs.getString(i)
-        context.addValue(key, value)
+        context.addValue(name+"."+key, value)
 
       }
     }

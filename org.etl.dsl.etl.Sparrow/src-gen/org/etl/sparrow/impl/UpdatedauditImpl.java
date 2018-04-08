@@ -21,6 +21,7 @@ import org.etl.sparrow.Updatedaudit;
  * </p>
  * <ul>
  *   <li>{@link org.etl.sparrow.impl.UpdatedauditImpl#getLogsink <em>Logsink</em>}</li>
+ *   <li>{@link org.etl.sparrow.impl.UpdatedauditImpl#getDatasource <em>Datasource</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.UpdatedauditImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -47,6 +48,26 @@ public class UpdatedauditImpl extends ActionImpl implements Updatedaudit
    * @ordered
    */
   protected String logsink = LOGSINK_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDatasource() <em>Datasource</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatasource()
+   * @generated
+   * @ordered
+   */
+  protected static final String DATASOURCE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDatasource() <em>Datasource</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatasource()
+   * @generated
+   * @ordered
+   */
+  protected String datasource = DATASOURCE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -117,6 +138,29 @@ public class UpdatedauditImpl extends ActionImpl implements Updatedaudit
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDatasource()
+  {
+    return datasource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDatasource(String newDatasource)
+  {
+    String oldDatasource = datasource;
+    datasource = newDatasource;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.UPDATEDAUDIT__DATASOURCE, oldDatasource, datasource));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getValue()
   {
     return value;
@@ -147,6 +191,8 @@ public class UpdatedauditImpl extends ActionImpl implements Updatedaudit
     {
       case SparrowPackage.UPDATEDAUDIT__LOGSINK:
         return getLogsink();
+      case SparrowPackage.UPDATEDAUDIT__DATASOURCE:
+        return getDatasource();
       case SparrowPackage.UPDATEDAUDIT__VALUE:
         return getValue();
     }
@@ -165,6 +211,9 @@ public class UpdatedauditImpl extends ActionImpl implements Updatedaudit
     {
       case SparrowPackage.UPDATEDAUDIT__LOGSINK:
         setLogsink((String)newValue);
+        return;
+      case SparrowPackage.UPDATEDAUDIT__DATASOURCE:
+        setDatasource((String)newValue);
         return;
       case SparrowPackage.UPDATEDAUDIT__VALUE:
         setValue((String)newValue);
@@ -186,6 +235,9 @@ public class UpdatedauditImpl extends ActionImpl implements Updatedaudit
       case SparrowPackage.UPDATEDAUDIT__LOGSINK:
         setLogsink(LOGSINK_EDEFAULT);
         return;
+      case SparrowPackage.UPDATEDAUDIT__DATASOURCE:
+        setDatasource(DATASOURCE_EDEFAULT);
+        return;
       case SparrowPackage.UPDATEDAUDIT__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
@@ -205,6 +257,8 @@ public class UpdatedauditImpl extends ActionImpl implements Updatedaudit
     {
       case SparrowPackage.UPDATEDAUDIT__LOGSINK:
         return LOGSINK_EDEFAULT == null ? logsink != null : !LOGSINK_EDEFAULT.equals(logsink);
+      case SparrowPackage.UPDATEDAUDIT__DATASOURCE:
+        return DATASOURCE_EDEFAULT == null ? datasource != null : !DATASOURCE_EDEFAULT.equals(datasource);
       case SparrowPackage.UPDATEDAUDIT__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
@@ -224,6 +278,8 @@ public class UpdatedauditImpl extends ActionImpl implements Updatedaudit
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (logsink: ");
     result.append(logsink);
+    result.append(", datasource: ");
+    result.append(datasource);
     result.append(", value: ");
     result.append(value);
     result.append(')');

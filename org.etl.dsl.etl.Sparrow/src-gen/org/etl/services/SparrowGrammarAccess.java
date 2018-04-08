@@ -228,6 +228,8 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDropfileParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		private final RuleCall cFBCLeadParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
 		private final RuleCall cGooglecontactPUTParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
+		private final RuleCall cGooglecontactSelectAllParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
+		private final RuleCall cAbortParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
 		
 		//Action:
 		//	Copydata
@@ -246,11 +248,13 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//	| Doozle
 		//	| Dropfile
 		//	| FBCLead
-		//	| GooglecontactPUT;
+		//	| GooglecontactPUT
+		//	| GooglecontactSelectAll
+		//	| Abort;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Copydata | LoadCsv | WriteCsv | Transform | GooglecalPUT | SlackPUT | ClickSendSms | Updatedaudit | Callprocess | Fetch
-		//| TrelloPUT | TrelloGET | Rest | Doozle | Dropfile | FBCLead | GooglecontactPUT
+		//| TrelloPUT | TrelloGET | Rest | Doozle | Dropfile | FBCLead | GooglecontactPUT | GooglecontactSelectAll | Abort
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Copydata
@@ -303,6 +307,189 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//GooglecontactPUT
 		public RuleCall getGooglecontactPUTParserRuleCall_16() { return cGooglecontactPUTParserRuleCall_16; }
+		
+		//GooglecontactSelectAll
+		public RuleCall getGooglecontactSelectAllParserRuleCall_17() { return cGooglecontactSelectAllParserRuleCall_17; }
+		
+		//Abort
+		public RuleCall getAbortParserRuleCall_18() { return cAbortParserRuleCall_18; }
+	}
+	public class AbortElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Abort");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAbortKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cMessageAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_2_0 = (RuleCall)cMessageAssignment_2.eContents().get(0);
+		private final Keyword cOnConditionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cConditionExpressionParserRuleCall_4_0 = (RuleCall)cConditionAssignment_4.eContents().get(0);
+		
+		//Abort:
+		//	'abort' name=STRING message=STRING 'on-condition' condition=Expression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'abort' name=STRING message=STRING 'on-condition' condition=Expression
+		public Group getGroup() { return cGroup; }
+		
+		//'abort'
+		public Keyword getAbortKeyword_0() { return cAbortKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//message=STRING
+		public Assignment getMessageAssignment_2() { return cMessageAssignment_2; }
+		
+		//STRING
+		public RuleCall getMessageSTRINGTerminalRuleCall_2_0() { return cMessageSTRINGTerminalRuleCall_2_0; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_3() { return cOnConditionKeyword_3; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_4() { return cConditionAssignment_4; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_4_0() { return cConditionExpressionParserRuleCall_4_0; }
+	}
+	public class GooglecontactSelectAllElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.GooglecontactSelectAll");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGcontactFetchallKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cThroughAccountKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAccountAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAccountSTRINGTerminalRuleCall_3_0 = (RuleCall)cAccountAssignment_3.eContents().get(0);
+		private final Keyword cSecuredByKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPrivateKeyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPrivateKeySTRINGTerminalRuleCall_5_0 = (RuleCall)cPrivateKeyAssignment_5.eContents().get(0);
+		private final Keyword cWithKeyKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cPtwelveFileAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cPtwelveFileSTRINGTerminalRuleCall_7_0 = (RuleCall)cPtwelveFileAssignment_7.eContents().get(0);
+		private final Keyword cForProjectKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cProjectAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cProjectSTRINGTerminalRuleCall_9_0 = (RuleCall)cProjectAssignment_9.eContents().get(0);
+		private final Keyword cOnBehalfOfKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cImpersonatedUserAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cImpersonatedUserSTRINGTerminalRuleCall_11_0 = (RuleCall)cImpersonatedUserAssignment_11.eContents().get(0);
+		private final Keyword cToTargetKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cDbSrcAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cDbSrcSTRINGTerminalRuleCall_13_0 = (RuleCall)cDbSrcAssignment_13.eContents().get(0);
+		private final Keyword cUsingKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cLeftCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cValueAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cValueSTRINGTerminalRuleCall_16_0 = (RuleCall)cValueAssignment_16.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cOnConditionKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cConditionAssignment_19 = (Assignment)cGroup.eContents().get(19);
+		private final RuleCall cConditionExpressionParserRuleCall_19_0 = (RuleCall)cConditionAssignment_19.eContents().get(0);
+		
+		//GooglecontactSelectAll:
+		//	'gcontact-fetchall' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key'
+		//	ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'to-target' dbSrc=STRING
+		//	'using'
+		//	'{'
+		//	value=STRING
+		//	'}' 'on-condition' condition=Expression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'gcontact-fetchall' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key'
+		//ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'to-target' dbSrc=STRING 'using'
+		//'{' value=STRING '}' 'on-condition' condition=Expression
+		public Group getGroup() { return cGroup; }
+		
+		//'gcontact-fetchall'
+		public Keyword getGcontactFetchallKeyword_0() { return cGcontactFetchallKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//'through-account'
+		public Keyword getThroughAccountKeyword_2() { return cThroughAccountKeyword_2; }
+		
+		//account=STRING
+		public Assignment getAccountAssignment_3() { return cAccountAssignment_3; }
+		
+		//STRING
+		public RuleCall getAccountSTRINGTerminalRuleCall_3_0() { return cAccountSTRINGTerminalRuleCall_3_0; }
+		
+		//'secured-by'
+		public Keyword getSecuredByKeyword_4() { return cSecuredByKeyword_4; }
+		
+		//privateKey=STRING
+		public Assignment getPrivateKeyAssignment_5() { return cPrivateKeyAssignment_5; }
+		
+		//STRING
+		public RuleCall getPrivateKeySTRINGTerminalRuleCall_5_0() { return cPrivateKeySTRINGTerminalRuleCall_5_0; }
+		
+		//'with-key'
+		public Keyword getWithKeyKeyword_6() { return cWithKeyKeyword_6; }
+		
+		//ptwelveFile=STRING
+		public Assignment getPtwelveFileAssignment_7() { return cPtwelveFileAssignment_7; }
+		
+		//STRING
+		public RuleCall getPtwelveFileSTRINGTerminalRuleCall_7_0() { return cPtwelveFileSTRINGTerminalRuleCall_7_0; }
+		
+		//'for-project'
+		public Keyword getForProjectKeyword_8() { return cForProjectKeyword_8; }
+		
+		//project=STRING
+		public Assignment getProjectAssignment_9() { return cProjectAssignment_9; }
+		
+		//STRING
+		public RuleCall getProjectSTRINGTerminalRuleCall_9_0() { return cProjectSTRINGTerminalRuleCall_9_0; }
+		
+		//'on-behalf-of'
+		public Keyword getOnBehalfOfKeyword_10() { return cOnBehalfOfKeyword_10; }
+		
+		//impersonatedUser=STRING
+		public Assignment getImpersonatedUserAssignment_11() { return cImpersonatedUserAssignment_11; }
+		
+		//STRING
+		public RuleCall getImpersonatedUserSTRINGTerminalRuleCall_11_0() { return cImpersonatedUserSTRINGTerminalRuleCall_11_0; }
+		
+		//'to-target'
+		public Keyword getToTargetKeyword_12() { return cToTargetKeyword_12; }
+		
+		//dbSrc=STRING
+		public Assignment getDbSrcAssignment_13() { return cDbSrcAssignment_13; }
+		
+		//STRING
+		public RuleCall getDbSrcSTRINGTerminalRuleCall_13_0() { return cDbSrcSTRINGTerminalRuleCall_13_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_14() { return cUsingKeyword_14; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_15() { return cLeftCurlyBracketKeyword_15; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_16() { return cValueAssignment_16; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_16_0() { return cValueSTRINGTerminalRuleCall_16_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_18() { return cOnConditionKeyword_18; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_19() { return cConditionAssignment_19; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_19_0() { return cConditionExpressionParserRuleCall_19_0; }
 	}
 	public class GooglecontactPUTElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.GooglecontactPUT");
@@ -1569,23 +1756,27 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLogtoKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cLogsinkAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cLogsinkSTRINGTerminalRuleCall_4_0 = (RuleCall)cLogsinkAssignment_4.eContents().get(0);
-		private final Keyword cUsingKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cValueSelectStatementParserRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cOnConditionKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cConditionAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cConditionExpressionParserRuleCall_10_0 = (RuleCall)cConditionAssignment_10.eContents().get(0);
+		private final Keyword cInKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDatasourceAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cDatasourceSTRINGTerminalRuleCall_6_0 = (RuleCall)cDatasourceAssignment_6.eContents().get(0);
+		private final Keyword cUsingKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cValueAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cValueSelectStatementParserRuleCall_9_0 = (RuleCall)cValueAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cOnConditionKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cConditionAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cConditionExpressionParserRuleCall_12_0 = (RuleCall)cConditionAssignment_12.eContents().get(0);
 		
 		//Updatedaudit:
-		//	'log' 'as' name=STRING 'logto' logsink=STRING 'using'
+		//	'log' 'as' name=STRING 'logto' logsink=STRING 'in' datasource=STRING 'using'
 		//	'{'
 		//	value=SelectStatement
 		//	'}' 'on-condition' condition=Expression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'log' 'as' name=STRING 'logto' logsink=STRING 'using' '{' value=SelectStatement '}' 'on-condition' condition=Expression
+		//'log' 'as' name=STRING 'logto' logsink=STRING 'in' datasource=STRING 'using' '{' value=SelectStatement '}'
+		//'on-condition' condition=Expression
 		public Group getGroup() { return cGroup; }
 		
 		//'log'
@@ -1609,29 +1800,38 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLogsinkSTRINGTerminalRuleCall_4_0() { return cLogsinkSTRINGTerminalRuleCall_4_0; }
 		
+		//'in'
+		public Keyword getInKeyword_5() { return cInKeyword_5; }
+		
+		//datasource=STRING
+		public Assignment getDatasourceAssignment_6() { return cDatasourceAssignment_6; }
+		
+		//STRING
+		public RuleCall getDatasourceSTRINGTerminalRuleCall_6_0() { return cDatasourceSTRINGTerminalRuleCall_6_0; }
+		
 		//'using'
-		public Keyword getUsingKeyword_5() { return cUsingKeyword_5; }
+		public Keyword getUsingKeyword_7() { return cUsingKeyword_7; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
+		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
 		
 		//value=SelectStatement
-		public Assignment getValueAssignment_7() { return cValueAssignment_7; }
+		public Assignment getValueAssignment_9() { return cValueAssignment_9; }
 		
 		//SelectStatement
-		public RuleCall getValueSelectStatementParserRuleCall_7_0() { return cValueSelectStatementParserRuleCall_7_0; }
+		public RuleCall getValueSelectStatementParserRuleCall_9_0() { return cValueSelectStatementParserRuleCall_9_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 		
 		//'on-condition'
-		public Keyword getOnConditionKeyword_9() { return cOnConditionKeyword_9; }
+		public Keyword getOnConditionKeyword_11() { return cOnConditionKeyword_11; }
 		
 		//condition=Expression
-		public Assignment getConditionAssignment_10() { return cConditionAssignment_10; }
+		public Assignment getConditionAssignment_12() { return cConditionAssignment_12; }
 		
 		//Expression
-		public RuleCall getConditionExpressionParserRuleCall_10_0() { return cConditionExpressionParserRuleCall_10_0; }
+		public RuleCall getConditionExpressionParserRuleCall_12_0() { return cConditionExpressionParserRuleCall_12_0; }
 	}
 	public class ClickSendSmsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.ClickSendSms");
@@ -2296,6 +2496,8 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	private final FinallyElements pFinally;
 	private final CatchElements pCatch;
 	private final ActionElements pAction;
+	private final AbortElements pAbort;
+	private final GooglecontactSelectAllElements pGooglecontactSelectAll;
 	private final GooglecontactPUTElements pGooglecontactPUT;
 	private final GooglecalPUTElements pGooglecalPUT;
 	private final FBCLeadElements pFBCLead;
@@ -2335,6 +2537,8 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFinally = new FinallyElements();
 		this.pCatch = new CatchElements();
 		this.pAction = new ActionElements();
+		this.pAbort = new AbortElements();
+		this.pGooglecontactSelectAll = new GooglecontactSelectAllElements();
 		this.pGooglecontactPUT = new GooglecontactPUTElements();
 		this.pGooglecalPUT = new GooglecalPUTElements();
 		this.pFBCLead = new FBCLeadElements();
@@ -2459,13 +2663,40 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	| Doozle
 	//	| Dropfile
 	//	| FBCLead
-	//	| GooglecontactPUT;
+	//	| GooglecontactPUT
+	//	| GooglecontactSelectAll
+	//	| Abort;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+	
+	//Abort:
+	//	'abort' name=STRING message=STRING 'on-condition' condition=Expression;
+	public AbortElements getAbortAccess() {
+		return pAbort;
+	}
+	
+	public ParserRule getAbortRule() {
+		return getAbortAccess().getRule();
+	}
+	
+	//GooglecontactSelectAll:
+	//	'gcontact-fetchall' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key'
+	//	ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'to-target' dbSrc=STRING
+	//	'using'
+	//	'{'
+	//	value=STRING
+	//	'}' 'on-condition' condition=Expression;
+	public GooglecontactSelectAllElements getGooglecontactSelectAllAccess() {
+		return pGooglecontactSelectAll;
+	}
+	
+	public ParserRule getGooglecontactSelectAllRule() {
+		return getGooglecontactSelectAllAccess().getRule();
 	}
 	
 	//GooglecontactPUT:
@@ -2626,7 +2857,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Updatedaudit:
-	//	'log' 'as' name=STRING 'logto' logsink=STRING 'using'
+	//	'log' 'as' name=STRING 'logto' logsink=STRING 'in' datasource=STRING 'using'
 	//	'{'
 	//	value=SelectStatement
 	//	'}' 'on-condition' condition=Expression;

@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.etl.services.SparrowGrammarAccess;
+import org.etl.sparrow.Abort;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
 import org.etl.sparrow.ClickSendSms;
@@ -27,6 +28,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
+import org.etl.sparrow.GooglecontactSelectAll;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
@@ -53,6 +55,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SparrowPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SparrowPackage.ABORT:
+				sequence_Abort(context, (Abort) semanticObject); 
+				return; 
 			case SparrowPackage.CALLPROCESS:
 				sequence_Callprocess(context, (Callprocess) semanticObject); 
 				return; 
@@ -88,6 +93,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SparrowPackage.GOOGLECONTACT_PUT:
 				sequence_GooglecontactPUT(context, (GooglecontactPUT) semanticObject); 
+				return; 
+			case SparrowPackage.GOOGLECONTACT_SELECT_ALL:
+				sequence_GooglecontactSelectAll(context, (GooglecontactSelectAll) semanticObject); 
 				return; 
 			case SparrowPackage.LOAD_CSV:
 				sequence_LoadCsv(context, (LoadCsv) semanticObject); 
@@ -126,6 +134,31 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Action returns Abort
+	 *     Abort returns Abort
+	 *
+	 * Constraint:
+	 *     (name=STRING message=STRING condition=Expression)
+	 */
+	protected void sequence_Abort(ISerializationContext context, Abort semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ABORT__MESSAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ABORT__MESSAGE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0(), semanticObject.getMessage());
+		feeder.accept(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -529,6 +562,59 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Action returns GooglecontactSelectAll
+	 *     GooglecontactSelectAll returns GooglecontactSelectAll
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=STRING 
+	 *         account=STRING 
+	 *         privateKey=STRING 
+	 *         ptwelveFile=STRING 
+	 *         project=STRING 
+	 *         impersonatedUser=STRING 
+	 *         dbSrc=STRING 
+	 *         value=STRING 
+	 *         condition=Expression
+	 *     )
+	 */
+	protected void sequence_GooglecontactSelectAll(ISerializationContext context, GooglecontactSelectAll semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__ACCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__ACCOUNT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__PRIVATE_KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__PRIVATE_KEY));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__PTWELVE_FILE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__PTWELVE_FILE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__PROJECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__PROJECT));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__IMPERSONATED_USER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__IMPERSONATED_USER));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__DB_SRC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__DB_SRC));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLECONTACT_SELECT_ALL__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0(), semanticObject.getAccount());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0(), semanticObject.getPrivateKey());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0(), semanticObject.getPtwelveFile());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0(), semanticObject.getProject());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0(), semanticObject.getImpersonatedUser());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0(), semanticObject.getDbSrc());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Action returns LoadCsv
 	 *     LoadCsv returns LoadCsv
 	 *
@@ -805,7 +891,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Updatedaudit returns Updatedaudit
 	 *
 	 * Constraint:
-	 *     (name=STRING logsink=STRING value=SelectStatement condition=Expression)
+	 *     (name=STRING logsink=STRING datasource=STRING value=SelectStatement condition=Expression)
 	 */
 	protected void sequence_Updatedaudit(ISerializationContext context, Updatedaudit semanticObject) {
 		if (errorAcceptor != null) {
@@ -813,6 +899,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__LOGSINK) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__LOGSINK));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__DATASOURCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__DATASOURCE));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.UPDATEDAUDIT__VALUE));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
@@ -821,8 +909,9 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUpdatedauditAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getUpdatedauditAccess().getLogsinkSTRINGTerminalRuleCall_4_0(), semanticObject.getLogsink());
-		feeder.accept(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_7_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getUpdatedauditAccess().getConditionExpressionParserRuleCall_10_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getDatasourceSTRINGTerminalRuleCall_6_0(), semanticObject.getDatasource());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_9_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getUpdatedauditAccess().getConditionExpressionParserRuleCall_12_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	

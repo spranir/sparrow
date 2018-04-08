@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.etl.sparrow.Abort;
 import org.etl.sparrow.Action;
 import org.etl.sparrow.Callprocess;
 import org.etl.sparrow.Catch;
@@ -23,6 +24,7 @@ import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
+import org.etl.sparrow.GooglecontactSelectAll;
 import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
@@ -122,6 +124,16 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAction(Action object)
       {
         return createActionAdapter();
+      }
+      @Override
+      public Adapter caseAbort(Abort object)
+      {
+        return createAbortAdapter();
+      }
+      @Override
+      public Adapter caseGooglecontactSelectAll(GooglecontactSelectAll object)
+      {
+        return createGooglecontactSelectAllAdapter();
       }
       @Override
       public Adapter caseGooglecontactPUT(GooglecontactPUT object)
@@ -311,6 +323,36 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.Abort <em>Abort</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.Abort
+   * @generated
+   */
+  public Adapter createAbortAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.GooglecontactSelectAll <em>Googlecontact Select All</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.GooglecontactSelectAll
+   * @generated
+   */
+  public Adapter createGooglecontactSelectAllAdapter()
   {
     return null;
   }

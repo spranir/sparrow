@@ -51,7 +51,20 @@ Action:
 	|Dropfile
 	|FBCLead
 	|GooglecontactPUT
+	|GooglecontactSelectAll
+	|Abort
 	)
+;
+
+Abort:
+	'abort' name=STRING message=STRING 'on-condition' condition=Expression
+;
+
+GooglecontactSelectAll:
+	'gcontact-fetchall' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key' ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'to-target' dbSrc=STRING 'using'
+	'{'
+		value=STRING
+	'}' 'on-condition' condition=Expression
 ;
 
 GooglecontactPUT:
@@ -141,7 +154,7 @@ Callprocess:
 ;
 
 Updatedaudit:
-	'log' 'as' name=STRING 'logto' logsink=STRING 'using'
+	'log' 'as' name=STRING 'logto' logsink=STRING 'in' datasource=STRING 'using' 
 	'{'
 		value=SelectStatement
 	'}' 'on-condition' condition=Expression

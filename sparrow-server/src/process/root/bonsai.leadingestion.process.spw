@@ -18,15 +18,15 @@ process "bonsai.leadingestion.process"
 			}
 			
 			transform as "add-leads-to-staging" on "${sor-db}" using
-			{
-				   "INSERT INTO leads_syfd (name, email, mobile, alt_mobile, 
+			{"
+				   INSERT INTO leads_syfd (name, email, mobile, alt_mobile, 
 					locality, targeted_city, leadsource_campaign, leadsource_channel, company, leadgen_date, 
 					coa_aprox, profession, budget, leadsource_metadata, intent_metadata, batch_id, updated_date) 					
 					SELECT  a.name,  a.email,  a.mobile,  a.alt_mobile,  a.locality,  a.targeted_city,  
 					a.leadsource_campaign,  a.leadsource_channel,  a.company,  a.leadgen_date,  a.coa_aprox,  
 					a.profession, a.budget, a.leadsource_metadata,  a.intent_metadata,  ${process-id}, now() FROM leads_soft a 
-					LEFT OUTER JOIN leads_syfd b ON a.mobile=b.mobile WHERE b.mobile IS NULL GROUP BY a.mobile having count(*)>=1;"
-			}
+					LEFT OUTER JOIN leads_syfd b ON a.mobile=b.mobile WHERE b.mobile IS NULL and a.batch_id=${process-id} GROUP BY a.mobile having count(*)>=1;
+			"}
 			
 			transform as "cleanup_leadgendate_on_incoming_leads" on "${sor-db}" using
 			{
