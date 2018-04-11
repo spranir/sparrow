@@ -2,6 +2,14 @@ process "wordpress.candy.leadingestion"
 {
 	try
 	{
+			transform as "cleanup_underscore_on_incoming_leads" on "${wci-db}" using
+			{
+				"insert IGNORE into leads_soft (name, email, mobile, alt_mobile, locality, targeted_city, leadsource_campaign, 
+				leadsource_channel, company, leadgen_date, coa_aprox, profession, budget, leadsource_metadata, intent_metadata, 
+				batch_id, updated_date) 
+				select lead_name, '', lead_contact, '', lead_location, '', '', '', '', created_date, 0, '', 0, '', '', ${incomingid}, created_date from ${integration-schema}.LEAD_TRANSFORM
+				WHERE lead_contact NOT IN (SELECT mobile from leads_soft) ;"
+			}
 	
 			transform as "add-leads-to-staging" on "${wci-db}" using
 			{		"INSERT INTO leads_syfd (name, email, mobile, alt_mobile, 
@@ -23,7 +31,7 @@ process "wordpress.candy.leadingestion"
 				  "INSERT INTO customer (version, budget, details, email, full_name, lead_campaign, lead_source, leadgen_date, 
 				  location, phone_number, profession, vendor_id, z_id, batch_id) 
 				  SELECT 0, budget, intent_metadata, email, name, leadsource_campaign, leadsource_channel, leadgen_date, locality, mobile, profession, 20, 35, batch_id  
-				  FROM leads_syfd where batch_id=${incomingid};"
+				  FROM leads_syfd where mobile NOT IN (SELECT phone_number from customer) and batch_id=${incomingid};"
 			}
 			
 			transform as "add_to_order" on "${wci-db}" using

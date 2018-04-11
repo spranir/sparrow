@@ -12,10 +12,10 @@ process "candycrm.wp.leadingestion"
 				lead_meta varchar(255),
 				lead_name_contact varchar(255)    		   
 			) COLLATE='utf8_general_ci' ENGINE=InnoDB;
-			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_1' and a.post_date > '2018-03-31 23:59:59';
-			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_21' and a.post_date > '2018-03-31 23:59:59';
-			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_22' and a.post_date > '2018-03-31 23:59:59';
-			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_25' and a.post_date > '2018-03-31 23:59:59';"
+			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_1' ;
+			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_21' ;
+			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_22' ;
+			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and m1.meta_key='_field_25' ;"
 		}			
 	
 		transform as "transform-from-lead" on "${integration-db}" using
@@ -40,14 +40,7 @@ process "candycrm.wp.leadingestion"
 			"SELECT DISTINCT wp_post_id as id, ${process-id} as incomingid FROM ${process-id}_LEAD_SOURCE;"			
 		}
 			
-		callprocess as "generate-lead-tranform"
-		with-target "wordpress.candy.leadingestion2"
-		from-file "wordpress.candy.leadingestion2.spw"
-		using "${integration-db}" 		
-		{
-			"SELECT DISTINCT lead_contact as mobile, ${process-id} as incomingid FROM ${process-id}_LEAD_TRANSFORM;"			
-		}
-		
+	
 		callprocess as "generate-lead-tranform"
 		with-target "wordpress.candy.leadingestion"
 		from-file "wordpress.candy.leadingestion.spw"
