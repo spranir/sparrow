@@ -2,48 +2,45 @@ process "wordpress.candy.leadingestion"
 {
 	try
 	{
+	
 			transform as "add-leads-to-staging" on "${wci-db}" using
-			{"
-				   TRUNCATE leads_syfd;
-				   INSERT INTO leads_syfd (name, email, mobile, alt_mobile, 
+			{		"INSERT INTO leads_syfd (name, email, mobile, alt_mobile, 
 					locality, targeted_city, leadsource_campaign, leadsource_channel, company, leadgen_date, 
 					coa_aprox, profession, budget, leadsource_metadata, intent_metadata, batch_id, updated_date) 					
 					SELECT  a.name,  a.email,  a.mobile,  a.alt_mobile,  a.locality,  a.targeted_city,  
 					a.leadsource_campaign,  a.leadsource_channel,  a.company,  a.leadgen_date,  a.coa_aprox,  
-					a.profession, a.budget, a.leadsource_metadata,  a.intent_metadata, 0 , now() FROM leads_soft a 
-					LEFT OUTER JOIN leads_syfd b ON a.mobile=b.mobile WHERE b.mobile IS NULL GROUP BY a.mobile having count(*)>=1;
-			"}
+					a.profession, a.budget, a.leadsource_metadata,  a.intent_metadata,  ${incomingid}, now() FROM leads_soft a 
+					LEFT OUTER JOIN leads_syfd b ON a.mobile=b.mobile WHERE b.mobile IS NULL and a.batch_id=${incomingid} GROUP BY a.mobile having count(*)>=1;"
+			}
 			
 			transform as "cleanup_leadgendate_on_incoming_leads" on "${wci-db}" using
 			{
-				"update leads_syfd set leadgen_date=concat(substr(leadgen_date, 1, 10),' ', substr(leadgen_date, 12,8));"
+				"update leads_syfd set leadgen_date=concat(substr(leadgen_date, 1, 10),' ', substr(leadgen_date, 12,8)) where batch_id=${incomingid};"
 			}
 			
 			transform as "add_to_customer" on "${wci-db}" using
 			{
-				"SET FOREIGN_KEY_CHECKS=0;
-				TRUNCATE customer;
-				INSERT INTO customer (version, budget, details, email, full_name, lead_campaign, lead_source, leadgen_date, 
+				  "INSERT INTO customer (version, budget, details, email, full_name, lead_campaign, lead_source, leadgen_date, 
 				  location, phone_number, profession, vendor_id, z_id, batch_id) 
 				  SELECT 0, budget, intent_metadata, email, name, leadsource_campaign, leadsource_channel, leadgen_date, locality, mobile, profession, 20, 35, batch_id  
-				  FROM leads_syfd;"
+				  FROM leads_syfd where batch_id=${incomingid};"
 			}
 			
 			transform as "add_to_order" on "${wci-db}" using
 			{
-				"INSERT IGNORE INTO order_info ( version, due_date, due_time, paid, state, customer_id, pickup_location_id, z_state, state_string, z_state_string) 
-					SELECT 0, NOW(), NOW(), 0, 0, id, 1, 10, 'NEW','New' FROM customer;"
+					"INSERT  INTO order_info ( version, due_date, due_time, paid, state, customer_id, pickup_location_id, z_state, reason, status) 
+					SELECT 0, NOW(), NOW(), 0, 0, id, 1, 10, 'NEW','New' FROM customer WHERE batch_id=${incomingid};"
 			}
 			
 			transform as "update_user_mapping" on "${wci-db}" using
 			{
 					"update customer c inner join agent_location a on c.location=a.location_string 
-					set c.user_id=a.user_id ;
+					set c.user_id=a.user_id WHERE batch_id=${incomingid};
 					update customer set user_id=4 where user_id is null;
 					update customer c inner join user_info u on c.user_id=u.id set c.user_name=u.email;
 					update customer c 
 					set c.search_input=concat(c.full_name,'#',c.phone_number,'#',c.location,'#None#',c.user_name) 
-					;"
+					where batch_id=${incomingid};"
 			}
 			
 			gcontact as "update-google-contact"  
@@ -54,15 +51,15 @@ process "wordpress.candy.leadingestion"
 			on-behalf-of "${impersonated-user}" 
 			from-source "${wci-db}" using
 			{
-				"SELECT concat('ZIJ-',full_name) as name, email, location, phone_number as mobile from customer ;"   
+				"SELECT concat('ZIJ-',full_name) as name, email, location, phone_number as mobile from customer where batch_id=${incomingid};"   
 			} on-condition if  "${runcontact}"=="true"
 			
 			transform as "create-calendar-event" on "${wci-db}" using
 			{
 				"INSERT INTO calendar_details (event_interval, event_start, event_end, event_alert_time, event_title, description, event_location, batch_id, updated_date)
 				SELECT 0, leadgen_date as event_start, date_add(leadgen_date, interval 1 day) as event_end, time(leadgen_date) as event_alert_time, 
-				concat('First call for ', name,'-',mobile) as event_title, intent_metadata as description, targeted_city as event_location, ${process-id}, NOW() 
-				FROM leads_syfd ;"				
+				concat('First call for ', name,'-',mobile) as event_title, intent_metadata as description, targeted_city as event_location, ${incomingid}, NOW() 
+				FROM leads_syfd where batch_id=${incomingid};"				
 			}on-condition if  "${runcalendar}"=="true"
 			
 			gcalendar as "update-google-calendar"  
@@ -73,13 +70,12 @@ process "wordpress.candy.leadingestion"
 			on-behalf-of "${impersonated-user}" 
 			from-source "${wci-db}" using
 			{
-				"select '${calendarid}' as event_calendar_id, event_interval, event_start, event_end, event_alert_time, event_title, description, event_location from calendar_details ;"   
+				"select '${calendarid}' as event_calendar_id, event_interval, event_start, event_end, event_alert_time, event_title, description, event_location from calendar_details where batch_id=${incomingid};"   
 			} on-condition if  "${runcalendar}"=="true"
 			
 	}
 	catch
 	{
-		
 			
 	}
 	finally

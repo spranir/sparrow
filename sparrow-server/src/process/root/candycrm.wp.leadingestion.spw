@@ -13,7 +13,9 @@ process "candycrm.wp.leadingestion"
 				lead_name_contact varchar(255)    		   
 			) COLLATE='utf8_general_ci' ENGINE=InnoDB;
 			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and meta_key='_field_1';
-			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and meta_key='_field_21';"
+			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and meta_key='_field_21';
+			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and meta_key='_field_22';
+			INSERT INTO ${process-id}_LEAD_SOURCE SELECT a.id, a.post_date, m1.meta_key, m1.meta_value as user_name FROM ${wordpress-schema}.wp_posts a INNER JOIN ${wordpress-schema}.wp_postmeta m1 on m1.post_id=a.id where a.post_type='nf_sub' and meta_key='_field_25';"
 		}			
 	
 		transform as "transform-from-lead" on "${integration-db}" using
@@ -22,7 +24,9 @@ process "candycrm.wp.leadingestion"
 			CREATE TABLE ${process-id}_LEAD_TRANSFORM (
 			   wp_post_id int,
       		   lead_name varchar(250),
-      		   lead_contact varchar(255),      		   
+      		   lead_contact varchar(255),
+      		   lead_location varchar(255),
+      		   lead_active varchar(255),      		   
       		   created_date varchar(100)      		   
 			) COLLATE='utf8_general_ci' ENGINE=InnoDB;"
 			
@@ -34,18 +38,23 @@ process "candycrm.wp.leadingestion"
 		using "${integration-db}" for-every 		
 		{
 			"SELECT DISTINCT wp_post_id as id, ${process-id} as incomingid FROM ${process-id}_LEAD_SOURCE;"			
-		}	
+		}
+			
+		callprocess as "generate-lead-tranform"
+		with-target "wordpress.candy.leadingestion2"
+		from-file "wordpress.candy.leadingestion2.spw"
+		using "${integration-db}" 		
+		{
+			"SELECT DISTINCT lead_contact as mobile, ${process-id} as incomingid FROM ${process-id}_LEAD_TRANSFORM;"			
+		}
 		
-		
-		transform as "cleanup_underscore_on_incoming_leads" on "${integration-db}" using
-			{
-				"TRUNCATE ${wci-schema}.leads_soft;
-				insert into ${wci-schema}.leads_soft (name, email, mobile, alt_mobile, locality, targeted_city, leadsource_campaign, 
-				leadsource_channel, company, leadgen_date, coa_aprox, profession, budget, leadsource_metadata, intent_metadata, 
-				batch_id, updated_date) 
-				select lead_name, '',lead_contact, '', '', '', '', '', '', created_date, 0, '', 0, '', '', 0, created_date from LEAD_TRANSFORM;"
-			}
-	
+		callprocess as "generate-lead-tranform"
+		with-target "wordpress.candy.leadingestion"
+		from-file "wordpress.candy.leadingestion.spw"
+		using "${integration-db}" 		
+		{
+			"SELECT DISTINCT ${process-id} as incomingid FROM ${process-id}_LEAD_TRANSFORM;"			
+		}
 
 	catch
 	{
