@@ -104,6 +104,12 @@ too keen on fixing another stupid ops problem for now
 I will just do 
 mvn clean compile install -Dmaven.test.skip=true
 
+mvn install:install-file -Dfile=/mnt/f/Workspace/bonsai-stencil/clicksend-java-sdk/target/ClickSend-3.1.0.jar -DgroupId=ClickSend     -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=/home/sid/Workspace/sparrow/sparrow-serverClickSend-3.1.0.jar -DgroupId=ClickSend -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar
+
+wget -O "start.fb.log" http://localhost:9377/process/bonsai.leadingestion.process/1/start
+
 On the fatjar item, I have decided to use alchemi option
 http://davidb.github.io/scala-maven-plugin
 
@@ -911,12 +917,6 @@ http://ubuntuhandbook.org/index.php/2015/12/install-wine-1-8-stable-new-ppa/
 
 
 gcloud compute --project "bonsai-crm" ssh --zone "asia-southeast1-a" "bonsai-crm-instance-1"
-
-
-mvn install:install-file -Dfile=/mnt/f/Workspace/bonsai-stencil/clicksend-java-sdk/target/ClickSend-3.1.0.jar -DgroupId=ClickSend     -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar
-
-wget -O "start.fb.log" http://localhost:9377/process/bonsai.leadingestion.process/1/start
-
 
 
 Install sequence for connect engine
