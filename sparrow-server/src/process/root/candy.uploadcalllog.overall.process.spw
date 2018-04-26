@@ -1,19 +1,8 @@
-process "candy.uploadcalllog.process.spw"
+process "candy.uploadcalllog.overall.process.spw"
 {
         try
         {
-                  doozle as "doozle-collection" in-table "${process-id}_calllog" on "${parkdb}" using
-                {
-                        "CREATE TABLE ${process-id}_call_log(
-                         agent char(128) ,
-                         callTimeStamp bigint, 
-                         callDuration char(128) ,
-                         callNumber char(128),
-                         callStartDate char(128),
-                         customerName char(128),                          
-                         callType char(128)
-                         )engine=CONNECT table_type=JSON File_name='${process-id}_calllog.json' option_list='object=callLogList';"
-                }
+  
                 
                 transform as "curate-lead-from-source" on "${parkdb}" using
 				{
@@ -31,7 +20,7 @@ process "candy.uploadcalllog.process.spw"
 						INSERT INTO ${process-id}_HISTORY_ITEM(order_info_id,customer_id,phone_number,message,batch_id)
 						select c.id as order_id,  c.customer_id, b.phone_number, 
 						concat('D - ', round(a.call_duration/60),'-mins', ' : Mob - ', a.call_number, ' : Type - ', a.call_type, ' : Name - ', a.customer_name) as message,  ${process-id}
-						from ${process-id}_call_log a
+						from ${wci-schema}.call_log a
 						inner join ${wci-schema}.customer b on a.call_number = b.phone_number 
 						inner join ${wci-schema}.order_info c on c.customer_id = b.id
 						order by c.customer_id ; "
@@ -59,14 +48,7 @@ process "candy.uploadcalllog.process.spw"
 				{
 					"SELECT id as history_id, order_info_id as order_info_id,  ${process-id} as incomingid FROM history_item where batch_id = ${process-id};"			
 				}
-				
-				transform as "create-calendar-event" on "${parkdb}" using
-				{
-					"insert into ${wci-schema}.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_type, customer_name) 
-					  select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp,a.callStartDate, date_add(a.callStartDate, interval a.callDuration second), interval a.callDuration second), 
-					  a.callType, c.full_name from ${process-id}_call_log a inner join ${wci-schema}.customer c on a.callNumber=c.phone_number 
-					  left outer join ${wci-schema}.call_log x on a.callTimeStamp=x.call_time_stamp where x.call_time_stamp is null;"
-				}						     	
+												     	
 
 	 }
      catch
@@ -75,10 +57,6 @@ process "candy.uploadcalllog.process.spw"
      }
     finally
     {
-   				transform as "drop-temp-call-log" on "${parkdb}" using
-				{
-					"drop table ${process-id}_call_log;"
-				}
     			
     }
 }
