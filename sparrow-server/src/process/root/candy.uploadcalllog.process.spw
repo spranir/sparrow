@@ -30,25 +30,25 @@ process "candy.uploadcalllog.process.spw"
 						
 						INSERT INTO ${process-id}_HISTORY_ITEM(order_info_id,customer_id,phone_number,message,batch_id)
 						select c.id as order_id,  c.customer_id, b.phone_number, 
-						concat('D - ', round(a.call_duration/60),'-mins', ' : Mob - ', a.call_number, ' : Type - ', a.call_type, ' : Name - ', a.customer_name) as message,  ${process-id}
+						concat('D - ', round(a.callDuration/60),'-mins', ' : Mob - ', a.callNumber, ' : Type - ', a.callType, ' : Name - ', a.customerName) as message,  ${process-id}
 						from ${process-id}_call_log a
-						inner join ${wci-schema}.customer b on a.call_number = b.phone_number 
+						inner join ${wci-schema}.customer b on a.callNumber = b.phone_number 
 						inner join ${wci-schema}.order_info c on c.customer_id = b.id
 						order by c.customer_id ; "
-				}	
+				} on-condition if  "${runcalllog}"=="true"	
 				
 				transform as "insert-into-history_item" on "${wci-db}" using
 				{"
 					insert into history_item (version, message, new_state, timestamp, created_by_id, reason_code, order_info_id, phone_number, batch_id) 
 					 select 0, message, 'NEW', now(), 2, 'NEW', order_info_id, phone_number, ${process-id} from ${park-schema}.${process-id}_HISTORY_ITEM order by customer_id;"
-				}
+				} on-condition if  "${runcalllog}"=="true"
 				
-				transform as "insert-into-counter" on "${parkdb}" using
+				transform as "insert-into-counter" on "${wci-db}" using
 				{"
-					insert into counter (order_info_id, id, last_modified_date) select order_info_id, NULL, now() from ${process-id}_HISTORY_ITEM 
+					insert into counter (order_info_id, id, last_modified_date) select order_info_id, NULL, now() from ${park-schema}.${process-id}_HISTORY_ITEM 
 					where order_info_id NOT IN (SELECT order_info_id from counter) group by order_info_id;
 					 
-				"}	
+				"}	on-condition if  "${runcalllog}"=="true"
 				
 					
 				callprocess as "update-order-info-history"
@@ -58,15 +58,15 @@ process "candy.uploadcalllog.process.spw"
 				
 				{
 					"SELECT id as history_id, order_info_id as order_info_id,  ${process-id} as incomingid FROM history_item where batch_id = ${process-id};"			
-				}
+				} on-condition if  "${runcalllog}"=="true"
 				
 				transform as "create-calendar-event" on "${parkdb}" using
 				{
 					"insert into ${wci-schema}.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_type, customer_name) 
-					  select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp,a.callStartDate, date_add(a.callStartDate, interval a.callDuration second), interval a.callDuration second), 
+					  select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp,a.callStartDate, date_add(a.callStartDate, interval a.callDuration second), 
 					  a.callType, c.full_name from ${process-id}_call_log a inner join ${wci-schema}.customer c on a.callNumber=c.phone_number 
 					  left outer join ${wci-schema}.call_log x on a.callTimeStamp=x.call_time_stamp where x.call_time_stamp is null;"
-				}						     	
+				}	on-condition if  "${runcalllog}"=="true" 					     	
 
 	 }
      catch
@@ -75,11 +75,7 @@ process "candy.uploadcalllog.process.spw"
      }
     finally
     {
-   				transform as "drop-temp-call-log" on "${parkdb}" using
-				{
-					"drop table ${process-id}_call_log;"
-				}
-    			
+
     }
 }
 

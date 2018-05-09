@@ -32,9 +32,9 @@ process "candy.uploadcalllog.overall.process.spw"
 					 select 0, message, 'NEW', now(), 2, 'NEW', order_info_id, phone_number, ${process-id} from ${park-schema}.${process-id}_HISTORY_ITEM order by customer_id;"
 				}
 				
-				transform as "insert-into-counter" on "${parkdb}" using
+				transform as "insert-into-counter" on "${wci-db}" using
 				{"
-					insert into counter (order_info_id, id, last_modified_date) select order_info_id, NULL, now() from ${process-id}_HISTORY_ITEM 
+					insert into counter (order_info_id, id, last_modified_date) select order_info_id, NULL, now() from ${park-schema}.${process-id}_HISTORY_ITEM 
 					where order_info_id NOT IN (SELECT order_info_id from counter) group by order_info_id;
 					 
 				"}	
