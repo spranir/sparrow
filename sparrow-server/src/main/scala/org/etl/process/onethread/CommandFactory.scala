@@ -17,6 +17,8 @@ object CommandFactory {
       case "fbclead"=>new FBLeadCreateAction
       case "googlecontactput"=>new GContactCreateAction
       case "googlecalput"=>new GoogleCalendarAction
+      case "clicksendsms"=>new SmsActionImpl
+      case "fetch"=>new FetchVariableAction
       
     }
   }

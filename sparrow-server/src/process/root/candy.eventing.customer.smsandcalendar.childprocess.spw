@@ -13,7 +13,7 @@ process "candy.eventing.customer.smsandcalendar.childprocess"
 				UPDATE ${parent-id}_sms_data_customer SET juno_customer_number=${test-mobile-number} WHERE ${test-mobile-number} IS NOT NULL;
 			"} on-condition if  "${runtextcustomer}"=="true"
 			
-			c2sms as "send-text-customer" with-user userid="${csms-userid}" secured-by "${csms-securitykey}" from-source "${sor-db}" using
+			c2sms as "send-text-customer" with-user userid"${csms-userid}" secured-by "${csms-securitykey}" from-source "${sor-db}" using
 			{"
 				SELECT ${csms-countrycode} as country, ${csms-source} as source, juno_customer_number as mobile, text_ as body from ${parent-id}_sms_data_customer;
 			"} on-condition if  "${runtextcustomer}"=="true"
