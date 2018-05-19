@@ -1,0 +1,19 @@
+process "candy.sendsms.customer.process"
+{
+	try
+	{
+			c2sms as "send-text-customer" with-user userid "${csms-userid}" secured-by "${csms-securitykey}" from-source "${cus-db}" using
+			{"
+				SELECT '${csms-countrycode}' as country, '${csms-source}' as source, phone_number as mobile, template as body from ${customertype};
+			"} on-condition if  "${runtextcustomer}"=="true"
+	
+	}
+	catch
+	{
+		
+	}
+	finally
+	{
+					
+	}
+}
