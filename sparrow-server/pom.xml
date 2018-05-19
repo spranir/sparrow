@@ -53,6 +53,11 @@
 			<name>Public online Restlet repository</name>
 			<url>http://maven.restlet.org</url>
 		</repository>
+		
+		<repository>
+    <id>unirest-for-android</id>
+    <url>https://raw.github.com/zeeshanejaz/unirest-android/mvn-repo</url>
+  </repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -68,12 +73,6 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
-
-		<dependency>
-			<groupId>ClickSend</groupId>
-			<artifactId>ClickSend</artifactId>
-			<version>3.1.0</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.google.apis</groupId>
@@ -136,6 +135,66 @@
 			<artifactId>google-api-services-calendar</artifactId>
 			<version>v3-rev87-1.19.0</version>
 		</dependency>
+		
+	  <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.3.6</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpasyncclient</artifactId>
+        <version>4.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpmime</artifactId>
+        <version>4.3.6</version>
+      </dependency>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20140107</version>
+      </dependency>
+		<dependency>
+  			<groupId>commons-io</groupId>
+  			<artifactId>commons-io</artifactId>
+  			<version>2.4</version>
+  			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.clicksend/ClickSend -->
+		<dependency>
+    			<groupId>com.clicksend</groupId>
+    			<artifactId>ClickSend</artifactId>
+    			<version>3.1.1</version>
+		</dependency>
+		
+					<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+			<dependency>
+			    <groupId>com.fasterxml.jackson.core</groupId>
+			    <artifactId>jackson-databind</artifactId>
+			    <version>2.9.5</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+			<dependency>
+			    <groupId>com.fasterxml.jackson.core</groupId>
+			    <artifactId>jackson-core</artifactId>
+			    <version>2.9.5</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+			<dependency>
+			    <groupId>com.fasterxml.jackson.core</groupId>
+			    <artifactId>jackson-annotations</artifactId>
+			    <version>2.9.5</version>
+			</dependency>
+		
+		
+		
+		
+		
 		<dependency>
 			<groupId>com.google.http-client</groupId>
 			<artifactId>google-http-client-jackson2</artifactId>
