@@ -8,7 +8,7 @@ process "bonsai.leadingestion.process"
 			for-campaign "${campaign-id-list}" into
 			"${sor-db}" using
 			{
-					"SELECT name, email, mobile, alt_mobile, locality, targeted_city, leadsource_campaign, leadsource_channel, company, 
+					"SELECT name, email, alt_mobile, mobile, locality, targeted_city, leadsource_campaign, leadsource_channel, company, 
 					leadgen_date, coa_aprox, profession, budget, leadsource_metadata, intent_metadata, batch_id, updated_date"
 			} on-condition if  "${runfbcl}"=="true"
 			
