@@ -28,12 +28,12 @@ import com.google.api.services.calendar.CalendarScopes
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
-class Calllog {
+class SmsCustomerTest {
   val JSON_FACTORY:JsonFactory = JacksonFactory.getDefaultInstance();
   @Test def runProcess()={
     val df = new SimpleDateFormat("dd-MM-YYYY hh:mm:ss");
     val date = df.format(new Date(System.currentTimeMillis()))
-    val instanceName = "candy.uploadcalllog.process#1" 
+    val instanceName = "candy.sendsms.customer.process#2" 
     val runtimeContext = ProcessAST.loadProcessAST(instanceName,"{}")
     try {
       
@@ -48,47 +48,4 @@ class Calllog {
     }
   }
   
-  
-  
-  /**/
-  
- /*@Test def runContactJson()={
-   val httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-   val credential = GoogleCredential.fromStream(new FileInputStream(new File("F:\\google-service-account-keys\\juno-console-10be801e4371.json")))
-    .createScoped(Collections.singleton(PeopleServiceScopes.CONTACTS));
-   
-   
-   val peopleService:PeopleService =
-        new PeopleService.Builder(httpTransport, JSON_FACTORY, credential).setApplicationName("bonsai-crm").build();
-    
-    val person = new Person
-    val phoneList = new java.util.ArrayList[PhoneNumber]
-    val phone = new PhoneNumber
-    phone.setValue("+919884024699")
-    phoneList.add(phone)
-    
-    val nameList =  new java.util.ArrayList[Name]
-    val name = new Name
-    name.setDisplayName("Jana poornavelsamy")
-    nameList.add(name)
-    
-    val emailList = new java.util.ArrayList[EmailAddress]
-    val email = new EmailAddress
-    email.setDisplayName("jpvel@junome.in")
-    email.setValue("jpvel@junome.in")
-    emailList.add(email)
-    
-    person.setPhoneNumbers(phoneList)
-    person.setNames(nameList)
-    person.setEmailAddresses(emailList)
-    val contact = peopleService.people.createContact(person)
-    val output = contact.execute()
-    println(output)
- }*/
-  
-  @Test def relativePath {
-    System.currentTimeMillis()
-    val url = this.getClass.getClassLoader.getResource("auth/Dhuruva-BMS-fa750e3a8102.p12")
-    println(url)
-  }
 }

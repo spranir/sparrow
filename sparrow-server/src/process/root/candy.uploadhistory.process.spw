@@ -35,6 +35,9 @@ process "candy.uploadhistory.process.spw"
 				{"
 					insert into counter (order_info_id, id, last_modified_date) select order_info_id, NULL, now() from ${park-schema}.${incomingid}_HISTORY_ITEM 
 					where order_info_id NOT IN (SELECT order_info_id from counter) group by order_info_id;
+					
+					update counter a set id = (select max(b.id) from 
+					order_info_history b where a.order_info_id = b.order_info_id group by a.order_info_id);
 					 
 				"}	
 				
