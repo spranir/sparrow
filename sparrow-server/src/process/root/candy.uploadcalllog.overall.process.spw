@@ -1,0 +1,63 @@
+process "candy.uploadcalllog.overall.process.spw"
+{
+        try
+        {
+  
+                
+                transform as "curate-lead-from-source" on "${parkdb}" using
+				{
+						"DROP TABLE IF EXISTS ${process-id}_HISTORY_ITEM;
+						CREATE TABLE ${process-id}_HISTORY_ITEM (
+						id int  AUTO_INCREMENT,
+			  			order_info_id int,
+						customer_id int,
+						phone_number varchar(255),
+						message varchar(255),
+						batch_id int,
+						PRIMARY KEY (ID)    		   
+						) COLLATE='utf8_general_ci' ENGINE=InnoDB;
+						
+						INSERT INTO ${process-id}_HISTORY_ITEM(order_info_id,customer_id,phone_number,message,batch_id)
+						select c.id as order_id,  c.customer_id, b.phone_number, 
+						concat('D - ', round(a.call_duration/60),'-mins', ' : Mob - ', a.call_number, ' : Type - ', a.call_type, ' : Name - ', a.customer_name) as message,  ${process-id}
+						from ${wci-schema}.call_log a
+						inner join ${wci-schema}.customer b on a.call_number = b.phone_number 
+						inner join ${wci-schema}.order_info c on c.customer_id = b.id
+						order by c.customer_id ; "
+				}	
+				
+				transform as "insert-into-history_item" on "${wci-db}" using
+				{"
+					insert into history_item (version, message, new_state, timestamp, created_by_id, reason_code, order_info_id, phone_number, batch_id) 
+					 select 0, message, 'NEW', now(), 2, 'NEW', order_info_id, phone_number, ${process-id} from ${park-schema}.${process-id}_HISTORY_ITEM order by customer_id;"
+				}
+				
+				transform as "insert-into-counter" on "${parkdb}" using
+				{"
+					insert into counter (order_info_id, id, last_modified_date) select order_info_id, NULL, now() from ${process-id}_HISTORY_ITEM 
+					where order_info_id NOT IN (SELECT order_info_id from counter) group by order_info_id;
+					 
+				"}	
+				
+					
+				callprocess as "update-order-info-history"
+				with-target "history.item.process"
+				from-file "history.item.process.spw"
+				using "${wci-db}" for-every 		
+				
+				{
+					"SELECT id as history_id, order_info_id as order_info_id,  ${process-id} as incomingid FROM history_item where batch_id = ${process-id};"			
+				}
+												     	
+
+	 }
+     catch
+     {
+     		
+     }
+    finally
+    {
+    			
+    }
+}
+

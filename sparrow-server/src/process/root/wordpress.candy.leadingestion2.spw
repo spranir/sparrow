@@ -1,0 +1,24 @@
+process "wordpress.candy.leadingestion"
+{
+	try
+	{
+	
+			transform as "cleanup_underscore_on_incoming_leads" on "${wci-db}" using
+			{
+				"insert IGNORE into leads_soft (name, email, mobile, alt_mobile, locality, targeted_city, leadsource_campaign, 
+				leadsource_channel, company, leadgen_date, coa_aprox, profession, budget, leadsource_metadata, intent_metadata, 
+				batch_id, updated_date) 
+				select lead_name, '', lead_contact, '', lead_location, '', '', '', '', created_date, 0, '', 0, '', '', ${incomingid}, created_date from ${integration-schema}.LEAD_TRANSFORM
+				AS tmp WHERE NOT EXISTS (
+    			SELECT mobile FROM leads_soft WHERE mobile = ${mobile}) and lead_contact = ${mobile};"
+			}
+	}		
+	catch
+	{
+			
+	}
+	finally
+	{
+			
+	}
+}
