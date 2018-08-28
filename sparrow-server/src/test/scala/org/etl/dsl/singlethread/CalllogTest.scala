@@ -28,12 +28,12 @@ import com.google.api.services.calendar.CalendarScopes
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
-class SmsTest {
+class CalllogTest {
   val JSON_FACTORY:JsonFactory = JacksonFactory.getDefaultInstance();
   @Test def runProcess()={
     val df = new SimpleDateFormat("dd-MM-YYYY hh:mm:ss");
     val date = df.format(new Date(System.currentTimeMillis()))
-    val instanceName = "candy.eventing.customer.process#1" 
+    val instanceName = "candy.uploadcalllog.overall.process#1" 
     val runtimeContext = ProcessAST.loadProcessAST(instanceName,"{}")
     try {
       
@@ -85,5 +85,10 @@ class SmsTest {
     val output = contact.execute()
     println(output)
  }*/
- 
+  
+  @Test def relativePath {
+    System.currentTimeMillis()
+    val url = this.getClass.getClassLoader.getResource("auth/Dhuruva-BMS-fa750e3a8102.p12")
+    println(url)
+  }
 }

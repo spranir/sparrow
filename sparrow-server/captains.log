@@ -104,7 +104,7 @@ too keen on fixing another stupid ops problem for now
 I will just do 
 mvn clean compile install -Dmaven.test.skip=true
 
-mvn install:install-file -Dfile=/mnt/f/Workspace/bonsai-stencil/clicksend-java-sdk/target/ClickSend-3.1.0.jar -DgroupId=ClickSend     -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar
+mvn install:install-file -Dfile=/mnt/e/workspace/sparrow/sparrow-server/ClickSend-3.1.0.jar -DgroupId=ClickSend     -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar
 
 mvn install:install-file -Dfile=/home/sid/Workspace/sparrow/sparrow-serverClickSend-3.1.0.jar -DgroupId=ClickSend -DartifactId=ClickSend -Dversion=3.1.0 -Dpackaging=jar
 

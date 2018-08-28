@@ -14,25 +14,38 @@ process "candy.uploadcalllog.process.spw"
                          callType char(128)
                          )engine=CONNECT table_type=JSON File_name='${process-id}_calllog.json' option_list='object=callLogList';"
                 }
-             	
-             	
-             	transform as "add-to-call-log" on "${parkdb}" using
+                
+                transform as "add-to-calllog" on "${parkdb}" using
 				{
-					"insert into bonsai_crm.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_type, customer_name) 
+					"insert into ${wci-schema}.call_log (version, agent, call_duration, call_number, call_time_stamp, call_start_date, call_end_date, call_type, customer_name) 
 					  select 0, a.agent, a.callDuration, a.callNumber, a.callTimeStamp,a.callStartDate, date_add(a.callStartDate, interval a.callDuration second), 
-					  a.callType, c.full_name from ${process-id}_call_log a inner join bonsai_crm.customer c on a.callNumber=c.phone_number 
-					  left outer join bonsai_crm.call_log x on a.callTimeStamp=x.call_time_stamp where x.call_time_stamp is null;"
-				}
+					  a.callType, c.full_name from ${process-id}_call_log a inner join ${wci-schema}.customer c on a.callNumber=c.phone_number 
+					  left outer join ${wci-schema}.call_log x on a.callTimeStamp=x.call_time_stamp where x.call_time_stamp is null;"
+				}	on-condition if  "${runcalllog}"=="true" 					     	
+                
+					
+				callprocess as "update-order-info-history"
+				with-target "candy.uploadhistory.process"
+				from-file "candy.uploadhistory.process.spw"
+				using "${parkdb}"	
+				
+				{
+					"SELECT distinct ${process-id} as incomingid FROM  ${process-id}_call_log;"			
+				} on-condition if  "${runcalllog}"=="true"
+				
+
+
 	 }
      catch
      {
      		
      }
+
     finally{
     			transform as "drop-temp-call-log" on "${parkdb}" using
 				{
 					"drop table ${process-id}_call_log;"
 				}
-    }
+
 }
 

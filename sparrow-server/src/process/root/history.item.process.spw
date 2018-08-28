@@ -7,12 +7,13 @@ process "history.item.process"
 		transform as "update-order-info-history" on "${wci-db}" using
 			
 		{
-				"INSERT INTO order_info_history(order_info_id,history_id,id) select ${order_info_id}, ${history_id}, case when a.id IS NULL then 0 when a.id >= 0 then id+1 else  0 end as id from ${park-schema}.counter a  where a.order_info_id = ${order_info_id}; "			
+				"INSERT INTO order_info_history(order_info_id,history_id,id) select ${order_info_id}, ${history_id}, case when a.id IS NULL then 0 when a.id >= 0 then id+1 else  0 end as id from counter a  where a.order_info_id = ${order_info_id}; "			
 		}	
 		
-		transform as "curate-lead-from-source" on "${parkdb}" using
+		transform as "curate-lead-from-source" on "${wci-db}" using
 		{
-			"update counter set id = case when id IS NULL then 0 when id >=0 then id+1 else 0 end  where order_info_id = ${order_info_id};" 
+			"update counter set id = case when id IS NULL then 0 when id >=0 then id+1 else 0 end  where order_info_id = ${order_info_id};
+			 update counter set last_modified_date = now() where order_info_id = ${order_info_id}" 
 		}	
 		
 

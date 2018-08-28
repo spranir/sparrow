@@ -14,8 +14,8 @@ process "candy.eventing.customer.process"
 	
 			transform as "generate-text-customer" on "${sor-db}" using
 			{"
-				CREATE TABLE ${process-id}_sms_data_customer SELECT a.due_date, b.full_name as juno_customer_name, b.phone_number as juno_customer_number, c.name as juno_vendor_name, c.phone_number as juno_vendor_number, 
-				c.alternate_number as juno_vendor_number_alt, d.sms_template as text_ from
+				CREATE TABLE ${process-id}_sms_data_customer SELECT a.due_date, b.full_name as juno_customer_name, b.phone_number as juno_customer_number, c.name as juno_vendor_name, 
+				c.phone_number as juno_vendor_number, c.alternate_number as juno_vendor_number_alt, d.sms_template as text_ from
 				order_info a inner join customer b on a.customer_id=b.id left outer join vendor c on b.vendor_id=c.id inner join sms_template d on a.state_string=d.status
 				and a.z_state_string=d.z_status where d.template_type='customer' and a.updated_date>date(${last_ran_date.end_date});				
 				
