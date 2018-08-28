@@ -44,7 +44,7 @@ process "bonsai.leadingestion.process"
 			transform as "add_to_order" on "${sor-db}" using
 			{
 				"INSERT INTO order_info ( version, due_date, due_time, paid, state, customer_id, pickup_location_id, z_state, reason, status) 
-					SELECT 0, NOW(), NOW(), 0, 0, id, 1, 10, 'NEW','New' FROM customer WHERE batch_id=${process-id};"
+					SELECT 0, NOW(), NOW(), 0, 0, id, 1, 10, 'FRESH','VRGN' FROM customer WHERE batch_id=${process-id};"
 			}
 			
 			transform as "update_user_mapping" on "${sor-db}" using

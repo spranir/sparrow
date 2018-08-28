@@ -9,6 +9,7 @@ import org.etl.util.ResourceAccess
 import org.etl.util.ParameterisationEngine
 import java.util.concurrent.atomic.AtomicInteger
 import java.sql.SQLException
+import java.util.regex.Pattern
 
 /**
  * //https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving/v2.9
@@ -66,7 +67,9 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
     val fbContext = new APIContext(accessToken, appSecret);
     val fbAccount = new AdAccount(accountId, fbContext)
-
+    val p = Pattern.compile("[^A-Za-z0-9]")
+    
+    
     campaignIdList.foreach {
       campaignId =>
         {
@@ -96,21 +99,25 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   val userGenData = lead.getFieldFieldData
 
                   val intentMeta = new StringBuilder
+                  val myLead:Lead = new Lead
                   if (!userGenData.isEmpty) {
                     val usergeniter = userGenData.listIterator
+                    
                     while (usergeniter.hasNext()) {
                       val userData = usergeniter.next()
                       val name = userData.getFieldName.trim
                       val value = userData.getFieldValues.toArray().mkString(",")
                       if (name.equals("email")) {
-                        stmt.setString(EMAIL, value)
+                        myLead.setEmail(value)
                       } else if (name.equals("full_name")) {
-                        stmt.setString(NAME, value)
+                        val  m = p.matcher(value)
+                        val b = m.find();
+                        if(!b)
+                          myLead.setFullName(value)
                       } else if (name.equals("city")) {
-                        stmt.setString(TARGETED_CITY, value)
-                        stmt.setString(LOCALITY, value)
+                        myLead.setCity(value)
                       } else if (name.equals("company_name")) {
-                        stmt.setString(COMPANY, value)
+                        myLead.setCompany(value)
                       } else if (name.equals("phone_number")) {
                         val prunedValue = {
                           if (value.length > 10)
@@ -118,16 +125,23 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                           else
                             value
                         }
-                        stmt.setString(MOBILE, prunedValue)
-                        stmt.setString(ALT_MOBILE, value)
+                       myLead.setMobile(prunedValue)
                       } else if (name.equals("job_title")) {
-                        stmt.setString(PROFESSION, value)
+                        myLead.setProfession(value)
                       } else {
                         intentMeta.append(name).append("=").append(value).append("\n")
                       }
                       usergeniter.remove
                     }
                   }
+                  stmt.setString(EMAIL, myLead.getEmail)
+                  stmt.setString(NAME, myLead.getFullName)
+                  stmt.setString(TARGETED_CITY, myLead.getCity)
+                  stmt.setString(LOCALITY, myLead.getCity)
+                  stmt.setString(COMPANY, myLead.getCompany)
+                  stmt.setString(MOBILE, myLead.getMobile)
+                  stmt.setString(ALT_MOBILE, myLead.getMobile)
+                  stmt.setString(PROFESSION, myLead.getProfession)
                   stmt.setString(INTENT_METADATA, intentMeta.toString)
                   stmt.setString(LEADSOURCE_METADATA, leadSourceMeta)
                   stmt.setString(LEADSOURCE_CAMPAIGN, lead.getFieldCampaignName)
@@ -138,6 +152,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   val processid = context.getValue("process-id")
                   stmt.setInt(BATCH_ID, Integer.parseInt(processid))
                   try {
+                    
                     stmt.executeUpdate
                     tgtConn.commit
                     leadListIter.remove
