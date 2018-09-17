@@ -68,8 +68,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
     val fbContext = new APIContext(accessToken, appSecret);
     val fbAccount = new AdAccount(accountId, fbContext)
     val p = Pattern.compile("[^A-Za-z0-9]")
-    
-    
+
     campaignIdList.foreach {
       campaignId =>
         {
@@ -84,7 +83,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
               val leadList = ad.getLeads.requestAllFields().execute();
               if (!leadList.isEmpty()) {
-                val leadListIter = leadList.listIterator
+                val leadListIter = leadList.withAutoPaginationIterator(true).iterator
                 val leadCounter: AtomicInteger = new AtomicInteger;
                 while (leadListIter.hasNext()) {
 
@@ -99,21 +98,29 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   val userGenData = lead.getFieldFieldData
 
                   val intentMeta = new StringBuilder
-                  val myLead:Lead = new Lead
+                  val myLead: Lead = new Lead
                   if (!userGenData.isEmpty) {
                     val usergeniter = userGenData.listIterator
-                    
+
                     while (usergeniter.hasNext()) {
                       val userData = usergeniter.next()
                       val name = userData.getFieldName.trim
                       val value = userData.getFieldValues.toArray().mkString(",")
                       if (name.equals("email")) {
                         myLead.setEmail(value)
-                      } else if (name.equals("full_name")) {
-                        val  m = p.matcher(value)
+                      } else if (name.toLowerCase().contains("full_name") || name.toLowerCase().contains("name")) {
+                        val m = p.matcher(value)
                         val b = m.find();
-                        if(!b)
+                        if (!b)
                           myLead.setFullName(value)
+                        else if (name.equalsIgnoreCase("na")&&name.toLowerCase().contains("name")) {
+                          myLead.setFullName(value)
+                        }
+                        else if (name.toLowerCase().contains("name") && !name.equalsIgnoreCase("full_name"))
+                        {
+                          myLead.setFullName(value+"/"+myLead.getFullName)
+                        }
+
                       } else if (name.equals("city")) {
                         myLead.setCity(value)
                       } else if (name.equals("company_name")) {
@@ -125,7 +132,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                           else
                             value
                         }
-                       myLead.setMobile(prunedValue)
+                        myLead.setMobile(prunedValue)
                       } else if (name.equals("job_title")) {
                         myLead.setProfession(value)
                       } else {
@@ -152,10 +159,10 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   val processid = context.getValue("process-id")
                   stmt.setInt(BATCH_ID, Integer.parseInt(processid))
                   try {
-                    
+
                     stmt.executeUpdate
                     tgtConn.commit
-                    leadListIter.remove
+                    //leadListIter.remove
                   } catch {
                     case ex: SQLException => {
                       logger.error(" SQL Error inserting data for {} with for campaign {}", leadCounter.incrementAndGet(), campaignId, ex)
@@ -169,7 +176,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
             } //adListIter.hasNext()
           } //!adList.isEmpty()
         } //campaign closure
-    }//campaign iteration
+    } //campaign iteration
     try {}
     finally {
       stmt.close
