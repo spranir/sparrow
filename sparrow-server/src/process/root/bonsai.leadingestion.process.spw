@@ -50,11 +50,11 @@ process "bonsai.leadingestion.process"
 			transform as "update_user_mapping" on "${sor-db}" using
 			{
 					"update customer c inner join agent_location a on c.location=a.location_string 
-					set c.user_id=6 WHERE batch_id=${process-id};
-					update customer set user_id=6 where user_id is null;
+					set c.user_id=${owner_user_id} WHERE batch_id=${process-id};
+					update customer set user_id=${owner_user_id} where user_id is null;
 					update customer c inner join user_info u on c.user_id=u.id set c.user_name=u.email;
 					update customer c 
-					set c.search_input=concat(c.full_name,'#',c.phone_number,'#',c.location,'#None#',c.user_name) 
+					set c.search_input=concat(c.full_name,'#',c.phone_number,'#',c.location,'#None#',c.user_name,'#',lead_campaign) 
 					where batch_id=${process-id};"
 			}
 			

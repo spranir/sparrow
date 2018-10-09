@@ -10,6 +10,10 @@ import org.etl.util.ParameterisationEngine
 import java.util.concurrent.atomic.AtomicInteger
 import java.sql.SQLException
 import java.util.regex.Pattern
+import com.facebook.ads.sdk.Ad
+import java.util.HashMap
+import java.time.LocalDateTime
+import java.time.ZoneOffset
 
 /**
  * //https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving/v2.9
@@ -67,9 +71,8 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
     val fbContext = new APIContext(accessToken, appSecret);
     val fbAccount = new AdAccount(accountId, fbContext)
-    val p = Pattern.compile("[^A-Za-z0-9]")
-    
-    
+    val pattern = Pattern.compile("[^A-Za-z0-9]")
+
     campaignIdList.foreach {
       campaignId =>
         {
@@ -84,7 +87,8 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
               val leadList = ad.getLeads.requestAllFields().execute();
               if (!leadList.isEmpty()) {
-                val leadListIter = leadList.listIterator
+                val leadListIter = leadList.withAutoPaginationIterator(true).iterator()
+                logger.info("Total leads available from this campaign {} is {}", campaignId, leadList.size())
                 val leadCounter: AtomicInteger = new AtomicInteger;
                 while (leadListIter.hasNext()) {
 
@@ -99,10 +103,10 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   val userGenData = lead.getFieldFieldData
 
                   val intentMeta = new StringBuilder
-                  val myLead:Lead = new Lead
+                  val myLead: Lead = new Lead
                   if (!userGenData.isEmpty) {
                     val usergeniter = userGenData.listIterator
-                    
+
                     while (usergeniter.hasNext()) {
                       val userData = usergeniter.next()
                       val name = userData.getFieldName.trim
@@ -110,10 +114,12 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                       if (name.equals("email")) {
                         myLead.setEmail(value)
                       } else if (name.equals("full_name")) {
-                        val  m = p.matcher(value)
+                        val m = pattern.matcher(value)
                         val b = m.find();
-                        if(!b)
+                        if (!b)
                           myLead.setFullName(value)
+                       
+                          
                       } else if (name.equals("city")) {
                         myLead.setCity(value)
                       } else if (name.equals("company_name")) {
@@ -125,7 +131,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                           else
                             value
                         }
-                       myLead.setMobile(prunedValue)
+                        myLead.setMobile(prunedValue)
                       } else if (name.equals("job_title")) {
                         myLead.setProfession(value)
                       } else {
@@ -152,7 +158,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   val processid = context.getValue("process-id")
                   stmt.setInt(BATCH_ID, Integer.parseInt(processid))
                   try {
-                    
+
                     stmt.executeUpdate
                     tgtConn.commit
                     leadListIter.remove
@@ -169,7 +175,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
             } //adListIter.hasNext()
           } //!adList.isEmpty()
         } //campaign closure
-    }//campaign iteration
+    } //campaign iteration
     try {}
     finally {
       stmt.close
