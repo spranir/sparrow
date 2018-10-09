@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -53,11 +54,11 @@
 			<name>Public online Restlet repository</name>
 			<url>http://maven.restlet.org</url>
 		</repository>
-		
+
 		<repository>
-    <id>unirest-for-android</id>
-    <url>https://raw.github.com/zeeshanejaz/unirest-android/mvn-repo</url>
-  </repository>
+			<id>unirest-for-android</id>
+			<url>https://raw.github.com/zeeshanejaz/unirest-android/mvn-repo</url>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -80,11 +81,18 @@
 			<version>v1-rev224-1.23.0</version>
 		</dependency>
 
-		<dependency>                                                                                                                                           
-                        <groupId>com.facebook.business.sdk</groupId>                                                                     
-                        <artifactId>facebook-java-business-sdk</artifactId>                                                                      
-                        <version>3.1.0</version>                                                                                                                       
-                </dependency>
+		<dependency>
+			<groupId>com.facebook.business.sdk</groupId>
+			<artifactId>facebook-java-business-sdk</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.11.0</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.restlet.jee/org.restlet.ext.json -->
 		<dependency>
 			<groupId>org.restlet.jee</groupId>
@@ -133,66 +141,66 @@
 			<artifactId>google-api-services-calendar</artifactId>
 			<version>v3-rev87-1.19.0</version>
 		</dependency>
-		
-	  <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpclient</artifactId>
-        <version>4.3.6</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpasyncclient</artifactId>
-        <version>4.0.2</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpmime</artifactId>
-        <version>4.3.6</version>
-      </dependency>
-      <dependency>
-        <groupId>org.json</groupId>
-        <artifactId>json</artifactId>
-        <version>20140107</version>
-      </dependency>
+
 		<dependency>
-  			<groupId>commons-io</groupId>
-  			<artifactId>commons-io</artifactId>
-  			<version>2.4</version>
-  			<scope>test</scope>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.6</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpasyncclient</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20140107</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.clicksend/ClickSend -->
 		<dependency>
-    			<groupId>com.clicksend</groupId>
-    			<artifactId>ClickSend</artifactId>
-    			<version>3.1.1</version>
+			<groupId>com.clicksend</groupId>
+			<artifactId>ClickSend</artifactId>
+			<version>3.1.1</version>
 		</dependency>
-		
-					<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-			<dependency>
-			    <groupId>com.fasterxml.jackson.core</groupId>
-			    <artifactId>jackson-databind</artifactId>
-			    <version>2.9.5</version>
-			</dependency>
-			
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-			<dependency>
-			    <groupId>com.fasterxml.jackson.core</groupId>
-			    <artifactId>jackson-core</artifactId>
-			    <version>2.9.5</version>
-			</dependency>
-			
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-			<dependency>
-			    <groupId>com.fasterxml.jackson.core</groupId>
-			    <artifactId>jackson-annotations</artifactId>
-			    <version>2.9.5</version>
-			</dependency>
-		
-		
-		
-		
-		
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.5</version>
+		</dependency>
+
+
+
+
+
 		<dependency>
 			<groupId>com.google.http-client</groupId>
 			<artifactId>google-http-client-jackson2</artifactId>

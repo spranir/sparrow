@@ -71,7 +71,9 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
     val fbContext = new APIContext(accessToken, appSecret);
     val fbAccount = new AdAccount(accountId, fbContext)
+
     val pattern = Pattern.compile("[^A-Za-z0-9]")
+
 
     campaignIdList.foreach {
       campaignId =>
@@ -87,6 +89,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
               val leadList = ad.getLeads.requestAllFields().execute();
               if (!leadList.isEmpty()) {
+
                 val leadListIter = leadList.withAutoPaginationIterator(true).iterator()
                 logger.info("Total leads available from this campaign {} is {}", campaignId, leadList.size())
                 val leadCounter: AtomicInteger = new AtomicInteger;
@@ -118,9 +121,20 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                         val b = m.find();
                         if (!b)
                           myLead.setFullName(value)
-                       
-                          
-                      } else if (name.equals("city")) {
+                      } else if (name.toLowerCase().contains("full_name") || name.toLowerCase().contains("name")) {
+                        val m = pattern.matcher(value)
+                        val b = m.find();
+                        if (!b)
+                          myLead.setFullName(value)
+                        else if (name.equalsIgnoreCase("na")&&name.toLowerCase().contains("name")) {
+                          myLead.setFullName(value)
+                        }
+                      }
+                        else if (name.toLowerCase().contains("name") && !name.equalsIgnoreCase("full_name"))
+                        {
+                          myLead.setFullName(value+"/"+myLead.getFullName)
+                        }
+                        else if (name.equals("city")) {
                         myLead.setCity(value)
                       } else if (name.equals("company_name")) {
                         myLead.setCompany(value)
@@ -161,7 +175,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
                     stmt.executeUpdate
                     tgtConn.commit
-                    leadListIter.remove
+                    //leadListIter.remove
                   } catch {
                     case ex: SQLException => {
                       logger.error(" SQL Error inserting data for {} with for campaign {}", leadCounter.incrementAndGet(), campaignId, ex)
