@@ -91,7 +91,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
               if (!leadList.isEmpty()) {
 
                 val leadListIter = leadList.withAutoPaginationIterator(true).iterator()
-                logger.info("Total leads available from this campaign {} is {}", campaignId, leadList.size())
+                //logger.info("Total leads available from this campaign {} is {}", campaignId, leadList.size())
                 val leadCounter: AtomicInteger = new AtomicInteger;
                 while (leadListIter.hasNext()) {
 
