@@ -1,4 +1,5 @@
 package in.chimera.httpclient;
+import org.etl.httpclient.SpoorsRestClient;
 import org.junit.Test;
 
 public class ChimeraRestClientTest {
@@ -11,7 +12,7 @@ public class ChimeraRestClientTest {
 		String tenantId = "default";
 		String path = "/groups/2370?command=saveCollectionSheet";
 		String payload ="{\"bulkRepaymentTransactions\":[{\"transactionAmount\":\"335.00\",\"loanId\":\"27789\"}],\"calendarId\":\"1061\",\"dateFormat\":\"dd MMMM yyyy\",\"clientsAttendance\":[{\"attendanceType\":\"2\",\"clientId\":\"19415\"}],\"locale\":\"en\",\"transactionDate\":\"02 November 2017\",\"actualDisbursementDate\":\"2017-08-06\"}";
-		ChimeraRestClient client = new ChimeraRestClient(baseURL, userName+":"+password+":chimerauth:"+tenantId);
+		HandymanRestClient client = new HandymanRestClient(baseURL, userName+":"+password+":chimerauth:"+tenantId);
 		client.createAuthToken();
 		client.post(path, payload);
 		

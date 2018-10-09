@@ -1,4 +1,4 @@
-package in.chimera.httpclient;
+package org.etl.httpclient;
 
 import java.net.HttpURLConnection;
 import java.security.KeyManagementException;
