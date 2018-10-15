@@ -32,25 +32,9 @@ import com.facebook.ads.sdk.Campaign
 import com.facebook.ads.sdk.LeadgenForm
 import java.util.HashMap
 
-class BonsaiFBLeadCreationTest {
+class BonsaiFileUploadLeadCreationTest {
   val JSON_FACTORY: JsonFactory = JacksonFactory.getDefaultInstance();
-  @Test def runProcess() = {
-    val df = new SimpleDateFormat("dd-MM-YYYY hh:mm:ss");
-    val date = df.format(new Date(System.currentTimeMillis()))
-    val instanceName = "bonsai.leadingestion.process#1"
-    val runtimeContext = ProcessAST.loadProcessAST(instanceName, "{}")
-    try {
-
-      val runtime = ProcessExecutor.execute("org.etl.process.onethread", runtimeContext)
-
-    } catch {
-      case ex: Throwable => {
-        ex.printStackTrace()
-      }
-    } finally {
-
-    }
-  }
+  
 
   @Test def testThroughFileLoad() = {
     val accessToken = "EAAEhaBeKXKcBAJSKgnD45yHW6PM7dvnD4Nt5fWZCpZCcH1JrdII80ZAOBZBo7gki5YktvhMsA0mujbrq3sMNFMZCePNXYI5Okbfvkn4XLCYuXelVnqNpI6Vi5eCtZAyI3YWipxD80OsuHrCkn8LaPXz8KrttJSXPeyvEygi5ZCw8QZDZD"
