@@ -54,7 +54,7 @@ process "bonsai.leadingestion.process"
 					update customer set user_id=${owner_user_id} where user_id is null;
 					update customer c inner join user_info u on c.user_id=u.id set c.user_name=u.email;
 					update customer c 
-					set c.search_input=concat(c.full_name,'#',c.phone_number,'#',c.location,'#None#',c.user_name,'#',lead_campaign) 
+					set c.search_input=concat(c.full_name,'#',c.phone_number,'#',c.location,'#None#',c.user_name,'#',lead_campaign,'#',email,'#',profession,'#',vendor_name) 
 					where batch_id=${process-id};
 					update customer set prospectiveness=0 where prospectiveness is null;
 					update customer set vendor_name='None' where vendor_name is null;
