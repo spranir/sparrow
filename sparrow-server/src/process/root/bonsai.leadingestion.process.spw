@@ -96,8 +96,9 @@ process "bonsai.leadingestion.process"
 			transform as "delete_order_customer" on "${sor-db}" using
 			{"
 				set foreign_key_checks=0;
-				delete from order_info where customer_id in (select id from customer where batch_id=${process-id});
+				delete a from order_info a inner join customer b on a.customer_id=b.id where b.batch_id==${process-id});
 				delete from customer where batch_id=${process-id};
+				delete from leads_syfd where batch_id=${process-id};
 			"}
 			
 			transform as "delete_systemofrecord" on "${sor-db}" using
