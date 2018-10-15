@@ -14,6 +14,7 @@ import com.facebook.ads.sdk.Ad
 import java.util.HashMap
 import java.time.LocalDateTime
 import java.time.ZoneOffset
+import org.etl.config.ConfigurationService
 
 /**
  * //https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving/v2.9
@@ -71,10 +72,7 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
 
     val fbContext = new APIContext(accessToken, appSecret);
     val fbAccount = new AdAccount(accountId, fbContext)
-
-    val pattern = Pattern.compile("[^A-Za-z0-9]")
-
-
+    val nameCleanup = ConfigurationService.getGlobalconfig().get("cleanSpecialChar").getOrElse("false")
     campaignIdList.foreach {
       campaignId =>
         {
@@ -110,33 +108,46 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
                   if (!userGenData.isEmpty) {
                     val usergeniter = userGenData.listIterator
 
-                    while (usergeniter.hasNext()) {
+                    while (usergeniter.hasNext()) 
+                    {
                       val userData = usergeniter.next()
                       val name = userData.getFieldName.trim
                       val value = userData.getFieldValues.toArray().mkString(",")
-                      if (name.equals("email")) {
+                      if (name.equals("email")) 
+                      {
                         myLead.setEmail(value)
-                      } else if (name.equals("full_name")) {
-                        val m = pattern.matcher(value)
-                        val b = m.find();
-                        if (!b)
-                          myLead.setFullName(value)
-                      } else if (name.toLowerCase().contains("full_name") || name.toLowerCase().contains("name")) {
-                        val m = pattern.matcher(value)
-                        val b = m.find();
-                        if (!b)
-                          myLead.setFullName(value)
-                        else if (name.equalsIgnoreCase("na")&&name.toLowerCase().contains("name")) {
-                          myLead.setFullName(value)
-                        }
+                      } else if (name.equals("full_name")) 
+                      {
+                          val leadName = {
+                            if(nameCleanup.equalsIgnoreCase("true"))
+                              cleanTextContent(value)
+                            else
+                              value
+                          }
+                          
+                          val existingVal = myLead.getFullName
+                          if(existingVal!=null)
+                            myLead.setFullName(existingVal+"/"+value)
+                          else
+                            myLead.setFullName(leadName)
+                      } else if (name.toLowerCase().contains("name")) 
+                      {
+                          val leadName = {
+                            if(nameCleanup.equalsIgnoreCase("true"))
+                              cleanTextContent(value)
+                            else
+                              value
+                          }
+                          val existingVal = myLead.getFullName
+                          if(existingVal!=null)
+                            myLead.setFullName(existingVal+"/"+value)        
+                          else
+                            myLead.setFullName(leadName)
                       }
-                        else if (name.toLowerCase().contains("name") && !name.equalsIgnoreCase("full_name"))
-                        {
-                          myLead.setFullName(value+"/"+myLead.getFullName)
-                        }
-                        else if (name.equals("city")) {
+                      else if (name.equals("city")) {
                         myLead.setCity(value)
-                      } else if (name.equals("company_name")) {
+                      } else if (name.equals("company_name")) 
+                      {
                         myLead.setCompany(value)
                       } else if (name.equals("phone_number")) {
                         val prunedValue = {
@@ -204,6 +215,19 @@ class FBLeadCreateAction extends org.etl.command.Action with LazyLogging {
     val expression = fb.getCondition
     ParameterisationEngine.doYieldtoTrue(expression)
   }
+  
+  //https://howtodoinjava.com/regex/java-clean-ascii-text-non-printable-chars/
+   def  cleanTextContent(text:String):String=
+    {
+       var output=text;
+      // strips off all non-ASCII characters
+      output = output.replaceAll("[^\\x00-\\x7F]", ""); 
+        // erases all the ASCII control characters
+      output = output.replaceAll("[\\p{Cntrl}&&[^\r\n\t]]", "");       
+      // removes non-printable characters from Unicode
+      output = output.replaceAll("\\p{C}", ""); 
+      return output.trim();
+    }
 
   //email	full_name	phone_number	city	company_name	job_title
 
