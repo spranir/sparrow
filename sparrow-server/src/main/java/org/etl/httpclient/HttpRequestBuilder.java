@@ -1,10 +1,10 @@
-package in.chimera.httpclient;
+package org.etl.httpclient;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import in.chimera.httpclient.SimpleHttpRequest.Method;
+import org.etl.httpclient.SimpleHttpRequest.Method;
 
 public class HttpRequestBuilder
 {

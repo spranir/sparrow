@@ -1,4 +1,4 @@
-package in.chimera.httpclient;
+package org.etl.httpclient;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.util.Date;
 
-import in.chimera.httpclient.SimpleHttpRequest.Method;
+import org.etl.httpclient.SimpleHttpRequest.Method;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 

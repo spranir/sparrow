@@ -1,4 +1,4 @@
-package in.chimera.httpclient;
+package org.etl.httpclient;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

@@ -1,4 +1,4 @@
-package in.chimera.httpclient;
+package org.etl.httpclient;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,12 +10,11 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
 
 import org.apache.commons.codec.binary.Base64;
+import org.etl.httpclient.SimpleHttpRequest.Method;
 
 import com.google.gson.Gson;
 
-import in.chimera.httpclient.SimpleHttpRequest.Method;
-
-public class ChimeraRestClient implements RestClient {
+public class HandymanRestClient implements RestClient {
 
 	private static final String MIFOS_ENDPOINT = "mifos.endpoint";
 
@@ -47,7 +46,7 @@ public class ChimeraRestClient implements RestClient {
 		}
 	}
 
-	public ChimeraRestClient() {
+	public HandymanRestClient() {
 
 		baseURL = System.getProperty(MIFOS_ENDPOINT);
 		userName = System.getProperty("mifos.user.id");
@@ -58,7 +57,7 @@ public class ChimeraRestClient implements RestClient {
 	
 	
 
-	public ChimeraRestClient(String baseURL, String authInfo) {
+	public HandymanRestClient(String baseURL, String authInfo) {
 		super();
 		String[] authInfoArr = authInfo.split(":");
 		this.baseURL = baseURL;
@@ -69,7 +68,7 @@ public class ChimeraRestClient implements RestClient {
 	}
 
 	/*
-	 * public ChimeraRestClient(String baseURL, String userName, String password,
+	 * public HandymanRestClient(String baseURL, String userName, String password,
 	 * String tenantId) { super(); this.baseURL = baseURL; this.userName = userName;
 	 * this.password = password; this.tenantId = tenantId; authType = "chimeraauth";
 	 * }

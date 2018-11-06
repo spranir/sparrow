@@ -4,9 +4,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.etl.httpclient.HandymanRestClient;
 import org.junit.Test;
-
-import in.chimera.httpclient.ChimeraRestClient;
 
 
 
@@ -20,7 +19,7 @@ public class ChimeraRestClientTest {
 		String tenantId = "default";
 		String path = "/datatables/CollectionDenomination/312?genericResultSet=true";
 		String payload ="{\"Denomination\":\"2000\",\"NoteValue\":\"5\",\"Value\":\"100000\",\"CollectionDate\":\"26 Sep 2017\",\"CollectionTime\":\"1345\",\"GroupLoanId\":\"0987\",\"locale\":\"en\",\"dateFormat\":\"dd MMMM yyyy\"}";
-		ChimeraRestClient client = new ChimeraRestClient(baseURL, "Mifos:duruva123:chimeraauth:default");
+		HandymanRestClient client = new HandymanRestClient(baseURL, "Mifos:duruva123:chimeraauth:default");
 		client.createAuthToken();
 		client.post(path, payload);
 		
@@ -37,7 +36,7 @@ public class ChimeraRestClientTest {
 		String filePath = this.getClass().getResource("spoors.test.json").getPath();
 		String osAppropriatePath = System.getProperty( "os.name" ).contains( "indow" ) ? filePath.substring(1) : filePath;
 		String payload =new String(Files.readAllBytes(Paths.get(osAppropriatePath)), StandardCharsets.UTF_8);
-		ChimeraRestClient client = new ChimeraRestClient(baseURL, userName+":"+password+":basicauth:default");
+		HandymanRestClient client = new HandymanRestClient(baseURL, userName+":"+password+":basicauth:default");
 		client.createAuthToken();
 		client.post("", payload);
 	}
