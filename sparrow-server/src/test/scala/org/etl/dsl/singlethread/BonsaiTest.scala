@@ -86,9 +86,9 @@ class BonsaiFBLeadCreationTest {
     println(output)
  }*/
   
-  @Test def relativePath {
+  /*@Test def relativePath {
     System.currentTimeMillis()
     val url = this.getClass.getClassLoader.getResource("auth/Dhuruva-BMS-fa750e3a8102.p12")
     println(url)
-  }
+  }*/
 }
