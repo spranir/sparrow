@@ -289,13 +289,13 @@ public interface SparrowPackage extends EPackage
   int ABORT__CONDITION = ACTION__CONDITION;
 
   /**
-   * The feature id for the '<em><b>Message</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABORT__MESSAGE = ACTION_FEATURE_COUNT + 0;
+  int ABORT__VALUE = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Abort</em>' class.
@@ -2014,15 +2014,15 @@ public interface SparrowPackage extends EPackage
   EClass getAbort();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.Abort#getMessage <em>Message</em>}'.
+   * Returns the meta object for the attribute '{@link org.etl.sparrow.Abort#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Message</em>'.
-   * @see org.etl.sparrow.Abort#getMessage()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.etl.sparrow.Abort#getValue()
    * @see #getAbort()
    * @generated
    */
-  EAttribute getAbort_Message();
+  EAttribute getAbort_Value();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.GooglecontactSelectAll <em>Googlecontact Select All</em>}'.
@@ -3394,12 +3394,12 @@ public interface SparrowPackage extends EPackage
     EClass ABORT = eINSTANCE.getAbort();
 
     /**
-     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ABORT__MESSAGE = eINSTANCE.getAbort_Message();
+    EAttribute ABORT__VALUE = eINSTANCE.getAbort_Value();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecontactSelectAllImpl <em>Googlecontact Select All</em>}' class.

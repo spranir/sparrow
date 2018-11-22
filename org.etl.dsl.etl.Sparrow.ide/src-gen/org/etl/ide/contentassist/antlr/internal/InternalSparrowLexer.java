@@ -332,10 +332,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:22:7: ( 'on-condition' )
-            // InternalSparrow.g:22:9: 'on-condition'
+            // InternalSparrow.g:22:7: ( 'as' )
+            // InternalSparrow.g:22:9: 'as'
             {
-            match("on-condition"); 
+            match("as"); 
 
 
             }
@@ -353,10 +353,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:23:7: ( 'gcontact-fetchall' )
-            // InternalSparrow.g:23:9: 'gcontact-fetchall'
+            // InternalSparrow.g:23:7: ( 'on-condition' )
+            // InternalSparrow.g:23:9: 'on-condition'
             {
-            match("gcontact-fetchall"); 
+            match("on-condition"); 
 
 
             }
@@ -374,10 +374,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:24:7: ( 'through-account' )
-            // InternalSparrow.g:24:9: 'through-account'
+            // InternalSparrow.g:24:7: ( 'gcontact-fetchall' )
+            // InternalSparrow.g:24:9: 'gcontact-fetchall'
             {
-            match("through-account"); 
+            match("gcontact-fetchall"); 
 
 
             }
@@ -395,10 +395,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:25:7: ( 'secured-by' )
-            // InternalSparrow.g:25:9: 'secured-by'
+            // InternalSparrow.g:25:7: ( 'through-account' )
+            // InternalSparrow.g:25:9: 'through-account'
             {
-            match("secured-by"); 
+            match("through-account"); 
 
 
             }
@@ -416,10 +416,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:26:7: ( 'with-key' )
-            // InternalSparrow.g:26:9: 'with-key'
+            // InternalSparrow.g:26:7: ( 'secured-by' )
+            // InternalSparrow.g:26:9: 'secured-by'
             {
-            match("with-key"); 
+            match("secured-by"); 
 
 
             }
@@ -437,10 +437,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:27:7: ( 'for-project' )
-            // InternalSparrow.g:27:9: 'for-project'
+            // InternalSparrow.g:27:7: ( 'with-key' )
+            // InternalSparrow.g:27:9: 'with-key'
             {
-            match("for-project"); 
+            match("with-key"); 
 
 
             }
@@ -458,10 +458,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:28:7: ( 'on-behalf-of' )
-            // InternalSparrow.g:28:9: 'on-behalf-of'
+            // InternalSparrow.g:28:7: ( 'for-project' )
+            // InternalSparrow.g:28:9: 'for-project'
             {
-            match("on-behalf-of"); 
+            match("for-project"); 
 
 
             }
@@ -479,10 +479,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:29:7: ( 'to-target' )
-            // InternalSparrow.g:29:9: 'to-target'
+            // InternalSparrow.g:29:7: ( 'on-behalf-of' )
+            // InternalSparrow.g:29:9: 'on-behalf-of'
             {
-            match("to-target"); 
+            match("on-behalf-of"); 
 
 
             }
@@ -500,10 +500,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:30:7: ( 'using' )
-            // InternalSparrow.g:30:9: 'using'
+            // InternalSparrow.g:30:7: ( 'to-target' )
+            // InternalSparrow.g:30:9: 'to-target'
             {
-            match("using"); 
+            match("to-target"); 
 
 
             }
@@ -521,10 +521,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:31:7: ( 'gcontact' )
-            // InternalSparrow.g:31:9: 'gcontact'
+            // InternalSparrow.g:31:7: ( 'using' )
+            // InternalSparrow.g:31:9: 'using'
             {
-            match("gcontact"); 
+            match("using"); 
 
 
             }
@@ -542,10 +542,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:32:7: ( 'as' )
-            // InternalSparrow.g:32:9: 'as'
+            // InternalSparrow.g:32:7: ( 'gcontact' )
+            // InternalSparrow.g:32:9: 'gcontact'
             {
-            match("as"); 
+            match("gcontact"); 
 
 
             }
@@ -1487,10 +1487,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:12142:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalSparrow.g:12142:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSparrow.g:12250:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSparrow.g:12250:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalSparrow.g:12142:11: ( '^' )?
+            // InternalSparrow.g:12250:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1499,7 +1499,7 @@ public class InternalSparrowLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalSparrow.g:12142:11: '^'
+                    // InternalSparrow.g:12250:11: '^'
                     {
                     match('^'); 
 
@@ -1517,7 +1517,7 @@ public class InternalSparrowLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalSparrow.g:12142:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSparrow.g:12250:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1566,10 +1566,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:12144:10: ( ( '0' .. '9' )+ )
-            // InternalSparrow.g:12144:12: ( '0' .. '9' )+
+            // InternalSparrow.g:12252:10: ( ( '0' .. '9' )+ )
+            // InternalSparrow.g:12252:12: ( '0' .. '9' )+
             {
-            // InternalSparrow.g:12144:12: ( '0' .. '9' )+
+            // InternalSparrow.g:12252:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1583,7 +1583,7 @@ public class InternalSparrowLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalSparrow.g:12144:13: '0' .. '9'
+            	    // InternalSparrow.g:12252:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1615,10 +1615,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:12146:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalSparrow.g:12146:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSparrow.g:12254:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalSparrow.g:12254:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalSparrow.g:12146:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSparrow.g:12254:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1636,10 +1636,10 @@ public class InternalSparrowLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSparrow.g:12146:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalSparrow.g:12254:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalSparrow.g:12146:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalSparrow.g:12254:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1655,7 +1655,7 @@ public class InternalSparrowLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalSparrow.g:12146:21: '\\\\' .
+                    	    // InternalSparrow.g:12254:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1663,7 +1663,7 @@ public class InternalSparrowLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSparrow.g:12146:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalSparrow.g:12254:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1688,10 +1688,10 @@ public class InternalSparrowLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalSparrow.g:12146:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalSparrow.g:12254:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalSparrow.g:12146:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalSparrow.g:12254:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1707,7 +1707,7 @@ public class InternalSparrowLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalSparrow.g:12146:54: '\\\\' .
+                    	    // InternalSparrow.g:12254:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1715,7 +1715,7 @@ public class InternalSparrowLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSparrow.g:12146:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalSparrow.g:12254:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1758,12 +1758,12 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:12148:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalSparrow.g:12148:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalSparrow.g:12256:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSparrow.g:12256:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalSparrow.g:12148:24: ( options {greedy=false; } : . )*
+            // InternalSparrow.g:12256:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1788,7 +1788,7 @@ public class InternalSparrowLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalSparrow.g:12148:52: .
+            	    // InternalSparrow.g:12256:52: .
             	    {
             	    matchAny(); 
 
@@ -1818,12 +1818,12 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:12150:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalSparrow.g:12150:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalSparrow.g:12258:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalSparrow.g:12258:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalSparrow.g:12150:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalSparrow.g:12258:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1836,7 +1836,7 @@ public class InternalSparrowLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSparrow.g:12150:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalSparrow.g:12258:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1856,7 +1856,7 @@ public class InternalSparrowLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalSparrow.g:12150:40: ( ( '\\r' )? '\\n' )?
+            // InternalSparrow.g:12258:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1865,9 +1865,9 @@ public class InternalSparrowLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalSparrow.g:12150:41: ( '\\r' )? '\\n'
+                    // InternalSparrow.g:12258:41: ( '\\r' )? '\\n'
                     {
-                    // InternalSparrow.g:12150:41: ( '\\r' )?
+                    // InternalSparrow.g:12258:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1876,7 +1876,7 @@ public class InternalSparrowLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalSparrow.g:12150:41: '\\r'
+                            // InternalSparrow.g:12258:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1908,10 +1908,10 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:12152:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalSparrow.g:12152:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSparrow.g:12260:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalSparrow.g:12260:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalSparrow.g:12152:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSparrow.g:12260:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1965,8 +1965,8 @@ public class InternalSparrowLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSparrow.g:12154:16: ( . )
-            // InternalSparrow.g:12154:18: .
+            // InternalSparrow.g:12262:16: ( . )
+            // InternalSparrow.g:12262:18: .
             {
             matchAny(); 
 
@@ -2512,7 +2512,7 @@ public class InternalSparrowLexer extends Lexer {
     static final String DFA12_maxS =
         "\1\uffff\2\uffff\1\75\1\157\1\162\2\uffff\2\162\1\163\1\156\1\143\1\164\1\162\1\163\1\156\1\162\1\145\1\157\1\172\2\uffff\2\uffff\1\57\5\uffff\1\160\1\164\1\163\1\uffff\1\157\1\162\2\uffff\1\171\1\162\1\172\1\156\1\162\1\157\1\154\1\157\1\172\1\144\1\172\1\157\1\143\1\157\1\165\1\141\1\164\2\151\1\144\2\172\2\157\1\163\1\147\5\uffff\1\164\1\171\1\143\1\154\1\155\1\143\1\164\1\172\1\154\1\156\1\157\2\uffff\1\141\1\55\1\155\1\143\1\162\1\151\1\uffff\1\55\1\143\1\uffff\1\156\1\154\1\165\2\162\1\143\1\150\1\164\1\156\1\141\1\157\1\164\2\uffff\1\160\1\172\1\164\1\172\1\144\1\141\1\144\1\150\1\160\1\163\1\145\1\156\1\172\1\uffff\1\154\1\163\1\165\1\154\1\160\2\172\1\164\1\147\3\uffff\1\164\1\145\1\162\1\145\1\143\1\153\1\172\1\145\1\147\1\164\1\172\2\uffff\1\146\1\154\1\172\1\157\1\uffff\1\143\1\151\1\141\1\172\1\162\1\172\1\163\1\164\1\uffff\1\157\1\146\1\147\1\154\4\uffff\1\163\2\uffff\1\172\1\156\1\141\1\156\1\145\1\55\1\145\1\160\1\165\1\uffff\1\143\1\172\1\145\1\uffff\1\151\1\145\1\uffff\1\172\1\163\1\156\1\164\1\uffff\1\157\1\uffff\1\163\1\172\1\160\1\157\1\150\1\171\4\uffff\1\172\1\143\2\144\1\uffff\1\172\1\165\1\uffff\1\163\1\uffff\1\163\1\uffff\1\55\1\154\1\172\1\uffff\1\166\1\163\1\141\1\143\1\172\1\uffff\1\145\1\165\1\162\1\55\1\172\1\uffff\1\164\1\141\1\55\1\uffff\1\164\2\uffff\1\166\1\165\1\145\1\uffff\3\172\1\145\1\uffff\2\164\1\155\1\165\1\uffff\1\172\1\162\1\uffff\2\172\3\uffff\1\172\3\uffff\1\163\3\172\4\uffff\1\172\3\uffff\1\163\4\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\1\uffff\1\1\1\2\3\uffff\1\6\1\7\15\uffff\1\103\1\104\3\uffff\1\110\1\111\1\1\1\2\1\3\3\uffff\1\103\2\uffff\1\6\1\7\32\uffff\1\104\1\105\1\106\1\107\1\110\13\uffff\1\23\1\57\6\uffff\1\26\2\uffff\1\41\14\uffff\1\72\1\102\15\uffff\1\10\11\uffff\1\44\1\14\1\22\13\uffff\1\36\1\40\4\uffff\1\70\10\uffff\1\53\4\uffff\1\21\1\33\1\61\1\67\1\uffff\1\45\1\31\11\uffff\1\54\3\uffff\1\34\2\uffff\1\42\4\uffff\1\12\1\uffff\1\73\6\uffff\1\27\1\56\1\66\1\13\4\uffff\1\52\2\uffff\1\20\1\uffff\1\65\1\uffff\1\24\3\uffff\1\71\5\uffff\1\51\5\uffff\1\62\3\uffff\1\63\1\uffff\1\43\1\74\3\uffff\1\37\4\uffff\1\5\4\uffff\1\11\2\uffff\1\17\2\uffff\1\46\1\47\1\50\1\uffff\1\100\1\4\1\76\4\uffff\1\16\1\32\1\15\1\25\1\uffff\1\75\1\77\1\35\1\uffff\1\55\1\60\1\101\1\30\1\uffff\1\64";
+        "\1\uffff\1\1\1\2\3\uffff\1\6\1\7\15\uffff\1\103\1\104\3\uffff\1\110\1\111\1\1\1\2\1\3\3\uffff\1\103\2\uffff\1\6\1\7\32\uffff\1\104\1\105\1\106\1\107\1\110\13\uffff\1\24\1\57\6\uffff\1\14\2\uffff\1\41\14\uffff\1\72\1\102\15\uffff\1\10\11\uffff\1\44\1\15\1\23\13\uffff\1\36\1\40\4\uffff\1\70\10\uffff\1\53\4\uffff\1\22\1\33\1\61\1\67\1\uffff\1\45\1\31\11\uffff\1\54\3\uffff\1\34\2\uffff\1\42\4\uffff\1\12\1\uffff\1\73\6\uffff\1\27\1\56\1\66\1\13\4\uffff\1\52\2\uffff\1\21\1\uffff\1\65\1\uffff\1\25\3\uffff\1\71\5\uffff\1\51\5\uffff\1\62\3\uffff\1\63\1\uffff\1\43\1\74\3\uffff\1\37\4\uffff\1\5\4\uffff\1\11\2\uffff\1\20\2\uffff\1\46\1\47\1\50\1\uffff\1\100\1\4\1\76\4\uffff\1\17\1\32\1\16\1\26\1\uffff\1\75\1\77\1\35\1\uffff\1\55\1\60\1\101\1\30\1\uffff\1\64";
     static final String DFA12_specialS =
         "\1\0\26\uffff\1\1\1\2\u0104\uffff}>";
     static final String[] DFA12_transitionS = {

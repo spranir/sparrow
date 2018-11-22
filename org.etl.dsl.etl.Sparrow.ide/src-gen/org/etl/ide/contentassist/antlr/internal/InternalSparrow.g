@@ -1594,9 +1594,9 @@ rule__Abort__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getNameAssignment_1()); }
-	(rule__Abort__NameAssignment_1)
-	{ after(grammarAccess.getAbortAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getAbortAccess().getAsKeyword_1()); }
+	'as'
+	{ after(grammarAccess.getAbortAccess().getAsKeyword_1()); }
 )
 ;
 finally {
@@ -1621,9 +1621,9 @@ rule__Abort__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getMessageAssignment_2()); }
-	(rule__Abort__MessageAssignment_2)
-	{ after(grammarAccess.getAbortAccess().getMessageAssignment_2()); }
+	{ before(grammarAccess.getAbortAccess().getNameAssignment_2()); }
+	(rule__Abort__NameAssignment_2)
+	{ after(grammarAccess.getAbortAccess().getNameAssignment_2()); }
 )
 ;
 finally {
@@ -1648,9 +1648,9 @@ rule__Abort__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getOnConditionKeyword_3()); }
-	'on-condition'
-	{ after(grammarAccess.getAbortAccess().getOnConditionKeyword_3()); }
+	{ before(grammarAccess.getAbortAccess().getLeftCurlyBracketKeyword_3()); }
+	'{'
+	{ after(grammarAccess.getAbortAccess().getLeftCurlyBracketKeyword_3()); }
 )
 ;
 finally {
@@ -1663,6 +1663,7 @@ rule__Abort__Group__4
 	}
 :
 	rule__Abort__Group__4__Impl
+	rule__Abort__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1674,9 +1675,89 @@ rule__Abort__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getConditionAssignment_4()); }
-	(rule__Abort__ConditionAssignment_4)
-	{ after(grammarAccess.getAbortAccess().getConditionAssignment_4()); }
+	{ before(grammarAccess.getAbortAccess().getValueAssignment_4()); }
+	(rule__Abort__ValueAssignment_4)
+	{ after(grammarAccess.getAbortAccess().getValueAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Abort__Group__5__Impl
+	rule__Abort__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAbortAccess().getRightCurlyBracketKeyword_5()); }
+	'}'
+	{ after(grammarAccess.getAbortAccess().getRightCurlyBracketKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Abort__Group__6__Impl
+	rule__Abort__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAbortAccess().getOnConditionKeyword_6()); }
+	'on-condition'
+	{ after(grammarAccess.getAbortAccess().getOnConditionKeyword_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Abort__Group__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAbortAccess().getConditionAssignment_7()); }
+	(rule__Abort__ConditionAssignment_7)
+	{ after(grammarAccess.getAbortAccess().getConditionAssignment_7()); }
 )
 ;
 finally {
@@ -1729,9 +1810,9 @@ rule__GooglecontactSelectAll__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_1()); }
-	(rule__GooglecontactSelectAll__NameAssignment_1)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getAsKeyword_1()); }
+	'as'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getAsKeyword_1()); }
 )
 ;
 finally {
@@ -1756,9 +1837,9 @@ rule__GooglecontactSelectAll__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_2()); }
-	'through-account'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_2()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_2()); }
+	(rule__GooglecontactSelectAll__NameAssignment_2)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_2()); }
 )
 ;
 finally {
@@ -1783,9 +1864,9 @@ rule__GooglecontactSelectAll__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_3()); }
-	(rule__GooglecontactSelectAll__AccountAssignment_3)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_3()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_3()); }
+	'through-account'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_3()); }
 )
 ;
 finally {
@@ -1810,9 +1891,9 @@ rule__GooglecontactSelectAll__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_4()); }
-	'secured-by'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_4()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_4()); }
+	(rule__GooglecontactSelectAll__AccountAssignment_4)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_4()); }
 )
 ;
 finally {
@@ -1837,9 +1918,9 @@ rule__GooglecontactSelectAll__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_5()); }
-	(rule__GooglecontactSelectAll__PrivateKeyAssignment_5)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_5()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_5()); }
+	'secured-by'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_5()); }
 )
 ;
 finally {
@@ -1864,9 +1945,9 @@ rule__GooglecontactSelectAll__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_6()); }
-	'with-key'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_6()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_6()); }
+	(rule__GooglecontactSelectAll__PrivateKeyAssignment_6)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_6()); }
 )
 ;
 finally {
@@ -1891,9 +1972,9 @@ rule__GooglecontactSelectAll__Group__7__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_7()); }
-	(rule__GooglecontactSelectAll__PtwelveFileAssignment_7)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_7()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_7()); }
+	'with-key'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_7()); }
 )
 ;
 finally {
@@ -1918,9 +1999,9 @@ rule__GooglecontactSelectAll__Group__8__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_8()); }
-	'for-project'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_8()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_8()); }
+	(rule__GooglecontactSelectAll__PtwelveFileAssignment_8)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_8()); }
 )
 ;
 finally {
@@ -1945,9 +2026,9 @@ rule__GooglecontactSelectAll__Group__9__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_9()); }
-	(rule__GooglecontactSelectAll__ProjectAssignment_9)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_9()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_9()); }
+	'for-project'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_9()); }
 )
 ;
 finally {
@@ -1972,9 +2053,9 @@ rule__GooglecontactSelectAll__Group__10__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_10()); }
-	'on-behalf-of'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_10()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_10()); }
+	(rule__GooglecontactSelectAll__ProjectAssignment_10)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_10()); }
 )
 ;
 finally {
@@ -1999,9 +2080,9 @@ rule__GooglecontactSelectAll__Group__11__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_11()); }
-	(rule__GooglecontactSelectAll__ImpersonatedUserAssignment_11)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_11()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_11()); }
+	'on-behalf-of'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_11()); }
 )
 ;
 finally {
@@ -2026,9 +2107,9 @@ rule__GooglecontactSelectAll__Group__12__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_12()); }
-	'to-target'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_12()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_12()); }
+	(rule__GooglecontactSelectAll__ImpersonatedUserAssignment_12)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_12()); }
 )
 ;
 finally {
@@ -2053,9 +2134,9 @@ rule__GooglecontactSelectAll__Group__13__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_13()); }
-	(rule__GooglecontactSelectAll__DbSrcAssignment_13)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_13()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_13()); }
+	'to-target'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_13()); }
 )
 ;
 finally {
@@ -2080,9 +2161,9 @@ rule__GooglecontactSelectAll__Group__14__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_14()); }
-	'using'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_14()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_14()); }
+	(rule__GooglecontactSelectAll__DbSrcAssignment_14)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_14()); }
 )
 ;
 finally {
@@ -2107,9 +2188,9 @@ rule__GooglecontactSelectAll__Group__15__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_15()); }
-	'{'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_15()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_15()); }
+	'using'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_15()); }
 )
 ;
 finally {
@@ -2134,9 +2215,9 @@ rule__GooglecontactSelectAll__Group__16__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_16()); }
-	(rule__GooglecontactSelectAll__ValueAssignment_16)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_16()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_16()); }
+	'{'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_16()); }
 )
 ;
 finally {
@@ -2161,9 +2242,9 @@ rule__GooglecontactSelectAll__Group__17__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_17()); }
-	'}'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_17()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_17()); }
+	(rule__GooglecontactSelectAll__ValueAssignment_17)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_17()); }
 )
 ;
 finally {
@@ -2188,9 +2269,9 @@ rule__GooglecontactSelectAll__Group__18__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_18()); }
-	'on-condition'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_18()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_18()); }
+	'}'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_18()); }
 )
 ;
 finally {
@@ -2203,6 +2284,7 @@ rule__GooglecontactSelectAll__Group__19
 	}
 :
 	rule__GooglecontactSelectAll__Group__19__Impl
+	rule__GooglecontactSelectAll__Group__20
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2214,9 +2296,35 @@ rule__GooglecontactSelectAll__Group__19__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_19()); }
-	(rule__GooglecontactSelectAll__ConditionAssignment_19)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_19()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_19()); }
+	'on-condition'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_19()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__Group__20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GooglecontactSelectAll__Group__20__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__Group__20__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_20()); }
+	(rule__GooglecontactSelectAll__ConditionAssignment_20)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_20()); }
 )
 ;
 finally {
@@ -10204,180 +10312,180 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Abort__NameAssignment_1
+rule__Abort__NameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Abort__MessageAssignment_2
+rule__Abort__ValueAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getAbortAccess().getValueSTRINGTerminalRuleCall_4_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getAbortAccess().getValueSTRINGTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Abort__ConditionAssignment_4
+rule__Abort__ConditionAssignment_7
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0()); }
+		{ before(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_7_0()); }
 		ruleExpression
-		{ after(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0()); }
+		{ after(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_7_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__NameAssignment_1
+rule__GooglecontactSelectAll__NameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__AccountAssignment_3
+rule__GooglecontactSelectAll__AccountAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__PrivateKeyAssignment_5
+rule__GooglecontactSelectAll__PrivateKeyAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__PtwelveFileAssignment_7
+rule__GooglecontactSelectAll__PtwelveFileAssignment_8
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__ProjectAssignment_9
+rule__GooglecontactSelectAll__ProjectAssignment_10
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__ImpersonatedUserAssignment_11
+rule__GooglecontactSelectAll__ImpersonatedUserAssignment_12
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__DbSrcAssignment_13
+rule__GooglecontactSelectAll__DbSrcAssignment_14
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__ValueAssignment_16
+rule__GooglecontactSelectAll__ValueAssignment_17
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_17_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_17_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__ConditionAssignment_19
+rule__GooglecontactSelectAll__ConditionAssignment_20
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0()); }
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0()); }
 		ruleExpression
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0()); }
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0()); }
 	)
 ;
 finally {
@@ -11425,9 +11533,9 @@ rule__Fetch__ValueAssignment_7
 	}
 :
 	(
-		{ before(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0()); }
-		ruleSelectStatement
-		{ after(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0()); }
+		{ before(grammarAccess.getFetchAccess().getValueSTRINGTerminalRuleCall_7_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getFetchAccess().getValueSTRINGTerminalRuleCall_7_0()); }
 	)
 ;
 finally {

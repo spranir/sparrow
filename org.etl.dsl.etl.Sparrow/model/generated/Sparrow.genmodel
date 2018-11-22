@@ -29,7 +29,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Action/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Abort">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Abort/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Abort/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//GooglecontactSelectAll">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/account"/>

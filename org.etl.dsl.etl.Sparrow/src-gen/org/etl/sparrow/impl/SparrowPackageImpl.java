@@ -476,7 +476,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAbort_Message()
+  public EAttribute getAbort_Value()
   {
     return (EAttribute)abortEClass.getEStructuralFeatures().get(0);
   }
@@ -1634,7 +1634,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEReference(actionEClass, ACTION__CONDITION);
 
     abortEClass = createEClass(ABORT);
-    createEAttribute(abortEClass, ABORT__MESSAGE);
+    createEAttribute(abortEClass, ABORT__VALUE);
 
     googlecontactSelectAllEClass = createEClass(GOOGLECONTACT_SELECT_ALL);
     createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__ACCOUNT);
@@ -1840,7 +1840,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEReference(getAction_Condition(), this.getExpression(), null, "condition", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abortEClass, Abort.class, "Abort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAbort_Message(), ecorePackage.getEString(), "message", null, 0, 1, Abort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAbort_Value(), ecorePackage.getEString(), "value", null, 0, 1, Abort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(googlecontactSelectAllEClass, GooglecontactSelectAll.class, "GooglecontactSelectAll", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGooglecontactSelectAll_Account(), ecorePackage.getEString(), "account", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

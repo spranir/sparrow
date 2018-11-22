@@ -26,6 +26,8 @@ import com.typesafe.scalalogging.LazyLogging
  */
 class RestAction extends org.etl.command.Action with LazyLogging {
 
+  val detailMap = new java.util.HashMap[String, String]
+  
   def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
     val restAsIs: org.etl.sparrow.Rest = action.asInstanceOf[org.etl.sparrow.Rest]
     val rest: org.etl.sparrow.Rest = CommandProxy.createProxy(restAsIs, classOf[org.etl.sparrow.Rest], context)
@@ -36,7 +38,7 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     val authResource = rest.getAuthtoken
     val id = context.getValue("process-id")
 
-    logger.info("Rest id#{}, name#{}, url#{}, method#{}, autinfo#{}", id, name, method)
+    logger.info("Rest id#{}, name#{}, url#{}, method#{}, autinfo#{}", id, name, method, authResource)
 
     val restDbSrc = rest.getResourcedatafrom
     val restResSql = rest.getUrldata
@@ -51,7 +53,12 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     restDbConn.close
 
     logger.info("Rest id#{}, restdbsrc#{}, resturl#{}, sql#{}", id, restDbSrc, restUrl, restResSql)
-
+    detailMap.put("restDbSrc", restDbSrc)
+    detailMap.put("resturl", restUrl)
+    detailMap.put("restResSql", restResSql)
+    detailMap.put("method", method)
+    detailMap.put("authResource", authResource)
+    
     val headerDbSrc = rest.getHeaderdatafrom
     val headerSql = rest.getHeaderdata
     val headerConn = ResourceAccess.rdbmsConn(headerDbSrc)
@@ -143,11 +150,12 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       val restClient = new HandymanRestClient(url, authResource)
       restClient.createAuthToken
       val output = restClient.post(restUrl, jsonObject)
+      
     }
 
     val ackSql = rest.getAckdata
     val ackTarget = rest.getAckdatato
-
+    
     context
   }
 
@@ -156,7 +164,14 @@ class RestAction extends org.etl.command.Action with LazyLogging {
     val rest: org.etl.sparrow.Rest = CommandProxy.createProxy(restAsIs, classOf[org.etl.sparrow.Rest], context)
 
     val expression = rest.getCondition
-    ParameterisationEngine.doYieldtoTrue(expression)
+    try {
+      val output = ParameterisationEngine.doYieldtoTrue(expression)
+      detailMap.putIfAbsent("condition-output", output.toString())
+      output
+    } finally {
+      detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
+
+    }
   }
 
   def append[T](xs: List[T], ys: List[T]): List[T] =
@@ -164,5 +179,10 @@ class RestAction extends org.etl.command.Action with LazyLogging {
       case List() => ys
       case x :: xs1 => x :: append(xs1, ys)
     }
+  
+  def generateAudit(): java.util.Map[String, String] = {
+    detailMap
+  }
 }
+
 

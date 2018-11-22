@@ -579,11 +579,15 @@ ruleAbort returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAbortAccess().getAbortKeyword_0());
 		}
+		otherlv_1='as'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAbortAccess().getAsKeyword_1());
+		}
 		(
 			(
-				lv_name_1_0=RULE_STRING
+				lv_name_2_0=RULE_STRING
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -592,16 +596,20 @@ ruleAbort returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAbortAccess().getLeftCurlyBracketKeyword_3());
+		}
 		(
 			(
-				lv_message_2_0=RULE_STRING
+				lv_value_4_0=RULE_STRING
 				{
-					newLeafNode(lv_message_2_0, grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_value_4_0, grammarAccess.getAbortAccess().getValueSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -609,22 +617,26 @@ ruleAbort returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"message",
-						lv_message_2_0,
+						"value",
+						lv_value_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3='on-condition'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAbortAccess().getOnConditionKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getAbortAccess().getRightCurlyBracketKeyword_5());
+		}
+		otherlv_6='on-condition'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getAbortAccess().getOnConditionKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_7_0());
 				}
-				lv_condition_4_0=ruleExpression
+				lv_condition_7_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAbortRule());
@@ -632,7 +644,7 @@ ruleAbort returns [EObject current=null]
 					set(
 						$current,
 						"condition",
-						lv_condition_4_0,
+						lv_condition_7_0,
 						"org.etl.Sparrow.Expression");
 					afterParserOrEnumRuleCall();
 				}
@@ -661,11 +673,15 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getGooglecontactSelectAllAccess().getGcontactFetchallKeyword_0());
 		}
+		otherlv_1='as'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGooglecontactSelectAllAccess().getAsKeyword_1());
+		}
 		(
 			(
-				lv_name_1_0=RULE_STRING
+				lv_name_2_0=RULE_STRING
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -674,20 +690,20 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='through-account'
+		otherlv_3='through-account'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_3());
 		}
 		(
 			(
-				lv_account_3_0=RULE_STRING
+				lv_account_4_0=RULE_STRING
 				{
-					newLeafNode(lv_account_3_0, grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0());
+					newLeafNode(lv_account_4_0, grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -696,20 +712,20 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"account",
-						lv_account_3_0,
+						lv_account_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_4='secured-by'
+		otherlv_5='secured-by'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_5());
 		}
 		(
 			(
-				lv_privateKey_5_0=RULE_STRING
+				lv_privateKey_6_0=RULE_STRING
 				{
-					newLeafNode(lv_privateKey_5_0, grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_privateKey_6_0, grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -718,20 +734,20 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"privateKey",
-						lv_privateKey_5_0,
+						lv_privateKey_6_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_6='with-key'
+		otherlv_7='with-key'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_7());
 		}
 		(
 			(
-				lv_ptwelveFile_7_0=RULE_STRING
+				lv_ptwelveFile_8_0=RULE_STRING
 				{
-					newLeafNode(lv_ptwelveFile_7_0, grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0());
+					newLeafNode(lv_ptwelveFile_8_0, grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
@@ -740,20 +756,20 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"ptwelveFile",
-						lv_ptwelveFile_7_0,
+						lv_ptwelveFile_8_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_8='for-project'
+		otherlv_9='for-project'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_9());
 		}
 		(
 			(
-				lv_project_9_0=RULE_STRING
+				lv_project_10_0=RULE_STRING
 				{
-					newLeafNode(lv_project_9_0, grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0());
+					newLeafNode(lv_project_10_0, grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_10_0());
 				}
 				{
 					if ($current==null) {
@@ -762,20 +778,20 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"project",
-						lv_project_9_0,
+						lv_project_10_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_10='on-behalf-of'
+		otherlv_11='on-behalf-of'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_10());
+			newLeafNode(otherlv_11, grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_11());
 		}
 		(
 			(
-				lv_impersonatedUser_11_0=RULE_STRING
+				lv_impersonatedUser_12_0=RULE_STRING
 				{
-					newLeafNode(lv_impersonatedUser_11_0, grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0());
+					newLeafNode(lv_impersonatedUser_12_0, grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0());
 				}
 				{
 					if ($current==null) {
@@ -784,20 +800,20 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"impersonatedUser",
-						lv_impersonatedUser_11_0,
+						lv_impersonatedUser_12_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_12='to-target'
+		otherlv_13='to-target'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_12());
+			newLeafNode(otherlv_13, grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_13());
 		}
 		(
 			(
-				lv_dbSrc_13_0=RULE_STRING
+				lv_dbSrc_14_0=RULE_STRING
 				{
-					newLeafNode(lv_dbSrc_13_0, grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0());
+					newLeafNode(lv_dbSrc_14_0, grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_14_0());
 				}
 				{
 					if ($current==null) {
@@ -806,24 +822,24 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"dbSrc",
-						lv_dbSrc_13_0,
+						lv_dbSrc_14_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_14='using'
+		otherlv_15='using'
 		{
-			newLeafNode(otherlv_14, grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_14());
+			newLeafNode(otherlv_15, grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_15());
 		}
-		otherlv_15='{'
+		otherlv_16='{'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_15());
+			newLeafNode(otherlv_16, grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_16());
 		}
 		(
 			(
-				lv_value_16_0=RULE_STRING
+				lv_value_17_0=RULE_STRING
 				{
-					newLeafNode(lv_value_16_0, grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0());
+					newLeafNode(lv_value_17_0, grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_17_0());
 				}
 				{
 					if ($current==null) {
@@ -832,25 +848,25 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_16_0,
+						lv_value_17_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_17='}'
+		otherlv_18='}'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_17());
+			newLeafNode(otherlv_18, grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_18());
 		}
-		otherlv_18='on-condition'
+		otherlv_19='on-condition'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_18());
+			newLeafNode(otherlv_19, grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_19());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0());
+					newCompositeNode(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0());
 				}
-				lv_condition_19_0=ruleExpression
+				lv_condition_20_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGooglecontactSelectAllRule());
@@ -858,7 +874,7 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 					set(
 						$current,
 						"condition",
-						lv_condition_19_0,
+						lv_condition_20_0,
 						"org.etl.Sparrow.Expression");
 					afterParserOrEnumRuleCall();
 				}
@@ -2727,20 +2743,19 @@ ruleFetch returns [EObject current=null]
 		}
 		(
 			(
+				lv_value_7_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0());
+					newLeafNode(lv_value_7_0, grammarAccess.getFetchAccess().getValueSTRINGTerminalRuleCall_7_0());
 				}
-				lv_value_7_0=ruleSelectStatement
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFetchRule());
+						$current = createModelElement(grammarAccess.getFetchRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"value",
 						lv_value_7_0,
-						"org.etl.Sparrow.SelectStatement");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)

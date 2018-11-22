@@ -57,11 +57,16 @@ Action:
 ;
 
 Abort:
-	'abort' name=STRING message=STRING 'on-condition' condition=Expression
+	'abort' 'as' name=STRING 
+	'{'
+		value=STRING
+	'}' 'on-condition' condition=Expression
 ;
 
+
+
 GooglecontactSelectAll:
-	'gcontact-fetchall' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key' ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'to-target' dbSrc=STRING 'using'
+	'gcontact-fetchall' 'as' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key' ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'to-target' dbSrc=STRING 'using'
 	'{'
 		value=STRING
 	'}' 'on-condition' condition=Expression
@@ -142,7 +147,7 @@ TrelloPUT:
 Fetch:
 	'assign' 'as' name=STRING 'source' source=STRING 'using'
 	'{'
-		value=SelectStatement
+		value=STRING
 	'}' 'on-condition' condition=Expression
 ;
 

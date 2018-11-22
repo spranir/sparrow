@@ -1,5 +1,7 @@
 package org.etl.command
 
+import com.fasterxml.jackson.databind.ObjectMapper
+
 class FinallyContext(val errorContext:ErrorContext) extends Context {
   def getValue(variable: String): String = {
     errorContext.getValue(variable)
@@ -14,4 +16,10 @@ class FinallyContext(val errorContext:ErrorContext) extends Context {
   def addValue(key: String, value: String): Unit = {
     
   }
+  
+    def getJson(): String = {
+    val jsonSerializer = new ObjectMapper
+    jsonSerializer.writeValueAsString(getMe())
+  }
+  
 }

@@ -141,21 +141,21 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Abort returns Abort
 	 *
 	 * Constraint:
-	 *     (name=STRING message=STRING condition=Expression)
+	 *     (name=STRING value=STRING condition=Expression)
 	 */
 	protected void sequence_Abort(ISerializationContext context, Abort semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ABORT__MESSAGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ABORT__MESSAGE));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ABORT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ABORT__VALUE));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0(), semanticObject.getMessage());
-		feeder.accept(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAbortAccess().getValueSTRINGTerminalRuleCall_4_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_7_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -420,7 +420,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Fetch returns Fetch
 	 *
 	 * Constraint:
-	 *     (name=STRING source=STRING value=SelectStatement condition=Expression)
+	 *     (name=STRING source=STRING value=STRING condition=Expression)
 	 */
 	protected void sequence_Fetch(ISerializationContext context, Fetch semanticObject) {
 		if (errorAcceptor != null) {
@@ -436,7 +436,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFetchAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getFetchAccess().getSourceSTRINGTerminalRuleCall_4_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFetchAccess().getValueSTRINGTerminalRuleCall_7_0(), semanticObject.getValue());
 		feeder.accept(grammarAccess.getFetchAccess().getConditionExpressionParserRuleCall_10_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
@@ -600,15 +600,15 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0(), semanticObject.getAccount());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0(), semanticObject.getPrivateKey());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0(), semanticObject.getPtwelveFile());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0(), semanticObject.getProject());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0(), semanticObject.getImpersonatedUser());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0(), semanticObject.getDbSrc());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_4_0(), semanticObject.getAccount());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_6_0(), semanticObject.getPrivateKey());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0(), semanticObject.getPtwelveFile());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_10_0(), semanticObject.getProject());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0(), semanticObject.getImpersonatedUser());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_14_0(), semanticObject.getDbSrc());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_17_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
