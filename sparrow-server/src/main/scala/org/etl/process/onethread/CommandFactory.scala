@@ -20,7 +20,7 @@ object CommandFactory {
       case "clicksendsms"=>new SmsActionImpl
       case "fetch"=>new FetchVariableAction        
       case "writecsv"=> new WriteCsvAction
-      case "copydata" => new CopydataAction      
+      case "copydata" => new CopyDataAction      
     }
   }
 }

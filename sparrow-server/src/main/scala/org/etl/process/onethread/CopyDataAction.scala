@@ -1,37 +1,20 @@
 package org.etl.process.onethread
 
-import com.typesafe.scalalogging.LazyLogging
-import org.etl.command.Context
-import org.etl.command.Action
-import org.etl.command.CommandProxy
-import org.etl.util.ResourceAccess
-import org.json.JSONObject
-import org.json.JSONArray
-import org.eclipse.emf.common.util.EList
-import org.etl.util.ParameterisationEngine
-import java.util.ArrayList
 import java.sql.SQLException
+import java.util.ArrayList
+import org.etl.command.CommandProxy
+import org.etl.command.Context
+import org.etl.sparrow.Action
+import org.etl.util.ParameterisationEngine
+import org.etl.util.ResourceAccess
+import com.typesafe.scalalogging.LazyLogging
 import akka.actor._
 
-/**
- * 1. Authenticate
- * 	- Handle http and https
- *  - Handle alltrust and strict evaluation
- * 2. Add headers
- * 3. Add parent part
- * 4. Add child part
- * 5. Print the graph and headers
- * 6. Make the call
- * 7. Receive the ack
- * 8. Store the ack
- */
-class CopydataAction extends org.etl.command.Action with LazyLogging {
-  
-  
+class CopyDataAction extends org.etl.command.Action with LazyLogging {
   case class WriteData(insert: String)
-
-  def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
-    val copydataAsIs: org.etl.sparrow.Copydata = action.asInstanceOf[org.etl.sparrow.Copydata]
+  val detailMap = new java.util.HashMap[String, String]
+  def execute(context: Context, action: Action): Context = {
+    val copydataAsIs = action.asInstanceOf[org.etl.sparrow.Copydata]
     val copydata: org.etl.sparrow.Copydata = CommandProxy.createProxy(copydataAsIs, classOf[org.etl.sparrow.Copydata], context)
 
     val source = copydata.getSource
@@ -52,7 +35,7 @@ class CopydataAction extends org.etl.command.Action with LazyLogging {
       def receive = {
         case "read" => {
           try {
-            
+
             val rs = copydataStmt.executeQuery(ddlSql)
             val records = new ArrayList[ArrayList[String]]()
             val cols: Int = rs.getMetaData().getColumnCount()
@@ -92,8 +75,8 @@ class CopydataAction extends org.etl.command.Action with LazyLogging {
       }
 
     }
-    
-      class WriteDataToDb extends Actor {
+
+    class WriteDataToDb extends Actor {
 
       def receive = {
         case WriteData(insert) =>
@@ -108,23 +91,26 @@ class CopydataAction extends org.etl.command.Action with LazyLogging {
     val write = system.actorOf(Props[WriteDataToDb], name = "WriteData")
     val read = system.actorOf(Props(new ReadDataFromTb(write)), name = "ReadData")
     read ! "read"
-    
+
     context
 
   }
-
-  def executeIf(context: org.etl.command.Context, action: org.etl.sparrow.Action): Boolean = {
-    val copydataAsIs: org.etl.sparrow.Copydata = action.asInstanceOf[org.etl.sparrow.Copydata]
+  def executeIf(context: Context, action: Action): Boolean = {
+    val copydataAsIs = action.asInstanceOf[org.etl.sparrow.Copydata]
     val copydata: org.etl.sparrow.Copydata = CommandProxy.createProxy(copydataAsIs, classOf[org.etl.sparrow.Copydata], context)
 
     val expression = copydata.getCondition
-    ParameterisationEngine.doYieldtoTrue(expression)
+        try {
+      val output = ParameterisationEngine.doYieldtoTrue(expression)
+      detailMap.putIfAbsent("condition-output", output.toString())
+      output
+    } finally {
+      detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
+
+    }
+  }
+    def generateAudit(): java.util.Map[String, String] = {
+    detailMap
   }
 
-  def append[T](xs: List[T], ys: List[T]): List[T] =
-    xs match {
-      case List() => ys
-      case x :: xs1 => x :: append(xs1, ys)
-    }
 }
-

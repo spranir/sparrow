@@ -15,6 +15,8 @@ import com.opencsv.CSVWriter
 import scala.collection.JavaConversions._
 
 class WriteCsvAction extends org.etl.command.Action with LazyLogging {
+  
+  val detailMap = new java.util.HashMap[String, String]
   def execute(context: Context, action: Action): Context = {
     val writecsvAsIs = action.asInstanceOf[org.etl.sparrow.WriteCsv]
     val writecsv: org.etl.sparrow.WriteCsv = CommandProxy.createProxy(writecsvAsIs, classOf[org.etl.sparrow.WriteCsv], context)
@@ -48,7 +50,17 @@ class WriteCsvAction extends org.etl.command.Action with LazyLogging {
     val writecsv: org.etl.sparrow.WriteCsv = CommandProxy.createProxy(writecsvAsIs, classOf[org.etl.sparrow.WriteCsv], context)
 
     val expression = writecsv.getCondition
-    ParameterisationEngine.doYieldtoTrue(expression)
+        try {
+      val output = ParameterisationEngine.doYieldtoTrue(expression)
+      detailMap.putIfAbsent("condition-output", output.toString())
+      output
+    } finally {
+      detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
+
+    }
+  }
+    def generateAudit(): java.util.Map[String, String] = {
+    detailMap
   }
 
 }
