@@ -1,7 +1,7 @@
 process "test.doozle.process"
 {
 	try{
-		doozle as "doozle-collection" in-table "${process-id}_collection" on "oltp/chimera-intg" using
+		doozle as "doozle-collection" in-table "${process-id}_collection" on "oltp/ffsc-intg" using
 		{
 			"CREATE TABLE ${process-id}_COLLECTION_DATA(
 			fieldLabel char(128) ,
