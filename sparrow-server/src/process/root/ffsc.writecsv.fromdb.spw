@@ -1,0 +1,17 @@
+process "ffsc.writecsv.fromdb"
+{
+	try
+	{
+		writecsv as "writetocsv" from "${ffsc-db}" to "${csv.storagepath}${process-id}_dbtocsv.csv" with "," using
+		{
+			"select * from BasicDataMapping_FFSC_Customers;"
+		}
+
+	}
+	catch
+	{
+	}
+	finally
+	{
+	}
+}
