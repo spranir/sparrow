@@ -28,8 +28,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Action/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//Action/condition"/>
     </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//SmsLeadSms">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SmsLeadSms/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SmsLeadSms/sender"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SmsLeadSms/account"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SmsLeadSms/privateKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SmsLeadSms/dbSrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SmsLeadSms/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//SmsLeadSms/dryrunNumber"/>
+    </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//Abort">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Abort/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//Abort/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//GooglecontactSelectAll">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/account"/>
@@ -39,6 +48,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/impersonatedUser"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/dbSrc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Sparrow.ecore#//GoogleSendMail">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/account"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/privateKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/ptwelveFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/project"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/impersonatedUser"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/dbSrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//GooglecontactPUT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/account"/>

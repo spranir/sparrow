@@ -3,6 +3,7 @@
 package org.etl.command
 
 import org.etl.util.ParameterisationEngine
+import com.fasterxml.jackson.databind.ObjectMapper
 
 class TryContext(var config: Map[String, String], val instanceName: String) extends Context {
 
@@ -32,5 +33,10 @@ class TryContext(var config: Map[String, String], val instanceName: String) exte
 
   def addValue(key: String, value: String): Unit = {
     config += ((key, value))
+  }
+  
+  def getJson(): String = {
+    val jsonSerializer = new ObjectMapper
+    jsonSerializer.writeValueAsString(getMe())
   }
 }

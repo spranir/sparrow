@@ -14,9 +14,12 @@ import org.etl.server.ProcessExecutor
 import org.etl.command.CommandProxy
 import org.etl.server.ProcessAST
 import org.etl.util.ParameterisationEngine
+import java.io.StringWriter
+import java.io.PrintWriter
+import org.etl.util.ExceptionUtil
 
 class CallProcessAction extends org.etl.command.Action with LazyLogging {
-
+  val detailMap = new java.util.HashMap[String, String]
   def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
 
     val callProcessAsIs: org.etl.sparrow.Callprocess = action.asInstanceOf[org.etl.sparrow.Callprocess]
@@ -38,11 +41,11 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
 
     while (rs.next()) {
 
-      for (i <- 1 until columnCount+1) {
+      for (i <- 1 until columnCount + 1) {
         val key = rs.getMetaData.getColumnLabel(i)
         val value = rs.getString(i)
         context.addValue(key, value)
-
+        detailMap.put("query.output." + key, value)
       }
 
       val runtimeContext = ProcessAST.loadProcessAST(processName, fileRelativePath, context)
@@ -54,22 +57,27 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
       } catch {
         case ex: Throwable => {
           handleError(ex)
+          detailMap.put("exception", ExceptionUtil.completeStackTraceex(ex))
         }
-      }finally
-      {
+
+      } finally {
         val onFinally = runtimeContext.process.getFinally
         handleFinally()
       }
     }
-    try{
+    try {
       logger.info("Completed callprocess name#{}, calledprocess#{}, calledfile#{}, db=#{}", name, processName, fileRelativePath, dbSrc)
-    }finally {
-        
-        rs.close
-        stmt.close
-        conn.close
-      }
-    
+      detailMap.put("name", name)
+      detailMap.put("targetProcess", processName)
+      detailMap.put("targetFile", fileRelativePath)
+      detailMap.put("dataSource", dbSrc)
+      detailMap.put("sql", sql)
+
+    } finally {
+      rs.close
+      stmt.close
+      conn.close
+    }
     context
   }
 
@@ -78,17 +86,29 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
     val callProcess: org.etl.sparrow.Callprocess = CommandProxy.createProxy(callProcessAsIs, classOf[org.etl.sparrow.Callprocess], context)
 
     val expression = callProcess.getCondition
-    ParameterisationEngine.doYieldtoTrue(expression)
-    
+    try {
+      val output = ParameterisationEngine.doYieldtoTrue(expression)
+      detailMap.putIfAbsent("condition-output", output.toString())
+      output
+    } finally {
+      if (expression != null)
+        detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
+
+    }
+
   }
 
-  
+  def generateAudit(): java.util.Map[String, String] = {
+    detailMap
+  }
 
   def handleError(ex: Throwable) = {
-    logger.info("Error section of call process")
+    logger.info("Error section of call process", ex)
+    throw ex
   }
 
   def handleFinally() = {
     logger.info("Finally section of call process")
   }
+
 }
