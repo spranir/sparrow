@@ -81,10 +81,14 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
         val description = rs.getString("description")
         val location = rs.getString("event_location")
         val event = new Event();
-        val startDateG = new Date(startDate.getTime)
+        val startDateG = new Date(startDate.getTime+36000)
+        
 
         val start = new DateTime(startDateG, timeZone)
-        event.setStart(new EventDateTime().setDateTime(start).setTimeZone(timeZoneLabel))
+        val startEventDateTime = new EventDateTime()
+        startEventDateTime.setTimeZone(timeZoneLabel).setDateTime(start)
+        event.setStart(startEventDateTime)
+        
 
         val eventEnd = new Date(startDate.getTime + 60 * 60 * 1000)
         val dailyEnd = new DateTime(eventEnd, TimeZone.getTimeZone(timeZoneLabel));
@@ -95,12 +99,11 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
         event.setDescription(description)
 
         val endDateForRecur = endDate.replaceAll("-", "") + "T170000Z"
-        logger.info("Final date set for recurrence=" + endDateForRecur)
         event.setRecurrence(Arrays.asList("RRULE:FREQ=DAILY;UNTIL=" + endDateForRecur));
 
         val result = client.events().insert(calId, event).execute();
         addedCalenderEvent.incrementAndGet
-        logger.info("Adding event  {} with for location {} title {} with counter {}", location, title, addedCalenderEvent.get)
+        logger.info("Adding event  {} with for location {} title {} with counter {} with description {} with final date{}", startDate, location, title, addedCalenderEvent.get, description, endDateForRecur)
       }
     } finally {
       detailMap.put("accountId", accountId)
@@ -129,6 +132,7 @@ class GoogleCalendarAction extends org.etl.command.Action with LazyLogging {
       detailMap.putIfAbsent("condition-output", output.toString())
       output
     } finally {
+       if(expression!=null)
       detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
 
     }

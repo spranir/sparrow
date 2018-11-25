@@ -556,6 +556,245 @@ ruleAction returns [EObject current=null]
 			$current = $this_Abort_18.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_19());
+		}
+		this_SmsLeadSms_19=ruleSmsLeadSms
+		{
+			$current = $this_SmsLeadSms_19.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleSmsLeadSms
+entryRuleSmsLeadSms returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSmsLeadSmsRule()); }
+	iv_ruleSmsLeadSms=ruleSmsLeadSms
+	{ $current=$iv_ruleSmsLeadSms.current; }
+	EOF;
+
+// Rule SmsLeadSms
+ruleSmsLeadSms returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='smsleadssms'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSmsLeadSmsAccess().getSmsleadssmsKeyword_0());
+		}
+		otherlv_1='as'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSmsLeadSmsAccess().getAsKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getSmsLeadSmsAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSmsLeadSmsAccess().getOnKeyword_3());
+		}
+		(
+			(
+				lv_url_4_0=RULE_STRING
+				{
+					newLeafNode(lv_url_4_0, grammarAccess.getSmsLeadSmsAccess().getUrlSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"url",
+						lv_url_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_5='with-sender'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSmsLeadSmsAccess().getWithSenderKeyword_5());
+		}
+		(
+			(
+				lv_sender_6_0=RULE_STRING
+				{
+					newLeafNode(lv_sender_6_0, grammarAccess.getSmsLeadSmsAccess().getSenderSTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"sender",
+						lv_sender_6_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_7='through-account'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getSmsLeadSmsAccess().getThroughAccountKeyword_7());
+		}
+		(
+			(
+				lv_account_8_0=RULE_STRING
+				{
+					newLeafNode(lv_account_8_0, grammarAccess.getSmsLeadSmsAccess().getAccountSTRINGTerminalRuleCall_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"account",
+						lv_account_8_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_9='secured-by'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getSmsLeadSmsAccess().getSecuredByKeyword_9());
+		}
+		(
+			(
+				lv_privateKey_10_0=RULE_STRING
+				{
+					newLeafNode(lv_privateKey_10_0, grammarAccess.getSmsLeadSmsAccess().getPrivateKeySTRINGTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"privateKey",
+						lv_privateKey_10_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_11='from-source'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getSmsLeadSmsAccess().getFromSourceKeyword_11());
+		}
+		(
+			(
+				lv_dbSrc_12_0=RULE_STRING
+				{
+					newLeafNode(lv_dbSrc_12_0, grammarAccess.getSmsLeadSmsAccess().getDbSrcSTRINGTerminalRuleCall_12_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dbSrc",
+						lv_dbSrc_12_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_13='using'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getSmsLeadSmsAccess().getUsingKeyword_13());
+		}
+		otherlv_14='{'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getSmsLeadSmsAccess().getLeftCurlyBracketKeyword_14());
+		}
+		(
+			(
+				lv_value_15_0=RULE_STRING
+				{
+					newLeafNode(lv_value_15_0, grammarAccess.getSmsLeadSmsAccess().getValueSTRINGTerminalRuleCall_15_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_15_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_16='}'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getSmsLeadSmsAccess().getRightCurlyBracketKeyword_16());
+		}
+		otherlv_17='on-condition'
+		{
+			newLeafNode(otherlv_17, grammarAccess.getSmsLeadSmsAccess().getOnConditionKeyword_17());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSmsLeadSmsAccess().getConditionExpressionParserRuleCall_18_0());
+				}
+				lv_condition_18_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSmsLeadSmsRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_18_0,
+						"org.etl.Sparrow.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_19='do-dryrun-with'
+		{
+			newLeafNode(otherlv_19, grammarAccess.getSmsLeadSmsAccess().getDoDryrunWithKeyword_19());
+		}
+		(
+			(
+				lv_dryrunNumber_20_0=RULE_STRING
+				{
+					newLeafNode(lv_dryrunNumber_20_0, grammarAccess.getSmsLeadSmsAccess().getDryrunNumberSTRINGTerminalRuleCall_20_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSmsLeadSmsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dryrunNumber",
+						lv_dryrunNumber_20_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 

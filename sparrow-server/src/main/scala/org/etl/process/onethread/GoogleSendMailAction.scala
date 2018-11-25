@@ -18,10 +18,19 @@ import com.google.api.services.people.v1.model.EmailAddress
 import com.google.api.services.people.v1.model.Name
 import com.google.api.services.people.v1.PeopleService
 import java.util.concurrent.atomic.AtomicInteger
+import com.google.api.services.people.v1.model.Source
+import com.google.api.services.people.v1.model.Address
+import com.google.api.services.people.v1.model.ProfileMetadata
+import com.google.api.services.people.v1.model.Url
+import com.google.api.services.gmail.Gmail
+import com.google.api.services.gmail.model.Message
 
-class GContactCreateAction extends org.etl.command.Action with LazyLogging {
+class GoogleSendMailAction extends org.etl.command.Action with LazyLogging {
+  
   val detailMap = new java.util.HashMap[String, String]
   val JSON_FACTORY: JsonFactory = JacksonFactory.getDefaultInstance();
+  
+  //https://developers.google.com/gmail/api/quickstart/java
   def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
     val contactPut: GooglecontactPUT = action.asInstanceOf[GooglecontactPUT]
     val contact: org.etl.sparrow.GooglecontactPUT = CommandProxy.createProxy(contactPut, classOf[org.etl.sparrow.GooglecontactPUT], context)
@@ -47,66 +56,23 @@ class GContactCreateAction extends org.etl.command.Action with LazyLogging {
       setServiceAccountScopes(Collections.singleton(PeopleServiceScopes.CONTACTS)).
       setServiceAccountUser(mail).build()
       
-    val peopleService: PeopleService =
-      new PeopleService.Builder(httpTransport, JSON_FACTORY, credential).setApplicationName(project).build();
-
-    val incomingContactCounter: AtomicInteger = new AtomicInteger
-    val addedContactCounter: AtomicInteger = new AtomicInteger
-    try {
-      while (rs.next()) {
-        incomingContactCounter.incrementAndGet
-
-        val name = rs.getString("name")
-        val email = rs.getString("email")
-        val location = rs.getString("location")
-        val mobile = rs.getString("mobile")
-
-        val person = new Person
-        val phoneList = new java.util.ArrayList[PhoneNumber]
-        val phone = new PhoneNumber
-        phone.setValue(mobile)
-        phoneList.add(phone)
-
-        val nameList = new java.util.ArrayList[Name]
-        val personName = new Name
-        personName.setDisplayName(name)
-        personName.setFamilyName(location)
-        personName.setGivenName(name)
-
-        nameList.add(personName)
-
-        val emailList = new java.util.ArrayList[EmailAddress]
-        val personEmail = new EmailAddress
-        personEmail.setDisplayName(email)
-        personEmail.setValue(email)
-        emailList.add(personEmail)
-
-        person.setPhoneNumbers(phoneList)
-        person.setNames(nameList)
-        person.setEmailAddresses(emailList)
-
-        val contact = peopleService.people.createContact(person)
-        val output = contact.execute()
-        addedContactCounter.incrementAndGet
-        logger.info("Adding lead  {} with for number {} from {} with counter {}", personName, mobile, location, addedContactCounter.get)
-      }
-    } finally {
-      detailMap.put("accountId", accountId)
-      detailMap.put("dbSrc", dbSrc)
-      detailMap.put("mail", mail)
-      detailMap.put("relativePath", relativePath)
-      detailMap.put("key", key)
-      detailMap.put("project", project)
-      detailMap.put("authStore", authStore)
-      detailMap.put("sql", sql)
-      detailMap.put("incomingContactCounter", incomingContactCounter.intValue.toString)
-      detailMap.put("addedContactCounter", addedContactCounter.intValue.toString)
-      stmt.close
-      conn.close
-    }
+     val service = new Gmail.Builder(httpTransport, JSON_FACTORY, credential)
+                .setApplicationName(project)
+                .build();
+    
+    val message = createEMail()
+    service.users().messages().send(accountId, message)
     context
   }
 
+  def createEMail(emailContent:MimeMessage):Message = {
+    
+  }
+  
+  def createMimeMessage():MimeMessage = {
+    
+  }
+  
   def executeIf(context: org.etl.command.Context, action: org.etl.sparrow.Action): Boolean = {
     val contactPut: GooglecontactPUT = action.asInstanceOf[GooglecontactPUT]
     val contact: org.etl.sparrow.GooglecontactPUT = CommandProxy.createProxy(contactPut, classOf[org.etl.sparrow.GooglecontactPUT], context)
@@ -116,6 +82,7 @@ class GContactCreateAction extends org.etl.command.Action with LazyLogging {
       detailMap.putIfAbsent("condition-output", output.toString())
       output
     } finally {
+       if(expression!=null)
       detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
 
     }

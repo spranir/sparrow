@@ -75,6 +75,14 @@
 	</pluginRepositories>
 	<dependencies>
 
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>com.google.apis</groupId>
 			<artifactId>google-api-services-people</artifactId>
@@ -92,7 +100,7 @@
 			<artifactId>okhttp</artifactId>
 			<version>3.11.0</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.restlet.jee/org.restlet.ext.json -->
 		<dependency>
 			<groupId>org.restlet.jee</groupId>

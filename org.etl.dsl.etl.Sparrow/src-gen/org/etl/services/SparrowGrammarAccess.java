@@ -230,6 +230,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cGooglecontactPUTParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
 		private final RuleCall cGooglecontactSelectAllParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
 		private final RuleCall cAbortParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
+		private final RuleCall cSmsLeadSmsParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
 		
 		//Action:
 		//	Copydata
@@ -250,11 +251,13 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//	| FBCLead
 		//	| GooglecontactPUT
 		//	| GooglecontactSelectAll
-		//	| Abort;
+		//	| Abort
+		//	| SmsLeadSms;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Copydata | LoadCsv | WriteCsv | Transform | GooglecalPUT | SlackPUT | ClickSendSms | Updatedaudit | Callprocess | Fetch
-		//| TrelloPUT | TrelloGET | Rest | Doozle | Dropfile | FBCLead | GooglecontactPUT | GooglecontactSelectAll | Abort
+		//| TrelloPUT | TrelloGET | Rest | Doozle | Dropfile | FBCLead | GooglecontactPUT | GooglecontactSelectAll | Abort |
+		//SmsLeadSms
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Copydata
@@ -313,6 +316,146 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Abort
 		public RuleCall getAbortParserRuleCall_18() { return cAbortParserRuleCall_18; }
+		
+		//SmsLeadSms
+		public RuleCall getSmsLeadSmsParserRuleCall_19() { return cSmsLeadSmsParserRuleCall_19; }
+	}
+	public class SmsLeadSmsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.SmsLeadSms");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSmsleadssmsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cUrlAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cUrlSTRINGTerminalRuleCall_4_0 = (RuleCall)cUrlAssignment_4.eContents().get(0);
+		private final Keyword cWithSenderKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cSenderAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSenderSTRINGTerminalRuleCall_6_0 = (RuleCall)cSenderAssignment_6.eContents().get(0);
+		private final Keyword cThroughAccountKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cAccountAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cAccountSTRINGTerminalRuleCall_8_0 = (RuleCall)cAccountAssignment_8.eContents().get(0);
+		private final Keyword cSecuredByKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cPrivateKeyAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cPrivateKeySTRINGTerminalRuleCall_10_0 = (RuleCall)cPrivateKeyAssignment_10.eContents().get(0);
+		private final Keyword cFromSourceKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cDbSrcAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cDbSrcSTRINGTerminalRuleCall_12_0 = (RuleCall)cDbSrcAssignment_12.eContents().get(0);
+		private final Keyword cUsingKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cLeftCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cValueAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cValueSTRINGTerminalRuleCall_15_0 = (RuleCall)cValueAssignment_15.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cOnConditionKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cConditionAssignment_18 = (Assignment)cGroup.eContents().get(18);
+		private final RuleCall cConditionExpressionParserRuleCall_18_0 = (RuleCall)cConditionAssignment_18.eContents().get(0);
+		private final Keyword cDoDryrunWithKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Assignment cDryrunNumberAssignment_20 = (Assignment)cGroup.eContents().get(20);
+		private final RuleCall cDryrunNumberSTRINGTerminalRuleCall_20_0 = (RuleCall)cDryrunNumberAssignment_20.eContents().get(0);
+		
+		//SmsLeadSms:
+		//	'smsleadssms' 'as' name=STRING 'on' url=STRING 'with-sender' sender=STRING 'through-account' account=STRING
+		//	'secured-by' privateKey=STRING 'from-source' dbSrc=STRING 'using'
+		//	'{'
+		//	value=STRING
+		//	'}' 'on-condition' condition=Expression 'do-dryrun-with' dryrunNumber=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'smsleadssms' 'as' name=STRING 'on' url=STRING 'with-sender' sender=STRING 'through-account' account=STRING 'secured-by'
+		//privateKey=STRING 'from-source' dbSrc=STRING 'using' '{' value=STRING '}' 'on-condition' condition=Expression
+		//'do-dryrun-with' dryrunNumber=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'smsleadssms'
+		public Keyword getSmsleadssmsKeyword_0() { return cSmsleadssmsKeyword_0; }
+		
+		//'as'
+		public Keyword getAsKeyword_1() { return cAsKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
+		
+		//url=STRING
+		public Assignment getUrlAssignment_4() { return cUrlAssignment_4; }
+		
+		//STRING
+		public RuleCall getUrlSTRINGTerminalRuleCall_4_0() { return cUrlSTRINGTerminalRuleCall_4_0; }
+		
+		//'with-sender'
+		public Keyword getWithSenderKeyword_5() { return cWithSenderKeyword_5; }
+		
+		//sender=STRING
+		public Assignment getSenderAssignment_6() { return cSenderAssignment_6; }
+		
+		//STRING
+		public RuleCall getSenderSTRINGTerminalRuleCall_6_0() { return cSenderSTRINGTerminalRuleCall_6_0; }
+		
+		//'through-account'
+		public Keyword getThroughAccountKeyword_7() { return cThroughAccountKeyword_7; }
+		
+		//account=STRING
+		public Assignment getAccountAssignment_8() { return cAccountAssignment_8; }
+		
+		//STRING
+		public RuleCall getAccountSTRINGTerminalRuleCall_8_0() { return cAccountSTRINGTerminalRuleCall_8_0; }
+		
+		//'secured-by'
+		public Keyword getSecuredByKeyword_9() { return cSecuredByKeyword_9; }
+		
+		//privateKey=STRING
+		public Assignment getPrivateKeyAssignment_10() { return cPrivateKeyAssignment_10; }
+		
+		//STRING
+		public RuleCall getPrivateKeySTRINGTerminalRuleCall_10_0() { return cPrivateKeySTRINGTerminalRuleCall_10_0; }
+		
+		//'from-source'
+		public Keyword getFromSourceKeyword_11() { return cFromSourceKeyword_11; }
+		
+		//dbSrc=STRING
+		public Assignment getDbSrcAssignment_12() { return cDbSrcAssignment_12; }
+		
+		//STRING
+		public RuleCall getDbSrcSTRINGTerminalRuleCall_12_0() { return cDbSrcSTRINGTerminalRuleCall_12_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_13() { return cUsingKeyword_13; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_14() { return cLeftCurlyBracketKeyword_14; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_15() { return cValueAssignment_15; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_15_0() { return cValueSTRINGTerminalRuleCall_15_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_17() { return cOnConditionKeyword_17; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_18() { return cConditionAssignment_18; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_18_0() { return cConditionExpressionParserRuleCall_18_0; }
+		
+		//'do-dryrun-with'
+		public Keyword getDoDryrunWithKeyword_19() { return cDoDryrunWithKeyword_19; }
+		
+		//dryrunNumber=STRING
+		public Assignment getDryrunNumberAssignment_20() { return cDryrunNumberAssignment_20; }
+		
+		//STRING
+		public RuleCall getDryrunNumberSTRINGTerminalRuleCall_20_0() { return cDryrunNumberSTRINGTerminalRuleCall_20_0; }
 	}
 	public class AbortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.Abort");
@@ -479,6 +622,144 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'to-target'
 		public Keyword getToTargetKeyword_13() { return cToTargetKeyword_13; }
+		
+		//dbSrc=STRING
+		public Assignment getDbSrcAssignment_14() { return cDbSrcAssignment_14; }
+		
+		//STRING
+		public RuleCall getDbSrcSTRINGTerminalRuleCall_14_0() { return cDbSrcSTRINGTerminalRuleCall_14_0; }
+		
+		//'using'
+		public Keyword getUsingKeyword_15() { return cUsingKeyword_15; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_16() { return cLeftCurlyBracketKeyword_16; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_17() { return cValueAssignment_17; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_17_0() { return cValueSTRINGTerminalRuleCall_17_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_18() { return cRightCurlyBracketKeyword_18; }
+		
+		//'on-condition'
+		public Keyword getOnConditionKeyword_19() { return cOnConditionKeyword_19; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_20() { return cConditionAssignment_20; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_20_0() { return cConditionExpressionParserRuleCall_20_0; }
+	}
+	public class GoogleSendMailElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.GoogleSendMail");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGsendmailKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cThroughAccountKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAccountAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAccountSTRINGTerminalRuleCall_4_0 = (RuleCall)cAccountAssignment_4.eContents().get(0);
+		private final Keyword cSecuredByKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cPrivateKeyAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cPrivateKeySTRINGTerminalRuleCall_6_0 = (RuleCall)cPrivateKeyAssignment_6.eContents().get(0);
+		private final Keyword cWithKeyKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cPtwelveFileAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cPtwelveFileSTRINGTerminalRuleCall_8_0 = (RuleCall)cPtwelveFileAssignment_8.eContents().get(0);
+		private final Keyword cForProjectKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cProjectAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cProjectSTRINGTerminalRuleCall_10_0 = (RuleCall)cProjectAssignment_10.eContents().get(0);
+		private final Keyword cOnBehalfOfKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cImpersonatedUserAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cImpersonatedUserSTRINGTerminalRuleCall_12_0 = (RuleCall)cImpersonatedUserAssignment_12.eContents().get(0);
+		private final Keyword cFromSourceKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cDbSrcAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cDbSrcSTRINGTerminalRuleCall_14_0 = (RuleCall)cDbSrcAssignment_14.eContents().get(0);
+		private final Keyword cUsingKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cLeftCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Assignment cValueAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cValueSTRINGTerminalRuleCall_17_0 = (RuleCall)cValueAssignment_17.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Keyword cOnConditionKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Assignment cConditionAssignment_20 = (Assignment)cGroup.eContents().get(20);
+		private final RuleCall cConditionExpressionParserRuleCall_20_0 = (RuleCall)cConditionAssignment_20.eContents().get(0);
+		
+		//GoogleSendMail:
+		//	'gsendmail' 'as' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key'
+		//	ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'from-source' dbSrc=STRING
+		//	'using'
+		//	'{'
+		//	value=STRING
+		//	'}' 'on-condition' condition=Expression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'gsendmail' 'as' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key'
+		//ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'from-source' dbSrc=STRING
+		//'using' '{' value=STRING '}' 'on-condition' condition=Expression
+		public Group getGroup() { return cGroup; }
+		
+		//'gsendmail'
+		public Keyword getGsendmailKeyword_0() { return cGsendmailKeyword_0; }
+		
+		//'as'
+		public Keyword getAsKeyword_1() { return cAsKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'through-account'
+		public Keyword getThroughAccountKeyword_3() { return cThroughAccountKeyword_3; }
+		
+		//account=STRING
+		public Assignment getAccountAssignment_4() { return cAccountAssignment_4; }
+		
+		//STRING
+		public RuleCall getAccountSTRINGTerminalRuleCall_4_0() { return cAccountSTRINGTerminalRuleCall_4_0; }
+		
+		//'secured-by'
+		public Keyword getSecuredByKeyword_5() { return cSecuredByKeyword_5; }
+		
+		//privateKey=STRING
+		public Assignment getPrivateKeyAssignment_6() { return cPrivateKeyAssignment_6; }
+		
+		//STRING
+		public RuleCall getPrivateKeySTRINGTerminalRuleCall_6_0() { return cPrivateKeySTRINGTerminalRuleCall_6_0; }
+		
+		//'with-key'
+		public Keyword getWithKeyKeyword_7() { return cWithKeyKeyword_7; }
+		
+		//ptwelveFile=STRING
+		public Assignment getPtwelveFileAssignment_8() { return cPtwelveFileAssignment_8; }
+		
+		//STRING
+		public RuleCall getPtwelveFileSTRINGTerminalRuleCall_8_0() { return cPtwelveFileSTRINGTerminalRuleCall_8_0; }
+		
+		//'for-project'
+		public Keyword getForProjectKeyword_9() { return cForProjectKeyword_9; }
+		
+		//project=STRING
+		public Assignment getProjectAssignment_10() { return cProjectAssignment_10; }
+		
+		//STRING
+		public RuleCall getProjectSTRINGTerminalRuleCall_10_0() { return cProjectSTRINGTerminalRuleCall_10_0; }
+		
+		//'on-behalf-of'
+		public Keyword getOnBehalfOfKeyword_11() { return cOnBehalfOfKeyword_11; }
+		
+		//impersonatedUser=STRING
+		public Assignment getImpersonatedUserAssignment_12() { return cImpersonatedUserAssignment_12; }
+		
+		//STRING
+		public RuleCall getImpersonatedUserSTRINGTerminalRuleCall_12_0() { return cImpersonatedUserSTRINGTerminalRuleCall_12_0; }
+		
+		//'from-source'
+		public Keyword getFromSourceKeyword_13() { return cFromSourceKeyword_13; }
 		
 		//dbSrc=STRING
 		public Assignment getDbSrcAssignment_14() { return cDbSrcAssignment_14; }
@@ -2514,8 +2795,10 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	private final FinallyElements pFinally;
 	private final CatchElements pCatch;
 	private final ActionElements pAction;
+	private final SmsLeadSmsElements pSmsLeadSms;
 	private final AbortElements pAbort;
 	private final GooglecontactSelectAllElements pGooglecontactSelectAll;
+	private final GoogleSendMailElements pGoogleSendMail;
 	private final GooglecontactPUTElements pGooglecontactPUT;
 	private final GooglecalPUTElements pGooglecalPUT;
 	private final FBCLeadElements pFBCLead;
@@ -2555,8 +2838,10 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFinally = new FinallyElements();
 		this.pCatch = new CatchElements();
 		this.pAction = new ActionElements();
+		this.pSmsLeadSms = new SmsLeadSmsElements();
 		this.pAbort = new AbortElements();
 		this.pGooglecontactSelectAll = new GooglecontactSelectAllElements();
+		this.pGoogleSendMail = new GoogleSendMailElements();
 		this.pGooglecontactPUT = new GooglecontactPUTElements();
 		this.pGooglecalPUT = new GooglecalPUTElements();
 		this.pFBCLead = new FBCLeadElements();
@@ -2683,13 +2968,28 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	| FBCLead
 	//	| GooglecontactPUT
 	//	| GooglecontactSelectAll
-	//	| Abort;
+	//	| Abort
+	//	| SmsLeadSms;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+	
+	//SmsLeadSms:
+	//	'smsleadssms' 'as' name=STRING 'on' url=STRING 'with-sender' sender=STRING 'through-account' account=STRING
+	//	'secured-by' privateKey=STRING 'from-source' dbSrc=STRING 'using'
+	//	'{'
+	//	value=STRING
+	//	'}' 'on-condition' condition=Expression 'do-dryrun-with' dryrunNumber=STRING;
+	public SmsLeadSmsElements getSmsLeadSmsAccess() {
+		return pSmsLeadSms;
+	}
+	
+	public ParserRule getSmsLeadSmsRule() {
+		return getSmsLeadSmsAccess().getRule();
 	}
 	
 	//Abort:
@@ -2718,6 +3018,21 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getGooglecontactSelectAllRule() {
 		return getGooglecontactSelectAllAccess().getRule();
+	}
+	
+	//GoogleSendMail:
+	//	'gsendmail' 'as' name=STRING 'through-account' account=STRING 'secured-by' privateKey=STRING 'with-key'
+	//	ptwelveFile=STRING 'for-project' project=STRING 'on-behalf-of' impersonatedUser=STRING 'from-source' dbSrc=STRING
+	//	'using'
+	//	'{'
+	//	value=STRING
+	//	'}' 'on-condition' condition=Expression;
+	public GoogleSendMailElements getGoogleSendMailAccess() {
+		return pGoogleSendMail;
+	}
+	
+	public ParserRule getGoogleSendMailRule() {
+		return getGoogleSendMailAccess().getRule();
 	}
 	
 	//GooglecontactPUT:

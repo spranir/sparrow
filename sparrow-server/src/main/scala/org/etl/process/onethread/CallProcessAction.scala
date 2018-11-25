@@ -61,18 +61,22 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
         }
 
       } finally {
-        logger.info("Completed callprocess name#{}, calledprocess#{}, calledfile#{}, db=#{}", name, processName, fileRelativePath, dbSrc)
-        detailMap.put("name", name)
-        detailMap.put("targetProcess", processName)
-        detailMap.put("targetFile", fileRelativePath)
-        detailMap.put("dataSource", dbSrc)
-        detailMap.put("sql", sql)
-        rs.close
-        stmt.close
-        conn.close
         val onFinally = runtimeContext.process.getFinally
         handleFinally()
       }
+    }
+    try {
+      logger.info("Completed callprocess name#{}, calledprocess#{}, calledfile#{}, db=#{}", name, processName, fileRelativePath, dbSrc)
+      detailMap.put("name", name)
+      detailMap.put("targetProcess", processName)
+      detailMap.put("targetFile", fileRelativePath)
+      detailMap.put("dataSource", dbSrc)
+      detailMap.put("sql", sql)
+
+    } finally {
+      rs.close
+      stmt.close
+      conn.close
     }
     context
   }
@@ -87,7 +91,8 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
       detailMap.putIfAbsent("condition-output", output.toString())
       output
     } finally {
-      detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
+      if (expression != null)
+        detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
 
     }
 
@@ -105,6 +110,5 @@ class CallProcessAction extends org.etl.command.Action with LazyLogging {
   def handleFinally() = {
     logger.info("Finally section of call process")
   }
-  
-  
+
 }

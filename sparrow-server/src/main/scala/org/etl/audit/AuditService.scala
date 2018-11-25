@@ -96,11 +96,11 @@ object AuditService extends LazyLogging{
   def updateCommandAudit(actionId: Integer, status: Integer, commandDetail:String): Unit = {
     val conn = ResourceAccess.rdbmsConn(auditService)
     logger.info("Obtained Connection for actionid #{} with status #{} ", actionId, status)
-    val st = conn.prepareStatement("update command_audit set end=now(), status=?, command_audit=?  where command_id=?")
+    val st = conn.prepareStatement("update command_audit set end=now(), status=?, command_config=?  where command_id=?")
     try {
       st.setInt(1, status)
-      st.setInt(2, actionId)
-      st.setString(3, commandDetail)
+      st.setString(2, commandDetail)
+      st.setInt(3, actionId)
       val rowsUpdated = st.executeUpdate()
       conn.commit
     } catch {

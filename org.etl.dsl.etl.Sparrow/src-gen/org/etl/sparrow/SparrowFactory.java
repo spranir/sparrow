@@ -69,6 +69,15 @@ public interface SparrowFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>Sms Lead Sms</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sms Lead Sms</em>'.
+   * @generated
+   */
+  SmsLeadSms createSmsLeadSms();
+
+  /**
    * Returns a new object of class '<em>Abort</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -85,6 +94,15 @@ public interface SparrowFactory extends EFactory
    * @generated
    */
   GooglecontactSelectAll createGooglecontactSelectAll();
+
+  /**
+   * Returns a new object of class '<em>Google Send Mail</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Google Send Mail</em>'.
+   * @generated
+   */
+  GoogleSendMail createGoogleSendMail();
 
   /**
    * Returns a new object of class '<em>Googlecontact PUT</em>'.

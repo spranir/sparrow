@@ -23,6 +23,7 @@ import org.etl.sparrow.Expression;
 import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
+import org.etl.sparrow.GoogleSendMail;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.GooglecontactSelectAll;
@@ -30,6 +31,7 @@ import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
+import org.etl.sparrow.SmsLeadSms;
 import org.etl.sparrow.SparrowFactory;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
@@ -96,8 +98,10 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
       case SparrowPackage.FINALLY: return createFinally();
       case SparrowPackage.CATCH: return createCatch();
       case SparrowPackage.ACTION: return createAction();
+      case SparrowPackage.SMS_LEAD_SMS: return createSmsLeadSms();
       case SparrowPackage.ABORT: return createAbort();
       case SparrowPackage.GOOGLECONTACT_SELECT_ALL: return createGooglecontactSelectAll();
+      case SparrowPackage.GOOGLE_SEND_MAIL: return createGoogleSendMail();
       case SparrowPackage.GOOGLECONTACT_PUT: return createGooglecontactPUT();
       case SparrowPackage.GOOGLECAL_PUT: return createGooglecalPUT();
       case SparrowPackage.FBC_LEAD: return createFBCLead();
@@ -182,6 +186,17 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public SmsLeadSms createSmsLeadSms()
+  {
+    SmsLeadSmsImpl smsLeadSms = new SmsLeadSmsImpl();
+    return smsLeadSms;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Abort createAbort()
   {
     AbortImpl abort = new AbortImpl();
@@ -197,6 +212,17 @@ public class SparrowFactoryImpl extends EFactoryImpl implements SparrowFactory
   {
     GooglecontactSelectAllImpl googlecontactSelectAll = new GooglecontactSelectAllImpl();
     return googlecontactSelectAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GoogleSendMail createGoogleSendMail()
+  {
+    GoogleSendMailImpl googleSendMail = new GoogleSendMailImpl();
+    return googleSendMail;
   }
 
   /**

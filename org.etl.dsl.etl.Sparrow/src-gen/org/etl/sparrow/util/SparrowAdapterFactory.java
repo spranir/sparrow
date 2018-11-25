@@ -22,6 +22,7 @@ import org.etl.sparrow.Expression;
 import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
+import org.etl.sparrow.GoogleSendMail;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.GooglecontactSelectAll;
@@ -29,6 +30,7 @@ import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
+import org.etl.sparrow.SmsLeadSms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
 import org.etl.sparrow.TrelloGET;
@@ -126,6 +128,11 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
         return createActionAdapter();
       }
       @Override
+      public Adapter caseSmsLeadSms(SmsLeadSms object)
+      {
+        return createSmsLeadSmsAdapter();
+      }
+      @Override
       public Adapter caseAbort(Abort object)
       {
         return createAbortAdapter();
@@ -134,6 +141,11 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGooglecontactSelectAll(GooglecontactSelectAll object)
       {
         return createGooglecontactSelectAllAdapter();
+      }
+      @Override
+      public Adapter caseGoogleSendMail(GoogleSendMail object)
+      {
+        return createGoogleSendMailAdapter();
       }
       @Override
       public Adapter caseGooglecontactPUT(GooglecontactPUT object)
@@ -328,6 +340,21 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.SmsLeadSms <em>Sms Lead Sms</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.SmsLeadSms
+   * @generated
+   */
+  public Adapter createSmsLeadSmsAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.etl.sparrow.Abort <em>Abort</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -353,6 +380,21 @@ public class SparrowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGooglecontactSelectAllAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.etl.sparrow.GoogleSendMail <em>Google Send Mail</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.etl.sparrow.GoogleSendMail
+   * @generated
+   */
+  public Adapter createGoogleSendMailAdapter()
   {
     return null;
   }

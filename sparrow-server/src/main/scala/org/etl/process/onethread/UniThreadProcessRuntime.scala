@@ -79,7 +79,7 @@ class UniThreadProcessRuntime(name:String, id:Int) extends ProcessRuntime with L
     val finallyContext:FinallyContext = new FinallyContext(errorContext)
     executeChain(onFinally.getAction, finallyContext)
     val processId:String = errorContext.getValue("process-id")
-    val contextLog:String = errorContext.completeStackTrace
+    val contextLog:String = errorContext.getJson()
     val status:Int = if(contextLog.isEmpty) 1 else -1
     AuditService.updateProcessAudit(Integer.parseInt(processId), status, contextLog, name)
     finallyContext

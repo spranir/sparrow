@@ -20,6 +20,7 @@ import org.etl.sparrow.Expression;
 import org.etl.sparrow.FBCLead;
 import org.etl.sparrow.Fetch;
 import org.etl.sparrow.Finally;
+import org.etl.sparrow.GoogleSendMail;
 import org.etl.sparrow.GooglecalPUT;
 import org.etl.sparrow.GooglecontactPUT;
 import org.etl.sparrow.GooglecontactSelectAll;
@@ -27,6 +28,7 @@ import org.etl.sparrow.LoadCsv;
 import org.etl.sparrow.Rest;
 import org.etl.sparrow.RestPart;
 import org.etl.sparrow.SlackPUT;
+import org.etl.sparrow.SmsLeadSms;
 import org.etl.sparrow.SparrowPackage;
 import org.etl.sparrow.Transform;
 import org.etl.sparrow.TrelloGET;
@@ -133,6 +135,14 @@ public class SparrowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SparrowPackage.SMS_LEAD_SMS:
+      {
+        SmsLeadSms smsLeadSms = (SmsLeadSms)theEObject;
+        T result = caseSmsLeadSms(smsLeadSms);
+        if (result == null) result = caseAction(smsLeadSms);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SparrowPackage.ABORT:
       {
         Abort abort = (Abort)theEObject;
@@ -146,6 +156,13 @@ public class SparrowSwitch<T> extends Switch<T>
         GooglecontactSelectAll googlecontactSelectAll = (GooglecontactSelectAll)theEObject;
         T result = caseGooglecontactSelectAll(googlecontactSelectAll);
         if (result == null) result = caseAction(googlecontactSelectAll);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SparrowPackage.GOOGLE_SEND_MAIL:
+      {
+        GoogleSendMail googleSendMail = (GoogleSendMail)theEObject;
+        T result = caseGoogleSendMail(googleSendMail);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -384,6 +401,22 @@ public class SparrowSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Sms Lead Sms</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sms Lead Sms</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSmsLeadSms(SmsLeadSms object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Abort</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -411,6 +444,22 @@ public class SparrowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGooglecontactSelectAll(GooglecontactSelectAll object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Google Send Mail</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Google Send Mail</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGoogleSendMail(GoogleSendMail object)
   {
     return null;
   }
