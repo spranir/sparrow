@@ -163,6 +163,7 @@ public class SparrowSwitch<T> extends Switch<T>
       {
         GoogleSendMail googleSendMail = (GoogleSendMail)theEObject;
         T result = caseGoogleSendMail(googleSendMail);
+        if (result == null) result = caseAction(googleSendMail);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

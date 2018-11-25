@@ -3,7 +3,6 @@
  */
 package org.etl.sparrow;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.GoogleSendMail#getName <em>Name</em>}</li>
  *   <li>{@link org.etl.sparrow.GoogleSendMail#getAccount <em>Account</em>}</li>
  *   <li>{@link org.etl.sparrow.GoogleSendMail#getPrivateKey <em>Private Key</em>}</li>
  *   <li>{@link org.etl.sparrow.GoogleSendMail#getPtwelveFile <em>Ptwelve File</em>}</li>
@@ -22,41 +20,14 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.etl.sparrow.GoogleSendMail#getImpersonatedUser <em>Impersonated User</em>}</li>
  *   <li>{@link org.etl.sparrow.GoogleSendMail#getDbSrc <em>Db Src</em>}</li>
  *   <li>{@link org.etl.sparrow.GoogleSendMail#getValue <em>Value</em>}</li>
- *   <li>{@link org.etl.sparrow.GoogleSendMail#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see org.etl.sparrow.SparrowPackage#getGoogleSendMail()
  * @model
  * @generated
  */
-public interface GoogleSendMail extends EObject
+public interface GoogleSendMail extends Action
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.etl.sparrow.SparrowPackage#getGoogleSendMail_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.etl.sparrow.GoogleSendMail#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
   /**
    * Returns the value of the '<em><b>Account</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -238,31 +209,5 @@ public interface GoogleSendMail extends EObject
    * @generated
    */
   void setValue(String value);
-
-  /**
-   * Returns the value of the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(Expression)
-   * @see org.etl.sparrow.SparrowPackage#getGoogleSendMail_Condition()
-   * @model containment="true"
-   * @generated
-   */
-  Expression getCondition();
-
-  /**
-   * Sets the value of the '{@link org.etl.sparrow.GoogleSendMail#getCondition <em>Condition</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Condition</em>' containment reference.
-   * @see #getCondition()
-   * @generated
-   */
-  void setCondition(Expression value);
 
 } // GoogleSendMail

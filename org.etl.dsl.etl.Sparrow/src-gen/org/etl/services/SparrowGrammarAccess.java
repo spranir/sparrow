@@ -227,10 +227,11 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDoozleParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cDropfileParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		private final RuleCall cFBCLeadParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
-		private final RuleCall cGooglecontactPUTParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
-		private final RuleCall cGooglecontactSelectAllParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
-		private final RuleCall cAbortParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
-		private final RuleCall cSmsLeadSmsParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
+		private final RuleCall cGoogleSendMailParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
+		private final RuleCall cGooglecontactPUTParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
+		private final RuleCall cGooglecontactSelectAllParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
+		private final RuleCall cAbortParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
+		private final RuleCall cSmsLeadSmsParserRuleCall_20 = (RuleCall)cAlternatives.eContents().get(20);
 		
 		//Action:
 		//	Copydata
@@ -249,6 +250,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//	| Doozle
 		//	| Dropfile
 		//	| FBCLead
+		//	| GoogleSendMail
 		//	| GooglecontactPUT
 		//	| GooglecontactSelectAll
 		//	| Abort
@@ -256,8 +258,8 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Copydata | LoadCsv | WriteCsv | Transform | GooglecalPUT | SlackPUT | ClickSendSms | Updatedaudit | Callprocess | Fetch
-		//| TrelloPUT | TrelloGET | Rest | Doozle | Dropfile | FBCLead | GooglecontactPUT | GooglecontactSelectAll | Abort |
-		//SmsLeadSms
+		//| TrelloPUT | TrelloGET | Rest | Doozle | Dropfile | FBCLead | GoogleSendMail | GooglecontactPUT |
+		//GooglecontactSelectAll | Abort | SmsLeadSms
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Copydata
@@ -308,17 +310,20 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 		//FBCLead
 		public RuleCall getFBCLeadParserRuleCall_15() { return cFBCLeadParserRuleCall_15; }
 		
+		//GoogleSendMail
+		public RuleCall getGoogleSendMailParserRuleCall_16() { return cGoogleSendMailParserRuleCall_16; }
+		
 		//GooglecontactPUT
-		public RuleCall getGooglecontactPUTParserRuleCall_16() { return cGooglecontactPUTParserRuleCall_16; }
+		public RuleCall getGooglecontactPUTParserRuleCall_17() { return cGooglecontactPUTParserRuleCall_17; }
 		
 		//GooglecontactSelectAll
-		public RuleCall getGooglecontactSelectAllParserRuleCall_17() { return cGooglecontactSelectAllParserRuleCall_17; }
+		public RuleCall getGooglecontactSelectAllParserRuleCall_18() { return cGooglecontactSelectAllParserRuleCall_18; }
 		
 		//Abort
-		public RuleCall getAbortParserRuleCall_18() { return cAbortParserRuleCall_18; }
+		public RuleCall getAbortParserRuleCall_19() { return cAbortParserRuleCall_19; }
 		
 		//SmsLeadSms
-		public RuleCall getSmsLeadSmsParserRuleCall_19() { return cSmsLeadSmsParserRuleCall_19; }
+		public RuleCall getSmsLeadSmsParserRuleCall_20() { return cSmsLeadSmsParserRuleCall_20; }
 	}
 	public class SmsLeadSmsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl.Sparrow.SmsLeadSms");
@@ -2966,6 +2971,7 @@ public class SparrowGrammarAccess extends AbstractGrammarElementFinder {
 	//	| Doozle
 	//	| Dropfile
 	//	| FBCLead
+	//	| GoogleSendMail
 	//	| GooglecontactPUT
 	//	| GooglecontactSelectAll
 	//	| Abort

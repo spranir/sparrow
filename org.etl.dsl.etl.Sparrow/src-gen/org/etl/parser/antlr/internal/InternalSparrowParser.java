@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSparrowParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'process'", "'{'", "'}'", "'try'", "'finally'", "'catch'", "'smsleadssms'", "'as'", "'on'", "'with-sender'", "'through-account'", "'secured-by'", "'from-source'", "'using'", "'on-condition'", "'do-dryrun-with'", "'abort'", "'gcontact-fetchall'", "'with-key'", "'for-project'", "'on-behalf-of'", "'to-target'", "'gcontact'", "'gcalendar'", "'fblc'", "'through-user'", "'for-campaign'", "'into'", "'dropfile'", "'in-path'", "'doozle'", "'in-table'", "'rest'", "'with-url'", "'and-method-as'", "'from'", "'update-url-with'", "'update-header-with'", "'update-body-with'", "'parent'", "'store-ack-at'", "'part'", "'with'", "'trelloget'", "'from-board'", "'to'", "'trelloput'", "'for-list'", "'assign'", "'source'", "'callprocess'", "'with-target'", "'from-file'", "'for-every'", "'log'", "'logto'", "'in'", "'c2sms'", "'with-user'", "'slackput'", "'copydata'", "'writecsv'", "'loadcsv'", "'transform'", "'if'", "'<'", "'>'", "'=='", "'contains'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'process'", "'{'", "'}'", "'try'", "'finally'", "'catch'", "'smsleadssms'", "'as'", "'on'", "'with-sender'", "'through-account'", "'secured-by'", "'from-source'", "'using'", "'on-condition'", "'do-dryrun-with'", "'abort'", "'gcontact-fetchall'", "'with-key'", "'for-project'", "'on-behalf-of'", "'to-target'", "'gsendmail'", "'gcontact'", "'gcalendar'", "'fblc'", "'through-user'", "'for-campaign'", "'into'", "'dropfile'", "'in-path'", "'doozle'", "'in-table'", "'rest'", "'with-url'", "'and-method-as'", "'from'", "'update-url-with'", "'update-header-with'", "'update-body-with'", "'parent'", "'store-ack-at'", "'part'", "'with'", "'trelloget'", "'from-board'", "'to'", "'trelloput'", "'for-list'", "'assign'", "'source'", "'callprocess'", "'with-target'", "'from-file'", "'for-every'", "'log'", "'logto'", "'in'", "'c2sms'", "'with-user'", "'slackput'", "'copydata'", "'writecsv'", "'loadcsv'", "'transform'", "'if'", "'<'", "'>'", "'=='", "'contains'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -88,6 +88,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
     public static final int T__75=75;
     public static final int T__32=32;
     public static final int T__76=76;
+    public static final int T__80=80;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__48=48;
@@ -453,7 +454,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==17||(LA1_0>=27 && LA1_0<=28)||(LA1_0>=33 && LA1_0<=35)||LA1_0==39||LA1_0==41||LA1_0==43||LA1_0==54||LA1_0==57||LA1_0==59||LA1_0==61||LA1_0==65||LA1_0==68||(LA1_0>=70 && LA1_0<=74)) ) {
+                if ( (LA1_0==17||(LA1_0>=27 && LA1_0<=28)||(LA1_0>=33 && LA1_0<=36)||LA1_0==40||LA1_0==42||LA1_0==44||LA1_0==55||LA1_0==58||LA1_0==60||LA1_0==62||LA1_0==66||LA1_0==69||(LA1_0>=71 && LA1_0<=75)) ) {
                     alt1=1;
                 }
 
@@ -620,7 +621,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==17||(LA2_0>=27 && LA2_0<=28)||(LA2_0>=33 && LA2_0<=35)||LA2_0==39||LA2_0==41||LA2_0==43||LA2_0==54||LA2_0==57||LA2_0==59||LA2_0==61||LA2_0==65||LA2_0==68||(LA2_0>=70 && LA2_0<=74)) ) {
+                if ( (LA2_0==17||(LA2_0>=27 && LA2_0<=28)||(LA2_0>=33 && LA2_0<=36)||LA2_0==40||LA2_0==42||LA2_0==44||LA2_0==55||LA2_0==58||LA2_0==60||LA2_0==62||LA2_0==66||LA2_0==69||(LA2_0>=71 && LA2_0<=75)) ) {
                     alt2=1;
                 }
 
@@ -787,7 +788,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==17||(LA3_0>=27 && LA3_0<=28)||(LA3_0>=33 && LA3_0<=35)||LA3_0==39||LA3_0==41||LA3_0==43||LA3_0==54||LA3_0==57||LA3_0==59||LA3_0==61||LA3_0==65||LA3_0==68||(LA3_0>=70 && LA3_0<=74)) ) {
+                if ( (LA3_0==17||(LA3_0>=27 && LA3_0<=28)||(LA3_0>=33 && LA3_0<=36)||LA3_0==40||LA3_0==42||LA3_0==44||LA3_0==55||LA3_0==58||LA3_0==60||LA3_0==62||LA3_0==66||LA3_0==69||(LA3_0>=71 && LA3_0<=75)) ) {
                     alt3=1;
                 }
 
@@ -893,7 +894,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAction"
-    // InternalSparrow.g:381:1: ruleAction returns [EObject current=null] : (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GooglecontactPUT_16= ruleGooglecontactPUT | this_GooglecontactSelectAll_17= ruleGooglecontactSelectAll | this_Abort_18= ruleAbort | this_SmsLeadSms_19= ruleSmsLeadSms ) ;
+    // InternalSparrow.g:381:1: ruleAction returns [EObject current=null] : (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GoogleSendMail_16= ruleGoogleSendMail | this_GooglecontactPUT_17= ruleGooglecontactPUT | this_GooglecontactSelectAll_18= ruleGooglecontactSelectAll | this_Abort_19= ruleAbort | this_SmsLeadSms_20= ruleSmsLeadSms ) ;
     public final EObject ruleAction() throws RecognitionException {
         EObject current = null;
 
@@ -929,101 +930,103 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
         EObject this_FBCLead_15 = null;
 
-        EObject this_GooglecontactPUT_16 = null;
+        EObject this_GoogleSendMail_16 = null;
 
-        EObject this_GooglecontactSelectAll_17 = null;
+        EObject this_GooglecontactPUT_17 = null;
 
-        EObject this_Abort_18 = null;
+        EObject this_GooglecontactSelectAll_18 = null;
 
-        EObject this_SmsLeadSms_19 = null;
+        EObject this_Abort_19 = null;
+
+        EObject this_SmsLeadSms_20 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSparrow.g:387:2: ( (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GooglecontactPUT_16= ruleGooglecontactPUT | this_GooglecontactSelectAll_17= ruleGooglecontactSelectAll | this_Abort_18= ruleAbort | this_SmsLeadSms_19= ruleSmsLeadSms ) )
-            // InternalSparrow.g:388:2: (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GooglecontactPUT_16= ruleGooglecontactPUT | this_GooglecontactSelectAll_17= ruleGooglecontactSelectAll | this_Abort_18= ruleAbort | this_SmsLeadSms_19= ruleSmsLeadSms )
+            // InternalSparrow.g:387:2: ( (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GoogleSendMail_16= ruleGoogleSendMail | this_GooglecontactPUT_17= ruleGooglecontactPUT | this_GooglecontactSelectAll_18= ruleGooglecontactSelectAll | this_Abort_19= ruleAbort | this_SmsLeadSms_20= ruleSmsLeadSms ) )
+            // InternalSparrow.g:388:2: (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GoogleSendMail_16= ruleGoogleSendMail | this_GooglecontactPUT_17= ruleGooglecontactPUT | this_GooglecontactSelectAll_18= ruleGooglecontactSelectAll | this_Abort_19= ruleAbort | this_SmsLeadSms_20= ruleSmsLeadSms )
             {
-            // InternalSparrow.g:388:2: (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GooglecontactPUT_16= ruleGooglecontactPUT | this_GooglecontactSelectAll_17= ruleGooglecontactSelectAll | this_Abort_18= ruleAbort | this_SmsLeadSms_19= ruleSmsLeadSms )
-            int alt4=20;
+            // InternalSparrow.g:388:2: (this_Copydata_0= ruleCopydata | this_LoadCsv_1= ruleLoadCsv | this_WriteCsv_2= ruleWriteCsv | this_Transform_3= ruleTransform | this_GooglecalPUT_4= ruleGooglecalPUT | this_SlackPUT_5= ruleSlackPUT | this_ClickSendSms_6= ruleClickSendSms | this_Updatedaudit_7= ruleUpdatedaudit | this_Callprocess_8= ruleCallprocess | this_Fetch_9= ruleFetch | this_TrelloPUT_10= ruleTrelloPUT | this_TrelloGET_11= ruleTrelloGET | this_Rest_12= ruleRest | this_Doozle_13= ruleDoozle | this_Dropfile_14= ruleDropfile | this_FBCLead_15= ruleFBCLead | this_GoogleSendMail_16= ruleGoogleSendMail | this_GooglecontactPUT_17= ruleGooglecontactPUT | this_GooglecontactSelectAll_18= ruleGooglecontactSelectAll | this_Abort_19= ruleAbort | this_SmsLeadSms_20= ruleSmsLeadSms )
+            int alt4=21;
             switch ( input.LA(1) ) {
-            case 71:
+            case 72:
                 {
                 alt4=1;
                 }
                 break;
-            case 73:
+            case 74:
                 {
                 alt4=2;
                 }
                 break;
-            case 72:
+            case 73:
                 {
                 alt4=3;
                 }
                 break;
-            case 74:
+            case 75:
                 {
                 alt4=4;
                 }
                 break;
-            case 34:
+            case 35:
                 {
                 alt4=5;
                 }
                 break;
-            case 70:
+            case 71:
                 {
                 alt4=6;
                 }
                 break;
-            case 68:
+            case 69:
                 {
                 alt4=7;
                 }
                 break;
-            case 65:
+            case 66:
                 {
                 alt4=8;
                 }
                 break;
-            case 61:
+            case 62:
                 {
                 alt4=9;
                 }
                 break;
-            case 59:
+            case 60:
                 {
                 alt4=10;
                 }
                 break;
-            case 57:
+            case 58:
                 {
                 alt4=11;
                 }
                 break;
-            case 54:
+            case 55:
                 {
                 alt4=12;
                 }
                 break;
-            case 43:
+            case 44:
                 {
                 alt4=13;
                 }
                 break;
-            case 41:
+            case 42:
                 {
                 alt4=14;
                 }
                 break;
-            case 39:
+            case 40:
                 {
                 alt4=15;
                 }
                 break;
-            case 35:
+            case 36:
                 {
                 alt4=16;
                 }
@@ -1033,19 +1036,24 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                 alt4=17;
                 }
                 break;
-            case 28:
+            case 34:
                 {
                 alt4=18;
                 }
                 break;
-            case 27:
+            case 28:
                 {
                 alt4=19;
                 }
                 break;
-            case 17:
+            case 27:
                 {
                 alt4=20;
+                }
+                break;
+            case 17:
+                {
+                alt4=21;
                 }
                 break;
             default:
@@ -1345,72 +1353,90 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalSparrow.g:533:3: this_GooglecontactPUT_16= ruleGooglecontactPUT
+                    // InternalSparrow.g:533:3: this_GoogleSendMail_16= ruleGoogleSendMail
                     {
 
-                    			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_16());
+                    			newCompositeNode(grammarAccess.getActionAccess().getGoogleSendMailParserRuleCall_16());
                     		
                     pushFollow(FOLLOW_2);
-                    this_GooglecontactPUT_16=ruleGooglecontactPUT();
+                    this_GoogleSendMail_16=ruleGoogleSendMail();
 
                     state._fsp--;
 
 
-                    			current = this_GooglecontactPUT_16;
+                    			current = this_GoogleSendMail_16;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 18 :
-                    // InternalSparrow.g:542:3: this_GooglecontactSelectAll_17= ruleGooglecontactSelectAll
+                    // InternalSparrow.g:542:3: this_GooglecontactPUT_17= ruleGooglecontactPUT
                     {
 
-                    			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_17());
+                    			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_17());
                     		
                     pushFollow(FOLLOW_2);
-                    this_GooglecontactSelectAll_17=ruleGooglecontactSelectAll();
+                    this_GooglecontactPUT_17=ruleGooglecontactPUT();
 
                     state._fsp--;
 
 
-                    			current = this_GooglecontactSelectAll_17;
+                    			current = this_GooglecontactPUT_17;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 19 :
-                    // InternalSparrow.g:551:3: this_Abort_18= ruleAbort
+                    // InternalSparrow.g:551:3: this_GooglecontactSelectAll_18= ruleGooglecontactSelectAll
                     {
 
-                    			newCompositeNode(grammarAccess.getActionAccess().getAbortParserRuleCall_18());
+                    			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_18());
                     		
                     pushFollow(FOLLOW_2);
-                    this_Abort_18=ruleAbort();
+                    this_GooglecontactSelectAll_18=ruleGooglecontactSelectAll();
 
                     state._fsp--;
 
 
-                    			current = this_Abort_18;
+                    			current = this_GooglecontactSelectAll_18;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 20 :
-                    // InternalSparrow.g:560:3: this_SmsLeadSms_19= ruleSmsLeadSms
+                    // InternalSparrow.g:560:3: this_Abort_19= ruleAbort
                     {
 
-                    			newCompositeNode(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_19());
+                    			newCompositeNode(grammarAccess.getActionAccess().getAbortParserRuleCall_19());
                     		
                     pushFollow(FOLLOW_2);
-                    this_SmsLeadSms_19=ruleSmsLeadSms();
+                    this_Abort_19=ruleAbort();
 
                     state._fsp--;
 
 
-                    			current = this_SmsLeadSms_19;
+                    			current = this_Abort_19;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 21 :
+                    // InternalSparrow.g:569:3: this_SmsLeadSms_20= ruleSmsLeadSms
+                    {
+
+                    			newCompositeNode(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_20());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_SmsLeadSms_20=ruleSmsLeadSms();
+
+                    state._fsp--;
+
+
+                    			current = this_SmsLeadSms_20;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -1439,7 +1465,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSmsLeadSms"
-    // InternalSparrow.g:572:1: entryRuleSmsLeadSms returns [EObject current=null] : iv_ruleSmsLeadSms= ruleSmsLeadSms EOF ;
+    // InternalSparrow.g:581:1: entryRuleSmsLeadSms returns [EObject current=null] : iv_ruleSmsLeadSms= ruleSmsLeadSms EOF ;
     public final EObject entryRuleSmsLeadSms() throws RecognitionException {
         EObject current = null;
 
@@ -1447,8 +1473,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:572:51: (iv_ruleSmsLeadSms= ruleSmsLeadSms EOF )
-            // InternalSparrow.g:573:2: iv_ruleSmsLeadSms= ruleSmsLeadSms EOF
+            // InternalSparrow.g:581:51: (iv_ruleSmsLeadSms= ruleSmsLeadSms EOF )
+            // InternalSparrow.g:582:2: iv_ruleSmsLeadSms= ruleSmsLeadSms EOF
             {
              newCompositeNode(grammarAccess.getSmsLeadSmsRule()); 
             pushFollow(FOLLOW_1);
@@ -1475,7 +1501,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSmsLeadSms"
-    // InternalSparrow.g:579:1: ruleSmsLeadSms returns [EObject current=null] : (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) ) ;
+    // InternalSparrow.g:588:1: ruleSmsLeadSms returns [EObject current=null] : (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) ) ;
     public final EObject ruleSmsLeadSms() throws RecognitionException {
         EObject current = null;
 
@@ -1506,11 +1532,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:585:2: ( (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) ) )
-            // InternalSparrow.g:586:2: (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) )
+            // InternalSparrow.g:594:2: ( (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) ) )
+            // InternalSparrow.g:595:2: (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) )
             {
-            // InternalSparrow.g:586:2: (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) )
-            // InternalSparrow.g:587:3: otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) )
+            // InternalSparrow.g:595:2: (otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) ) )
+            // InternalSparrow.g:596:3: otherlv_0= 'smsleadssms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_url_4_0= RULE_STRING ) ) otherlv_5= 'with-sender' ( (lv_sender_6_0= RULE_STRING ) ) otherlv_7= 'through-account' ( (lv_account_8_0= RULE_STRING ) ) otherlv_9= 'secured-by' ( (lv_privateKey_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_dbSrc_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) otherlv_19= 'do-dryrun-with' ( (lv_dryrunNumber_20_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,17,FOLLOW_11); 
 
@@ -1520,11 +1546,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSmsLeadSmsAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:595:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:596:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:604:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:605:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:596:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:597:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:605:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:606:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
 
@@ -1550,11 +1576,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getSmsLeadSmsAccess().getOnKeyword_3());
             		
-            // InternalSparrow.g:617:3: ( (lv_url_4_0= RULE_STRING ) )
-            // InternalSparrow.g:618:4: (lv_url_4_0= RULE_STRING )
+            // InternalSparrow.g:626:3: ( (lv_url_4_0= RULE_STRING ) )
+            // InternalSparrow.g:627:4: (lv_url_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:618:4: (lv_url_4_0= RULE_STRING )
-            // InternalSparrow.g:619:5: lv_url_4_0= RULE_STRING
+            // InternalSparrow.g:627:4: (lv_url_4_0= RULE_STRING )
+            // InternalSparrow.g:628:5: lv_url_4_0= RULE_STRING
             {
             lv_url_4_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
@@ -1580,11 +1606,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getSmsLeadSmsAccess().getWithSenderKeyword_5());
             		
-            // InternalSparrow.g:639:3: ( (lv_sender_6_0= RULE_STRING ) )
-            // InternalSparrow.g:640:4: (lv_sender_6_0= RULE_STRING )
+            // InternalSparrow.g:648:3: ( (lv_sender_6_0= RULE_STRING ) )
+            // InternalSparrow.g:649:4: (lv_sender_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:640:4: (lv_sender_6_0= RULE_STRING )
-            // InternalSparrow.g:641:5: lv_sender_6_0= RULE_STRING
+            // InternalSparrow.g:649:4: (lv_sender_6_0= RULE_STRING )
+            // InternalSparrow.g:650:5: lv_sender_6_0= RULE_STRING
             {
             lv_sender_6_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
 
@@ -1610,11 +1636,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getSmsLeadSmsAccess().getThroughAccountKeyword_7());
             		
-            // InternalSparrow.g:661:3: ( (lv_account_8_0= RULE_STRING ) )
-            // InternalSparrow.g:662:4: (lv_account_8_0= RULE_STRING )
+            // InternalSparrow.g:670:3: ( (lv_account_8_0= RULE_STRING ) )
+            // InternalSparrow.g:671:4: (lv_account_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:662:4: (lv_account_8_0= RULE_STRING )
-            // InternalSparrow.g:663:5: lv_account_8_0= RULE_STRING
+            // InternalSparrow.g:671:4: (lv_account_8_0= RULE_STRING )
+            // InternalSparrow.g:672:5: lv_account_8_0= RULE_STRING
             {
             lv_account_8_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -1640,11 +1666,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getSmsLeadSmsAccess().getSecuredByKeyword_9());
             		
-            // InternalSparrow.g:683:3: ( (lv_privateKey_10_0= RULE_STRING ) )
-            // InternalSparrow.g:684:4: (lv_privateKey_10_0= RULE_STRING )
+            // InternalSparrow.g:692:3: ( (lv_privateKey_10_0= RULE_STRING ) )
+            // InternalSparrow.g:693:4: (lv_privateKey_10_0= RULE_STRING )
             {
-            // InternalSparrow.g:684:4: (lv_privateKey_10_0= RULE_STRING )
-            // InternalSparrow.g:685:5: lv_privateKey_10_0= RULE_STRING
+            // InternalSparrow.g:693:4: (lv_privateKey_10_0= RULE_STRING )
+            // InternalSparrow.g:694:5: lv_privateKey_10_0= RULE_STRING
             {
             lv_privateKey_10_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
@@ -1670,11 +1696,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getSmsLeadSmsAccess().getFromSourceKeyword_11());
             		
-            // InternalSparrow.g:705:3: ( (lv_dbSrc_12_0= RULE_STRING ) )
-            // InternalSparrow.g:706:4: (lv_dbSrc_12_0= RULE_STRING )
+            // InternalSparrow.g:714:3: ( (lv_dbSrc_12_0= RULE_STRING ) )
+            // InternalSparrow.g:715:4: (lv_dbSrc_12_0= RULE_STRING )
             {
-            // InternalSparrow.g:706:4: (lv_dbSrc_12_0= RULE_STRING )
-            // InternalSparrow.g:707:5: lv_dbSrc_12_0= RULE_STRING
+            // InternalSparrow.g:715:4: (lv_dbSrc_12_0= RULE_STRING )
+            // InternalSparrow.g:716:5: lv_dbSrc_12_0= RULE_STRING
             {
             lv_dbSrc_12_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -1704,11 +1730,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_14, grammarAccess.getSmsLeadSmsAccess().getLeftCurlyBracketKeyword_14());
             		
-            // InternalSparrow.g:731:3: ( (lv_value_15_0= RULE_STRING ) )
-            // InternalSparrow.g:732:4: (lv_value_15_0= RULE_STRING )
+            // InternalSparrow.g:740:3: ( (lv_value_15_0= RULE_STRING ) )
+            // InternalSparrow.g:741:4: (lv_value_15_0= RULE_STRING )
             {
-            // InternalSparrow.g:732:4: (lv_value_15_0= RULE_STRING )
-            // InternalSparrow.g:733:5: lv_value_15_0= RULE_STRING
+            // InternalSparrow.g:741:4: (lv_value_15_0= RULE_STRING )
+            // InternalSparrow.g:742:5: lv_value_15_0= RULE_STRING
             {
             lv_value_15_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -1738,11 +1764,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_17, grammarAccess.getSmsLeadSmsAccess().getOnConditionKeyword_17());
             		
-            // InternalSparrow.g:757:3: ( (lv_condition_18_0= ruleExpression ) )
-            // InternalSparrow.g:758:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:766:3: ( (lv_condition_18_0= ruleExpression ) )
+            // InternalSparrow.g:767:4: (lv_condition_18_0= ruleExpression )
             {
-            // InternalSparrow.g:758:4: (lv_condition_18_0= ruleExpression )
-            // InternalSparrow.g:759:5: lv_condition_18_0= ruleExpression
+            // InternalSparrow.g:767:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:768:5: lv_condition_18_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getSmsLeadSmsAccess().getConditionExpressionParserRuleCall_18_0());
@@ -1773,11 +1799,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_19, grammarAccess.getSmsLeadSmsAccess().getDoDryrunWithKeyword_19());
             		
-            // InternalSparrow.g:780:3: ( (lv_dryrunNumber_20_0= RULE_STRING ) )
-            // InternalSparrow.g:781:4: (lv_dryrunNumber_20_0= RULE_STRING )
+            // InternalSparrow.g:789:3: ( (lv_dryrunNumber_20_0= RULE_STRING ) )
+            // InternalSparrow.g:790:4: (lv_dryrunNumber_20_0= RULE_STRING )
             {
-            // InternalSparrow.g:781:4: (lv_dryrunNumber_20_0= RULE_STRING )
-            // InternalSparrow.g:782:5: lv_dryrunNumber_20_0= RULE_STRING
+            // InternalSparrow.g:790:4: (lv_dryrunNumber_20_0= RULE_STRING )
+            // InternalSparrow.g:791:5: lv_dryrunNumber_20_0= RULE_STRING
             {
             lv_dryrunNumber_20_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1822,7 +1848,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbort"
-    // InternalSparrow.g:802:1: entryRuleAbort returns [EObject current=null] : iv_ruleAbort= ruleAbort EOF ;
+    // InternalSparrow.g:811:1: entryRuleAbort returns [EObject current=null] : iv_ruleAbort= ruleAbort EOF ;
     public final EObject entryRuleAbort() throws RecognitionException {
         EObject current = null;
 
@@ -1830,8 +1856,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:802:46: (iv_ruleAbort= ruleAbort EOF )
-            // InternalSparrow.g:803:2: iv_ruleAbort= ruleAbort EOF
+            // InternalSparrow.g:811:46: (iv_ruleAbort= ruleAbort EOF )
+            // InternalSparrow.g:812:2: iv_ruleAbort= ruleAbort EOF
             {
              newCompositeNode(grammarAccess.getAbortRule()); 
             pushFollow(FOLLOW_1);
@@ -1858,7 +1884,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbort"
-    // InternalSparrow.g:809:1: ruleAbort returns [EObject current=null] : (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:818:1: ruleAbort returns [EObject current=null] : (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) ) ;
     public final EObject ruleAbort() throws RecognitionException {
         EObject current = null;
 
@@ -1876,11 +1902,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:815:2: ( (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:816:2: (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) )
+            // InternalSparrow.g:824:2: ( (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:825:2: (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:816:2: (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) )
-            // InternalSparrow.g:817:3: otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) )
+            // InternalSparrow.g:825:2: (otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) ) )
+            // InternalSparrow.g:826:3: otherlv_0= 'abort' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= '}' otherlv_6= 'on-condition' ( (lv_condition_7_0= ruleExpression ) )
             {
             otherlv_0=(Token)match(input,27,FOLLOW_11); 
 
@@ -1890,11 +1916,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getAbortAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:825:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:826:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:834:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:835:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:826:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:827:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:835:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:836:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
 
@@ -1920,11 +1946,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getAbortAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSparrow.g:847:3: ( (lv_value_4_0= RULE_STRING ) )
-            // InternalSparrow.g:848:4: (lv_value_4_0= RULE_STRING )
+            // InternalSparrow.g:856:3: ( (lv_value_4_0= RULE_STRING ) )
+            // InternalSparrow.g:857:4: (lv_value_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:848:4: (lv_value_4_0= RULE_STRING )
-            // InternalSparrow.g:849:5: lv_value_4_0= RULE_STRING
+            // InternalSparrow.g:857:4: (lv_value_4_0= RULE_STRING )
+            // InternalSparrow.g:858:5: lv_value_4_0= RULE_STRING
             {
             lv_value_4_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -1954,11 +1980,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getAbortAccess().getOnConditionKeyword_6());
             		
-            // InternalSparrow.g:873:3: ( (lv_condition_7_0= ruleExpression ) )
-            // InternalSparrow.g:874:4: (lv_condition_7_0= ruleExpression )
+            // InternalSparrow.g:882:3: ( (lv_condition_7_0= ruleExpression ) )
+            // InternalSparrow.g:883:4: (lv_condition_7_0= ruleExpression )
             {
-            // InternalSparrow.g:874:4: (lv_condition_7_0= ruleExpression )
-            // InternalSparrow.g:875:5: lv_condition_7_0= ruleExpression
+            // InternalSparrow.g:883:4: (lv_condition_7_0= ruleExpression )
+            // InternalSparrow.g:884:5: lv_condition_7_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_7_0());
@@ -2008,7 +2034,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGooglecontactSelectAll"
-    // InternalSparrow.g:896:1: entryRuleGooglecontactSelectAll returns [EObject current=null] : iv_ruleGooglecontactSelectAll= ruleGooglecontactSelectAll EOF ;
+    // InternalSparrow.g:905:1: entryRuleGooglecontactSelectAll returns [EObject current=null] : iv_ruleGooglecontactSelectAll= ruleGooglecontactSelectAll EOF ;
     public final EObject entryRuleGooglecontactSelectAll() throws RecognitionException {
         EObject current = null;
 
@@ -2016,8 +2042,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:896:63: (iv_ruleGooglecontactSelectAll= ruleGooglecontactSelectAll EOF )
-            // InternalSparrow.g:897:2: iv_ruleGooglecontactSelectAll= ruleGooglecontactSelectAll EOF
+            // InternalSparrow.g:905:63: (iv_ruleGooglecontactSelectAll= ruleGooglecontactSelectAll EOF )
+            // InternalSparrow.g:906:2: iv_ruleGooglecontactSelectAll= ruleGooglecontactSelectAll EOF
             {
              newCompositeNode(grammarAccess.getGooglecontactSelectAllRule()); 
             pushFollow(FOLLOW_1);
@@ -2044,7 +2070,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGooglecontactSelectAll"
-    // InternalSparrow.g:903:1: ruleGooglecontactSelectAll returns [EObject current=null] : (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:912:1: ruleGooglecontactSelectAll returns [EObject current=null] : (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) ;
     public final EObject ruleGooglecontactSelectAll() throws RecognitionException {
         EObject current = null;
 
@@ -2075,11 +2101,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:909:2: ( (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:910:2: (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            // InternalSparrow.g:918:2: ( (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:919:2: (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:910:2: (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
-            // InternalSparrow.g:911:3: otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) )
+            // InternalSparrow.g:919:2: (otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            // InternalSparrow.g:920:3: otherlv_0= 'gcontact-fetchall' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'to-target' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) )
             {
             otherlv_0=(Token)match(input,28,FOLLOW_11); 
 
@@ -2089,11 +2115,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getGooglecontactSelectAllAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:919:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:920:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:928:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:929:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:920:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:921:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:929:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:930:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
 
@@ -2119,11 +2145,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_3());
             		
-            // InternalSparrow.g:941:3: ( (lv_account_4_0= RULE_STRING ) )
-            // InternalSparrow.g:942:4: (lv_account_4_0= RULE_STRING )
+            // InternalSparrow.g:950:3: ( (lv_account_4_0= RULE_STRING ) )
+            // InternalSparrow.g:951:4: (lv_account_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:942:4: (lv_account_4_0= RULE_STRING )
-            // InternalSparrow.g:943:5: lv_account_4_0= RULE_STRING
+            // InternalSparrow.g:951:4: (lv_account_4_0= RULE_STRING )
+            // InternalSparrow.g:952:5: lv_account_4_0= RULE_STRING
             {
             lv_account_4_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -2149,11 +2175,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_5());
             		
-            // InternalSparrow.g:963:3: ( (lv_privateKey_6_0= RULE_STRING ) )
-            // InternalSparrow.g:964:4: (lv_privateKey_6_0= RULE_STRING )
+            // InternalSparrow.g:972:3: ( (lv_privateKey_6_0= RULE_STRING ) )
+            // InternalSparrow.g:973:4: (lv_privateKey_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:964:4: (lv_privateKey_6_0= RULE_STRING )
-            // InternalSparrow.g:965:5: lv_privateKey_6_0= RULE_STRING
+            // InternalSparrow.g:973:4: (lv_privateKey_6_0= RULE_STRING )
+            // InternalSparrow.g:974:5: lv_privateKey_6_0= RULE_STRING
             {
             lv_privateKey_6_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
@@ -2179,11 +2205,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_7());
             		
-            // InternalSparrow.g:985:3: ( (lv_ptwelveFile_8_0= RULE_STRING ) )
-            // InternalSparrow.g:986:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            // InternalSparrow.g:994:3: ( (lv_ptwelveFile_8_0= RULE_STRING ) )
+            // InternalSparrow.g:995:4: (lv_ptwelveFile_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:986:4: (lv_ptwelveFile_8_0= RULE_STRING )
-            // InternalSparrow.g:987:5: lv_ptwelveFile_8_0= RULE_STRING
+            // InternalSparrow.g:995:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            // InternalSparrow.g:996:5: lv_ptwelveFile_8_0= RULE_STRING
             {
             lv_ptwelveFile_8_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
 
@@ -2209,11 +2235,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_9());
             		
-            // InternalSparrow.g:1007:3: ( (lv_project_10_0= RULE_STRING ) )
-            // InternalSparrow.g:1008:4: (lv_project_10_0= RULE_STRING )
+            // InternalSparrow.g:1016:3: ( (lv_project_10_0= RULE_STRING ) )
+            // InternalSparrow.g:1017:4: (lv_project_10_0= RULE_STRING )
             {
-            // InternalSparrow.g:1008:4: (lv_project_10_0= RULE_STRING )
-            // InternalSparrow.g:1009:5: lv_project_10_0= RULE_STRING
+            // InternalSparrow.g:1017:4: (lv_project_10_0= RULE_STRING )
+            // InternalSparrow.g:1018:5: lv_project_10_0= RULE_STRING
             {
             lv_project_10_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
 
@@ -2239,11 +2265,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_11());
             		
-            // InternalSparrow.g:1029:3: ( (lv_impersonatedUser_12_0= RULE_STRING ) )
-            // InternalSparrow.g:1030:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            // InternalSparrow.g:1038:3: ( (lv_impersonatedUser_12_0= RULE_STRING ) )
+            // InternalSparrow.g:1039:4: (lv_impersonatedUser_12_0= RULE_STRING )
             {
-            // InternalSparrow.g:1030:4: (lv_impersonatedUser_12_0= RULE_STRING )
-            // InternalSparrow.g:1031:5: lv_impersonatedUser_12_0= RULE_STRING
+            // InternalSparrow.g:1039:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            // InternalSparrow.g:1040:5: lv_impersonatedUser_12_0= RULE_STRING
             {
             lv_impersonatedUser_12_0=(Token)match(input,RULE_STRING,FOLLOW_24); 
 
@@ -2269,11 +2295,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_13());
             		
-            // InternalSparrow.g:1051:3: ( (lv_dbSrc_14_0= RULE_STRING ) )
-            // InternalSparrow.g:1052:4: (lv_dbSrc_14_0= RULE_STRING )
+            // InternalSparrow.g:1060:3: ( (lv_dbSrc_14_0= RULE_STRING ) )
+            // InternalSparrow.g:1061:4: (lv_dbSrc_14_0= RULE_STRING )
             {
-            // InternalSparrow.g:1052:4: (lv_dbSrc_14_0= RULE_STRING )
-            // InternalSparrow.g:1053:5: lv_dbSrc_14_0= RULE_STRING
+            // InternalSparrow.g:1061:4: (lv_dbSrc_14_0= RULE_STRING )
+            // InternalSparrow.g:1062:5: lv_dbSrc_14_0= RULE_STRING
             {
             lv_dbSrc_14_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -2303,11 +2329,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_16, grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_16());
             		
-            // InternalSparrow.g:1077:3: ( (lv_value_17_0= RULE_STRING ) )
-            // InternalSparrow.g:1078:4: (lv_value_17_0= RULE_STRING )
+            // InternalSparrow.g:1086:3: ( (lv_value_17_0= RULE_STRING ) )
+            // InternalSparrow.g:1087:4: (lv_value_17_0= RULE_STRING )
             {
-            // InternalSparrow.g:1078:4: (lv_value_17_0= RULE_STRING )
-            // InternalSparrow.g:1079:5: lv_value_17_0= RULE_STRING
+            // InternalSparrow.g:1087:4: (lv_value_17_0= RULE_STRING )
+            // InternalSparrow.g:1088:5: lv_value_17_0= RULE_STRING
             {
             lv_value_17_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -2337,11 +2363,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_19, grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_19());
             		
-            // InternalSparrow.g:1103:3: ( (lv_condition_20_0= ruleExpression ) )
-            // InternalSparrow.g:1104:4: (lv_condition_20_0= ruleExpression )
+            // InternalSparrow.g:1112:3: ( (lv_condition_20_0= ruleExpression ) )
+            // InternalSparrow.g:1113:4: (lv_condition_20_0= ruleExpression )
             {
-            // InternalSparrow.g:1104:4: (lv_condition_20_0= ruleExpression )
-            // InternalSparrow.g:1105:5: lv_condition_20_0= ruleExpression
+            // InternalSparrow.g:1113:4: (lv_condition_20_0= ruleExpression )
+            // InternalSparrow.g:1114:5: lv_condition_20_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0());
@@ -2390,8 +2416,391 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleGooglecontactSelectAll"
 
 
+    // $ANTLR start "entryRuleGoogleSendMail"
+    // InternalSparrow.g:1135:1: entryRuleGoogleSendMail returns [EObject current=null] : iv_ruleGoogleSendMail= ruleGoogleSendMail EOF ;
+    public final EObject entryRuleGoogleSendMail() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleGoogleSendMail = null;
+
+
+        try {
+            // InternalSparrow.g:1135:55: (iv_ruleGoogleSendMail= ruleGoogleSendMail EOF )
+            // InternalSparrow.g:1136:2: iv_ruleGoogleSendMail= ruleGoogleSendMail EOF
+            {
+             newCompositeNode(grammarAccess.getGoogleSendMailRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleGoogleSendMail=ruleGoogleSendMail();
+
+            state._fsp--;
+
+             current =iv_ruleGoogleSendMail; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleGoogleSendMail"
+
+
+    // $ANTLR start "ruleGoogleSendMail"
+    // InternalSparrow.g:1142:1: ruleGoogleSendMail returns [EObject current=null] : (otherlv_0= 'gsendmail' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) ;
+    public final EObject ruleGoogleSendMail() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_name_2_0=null;
+        Token otherlv_3=null;
+        Token lv_account_4_0=null;
+        Token otherlv_5=null;
+        Token lv_privateKey_6_0=null;
+        Token otherlv_7=null;
+        Token lv_ptwelveFile_8_0=null;
+        Token otherlv_9=null;
+        Token lv_project_10_0=null;
+        Token otherlv_11=null;
+        Token lv_impersonatedUser_12_0=null;
+        Token otherlv_13=null;
+        Token lv_dbSrc_14_0=null;
+        Token otherlv_15=null;
+        Token otherlv_16=null;
+        Token lv_value_17_0=null;
+        Token otherlv_18=null;
+        Token otherlv_19=null;
+        EObject lv_condition_20_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSparrow.g:1148:2: ( (otherlv_0= 'gsendmail' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:1149:2: (otherlv_0= 'gsendmail' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            {
+            // InternalSparrow.g:1149:2: (otherlv_0= 'gsendmail' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            // InternalSparrow.g:1150:3: otherlv_0= 'gsendmail' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) )
+            {
+            otherlv_0=(Token)match(input,33,FOLLOW_11); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getGoogleSendMailAccess().getGsendmailKeyword_0());
+            		
+            otherlv_1=(Token)match(input,18,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getGoogleSendMailAccess().getAsKeyword_1());
+            		
+            // InternalSparrow.g:1158:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:1159:4: (lv_name_2_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1159:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:1160:5: lv_name_2_0= RULE_STRING
+            {
+            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
+
+            					newLeafNode(lv_name_2_0, grammarAccess.getGoogleSendMailAccess().getNameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,21,FOLLOW_3); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getGoogleSendMailAccess().getThroughAccountKeyword_3());
+            		
+            // InternalSparrow.g:1180:3: ( (lv_account_4_0= RULE_STRING ) )
+            // InternalSparrow.g:1181:4: (lv_account_4_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1181:4: (lv_account_4_0= RULE_STRING )
+            // InternalSparrow.g:1182:5: lv_account_4_0= RULE_STRING
+            {
+            lv_account_4_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+
+            					newLeafNode(lv_account_4_0, grammarAccess.getGoogleSendMailAccess().getAccountSTRINGTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"account",
+            						lv_account_4_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,22,FOLLOW_3); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getGoogleSendMailAccess().getSecuredByKeyword_5());
+            		
+            // InternalSparrow.g:1202:3: ( (lv_privateKey_6_0= RULE_STRING ) )
+            // InternalSparrow.g:1203:4: (lv_privateKey_6_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1203:4: (lv_privateKey_6_0= RULE_STRING )
+            // InternalSparrow.g:1204:5: lv_privateKey_6_0= RULE_STRING
+            {
+            lv_privateKey_6_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
+
+            					newLeafNode(lv_privateKey_6_0, grammarAccess.getGoogleSendMailAccess().getPrivateKeySTRINGTerminalRuleCall_6_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"privateKey",
+            						lv_privateKey_6_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_7=(Token)match(input,29,FOLLOW_3); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getGoogleSendMailAccess().getWithKeyKeyword_7());
+            		
+            // InternalSparrow.g:1224:3: ( (lv_ptwelveFile_8_0= RULE_STRING ) )
+            // InternalSparrow.g:1225:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1225:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            // InternalSparrow.g:1226:5: lv_ptwelveFile_8_0= RULE_STRING
+            {
+            lv_ptwelveFile_8_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
+
+            					newLeafNode(lv_ptwelveFile_8_0, grammarAccess.getGoogleSendMailAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"ptwelveFile",
+            						lv_ptwelveFile_8_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_9=(Token)match(input,30,FOLLOW_3); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getGoogleSendMailAccess().getForProjectKeyword_9());
+            		
+            // InternalSparrow.g:1246:3: ( (lv_project_10_0= RULE_STRING ) )
+            // InternalSparrow.g:1247:4: (lv_project_10_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1247:4: (lv_project_10_0= RULE_STRING )
+            // InternalSparrow.g:1248:5: lv_project_10_0= RULE_STRING
+            {
+            lv_project_10_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
+
+            					newLeafNode(lv_project_10_0, grammarAccess.getGoogleSendMailAccess().getProjectSTRINGTerminalRuleCall_10_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"project",
+            						lv_project_10_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_11=(Token)match(input,31,FOLLOW_3); 
+
+            			newLeafNode(otherlv_11, grammarAccess.getGoogleSendMailAccess().getOnBehalfOfKeyword_11());
+            		
+            // InternalSparrow.g:1268:3: ( (lv_impersonatedUser_12_0= RULE_STRING ) )
+            // InternalSparrow.g:1269:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1269:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            // InternalSparrow.g:1270:5: lv_impersonatedUser_12_0= RULE_STRING
+            {
+            lv_impersonatedUser_12_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
+
+            					newLeafNode(lv_impersonatedUser_12_0, grammarAccess.getGoogleSendMailAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"impersonatedUser",
+            						lv_impersonatedUser_12_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_13=(Token)match(input,23,FOLLOW_3); 
+
+            			newLeafNode(otherlv_13, grammarAccess.getGoogleSendMailAccess().getFromSourceKeyword_13());
+            		
+            // InternalSparrow.g:1290:3: ( (lv_dbSrc_14_0= RULE_STRING ) )
+            // InternalSparrow.g:1291:4: (lv_dbSrc_14_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1291:4: (lv_dbSrc_14_0= RULE_STRING )
+            // InternalSparrow.g:1292:5: lv_dbSrc_14_0= RULE_STRING
+            {
+            lv_dbSrc_14_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+
+            					newLeafNode(lv_dbSrc_14_0, grammarAccess.getGoogleSendMailAccess().getDbSrcSTRINGTerminalRuleCall_14_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"dbSrc",
+            						lv_dbSrc_14_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_15=(Token)match(input,24,FOLLOW_4); 
+
+            			newLeafNode(otherlv_15, grammarAccess.getGoogleSendMailAccess().getUsingKeyword_15());
+            		
+            otherlv_16=(Token)match(input,12,FOLLOW_3); 
+
+            			newLeafNode(otherlv_16, grammarAccess.getGoogleSendMailAccess().getLeftCurlyBracketKeyword_16());
+            		
+            // InternalSparrow.g:1316:3: ( (lv_value_17_0= RULE_STRING ) )
+            // InternalSparrow.g:1317:4: (lv_value_17_0= RULE_STRING )
+            {
+            // InternalSparrow.g:1317:4: (lv_value_17_0= RULE_STRING )
+            // InternalSparrow.g:1318:5: lv_value_17_0= RULE_STRING
+            {
+            lv_value_17_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
+
+            					newLeafNode(lv_value_17_0, grammarAccess.getGoogleSendMailAccess().getValueSTRINGTerminalRuleCall_17_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGoogleSendMailRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"value",
+            						lv_value_17_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_18=(Token)match(input,13,FOLLOW_18); 
+
+            			newLeafNode(otherlv_18, grammarAccess.getGoogleSendMailAccess().getRightCurlyBracketKeyword_18());
+            		
+            otherlv_19=(Token)match(input,25,FOLLOW_19); 
+
+            			newLeafNode(otherlv_19, grammarAccess.getGoogleSendMailAccess().getOnConditionKeyword_19());
+            		
+            // InternalSparrow.g:1342:3: ( (lv_condition_20_0= ruleExpression ) )
+            // InternalSparrow.g:1343:4: (lv_condition_20_0= ruleExpression )
+            {
+            // InternalSparrow.g:1343:4: (lv_condition_20_0= ruleExpression )
+            // InternalSparrow.g:1344:5: lv_condition_20_0= ruleExpression
+            {
+
+            					newCompositeNode(grammarAccess.getGoogleSendMailAccess().getConditionExpressionParserRuleCall_20_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_condition_20_0=ruleExpression();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getGoogleSendMailRule());
+            					}
+            					set(
+            						current,
+            						"condition",
+            						lv_condition_20_0,
+            						"org.etl.Sparrow.Expression");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleGoogleSendMail"
+
+
     // $ANTLR start "entryRuleGooglecontactPUT"
-    // InternalSparrow.g:1126:1: entryRuleGooglecontactPUT returns [EObject current=null] : iv_ruleGooglecontactPUT= ruleGooglecontactPUT EOF ;
+    // InternalSparrow.g:1365:1: entryRuleGooglecontactPUT returns [EObject current=null] : iv_ruleGooglecontactPUT= ruleGooglecontactPUT EOF ;
     public final EObject entryRuleGooglecontactPUT() throws RecognitionException {
         EObject current = null;
 
@@ -2399,8 +2808,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:1126:57: (iv_ruleGooglecontactPUT= ruleGooglecontactPUT EOF )
-            // InternalSparrow.g:1127:2: iv_ruleGooglecontactPUT= ruleGooglecontactPUT EOF
+            // InternalSparrow.g:1365:57: (iv_ruleGooglecontactPUT= ruleGooglecontactPUT EOF )
+            // InternalSparrow.g:1366:2: iv_ruleGooglecontactPUT= ruleGooglecontactPUT EOF
             {
              newCompositeNode(grammarAccess.getGooglecontactPUTRule()); 
             pushFollow(FOLLOW_1);
@@ -2427,7 +2836,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGooglecontactPUT"
-    // InternalSparrow.g:1133:1: ruleGooglecontactPUT returns [EObject current=null] : (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:1372:1: ruleGooglecontactPUT returns [EObject current=null] : (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) ;
     public final EObject ruleGooglecontactPUT() throws RecognitionException {
         EObject current = null;
 
@@ -2458,13 +2867,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:1139:2: ( (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:1140:2: (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            // InternalSparrow.g:1378:2: ( (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:1379:2: (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:1140:2: (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
-            // InternalSparrow.g:1141:3: otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) )
+            // InternalSparrow.g:1379:2: (otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            // InternalSparrow.g:1380:3: otherlv_0= 'gcontact' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_11); 
+            otherlv_0=(Token)match(input,34,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGooglecontactPUTAccess().getGcontactKeyword_0());
             		
@@ -2472,11 +2881,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getGooglecontactPUTAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:1149:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:1150:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:1388:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:1389:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:1150:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:1151:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:1389:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:1390:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
 
@@ -2502,11 +2911,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getGooglecontactPUTAccess().getThroughAccountKeyword_3());
             		
-            // InternalSparrow.g:1171:3: ( (lv_account_4_0= RULE_STRING ) )
-            // InternalSparrow.g:1172:4: (lv_account_4_0= RULE_STRING )
+            // InternalSparrow.g:1410:3: ( (lv_account_4_0= RULE_STRING ) )
+            // InternalSparrow.g:1411:4: (lv_account_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:1172:4: (lv_account_4_0= RULE_STRING )
-            // InternalSparrow.g:1173:5: lv_account_4_0= RULE_STRING
+            // InternalSparrow.g:1411:4: (lv_account_4_0= RULE_STRING )
+            // InternalSparrow.g:1412:5: lv_account_4_0= RULE_STRING
             {
             lv_account_4_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -2532,11 +2941,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getGooglecontactPUTAccess().getSecuredByKeyword_5());
             		
-            // InternalSparrow.g:1193:3: ( (lv_privateKey_6_0= RULE_STRING ) )
-            // InternalSparrow.g:1194:4: (lv_privateKey_6_0= RULE_STRING )
+            // InternalSparrow.g:1432:3: ( (lv_privateKey_6_0= RULE_STRING ) )
+            // InternalSparrow.g:1433:4: (lv_privateKey_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:1194:4: (lv_privateKey_6_0= RULE_STRING )
-            // InternalSparrow.g:1195:5: lv_privateKey_6_0= RULE_STRING
+            // InternalSparrow.g:1433:4: (lv_privateKey_6_0= RULE_STRING )
+            // InternalSparrow.g:1434:5: lv_privateKey_6_0= RULE_STRING
             {
             lv_privateKey_6_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
@@ -2562,11 +2971,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getGooglecontactPUTAccess().getWithKeyKeyword_7());
             		
-            // InternalSparrow.g:1215:3: ( (lv_ptwelveFile_8_0= RULE_STRING ) )
-            // InternalSparrow.g:1216:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            // InternalSparrow.g:1454:3: ( (lv_ptwelveFile_8_0= RULE_STRING ) )
+            // InternalSparrow.g:1455:4: (lv_ptwelveFile_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:1216:4: (lv_ptwelveFile_8_0= RULE_STRING )
-            // InternalSparrow.g:1217:5: lv_ptwelveFile_8_0= RULE_STRING
+            // InternalSparrow.g:1455:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            // InternalSparrow.g:1456:5: lv_ptwelveFile_8_0= RULE_STRING
             {
             lv_ptwelveFile_8_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
 
@@ -2592,11 +3001,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getGooglecontactPUTAccess().getForProjectKeyword_9());
             		
-            // InternalSparrow.g:1237:3: ( (lv_project_10_0= RULE_STRING ) )
-            // InternalSparrow.g:1238:4: (lv_project_10_0= RULE_STRING )
+            // InternalSparrow.g:1476:3: ( (lv_project_10_0= RULE_STRING ) )
+            // InternalSparrow.g:1477:4: (lv_project_10_0= RULE_STRING )
             {
-            // InternalSparrow.g:1238:4: (lv_project_10_0= RULE_STRING )
-            // InternalSparrow.g:1239:5: lv_project_10_0= RULE_STRING
+            // InternalSparrow.g:1477:4: (lv_project_10_0= RULE_STRING )
+            // InternalSparrow.g:1478:5: lv_project_10_0= RULE_STRING
             {
             lv_project_10_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
 
@@ -2622,11 +3031,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getGooglecontactPUTAccess().getOnBehalfOfKeyword_11());
             		
-            // InternalSparrow.g:1259:3: ( (lv_impersonatedUser_12_0= RULE_STRING ) )
-            // InternalSparrow.g:1260:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            // InternalSparrow.g:1498:3: ( (lv_impersonatedUser_12_0= RULE_STRING ) )
+            // InternalSparrow.g:1499:4: (lv_impersonatedUser_12_0= RULE_STRING )
             {
-            // InternalSparrow.g:1260:4: (lv_impersonatedUser_12_0= RULE_STRING )
-            // InternalSparrow.g:1261:5: lv_impersonatedUser_12_0= RULE_STRING
+            // InternalSparrow.g:1499:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            // InternalSparrow.g:1500:5: lv_impersonatedUser_12_0= RULE_STRING
             {
             lv_impersonatedUser_12_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
@@ -2652,11 +3061,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getGooglecontactPUTAccess().getFromSourceKeyword_13());
             		
-            // InternalSparrow.g:1281:3: ( (lv_dbSrc_14_0= RULE_STRING ) )
-            // InternalSparrow.g:1282:4: (lv_dbSrc_14_0= RULE_STRING )
+            // InternalSparrow.g:1520:3: ( (lv_dbSrc_14_0= RULE_STRING ) )
+            // InternalSparrow.g:1521:4: (lv_dbSrc_14_0= RULE_STRING )
             {
-            // InternalSparrow.g:1282:4: (lv_dbSrc_14_0= RULE_STRING )
-            // InternalSparrow.g:1283:5: lv_dbSrc_14_0= RULE_STRING
+            // InternalSparrow.g:1521:4: (lv_dbSrc_14_0= RULE_STRING )
+            // InternalSparrow.g:1522:5: lv_dbSrc_14_0= RULE_STRING
             {
             lv_dbSrc_14_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -2686,11 +3095,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_16, grammarAccess.getGooglecontactPUTAccess().getLeftCurlyBracketKeyword_16());
             		
-            // InternalSparrow.g:1307:3: ( (lv_value_17_0= RULE_STRING ) )
-            // InternalSparrow.g:1308:4: (lv_value_17_0= RULE_STRING )
+            // InternalSparrow.g:1546:3: ( (lv_value_17_0= RULE_STRING ) )
+            // InternalSparrow.g:1547:4: (lv_value_17_0= RULE_STRING )
             {
-            // InternalSparrow.g:1308:4: (lv_value_17_0= RULE_STRING )
-            // InternalSparrow.g:1309:5: lv_value_17_0= RULE_STRING
+            // InternalSparrow.g:1547:4: (lv_value_17_0= RULE_STRING )
+            // InternalSparrow.g:1548:5: lv_value_17_0= RULE_STRING
             {
             lv_value_17_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -2720,11 +3129,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_19, grammarAccess.getGooglecontactPUTAccess().getOnConditionKeyword_19());
             		
-            // InternalSparrow.g:1333:3: ( (lv_condition_20_0= ruleExpression ) )
-            // InternalSparrow.g:1334:4: (lv_condition_20_0= ruleExpression )
+            // InternalSparrow.g:1572:3: ( (lv_condition_20_0= ruleExpression ) )
+            // InternalSparrow.g:1573:4: (lv_condition_20_0= ruleExpression )
             {
-            // InternalSparrow.g:1334:4: (lv_condition_20_0= ruleExpression )
-            // InternalSparrow.g:1335:5: lv_condition_20_0= ruleExpression
+            // InternalSparrow.g:1573:4: (lv_condition_20_0= ruleExpression )
+            // InternalSparrow.g:1574:5: lv_condition_20_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getGooglecontactPUTAccess().getConditionExpressionParserRuleCall_20_0());
@@ -2774,7 +3183,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGooglecalPUT"
-    // InternalSparrow.g:1356:1: entryRuleGooglecalPUT returns [EObject current=null] : iv_ruleGooglecalPUT= ruleGooglecalPUT EOF ;
+    // InternalSparrow.g:1595:1: entryRuleGooglecalPUT returns [EObject current=null] : iv_ruleGooglecalPUT= ruleGooglecalPUT EOF ;
     public final EObject entryRuleGooglecalPUT() throws RecognitionException {
         EObject current = null;
 
@@ -2782,8 +3191,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:1356:53: (iv_ruleGooglecalPUT= ruleGooglecalPUT EOF )
-            // InternalSparrow.g:1357:2: iv_ruleGooglecalPUT= ruleGooglecalPUT EOF
+            // InternalSparrow.g:1595:53: (iv_ruleGooglecalPUT= ruleGooglecalPUT EOF )
+            // InternalSparrow.g:1596:2: iv_ruleGooglecalPUT= ruleGooglecalPUT EOF
             {
              newCompositeNode(grammarAccess.getGooglecalPUTRule()); 
             pushFollow(FOLLOW_1);
@@ -2810,7 +3219,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGooglecalPUT"
-    // InternalSparrow.g:1363:1: ruleGooglecalPUT returns [EObject current=null] : (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:1602:1: ruleGooglecalPUT returns [EObject current=null] : (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) ;
     public final EObject ruleGooglecalPUT() throws RecognitionException {
         EObject current = null;
 
@@ -2841,13 +3250,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:1369:2: ( (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:1370:2: (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            // InternalSparrow.g:1608:2: ( (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:1609:2: (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:1370:2: (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
-            // InternalSparrow.g:1371:3: otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) )
+            // InternalSparrow.g:1609:2: (otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) ) )
+            // InternalSparrow.g:1610:3: otherlv_0= 'gcalendar' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'through-account' ( (lv_account_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_privateKey_6_0= RULE_STRING ) ) otherlv_7= 'with-key' ( (lv_ptwelveFile_8_0= RULE_STRING ) ) otherlv_9= 'for-project' ( (lv_project_10_0= RULE_STRING ) ) otherlv_11= 'on-behalf-of' ( (lv_impersonatedUser_12_0= RULE_STRING ) ) otherlv_13= 'from-source' ( (lv_dbSrc_14_0= RULE_STRING ) ) otherlv_15= 'using' otherlv_16= '{' ( (lv_value_17_0= RULE_STRING ) ) otherlv_18= '}' otherlv_19= 'on-condition' ( (lv_condition_20_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_11); 
+            otherlv_0=(Token)match(input,35,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGooglecalPUTAccess().getGcalendarKeyword_0());
             		
@@ -2855,11 +3264,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getGooglecalPUTAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:1379:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:1380:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:1618:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:1619:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:1380:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:1381:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:1619:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:1620:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
 
@@ -2885,11 +3294,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getGooglecalPUTAccess().getThroughAccountKeyword_3());
             		
-            // InternalSparrow.g:1401:3: ( (lv_account_4_0= RULE_STRING ) )
-            // InternalSparrow.g:1402:4: (lv_account_4_0= RULE_STRING )
+            // InternalSparrow.g:1640:3: ( (lv_account_4_0= RULE_STRING ) )
+            // InternalSparrow.g:1641:4: (lv_account_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:1402:4: (lv_account_4_0= RULE_STRING )
-            // InternalSparrow.g:1403:5: lv_account_4_0= RULE_STRING
+            // InternalSparrow.g:1641:4: (lv_account_4_0= RULE_STRING )
+            // InternalSparrow.g:1642:5: lv_account_4_0= RULE_STRING
             {
             lv_account_4_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -2915,11 +3324,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getGooglecalPUTAccess().getSecuredByKeyword_5());
             		
-            // InternalSparrow.g:1423:3: ( (lv_privateKey_6_0= RULE_STRING ) )
-            // InternalSparrow.g:1424:4: (lv_privateKey_6_0= RULE_STRING )
+            // InternalSparrow.g:1662:3: ( (lv_privateKey_6_0= RULE_STRING ) )
+            // InternalSparrow.g:1663:4: (lv_privateKey_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:1424:4: (lv_privateKey_6_0= RULE_STRING )
-            // InternalSparrow.g:1425:5: lv_privateKey_6_0= RULE_STRING
+            // InternalSparrow.g:1663:4: (lv_privateKey_6_0= RULE_STRING )
+            // InternalSparrow.g:1664:5: lv_privateKey_6_0= RULE_STRING
             {
             lv_privateKey_6_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
@@ -2945,11 +3354,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getGooglecalPUTAccess().getWithKeyKeyword_7());
             		
-            // InternalSparrow.g:1445:3: ( (lv_ptwelveFile_8_0= RULE_STRING ) )
-            // InternalSparrow.g:1446:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            // InternalSparrow.g:1684:3: ( (lv_ptwelveFile_8_0= RULE_STRING ) )
+            // InternalSparrow.g:1685:4: (lv_ptwelveFile_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:1446:4: (lv_ptwelveFile_8_0= RULE_STRING )
-            // InternalSparrow.g:1447:5: lv_ptwelveFile_8_0= RULE_STRING
+            // InternalSparrow.g:1685:4: (lv_ptwelveFile_8_0= RULE_STRING )
+            // InternalSparrow.g:1686:5: lv_ptwelveFile_8_0= RULE_STRING
             {
             lv_ptwelveFile_8_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
 
@@ -2975,11 +3384,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getGooglecalPUTAccess().getForProjectKeyword_9());
             		
-            // InternalSparrow.g:1467:3: ( (lv_project_10_0= RULE_STRING ) )
-            // InternalSparrow.g:1468:4: (lv_project_10_0= RULE_STRING )
+            // InternalSparrow.g:1706:3: ( (lv_project_10_0= RULE_STRING ) )
+            // InternalSparrow.g:1707:4: (lv_project_10_0= RULE_STRING )
             {
-            // InternalSparrow.g:1468:4: (lv_project_10_0= RULE_STRING )
-            // InternalSparrow.g:1469:5: lv_project_10_0= RULE_STRING
+            // InternalSparrow.g:1707:4: (lv_project_10_0= RULE_STRING )
+            // InternalSparrow.g:1708:5: lv_project_10_0= RULE_STRING
             {
             lv_project_10_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
 
@@ -3005,11 +3414,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getGooglecalPUTAccess().getOnBehalfOfKeyword_11());
             		
-            // InternalSparrow.g:1489:3: ( (lv_impersonatedUser_12_0= RULE_STRING ) )
-            // InternalSparrow.g:1490:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            // InternalSparrow.g:1728:3: ( (lv_impersonatedUser_12_0= RULE_STRING ) )
+            // InternalSparrow.g:1729:4: (lv_impersonatedUser_12_0= RULE_STRING )
             {
-            // InternalSparrow.g:1490:4: (lv_impersonatedUser_12_0= RULE_STRING )
-            // InternalSparrow.g:1491:5: lv_impersonatedUser_12_0= RULE_STRING
+            // InternalSparrow.g:1729:4: (lv_impersonatedUser_12_0= RULE_STRING )
+            // InternalSparrow.g:1730:5: lv_impersonatedUser_12_0= RULE_STRING
             {
             lv_impersonatedUser_12_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
@@ -3035,11 +3444,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getGooglecalPUTAccess().getFromSourceKeyword_13());
             		
-            // InternalSparrow.g:1511:3: ( (lv_dbSrc_14_0= RULE_STRING ) )
-            // InternalSparrow.g:1512:4: (lv_dbSrc_14_0= RULE_STRING )
+            // InternalSparrow.g:1750:3: ( (lv_dbSrc_14_0= RULE_STRING ) )
+            // InternalSparrow.g:1751:4: (lv_dbSrc_14_0= RULE_STRING )
             {
-            // InternalSparrow.g:1512:4: (lv_dbSrc_14_0= RULE_STRING )
-            // InternalSparrow.g:1513:5: lv_dbSrc_14_0= RULE_STRING
+            // InternalSparrow.g:1751:4: (lv_dbSrc_14_0= RULE_STRING )
+            // InternalSparrow.g:1752:5: lv_dbSrc_14_0= RULE_STRING
             {
             lv_dbSrc_14_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -3069,11 +3478,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_16, grammarAccess.getGooglecalPUTAccess().getLeftCurlyBracketKeyword_16());
             		
-            // InternalSparrow.g:1537:3: ( (lv_value_17_0= RULE_STRING ) )
-            // InternalSparrow.g:1538:4: (lv_value_17_0= RULE_STRING )
+            // InternalSparrow.g:1776:3: ( (lv_value_17_0= RULE_STRING ) )
+            // InternalSparrow.g:1777:4: (lv_value_17_0= RULE_STRING )
             {
-            // InternalSparrow.g:1538:4: (lv_value_17_0= RULE_STRING )
-            // InternalSparrow.g:1539:5: lv_value_17_0= RULE_STRING
+            // InternalSparrow.g:1777:4: (lv_value_17_0= RULE_STRING )
+            // InternalSparrow.g:1778:5: lv_value_17_0= RULE_STRING
             {
             lv_value_17_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -3103,11 +3512,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_19, grammarAccess.getGooglecalPUTAccess().getOnConditionKeyword_19());
             		
-            // InternalSparrow.g:1563:3: ( (lv_condition_20_0= ruleExpression ) )
-            // InternalSparrow.g:1564:4: (lv_condition_20_0= ruleExpression )
+            // InternalSparrow.g:1802:3: ( (lv_condition_20_0= ruleExpression ) )
+            // InternalSparrow.g:1803:4: (lv_condition_20_0= ruleExpression )
             {
-            // InternalSparrow.g:1564:4: (lv_condition_20_0= ruleExpression )
-            // InternalSparrow.g:1565:5: lv_condition_20_0= ruleExpression
+            // InternalSparrow.g:1803:4: (lv_condition_20_0= ruleExpression )
+            // InternalSparrow.g:1804:5: lv_condition_20_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getGooglecalPUTAccess().getConditionExpressionParserRuleCall_20_0());
@@ -3157,7 +3566,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFBCLead"
-    // InternalSparrow.g:1586:1: entryRuleFBCLead returns [EObject current=null] : iv_ruleFBCLead= ruleFBCLead EOF ;
+    // InternalSparrow.g:1825:1: entryRuleFBCLead returns [EObject current=null] : iv_ruleFBCLead= ruleFBCLead EOF ;
     public final EObject entryRuleFBCLead() throws RecognitionException {
         EObject current = null;
 
@@ -3165,8 +3574,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:1586:48: (iv_ruleFBCLead= ruleFBCLead EOF )
-            // InternalSparrow.g:1587:2: iv_ruleFBCLead= ruleFBCLead EOF
+            // InternalSparrow.g:1825:48: (iv_ruleFBCLead= ruleFBCLead EOF )
+            // InternalSparrow.g:1826:2: iv_ruleFBCLead= ruleFBCLead EOF
             {
              newCompositeNode(grammarAccess.getFBCLeadRule()); 
             pushFollow(FOLLOW_1);
@@ -3193,7 +3602,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFBCLead"
-    // InternalSparrow.g:1593:1: ruleFBCLead returns [EObject current=null] : (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:1832:1: ruleFBCLead returns [EObject current=null] : (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) ;
     public final EObject ruleFBCLead() throws RecognitionException {
         EObject current = null;
 
@@ -3222,13 +3631,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:1599:2: ( (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:1600:2: (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
+            // InternalSparrow.g:1838:2: ( (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:1839:2: (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:1600:2: (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
-            // InternalSparrow.g:1601:3: otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) )
+            // InternalSparrow.g:1839:2: (otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
+            // InternalSparrow.g:1840:3: otherlv_0= 'fblc' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_accessToken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_appSecret_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_accountId_8_0= RULE_STRING ) ) otherlv_9= 'for-campaign' ( (lv_campaignId_10_0= RULE_STRING ) ) otherlv_11= 'into' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= RULE_STRING ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,35,FOLLOW_11); 
+            otherlv_0=(Token)match(input,36,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFBCLeadAccess().getFblcKeyword_0());
             		
@@ -3236,11 +3645,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getFBCLeadAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:1609:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:1610:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:1848:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:1849:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:1610:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:1611:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:1849:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:1850:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -3266,11 +3675,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getFBCLeadAccess().getSecuredByKeyword_3());
             		
-            // InternalSparrow.g:1631:3: ( (lv_accessToken_4_0= RULE_STRING ) )
-            // InternalSparrow.g:1632:4: (lv_accessToken_4_0= RULE_STRING )
+            // InternalSparrow.g:1870:3: ( (lv_accessToken_4_0= RULE_STRING ) )
+            // InternalSparrow.g:1871:4: (lv_accessToken_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:1632:4: (lv_accessToken_4_0= RULE_STRING )
-            // InternalSparrow.g:1633:5: lv_accessToken_4_0= RULE_STRING
+            // InternalSparrow.g:1871:4: (lv_accessToken_4_0= RULE_STRING )
+            // InternalSparrow.g:1872:5: lv_accessToken_4_0= RULE_STRING
             {
             lv_accessToken_4_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
@@ -3296,11 +3705,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getFBCLeadAccess().getWithKeyKeyword_5());
             		
-            // InternalSparrow.g:1653:3: ( (lv_appSecret_6_0= RULE_STRING ) )
-            // InternalSparrow.g:1654:4: (lv_appSecret_6_0= RULE_STRING )
+            // InternalSparrow.g:1892:3: ( (lv_appSecret_6_0= RULE_STRING ) )
+            // InternalSparrow.g:1893:4: (lv_appSecret_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:1654:4: (lv_appSecret_6_0= RULE_STRING )
-            // InternalSparrow.g:1655:5: lv_appSecret_6_0= RULE_STRING
+            // InternalSparrow.g:1893:4: (lv_appSecret_6_0= RULE_STRING )
+            // InternalSparrow.g:1894:5: lv_appSecret_6_0= RULE_STRING
             {
             lv_appSecret_6_0=(Token)match(input,RULE_STRING,FOLLOW_25); 
 
@@ -3322,15 +3731,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,36,FOLLOW_3); 
+            otherlv_7=(Token)match(input,37,FOLLOW_3); 
 
             			newLeafNode(otherlv_7, grammarAccess.getFBCLeadAccess().getThroughUserKeyword_7());
             		
-            // InternalSparrow.g:1675:3: ( (lv_accountId_8_0= RULE_STRING ) )
-            // InternalSparrow.g:1676:4: (lv_accountId_8_0= RULE_STRING )
+            // InternalSparrow.g:1914:3: ( (lv_accountId_8_0= RULE_STRING ) )
+            // InternalSparrow.g:1915:4: (lv_accountId_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:1676:4: (lv_accountId_8_0= RULE_STRING )
-            // InternalSparrow.g:1677:5: lv_accountId_8_0= RULE_STRING
+            // InternalSparrow.g:1915:4: (lv_accountId_8_0= RULE_STRING )
+            // InternalSparrow.g:1916:5: lv_accountId_8_0= RULE_STRING
             {
             lv_accountId_8_0=(Token)match(input,RULE_STRING,FOLLOW_26); 
 
@@ -3352,15 +3761,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,37,FOLLOW_3); 
+            otherlv_9=(Token)match(input,38,FOLLOW_3); 
 
             			newLeafNode(otherlv_9, grammarAccess.getFBCLeadAccess().getForCampaignKeyword_9());
             		
-            // InternalSparrow.g:1697:3: ( (lv_campaignId_10_0= RULE_STRING ) )
-            // InternalSparrow.g:1698:4: (lv_campaignId_10_0= RULE_STRING )
+            // InternalSparrow.g:1936:3: ( (lv_campaignId_10_0= RULE_STRING ) )
+            // InternalSparrow.g:1937:4: (lv_campaignId_10_0= RULE_STRING )
             {
-            // InternalSparrow.g:1698:4: (lv_campaignId_10_0= RULE_STRING )
-            // InternalSparrow.g:1699:5: lv_campaignId_10_0= RULE_STRING
+            // InternalSparrow.g:1937:4: (lv_campaignId_10_0= RULE_STRING )
+            // InternalSparrow.g:1938:5: lv_campaignId_10_0= RULE_STRING
             {
             lv_campaignId_10_0=(Token)match(input,RULE_STRING,FOLLOW_27); 
 
@@ -3382,15 +3791,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,38,FOLLOW_3); 
+            otherlv_11=(Token)match(input,39,FOLLOW_3); 
 
             			newLeafNode(otherlv_11, grammarAccess.getFBCLeadAccess().getIntoKeyword_11());
             		
-            // InternalSparrow.g:1719:3: ( (lv_target_12_0= RULE_STRING ) )
-            // InternalSparrow.g:1720:4: (lv_target_12_0= RULE_STRING )
+            // InternalSparrow.g:1958:3: ( (lv_target_12_0= RULE_STRING ) )
+            // InternalSparrow.g:1959:4: (lv_target_12_0= RULE_STRING )
             {
-            // InternalSparrow.g:1720:4: (lv_target_12_0= RULE_STRING )
-            // InternalSparrow.g:1721:5: lv_target_12_0= RULE_STRING
+            // InternalSparrow.g:1959:4: (lv_target_12_0= RULE_STRING )
+            // InternalSparrow.g:1960:5: lv_target_12_0= RULE_STRING
             {
             lv_target_12_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -3420,11 +3829,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_14, grammarAccess.getFBCLeadAccess().getLeftCurlyBracketKeyword_14());
             		
-            // InternalSparrow.g:1745:3: ( (lv_value_15_0= RULE_STRING ) )
-            // InternalSparrow.g:1746:4: (lv_value_15_0= RULE_STRING )
+            // InternalSparrow.g:1984:3: ( (lv_value_15_0= RULE_STRING ) )
+            // InternalSparrow.g:1985:4: (lv_value_15_0= RULE_STRING )
             {
-            // InternalSparrow.g:1746:4: (lv_value_15_0= RULE_STRING )
-            // InternalSparrow.g:1747:5: lv_value_15_0= RULE_STRING
+            // InternalSparrow.g:1985:4: (lv_value_15_0= RULE_STRING )
+            // InternalSparrow.g:1986:5: lv_value_15_0= RULE_STRING
             {
             lv_value_15_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -3454,11 +3863,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_17, grammarAccess.getFBCLeadAccess().getOnConditionKeyword_17());
             		
-            // InternalSparrow.g:1771:3: ( (lv_condition_18_0= ruleExpression ) )
-            // InternalSparrow.g:1772:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:2010:3: ( (lv_condition_18_0= ruleExpression ) )
+            // InternalSparrow.g:2011:4: (lv_condition_18_0= ruleExpression )
             {
-            // InternalSparrow.g:1772:4: (lv_condition_18_0= ruleExpression )
-            // InternalSparrow.g:1773:5: lv_condition_18_0= ruleExpression
+            // InternalSparrow.g:2011:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:2012:5: lv_condition_18_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getFBCLeadAccess().getConditionExpressionParserRuleCall_18_0());
@@ -3508,7 +3917,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDropfile"
-    // InternalSparrow.g:1794:1: entryRuleDropfile returns [EObject current=null] : iv_ruleDropfile= ruleDropfile EOF ;
+    // InternalSparrow.g:2033:1: entryRuleDropfile returns [EObject current=null] : iv_ruleDropfile= ruleDropfile EOF ;
     public final EObject entryRuleDropfile() throws RecognitionException {
         EObject current = null;
 
@@ -3516,8 +3925,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:1794:49: (iv_ruleDropfile= ruleDropfile EOF )
-            // InternalSparrow.g:1795:2: iv_ruleDropfile= ruleDropfile EOF
+            // InternalSparrow.g:2033:49: (iv_ruleDropfile= ruleDropfile EOF )
+            // InternalSparrow.g:2034:2: iv_ruleDropfile= ruleDropfile EOF
             {
              newCompositeNode(grammarAccess.getDropfileRule()); 
             pushFollow(FOLLOW_1);
@@ -3544,7 +3953,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDropfile"
-    // InternalSparrow.g:1801:1: ruleDropfile returns [EObject current=null] : (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:2040:1: ruleDropfile returns [EObject current=null] : (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) ) ;
     public final EObject ruleDropfile() throws RecognitionException {
         EObject current = null;
 
@@ -3561,13 +3970,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:1807:2: ( (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:1808:2: (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) )
+            // InternalSparrow.g:2046:2: ( (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:2047:2: (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:1808:2: (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) )
-            // InternalSparrow.g:1809:3: otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) )
+            // InternalSparrow.g:2047:2: (otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) ) )
+            // InternalSparrow.g:2048:3: otherlv_0= 'dropfile' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-path' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on-condition' ( (lv_condition_6_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_11); 
+            otherlv_0=(Token)match(input,40,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDropfileAccess().getDropfileKeyword_0());
             		
@@ -3575,11 +3984,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getDropfileAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:1817:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:1818:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2056:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:2057:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:1818:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:1819:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:2057:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2058:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
 
@@ -3601,15 +4010,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,40,FOLLOW_3); 
+            otherlv_3=(Token)match(input,41,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDropfileAccess().getInPathKeyword_3());
             		
-            // InternalSparrow.g:1839:3: ( (lv_target_4_0= RULE_STRING ) )
-            // InternalSparrow.g:1840:4: (lv_target_4_0= RULE_STRING )
+            // InternalSparrow.g:2078:3: ( (lv_target_4_0= RULE_STRING ) )
+            // InternalSparrow.g:2079:4: (lv_target_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:1840:4: (lv_target_4_0= RULE_STRING )
-            // InternalSparrow.g:1841:5: lv_target_4_0= RULE_STRING
+            // InternalSparrow.g:2079:4: (lv_target_4_0= RULE_STRING )
+            // InternalSparrow.g:2080:5: lv_target_4_0= RULE_STRING
             {
             lv_target_4_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
@@ -3635,11 +4044,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getDropfileAccess().getOnConditionKeyword_5());
             		
-            // InternalSparrow.g:1861:3: ( (lv_condition_6_0= ruleExpression ) )
-            // InternalSparrow.g:1862:4: (lv_condition_6_0= ruleExpression )
+            // InternalSparrow.g:2100:3: ( (lv_condition_6_0= ruleExpression ) )
+            // InternalSparrow.g:2101:4: (lv_condition_6_0= ruleExpression )
             {
-            // InternalSparrow.g:1862:4: (lv_condition_6_0= ruleExpression )
-            // InternalSparrow.g:1863:5: lv_condition_6_0= ruleExpression
+            // InternalSparrow.g:2101:4: (lv_condition_6_0= ruleExpression )
+            // InternalSparrow.g:2102:5: lv_condition_6_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getDropfileAccess().getConditionExpressionParserRuleCall_6_0());
@@ -3689,7 +4098,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDoozle"
-    // InternalSparrow.g:1884:1: entryRuleDoozle returns [EObject current=null] : iv_ruleDoozle= ruleDoozle EOF ;
+    // InternalSparrow.g:2123:1: entryRuleDoozle returns [EObject current=null] : iv_ruleDoozle= ruleDoozle EOF ;
     public final EObject entryRuleDoozle() throws RecognitionException {
         EObject current = null;
 
@@ -3697,8 +4106,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:1884:47: (iv_ruleDoozle= ruleDoozle EOF )
-            // InternalSparrow.g:1885:2: iv_ruleDoozle= ruleDoozle EOF
+            // InternalSparrow.g:2123:47: (iv_ruleDoozle= ruleDoozle EOF )
+            // InternalSparrow.g:2124:2: iv_ruleDoozle= ruleDoozle EOF
             {
              newCompositeNode(grammarAccess.getDoozleRule()); 
             pushFollow(FOLLOW_1);
@@ -3725,7 +4134,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDoozle"
-    // InternalSparrow.g:1891:1: ruleDoozle returns [EObject current=null] : (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:2130:1: ruleDoozle returns [EObject current=null] : (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
     public final EObject ruleDoozle() throws RecognitionException {
         EObject current = null;
 
@@ -3749,13 +4158,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:1897:2: ( (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:1898:2: (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:2136:2: ( (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:2137:2: (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:1898:2: (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
-            // InternalSparrow.g:1899:3: otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:2137:2: (otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:2138:3: otherlv_0= 'doozle' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'in-table' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_on_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleCreateStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,41,FOLLOW_11); 
+            otherlv_0=(Token)match(input,42,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDoozleAccess().getDoozleKeyword_0());
             		
@@ -3763,11 +4172,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getDoozleAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:1907:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:1908:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2146:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:2147:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:1908:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:1909:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:2147:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2148:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_29); 
 
@@ -3789,15 +4198,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,42,FOLLOW_3); 
+            otherlv_3=(Token)match(input,43,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDoozleAccess().getInTableKeyword_3());
             		
-            // InternalSparrow.g:1929:3: ( (lv_target_4_0= RULE_STRING ) )
-            // InternalSparrow.g:1930:4: (lv_target_4_0= RULE_STRING )
+            // InternalSparrow.g:2168:3: ( (lv_target_4_0= RULE_STRING ) )
+            // InternalSparrow.g:2169:4: (lv_target_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:1930:4: (lv_target_4_0= RULE_STRING )
-            // InternalSparrow.g:1931:5: lv_target_4_0= RULE_STRING
+            // InternalSparrow.g:2169:4: (lv_target_4_0= RULE_STRING )
+            // InternalSparrow.g:2170:5: lv_target_4_0= RULE_STRING
             {
             lv_target_4_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
 
@@ -3823,11 +4232,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getDoozleAccess().getOnKeyword_5());
             		
-            // InternalSparrow.g:1951:3: ( (lv_on_6_0= RULE_STRING ) )
-            // InternalSparrow.g:1952:4: (lv_on_6_0= RULE_STRING )
+            // InternalSparrow.g:2190:3: ( (lv_on_6_0= RULE_STRING ) )
+            // InternalSparrow.g:2191:4: (lv_on_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:1952:4: (lv_on_6_0= RULE_STRING )
-            // InternalSparrow.g:1953:5: lv_on_6_0= RULE_STRING
+            // InternalSparrow.g:2191:4: (lv_on_6_0= RULE_STRING )
+            // InternalSparrow.g:2192:5: lv_on_6_0= RULE_STRING
             {
             lv_on_6_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -3857,11 +4266,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getDoozleAccess().getLeftCurlyBracketKeyword_8());
             		
-            // InternalSparrow.g:1977:3: ( (lv_value_9_0= ruleCreateStatement ) )
-            // InternalSparrow.g:1978:4: (lv_value_9_0= ruleCreateStatement )
+            // InternalSparrow.g:2216:3: ( (lv_value_9_0= ruleCreateStatement ) )
+            // InternalSparrow.g:2217:4: (lv_value_9_0= ruleCreateStatement )
             {
-            // InternalSparrow.g:1978:4: (lv_value_9_0= ruleCreateStatement )
-            // InternalSparrow.g:1979:5: lv_value_9_0= ruleCreateStatement
+            // InternalSparrow.g:2217:4: (lv_value_9_0= ruleCreateStatement )
+            // InternalSparrow.g:2218:5: lv_value_9_0= ruleCreateStatement
             {
 
             					newCompositeNode(grammarAccess.getDoozleAccess().getValueCreateStatementParserRuleCall_9_0());
@@ -3896,11 +4305,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getDoozleAccess().getOnConditionKeyword_11());
             		
-            // InternalSparrow.g:2004:3: ( (lv_condition_12_0= ruleExpression ) )
-            // InternalSparrow.g:2005:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:2243:3: ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:2244:4: (lv_condition_12_0= ruleExpression )
             {
-            // InternalSparrow.g:2005:4: (lv_condition_12_0= ruleExpression )
-            // InternalSparrow.g:2006:5: lv_condition_12_0= ruleExpression
+            // InternalSparrow.g:2244:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:2245:5: lv_condition_12_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getDoozleAccess().getConditionExpressionParserRuleCall_12_0());
@@ -3950,7 +4359,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRest"
-    // InternalSparrow.g:2027:1: entryRuleRest returns [EObject current=null] : iv_ruleRest= ruleRest EOF ;
+    // InternalSparrow.g:2266:1: entryRuleRest returns [EObject current=null] : iv_ruleRest= ruleRest EOF ;
     public final EObject entryRuleRest() throws RecognitionException {
         EObject current = null;
 
@@ -3958,8 +4367,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:2027:45: (iv_ruleRest= ruleRest EOF )
-            // InternalSparrow.g:2028:2: iv_ruleRest= ruleRest EOF
+            // InternalSparrow.g:2266:45: (iv_ruleRest= ruleRest EOF )
+            // InternalSparrow.g:2267:2: iv_ruleRest= ruleRest EOF
             {
              newCompositeNode(grammarAccess.getRestRule()); 
             pushFollow(FOLLOW_1);
@@ -3986,7 +4395,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRest"
-    // InternalSparrow.g:2034:1: ruleRest returns [EObject current=null] : (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:2273:1: ruleRest returns [EObject current=null] : (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) ) ;
     public final EObject ruleRest() throws RecognitionException {
         EObject current = null;
 
@@ -4042,13 +4451,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:2040:2: ( (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:2041:2: (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) )
+            // InternalSparrow.g:2279:2: ( (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:2280:2: (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:2041:2: (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) )
-            // InternalSparrow.g:2042:3: otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) )
+            // InternalSparrow.g:2280:2: (otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) ) )
+            // InternalSparrow.g:2281:3: otherlv_0= 'rest' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-url' ( (lv_url_6_0= RULE_STRING ) ) otherlv_7= 'and-method-as' ( (lv_method_8_0= RULE_STRING ) ) otherlv_9= '{' otherlv_10= 'from' ( (lv_resourcedatafrom_11_0= RULE_STRING ) ) otherlv_12= 'update-url-with' otherlv_13= '{' ( (lv_urldata_14_0= ruleSelectStatement ) ) otherlv_15= '}' otherlv_16= 'from' ( (lv_headerdatafrom_17_0= RULE_STRING ) ) otherlv_18= 'update-header-with' otherlv_19= '{' ( (lv_headerdata_20_0= ruleSelectStatement ) ) otherlv_21= '}' otherlv_22= 'from' ( (lv_postdatafrom_23_0= RULE_STRING ) ) otherlv_24= 'update-body-with' otherlv_25= '{' otherlv_26= 'parent' otherlv_27= 'as' ( (lv_parentName_28_0= RULE_STRING ) ) ( (lv_parentdata_29_0= ruleSelectStatement ) ) ( (lv_parts_30_0= ruleRestPart ) )* otherlv_31= '}' otherlv_32= 'into' ( (lv_ackdatato_33_0= RULE_STRING ) ) otherlv_34= 'store-ack-at' otherlv_35= '{' ( (lv_ackdata_36_0= ruleSelectStatement ) ) otherlv_37= '}' otherlv_38= '}' otherlv_39= 'on-condition' ( (lv_condition_40_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,43,FOLLOW_11); 
+            otherlv_0=(Token)match(input,44,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRestAccess().getRestKeyword_0());
             		
@@ -4056,11 +4465,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRestAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:2050:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:2051:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2289:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:2290:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:2051:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:2052:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:2290:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2291:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -4086,11 +4495,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getRestAccess().getSecuredByKeyword_3());
             		
-            // InternalSparrow.g:2072:3: ( (lv_authtoken_4_0= RULE_STRING ) )
-            // InternalSparrow.g:2073:4: (lv_authtoken_4_0= RULE_STRING )
+            // InternalSparrow.g:2311:3: ( (lv_authtoken_4_0= RULE_STRING ) )
+            // InternalSparrow.g:2312:4: (lv_authtoken_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:2073:4: (lv_authtoken_4_0= RULE_STRING )
-            // InternalSparrow.g:2074:5: lv_authtoken_4_0= RULE_STRING
+            // InternalSparrow.g:2312:4: (lv_authtoken_4_0= RULE_STRING )
+            // InternalSparrow.g:2313:5: lv_authtoken_4_0= RULE_STRING
             {
             lv_authtoken_4_0=(Token)match(input,RULE_STRING,FOLLOW_30); 
 
@@ -4112,15 +4521,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,44,FOLLOW_3); 
+            otherlv_5=(Token)match(input,45,FOLLOW_3); 
 
             			newLeafNode(otherlv_5, grammarAccess.getRestAccess().getWithUrlKeyword_5());
             		
-            // InternalSparrow.g:2094:3: ( (lv_url_6_0= RULE_STRING ) )
-            // InternalSparrow.g:2095:4: (lv_url_6_0= RULE_STRING )
+            // InternalSparrow.g:2333:3: ( (lv_url_6_0= RULE_STRING ) )
+            // InternalSparrow.g:2334:4: (lv_url_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:2095:4: (lv_url_6_0= RULE_STRING )
-            // InternalSparrow.g:2096:5: lv_url_6_0= RULE_STRING
+            // InternalSparrow.g:2334:4: (lv_url_6_0= RULE_STRING )
+            // InternalSparrow.g:2335:5: lv_url_6_0= RULE_STRING
             {
             lv_url_6_0=(Token)match(input,RULE_STRING,FOLLOW_31); 
 
@@ -4142,15 +4551,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,45,FOLLOW_3); 
+            otherlv_7=(Token)match(input,46,FOLLOW_3); 
 
             			newLeafNode(otherlv_7, grammarAccess.getRestAccess().getAndMethodAsKeyword_7());
             		
-            // InternalSparrow.g:2116:3: ( (lv_method_8_0= RULE_STRING ) )
-            // InternalSparrow.g:2117:4: (lv_method_8_0= RULE_STRING )
+            // InternalSparrow.g:2355:3: ( (lv_method_8_0= RULE_STRING ) )
+            // InternalSparrow.g:2356:4: (lv_method_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:2117:4: (lv_method_8_0= RULE_STRING )
-            // InternalSparrow.g:2118:5: lv_method_8_0= RULE_STRING
+            // InternalSparrow.g:2356:4: (lv_method_8_0= RULE_STRING )
+            // InternalSparrow.g:2357:5: lv_method_8_0= RULE_STRING
             {
             lv_method_8_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
 
@@ -4176,15 +4585,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_9());
             		
-            otherlv_10=(Token)match(input,46,FOLLOW_3); 
+            otherlv_10=(Token)match(input,47,FOLLOW_3); 
 
             			newLeafNode(otherlv_10, grammarAccess.getRestAccess().getFromKeyword_10());
             		
-            // InternalSparrow.g:2142:3: ( (lv_resourcedatafrom_11_0= RULE_STRING ) )
-            // InternalSparrow.g:2143:4: (lv_resourcedatafrom_11_0= RULE_STRING )
+            // InternalSparrow.g:2381:3: ( (lv_resourcedatafrom_11_0= RULE_STRING ) )
+            // InternalSparrow.g:2382:4: (lv_resourcedatafrom_11_0= RULE_STRING )
             {
-            // InternalSparrow.g:2143:4: (lv_resourcedatafrom_11_0= RULE_STRING )
-            // InternalSparrow.g:2144:5: lv_resourcedatafrom_11_0= RULE_STRING
+            // InternalSparrow.g:2382:4: (lv_resourcedatafrom_11_0= RULE_STRING )
+            // InternalSparrow.g:2383:5: lv_resourcedatafrom_11_0= RULE_STRING
             {
             lv_resourcedatafrom_11_0=(Token)match(input,RULE_STRING,FOLLOW_33); 
 
@@ -4206,7 +4615,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,47,FOLLOW_4); 
+            otherlv_12=(Token)match(input,48,FOLLOW_4); 
 
             			newLeafNode(otherlv_12, grammarAccess.getRestAccess().getUpdateUrlWithKeyword_12());
             		
@@ -4214,11 +4623,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_13());
             		
-            // InternalSparrow.g:2168:3: ( (lv_urldata_14_0= ruleSelectStatement ) )
-            // InternalSparrow.g:2169:4: (lv_urldata_14_0= ruleSelectStatement )
+            // InternalSparrow.g:2407:3: ( (lv_urldata_14_0= ruleSelectStatement ) )
+            // InternalSparrow.g:2408:4: (lv_urldata_14_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:2169:4: (lv_urldata_14_0= ruleSelectStatement )
-            // InternalSparrow.g:2170:5: lv_urldata_14_0= ruleSelectStatement
+            // InternalSparrow.g:2408:4: (lv_urldata_14_0= ruleSelectStatement )
+            // InternalSparrow.g:2409:5: lv_urldata_14_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getRestAccess().getUrldataSelectStatementParserRuleCall_14_0());
@@ -4249,15 +4658,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_15, grammarAccess.getRestAccess().getRightCurlyBracketKeyword_15());
             		
-            otherlv_16=(Token)match(input,46,FOLLOW_3); 
+            otherlv_16=(Token)match(input,47,FOLLOW_3); 
 
             			newLeafNode(otherlv_16, grammarAccess.getRestAccess().getFromKeyword_16());
             		
-            // InternalSparrow.g:2195:3: ( (lv_headerdatafrom_17_0= RULE_STRING ) )
-            // InternalSparrow.g:2196:4: (lv_headerdatafrom_17_0= RULE_STRING )
+            // InternalSparrow.g:2434:3: ( (lv_headerdatafrom_17_0= RULE_STRING ) )
+            // InternalSparrow.g:2435:4: (lv_headerdatafrom_17_0= RULE_STRING )
             {
-            // InternalSparrow.g:2196:4: (lv_headerdatafrom_17_0= RULE_STRING )
-            // InternalSparrow.g:2197:5: lv_headerdatafrom_17_0= RULE_STRING
+            // InternalSparrow.g:2435:4: (lv_headerdatafrom_17_0= RULE_STRING )
+            // InternalSparrow.g:2436:5: lv_headerdatafrom_17_0= RULE_STRING
             {
             lv_headerdatafrom_17_0=(Token)match(input,RULE_STRING,FOLLOW_34); 
 
@@ -4279,7 +4688,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_18=(Token)match(input,48,FOLLOW_4); 
+            otherlv_18=(Token)match(input,49,FOLLOW_4); 
 
             			newLeafNode(otherlv_18, grammarAccess.getRestAccess().getUpdateHeaderWithKeyword_18());
             		
@@ -4287,11 +4696,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_19, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_19());
             		
-            // InternalSparrow.g:2221:3: ( (lv_headerdata_20_0= ruleSelectStatement ) )
-            // InternalSparrow.g:2222:4: (lv_headerdata_20_0= ruleSelectStatement )
+            // InternalSparrow.g:2460:3: ( (lv_headerdata_20_0= ruleSelectStatement ) )
+            // InternalSparrow.g:2461:4: (lv_headerdata_20_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:2222:4: (lv_headerdata_20_0= ruleSelectStatement )
-            // InternalSparrow.g:2223:5: lv_headerdata_20_0= ruleSelectStatement
+            // InternalSparrow.g:2461:4: (lv_headerdata_20_0= ruleSelectStatement )
+            // InternalSparrow.g:2462:5: lv_headerdata_20_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getRestAccess().getHeaderdataSelectStatementParserRuleCall_20_0());
@@ -4322,15 +4731,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_21, grammarAccess.getRestAccess().getRightCurlyBracketKeyword_21());
             		
-            otherlv_22=(Token)match(input,46,FOLLOW_3); 
+            otherlv_22=(Token)match(input,47,FOLLOW_3); 
 
             			newLeafNode(otherlv_22, grammarAccess.getRestAccess().getFromKeyword_22());
             		
-            // InternalSparrow.g:2248:3: ( (lv_postdatafrom_23_0= RULE_STRING ) )
-            // InternalSparrow.g:2249:4: (lv_postdatafrom_23_0= RULE_STRING )
+            // InternalSparrow.g:2487:3: ( (lv_postdatafrom_23_0= RULE_STRING ) )
+            // InternalSparrow.g:2488:4: (lv_postdatafrom_23_0= RULE_STRING )
             {
-            // InternalSparrow.g:2249:4: (lv_postdatafrom_23_0= RULE_STRING )
-            // InternalSparrow.g:2250:5: lv_postdatafrom_23_0= RULE_STRING
+            // InternalSparrow.g:2488:4: (lv_postdatafrom_23_0= RULE_STRING )
+            // InternalSparrow.g:2489:5: lv_postdatafrom_23_0= RULE_STRING
             {
             lv_postdatafrom_23_0=(Token)match(input,RULE_STRING,FOLLOW_35); 
 
@@ -4352,7 +4761,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_24=(Token)match(input,49,FOLLOW_4); 
+            otherlv_24=(Token)match(input,50,FOLLOW_4); 
 
             			newLeafNode(otherlv_24, grammarAccess.getRestAccess().getUpdateBodyWithKeyword_24());
             		
@@ -4360,7 +4769,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_25, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_25());
             		
-            otherlv_26=(Token)match(input,50,FOLLOW_11); 
+            otherlv_26=(Token)match(input,51,FOLLOW_11); 
 
             			newLeafNode(otherlv_26, grammarAccess.getRestAccess().getParentKeyword_26());
             		
@@ -4368,11 +4777,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_27, grammarAccess.getRestAccess().getAsKeyword_27());
             		
-            // InternalSparrow.g:2282:3: ( (lv_parentName_28_0= RULE_STRING ) )
-            // InternalSparrow.g:2283:4: (lv_parentName_28_0= RULE_STRING )
+            // InternalSparrow.g:2521:3: ( (lv_parentName_28_0= RULE_STRING ) )
+            // InternalSparrow.g:2522:4: (lv_parentName_28_0= RULE_STRING )
             {
-            // InternalSparrow.g:2283:4: (lv_parentName_28_0= RULE_STRING )
-            // InternalSparrow.g:2284:5: lv_parentName_28_0= RULE_STRING
+            // InternalSparrow.g:2522:4: (lv_parentName_28_0= RULE_STRING )
+            // InternalSparrow.g:2523:5: lv_parentName_28_0= RULE_STRING
             {
             lv_parentName_28_0=(Token)match(input,RULE_STRING,FOLLOW_3); 
 
@@ -4394,11 +4803,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSparrow.g:2300:3: ( (lv_parentdata_29_0= ruleSelectStatement ) )
-            // InternalSparrow.g:2301:4: (lv_parentdata_29_0= ruleSelectStatement )
+            // InternalSparrow.g:2539:3: ( (lv_parentdata_29_0= ruleSelectStatement ) )
+            // InternalSparrow.g:2540:4: (lv_parentdata_29_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:2301:4: (lv_parentdata_29_0= ruleSelectStatement )
-            // InternalSparrow.g:2302:5: lv_parentdata_29_0= ruleSelectStatement
+            // InternalSparrow.g:2540:4: (lv_parentdata_29_0= ruleSelectStatement )
+            // InternalSparrow.g:2541:5: lv_parentdata_29_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getRestAccess().getParentdataSelectStatementParserRuleCall_29_0());
@@ -4425,23 +4834,23 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSparrow.g:2319:3: ( (lv_parts_30_0= ruleRestPart ) )*
+            // InternalSparrow.g:2558:3: ( (lv_parts_30_0= ruleRestPart ) )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==52) ) {
+                if ( (LA5_0==53) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalSparrow.g:2320:4: (lv_parts_30_0= ruleRestPart )
+            	    // InternalSparrow.g:2559:4: (lv_parts_30_0= ruleRestPart )
             	    {
-            	    // InternalSparrow.g:2320:4: (lv_parts_30_0= ruleRestPart )
-            	    // InternalSparrow.g:2321:5: lv_parts_30_0= ruleRestPart
+            	    // InternalSparrow.g:2559:4: (lv_parts_30_0= ruleRestPart )
+            	    // InternalSparrow.g:2560:5: lv_parts_30_0= ruleRestPart
             	    {
 
             	    					newCompositeNode(grammarAccess.getRestAccess().getPartsRestPartParserRuleCall_30_0());
@@ -4478,15 +4887,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_31, grammarAccess.getRestAccess().getRightCurlyBracketKeyword_31());
             		
-            otherlv_32=(Token)match(input,38,FOLLOW_3); 
+            otherlv_32=(Token)match(input,39,FOLLOW_3); 
 
             			newLeafNode(otherlv_32, grammarAccess.getRestAccess().getIntoKeyword_32());
             		
-            // InternalSparrow.g:2346:3: ( (lv_ackdatato_33_0= RULE_STRING ) )
-            // InternalSparrow.g:2347:4: (lv_ackdatato_33_0= RULE_STRING )
+            // InternalSparrow.g:2585:3: ( (lv_ackdatato_33_0= RULE_STRING ) )
+            // InternalSparrow.g:2586:4: (lv_ackdatato_33_0= RULE_STRING )
             {
-            // InternalSparrow.g:2347:4: (lv_ackdatato_33_0= RULE_STRING )
-            // InternalSparrow.g:2348:5: lv_ackdatato_33_0= RULE_STRING
+            // InternalSparrow.g:2586:4: (lv_ackdatato_33_0= RULE_STRING )
+            // InternalSparrow.g:2587:5: lv_ackdatato_33_0= RULE_STRING
             {
             lv_ackdatato_33_0=(Token)match(input,RULE_STRING,FOLLOW_38); 
 
@@ -4508,7 +4917,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_34=(Token)match(input,51,FOLLOW_4); 
+            otherlv_34=(Token)match(input,52,FOLLOW_4); 
 
             			newLeafNode(otherlv_34, grammarAccess.getRestAccess().getStoreAckAtKeyword_34());
             		
@@ -4516,11 +4925,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_35, grammarAccess.getRestAccess().getLeftCurlyBracketKeyword_35());
             		
-            // InternalSparrow.g:2372:3: ( (lv_ackdata_36_0= ruleSelectStatement ) )
-            // InternalSparrow.g:2373:4: (lv_ackdata_36_0= ruleSelectStatement )
+            // InternalSparrow.g:2611:3: ( (lv_ackdata_36_0= ruleSelectStatement ) )
+            // InternalSparrow.g:2612:4: (lv_ackdata_36_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:2373:4: (lv_ackdata_36_0= ruleSelectStatement )
-            // InternalSparrow.g:2374:5: lv_ackdata_36_0= ruleSelectStatement
+            // InternalSparrow.g:2612:4: (lv_ackdata_36_0= ruleSelectStatement )
+            // InternalSparrow.g:2613:5: lv_ackdata_36_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getRestAccess().getAckdataSelectStatementParserRuleCall_36_0());
@@ -4559,11 +4968,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_39, grammarAccess.getRestAccess().getOnConditionKeyword_39());
             		
-            // InternalSparrow.g:2403:3: ( (lv_condition_40_0= ruleExpression ) )
-            // InternalSparrow.g:2404:4: (lv_condition_40_0= ruleExpression )
+            // InternalSparrow.g:2642:3: ( (lv_condition_40_0= ruleExpression ) )
+            // InternalSparrow.g:2643:4: (lv_condition_40_0= ruleExpression )
             {
-            // InternalSparrow.g:2404:4: (lv_condition_40_0= ruleExpression )
-            // InternalSparrow.g:2405:5: lv_condition_40_0= ruleExpression
+            // InternalSparrow.g:2643:4: (lv_condition_40_0= ruleExpression )
+            // InternalSparrow.g:2644:5: lv_condition_40_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getRestAccess().getConditionExpressionParserRuleCall_40_0());
@@ -4613,7 +5022,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRestPart"
-    // InternalSparrow.g:2426:1: entryRuleRestPart returns [EObject current=null] : iv_ruleRestPart= ruleRestPart EOF ;
+    // InternalSparrow.g:2665:1: entryRuleRestPart returns [EObject current=null] : iv_ruleRestPart= ruleRestPart EOF ;
     public final EObject entryRuleRestPart() throws RecognitionException {
         EObject current = null;
 
@@ -4621,8 +5030,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:2426:49: (iv_ruleRestPart= ruleRestPart EOF )
-            // InternalSparrow.g:2427:2: iv_ruleRestPart= ruleRestPart EOF
+            // InternalSparrow.g:2665:49: (iv_ruleRestPart= ruleRestPart EOF )
+            // InternalSparrow.g:2666:2: iv_ruleRestPart= ruleRestPart EOF
             {
              newCompositeNode(grammarAccess.getRestPartRule()); 
             pushFollow(FOLLOW_1);
@@ -4649,7 +5058,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRestPart"
-    // InternalSparrow.g:2433:1: ruleRestPart returns [EObject current=null] : (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) ) ;
+    // InternalSparrow.g:2672:1: ruleRestPart returns [EObject current=null] : (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) ) ;
     public final EObject ruleRestPart() throws RecognitionException {
         EObject current = null;
 
@@ -4664,13 +5073,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:2439:2: ( (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) ) )
-            // InternalSparrow.g:2440:2: (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) )
+            // InternalSparrow.g:2678:2: ( (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) ) )
+            // InternalSparrow.g:2679:2: (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) )
             {
-            // InternalSparrow.g:2440:2: (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) )
-            // InternalSparrow.g:2441:3: otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) )
+            // InternalSparrow.g:2679:2: (otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) ) )
+            // InternalSparrow.g:2680:3: otherlv_0= 'part' otherlv_1= 'as' ( (lv_partName_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (lv_partData_4_0= ruleSelectStatement ) )
             {
-            otherlv_0=(Token)match(input,52,FOLLOW_11); 
+            otherlv_0=(Token)match(input,53,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRestPartAccess().getPartKeyword_0());
             		
@@ -4678,11 +5087,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRestPartAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:2449:3: ( (lv_partName_2_0= RULE_STRING ) )
-            // InternalSparrow.g:2450:4: (lv_partName_2_0= RULE_STRING )
+            // InternalSparrow.g:2688:3: ( (lv_partName_2_0= RULE_STRING ) )
+            // InternalSparrow.g:2689:4: (lv_partName_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:2450:4: (lv_partName_2_0= RULE_STRING )
-            // InternalSparrow.g:2451:5: lv_partName_2_0= RULE_STRING
+            // InternalSparrow.g:2689:4: (lv_partName_2_0= RULE_STRING )
+            // InternalSparrow.g:2690:5: lv_partName_2_0= RULE_STRING
             {
             lv_partName_2_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
 
@@ -4704,15 +5113,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,53,FOLLOW_3); 
+            otherlv_3=(Token)match(input,54,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRestPartAccess().getWithKeyword_3());
             		
-            // InternalSparrow.g:2471:3: ( (lv_partData_4_0= ruleSelectStatement ) )
-            // InternalSparrow.g:2472:4: (lv_partData_4_0= ruleSelectStatement )
+            // InternalSparrow.g:2710:3: ( (lv_partData_4_0= ruleSelectStatement ) )
+            // InternalSparrow.g:2711:4: (lv_partData_4_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:2472:4: (lv_partData_4_0= ruleSelectStatement )
-            // InternalSparrow.g:2473:5: lv_partData_4_0= ruleSelectStatement
+            // InternalSparrow.g:2711:4: (lv_partData_4_0= ruleSelectStatement )
+            // InternalSparrow.g:2712:5: lv_partData_4_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getRestPartAccess().getPartDataSelectStatementParserRuleCall_4_0());
@@ -4762,7 +5171,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrelloGET"
-    // InternalSparrow.g:2494:1: entryRuleTrelloGET returns [EObject current=null] : iv_ruleTrelloGET= ruleTrelloGET EOF ;
+    // InternalSparrow.g:2733:1: entryRuleTrelloGET returns [EObject current=null] : iv_ruleTrelloGET= ruleTrelloGET EOF ;
     public final EObject entryRuleTrelloGET() throws RecognitionException {
         EObject current = null;
 
@@ -4770,8 +5179,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:2494:50: (iv_ruleTrelloGET= ruleTrelloGET EOF )
-            // InternalSparrow.g:2495:2: iv_ruleTrelloGET= ruleTrelloGET EOF
+            // InternalSparrow.g:2733:50: (iv_ruleTrelloGET= ruleTrelloGET EOF )
+            // InternalSparrow.g:2734:2: iv_ruleTrelloGET= ruleTrelloGET EOF
             {
              newCompositeNode(grammarAccess.getTrelloGETRule()); 
             pushFollow(FOLLOW_1);
@@ -4798,7 +5207,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrelloGET"
-    // InternalSparrow.g:2501:1: ruleTrelloGET returns [EObject current=null] : (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:2740:1: ruleTrelloGET returns [EObject current=null] : (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) ;
     public final EObject ruleTrelloGET() throws RecognitionException {
         EObject current = null;
 
@@ -4828,13 +5237,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:2507:2: ( (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:2508:2: (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
+            // InternalSparrow.g:2746:2: ( (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:2747:2: (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:2508:2: (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
-            // InternalSparrow.g:2509:3: otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) )
+            // InternalSparrow.g:2747:2: (otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
+            // InternalSparrow.g:2748:3: otherlv_0= 'trelloget' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'from-board' ( (lv_board_10_0= RULE_STRING ) ) otherlv_11= 'to' ( (lv_target_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,54,FOLLOW_11); 
+            otherlv_0=(Token)match(input,55,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTrelloGETAccess().getTrellogetKeyword_0());
             		
@@ -4842,11 +5251,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTrelloGETAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:2517:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:2518:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2756:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:2757:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:2518:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:2519:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:2757:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2758:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -4872,11 +5281,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getTrelloGETAccess().getSecuredByKeyword_3());
             		
-            // InternalSparrow.g:2539:3: ( (lv_authtoken_4_0= RULE_STRING ) )
-            // InternalSparrow.g:2540:4: (lv_authtoken_4_0= RULE_STRING )
+            // InternalSparrow.g:2778:3: ( (lv_authtoken_4_0= RULE_STRING ) )
+            // InternalSparrow.g:2779:4: (lv_authtoken_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:2540:4: (lv_authtoken_4_0= RULE_STRING )
-            // InternalSparrow.g:2541:5: lv_authtoken_4_0= RULE_STRING
+            // InternalSparrow.g:2779:4: (lv_authtoken_4_0= RULE_STRING )
+            // InternalSparrow.g:2780:5: lv_authtoken_4_0= RULE_STRING
             {
             lv_authtoken_4_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
@@ -4902,11 +5311,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getTrelloGETAccess().getWithKeyKeyword_5());
             		
-            // InternalSparrow.g:2561:3: ( (lv_key_6_0= RULE_STRING ) )
-            // InternalSparrow.g:2562:4: (lv_key_6_0= RULE_STRING )
+            // InternalSparrow.g:2800:3: ( (lv_key_6_0= RULE_STRING ) )
+            // InternalSparrow.g:2801:4: (lv_key_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:2562:4: (lv_key_6_0= RULE_STRING )
-            // InternalSparrow.g:2563:5: lv_key_6_0= RULE_STRING
+            // InternalSparrow.g:2801:4: (lv_key_6_0= RULE_STRING )
+            // InternalSparrow.g:2802:5: lv_key_6_0= RULE_STRING
             {
             lv_key_6_0=(Token)match(input,RULE_STRING,FOLLOW_25); 
 
@@ -4928,15 +5337,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,36,FOLLOW_3); 
+            otherlv_7=(Token)match(input,37,FOLLOW_3); 
 
             			newLeafNode(otherlv_7, grammarAccess.getTrelloGETAccess().getThroughUserKeyword_7());
             		
-            // InternalSparrow.g:2583:3: ( (lv_useraccount_8_0= RULE_STRING ) )
-            // InternalSparrow.g:2584:4: (lv_useraccount_8_0= RULE_STRING )
+            // InternalSparrow.g:2822:3: ( (lv_useraccount_8_0= RULE_STRING ) )
+            // InternalSparrow.g:2823:4: (lv_useraccount_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:2584:4: (lv_useraccount_8_0= RULE_STRING )
-            // InternalSparrow.g:2585:5: lv_useraccount_8_0= RULE_STRING
+            // InternalSparrow.g:2823:4: (lv_useraccount_8_0= RULE_STRING )
+            // InternalSparrow.g:2824:5: lv_useraccount_8_0= RULE_STRING
             {
             lv_useraccount_8_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
 
@@ -4958,15 +5367,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,55,FOLLOW_3); 
+            otherlv_9=(Token)match(input,56,FOLLOW_3); 
 
             			newLeafNode(otherlv_9, grammarAccess.getTrelloGETAccess().getFromBoardKeyword_9());
             		
-            // InternalSparrow.g:2605:3: ( (lv_board_10_0= RULE_STRING ) )
-            // InternalSparrow.g:2606:4: (lv_board_10_0= RULE_STRING )
+            // InternalSparrow.g:2844:3: ( (lv_board_10_0= RULE_STRING ) )
+            // InternalSparrow.g:2845:4: (lv_board_10_0= RULE_STRING )
             {
-            // InternalSparrow.g:2606:4: (lv_board_10_0= RULE_STRING )
-            // InternalSparrow.g:2607:5: lv_board_10_0= RULE_STRING
+            // InternalSparrow.g:2845:4: (lv_board_10_0= RULE_STRING )
+            // InternalSparrow.g:2846:5: lv_board_10_0= RULE_STRING
             {
             lv_board_10_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
@@ -4988,15 +5397,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,56,FOLLOW_3); 
+            otherlv_11=(Token)match(input,57,FOLLOW_3); 
 
             			newLeafNode(otherlv_11, grammarAccess.getTrelloGETAccess().getToKeyword_11());
             		
-            // InternalSparrow.g:2627:3: ( (lv_target_12_0= RULE_STRING ) )
-            // InternalSparrow.g:2628:4: (lv_target_12_0= RULE_STRING )
+            // InternalSparrow.g:2866:3: ( (lv_target_12_0= RULE_STRING ) )
+            // InternalSparrow.g:2867:4: (lv_target_12_0= RULE_STRING )
             {
-            // InternalSparrow.g:2628:4: (lv_target_12_0= RULE_STRING )
-            // InternalSparrow.g:2629:5: lv_target_12_0= RULE_STRING
+            // InternalSparrow.g:2867:4: (lv_target_12_0= RULE_STRING )
+            // InternalSparrow.g:2868:5: lv_target_12_0= RULE_STRING
             {
             lv_target_12_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -5026,11 +5435,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_14, grammarAccess.getTrelloGETAccess().getLeftCurlyBracketKeyword_14());
             		
-            // InternalSparrow.g:2653:3: ( (lv_value_15_0= ruleSelectStatement ) )
-            // InternalSparrow.g:2654:4: (lv_value_15_0= ruleSelectStatement )
+            // InternalSparrow.g:2892:3: ( (lv_value_15_0= ruleSelectStatement ) )
+            // InternalSparrow.g:2893:4: (lv_value_15_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:2654:4: (lv_value_15_0= ruleSelectStatement )
-            // InternalSparrow.g:2655:5: lv_value_15_0= ruleSelectStatement
+            // InternalSparrow.g:2893:4: (lv_value_15_0= ruleSelectStatement )
+            // InternalSparrow.g:2894:5: lv_value_15_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getTrelloGETAccess().getValueSelectStatementParserRuleCall_15_0());
@@ -5065,11 +5474,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_17, grammarAccess.getTrelloGETAccess().getOnConditionKeyword_17());
             		
-            // InternalSparrow.g:2680:3: ( (lv_condition_18_0= ruleExpression ) )
-            // InternalSparrow.g:2681:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:2919:3: ( (lv_condition_18_0= ruleExpression ) )
+            // InternalSparrow.g:2920:4: (lv_condition_18_0= ruleExpression )
             {
-            // InternalSparrow.g:2681:4: (lv_condition_18_0= ruleExpression )
-            // InternalSparrow.g:2682:5: lv_condition_18_0= ruleExpression
+            // InternalSparrow.g:2920:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:2921:5: lv_condition_18_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getTrelloGETAccess().getConditionExpressionParserRuleCall_18_0());
@@ -5119,7 +5528,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrelloPUT"
-    // InternalSparrow.g:2703:1: entryRuleTrelloPUT returns [EObject current=null] : iv_ruleTrelloPUT= ruleTrelloPUT EOF ;
+    // InternalSparrow.g:2942:1: entryRuleTrelloPUT returns [EObject current=null] : iv_ruleTrelloPUT= ruleTrelloPUT EOF ;
     public final EObject entryRuleTrelloPUT() throws RecognitionException {
         EObject current = null;
 
@@ -5127,8 +5536,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:2703:50: (iv_ruleTrelloPUT= ruleTrelloPUT EOF )
-            // InternalSparrow.g:2704:2: iv_ruleTrelloPUT= ruleTrelloPUT EOF
+            // InternalSparrow.g:2942:50: (iv_ruleTrelloPUT= ruleTrelloPUT EOF )
+            // InternalSparrow.g:2943:2: iv_ruleTrelloPUT= ruleTrelloPUT EOF
             {
              newCompositeNode(grammarAccess.getTrelloPUTRule()); 
             pushFollow(FOLLOW_1);
@@ -5155,7 +5564,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrelloPUT"
-    // InternalSparrow.g:2710:1: ruleTrelloPUT returns [EObject current=null] : (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:2949:1: ruleTrelloPUT returns [EObject current=null] : (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) ;
     public final EObject ruleTrelloPUT() throws RecognitionException {
         EObject current = null;
 
@@ -5185,13 +5594,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:2716:2: ( (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:2717:2: (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
+            // InternalSparrow.g:2955:2: ( (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:2956:2: (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:2717:2: (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
-            // InternalSparrow.g:2718:3: otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) )
+            // InternalSparrow.g:2956:2: (otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) ) )
+            // InternalSparrow.g:2957:3: otherlv_0= 'trelloput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'secured-by' ( (lv_authtoken_4_0= RULE_STRING ) ) otherlv_5= 'with-key' ( (lv_key_6_0= RULE_STRING ) ) otherlv_7= 'through-user' ( (lv_useraccount_8_0= RULE_STRING ) ) otherlv_9= 'for-list' ( (lv_list_10_0= RULE_STRING ) ) otherlv_11= 'from-source' ( (lv_source_12_0= RULE_STRING ) ) otherlv_13= 'using' otherlv_14= '{' ( (lv_value_15_0= ruleSelectStatement ) ) otherlv_16= '}' otherlv_17= 'on-condition' ( (lv_condition_18_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,57,FOLLOW_11); 
+            otherlv_0=(Token)match(input,58,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTrelloPUTAccess().getTrelloputKeyword_0());
             		
@@ -5199,11 +5608,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTrelloPUTAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:2726:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:2727:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2965:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:2966:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:2727:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:2728:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:2966:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:2967:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -5229,11 +5638,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getTrelloPUTAccess().getSecuredByKeyword_3());
             		
-            // InternalSparrow.g:2748:3: ( (lv_authtoken_4_0= RULE_STRING ) )
-            // InternalSparrow.g:2749:4: (lv_authtoken_4_0= RULE_STRING )
+            // InternalSparrow.g:2987:3: ( (lv_authtoken_4_0= RULE_STRING ) )
+            // InternalSparrow.g:2988:4: (lv_authtoken_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:2749:4: (lv_authtoken_4_0= RULE_STRING )
-            // InternalSparrow.g:2750:5: lv_authtoken_4_0= RULE_STRING
+            // InternalSparrow.g:2988:4: (lv_authtoken_4_0= RULE_STRING )
+            // InternalSparrow.g:2989:5: lv_authtoken_4_0= RULE_STRING
             {
             lv_authtoken_4_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
@@ -5259,11 +5668,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getTrelloPUTAccess().getWithKeyKeyword_5());
             		
-            // InternalSparrow.g:2770:3: ( (lv_key_6_0= RULE_STRING ) )
-            // InternalSparrow.g:2771:4: (lv_key_6_0= RULE_STRING )
+            // InternalSparrow.g:3009:3: ( (lv_key_6_0= RULE_STRING ) )
+            // InternalSparrow.g:3010:4: (lv_key_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:2771:4: (lv_key_6_0= RULE_STRING )
-            // InternalSparrow.g:2772:5: lv_key_6_0= RULE_STRING
+            // InternalSparrow.g:3010:4: (lv_key_6_0= RULE_STRING )
+            // InternalSparrow.g:3011:5: lv_key_6_0= RULE_STRING
             {
             lv_key_6_0=(Token)match(input,RULE_STRING,FOLLOW_25); 
 
@@ -5285,15 +5694,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,36,FOLLOW_3); 
+            otherlv_7=(Token)match(input,37,FOLLOW_3); 
 
             			newLeafNode(otherlv_7, grammarAccess.getTrelloPUTAccess().getThroughUserKeyword_7());
             		
-            // InternalSparrow.g:2792:3: ( (lv_useraccount_8_0= RULE_STRING ) )
-            // InternalSparrow.g:2793:4: (lv_useraccount_8_0= RULE_STRING )
+            // InternalSparrow.g:3031:3: ( (lv_useraccount_8_0= RULE_STRING ) )
+            // InternalSparrow.g:3032:4: (lv_useraccount_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:2793:4: (lv_useraccount_8_0= RULE_STRING )
-            // InternalSparrow.g:2794:5: lv_useraccount_8_0= RULE_STRING
+            // InternalSparrow.g:3032:4: (lv_useraccount_8_0= RULE_STRING )
+            // InternalSparrow.g:3033:5: lv_useraccount_8_0= RULE_STRING
             {
             lv_useraccount_8_0=(Token)match(input,RULE_STRING,FOLLOW_42); 
 
@@ -5315,15 +5724,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,58,FOLLOW_3); 
+            otherlv_9=(Token)match(input,59,FOLLOW_3); 
 
             			newLeafNode(otherlv_9, grammarAccess.getTrelloPUTAccess().getForListKeyword_9());
             		
-            // InternalSparrow.g:2814:3: ( (lv_list_10_0= RULE_STRING ) )
-            // InternalSparrow.g:2815:4: (lv_list_10_0= RULE_STRING )
+            // InternalSparrow.g:3053:3: ( (lv_list_10_0= RULE_STRING ) )
+            // InternalSparrow.g:3054:4: (lv_list_10_0= RULE_STRING )
             {
-            // InternalSparrow.g:2815:4: (lv_list_10_0= RULE_STRING )
-            // InternalSparrow.g:2816:5: lv_list_10_0= RULE_STRING
+            // InternalSparrow.g:3054:4: (lv_list_10_0= RULE_STRING )
+            // InternalSparrow.g:3055:5: lv_list_10_0= RULE_STRING
             {
             lv_list_10_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
@@ -5349,11 +5758,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getTrelloPUTAccess().getFromSourceKeyword_11());
             		
-            // InternalSparrow.g:2836:3: ( (lv_source_12_0= RULE_STRING ) )
-            // InternalSparrow.g:2837:4: (lv_source_12_0= RULE_STRING )
+            // InternalSparrow.g:3075:3: ( (lv_source_12_0= RULE_STRING ) )
+            // InternalSparrow.g:3076:4: (lv_source_12_0= RULE_STRING )
             {
-            // InternalSparrow.g:2837:4: (lv_source_12_0= RULE_STRING )
-            // InternalSparrow.g:2838:5: lv_source_12_0= RULE_STRING
+            // InternalSparrow.g:3076:4: (lv_source_12_0= RULE_STRING )
+            // InternalSparrow.g:3077:5: lv_source_12_0= RULE_STRING
             {
             lv_source_12_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -5383,11 +5792,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_14, grammarAccess.getTrelloPUTAccess().getLeftCurlyBracketKeyword_14());
             		
-            // InternalSparrow.g:2862:3: ( (lv_value_15_0= ruleSelectStatement ) )
-            // InternalSparrow.g:2863:4: (lv_value_15_0= ruleSelectStatement )
+            // InternalSparrow.g:3101:3: ( (lv_value_15_0= ruleSelectStatement ) )
+            // InternalSparrow.g:3102:4: (lv_value_15_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:2863:4: (lv_value_15_0= ruleSelectStatement )
-            // InternalSparrow.g:2864:5: lv_value_15_0= ruleSelectStatement
+            // InternalSparrow.g:3102:4: (lv_value_15_0= ruleSelectStatement )
+            // InternalSparrow.g:3103:5: lv_value_15_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getTrelloPUTAccess().getValueSelectStatementParserRuleCall_15_0());
@@ -5422,11 +5831,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_17, grammarAccess.getTrelloPUTAccess().getOnConditionKeyword_17());
             		
-            // InternalSparrow.g:2889:3: ( (lv_condition_18_0= ruleExpression ) )
-            // InternalSparrow.g:2890:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:3128:3: ( (lv_condition_18_0= ruleExpression ) )
+            // InternalSparrow.g:3129:4: (lv_condition_18_0= ruleExpression )
             {
-            // InternalSparrow.g:2890:4: (lv_condition_18_0= ruleExpression )
-            // InternalSparrow.g:2891:5: lv_condition_18_0= ruleExpression
+            // InternalSparrow.g:3129:4: (lv_condition_18_0= ruleExpression )
+            // InternalSparrow.g:3130:5: lv_condition_18_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getTrelloPUTAccess().getConditionExpressionParserRuleCall_18_0());
@@ -5476,7 +5885,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFetch"
-    // InternalSparrow.g:2912:1: entryRuleFetch returns [EObject current=null] : iv_ruleFetch= ruleFetch EOF ;
+    // InternalSparrow.g:3151:1: entryRuleFetch returns [EObject current=null] : iv_ruleFetch= ruleFetch EOF ;
     public final EObject entryRuleFetch() throws RecognitionException {
         EObject current = null;
 
@@ -5484,8 +5893,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:2912:46: (iv_ruleFetch= ruleFetch EOF )
-            // InternalSparrow.g:2913:2: iv_ruleFetch= ruleFetch EOF
+            // InternalSparrow.g:3151:46: (iv_ruleFetch= ruleFetch EOF )
+            // InternalSparrow.g:3152:2: iv_ruleFetch= ruleFetch EOF
             {
              newCompositeNode(grammarAccess.getFetchRule()); 
             pushFollow(FOLLOW_1);
@@ -5512,7 +5921,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFetch"
-    // InternalSparrow.g:2919:1: ruleFetch returns [EObject current=null] : (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:3158:1: ruleFetch returns [EObject current=null] : (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) ;
     public final EObject ruleFetch() throws RecognitionException {
         EObject current = null;
 
@@ -5533,13 +5942,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:2925:2: ( (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:2926:2: (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
+            // InternalSparrow.g:3164:2: ( (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:3165:2: (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:2926:2: (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
-            // InternalSparrow.g:2927:3: otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) )
+            // InternalSparrow.g:3165:2: (otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
+            // InternalSparrow.g:3166:3: otherlv_0= 'assign' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'source' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,59,FOLLOW_11); 
+            otherlv_0=(Token)match(input,60,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFetchAccess().getAssignKeyword_0());
             		
@@ -5547,11 +5956,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getFetchAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:2935:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:2936:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3174:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:3175:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:2936:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:2937:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:3175:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3176:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_43); 
 
@@ -5573,15 +5982,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,60,FOLLOW_3); 
+            otherlv_3=(Token)match(input,61,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getFetchAccess().getSourceKeyword_3());
             		
-            // InternalSparrow.g:2957:3: ( (lv_source_4_0= RULE_STRING ) )
-            // InternalSparrow.g:2958:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:3196:3: ( (lv_source_4_0= RULE_STRING ) )
+            // InternalSparrow.g:3197:4: (lv_source_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:2958:4: (lv_source_4_0= RULE_STRING )
-            // InternalSparrow.g:2959:5: lv_source_4_0= RULE_STRING
+            // InternalSparrow.g:3197:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:3198:5: lv_source_4_0= RULE_STRING
             {
             lv_source_4_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -5611,11 +6020,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getFetchAccess().getLeftCurlyBracketKeyword_6());
             		
-            // InternalSparrow.g:2983:3: ( (lv_value_7_0= RULE_STRING ) )
-            // InternalSparrow.g:2984:4: (lv_value_7_0= RULE_STRING )
+            // InternalSparrow.g:3222:3: ( (lv_value_7_0= RULE_STRING ) )
+            // InternalSparrow.g:3223:4: (lv_value_7_0= RULE_STRING )
             {
-            // InternalSparrow.g:2984:4: (lv_value_7_0= RULE_STRING )
-            // InternalSparrow.g:2985:5: lv_value_7_0= RULE_STRING
+            // InternalSparrow.g:3223:4: (lv_value_7_0= RULE_STRING )
+            // InternalSparrow.g:3224:5: lv_value_7_0= RULE_STRING
             {
             lv_value_7_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -5645,11 +6054,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getFetchAccess().getOnConditionKeyword_9());
             		
-            // InternalSparrow.g:3009:3: ( (lv_condition_10_0= ruleExpression ) )
-            // InternalSparrow.g:3010:4: (lv_condition_10_0= ruleExpression )
+            // InternalSparrow.g:3248:3: ( (lv_condition_10_0= ruleExpression ) )
+            // InternalSparrow.g:3249:4: (lv_condition_10_0= ruleExpression )
             {
-            // InternalSparrow.g:3010:4: (lv_condition_10_0= ruleExpression )
-            // InternalSparrow.g:3011:5: lv_condition_10_0= ruleExpression
+            // InternalSparrow.g:3249:4: (lv_condition_10_0= ruleExpression )
+            // InternalSparrow.g:3250:5: lv_condition_10_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getFetchAccess().getConditionExpressionParserRuleCall_10_0());
@@ -5699,7 +6108,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCallprocess"
-    // InternalSparrow.g:3032:1: entryRuleCallprocess returns [EObject current=null] : iv_ruleCallprocess= ruleCallprocess EOF ;
+    // InternalSparrow.g:3271:1: entryRuleCallprocess returns [EObject current=null] : iv_ruleCallprocess= ruleCallprocess EOF ;
     public final EObject entryRuleCallprocess() throws RecognitionException {
         EObject current = null;
 
@@ -5707,8 +6116,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:3032:52: (iv_ruleCallprocess= ruleCallprocess EOF )
-            // InternalSparrow.g:3033:2: iv_ruleCallprocess= ruleCallprocess EOF
+            // InternalSparrow.g:3271:52: (iv_ruleCallprocess= ruleCallprocess EOF )
+            // InternalSparrow.g:3272:2: iv_ruleCallprocess= ruleCallprocess EOF
             {
              newCompositeNode(grammarAccess.getCallprocessRule()); 
             pushFollow(FOLLOW_1);
@@ -5735,7 +6144,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCallprocess"
-    // InternalSparrow.g:3039:1: ruleCallprocess returns [EObject current=null] : (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:3278:1: ruleCallprocess returns [EObject current=null] : (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
     public final EObject ruleCallprocess() throws RecognitionException {
         EObject current = null;
 
@@ -5761,13 +6170,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:3045:2: ( (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:3046:2: (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:3284:2: ( (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:3285:2: (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:3046:2: (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
-            // InternalSparrow.g:3047:3: otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:3285:2: (otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:3286:3: otherlv_0= 'callprocess' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-target' ( (lv_target_4_0= RULE_STRING ) ) otherlv_5= 'from-file' ( (lv_source_6_0= RULE_STRING ) ) otherlv_7= 'using' ( (lv_datasource_8_0= RULE_STRING ) ) otherlv_9= 'for-every' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,61,FOLLOW_11); 
+            otherlv_0=(Token)match(input,62,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCallprocessAccess().getCallprocessKeyword_0());
             		
@@ -5775,11 +6184,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getCallprocessAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:3055:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:3056:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3294:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:3295:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:3056:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:3057:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:3295:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3296:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_44); 
 
@@ -5801,15 +6210,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,62,FOLLOW_3); 
+            otherlv_3=(Token)match(input,63,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getCallprocessAccess().getWithTargetKeyword_3());
             		
-            // InternalSparrow.g:3077:3: ( (lv_target_4_0= RULE_STRING ) )
-            // InternalSparrow.g:3078:4: (lv_target_4_0= RULE_STRING )
+            // InternalSparrow.g:3316:3: ( (lv_target_4_0= RULE_STRING ) )
+            // InternalSparrow.g:3317:4: (lv_target_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:3078:4: (lv_target_4_0= RULE_STRING )
-            // InternalSparrow.g:3079:5: lv_target_4_0= RULE_STRING
+            // InternalSparrow.g:3317:4: (lv_target_4_0= RULE_STRING )
+            // InternalSparrow.g:3318:5: lv_target_4_0= RULE_STRING
             {
             lv_target_4_0=(Token)match(input,RULE_STRING,FOLLOW_45); 
 
@@ -5831,15 +6240,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,63,FOLLOW_3); 
+            otherlv_5=(Token)match(input,64,FOLLOW_3); 
 
             			newLeafNode(otherlv_5, grammarAccess.getCallprocessAccess().getFromFileKeyword_5());
             		
-            // InternalSparrow.g:3099:3: ( (lv_source_6_0= RULE_STRING ) )
-            // InternalSparrow.g:3100:4: (lv_source_6_0= RULE_STRING )
+            // InternalSparrow.g:3338:3: ( (lv_source_6_0= RULE_STRING ) )
+            // InternalSparrow.g:3339:4: (lv_source_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:3100:4: (lv_source_6_0= RULE_STRING )
-            // InternalSparrow.g:3101:5: lv_source_6_0= RULE_STRING
+            // InternalSparrow.g:3339:4: (lv_source_6_0= RULE_STRING )
+            // InternalSparrow.g:3340:5: lv_source_6_0= RULE_STRING
             {
             lv_source_6_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -5865,11 +6274,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getCallprocessAccess().getUsingKeyword_7());
             		
-            // InternalSparrow.g:3121:3: ( (lv_datasource_8_0= RULE_STRING ) )
-            // InternalSparrow.g:3122:4: (lv_datasource_8_0= RULE_STRING )
+            // InternalSparrow.g:3360:3: ( (lv_datasource_8_0= RULE_STRING ) )
+            // InternalSparrow.g:3361:4: (lv_datasource_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:3122:4: (lv_datasource_8_0= RULE_STRING )
-            // InternalSparrow.g:3123:5: lv_datasource_8_0= RULE_STRING
+            // InternalSparrow.g:3361:4: (lv_datasource_8_0= RULE_STRING )
+            // InternalSparrow.g:3362:5: lv_datasource_8_0= RULE_STRING
             {
             lv_datasource_8_0=(Token)match(input,RULE_STRING,FOLLOW_46); 
 
@@ -5891,7 +6300,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,64,FOLLOW_4); 
+            otherlv_9=(Token)match(input,65,FOLLOW_4); 
 
             			newLeafNode(otherlv_9, grammarAccess.getCallprocessAccess().getForEveryKeyword_9());
             		
@@ -5899,11 +6308,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_10, grammarAccess.getCallprocessAccess().getLeftCurlyBracketKeyword_10());
             		
-            // InternalSparrow.g:3147:3: ( (lv_value_11_0= ruleSelectStatement ) )
-            // InternalSparrow.g:3148:4: (lv_value_11_0= ruleSelectStatement )
+            // InternalSparrow.g:3386:3: ( (lv_value_11_0= ruleSelectStatement ) )
+            // InternalSparrow.g:3387:4: (lv_value_11_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:3148:4: (lv_value_11_0= ruleSelectStatement )
-            // InternalSparrow.g:3149:5: lv_value_11_0= ruleSelectStatement
+            // InternalSparrow.g:3387:4: (lv_value_11_0= ruleSelectStatement )
+            // InternalSparrow.g:3388:5: lv_value_11_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getCallprocessAccess().getValueSelectStatementParserRuleCall_11_0());
@@ -5938,11 +6347,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getCallprocessAccess().getOnConditionKeyword_13());
             		
-            // InternalSparrow.g:3174:3: ( (lv_condition_14_0= ruleExpression ) )
-            // InternalSparrow.g:3175:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:3413:3: ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:3414:4: (lv_condition_14_0= ruleExpression )
             {
-            // InternalSparrow.g:3175:4: (lv_condition_14_0= ruleExpression )
-            // InternalSparrow.g:3176:5: lv_condition_14_0= ruleExpression
+            // InternalSparrow.g:3414:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:3415:5: lv_condition_14_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getCallprocessAccess().getConditionExpressionParserRuleCall_14_0());
@@ -5992,7 +6401,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUpdatedaudit"
-    // InternalSparrow.g:3197:1: entryRuleUpdatedaudit returns [EObject current=null] : iv_ruleUpdatedaudit= ruleUpdatedaudit EOF ;
+    // InternalSparrow.g:3436:1: entryRuleUpdatedaudit returns [EObject current=null] : iv_ruleUpdatedaudit= ruleUpdatedaudit EOF ;
     public final EObject entryRuleUpdatedaudit() throws RecognitionException {
         EObject current = null;
 
@@ -6000,8 +6409,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:3197:53: (iv_ruleUpdatedaudit= ruleUpdatedaudit EOF )
-            // InternalSparrow.g:3198:2: iv_ruleUpdatedaudit= ruleUpdatedaudit EOF
+            // InternalSparrow.g:3436:53: (iv_ruleUpdatedaudit= ruleUpdatedaudit EOF )
+            // InternalSparrow.g:3437:2: iv_ruleUpdatedaudit= ruleUpdatedaudit EOF
             {
              newCompositeNode(grammarAccess.getUpdatedauditRule()); 
             pushFollow(FOLLOW_1);
@@ -6028,7 +6437,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUpdatedaudit"
-    // InternalSparrow.g:3204:1: ruleUpdatedaudit returns [EObject current=null] : (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:3443:1: ruleUpdatedaudit returns [EObject current=null] : (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
     public final EObject ruleUpdatedaudit() throws RecognitionException {
         EObject current = null;
 
@@ -6052,13 +6461,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:3210:2: ( (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:3211:2: (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:3449:2: ( (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:3450:2: (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:3211:2: (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
-            // InternalSparrow.g:3212:3: otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:3450:2: (otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:3451:3: otherlv_0= 'log' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'logto' ( (lv_logsink_4_0= RULE_STRING ) ) otherlv_5= 'in' ( (lv_datasource_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,65,FOLLOW_11); 
+            otherlv_0=(Token)match(input,66,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getUpdatedauditAccess().getLogKeyword_0());
             		
@@ -6066,11 +6475,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getUpdatedauditAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:3220:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:3221:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3459:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:3460:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:3221:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:3222:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:3460:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3461:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_47); 
 
@@ -6092,15 +6501,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,66,FOLLOW_3); 
+            otherlv_3=(Token)match(input,67,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getUpdatedauditAccess().getLogtoKeyword_3());
             		
-            // InternalSparrow.g:3242:3: ( (lv_logsink_4_0= RULE_STRING ) )
-            // InternalSparrow.g:3243:4: (lv_logsink_4_0= RULE_STRING )
+            // InternalSparrow.g:3481:3: ( (lv_logsink_4_0= RULE_STRING ) )
+            // InternalSparrow.g:3482:4: (lv_logsink_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:3243:4: (lv_logsink_4_0= RULE_STRING )
-            // InternalSparrow.g:3244:5: lv_logsink_4_0= RULE_STRING
+            // InternalSparrow.g:3482:4: (lv_logsink_4_0= RULE_STRING )
+            // InternalSparrow.g:3483:5: lv_logsink_4_0= RULE_STRING
             {
             lv_logsink_4_0=(Token)match(input,RULE_STRING,FOLLOW_48); 
 
@@ -6122,15 +6531,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,67,FOLLOW_3); 
+            otherlv_5=(Token)match(input,68,FOLLOW_3); 
 
             			newLeafNode(otherlv_5, grammarAccess.getUpdatedauditAccess().getInKeyword_5());
             		
-            // InternalSparrow.g:3264:3: ( (lv_datasource_6_0= RULE_STRING ) )
-            // InternalSparrow.g:3265:4: (lv_datasource_6_0= RULE_STRING )
+            // InternalSparrow.g:3503:3: ( (lv_datasource_6_0= RULE_STRING ) )
+            // InternalSparrow.g:3504:4: (lv_datasource_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:3265:4: (lv_datasource_6_0= RULE_STRING )
-            // InternalSparrow.g:3266:5: lv_datasource_6_0= RULE_STRING
+            // InternalSparrow.g:3504:4: (lv_datasource_6_0= RULE_STRING )
+            // InternalSparrow.g:3505:5: lv_datasource_6_0= RULE_STRING
             {
             lv_datasource_6_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -6160,11 +6569,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getUpdatedauditAccess().getLeftCurlyBracketKeyword_8());
             		
-            // InternalSparrow.g:3290:3: ( (lv_value_9_0= ruleSelectStatement ) )
-            // InternalSparrow.g:3291:4: (lv_value_9_0= ruleSelectStatement )
+            // InternalSparrow.g:3529:3: ( (lv_value_9_0= ruleSelectStatement ) )
+            // InternalSparrow.g:3530:4: (lv_value_9_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:3291:4: (lv_value_9_0= ruleSelectStatement )
-            // InternalSparrow.g:3292:5: lv_value_9_0= ruleSelectStatement
+            // InternalSparrow.g:3530:4: (lv_value_9_0= ruleSelectStatement )
+            // InternalSparrow.g:3531:5: lv_value_9_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getUpdatedauditAccess().getValueSelectStatementParserRuleCall_9_0());
@@ -6199,11 +6608,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getUpdatedauditAccess().getOnConditionKeyword_11());
             		
-            // InternalSparrow.g:3317:3: ( (lv_condition_12_0= ruleExpression ) )
-            // InternalSparrow.g:3318:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:3556:3: ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:3557:4: (lv_condition_12_0= ruleExpression )
             {
-            // InternalSparrow.g:3318:4: (lv_condition_12_0= ruleExpression )
-            // InternalSparrow.g:3319:5: lv_condition_12_0= ruleExpression
+            // InternalSparrow.g:3557:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:3558:5: lv_condition_12_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getUpdatedauditAccess().getConditionExpressionParserRuleCall_12_0());
@@ -6253,7 +6662,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClickSendSms"
-    // InternalSparrow.g:3340:1: entryRuleClickSendSms returns [EObject current=null] : iv_ruleClickSendSms= ruleClickSendSms EOF ;
+    // InternalSparrow.g:3579:1: entryRuleClickSendSms returns [EObject current=null] : iv_ruleClickSendSms= ruleClickSendSms EOF ;
     public final EObject entryRuleClickSendSms() throws RecognitionException {
         EObject current = null;
 
@@ -6261,8 +6670,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:3340:53: (iv_ruleClickSendSms= ruleClickSendSms EOF )
-            // InternalSparrow.g:3341:2: iv_ruleClickSendSms= ruleClickSendSms EOF
+            // InternalSparrow.g:3579:53: (iv_ruleClickSendSms= ruleClickSendSms EOF )
+            // InternalSparrow.g:3580:2: iv_ruleClickSendSms= ruleClickSendSms EOF
             {
              newCompositeNode(grammarAccess.getClickSendSmsRule()); 
             pushFollow(FOLLOW_1);
@@ -6289,7 +6698,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClickSendSms"
-    // InternalSparrow.g:3347:1: ruleClickSendSms returns [EObject current=null] : (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:3586:1: ruleClickSendSms returns [EObject current=null] : (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
     public final EObject ruleClickSendSms() throws RecognitionException {
         EObject current = null;
 
@@ -6314,13 +6723,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:3353:2: ( (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:3354:2: (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:3592:2: ( (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:3593:2: (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:3354:2: (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
-            // InternalSparrow.g:3355:3: otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:3593:2: (otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:3594:3: otherlv_0= 'c2sms' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with-user' ( (lv_userid_4_0= RULE_STRING ) ) otherlv_5= 'secured-by' ( (lv_securityKey_6_0= RULE_STRING ) ) otherlv_7= 'from-source' ( (lv_target_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= RULE_STRING ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,68,FOLLOW_11); 
+            otherlv_0=(Token)match(input,69,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getClickSendSmsAccess().getC2smsKeyword_0());
             		
@@ -6328,11 +6737,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getClickSendSmsAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:3363:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:3364:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3602:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:3603:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:3364:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:3365:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:3603:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3604:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_49); 
 
@@ -6354,15 +6763,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,69,FOLLOW_3); 
+            otherlv_3=(Token)match(input,70,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getClickSendSmsAccess().getWithUserKeyword_3());
             		
-            // InternalSparrow.g:3385:3: ( (lv_userid_4_0= RULE_STRING ) )
-            // InternalSparrow.g:3386:4: (lv_userid_4_0= RULE_STRING )
+            // InternalSparrow.g:3624:3: ( (lv_userid_4_0= RULE_STRING ) )
+            // InternalSparrow.g:3625:4: (lv_userid_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:3386:4: (lv_userid_4_0= RULE_STRING )
-            // InternalSparrow.g:3387:5: lv_userid_4_0= RULE_STRING
+            // InternalSparrow.g:3625:4: (lv_userid_4_0= RULE_STRING )
+            // InternalSparrow.g:3626:5: lv_userid_4_0= RULE_STRING
             {
             lv_userid_4_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -6388,11 +6797,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getClickSendSmsAccess().getSecuredByKeyword_5());
             		
-            // InternalSparrow.g:3407:3: ( (lv_securityKey_6_0= RULE_STRING ) )
-            // InternalSparrow.g:3408:4: (lv_securityKey_6_0= RULE_STRING )
+            // InternalSparrow.g:3646:3: ( (lv_securityKey_6_0= RULE_STRING ) )
+            // InternalSparrow.g:3647:4: (lv_securityKey_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:3408:4: (lv_securityKey_6_0= RULE_STRING )
-            // InternalSparrow.g:3409:5: lv_securityKey_6_0= RULE_STRING
+            // InternalSparrow.g:3647:4: (lv_securityKey_6_0= RULE_STRING )
+            // InternalSparrow.g:3648:5: lv_securityKey_6_0= RULE_STRING
             {
             lv_securityKey_6_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
@@ -6418,11 +6827,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getClickSendSmsAccess().getFromSourceKeyword_7());
             		
-            // InternalSparrow.g:3429:3: ( (lv_target_8_0= RULE_STRING ) )
-            // InternalSparrow.g:3430:4: (lv_target_8_0= RULE_STRING )
+            // InternalSparrow.g:3668:3: ( (lv_target_8_0= RULE_STRING ) )
+            // InternalSparrow.g:3669:4: (lv_target_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:3430:4: (lv_target_8_0= RULE_STRING )
-            // InternalSparrow.g:3431:5: lv_target_8_0= RULE_STRING
+            // InternalSparrow.g:3669:4: (lv_target_8_0= RULE_STRING )
+            // InternalSparrow.g:3670:5: lv_target_8_0= RULE_STRING
             {
             lv_target_8_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -6452,11 +6861,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_10, grammarAccess.getClickSendSmsAccess().getLeftCurlyBracketKeyword_10());
             		
-            // InternalSparrow.g:3455:3: ( (lv_value_11_0= RULE_STRING ) )
-            // InternalSparrow.g:3456:4: (lv_value_11_0= RULE_STRING )
+            // InternalSparrow.g:3694:3: ( (lv_value_11_0= RULE_STRING ) )
+            // InternalSparrow.g:3695:4: (lv_value_11_0= RULE_STRING )
             {
-            // InternalSparrow.g:3456:4: (lv_value_11_0= RULE_STRING )
-            // InternalSparrow.g:3457:5: lv_value_11_0= RULE_STRING
+            // InternalSparrow.g:3695:4: (lv_value_11_0= RULE_STRING )
+            // InternalSparrow.g:3696:5: lv_value_11_0= RULE_STRING
             {
             lv_value_11_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -6486,11 +6895,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getClickSendSmsAccess().getOnConditionKeyword_13());
             		
-            // InternalSparrow.g:3481:3: ( (lv_condition_14_0= ruleExpression ) )
-            // InternalSparrow.g:3482:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:3720:3: ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:3721:4: (lv_condition_14_0= ruleExpression )
             {
-            // InternalSparrow.g:3482:4: (lv_condition_14_0= ruleExpression )
-            // InternalSparrow.g:3483:5: lv_condition_14_0= ruleExpression
+            // InternalSparrow.g:3721:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:3722:5: lv_condition_14_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getClickSendSmsAccess().getConditionExpressionParserRuleCall_14_0());
@@ -6540,7 +6949,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSlackPUT"
-    // InternalSparrow.g:3504:1: entryRuleSlackPUT returns [EObject current=null] : iv_ruleSlackPUT= ruleSlackPUT EOF ;
+    // InternalSparrow.g:3743:1: entryRuleSlackPUT returns [EObject current=null] : iv_ruleSlackPUT= ruleSlackPUT EOF ;
     public final EObject entryRuleSlackPUT() throws RecognitionException {
         EObject current = null;
 
@@ -6548,8 +6957,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:3504:49: (iv_ruleSlackPUT= ruleSlackPUT EOF )
-            // InternalSparrow.g:3505:2: iv_ruleSlackPUT= ruleSlackPUT EOF
+            // InternalSparrow.g:3743:49: (iv_ruleSlackPUT= ruleSlackPUT EOF )
+            // InternalSparrow.g:3744:2: iv_ruleSlackPUT= ruleSlackPUT EOF
             {
              newCompositeNode(grammarAccess.getSlackPUTRule()); 
             pushFollow(FOLLOW_1);
@@ -6576,7 +6985,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSlackPUT"
-    // InternalSparrow.g:3511:1: ruleSlackPUT returns [EObject current=null] : (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:3750:1: ruleSlackPUT returns [EObject current=null] : (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
     public final EObject ruleSlackPUT() throws RecognitionException {
         EObject current = null;
 
@@ -6599,13 +7008,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:3517:2: ( (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:3518:2: (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:3756:2: ( (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:3757:2: (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:3518:2: (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
-            // InternalSparrow.g:3519:3: otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:3757:2: (otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:3758:3: otherlv_0= 'slackput' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_team_4_0= RULE_STRING ) ) otherlv_5= 'on' ( (lv_channel_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= RULE_STRING ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,70,FOLLOW_11); 
+            otherlv_0=(Token)match(input,71,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSlackPUTAccess().getSlackputKeyword_0());
             		
@@ -6613,11 +7022,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSlackPUTAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:3527:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:3528:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3766:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:3767:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:3528:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:3529:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:3767:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3768:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
@@ -6639,15 +7048,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,56,FOLLOW_3); 
+            otherlv_3=(Token)match(input,57,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSlackPUTAccess().getToKeyword_3());
             		
-            // InternalSparrow.g:3549:3: ( (lv_team_4_0= RULE_STRING ) )
-            // InternalSparrow.g:3550:4: (lv_team_4_0= RULE_STRING )
+            // InternalSparrow.g:3788:3: ( (lv_team_4_0= RULE_STRING ) )
+            // InternalSparrow.g:3789:4: (lv_team_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:3550:4: (lv_team_4_0= RULE_STRING )
-            // InternalSparrow.g:3551:5: lv_team_4_0= RULE_STRING
+            // InternalSparrow.g:3789:4: (lv_team_4_0= RULE_STRING )
+            // InternalSparrow.g:3790:5: lv_team_4_0= RULE_STRING
             {
             lv_team_4_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
 
@@ -6673,11 +7082,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getSlackPUTAccess().getOnKeyword_5());
             		
-            // InternalSparrow.g:3571:3: ( (lv_channel_6_0= RULE_STRING ) )
-            // InternalSparrow.g:3572:4: (lv_channel_6_0= RULE_STRING )
+            // InternalSparrow.g:3810:3: ( (lv_channel_6_0= RULE_STRING ) )
+            // InternalSparrow.g:3811:4: (lv_channel_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:3572:4: (lv_channel_6_0= RULE_STRING )
-            // InternalSparrow.g:3573:5: lv_channel_6_0= RULE_STRING
+            // InternalSparrow.g:3811:4: (lv_channel_6_0= RULE_STRING )
+            // InternalSparrow.g:3812:5: lv_channel_6_0= RULE_STRING
             {
             lv_channel_6_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -6707,11 +7116,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getSlackPUTAccess().getLeftCurlyBracketKeyword_8());
             		
-            // InternalSparrow.g:3597:3: ( (lv_value_9_0= RULE_STRING ) )
-            // InternalSparrow.g:3598:4: (lv_value_9_0= RULE_STRING )
+            // InternalSparrow.g:3836:3: ( (lv_value_9_0= RULE_STRING ) )
+            // InternalSparrow.g:3837:4: (lv_value_9_0= RULE_STRING )
             {
-            // InternalSparrow.g:3598:4: (lv_value_9_0= RULE_STRING )
-            // InternalSparrow.g:3599:5: lv_value_9_0= RULE_STRING
+            // InternalSparrow.g:3837:4: (lv_value_9_0= RULE_STRING )
+            // InternalSparrow.g:3838:5: lv_value_9_0= RULE_STRING
             {
             lv_value_9_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
 
@@ -6741,11 +7150,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getSlackPUTAccess().getOnConditionKeyword_11());
             		
-            // InternalSparrow.g:3623:3: ( (lv_condition_12_0= ruleExpression ) )
-            // InternalSparrow.g:3624:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:3862:3: ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:3863:4: (lv_condition_12_0= ruleExpression )
             {
-            // InternalSparrow.g:3624:4: (lv_condition_12_0= ruleExpression )
-            // InternalSparrow.g:3625:5: lv_condition_12_0= ruleExpression
+            // InternalSparrow.g:3863:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:3864:5: lv_condition_12_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getSlackPUTAccess().getConditionExpressionParserRuleCall_12_0());
@@ -6795,7 +7204,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCopydata"
-    // InternalSparrow.g:3646:1: entryRuleCopydata returns [EObject current=null] : iv_ruleCopydata= ruleCopydata EOF ;
+    // InternalSparrow.g:3885:1: entryRuleCopydata returns [EObject current=null] : iv_ruleCopydata= ruleCopydata EOF ;
     public final EObject entryRuleCopydata() throws RecognitionException {
         EObject current = null;
 
@@ -6803,8 +7212,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:3646:49: (iv_ruleCopydata= ruleCopydata EOF )
-            // InternalSparrow.g:3647:2: iv_ruleCopydata= ruleCopydata EOF
+            // InternalSparrow.g:3885:49: (iv_ruleCopydata= ruleCopydata EOF )
+            // InternalSparrow.g:3886:2: iv_ruleCopydata= ruleCopydata EOF
             {
              newCompositeNode(grammarAccess.getCopydataRule()); 
             pushFollow(FOLLOW_1);
@@ -6831,7 +7240,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCopydata"
-    // InternalSparrow.g:3653:1: ruleCopydata returns [EObject current=null] : (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:3892:1: ruleCopydata returns [EObject current=null] : (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) ;
     public final EObject ruleCopydata() throws RecognitionException {
         EObject current = null;
 
@@ -6855,13 +7264,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:3659:2: ( (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:3660:2: (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:3898:2: ( (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:3899:2: (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:3660:2: (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
-            // InternalSparrow.g:3661:3: otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:3899:2: (otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) ) )
+            // InternalSparrow.g:3900:3: otherlv_0= 'copydata' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'using' otherlv_8= '{' ( (lv_value_9_0= ruleSelectStatement ) ) otherlv_10= '}' otherlv_11= 'on-condition' ( (lv_condition_12_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,71,FOLLOW_11); 
+            otherlv_0=(Token)match(input,72,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCopydataAccess().getCopydataKeyword_0());
             		
@@ -6869,11 +7278,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getCopydataAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:3669:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:3670:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3908:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:3909:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:3670:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:3671:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:3909:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:3910:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_32); 
 
@@ -6895,15 +7304,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,46,FOLLOW_3); 
+            otherlv_3=(Token)match(input,47,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getCopydataAccess().getFromKeyword_3());
             		
-            // InternalSparrow.g:3691:3: ( (lv_source_4_0= RULE_STRING ) )
-            // InternalSparrow.g:3692:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:3930:3: ( (lv_source_4_0= RULE_STRING ) )
+            // InternalSparrow.g:3931:4: (lv_source_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:3692:4: (lv_source_4_0= RULE_STRING )
-            // InternalSparrow.g:3693:5: lv_source_4_0= RULE_STRING
+            // InternalSparrow.g:3931:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:3932:5: lv_source_4_0= RULE_STRING
             {
             lv_source_4_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
@@ -6925,15 +7334,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,56,FOLLOW_3); 
+            otherlv_5=(Token)match(input,57,FOLLOW_3); 
 
             			newLeafNode(otherlv_5, grammarAccess.getCopydataAccess().getToKeyword_5());
             		
-            // InternalSparrow.g:3713:3: ( (lv_to_6_0= RULE_STRING ) )
-            // InternalSparrow.g:3714:4: (lv_to_6_0= RULE_STRING )
+            // InternalSparrow.g:3952:3: ( (lv_to_6_0= RULE_STRING ) )
+            // InternalSparrow.g:3953:4: (lv_to_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:3714:4: (lv_to_6_0= RULE_STRING )
-            // InternalSparrow.g:3715:5: lv_to_6_0= RULE_STRING
+            // InternalSparrow.g:3953:4: (lv_to_6_0= RULE_STRING )
+            // InternalSparrow.g:3954:5: lv_to_6_0= RULE_STRING
             {
             lv_to_6_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -6963,11 +7372,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getCopydataAccess().getLeftCurlyBracketKeyword_8());
             		
-            // InternalSparrow.g:3739:3: ( (lv_value_9_0= ruleSelectStatement ) )
-            // InternalSparrow.g:3740:4: (lv_value_9_0= ruleSelectStatement )
+            // InternalSparrow.g:3978:3: ( (lv_value_9_0= ruleSelectStatement ) )
+            // InternalSparrow.g:3979:4: (lv_value_9_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:3740:4: (lv_value_9_0= ruleSelectStatement )
-            // InternalSparrow.g:3741:5: lv_value_9_0= ruleSelectStatement
+            // InternalSparrow.g:3979:4: (lv_value_9_0= ruleSelectStatement )
+            // InternalSparrow.g:3980:5: lv_value_9_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getCopydataAccess().getValueSelectStatementParserRuleCall_9_0());
@@ -7002,11 +7411,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getCopydataAccess().getOnConditionKeyword_11());
             		
-            // InternalSparrow.g:3766:3: ( (lv_condition_12_0= ruleExpression ) )
-            // InternalSparrow.g:3767:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:4005:3: ( (lv_condition_12_0= ruleExpression ) )
+            // InternalSparrow.g:4006:4: (lv_condition_12_0= ruleExpression )
             {
-            // InternalSparrow.g:3767:4: (lv_condition_12_0= ruleExpression )
-            // InternalSparrow.g:3768:5: lv_condition_12_0= ruleExpression
+            // InternalSparrow.g:4006:4: (lv_condition_12_0= ruleExpression )
+            // InternalSparrow.g:4007:5: lv_condition_12_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getCopydataAccess().getConditionExpressionParserRuleCall_12_0());
@@ -7056,7 +7465,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWriteCsv"
-    // InternalSparrow.g:3789:1: entryRuleWriteCsv returns [EObject current=null] : iv_ruleWriteCsv= ruleWriteCsv EOF ;
+    // InternalSparrow.g:4028:1: entryRuleWriteCsv returns [EObject current=null] : iv_ruleWriteCsv= ruleWriteCsv EOF ;
     public final EObject entryRuleWriteCsv() throws RecognitionException {
         EObject current = null;
 
@@ -7064,8 +7473,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:3789:49: (iv_ruleWriteCsv= ruleWriteCsv EOF )
-            // InternalSparrow.g:3790:2: iv_ruleWriteCsv= ruleWriteCsv EOF
+            // InternalSparrow.g:4028:49: (iv_ruleWriteCsv= ruleWriteCsv EOF )
+            // InternalSparrow.g:4029:2: iv_ruleWriteCsv= ruleWriteCsv EOF
             {
              newCompositeNode(grammarAccess.getWriteCsvRule()); 
             pushFollow(FOLLOW_1);
@@ -7092,7 +7501,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWriteCsv"
-    // InternalSparrow.g:3796:1: ruleWriteCsv returns [EObject current=null] : (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:4035:1: ruleWriteCsv returns [EObject current=null] : (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
     public final EObject ruleWriteCsv() throws RecognitionException {
         EObject current = null;
 
@@ -7118,13 +7527,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:3802:2: ( (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:3803:2: (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:4041:2: ( (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:4042:2: (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:3803:2: (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
-            // InternalSparrow.g:3804:3: otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:4042:2: (otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:4043:3: otherlv_0= 'writecsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,72,FOLLOW_11); 
+            otherlv_0=(Token)match(input,73,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getWriteCsvAccess().getWritecsvKeyword_0());
             		
@@ -7132,11 +7541,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getWriteCsvAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:3812:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:3813:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:4051:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:4052:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:3813:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:3814:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:4052:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:4053:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_32); 
 
@@ -7158,15 +7567,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,46,FOLLOW_3); 
+            otherlv_3=(Token)match(input,47,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getWriteCsvAccess().getFromKeyword_3());
             		
-            // InternalSparrow.g:3834:3: ( (lv_source_4_0= RULE_STRING ) )
-            // InternalSparrow.g:3835:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:4073:3: ( (lv_source_4_0= RULE_STRING ) )
+            // InternalSparrow.g:4074:4: (lv_source_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:3835:4: (lv_source_4_0= RULE_STRING )
-            // InternalSparrow.g:3836:5: lv_source_4_0= RULE_STRING
+            // InternalSparrow.g:4074:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:4075:5: lv_source_4_0= RULE_STRING
             {
             lv_source_4_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
@@ -7188,15 +7597,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,56,FOLLOW_3); 
+            otherlv_5=(Token)match(input,57,FOLLOW_3); 
 
             			newLeafNode(otherlv_5, grammarAccess.getWriteCsvAccess().getToKeyword_5());
             		
-            // InternalSparrow.g:3856:3: ( (lv_to_6_0= RULE_STRING ) )
-            // InternalSparrow.g:3857:4: (lv_to_6_0= RULE_STRING )
+            // InternalSparrow.g:4095:3: ( (lv_to_6_0= RULE_STRING ) )
+            // InternalSparrow.g:4096:4: (lv_to_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:3857:4: (lv_to_6_0= RULE_STRING )
-            // InternalSparrow.g:3858:5: lv_to_6_0= RULE_STRING
+            // InternalSparrow.g:4096:4: (lv_to_6_0= RULE_STRING )
+            // InternalSparrow.g:4097:5: lv_to_6_0= RULE_STRING
             {
             lv_to_6_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
 
@@ -7218,15 +7627,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,53,FOLLOW_3); 
+            otherlv_7=(Token)match(input,54,FOLLOW_3); 
 
             			newLeafNode(otherlv_7, grammarAccess.getWriteCsvAccess().getWithKeyword_7());
             		
-            // InternalSparrow.g:3878:3: ( (lv_delim_8_0= RULE_STRING ) )
-            // InternalSparrow.g:3879:4: (lv_delim_8_0= RULE_STRING )
+            // InternalSparrow.g:4117:3: ( (lv_delim_8_0= RULE_STRING ) )
+            // InternalSparrow.g:4118:4: (lv_delim_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:3879:4: (lv_delim_8_0= RULE_STRING )
-            // InternalSparrow.g:3880:5: lv_delim_8_0= RULE_STRING
+            // InternalSparrow.g:4118:4: (lv_delim_8_0= RULE_STRING )
+            // InternalSparrow.g:4119:5: lv_delim_8_0= RULE_STRING
             {
             lv_delim_8_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -7256,11 +7665,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_10, grammarAccess.getWriteCsvAccess().getLeftCurlyBracketKeyword_10());
             		
-            // InternalSparrow.g:3904:3: ( (lv_value_11_0= ruleSelectStatement ) )
-            // InternalSparrow.g:3905:4: (lv_value_11_0= ruleSelectStatement )
+            // InternalSparrow.g:4143:3: ( (lv_value_11_0= ruleSelectStatement ) )
+            // InternalSparrow.g:4144:4: (lv_value_11_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:3905:4: (lv_value_11_0= ruleSelectStatement )
-            // InternalSparrow.g:3906:5: lv_value_11_0= ruleSelectStatement
+            // InternalSparrow.g:4144:4: (lv_value_11_0= ruleSelectStatement )
+            // InternalSparrow.g:4145:5: lv_value_11_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getWriteCsvAccess().getValueSelectStatementParserRuleCall_11_0());
@@ -7295,11 +7704,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getWriteCsvAccess().getOnConditionKeyword_13());
             		
-            // InternalSparrow.g:3931:3: ( (lv_condition_14_0= ruleExpression ) )
-            // InternalSparrow.g:3932:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:4170:3: ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:4171:4: (lv_condition_14_0= ruleExpression )
             {
-            // InternalSparrow.g:3932:4: (lv_condition_14_0= ruleExpression )
-            // InternalSparrow.g:3933:5: lv_condition_14_0= ruleExpression
+            // InternalSparrow.g:4171:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:4172:5: lv_condition_14_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getWriteCsvAccess().getConditionExpressionParserRuleCall_14_0());
@@ -7349,7 +7758,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLoadCsv"
-    // InternalSparrow.g:3954:1: entryRuleLoadCsv returns [EObject current=null] : iv_ruleLoadCsv= ruleLoadCsv EOF ;
+    // InternalSparrow.g:4193:1: entryRuleLoadCsv returns [EObject current=null] : iv_ruleLoadCsv= ruleLoadCsv EOF ;
     public final EObject entryRuleLoadCsv() throws RecognitionException {
         EObject current = null;
 
@@ -7357,8 +7766,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:3954:48: (iv_ruleLoadCsv= ruleLoadCsv EOF )
-            // InternalSparrow.g:3955:2: iv_ruleLoadCsv= ruleLoadCsv EOF
+            // InternalSparrow.g:4193:48: (iv_ruleLoadCsv= ruleLoadCsv EOF )
+            // InternalSparrow.g:4194:2: iv_ruleLoadCsv= ruleLoadCsv EOF
             {
              newCompositeNode(grammarAccess.getLoadCsvRule()); 
             pushFollow(FOLLOW_1);
@@ -7385,7 +7794,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLoadCsv"
-    // InternalSparrow.g:3961:1: ruleLoadCsv returns [EObject current=null] : (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:4200:1: ruleLoadCsv returns [EObject current=null] : (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) ;
     public final EObject ruleLoadCsv() throws RecognitionException {
         EObject current = null;
 
@@ -7411,13 +7820,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:3967:2: ( (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:3968:2: (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:4206:2: ( (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:4207:2: (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:3968:2: (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
-            // InternalSparrow.g:3969:3: otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:4207:2: (otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) ) )
+            // InternalSparrow.g:4208:3: otherlv_0= 'loadcsv' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (lv_source_4_0= RULE_STRING ) ) otherlv_5= 'to' ( (lv_to_6_0= RULE_STRING ) ) otherlv_7= 'with' ( (lv_delim_8_0= RULE_STRING ) ) otherlv_9= 'using' otherlv_10= '{' ( (lv_value_11_0= ruleSelectStatement ) ) otherlv_12= '}' otherlv_13= 'on-condition' ( (lv_condition_14_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,73,FOLLOW_11); 
+            otherlv_0=(Token)match(input,74,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLoadCsvAccess().getLoadcsvKeyword_0());
             		
@@ -7425,11 +7834,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getLoadCsvAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:3977:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:3978:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:4216:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:4217:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:3978:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:3979:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:4217:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:4218:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_32); 
 
@@ -7451,15 +7860,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,46,FOLLOW_3); 
+            otherlv_3=(Token)match(input,47,FOLLOW_3); 
 
             			newLeafNode(otherlv_3, grammarAccess.getLoadCsvAccess().getFromKeyword_3());
             		
-            // InternalSparrow.g:3999:3: ( (lv_source_4_0= RULE_STRING ) )
-            // InternalSparrow.g:4000:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:4238:3: ( (lv_source_4_0= RULE_STRING ) )
+            // InternalSparrow.g:4239:4: (lv_source_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:4000:4: (lv_source_4_0= RULE_STRING )
-            // InternalSparrow.g:4001:5: lv_source_4_0= RULE_STRING
+            // InternalSparrow.g:4239:4: (lv_source_4_0= RULE_STRING )
+            // InternalSparrow.g:4240:5: lv_source_4_0= RULE_STRING
             {
             lv_source_4_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
@@ -7481,15 +7890,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,56,FOLLOW_3); 
+            otherlv_5=(Token)match(input,57,FOLLOW_3); 
 
             			newLeafNode(otherlv_5, grammarAccess.getLoadCsvAccess().getToKeyword_5());
             		
-            // InternalSparrow.g:4021:3: ( (lv_to_6_0= RULE_STRING ) )
-            // InternalSparrow.g:4022:4: (lv_to_6_0= RULE_STRING )
+            // InternalSparrow.g:4260:3: ( (lv_to_6_0= RULE_STRING ) )
+            // InternalSparrow.g:4261:4: (lv_to_6_0= RULE_STRING )
             {
-            // InternalSparrow.g:4022:4: (lv_to_6_0= RULE_STRING )
-            // InternalSparrow.g:4023:5: lv_to_6_0= RULE_STRING
+            // InternalSparrow.g:4261:4: (lv_to_6_0= RULE_STRING )
+            // InternalSparrow.g:4262:5: lv_to_6_0= RULE_STRING
             {
             lv_to_6_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
 
@@ -7511,15 +7920,15 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,53,FOLLOW_3); 
+            otherlv_7=(Token)match(input,54,FOLLOW_3); 
 
             			newLeafNode(otherlv_7, grammarAccess.getLoadCsvAccess().getWithKeyword_7());
             		
-            // InternalSparrow.g:4043:3: ( (lv_delim_8_0= RULE_STRING ) )
-            // InternalSparrow.g:4044:4: (lv_delim_8_0= RULE_STRING )
+            // InternalSparrow.g:4282:3: ( (lv_delim_8_0= RULE_STRING ) )
+            // InternalSparrow.g:4283:4: (lv_delim_8_0= RULE_STRING )
             {
-            // InternalSparrow.g:4044:4: (lv_delim_8_0= RULE_STRING )
-            // InternalSparrow.g:4045:5: lv_delim_8_0= RULE_STRING
+            // InternalSparrow.g:4283:4: (lv_delim_8_0= RULE_STRING )
+            // InternalSparrow.g:4284:5: lv_delim_8_0= RULE_STRING
             {
             lv_delim_8_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -7549,11 +7958,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_10, grammarAccess.getLoadCsvAccess().getLeftCurlyBracketKeyword_10());
             		
-            // InternalSparrow.g:4069:3: ( (lv_value_11_0= ruleSelectStatement ) )
-            // InternalSparrow.g:4070:4: (lv_value_11_0= ruleSelectStatement )
+            // InternalSparrow.g:4308:3: ( (lv_value_11_0= ruleSelectStatement ) )
+            // InternalSparrow.g:4309:4: (lv_value_11_0= ruleSelectStatement )
             {
-            // InternalSparrow.g:4070:4: (lv_value_11_0= ruleSelectStatement )
-            // InternalSparrow.g:4071:5: lv_value_11_0= ruleSelectStatement
+            // InternalSparrow.g:4309:4: (lv_value_11_0= ruleSelectStatement )
+            // InternalSparrow.g:4310:5: lv_value_11_0= ruleSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getLoadCsvAccess().getValueSelectStatementParserRuleCall_11_0());
@@ -7588,11 +7997,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getLoadCsvAccess().getOnConditionKeyword_13());
             		
-            // InternalSparrow.g:4096:3: ( (lv_condition_14_0= ruleExpression ) )
-            // InternalSparrow.g:4097:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:4335:3: ( (lv_condition_14_0= ruleExpression ) )
+            // InternalSparrow.g:4336:4: (lv_condition_14_0= ruleExpression )
             {
-            // InternalSparrow.g:4097:4: (lv_condition_14_0= ruleExpression )
-            // InternalSparrow.g:4098:5: lv_condition_14_0= ruleExpression
+            // InternalSparrow.g:4336:4: (lv_condition_14_0= ruleExpression )
+            // InternalSparrow.g:4337:5: lv_condition_14_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getLoadCsvAccess().getConditionExpressionParserRuleCall_14_0());
@@ -7642,7 +8051,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransform"
-    // InternalSparrow.g:4119:1: entryRuleTransform returns [EObject current=null] : iv_ruleTransform= ruleTransform EOF ;
+    // InternalSparrow.g:4358:1: entryRuleTransform returns [EObject current=null] : iv_ruleTransform= ruleTransform EOF ;
     public final EObject entryRuleTransform() throws RecognitionException {
         EObject current = null;
 
@@ -7650,8 +8059,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:4119:50: (iv_ruleTransform= ruleTransform EOF )
-            // InternalSparrow.g:4120:2: iv_ruleTransform= ruleTransform EOF
+            // InternalSparrow.g:4358:50: (iv_ruleTransform= ruleTransform EOF )
+            // InternalSparrow.g:4359:2: iv_ruleTransform= ruleTransform EOF
             {
              newCompositeNode(grammarAccess.getTransformRule()); 
             pushFollow(FOLLOW_1);
@@ -7678,7 +8087,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransform"
-    // InternalSparrow.g:4126:1: ruleTransform returns [EObject current=null] : (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) ;
+    // InternalSparrow.g:4365:1: ruleTransform returns [EObject current=null] : (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) ;
     public final EObject ruleTransform() throws RecognitionException {
         EObject current = null;
 
@@ -7700,13 +8109,13 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:4132:2: ( (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) )
-            // InternalSparrow.g:4133:2: (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
+            // InternalSparrow.g:4371:2: ( (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) ) )
+            // InternalSparrow.g:4372:2: (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
             {
-            // InternalSparrow.g:4133:2: (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
-            // InternalSparrow.g:4134:3: otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) )
+            // InternalSparrow.g:4372:2: (otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) ) )
+            // InternalSparrow.g:4373:3: otherlv_0= 'transform' otherlv_1= 'as' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'on' ( (lv_on_4_0= RULE_STRING ) ) otherlv_5= 'using' otherlv_6= '{' ( (lv_value_7_0= ruleNonSelectStatement ) ) otherlv_8= '}' otherlv_9= 'on-condition' ( (lv_condition_10_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,74,FOLLOW_11); 
+            otherlv_0=(Token)match(input,75,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTransformAccess().getTransformKeyword_0());
             		
@@ -7714,11 +8123,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTransformAccess().getAsKeyword_1());
             		
-            // InternalSparrow.g:4142:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalSparrow.g:4143:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:4381:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalSparrow.g:4382:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalSparrow.g:4143:4: (lv_name_2_0= RULE_STRING )
-            // InternalSparrow.g:4144:5: lv_name_2_0= RULE_STRING
+            // InternalSparrow.g:4382:4: (lv_name_2_0= RULE_STRING )
+            // InternalSparrow.g:4383:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
 
@@ -7744,11 +8153,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getTransformAccess().getOnKeyword_3());
             		
-            // InternalSparrow.g:4164:3: ( (lv_on_4_0= RULE_STRING ) )
-            // InternalSparrow.g:4165:4: (lv_on_4_0= RULE_STRING )
+            // InternalSparrow.g:4403:3: ( (lv_on_4_0= RULE_STRING ) )
+            // InternalSparrow.g:4404:4: (lv_on_4_0= RULE_STRING )
             {
-            // InternalSparrow.g:4165:4: (lv_on_4_0= RULE_STRING )
-            // InternalSparrow.g:4166:5: lv_on_4_0= RULE_STRING
+            // InternalSparrow.g:4404:4: (lv_on_4_0= RULE_STRING )
+            // InternalSparrow.g:4405:5: lv_on_4_0= RULE_STRING
             {
             lv_on_4_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -7778,11 +8187,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getTransformAccess().getLeftCurlyBracketKeyword_6());
             		
-            // InternalSparrow.g:4190:3: ( (lv_value_7_0= ruleNonSelectStatement ) )
-            // InternalSparrow.g:4191:4: (lv_value_7_0= ruleNonSelectStatement )
+            // InternalSparrow.g:4429:3: ( (lv_value_7_0= ruleNonSelectStatement ) )
+            // InternalSparrow.g:4430:4: (lv_value_7_0= ruleNonSelectStatement )
             {
-            // InternalSparrow.g:4191:4: (lv_value_7_0= ruleNonSelectStatement )
-            // InternalSparrow.g:4192:5: lv_value_7_0= ruleNonSelectStatement
+            // InternalSparrow.g:4430:4: (lv_value_7_0= ruleNonSelectStatement )
+            // InternalSparrow.g:4431:5: lv_value_7_0= ruleNonSelectStatement
             {
 
             					newCompositeNode(grammarAccess.getTransformAccess().getValueNonSelectStatementParserRuleCall_7_0());
@@ -7817,11 +8226,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getTransformAccess().getOnConditionKeyword_9());
             		
-            // InternalSparrow.g:4217:3: ( (lv_condition_10_0= ruleExpression ) )
-            // InternalSparrow.g:4218:4: (lv_condition_10_0= ruleExpression )
+            // InternalSparrow.g:4456:3: ( (lv_condition_10_0= ruleExpression ) )
+            // InternalSparrow.g:4457:4: (lv_condition_10_0= ruleExpression )
             {
-            // InternalSparrow.g:4218:4: (lv_condition_10_0= ruleExpression )
-            // InternalSparrow.g:4219:5: lv_condition_10_0= ruleExpression
+            // InternalSparrow.g:4457:4: (lv_condition_10_0= ruleExpression )
+            // InternalSparrow.g:4458:5: lv_condition_10_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getTransformAccess().getConditionExpressionParserRuleCall_10_0());
@@ -7871,7 +8280,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSelectStatement"
-    // InternalSparrow.g:4240:1: entryRuleSelectStatement returns [String current=null] : iv_ruleSelectStatement= ruleSelectStatement EOF ;
+    // InternalSparrow.g:4479:1: entryRuleSelectStatement returns [String current=null] : iv_ruleSelectStatement= ruleSelectStatement EOF ;
     public final String entryRuleSelectStatement() throws RecognitionException {
         String current = null;
 
@@ -7879,8 +8288,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:4240:55: (iv_ruleSelectStatement= ruleSelectStatement EOF )
-            // InternalSparrow.g:4241:2: iv_ruleSelectStatement= ruleSelectStatement EOF
+            // InternalSparrow.g:4479:55: (iv_ruleSelectStatement= ruleSelectStatement EOF )
+            // InternalSparrow.g:4480:2: iv_ruleSelectStatement= ruleSelectStatement EOF
             {
              newCompositeNode(grammarAccess.getSelectStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -7907,7 +8316,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSelectStatement"
-    // InternalSparrow.g:4247:1: ruleSelectStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalSparrow.g:4486:1: ruleSelectStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleSelectStatement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7917,8 +8326,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:4253:2: (this_STRING_0= RULE_STRING )
-            // InternalSparrow.g:4254:2: this_STRING_0= RULE_STRING
+            // InternalSparrow.g:4492:2: (this_STRING_0= RULE_STRING )
+            // InternalSparrow.g:4493:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -7947,7 +8356,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNonSelectStatement"
-    // InternalSparrow.g:4264:1: entryRuleNonSelectStatement returns [String current=null] : iv_ruleNonSelectStatement= ruleNonSelectStatement EOF ;
+    // InternalSparrow.g:4503:1: entryRuleNonSelectStatement returns [String current=null] : iv_ruleNonSelectStatement= ruleNonSelectStatement EOF ;
     public final String entryRuleNonSelectStatement() throws RecognitionException {
         String current = null;
 
@@ -7955,8 +8364,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:4264:58: (iv_ruleNonSelectStatement= ruleNonSelectStatement EOF )
-            // InternalSparrow.g:4265:2: iv_ruleNonSelectStatement= ruleNonSelectStatement EOF
+            // InternalSparrow.g:4503:58: (iv_ruleNonSelectStatement= ruleNonSelectStatement EOF )
+            // InternalSparrow.g:4504:2: iv_ruleNonSelectStatement= ruleNonSelectStatement EOF
             {
              newCompositeNode(grammarAccess.getNonSelectStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -7983,7 +8392,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNonSelectStatement"
-    // InternalSparrow.g:4271:1: ruleNonSelectStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalSparrow.g:4510:1: ruleNonSelectStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleNonSelectStatement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7993,8 +8402,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:4277:2: (this_STRING_0= RULE_STRING )
-            // InternalSparrow.g:4278:2: this_STRING_0= RULE_STRING
+            // InternalSparrow.g:4516:2: (this_STRING_0= RULE_STRING )
+            // InternalSparrow.g:4517:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8023,7 +8432,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCreateStatement"
-    // InternalSparrow.g:4288:1: entryRuleCreateStatement returns [String current=null] : iv_ruleCreateStatement= ruleCreateStatement EOF ;
+    // InternalSparrow.g:4527:1: entryRuleCreateStatement returns [String current=null] : iv_ruleCreateStatement= ruleCreateStatement EOF ;
     public final String entryRuleCreateStatement() throws RecognitionException {
         String current = null;
 
@@ -8031,8 +8440,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:4288:55: (iv_ruleCreateStatement= ruleCreateStatement EOF )
-            // InternalSparrow.g:4289:2: iv_ruleCreateStatement= ruleCreateStatement EOF
+            // InternalSparrow.g:4527:55: (iv_ruleCreateStatement= ruleCreateStatement EOF )
+            // InternalSparrow.g:4528:2: iv_ruleCreateStatement= ruleCreateStatement EOF
             {
              newCompositeNode(grammarAccess.getCreateStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -8059,7 +8468,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCreateStatement"
-    // InternalSparrow.g:4295:1: ruleCreateStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalSparrow.g:4534:1: ruleCreateStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleCreateStatement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8069,8 +8478,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:4301:2: (this_STRING_0= RULE_STRING )
-            // InternalSparrow.g:4302:2: this_STRING_0= RULE_STRING
+            // InternalSparrow.g:4540:2: (this_STRING_0= RULE_STRING )
+            // InternalSparrow.g:4541:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8099,7 +8508,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // InternalSparrow.g:4312:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalSparrow.g:4551:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -8107,8 +8516,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:4312:51: (iv_ruleExpression= ruleExpression EOF )
-            // InternalSparrow.g:4313:2: iv_ruleExpression= ruleExpression EOF
+            // InternalSparrow.g:4551:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalSparrow.g:4552:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -8135,7 +8544,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalSparrow.g:4319:1: ruleExpression returns [EObject current=null] : (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) ) ;
+    // InternalSparrow.g:4558:1: ruleExpression returns [EObject current=null] : (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -8149,21 +8558,21 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:4325:2: ( (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) ) )
-            // InternalSparrow.g:4326:2: (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) )
+            // InternalSparrow.g:4564:2: ( (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) ) )
+            // InternalSparrow.g:4565:2: (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) )
             {
-            // InternalSparrow.g:4326:2: (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) )
-            // InternalSparrow.g:4327:3: otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) )
+            // InternalSparrow.g:4565:2: (otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) ) )
+            // InternalSparrow.g:4566:3: otherlv_0= 'if' ( (lv_lhs_1_0= RULE_STRING ) ) ( (lv_operator_2_0= ruleOperator ) ) ( (lv_rhs_3_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,75,FOLLOW_3); 
+            otherlv_0=(Token)match(input,76,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExpressionAccess().getIfKeyword_0());
             		
-            // InternalSparrow.g:4331:3: ( (lv_lhs_1_0= RULE_STRING ) )
-            // InternalSparrow.g:4332:4: (lv_lhs_1_0= RULE_STRING )
+            // InternalSparrow.g:4570:3: ( (lv_lhs_1_0= RULE_STRING ) )
+            // InternalSparrow.g:4571:4: (lv_lhs_1_0= RULE_STRING )
             {
-            // InternalSparrow.g:4332:4: (lv_lhs_1_0= RULE_STRING )
-            // InternalSparrow.g:4333:5: lv_lhs_1_0= RULE_STRING
+            // InternalSparrow.g:4571:4: (lv_lhs_1_0= RULE_STRING )
+            // InternalSparrow.g:4572:5: lv_lhs_1_0= RULE_STRING
             {
             lv_lhs_1_0=(Token)match(input,RULE_STRING,FOLLOW_50); 
 
@@ -8185,11 +8594,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSparrow.g:4349:3: ( (lv_operator_2_0= ruleOperator ) )
-            // InternalSparrow.g:4350:4: (lv_operator_2_0= ruleOperator )
+            // InternalSparrow.g:4588:3: ( (lv_operator_2_0= ruleOperator ) )
+            // InternalSparrow.g:4589:4: (lv_operator_2_0= ruleOperator )
             {
-            // InternalSparrow.g:4350:4: (lv_operator_2_0= ruleOperator )
-            // InternalSparrow.g:4351:5: lv_operator_2_0= ruleOperator
+            // InternalSparrow.g:4589:4: (lv_operator_2_0= ruleOperator )
+            // InternalSparrow.g:4590:5: lv_operator_2_0= ruleOperator
             {
 
             					newCompositeNode(grammarAccess.getExpressionAccess().getOperatorOperatorParserRuleCall_2_0());
@@ -8216,11 +8625,11 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSparrow.g:4368:3: ( (lv_rhs_3_0= RULE_STRING ) )
-            // InternalSparrow.g:4369:4: (lv_rhs_3_0= RULE_STRING )
+            // InternalSparrow.g:4607:3: ( (lv_rhs_3_0= RULE_STRING ) )
+            // InternalSparrow.g:4608:4: (lv_rhs_3_0= RULE_STRING )
             {
-            // InternalSparrow.g:4369:4: (lv_rhs_3_0= RULE_STRING )
-            // InternalSparrow.g:4370:5: lv_rhs_3_0= RULE_STRING
+            // InternalSparrow.g:4608:4: (lv_rhs_3_0= RULE_STRING )
+            // InternalSparrow.g:4609:5: lv_rhs_3_0= RULE_STRING
             {
             lv_rhs_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8265,7 +8674,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperator"
-    // InternalSparrow.g:4390:1: entryRuleOperator returns [String current=null] : iv_ruleOperator= ruleOperator EOF ;
+    // InternalSparrow.g:4629:1: entryRuleOperator returns [String current=null] : iv_ruleOperator= ruleOperator EOF ;
     public final String entryRuleOperator() throws RecognitionException {
         String current = null;
 
@@ -8273,8 +8682,8 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSparrow.g:4390:48: (iv_ruleOperator= ruleOperator EOF )
-            // InternalSparrow.g:4391:2: iv_ruleOperator= ruleOperator EOF
+            // InternalSparrow.g:4629:48: (iv_ruleOperator= ruleOperator EOF )
+            // InternalSparrow.g:4630:2: iv_ruleOperator= ruleOperator EOF
             {
              newCompositeNode(grammarAccess.getOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -8301,7 +8710,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperator"
-    // InternalSparrow.g:4397:1: ruleOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' ) ;
+    // InternalSparrow.g:4636:1: ruleOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' ) ;
     public final AntlrDatatypeRuleToken ruleOperator() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8311,28 +8720,28 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSparrow.g:4403:2: ( (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' ) )
-            // InternalSparrow.g:4404:2: (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' )
+            // InternalSparrow.g:4642:2: ( (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' ) )
+            // InternalSparrow.g:4643:2: (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' )
             {
-            // InternalSparrow.g:4404:2: (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' )
+            // InternalSparrow.g:4643:2: (kw= '<' | kw= '>' | kw= '==' | kw= 'contains' )
             int alt6=4;
             switch ( input.LA(1) ) {
-            case 76:
+            case 77:
                 {
                 alt6=1;
                 }
                 break;
-            case 77:
+            case 78:
                 {
                 alt6=2;
                 }
                 break;
-            case 78:
+            case 79:
                 {
                 alt6=3;
                 }
                 break;
-            case 79:
+            case 80:
                 {
                 alt6=4;
                 }
@@ -8346,9 +8755,9 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
 
             switch (alt6) {
                 case 1 :
-                    // InternalSparrow.g:4405:3: kw= '<'
+                    // InternalSparrow.g:4644:3: kw= '<'
                     {
-                    kw=(Token)match(input,76,FOLLOW_2); 
+                    kw=(Token)match(input,77,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOperatorAccess().getLessThanSignKeyword_0());
@@ -8357,9 +8766,9 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSparrow.g:4411:3: kw= '>'
+                    // InternalSparrow.g:4650:3: kw= '>'
                     {
-                    kw=(Token)match(input,77,FOLLOW_2); 
+                    kw=(Token)match(input,78,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOperatorAccess().getGreaterThanSignKeyword_1());
@@ -8368,9 +8777,9 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSparrow.g:4417:3: kw= '=='
+                    // InternalSparrow.g:4656:3: kw= '=='
                     {
-                    kw=(Token)match(input,78,FOLLOW_2); 
+                    kw=(Token)match(input,79,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOperatorAccess().getEqualsSignEqualsSignKeyword_2());
@@ -8379,9 +8788,9 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSparrow.g:4423:3: kw= 'contains'
+                    // InternalSparrow.g:4662:3: kw= 'contains'
                     {
-                    kw=(Token)match(input,79,FOLLOW_2); 
+                    kw=(Token)match(input,80,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOperatorAccess().getContainsKeyword_3());
@@ -8424,7 +8833,7 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x2A400A8E18022000L,0x00000000000007D2L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x5480151E18022000L,0x0000000000000FA4L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
@@ -8433,37 +8842,37 @@ public class InternalSparrowParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0010000000002000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x4000000000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x000000000000F000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0020000000002000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x000000000001E000L});
 
 }

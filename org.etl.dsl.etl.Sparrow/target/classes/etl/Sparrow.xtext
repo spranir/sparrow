@@ -50,6 +50,7 @@ Action:
 	|Doozle
 	|Dropfile
 	|FBCLead
+	|GoogleSendMail
 	|GooglecontactPUT
 	|GooglecontactSelectAll
 	|Abort

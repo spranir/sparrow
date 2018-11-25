@@ -672,7 +672,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoogleSendMail_Name()
+  public EAttribute getGoogleSendMail_Account()
   {
     return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(0);
   }
@@ -682,7 +682,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoogleSendMail_Account()
+  public EAttribute getGoogleSendMail_PrivateKey()
   {
     return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(1);
   }
@@ -692,7 +692,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoogleSendMail_PrivateKey()
+  public EAttribute getGoogleSendMail_PtwelveFile()
   {
     return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(2);
   }
@@ -702,7 +702,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoogleSendMail_PtwelveFile()
+  public EAttribute getGoogleSendMail_Project()
   {
     return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(3);
   }
@@ -712,7 +712,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoogleSendMail_Project()
+  public EAttribute getGoogleSendMail_ImpersonatedUser()
   {
     return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(4);
   }
@@ -722,7 +722,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoogleSendMail_ImpersonatedUser()
+  public EAttribute getGoogleSendMail_DbSrc()
   {
     return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(5);
   }
@@ -732,29 +732,9 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoogleSendMail_DbSrc()
-  {
-    return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getGoogleSendMail_Value()
   {
-    return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoogleSendMail_Condition()
-  {
-    return (EReference)googleSendMailEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)googleSendMailEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1851,7 +1831,6 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(googlecontactSelectAllEClass, GOOGLECONTACT_SELECT_ALL__VALUE);
 
     googleSendMailEClass = createEClass(GOOGLE_SEND_MAIL);
-    createEAttribute(googleSendMailEClass, GOOGLE_SEND_MAIL__NAME);
     createEAttribute(googleSendMailEClass, GOOGLE_SEND_MAIL__ACCOUNT);
     createEAttribute(googleSendMailEClass, GOOGLE_SEND_MAIL__PRIVATE_KEY);
     createEAttribute(googleSendMailEClass, GOOGLE_SEND_MAIL__PTWELVE_FILE);
@@ -1859,7 +1838,6 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     createEAttribute(googleSendMailEClass, GOOGLE_SEND_MAIL__IMPERSONATED_USER);
     createEAttribute(googleSendMailEClass, GOOGLE_SEND_MAIL__DB_SRC);
     createEAttribute(googleSendMailEClass, GOOGLE_SEND_MAIL__VALUE);
-    createEReference(googleSendMailEClass, GOOGLE_SEND_MAIL__CONDITION);
 
     googlecontactPUTEClass = createEClass(GOOGLECONTACT_PUT);
     createEAttribute(googlecontactPUTEClass, GOOGLECONTACT_PUT__ACCOUNT);
@@ -2015,6 +1993,7 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     smsLeadSmsEClass.getESuperTypes().add(this.getAction());
     abortEClass.getESuperTypes().add(this.getAction());
     googlecontactSelectAllEClass.getESuperTypes().add(this.getAction());
+    googleSendMailEClass.getESuperTypes().add(this.getAction());
     googlecontactPUTEClass.getESuperTypes().add(this.getAction());
     googlecalPUTEClass.getESuperTypes().add(this.getAction());
     fbcLeadEClass.getESuperTypes().add(this.getAction());
@@ -2078,7 +2057,6 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getGooglecontactSelectAll_Value(), ecorePackage.getEString(), "value", null, 0, 1, GooglecontactSelectAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(googleSendMailEClass, GoogleSendMail.class, "GoogleSendMail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGoogleSendMail_Name(), ecorePackage.getEString(), "name", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoogleSendMail_Account(), ecorePackage.getEString(), "account", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoogleSendMail_PrivateKey(), ecorePackage.getEString(), "privateKey", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoogleSendMail_PtwelveFile(), ecorePackage.getEString(), "ptwelveFile", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2086,7 +2064,6 @@ public class SparrowPackageImpl extends EPackageImpl implements SparrowPackage
     initEAttribute(getGoogleSendMail_ImpersonatedUser(), ecorePackage.getEString(), "impersonatedUser", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoogleSendMail_DbSrc(), ecorePackage.getEString(), "dbSrc", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoogleSendMail_Value(), ecorePackage.getEString(), "value", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoogleSendMail_Condition(), this.getExpression(), null, "condition", null, 0, 1, GoogleSendMail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(googlecontactPUTEClass, GooglecontactPUT.class, "GooglecontactPUT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGooglecontactPUT_Account(), ecorePackage.getEString(), "account", null, 0, 1, GooglecontactPUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

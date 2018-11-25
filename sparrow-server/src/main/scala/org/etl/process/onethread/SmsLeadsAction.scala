@@ -28,7 +28,7 @@ class SmsLeadsAction extends org.etl.command.Action with LazyLogging {
     val sql = sms.getValue
     val conn = ResourceAccess.rdbmsConn(dbSrc)
     val stmt = conn.createStatement
-    val rs = stmt.executeQuery(sql)
+    val rs = stmt.executeQuery(sql.trim())
 
     try {
       while (rs.next()) {
@@ -42,6 +42,7 @@ class SmsLeadsAction extends org.etl.command.Action with LazyLogging {
         val targetAltNumber = rs.getString("target_alternate_number")
         val targetCity = rs.getString("target_city")
         val targetBudget = rs.getString("target_budget")
+        val targetDomain = rs.getString("target_domain_name")
 
         val body = rs.getString("body")
 
@@ -55,6 +56,7 @@ class SmsLeadsAction extends org.etl.command.Action with LazyLogging {
         paramMap.put("target_alternate_number", targetAltNumber)
         paramMap.put("target_city", targetCity)
         paramMap.put("target_budget", targetBudget)
+        paramMap.put("target_domain_name", targetDomain)
        
 
         val mobile = {
@@ -63,8 +65,7 @@ class SmsLeadsAction extends org.etl.command.Action with LazyLogging {
           else
             rs.getString("mobile")
         }
-        val country = rs.getString("country")
-        val source = rs.getString("source")
+        
 
         val paramEngine = new StrSubstitutor(paramMap)
         val output = paramEngine.replace(body)

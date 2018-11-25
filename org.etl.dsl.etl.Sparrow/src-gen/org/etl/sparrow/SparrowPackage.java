@@ -523,70 +523,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOOGLE_SEND_MAIL__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Account</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLE_SEND_MAIL__ACCOUNT = 1;
-
-  /**
-   * The feature id for the '<em><b>Private Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLE_SEND_MAIL__PRIVATE_KEY = 2;
-
-  /**
-   * The feature id for the '<em><b>Ptwelve File</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLE_SEND_MAIL__PTWELVE_FILE = 3;
-
-  /**
-   * The feature id for the '<em><b>Project</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLE_SEND_MAIL__PROJECT = 4;
-
-  /**
-   * The feature id for the '<em><b>Impersonated User</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLE_SEND_MAIL__IMPERSONATED_USER = 5;
-
-  /**
-   * The feature id for the '<em><b>Db Src</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLE_SEND_MAIL__DB_SRC = 6;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOOGLE_SEND_MAIL__VALUE = 7;
+  int GOOGLE_SEND_MAIL__NAME = ACTION__NAME;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -595,7 +532,70 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOOGLE_SEND_MAIL__CONDITION = 8;
+  int GOOGLE_SEND_MAIL__CONDITION = ACTION__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Account</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLE_SEND_MAIL__ACCOUNT = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Private Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLE_SEND_MAIL__PRIVATE_KEY = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Ptwelve File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLE_SEND_MAIL__PTWELVE_FILE = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Project</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLE_SEND_MAIL__PROJECT = ACTION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Impersonated User</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLE_SEND_MAIL__IMPERSONATED_USER = ACTION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Db Src</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLE_SEND_MAIL__DB_SRC = ACTION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOOGLE_SEND_MAIL__VALUE = ACTION_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Google Send Mail</em>' class.
@@ -604,7 +604,7 @@ public interface SparrowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOOGLE_SEND_MAIL_FEATURE_COUNT = 9;
+  int GOOGLE_SEND_MAIL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link org.etl.sparrow.impl.GooglecontactPUTImpl <em>Googlecontact PUT</em>}' class.
@@ -2409,17 +2409,6 @@ public interface SparrowPackage extends EPackage
   EClass getGoogleSendMail();
 
   /**
-   * Returns the meta object for the attribute '{@link org.etl.sparrow.GoogleSendMail#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.etl.sparrow.GoogleSendMail#getName()
-   * @see #getGoogleSendMail()
-   * @generated
-   */
-  EAttribute getGoogleSendMail_Name();
-
-  /**
    * Returns the meta object for the attribute '{@link org.etl.sparrow.GoogleSendMail#getAccount <em>Account</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2495,17 +2484,6 @@ public interface SparrowPackage extends EPackage
    * @generated
    */
   EAttribute getGoogleSendMail_Value();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.etl.sparrow.GoogleSendMail#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see org.etl.sparrow.GoogleSendMail#getCondition()
-   * @see #getGoogleSendMail()
-   * @generated
-   */
-  EReference getGoogleSendMail_Condition();
 
   /**
    * Returns the meta object for class '{@link org.etl.sparrow.GooglecontactPUT <em>Googlecontact PUT</em>}'.
@@ -3940,14 +3918,6 @@ public interface SparrowPackage extends EPackage
     EClass GOOGLE_SEND_MAIL = eINSTANCE.getGoogleSendMail();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOOGLE_SEND_MAIL__NAME = eINSTANCE.getGoogleSendMail_Name();
-
-    /**
      * The meta object literal for the '<em><b>Account</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4002,14 +3972,6 @@ public interface SparrowPackage extends EPackage
      * @generated
      */
     EAttribute GOOGLE_SEND_MAIL__VALUE = eINSTANCE.getGoogleSendMail_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOOGLE_SEND_MAIL__CONDITION = eINSTANCE.getGoogleSendMail_Condition();
 
     /**
      * The meta object literal for the '{@link org.etl.sparrow.impl.GooglecontactPUTImpl <em>Googlecontact PUT</em>}' class.

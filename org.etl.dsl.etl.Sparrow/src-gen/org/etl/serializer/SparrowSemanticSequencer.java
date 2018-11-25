@@ -464,6 +464,7 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Action returns GoogleSendMail
 	 *     GoogleSendMail returns GoogleSendMail
 	 *
 	 * Constraint:
@@ -481,8 +482,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_GoogleSendMail(ISerializationContext context, GoogleSendMail semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__NAME));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__NAME));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__ACCOUNT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__ACCOUNT));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__PRIVATE_KEY) == ValueTransient.YES)
@@ -497,8 +498,8 @@ public class SparrowSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__DB_SRC));
 			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__VALUE));
-			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.GOOGLE_SEND_MAIL__CONDITION));
+			if (transientValues.isValueTransient(semanticObject, SparrowPackage.Literals.ACTION__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SparrowPackage.Literals.ACTION__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGoogleSendMailAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());

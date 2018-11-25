@@ -249,6 +249,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleGoogleSendMail
+entryRuleGoogleSendMail
+:
+{ before(grammarAccess.getGoogleSendMailRule()); }
+	 ruleGoogleSendMail
+{ after(grammarAccess.getGoogleSendMailRule()); } 
+	 EOF 
+;
+
+// Rule GoogleSendMail
+ruleGoogleSendMail 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getGroup()); }
+		(rule__GoogleSendMail__Group__0)
+		{ after(grammarAccess.getGoogleSendMailAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleGooglecontactPUT
 entryRuleGooglecontactPUT
 :
@@ -926,27 +951,33 @@ rule__Action__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_16()); }
+		{ before(grammarAccess.getActionAccess().getGoogleSendMailParserRuleCall_16()); }
+		ruleGoogleSendMail
+		{ after(grammarAccess.getActionAccess().getGoogleSendMailParserRuleCall_16()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_17()); }
 		ruleGooglecontactPUT
-		{ after(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_16()); }
+		{ after(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_17()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_17()); }
+		{ before(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_18()); }
 		ruleGooglecontactSelectAll
-		{ after(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_17()); }
+		{ after(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_18()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getActionAccess().getAbortParserRuleCall_18()); }
+		{ before(grammarAccess.getActionAccess().getAbortParserRuleCall_19()); }
 		ruleAbort
-		{ after(grammarAccess.getActionAccess().getAbortParserRuleCall_18()); }
+		{ after(grammarAccess.getActionAccess().getAbortParserRuleCall_19()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_19()); }
+		{ before(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_20()); }
 		ruleSmsLeadSms
-		{ after(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_19()); }
+		{ after(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_20()); }
 	)
 ;
 finally {
@@ -2923,6 +2954,573 @@ rule__GooglecontactSelectAll__Group__20__Impl
 	{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_20()); }
 	(rule__GooglecontactSelectAll__ConditionAssignment_20)
 	{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_20()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__GoogleSendMail__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__0__Impl
+	rule__GoogleSendMail__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getGsendmailKeyword_0()); }
+	'gsendmail'
+	{ after(grammarAccess.getGoogleSendMailAccess().getGsendmailKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__1__Impl
+	rule__GoogleSendMail__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getAsKeyword_1()); }
+	'as'
+	{ after(grammarAccess.getGoogleSendMailAccess().getAsKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__2__Impl
+	rule__GoogleSendMail__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getNameAssignment_2()); }
+	(rule__GoogleSendMail__NameAssignment_2)
+	{ after(grammarAccess.getGoogleSendMailAccess().getNameAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__3__Impl
+	rule__GoogleSendMail__Group__4
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getThroughAccountKeyword_3()); }
+	'through-account'
+	{ after(grammarAccess.getGoogleSendMailAccess().getThroughAccountKeyword_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__4__Impl
+	rule__GoogleSendMail__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getAccountAssignment_4()); }
+	(rule__GoogleSendMail__AccountAssignment_4)
+	{ after(grammarAccess.getGoogleSendMailAccess().getAccountAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__5__Impl
+	rule__GoogleSendMail__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getSecuredByKeyword_5()); }
+	'secured-by'
+	{ after(grammarAccess.getGoogleSendMailAccess().getSecuredByKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__6__Impl
+	rule__GoogleSendMail__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getPrivateKeyAssignment_6()); }
+	(rule__GoogleSendMail__PrivateKeyAssignment_6)
+	{ after(grammarAccess.getGoogleSendMailAccess().getPrivateKeyAssignment_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__7__Impl
+	rule__GoogleSendMail__Group__8
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getWithKeyKeyword_7()); }
+	'with-key'
+	{ after(grammarAccess.getGoogleSendMailAccess().getWithKeyKeyword_7()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__8__Impl
+	rule__GoogleSendMail__Group__9
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__8__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getPtwelveFileAssignment_8()); }
+	(rule__GoogleSendMail__PtwelveFileAssignment_8)
+	{ after(grammarAccess.getGoogleSendMailAccess().getPtwelveFileAssignment_8()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__9
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__9__Impl
+	rule__GoogleSendMail__Group__10
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__9__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getForProjectKeyword_9()); }
+	'for-project'
+	{ after(grammarAccess.getGoogleSendMailAccess().getForProjectKeyword_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__10__Impl
+	rule__GoogleSendMail__Group__11
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__10__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getProjectAssignment_10()); }
+	(rule__GoogleSendMail__ProjectAssignment_10)
+	{ after(grammarAccess.getGoogleSendMailAccess().getProjectAssignment_10()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__11__Impl
+	rule__GoogleSendMail__Group__12
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__11__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getOnBehalfOfKeyword_11()); }
+	'on-behalf-of'
+	{ after(grammarAccess.getGoogleSendMailAccess().getOnBehalfOfKeyword_11()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__12__Impl
+	rule__GoogleSendMail__Group__13
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__12__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserAssignment_12()); }
+	(rule__GoogleSendMail__ImpersonatedUserAssignment_12)
+	{ after(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserAssignment_12()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__13
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__13__Impl
+	rule__GoogleSendMail__Group__14
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__13__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getFromSourceKeyword_13()); }
+	'from-source'
+	{ after(grammarAccess.getGoogleSendMailAccess().getFromSourceKeyword_13()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__14
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__14__Impl
+	rule__GoogleSendMail__Group__15
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__14__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getDbSrcAssignment_14()); }
+	(rule__GoogleSendMail__DbSrcAssignment_14)
+	{ after(grammarAccess.getGoogleSendMailAccess().getDbSrcAssignment_14()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__15
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__15__Impl
+	rule__GoogleSendMail__Group__16
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__15__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getUsingKeyword_15()); }
+	'using'
+	{ after(grammarAccess.getGoogleSendMailAccess().getUsingKeyword_15()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__16
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__16__Impl
+	rule__GoogleSendMail__Group__17
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__16__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getLeftCurlyBracketKeyword_16()); }
+	'{'
+	{ after(grammarAccess.getGoogleSendMailAccess().getLeftCurlyBracketKeyword_16()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__17
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__17__Impl
+	rule__GoogleSendMail__Group__18
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__17__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getValueAssignment_17()); }
+	(rule__GoogleSendMail__ValueAssignment_17)
+	{ after(grammarAccess.getGoogleSendMailAccess().getValueAssignment_17()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__18
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__18__Impl
+	rule__GoogleSendMail__Group__19
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__18__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getRightCurlyBracketKeyword_18()); }
+	'}'
+	{ after(grammarAccess.getGoogleSendMailAccess().getRightCurlyBracketKeyword_18()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__19
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__19__Impl
+	rule__GoogleSendMail__Group__20
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__19__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getOnConditionKeyword_19()); }
+	'on-condition'
+	{ after(grammarAccess.getGoogleSendMailAccess().getOnConditionKeyword_19()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__20__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__20__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getConditionAssignment_20()); }
+	(rule__GoogleSendMail__ConditionAssignment_20)
+	{ after(grammarAccess.getGoogleSendMailAccess().getConditionAssignment_20()); }
 )
 ;
 finally {
@@ -11219,6 +11817,141 @@ rule__GooglecontactSelectAll__ConditionAssignment_20
 		{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0()); }
 		ruleExpression
 		{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__NameAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__AccountAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__PrivateKeyAssignment_6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__PtwelveFileAssignment_8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ProjectAssignment_10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ImpersonatedUserAssignment_12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__DbSrcAssignment_14
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ValueAssignment_17
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getValueSTRINGTerminalRuleCall_17_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getValueSTRINGTerminalRuleCall_17_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ConditionAssignment_20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getConditionExpressionParserRuleCall_20_0()); }
+		ruleExpression
+		{ after(grammarAccess.getGoogleSendMailAccess().getConditionExpressionParserRuleCall_20_0()); }
 	)
 ;
 finally {

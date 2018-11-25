@@ -531,38 +531,47 @@ ruleAction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_16());
+			newCompositeNode(grammarAccess.getActionAccess().getGoogleSendMailParserRuleCall_16());
 		}
-		this_GooglecontactPUT_16=ruleGooglecontactPUT
+		this_GoogleSendMail_16=ruleGoogleSendMail
 		{
-			$current = $this_GooglecontactPUT_16.current;
+			$current = $this_GoogleSendMail_16.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_17());
+			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_17());
 		}
-		this_GooglecontactSelectAll_17=ruleGooglecontactSelectAll
+		this_GooglecontactPUT_17=ruleGooglecontactPUT
 		{
-			$current = $this_GooglecontactSelectAll_17.current;
+			$current = $this_GooglecontactPUT_17.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getActionAccess().getAbortParserRuleCall_18());
+			newCompositeNode(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_18());
 		}
-		this_Abort_18=ruleAbort
+		this_GooglecontactSelectAll_18=ruleGooglecontactSelectAll
 		{
-			$current = $this_Abort_18.current;
+			$current = $this_GooglecontactSelectAll_18.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_19());
+			newCompositeNode(grammarAccess.getActionAccess().getAbortParserRuleCall_19());
 		}
-		this_SmsLeadSms_19=ruleSmsLeadSms
+		this_Abort_19=ruleAbort
 		{
-			$current = $this_SmsLeadSms_19.current;
+			$current = $this_Abort_19.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_20());
+		}
+		this_SmsLeadSms_20=ruleSmsLeadSms
+		{
+			$current = $this_SmsLeadSms_20.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1109,6 +1118,236 @@ ruleGooglecontactSelectAll returns [EObject current=null]
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGooglecontactSelectAllRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_20_0,
+						"org.etl.Sparrow.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleGoogleSendMail
+entryRuleGoogleSendMail returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGoogleSendMailRule()); }
+	iv_ruleGoogleSendMail=ruleGoogleSendMail
+	{ $current=$iv_ruleGoogleSendMail.current; }
+	EOF;
+
+// Rule GoogleSendMail
+ruleGoogleSendMail returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='gsendmail'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGoogleSendMailAccess().getGsendmailKeyword_0());
+		}
+		otherlv_1='as'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGoogleSendMailAccess().getAsKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getGoogleSendMailAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='through-account'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGoogleSendMailAccess().getThroughAccountKeyword_3());
+		}
+		(
+			(
+				lv_account_4_0=RULE_STRING
+				{
+					newLeafNode(lv_account_4_0, grammarAccess.getGoogleSendMailAccess().getAccountSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"account",
+						lv_account_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_5='secured-by'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getGoogleSendMailAccess().getSecuredByKeyword_5());
+		}
+		(
+			(
+				lv_privateKey_6_0=RULE_STRING
+				{
+					newLeafNode(lv_privateKey_6_0, grammarAccess.getGoogleSendMailAccess().getPrivateKeySTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"privateKey",
+						lv_privateKey_6_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_7='with-key'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getGoogleSendMailAccess().getWithKeyKeyword_7());
+		}
+		(
+			(
+				lv_ptwelveFile_8_0=RULE_STRING
+				{
+					newLeafNode(lv_ptwelveFile_8_0, grammarAccess.getGoogleSendMailAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"ptwelveFile",
+						lv_ptwelveFile_8_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_9='for-project'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getGoogleSendMailAccess().getForProjectKeyword_9());
+		}
+		(
+			(
+				lv_project_10_0=RULE_STRING
+				{
+					newLeafNode(lv_project_10_0, grammarAccess.getGoogleSendMailAccess().getProjectSTRINGTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"project",
+						lv_project_10_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_11='on-behalf-of'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getGoogleSendMailAccess().getOnBehalfOfKeyword_11());
+		}
+		(
+			(
+				lv_impersonatedUser_12_0=RULE_STRING
+				{
+					newLeafNode(lv_impersonatedUser_12_0, grammarAccess.getGoogleSendMailAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"impersonatedUser",
+						lv_impersonatedUser_12_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_13='from-source'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getGoogleSendMailAccess().getFromSourceKeyword_13());
+		}
+		(
+			(
+				lv_dbSrc_14_0=RULE_STRING
+				{
+					newLeafNode(lv_dbSrc_14_0, grammarAccess.getGoogleSendMailAccess().getDbSrcSTRINGTerminalRuleCall_14_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"dbSrc",
+						lv_dbSrc_14_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_15='using'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getGoogleSendMailAccess().getUsingKeyword_15());
+		}
+		otherlv_16='{'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getGoogleSendMailAccess().getLeftCurlyBracketKeyword_16());
+		}
+		(
+			(
+				lv_value_17_0=RULE_STRING
+				{
+					newLeafNode(lv_value_17_0, grammarAccess.getGoogleSendMailAccess().getValueSTRINGTerminalRuleCall_17_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoogleSendMailRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_17_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_18='}'
+		{
+			newLeafNode(otherlv_18, grammarAccess.getGoogleSendMailAccess().getRightCurlyBracketKeyword_18());
+		}
+		otherlv_19='on-condition'
+		{
+			newLeafNode(otherlv_19, grammarAccess.getGoogleSendMailAccess().getOnConditionKeyword_19());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGoogleSendMailAccess().getConditionExpressionParserRuleCall_20_0());
+				}
+				lv_condition_20_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGoogleSendMailRule());
 					}
 					set(
 						$current,

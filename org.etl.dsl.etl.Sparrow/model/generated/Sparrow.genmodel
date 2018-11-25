@@ -50,7 +50,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactSelectAll/value"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//GoogleSendMail">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/account"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/privateKey"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/ptwelveFile"/>
@@ -58,7 +57,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/impersonatedUser"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/dbSrc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GoogleSendMail/value"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sparrow.ecore#//GoogleSendMail/condition"/>
     </genClasses>
     <genClasses ecoreClass="Sparrow.ecore#//GooglecontactPUT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sparrow.ecore#//GooglecontactPUT/account"/>

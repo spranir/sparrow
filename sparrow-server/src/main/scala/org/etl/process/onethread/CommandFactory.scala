@@ -18,9 +18,8 @@ object CommandFactory {
       case "googlecontactput"=>new GContactCreateAction
       case "googlecalput"=>new GoogleCalendarAction
       case "clicksendsms"=>new SmsActionImpl
-      case "fetch"=>new FetchVariableAction        
-      case "writecsv"=> new WriteCsvAction
-      case "copydata" => new CopyDataAction      
+      case "fetch"=>new FetchVariableAction
+      case "smsleadsms"=>new SmsLeadsAction          
     }
   }
 }

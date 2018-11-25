@@ -4,15 +4,11 @@
 package org.etl.sparrow.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.etl.sparrow.Expression;
 import org.etl.sparrow.GoogleSendMail;
 import org.etl.sparrow.SparrowPackage;
 
@@ -24,7 +20,6 @@ import org.etl.sparrow.SparrowPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getAccount <em>Account</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getPrivateKey <em>Private Key</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getPtwelveFile <em>Ptwelve File</em>}</li>
@@ -32,33 +27,12 @@ import org.etl.sparrow.SparrowPackage;
  *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getImpersonatedUser <em>Impersonated User</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getDbSrc <em>Db Src</em>}</li>
  *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.etl.sparrow.impl.GoogleSendMailImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements GoogleSendMail
+public class GoogleSendMailImpl extends ActionImpl implements GoogleSendMail
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getAccount() <em>Account</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -200,16 +174,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
   protected String value = VALUE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCondition()
-   * @generated
-   * @ordered
-   */
-  protected Expression condition;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -228,29 +192,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
   protected EClass eStaticClass()
   {
     return SparrowPackage.Literals.GOOGLE_SEND_MAIL;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLE_SEND_MAIL__NAME, oldName, name));
   }
 
   /**
@@ -419,77 +360,11 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getCondition()
-  {
-    return condition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
-  {
-    Expression oldCondition = condition;
-    condition = newCondition;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLE_SEND_MAIL__CONDITION, oldCondition, newCondition);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCondition(Expression newCondition)
-  {
-    if (newCondition != condition)
-    {
-      NotificationChain msgs = null;
-      if (condition != null)
-        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.GOOGLE_SEND_MAIL__CONDITION, null, msgs);
-      if (newCondition != null)
-        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SparrowPackage.GOOGLE_SEND_MAIL__CONDITION, null, msgs);
-      msgs = basicSetCondition(newCondition, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SparrowPackage.GOOGLE_SEND_MAIL__CONDITION, newCondition, newCondition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case SparrowPackage.GOOGLE_SEND_MAIL__CONDITION:
-        return basicSetCondition(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLE_SEND_MAIL__NAME:
-        return getName();
       case SparrowPackage.GOOGLE_SEND_MAIL__ACCOUNT:
         return getAccount();
       case SparrowPackage.GOOGLE_SEND_MAIL__PRIVATE_KEY:
@@ -504,8 +379,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
         return getDbSrc();
       case SparrowPackage.GOOGLE_SEND_MAIL__VALUE:
         return getValue();
-      case SparrowPackage.GOOGLE_SEND_MAIL__CONDITION:
-        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -520,9 +393,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLE_SEND_MAIL__NAME:
-        setName((String)newValue);
-        return;
       case SparrowPackage.GOOGLE_SEND_MAIL__ACCOUNT:
         setAccount((String)newValue);
         return;
@@ -544,9 +414,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
       case SparrowPackage.GOOGLE_SEND_MAIL__VALUE:
         setValue((String)newValue);
         return;
-      case SparrowPackage.GOOGLE_SEND_MAIL__CONDITION:
-        setCondition((Expression)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -561,9 +428,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLE_SEND_MAIL__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case SparrowPackage.GOOGLE_SEND_MAIL__ACCOUNT:
         setAccount(ACCOUNT_EDEFAULT);
         return;
@@ -585,9 +449,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
       case SparrowPackage.GOOGLE_SEND_MAIL__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
-      case SparrowPackage.GOOGLE_SEND_MAIL__CONDITION:
-        setCondition((Expression)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -602,8 +463,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SparrowPackage.GOOGLE_SEND_MAIL__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SparrowPackage.GOOGLE_SEND_MAIL__ACCOUNT:
         return ACCOUNT_EDEFAULT == null ? account != null : !ACCOUNT_EDEFAULT.equals(account);
       case SparrowPackage.GOOGLE_SEND_MAIL__PRIVATE_KEY:
@@ -618,8 +477,6 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
         return DB_SRC_EDEFAULT == null ? dbSrc != null : !DB_SRC_EDEFAULT.equals(dbSrc);
       case SparrowPackage.GOOGLE_SEND_MAIL__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case SparrowPackage.GOOGLE_SEND_MAIL__CONDITION:
-        return condition != null;
     }
     return super.eIsSet(featureID);
   }
@@ -635,9 +492,7 @@ public class GoogleSendMailImpl extends MinimalEObjectImpl.Container implements 
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", account: ");
+    result.append(" (account: ");
     result.append(account);
     result.append(", privateKey: ");
     result.append(privateKey);
