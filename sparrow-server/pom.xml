@@ -35,44 +35,32 @@
 	<repositories>
 
 		<repository>
-			<id>twitter-twttr</id>
-			<url>http://maven.twttr.com/</url>
-		</repository>
-		<repository>
-			<id>scala</id>
-			<name>Scala Tools</name>
-			<url>http://scala-tools.org/repo-releases/</url>
+			<id>1_maven.apache.org</id>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
 			<snapshots>
-				<enabled>false</enabled>
+				<enabled>true</enabled>
 			</snapshots>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
 		</repository>
+
+
 		<repository>
-			<id>maven-restlet</id>
+			<id>3_twitter-twttr</id>
+			<url>http://maven.twttr.com/</url>
+		</repository>
+		
+		<repository>
+			<id>2_maven-restlet</id>
 			<name>Public online Restlet repository</name>
 			<url>http://maven.restlet.org</url>
 		</repository>
 
-		<repository>
-			<id>unirest-for-android</id>
-			<url>https://raw.github.com/zeeshanejaz/unirest-android/mvn-repo</url>
-		</repository>
+		
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>scala</id>
-			<name>Scala Tools</name>
-			<url>http://scala-tools.org/repo-releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+	
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
