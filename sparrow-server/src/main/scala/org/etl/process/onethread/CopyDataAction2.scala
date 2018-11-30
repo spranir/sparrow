@@ -1,4 +1,4 @@
-package org.etl.process.onethread
+/*package org.etl.process.onethread
 
 import com.typesafe.scalalogging.LazyLogging
 import org.etl.command.Context
@@ -27,10 +27,10 @@ class CopydataAction2 extends org.etl.command.Action with LazyLogging {
 
     val copydataDbConn = ResourceAccess.rdbmsConn(source)
     val copydataStmt = copydataDbConn.createStatement
-    /*val copdatasql = copydata.getValue
+    val copdatasql = copydata.getValue
     val copydataRs = copydataStmt.executeQuery(copdatasql)
     var copydataQuery = copydata.getValue
-    var copydataInsert = copydata.getValue*/
+    var copydataInsert = copydata.getValue
 
     object CopyDataWithoutColumn {
       case class WriteData(insert: String)
@@ -127,3 +127,4 @@ class CopydataAction2 extends org.etl.command.Action with LazyLogging {
     }
 }
 
+*/

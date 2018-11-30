@@ -1,4 +1,4 @@
-package org.etl.process.onethread
+/*package org.etl.process.onethread
 
 import com.typesafe.scalalogging.LazyLogging
 import org.etl.sparrow.Action
@@ -70,4 +70,4 @@ class WriteCsvAction extends org.etl.command.Action with LazyLogging {
     detailMap
   }
 
-}
+}*/

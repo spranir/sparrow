@@ -1,4 +1,4 @@
-package org.etl.process.onethread
+/*package org.etl.process.onethread
 
 import com.typesafe.scalalogging.LazyLogging
 import org.etl.sparrow.Action
@@ -51,4 +51,4 @@ class WriteCsvActionUsingOpenCsv extends org.etl.command.Action with LazyLogging
     ParameterisationEngine.doYieldtoTrue(expression)
   }
 
-}
+}*/
