@@ -1,0 +1,206 @@
+-- MySQL dump 10.15  Distrib 10.0.36-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: spw_config
+-- ------------------------------------------------------
+-- Server version	10.0.36-MariaDB-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `config_audit`
+--
+
+DROP TABLE IF EXISTS `config_audit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `config_audit` (
+  `config_type` varchar(50) DEFAULT NULL,
+  `variable` varchar(150) DEFAULT NULL,
+  `value` varchar(500) DEFAULT NULL,
+  `process` varchar(500) DEFAULT NULL,
+  `instance` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `config_audit`
+--
+
+LOCK TABLES `config_audit` WRITE;
+/*!40000 ALTER TABLE `config_audit` DISABLE KEYS */;
+INSERT INTO `config_audit` VALUES ('rdms',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `config_audit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `counter`
+--
+
+DROP TABLE IF EXISTS `counter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `counter` (
+  `order_info_id` int(11) DEFAULT NULL,
+  `id` int(11) DEFAULT NULL,
+  `last_modified_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `counter`
+--
+
+LOCK TABLES `counter` WRITE;
+/*!40000 ALTER TABLE `counter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `counter` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `spw_common_config`
+--
+
+DROP TABLE IF EXISTS `spw_common_config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `spw_common_config` (
+  `variable` varchar(150) DEFAULT NULL,
+  `value` varchar(500) DEFAULT NULL,
+  `active` enum('Y','N') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spw_common_config`
+--
+
+LOCK TABLES `spw_common_config` WRITE;
+/*!40000 ALTER TABLE `spw_common_config` DISABLE KEYS */;
+INSERT INTO `spw_common_config` VALUES ('basepath','root','Y'),('runmode','single','Y'),('audit','audit/bonsai-audit','Y'),('json.storagepath','/var/lib/mysql/parkingbay','Y'),('integration-db','oltp/bonsai','Y'),('integration-schema','bonsai_crm','Y'),('wordpress-schema','bitnami_wordpress','Y'),('audit','audit/candy_lead-audit','Y'),('wci-db','oltp/wci-intg','Y'),('wci-schema','bonsai_crm','Y'),('parkdb','oltp/parkingdb','Y'),('park-schema','parkingbay','Y'),('cus-db','oltp/cus-intg','Y'),('cus-schema','customer','Y');
+/*!40000 ALTER TABLE `spw_common_config` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `spw_instance`
+--
+
+DROP TABLE IF EXISTS `spw_instance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `spw_instance` (
+  `instance` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
+  `process` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
+  `variable` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
+  `value` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
+  `active` enum('Y','N') CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spw_instance`
+--
+
+LOCK TABLES `spw_instance` WRITE;
+/*!40000 ALTER TABLE `spw_instance` DISABLE KEYS */;
+INSERT INTO `spw_instance` VALUES ('test.callprocess.process#1','test.callprocess.process','lms','oltp/chimera_lms','Y'),('test.rest.process#1','test.rest.process','lms','oltp/chimera-lms','Y'),('test.doozle.process#1','test.doozle.process','lms','oltp/chimera_lms','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','runfbcl','true','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','accesstoken','EAAEhaBeKXKcBAK4jOdwlra5PyORaqGZC1lYgXeiAAZAnaplLqtBnMtn8BUjlrKaphTJSnUeErhaXfndpm06ILZCx1xaSFBz4zZCcXWyCcUsJKh6pjtRO7A67pT0yBPxlf6RRPccWKDh2c87JdYnGVuCxHsnllZA5AuQG7wexL7QZDZD','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','secret-key','632b2b7e5a1d1a86348aa3ec73606cfd','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','user-id','1385910988364458','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','campaign-id-list','6089266474957,6083587107157,6080044414357','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','wci-db','oltp/wci-intg','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','gaccountid','bonsai@bonsai-crm-under-tissow-org.iam.gserviceaccount.com','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','gprivatekey','8debeae0d4910282754c67cadb177287d3ed8d86','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','p12filepath','auth/bonsai-crm-under-tissow-org-8debeae0d491.p12','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','gcloud-project-name','bonsai-crm-under-tissow-org','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','impersonated-user','junomeadmin@tissow.com','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','calendarid','junomeadmin@tissow.com','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','runcontact','true','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','runcalendar','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','rundoozle','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','parkdb','oltp/parkingdb','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','runfbcl','true','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','accesstoken','EAAEhaBeKXKcBAK4jOdwlra5PyORaqGZC1lYgXeiAAZAnaplLqtBnMtn8BUjlrKaphTJSnUeErhaXfndpm06ILZCx1xaSFBz4zZCcXWyCcUsJKh6pjtRO7A67pT0yBPxlf6RRPccWKDh2c87JdYnGVuCxHsnllZA5AuQG7wexL7QZDZD','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','secret-key','632b2b7e5a1d1a86348aa3ec73606cfd','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','user-id','1385910988364458','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','campaign-id-list','6092541246957,6092384957357','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','sor-db','oltp/bonsai','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','gaccountid','bonsai@bonsai-crm-under-tissow-org.iam.gserviceaccount.com','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','gprivatekey','8debeae0d4910282754c67cadb177287d3ed8d86','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','p12filepath','auth/bonsai-crm-under-tissow-org-8debeae0d491.p12','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','gcloud-project-name','bonsai-crm-under-tissow-org','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','impersonated-user','junomeadmin@tissow.com','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','calendarid','junomeadmin@tissow.com','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','runcontact','true','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','runcalendar','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','rundoozle','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','parkdb','oltp/parkingdb','Y'),('candy.uploadcalllog.overall.process#1','candy.uploadcalllog.overall.process','rundoozle','true','Y'),('candy.uploadcalllog.overall.process#1','candy.uploadcalllog.overall.process','parkdb','oltp/parkingdb','Y'),('candy.uploadcalllog.overall.process#1','candy.uploadcalllog.overall.process','runcalllog','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','runcalllog','true','Y');
+/*!40000 ALTER TABLE `spw_instance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `spw_instance_config`
+--
+
+DROP TABLE IF EXISTS `spw_instance_config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `spw_instance_config` (
+  `instance` varchar(150) DEFAULT NULL,
+  `process` varchar(150) DEFAULT NULL,
+  `variable` varchar(150) DEFAULT NULL,
+  `value` varchar(500) DEFAULT NULL,
+  `active` enum('Y','N') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spw_instance_config`
+--
+
+LOCK TABLES `spw_instance_config` WRITE;
+/*!40000 ALTER TABLE `spw_instance_config` DISABLE KEYS */;
+INSERT INTO `spw_instance_config` VALUES ('test.callprocess.process#1','test.callprocess.process','lms','oltp/chimera_lms','Y'),('test.rest.process#1','test.rest.process','lms','oltp/chimera-lms','Y'),('test.doozle.process#1','test.doozle.process','lms','oltp/chimera_lms','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','runfbcl','true','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','accesstoken','EAAEhaBeKXKcBAK4jOdwlra5PyORaqGZC1lYgXeiAAZAnaplLqtBnMtn8BUjlrKaphTJSnUeErhaXfndpm06ILZCx1xaSFBz4zZCcXWyCcUsJKh6pjtRO7A67pT0yBPxlf6RRPccWKDh2c87JdYnGVuCxHsnllZA5AuQG7wexL7QZDZD','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','secret-key','632b2b7e5a1d1a86348aa3ec73606cfd','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','user-id','1385910988364458','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','campaign-id-list','6106554292157','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','wci-db','oltp/wci-intg','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','gaccountid','bonsai@bonsai-crm-under-tissow-org.iam.gserviceaccount.com','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','gprivatekey','8debeae0d4910282754c67cadb177287d3ed8d86','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','p12filepath','auth/bonsai-crm-under-tissow-org-8debeae0d491.p12','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','gcloud-project-name','bonsai-crm-under-tissow-org','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','impersonated-user','junomeadmin@tissow.com','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','calendarid','junomeadmin@tissow.com','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','runcontact','true','Y'),('candycrm.wp.leadingestion#1','candycrm.wp.leadingestion','runcalendar','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','runcalllog','true','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','runfbcl','true','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','accesstoken','EAAEhaBeKXKcBALzu7BoObg76ENa81QmHQHnFqgK9vu6IZBS194dZBOYUjilt7ZBArxBZBcsObauDzR6zUqiYRjv1An4bakdOa8mCxhoOfUjZCZAkpbWZBZBCPzRf4MyjlZBZCZCJxWEZCYO5Bz1qnREVZAY2yy5I0DelUOHugl3jz4y62JEZC1weYpUoqk','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','secret-key','632b2b7e5a1d1a86348aa3ec73606cfd','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','user-id','1385910988364458','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','campaign-id-list','6106554292157','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','sor-db','oltp/bonsai','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','gaccountid','bonsai@bonsai-crm-under-tissow-org.iam.gserviceaccount.com','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','gprivatekey','8debeae0d4910282754c67cadb177287d3ed8d86','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','p12filepath','auth/bonsai-crm-under-tissow-org-8debeae0d491.p12','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','gcloud-project-name','bonsai-crm-under-tissow-org','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','impersonated-user','junomeadmin@tissow.com','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','calendarid','junomeadmin@tissow.com','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','runcontact','true','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','runcalendar','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','parkdb','oltp/parkingdb','Y'),('candy.uploadcalllog.overall.process#1','candy.uploadcalllog.overall.process','runcalllog','true','Y'),('candy.uploadcalllog.overall.process#1','candy.uploadcalllog.overall.process','rundoozle','true','Y'),('candy.uploadcalllog.overall.process#1','candy.uploadcalllog.overall.process','parkdb','oltp/parkingdb','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','runcalllog','true','Y'),('candy.uploadcalllog.process#1','candy.uploadcalllog.process','rundoozle','true','Y'),('candy.eventing.customer.process#1','candy.eventing.customer.process','parkdb','oltp/parkingdb','Y'),('candy.eventing.customer.process#1','candy.eventing.customer.process','rundoozle','true','Y'),('candy.eventing.customer.process#1','candy.eventing.customer.process','runtextcustomer','true','Y'),('candy.sendsms.customer.process#1','candy.sendsms.customer.process','cus-db','oltp/cus-intg','Y'),('candy.sendsms.customer.process#1','candy.sendsms.customer.process','csms-userid','jpvel','Y'),('candy.sendsms.customer.process#1','candy.sendsms.customer.process','csms-securitykey','9FE64F27-9E09-861A-1507-3AB12A74FA67','Y'),('candy.sendsms.customer.process#1','candy.sendsms.customer.process','runtextcustomer','true','Y'),('candy.sendsms.customer.process#1','candy.sendsms.customer.process','csms-countrycode','IN','Y'),('candy.sendsms.customer.process#1','candy.sendsms.customer.process','csms-source','Juno','Y'),('candy.sendsms.customer.process#1','candy.sendsms.customer.process','customertype','onetime_customer_process','Y'),('candy.sendsms.customer.process#2','candy.sendsms.customer.process','cus-db','oltp/cus-intg','Y'),('candy.sendsms.customer.process#2','candy.sendsms.customer.process','csms-userid','jpvel','Y'),('candy.sendsms.customer.process#2','candy.sendsms.customer.process','csms-securitykey','9FE64F27-9E09-861A-1507-3AB12A74FA67','Y'),('candy.sendsms.customer.process#2','candy.sendsms.customer.process','runtextcustomer','true','Y'),('candy.sendsms.customer.process#2','candy.sendsms.customer.process','csms-countrycode','IN','Y'),('candy.sendsms.customer.process#2','candy.sendsms.customer.process','csms-source','Juno','Y'),('candy.sendsms.customer.process#2','candy.sendsms.customer.process','customertype','weekly_customer_process','Y'),('candy.sendsms.customer.process#3','candy.sendsms.customer.process','cus-db','oltp/cus-intg','Y'),('candy.sendsms.customer.process#3','candy.sendsms.customer.process','csms-userid','jpvel','Y'),('candy.sendsms.customer.process#3','candy.sendsms.customer.process','csms-securitykey','9FE64F27-9E09-861A-1507-3AB12A74FA67','Y'),('candy.sendsms.customer.process#3','candy.sendsms.customer.process','runtextcustomer','true','Y'),('candy.sendsms.customer.process#3','candy.sendsms.customer.process','csms-countrycode','IN','Y'),('candy.sendsms.customer.process#3','candy.sendsms.customer.process','csms-source','Juno','Y'),('candy.sendsms.customer.process#3','candy.sendsms.customer.process','customertype','monthly_customer_process','Y'),('bonsai.leadingestion.process#1','bonsai.leadingestion.process','owner_user_id','12','Y');
+/*!40000 ALTER TABLE `spw_instance_config` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `spw_process_config`
+--
+
+DROP TABLE IF EXISTS `spw_process_config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `spw_process_config` (
+  `process` varchar(150) DEFAULT NULL,
+  `variable` varchar(150) DEFAULT NULL,
+  `value` varchar(500) DEFAULT NULL,
+  `active` enum('Y','N') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spw_process_config`
+--
+
+LOCK TABLES `spw_process_config` WRITE;
+/*!40000 ALTER TABLE `spw_process_config` DISABLE KEYS */;
+INSERT INTO `spw_process_config` VALUES ('test.callprocess.process','filepath','test.callprocess.process.spw','Y'),('test.doozle.process','filepath','test.doozle.process.spw','Y'),('test.rest.process','filepath','test.rest.process.spw','Y'),('bonsai.leadingestion.process','filepath','bonsai.leadingestion.process.spw','Y'),('candy.uploadcalllog.process','filepath','candy.uploadcalllog.process.spw','Y'),('candycrm.wp.leadingestion','filepath','candycrm.wp.leadingestion.spw','Y'),('candycrm.wp.leadingestion','integration-db','oltp/bonsai','Y'),('candycrm.wp.leadingestion','filepath','candycrm.wp.leadingestion.spw','Y'),('wordpress.candy.leadingestion','filepath','wordpress.candy.leadingestion.spw','Y'),('wordpress.candy.leadingestion','wci-db','oltp/wci-intg','Y'),('candy.uploadcalllog.overall.process','filepath','candy.uploadcalllog.overall.process.spw','Y'),('candy.eventing.customer.process','filepath','candy.eventing.customer.process.spw','Y'),('candy.sendsms.customer.process','filepath','candy.sendsms.customer.process.spw','Y');
+/*!40000 ALTER TABLE `spw_process_config` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `spw_resource_config`
+--
+
+DROP TABLE IF EXISTS `spw_resource_config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `spw_resource_config` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `config_type` varchar(50) DEFAULT NULL,
+  `config_name` varchar(50) DEFAULT NULL,
+  `auth_info` varchar(1000) DEFAULT NULL,
+  `resource_url` varchar(1000) DEFAULT NULL,
+  `active` enum('Y','N') DEFAULT NULL,
+  `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spw_resource_config`
+--
+
+LOCK TABLES `spw_resource_config` WRITE;
+/*!40000 ALTER TABLE `spw_resource_config` DISABLE KEYS */;
+INSERT INTO `spw_resource_config` VALUES (1,'1','oltp/bonsai','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/bonsai_crm?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true','Y','2017-09-24 17:22:05'),(2,'1','audit/bonsai-audit','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/spw_audit?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true','Y','2018-02-06 20:42:36'),(3,'1','oltp/parkingdb','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/parkingbay?charset=utf8mb4&dumpQueriesOnException=true','Y','2018-03-02 14:17:42'),(4,'1','oltp/candy-intg','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/candy_lead?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true','Y','2017-09-24 17:22:05'),(5,'1','audit/candy_lead-audit','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/spw_audit?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true','Y','2017-09-24 18:42:29'),(6,'1','oltp/candy_lead-intg','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/lead?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=utf8&connectionCollation=utf8_general_ci&dumpQueriesOnException=true','Y','2018-08-29 11:32:45'),(7,'1','audit/wordpress-audit','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/spw_audit?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true','Y','2018-04-10 09:38:42'),(8,'1','oltp/wci-intg','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/bonsai_crm?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true','Y','2018-04-10 09:39:06'),(9,'1','oltp/cus-intg','{ \"user\": \"root\", \"password\": \"password\"}','jdbc:mysql://localhost:3306/customer?useUnicode=true&characterEncoding=utf8&dumpQueriesOnException=true','Y','2018-04-10 15:09:06');
+/*!40000 ALTER TABLE `spw_resource_config` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-11-22 16:45:13

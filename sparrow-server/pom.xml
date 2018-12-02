@@ -34,46 +34,48 @@
 
 	<repositories>
 
-		<repository>
-			<id>twitter-twttr</id>
-			<url>http://maven.twttr.com/</url>
-		</repository>
-		<repository>
-			<id>scala</id>
-			<name>Scala Tools</name>
-			<url>http://scala-tools.org/repo-releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>maven-restlet</id>
-			<name>Public online Restlet repository</name>
-			<url>http://maven.restlet.org</url>
-		</repository>
+                <repository>
+                        <id>1_maven.apache.org</id>
+                        <releases>
+                                <enabled>true</enabled>
+                        </releases>
+                        <snapshots>
+                                <enabled>true</enabled>
+                        </snapshots>
+                        <url>https://repo.maven.apache.org/maven2</url>
+                        <layout>default</layout>
+                </repository>
 
-		<repository>
-			<id>unirest-for-android</id>
-			<url>https://raw.github.com/zeeshanejaz/unirest-android/mvn-repo</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>scala</id>
-			<name>Scala Tools</name>
-			<url>http://scala-tools.org/repo-releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+
+                <repository>
+                        <id>3_twitter-twttr</id>
+                        <url>http://maven.twttr.com/</url>
+                </repository>
+
+                <repository>
+                        <id>2_maven-restlet</id>
+                        <name>Public online Restlet repository</name>
+                        <url>http://maven.restlet.org</url>
+                </repository>
+
+
+        </repositories>
+
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-gmail -->
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-gmail</artifactId>
+			<version>v1-rev96-1.25.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.google.apis</groupId>
@@ -92,7 +94,7 @@
 			<artifactId>okhttp</artifactId>
 			<version>3.11.0</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.restlet.jee/org.restlet.ext.json -->
 		<dependency>
 			<groupId>org.restlet.jee</groupId>

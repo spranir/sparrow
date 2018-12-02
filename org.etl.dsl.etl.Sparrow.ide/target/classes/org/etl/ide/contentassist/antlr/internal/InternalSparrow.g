@@ -174,6 +174,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleSmsLeadSms
+entryRuleSmsLeadSms
+:
+{ before(grammarAccess.getSmsLeadSmsRule()); }
+	 ruleSmsLeadSms
+{ after(grammarAccess.getSmsLeadSmsRule()); } 
+	 EOF 
+;
+
+// Rule SmsLeadSms
+ruleSmsLeadSms 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSmsLeadSmsAccess().getGroup()); }
+		(rule__SmsLeadSms__Group__0)
+		{ after(grammarAccess.getSmsLeadSmsAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleAbort
 entryRuleAbort
 :
@@ -218,6 +243,31 @@ ruleGooglecontactSelectAll
 		{ before(grammarAccess.getGooglecontactSelectAllAccess().getGroup()); }
 		(rule__GooglecontactSelectAll__Group__0)
 		{ after(grammarAccess.getGooglecontactSelectAllAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleGoogleSendMail
+entryRuleGoogleSendMail
+:
+{ before(grammarAccess.getGoogleSendMailRule()); }
+	 ruleGoogleSendMail
+{ after(grammarAccess.getGoogleSendMailRule()); } 
+	 EOF 
+;
+
+// Rule GoogleSendMail
+ruleGoogleSendMail 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getGroup()); }
+		(rule__GoogleSendMail__Group__0)
+		{ after(grammarAccess.getGoogleSendMailAccess().getGroup()); }
 	)
 ;
 finally {
@@ -901,21 +951,33 @@ rule__Action__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_16()); }
+		{ before(grammarAccess.getActionAccess().getGoogleSendMailParserRuleCall_16()); }
+		ruleGoogleSendMail
+		{ after(grammarAccess.getActionAccess().getGoogleSendMailParserRuleCall_16()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_17()); }
 		ruleGooglecontactPUT
-		{ after(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_16()); }
+		{ after(grammarAccess.getActionAccess().getGooglecontactPUTParserRuleCall_17()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_17()); }
+		{ before(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_18()); }
 		ruleGooglecontactSelectAll
-		{ after(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_17()); }
+		{ after(grammarAccess.getActionAccess().getGooglecontactSelectAllParserRuleCall_18()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getActionAccess().getAbortParserRuleCall_18()); }
+		{ before(grammarAccess.getActionAccess().getAbortParserRuleCall_19()); }
 		ruleAbort
-		{ after(grammarAccess.getActionAccess().getAbortParserRuleCall_18()); }
+		{ after(grammarAccess.getActionAccess().getAbortParserRuleCall_19()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_20()); }
+		ruleSmsLeadSms
+		{ after(grammarAccess.getActionAccess().getSmsLeadSmsParserRuleCall_20()); }
 	)
 ;
 finally {
@@ -1549,6 +1611,573 @@ finally {
 }
 
 
+rule__SmsLeadSms__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__0__Impl
+	rule__SmsLeadSms__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getSmsleadssmsKeyword_0()); }
+	'smsleadssms'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getSmsleadssmsKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__1__Impl
+	rule__SmsLeadSms__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getAsKeyword_1()); }
+	'as'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getAsKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__2__Impl
+	rule__SmsLeadSms__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getNameAssignment_2()); }
+	(rule__SmsLeadSms__NameAssignment_2)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getNameAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__3__Impl
+	rule__SmsLeadSms__Group__4
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getOnKeyword_3()); }
+	'on'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getOnKeyword_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__4__Impl
+	rule__SmsLeadSms__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getUrlAssignment_4()); }
+	(rule__SmsLeadSms__UrlAssignment_4)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getUrlAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__5__Impl
+	rule__SmsLeadSms__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getWithSenderKeyword_5()); }
+	'with-sender'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getWithSenderKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__6__Impl
+	rule__SmsLeadSms__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getSenderAssignment_6()); }
+	(rule__SmsLeadSms__SenderAssignment_6)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getSenderAssignment_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__7__Impl
+	rule__SmsLeadSms__Group__8
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getThroughAccountKeyword_7()); }
+	'through-account'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getThroughAccountKeyword_7()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__8__Impl
+	rule__SmsLeadSms__Group__9
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__8__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getAccountAssignment_8()); }
+	(rule__SmsLeadSms__AccountAssignment_8)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getAccountAssignment_8()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__9
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__9__Impl
+	rule__SmsLeadSms__Group__10
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__9__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getSecuredByKeyword_9()); }
+	'secured-by'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getSecuredByKeyword_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__10__Impl
+	rule__SmsLeadSms__Group__11
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__10__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getPrivateKeyAssignment_10()); }
+	(rule__SmsLeadSms__PrivateKeyAssignment_10)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getPrivateKeyAssignment_10()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__11__Impl
+	rule__SmsLeadSms__Group__12
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__11__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getFromSourceKeyword_11()); }
+	'from-source'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getFromSourceKeyword_11()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__12__Impl
+	rule__SmsLeadSms__Group__13
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__12__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getDbSrcAssignment_12()); }
+	(rule__SmsLeadSms__DbSrcAssignment_12)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getDbSrcAssignment_12()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__13
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__13__Impl
+	rule__SmsLeadSms__Group__14
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__13__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getUsingKeyword_13()); }
+	'using'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getUsingKeyword_13()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__14
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__14__Impl
+	rule__SmsLeadSms__Group__15
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__14__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getLeftCurlyBracketKeyword_14()); }
+	'{'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getLeftCurlyBracketKeyword_14()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__15
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__15__Impl
+	rule__SmsLeadSms__Group__16
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__15__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getValueAssignment_15()); }
+	(rule__SmsLeadSms__ValueAssignment_15)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getValueAssignment_15()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__16
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__16__Impl
+	rule__SmsLeadSms__Group__17
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__16__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getRightCurlyBracketKeyword_16()); }
+	'}'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getRightCurlyBracketKeyword_16()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__17
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__17__Impl
+	rule__SmsLeadSms__Group__18
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__17__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getOnConditionKeyword_17()); }
+	'on-condition'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getOnConditionKeyword_17()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__18
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__18__Impl
+	rule__SmsLeadSms__Group__19
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__18__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getConditionAssignment_18()); }
+	(rule__SmsLeadSms__ConditionAssignment_18)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getConditionAssignment_18()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__19
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__19__Impl
+	rule__SmsLeadSms__Group__20
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__19__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getDoDryrunWithKeyword_19()); }
+	'do-dryrun-with'
+	{ after(grammarAccess.getSmsLeadSmsAccess().getDoDryrunWithKeyword_19()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SmsLeadSms__Group__20__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__Group__20__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSmsLeadSmsAccess().getDryrunNumberAssignment_20()); }
+	(rule__SmsLeadSms__DryrunNumberAssignment_20)
+	{ after(grammarAccess.getSmsLeadSmsAccess().getDryrunNumberAssignment_20()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__Abort__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -1594,9 +2223,9 @@ rule__Abort__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getNameAssignment_1()); }
-	(rule__Abort__NameAssignment_1)
-	{ after(grammarAccess.getAbortAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getAbortAccess().getAsKeyword_1()); }
+	'as'
+	{ after(grammarAccess.getAbortAccess().getAsKeyword_1()); }
 )
 ;
 finally {
@@ -1621,9 +2250,9 @@ rule__Abort__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getMessageAssignment_2()); }
-	(rule__Abort__MessageAssignment_2)
-	{ after(grammarAccess.getAbortAccess().getMessageAssignment_2()); }
+	{ before(grammarAccess.getAbortAccess().getNameAssignment_2()); }
+	(rule__Abort__NameAssignment_2)
+	{ after(grammarAccess.getAbortAccess().getNameAssignment_2()); }
 )
 ;
 finally {
@@ -1648,9 +2277,9 @@ rule__Abort__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getOnConditionKeyword_3()); }
-	'on-condition'
-	{ after(grammarAccess.getAbortAccess().getOnConditionKeyword_3()); }
+	{ before(grammarAccess.getAbortAccess().getLeftCurlyBracketKeyword_3()); }
+	'{'
+	{ after(grammarAccess.getAbortAccess().getLeftCurlyBracketKeyword_3()); }
 )
 ;
 finally {
@@ -1663,6 +2292,7 @@ rule__Abort__Group__4
 	}
 :
 	rule__Abort__Group__4__Impl
+	rule__Abort__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1674,9 +2304,89 @@ rule__Abort__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAbortAccess().getConditionAssignment_4()); }
-	(rule__Abort__ConditionAssignment_4)
-	{ after(grammarAccess.getAbortAccess().getConditionAssignment_4()); }
+	{ before(grammarAccess.getAbortAccess().getValueAssignment_4()); }
+	(rule__Abort__ValueAssignment_4)
+	{ after(grammarAccess.getAbortAccess().getValueAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Abort__Group__5__Impl
+	rule__Abort__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAbortAccess().getRightCurlyBracketKeyword_5()); }
+	'}'
+	{ after(grammarAccess.getAbortAccess().getRightCurlyBracketKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Abort__Group__6__Impl
+	rule__Abort__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAbortAccess().getOnConditionKeyword_6()); }
+	'on-condition'
+	{ after(grammarAccess.getAbortAccess().getOnConditionKeyword_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Abort__Group__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Abort__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAbortAccess().getConditionAssignment_7()); }
+	(rule__Abort__ConditionAssignment_7)
+	{ after(grammarAccess.getAbortAccess().getConditionAssignment_7()); }
 )
 ;
 finally {
@@ -1729,9 +2439,9 @@ rule__GooglecontactSelectAll__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_1()); }
-	(rule__GooglecontactSelectAll__NameAssignment_1)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getAsKeyword_1()); }
+	'as'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getAsKeyword_1()); }
 )
 ;
 finally {
@@ -1756,9 +2466,9 @@ rule__GooglecontactSelectAll__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_2()); }
-	'through-account'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_2()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_2()); }
+	(rule__GooglecontactSelectAll__NameAssignment_2)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameAssignment_2()); }
 )
 ;
 finally {
@@ -1783,9 +2493,9 @@ rule__GooglecontactSelectAll__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_3()); }
-	(rule__GooglecontactSelectAll__AccountAssignment_3)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_3()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_3()); }
+	'through-account'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getThroughAccountKeyword_3()); }
 )
 ;
 finally {
@@ -1810,9 +2520,9 @@ rule__GooglecontactSelectAll__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_4()); }
-	'secured-by'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_4()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_4()); }
+	(rule__GooglecontactSelectAll__AccountAssignment_4)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountAssignment_4()); }
 )
 ;
 finally {
@@ -1837,9 +2547,9 @@ rule__GooglecontactSelectAll__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_5()); }
-	(rule__GooglecontactSelectAll__PrivateKeyAssignment_5)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_5()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_5()); }
+	'secured-by'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getSecuredByKeyword_5()); }
 )
 ;
 finally {
@@ -1864,9 +2574,9 @@ rule__GooglecontactSelectAll__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_6()); }
-	'with-key'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_6()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_6()); }
+	(rule__GooglecontactSelectAll__PrivateKeyAssignment_6)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeyAssignment_6()); }
 )
 ;
 finally {
@@ -1891,9 +2601,9 @@ rule__GooglecontactSelectAll__Group__7__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_7()); }
-	(rule__GooglecontactSelectAll__PtwelveFileAssignment_7)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_7()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_7()); }
+	'with-key'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getWithKeyKeyword_7()); }
 )
 ;
 finally {
@@ -1918,9 +2628,9 @@ rule__GooglecontactSelectAll__Group__8__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_8()); }
-	'for-project'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_8()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_8()); }
+	(rule__GooglecontactSelectAll__PtwelveFileAssignment_8)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileAssignment_8()); }
 )
 ;
 finally {
@@ -1945,9 +2655,9 @@ rule__GooglecontactSelectAll__Group__9__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_9()); }
-	(rule__GooglecontactSelectAll__ProjectAssignment_9)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_9()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_9()); }
+	'for-project'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getForProjectKeyword_9()); }
 )
 ;
 finally {
@@ -1972,9 +2682,9 @@ rule__GooglecontactSelectAll__Group__10__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_10()); }
-	'on-behalf-of'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_10()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_10()); }
+	(rule__GooglecontactSelectAll__ProjectAssignment_10)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectAssignment_10()); }
 )
 ;
 finally {
@@ -1999,9 +2709,9 @@ rule__GooglecontactSelectAll__Group__11__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_11()); }
-	(rule__GooglecontactSelectAll__ImpersonatedUserAssignment_11)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_11()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_11()); }
+	'on-behalf-of'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnBehalfOfKeyword_11()); }
 )
 ;
 finally {
@@ -2026,9 +2736,9 @@ rule__GooglecontactSelectAll__Group__12__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_12()); }
-	'to-target'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_12()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_12()); }
+	(rule__GooglecontactSelectAll__ImpersonatedUserAssignment_12)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserAssignment_12()); }
 )
 ;
 finally {
@@ -2053,9 +2763,9 @@ rule__GooglecontactSelectAll__Group__13__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_13()); }
-	(rule__GooglecontactSelectAll__DbSrcAssignment_13)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_13()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_13()); }
+	'to-target'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getToTargetKeyword_13()); }
 )
 ;
 finally {
@@ -2080,9 +2790,9 @@ rule__GooglecontactSelectAll__Group__14__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_14()); }
-	'using'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_14()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_14()); }
+	(rule__GooglecontactSelectAll__DbSrcAssignment_14)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcAssignment_14()); }
 )
 ;
 finally {
@@ -2107,9 +2817,9 @@ rule__GooglecontactSelectAll__Group__15__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_15()); }
-	'{'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_15()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_15()); }
+	'using'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getUsingKeyword_15()); }
 )
 ;
 finally {
@@ -2134,9 +2844,9 @@ rule__GooglecontactSelectAll__Group__16__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_16()); }
-	(rule__GooglecontactSelectAll__ValueAssignment_16)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_16()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_16()); }
+	'{'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getLeftCurlyBracketKeyword_16()); }
 )
 ;
 finally {
@@ -2161,9 +2871,9 @@ rule__GooglecontactSelectAll__Group__17__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_17()); }
-	'}'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_17()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_17()); }
+	(rule__GooglecontactSelectAll__ValueAssignment_17)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueAssignment_17()); }
 )
 ;
 finally {
@@ -2188,9 +2898,9 @@ rule__GooglecontactSelectAll__Group__18__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_18()); }
-	'on-condition'
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_18()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_18()); }
+	'}'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getRightCurlyBracketKeyword_18()); }
 )
 ;
 finally {
@@ -2203,6 +2913,7 @@ rule__GooglecontactSelectAll__Group__19
 	}
 :
 	rule__GooglecontactSelectAll__Group__19__Impl
+	rule__GooglecontactSelectAll__Group__20
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2214,9 +2925,602 @@ rule__GooglecontactSelectAll__Group__19__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_19()); }
-	(rule__GooglecontactSelectAll__ConditionAssignment_19)
-	{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_19()); }
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_19()); }
+	'on-condition'
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getOnConditionKeyword_19()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__Group__20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GooglecontactSelectAll__Group__20__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__Group__20__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_20()); }
+	(rule__GooglecontactSelectAll__ConditionAssignment_20)
+	{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionAssignment_20()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__GoogleSendMail__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__0__Impl
+	rule__GoogleSendMail__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getGsendmailKeyword_0()); }
+	'gsendmail'
+	{ after(grammarAccess.getGoogleSendMailAccess().getGsendmailKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__1__Impl
+	rule__GoogleSendMail__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getAsKeyword_1()); }
+	'as'
+	{ after(grammarAccess.getGoogleSendMailAccess().getAsKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__2__Impl
+	rule__GoogleSendMail__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getNameAssignment_2()); }
+	(rule__GoogleSendMail__NameAssignment_2)
+	{ after(grammarAccess.getGoogleSendMailAccess().getNameAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__3__Impl
+	rule__GoogleSendMail__Group__4
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getThroughAccountKeyword_3()); }
+	'through-account'
+	{ after(grammarAccess.getGoogleSendMailAccess().getThroughAccountKeyword_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__4__Impl
+	rule__GoogleSendMail__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getAccountAssignment_4()); }
+	(rule__GoogleSendMail__AccountAssignment_4)
+	{ after(grammarAccess.getGoogleSendMailAccess().getAccountAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__5__Impl
+	rule__GoogleSendMail__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getSecuredByKeyword_5()); }
+	'secured-by'
+	{ after(grammarAccess.getGoogleSendMailAccess().getSecuredByKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__6__Impl
+	rule__GoogleSendMail__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getPrivateKeyAssignment_6()); }
+	(rule__GoogleSendMail__PrivateKeyAssignment_6)
+	{ after(grammarAccess.getGoogleSendMailAccess().getPrivateKeyAssignment_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__7__Impl
+	rule__GoogleSendMail__Group__8
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getWithKeyKeyword_7()); }
+	'with-key'
+	{ after(grammarAccess.getGoogleSendMailAccess().getWithKeyKeyword_7()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__8__Impl
+	rule__GoogleSendMail__Group__9
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__8__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getPtwelveFileAssignment_8()); }
+	(rule__GoogleSendMail__PtwelveFileAssignment_8)
+	{ after(grammarAccess.getGoogleSendMailAccess().getPtwelveFileAssignment_8()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__9
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__9__Impl
+	rule__GoogleSendMail__Group__10
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__9__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getForProjectKeyword_9()); }
+	'for-project'
+	{ after(grammarAccess.getGoogleSendMailAccess().getForProjectKeyword_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__10__Impl
+	rule__GoogleSendMail__Group__11
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__10__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getProjectAssignment_10()); }
+	(rule__GoogleSendMail__ProjectAssignment_10)
+	{ after(grammarAccess.getGoogleSendMailAccess().getProjectAssignment_10()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__11__Impl
+	rule__GoogleSendMail__Group__12
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__11__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getOnBehalfOfKeyword_11()); }
+	'on-behalf-of'
+	{ after(grammarAccess.getGoogleSendMailAccess().getOnBehalfOfKeyword_11()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__12__Impl
+	rule__GoogleSendMail__Group__13
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__12__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserAssignment_12()); }
+	(rule__GoogleSendMail__ImpersonatedUserAssignment_12)
+	{ after(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserAssignment_12()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__13
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__13__Impl
+	rule__GoogleSendMail__Group__14
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__13__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getFromSourceKeyword_13()); }
+	'from-source'
+	{ after(grammarAccess.getGoogleSendMailAccess().getFromSourceKeyword_13()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__14
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__14__Impl
+	rule__GoogleSendMail__Group__15
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__14__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getDbSrcAssignment_14()); }
+	(rule__GoogleSendMail__DbSrcAssignment_14)
+	{ after(grammarAccess.getGoogleSendMailAccess().getDbSrcAssignment_14()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__15
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__15__Impl
+	rule__GoogleSendMail__Group__16
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__15__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getUsingKeyword_15()); }
+	'using'
+	{ after(grammarAccess.getGoogleSendMailAccess().getUsingKeyword_15()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__16
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__16__Impl
+	rule__GoogleSendMail__Group__17
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__16__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getLeftCurlyBracketKeyword_16()); }
+	'{'
+	{ after(grammarAccess.getGoogleSendMailAccess().getLeftCurlyBracketKeyword_16()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__17
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__17__Impl
+	rule__GoogleSendMail__Group__18
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__17__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getValueAssignment_17()); }
+	(rule__GoogleSendMail__ValueAssignment_17)
+	{ after(grammarAccess.getGoogleSendMailAccess().getValueAssignment_17()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__18
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__18__Impl
+	rule__GoogleSendMail__Group__19
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__18__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getRightCurlyBracketKeyword_18()); }
+	'}'
+	{ after(grammarAccess.getGoogleSendMailAccess().getRightCurlyBracketKeyword_18()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__19
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__19__Impl
+	rule__GoogleSendMail__Group__20
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__19__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getOnConditionKeyword_19()); }
+	'on-condition'
+	{ after(grammarAccess.getGoogleSendMailAccess().getOnConditionKeyword_19()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__GoogleSendMail__Group__20__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__Group__20__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getGoogleSendMailAccess().getConditionAssignment_20()); }
+	(rule__GoogleSendMail__ConditionAssignment_20)
+	{ after(grammarAccess.getGoogleSendMailAccess().getConditionAssignment_20()); }
 )
 ;
 finally {
@@ -10204,180 +11508,450 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Abort__NameAssignment_1
+rule__SmsLeadSms__NameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getSmsLeadSmsAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getSmsLeadSmsAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Abort__MessageAssignment_2
+rule__SmsLeadSms__UrlAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getSmsLeadSmsAccess().getUrlSTRINGTerminalRuleCall_4_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getAbortAccess().getMessageSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getSmsLeadSmsAccess().getUrlSTRINGTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Abort__ConditionAssignment_4
+rule__SmsLeadSms__SenderAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0()); }
+		{ before(grammarAccess.getSmsLeadSmsAccess().getSenderSTRINGTerminalRuleCall_6_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSmsLeadSmsAccess().getSenderSTRINGTerminalRuleCall_6_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__AccountAssignment_8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSmsLeadSmsAccess().getAccountSTRINGTerminalRuleCall_8_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSmsLeadSmsAccess().getAccountSTRINGTerminalRuleCall_8_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__PrivateKeyAssignment_10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSmsLeadSmsAccess().getPrivateKeySTRINGTerminalRuleCall_10_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSmsLeadSmsAccess().getPrivateKeySTRINGTerminalRuleCall_10_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__DbSrcAssignment_12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSmsLeadSmsAccess().getDbSrcSTRINGTerminalRuleCall_12_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSmsLeadSmsAccess().getDbSrcSTRINGTerminalRuleCall_12_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__ValueAssignment_15
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSmsLeadSmsAccess().getValueSTRINGTerminalRuleCall_15_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSmsLeadSmsAccess().getValueSTRINGTerminalRuleCall_15_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SmsLeadSms__ConditionAssignment_18
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSmsLeadSmsAccess().getConditionExpressionParserRuleCall_18_0()); }
 		ruleExpression
-		{ after(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_4_0()); }
+		{ after(grammarAccess.getSmsLeadSmsAccess().getConditionExpressionParserRuleCall_18_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__NameAssignment_1
+rule__SmsLeadSms__DryrunNumberAssignment_20
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getSmsLeadSmsAccess().getDryrunNumberSTRINGTerminalRuleCall_20_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getSmsLeadSmsAccess().getDryrunNumberSTRINGTerminalRuleCall_20_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__AccountAssignment_3
+rule__Abort__NameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0()); }
+		{ before(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_3_0()); }
+		{ after(grammarAccess.getAbortAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__PrivateKeyAssignment_5
+rule__Abort__ValueAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getAbortAccess().getValueSTRINGTerminalRuleCall_4_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_5_0()); }
+		{ after(grammarAccess.getAbortAccess().getValueSTRINGTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GooglecontactSelectAll__PtwelveFileAssignment_7
+rule__Abort__ConditionAssignment_7
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_7_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__GooglecontactSelectAll__ProjectAssignment_9
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_9_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__GooglecontactSelectAll__ImpersonatedUserAssignment_11
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_11_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__GooglecontactSelectAll__DbSrcAssignment_13
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_13_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__GooglecontactSelectAll__ValueAssignment_16
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_16_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__GooglecontactSelectAll__ConditionAssignment_19
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0()); }
+		{ before(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_7_0()); }
 		ruleExpression
-		{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_19_0()); }
+		{ after(grammarAccess.getAbortAccess().getConditionExpressionParserRuleCall_7_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__NameAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__AccountAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__PrivateKeyAssignment_6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__PtwelveFileAssignment_8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__ProjectAssignment_10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__ImpersonatedUserAssignment_12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__DbSrcAssignment_14
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__ValueAssignment_17
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_17_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getValueSTRINGTerminalRuleCall_17_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GooglecontactSelectAll__ConditionAssignment_20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0()); }
+		ruleExpression
+		{ after(grammarAccess.getGooglecontactSelectAllAccess().getConditionExpressionParserRuleCall_20_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__NameAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__AccountAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getAccountSTRINGTerminalRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__PrivateKeyAssignment_6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getPrivateKeySTRINGTerminalRuleCall_6_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__PtwelveFileAssignment_8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getPtwelveFileSTRINGTerminalRuleCall_8_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ProjectAssignment_10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getProjectSTRINGTerminalRuleCall_10_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ImpersonatedUserAssignment_12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getImpersonatedUserSTRINGTerminalRuleCall_12_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__DbSrcAssignment_14
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getDbSrcSTRINGTerminalRuleCall_14_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ValueAssignment_17
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getValueSTRINGTerminalRuleCall_17_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getGoogleSendMailAccess().getValueSTRINGTerminalRuleCall_17_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GoogleSendMail__ConditionAssignment_20
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGoogleSendMailAccess().getConditionExpressionParserRuleCall_20_0()); }
+		ruleExpression
+		{ after(grammarAccess.getGoogleSendMailAccess().getConditionExpressionParserRuleCall_20_0()); }
 	)
 ;
 finally {
@@ -11425,9 +12999,9 @@ rule__Fetch__ValueAssignment_7
 	}
 :
 	(
-		{ before(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0()); }
-		ruleSelectStatement
-		{ after(grammarAccess.getFetchAccess().getValueSelectStatementParserRuleCall_7_0()); }
+		{ before(grammarAccess.getFetchAccess().getValueSTRINGTerminalRuleCall_7_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getFetchAccess().getValueSTRINGTerminalRuleCall_7_0()); }
 	)
 ;
 finally {

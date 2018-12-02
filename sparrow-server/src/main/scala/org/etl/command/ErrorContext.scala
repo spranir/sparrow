@@ -2,6 +2,7 @@ package org.etl.command
 
 import java.io.StringWriter
 import java.io.PrintWriter
+import com.fasterxml.jackson.databind.ObjectMapper
 
 class ErrorContext(val tryContext:Context) extends Context {
   
@@ -30,6 +31,11 @@ class ErrorContext(val tryContext:Context) extends Context {
     if(executionException!=null) executionException.printStackTrace(print) else print.print("NONE");
     errors.toString();
     
+  }
+
+  def getJson(): String = {
+    val jsonSerializer = new ObjectMapper
+    jsonSerializer.writeValueAsString(getMe())
   }
   
 }

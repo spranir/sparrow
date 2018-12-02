@@ -12,7 +12,8 @@ import java.nio.file.StandardOpenOption
 import org.etl.util.ParameterisationEngine
 
 class DoozleAction extends org.etl.command.Action with LazyLogging {
-
+  val detailMap = new java.util.HashMap[String, String]
+  
   def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
     val doozleAsIs: org.etl.sparrow.Doozle = action.asInstanceOf[org.etl.sparrow.Doozle]
     val doozle: org.etl.sparrow.Doozle = CommandProxy.createProxy(doozleAsIs, classOf[org.etl.sparrow.Doozle], context)
@@ -38,6 +39,12 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
     } finally {
       stmt.close
       conn.close
+      detailMap.put("name", name)
+      detailMap.put("table", table)
+      detailMap.put("dbSrc", dbSrc)
+      detailMap.put("ddlSql", ddlSql)
+      detailMap.put("storagePath", storagePath)
+      
     }
     context
   }
@@ -47,7 +54,15 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
     val doozle: org.etl.sparrow.Doozle = CommandProxy.createProxy(doozleAsIs, classOf[org.etl.sparrow.Doozle], context)
 
     val expression = doozle.getCondition
-    ParameterisationEngine.doYieldtoTrue(expression)
+    try {
+      val output = ParameterisationEngine.doYieldtoTrue(expression)
+      detailMap.putIfAbsent("condition-output", output.toString())
+      output
+    } finally {
+       if(expression!=null)
+      detailMap.putIfAbsent("condition", "LHS=" + expression.getLhs + ", Operator=" + expression.getOperator + ", RHS=" + expression.getRhs)
+
+    }
   }
 
   def storeJson(incomingJson: String, storagePath: String, name: String, id: String) = {
@@ -56,4 +71,9 @@ class DoozleAction extends org.etl.command.Action with LazyLogging {
     logger.info("File stored for doozle id#{}, path#{}", id, finalPath)
   }
 
+  def generateAudit(): java.util.Map[String, String] = {
+    detailMap
+  }
+  
+  
 }

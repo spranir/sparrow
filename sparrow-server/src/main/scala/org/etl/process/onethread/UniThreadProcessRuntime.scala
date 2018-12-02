@@ -12,11 +12,14 @@ import org.etl.sparrow.Action
 import java.util.function.Consumer
 import org.etl.audit.AuditService
 import java.net.Inet4Address
+import org.etl.AbortException
+import com.fasterxml.jackson.databind.ObjectMapper
 
-case class AbortException(reason:String) extends Exception
+
 
 class UniThreadProcessRuntime(name:String, id:Int) extends ProcessRuntime with LazyLogging{
-  
+  val jsonSerializer = new ObjectMapper
+  @throws(classOf[Exception])
   def execute(process:org.etl.sparrow.Process, context:Context)={
     var errorContext:ErrorContext=new ErrorContext(context.asInstanceOf[TryContext])
     try {
@@ -25,12 +28,14 @@ class UniThreadProcessRuntime(name:String, id:Int) extends ProcessRuntime with L
     } catch {
       case ex: AbortException =>{
         logError(ex)
+        throw ex
       }
       case ex: Throwable => {
         logError(ex)
         val onError = process.getCatch
         errorContext=executeCatch(onError, context.asInstanceOf[TryContext])
         errorContext.exception=ex
+        throw ex
       }
       
     } finally {
@@ -52,11 +57,14 @@ class UniThreadProcessRuntime(name:String, id:Int) extends ProcessRuntime with L
         val actionId = AuditService.insertCommandAudit(id, action.eClass().getName+"->"+action.getName, name)
         actionRuntime.execute(context, action)
         //TODO still need to fix the status part
-        AuditService.updateCommandAudit(actionId, 1)
+        val commandDetailAsMap = actionRuntime.generateAudit()
+        val commandDetail = jsonSerializer.writeValueAsString(commandDetailAsMap)
+        AuditService.updateCommandAudit(actionId, 1, commandDetail)
       }
     }
     
   }
+  
   def logError(ex: Throwable) = {
     logger.error("Error executing process", ex)  
   }
@@ -71,7 +79,7 @@ class UniThreadProcessRuntime(name:String, id:Int) extends ProcessRuntime with L
     val finallyContext:FinallyContext = new FinallyContext(errorContext)
     executeChain(onFinally.getAction, finallyContext)
     val processId:String = errorContext.getValue("process-id")
-    val contextLog:String = errorContext.completeStackTrace
+    val contextLog:String = errorContext.getJson()
     val status:Int = if(contextLog.isEmpty) 1 else -1
     AuditService.updateProcessAudit(Integer.parseInt(processId), status, contextLog, name)
     finallyContext
