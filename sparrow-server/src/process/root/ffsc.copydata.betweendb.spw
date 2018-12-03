@@ -2,9 +2,10 @@ process "ffsc.copydata.betweendb"
 {
 	try
 	{
-		writecsv as "writetocsv" from "${ffsc-db}" to "${csv.storagepath}${process-id}_dbtocsv.csv" with "," using
+		copydata as "copydata" from "${ffsc-db}" to "${test-db}" using
 		{
-			"select * from BasicDataMapping_FFSC_Customers;"
+			"select * from BasicDataMapping_FFSC_Customers;
+			insert into fcc values"
 		}
 
 	}

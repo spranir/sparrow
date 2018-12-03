@@ -1,0 +1,18 @@
+process "ffsc.tar"
+{
+	try
+	{
+		tar as "index" using
+		{
+			"/home/sid/index;
+			 /home/sid/"
+		}
+
+	}
+	catch
+	{
+	}
+	finally
+	{
+	}
+}
