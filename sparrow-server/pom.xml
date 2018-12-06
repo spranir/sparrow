@@ -86,6 +86,11 @@
 			<artifactId>gson</artifactId>
 			<version>2.2.4</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-common</artifactId>
+			<version>2.7.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
@@ -252,6 +257,25 @@
 			<groupId>com.twitter</groupId>
 			<artifactId>querulous-core</artifactId>
 			<version>3.0.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.yammer.metrics/metrics-core -->
+		<dependency>
+			<groupId>com.yammer.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>2.2.0</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.mahout</groupId>
+			<artifactId>mahout-core</artifactId>
+			<version>0.9-cdh5.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.mahout</groupId>
+			<artifactId>mahout-math</artifactId>
+			<version>0.9-cdh5.4.4</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
