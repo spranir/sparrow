@@ -154,7 +154,7 @@ GooglecalPUT:
 ;
 	
 Copydata:
-	'copydata' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'using'
+	'copydata' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'with-batch' limit=STRING 'using'
 	'{'
 		value=SelectStatement
 	'}' 'on-condition' condition=Expression
