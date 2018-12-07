@@ -35,7 +35,9 @@ class CopydataAction extends org.etl.command.Action with LazyLogging {
 
     val output: Array[String] = ddlSql.split(";")
     val select: String = output(0)
-
+    val slimit : String = copydata.getLimit
+    val limit : Int = slimit.toInt
+    
     val rs = copydataStmtfrom.executeQuery(select)
 
     val cols: Int = rs.getMetaData().getColumnCount()
@@ -46,14 +48,14 @@ class CopydataAction extends org.etl.command.Action with LazyLogging {
         val i: Int = 0
         query = query + "("
         for (i <- 1 to cols) {
-          var str = rs.getString(i)
+          var str: String = rs.getString(i)
           if (str != null)
-          str = str.replaceAll("[^a-zA-Z0-9-:]", " ")
-          query = query + "\"" + rs.getString(i) + "\"" + ","
+            str = str.replaceAll("[^a-zA-Z0-9-:]", " ")
+          query = query + "\"" + str + "\"" + ","
 
         }
         query = query.substring(0, query.length() - 1) + "),"
-        if (j % 100 == 0) {
+        if (j % limit == 0) {
           query = query.replace("\"null\"", "null")
           var insert: String = output(1) + query.substring(0, query.length() - 1) + ";"
           logger.info("WriteCsv id#{}, name#{}, from#{}, sqlList#{}", id, name, source, insert)

@@ -2,10 +2,10 @@ process "ffsc.copydata.betweendb"
 {
 	try
 	{
-		copydata as "copydata" from "${ffsc-db}" to "${ffsc-db}" using
+		copydata as "copydata" from "${ffsc-db}" to "${ffsc-db}" with-batch "1000" using
 		{
-			"select * from BasicDataMapping_FFSC_Customers;
-			insert ignore into ffc values"
+			"select * from fftc;
+			insert ignore into BasicDataMapping_FFSC_Traffic values"
 		}
 
 	}
