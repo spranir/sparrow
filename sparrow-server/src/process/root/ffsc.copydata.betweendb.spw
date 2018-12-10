@@ -1,11 +1,11 @@
-process "ffsc.copydata.betweendb"
+process "ffsc.model.training"
 {
 	try
 	{
-		copydata as "copydata" from "${ffsc-db}" to "${ffsc-db}" with-batch "1000" using
+		trainseq as "trainseq" from "${ffsc-db}" to "${ffsc-db}" using
 		{
-			"select * from fftc;
-			insert ignore into BasicDataMapping_FFSC_Traffic values"
+			"select * from t;
+			insert ignore into v values"
 		}
 
 	}

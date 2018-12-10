@@ -44,28 +44,40 @@ class CopydataAction extends org.etl.command.Action with LazyLogging {
     var query: String = ""
     var j: Int = 0
     try {
+    
       while (rs.next()) {
         val i: Int = 0
         query = query + "("
         for (i <- 1 to cols) {
+        
           var str: String = rs.getString(i)
           if (str != null)
             str = str.replaceAll("[^a-zA-Z0-9-:]", " ")
           query = query + "\"" + str + "\"" + ","
 
         }
+
         query = query.substring(0, query.length() - 1) + "),"
+        
         if (j % limit == 0) {
+        
           query = query.replace("\"null\"", "null")
+          logger.info("WriteCsv id#{}, name#{}, from#{}, sqlList#{}", id, name, source, query)
+          
           var insert: String = output(1) + query.substring(0, query.length() - 1) + ";"
           logger.info("WriteCsv id#{}, name#{}, from#{}, sqlList#{}", id, name, source, insert)
+          
           copydataStmtto.execute(insert)
           insert = ""
           query = ""
+        
         }
         j = j + 1
+      
         copydataDbConnto.commit()
+
       }
+      
       query = query.replace("\"null\"", "null")
       var insert: String = output(1) + query.substring(0, query.length() - 1) + ";"
       logger.info("WriteCsv id#{}, name#{}, from#{}, sqlList#{}", id, name, source, insert)

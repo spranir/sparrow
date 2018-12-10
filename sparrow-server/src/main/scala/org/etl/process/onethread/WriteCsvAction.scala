@@ -41,6 +41,7 @@ class WriteCsvAction extends org.etl.command.Action with LazyLogging {
 
     val fop: FileOutputStream = new FileOutputStream(to)
     val out: Writer = new OutputStreamWriter(new BufferedOutputStream(fop))
+    var column : String = ""
     if (!to.exists()) {
       to.createNewFile()
     }
@@ -51,7 +52,10 @@ class WriteCsvAction extends org.etl.command.Action with LazyLogging {
     }
     while (ars.next()) {
       for (i <- 1 to ncols) {
-        out.append(ars.getString(i))
+        column = ars.getString(i)
+        if(column !=null)
+        column = column.replaceAll("[^a-zA-Z0-9-:]", " ")
+        out.append(column)
         if (i < ncols) out.append("\t") else out.append("\r\n")
       }
     }

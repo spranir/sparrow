@@ -1,0 +1,28 @@
+process "ffsc.copydata.betweendb"
+{
+	try
+	{
+		copydata as "copydata" with-url "" header-key "" header-value "" using
+		{"
+			mvn clean package assembly:single -f /home/anu/eclipse-workspace/mahout-naive-bayes-example/;
+			java -cp /home/anu/eclipse-workspace/mahout-naive-bayes-example/target/twitter-naive-bayes-example-1.0-jar-with-dependencies.jar com.chimpler.example.bayes.TweetTSVToSeq /home/anu/eclipse-workspace/FFSC/output-onlinetsvtools.tsv /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq;
+			hadoop fs -put /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq;
+			mahout seq2sparse -i /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-vectors;
+			mahout split -i /home/anu/eclipse-workspace//mahout-naive-bayes-example/tweets_damoen-vectors/tfidf-vectors --trainingOutput train-vectors --testOutput test-vectors --randomSelectionPct 40 --overwrite --sequenceFiles -xm sequential;
+			mahout trainnb -i train-vectors -el -li /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/model -ow -c;
+			mahout testnb -i train-vectors -m /home/anu/eclipse-workspace/mahout-naive-bayes-example/model -l /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex -ow -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets-testing -c;
+			mahout testnb -i test-vectors -m /home/anu/eclipse-workspace/mahout-naive-bayes-example/model -l /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex -ow -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets-testing -c;
+			hadoop fs -get /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex;
+			hadoop fs -get /home/anu/eclipse-workspace/mahout-naive-bayes-example/model /home/anu/eclipse-workspace/mahout-naive-bayes-example/model;
+			hadoop fs -get /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-vectors/dictionary.file-0 /home/anu/eclipse-workspace/mahout-naive-bayes-example/dictionary.file-0;
+			hadoop fs -getmerge /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-vectors/df-count /home/anu/eclipse-workspace/mahout-naive-bayes-example/df-count
+		"}
+
+	}
+	catch
+	{
+	}
+	finally
+	{
+	}
+}
