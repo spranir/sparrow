@@ -160,6 +160,20 @@ Copydata:
 	'}' 'on-condition' condition=Expression
 ;
 
+TrainSequence:
+	'trainseq' 'as' name= STRING 'with-url' url= STRING 'header-key' hkey= STRING 'header-value' hvalue=STRING 'using'
+	'{'
+		value=STRING
+	'}' 'on-condition' condition=Expression
+;
+
+TrainVector:
+	'trainvec' 'as' name= STRING 'with-url' url= STRING 'header-key' hkey= STRING 'header-value' hvalue=STRING 'using'
+	'{'
+		value=STRING
+	'}' 'on-condition' condition=Expression
+;
+
 
 WriteCsv:
 	'writecsv' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'with'  delim= STRING 'using'
