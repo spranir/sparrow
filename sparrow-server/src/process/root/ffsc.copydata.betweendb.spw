@@ -2,10 +2,10 @@ process "ffsc.model.training"
 {
 	try
 	{
-		trainseq as "trainseq" from "${ffsc-db}" to "${ffsc-db}" using
+		copydata as "trainseq" from "${ffsc-db}" to "${ffsc-db}" with-batch "100" using
 		{
-			"select * from t;
-			insert ignore into v values"
+			"select * from BasicDataMapping_FFSC_Customers;
+			insert ignore into ffc values"
 		}
 
 	}

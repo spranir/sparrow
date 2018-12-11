@@ -14,7 +14,7 @@ object CommandFactory {
       case "callprocess" => new CallProcessAction
       case "doozle"=>new DoozleAction
       case "rest"=>new RestAction
-      case "writecsv"=> new WriteCsvAction
+      case "writecsvandtsv"=> new WriteCsvAndTsvAction
       case "copydata" => new CopydataAction
       case "mahout" => new ModelTrainingAction
     }

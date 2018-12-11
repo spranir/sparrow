@@ -36,7 +36,7 @@ Catch:
 Action:
 	(Copydata
 	|LoadCsv
-	|WriteCsv
+	|WriteCsvAndTsv
 	|Transform
 	|GooglecalPUT
 	|SlackPUT
@@ -169,8 +169,8 @@ Mahout:
 ;
 
 
-WriteCsv:
-	'writecsv' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'with'  delim= STRING 'using'
+WriteCsvAndTsv:
+	'writecsvandtsv' 'as' name= STRING 'from' source= STRING 'to' to= STRING 'with'  delim= STRING 'using'
 	'{'
 		value=SelectStatement
 	'}' 'on-condition' condition=Expression
