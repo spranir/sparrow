@@ -11,7 +11,7 @@ class ModelTrainingTest {
     
     System.currentTimeMillis()
    
-    val instanceName = "ffsc.copydata.betweendb#1" 
+    val instanceName = "ffsc.model.training#1" 
     val runtimeContext = ProcessAST.loadProcessAST(instanceName,"{}")
     try {
       //TODO - change to create(config.get("runmode"))
@@ -25,10 +25,4 @@ class ModelTrainingTest {
       
     }
   }
-  
-  /*@Test def relativePath {
-    System.currentTimeMillis()
-    val url = this.getClass.getClassLoader.getResource("auth/Dhuruva-BMS-fa750e3a8102.p12")
-    println(url)
-  }*/
 }

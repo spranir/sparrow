@@ -16,7 +16,7 @@ object CommandFactory {
       case "rest"=>new RestAction
       case "writecsv"=> new WriteCsvAction
       case "copydata" => new CopydataAction
-      case "trainseq" => new ModelTrainingAction
+      case "mahout" => new ModelTrainingAction
     }
   }
 }

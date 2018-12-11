@@ -22,20 +22,20 @@ import org.apache.http.entity.StringEntity
 class ModelTrainingAction extends org.etl.command.Action with LazyLogging {
 
   def execute(context: org.etl.command.Context, action: org.etl.sparrow.Action): org.etl.command.Context = {
-    val modeltrainingAsIs: org.etl.sparrow.TrainSequence = action.asInstanceOf[org.etl.sparrow.TrainSequence]
-    val modeltraining: org.etl.sparrow.TrainSequence = CommandProxy.createProxy(modeltrainingAsIs, classOf[org.etl.sparrow.TrainSequence], context)
+    val modeltrainingAsIs: org.etl.sparrow.Mahout = action.asInstanceOf[org.etl.sparrow.Mahout]
+    val modeltraining: org.etl.sparrow.Mahout = CommandProxy.createProxy(modeltrainingAsIs, classOf[org.etl.sparrow.Mahout], context)
 
     try {
       val postData = modeltraining.getValue
       val gson = new Gson
-      // create an HttpPost object
-      val url = modeltraining.getUrl
-      val post = new HttpPost(url)
-      val hkey = modeltraining.getHkey
-      val hvalue = modeltraining.getHvalue
+       // create an HttpPost object
+      // val url = modeltraining.getUrl
+      val post = new HttpPost("http://localhost:8008")
+    //  val hkey = modeltraining.getHkey
+   //  val hvalue = modeltraining.getHvalue
 
       // set the Content-type
-      post.setHeader(hkey, hvalue)
+      post.setHeader("Content-type", "application/json")
 
       // add the JSON as a StringEntity
       post.setEntity(new StringEntity(gson.toJson(postData)))
@@ -66,8 +66,8 @@ class ModelTrainingAction extends org.etl.command.Action with LazyLogging {
   }
 
   def executeIf(context: org.etl.command.Context, action: org.etl.sparrow.Action): Boolean = {
-    val modeltrainingAsIs: org.etl.sparrow.TrainSequence = action.asInstanceOf[org.etl.sparrow.TrainSequence]
-    val modeltraining: org.etl.sparrow.TrainSequence = CommandProxy.createProxy(modeltrainingAsIs, classOf[org.etl.sparrow.TrainSequence], context)
+    val modeltrainingAsIs: org.etl.sparrow.Mahout = action.asInstanceOf[org.etl.sparrow.Mahout]
+    val modeltraining: org.etl.sparrow.Mahout = CommandProxy.createProxy(modeltrainingAsIs, classOf[org.etl.sparrow.Mahout], context)
 
     val expression = modeltraining.getCondition
     ParameterisationEngine.doYieldtoTrue(expression)

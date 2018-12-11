@@ -50,6 +50,7 @@ Action:
 	|Doozle
 	|Dropfile
 	|FBCLead
+	|Mahout
 	)
 ;
 
@@ -160,15 +161,8 @@ Copydata:
 	'}' 'on-condition' condition=Expression
 ;
 
-TrainSequence:
-	'trainseq' 'as' name= STRING 'with-url' url= STRING 'header-key' hkey= STRING 'header-value' hvalue=STRING 'using'
-	'{'
-		value=STRING
-	'}' 'on-condition' condition=Expression
-;
-
-TrainVector:
-	'trainvec' 'as' name= STRING 'with-url' url= STRING 'header-key' hkey= STRING 'header-value' hvalue=STRING 'using'
+Mahout:
+	'mahout' 'as' name= STRING 'using'
 	'{'
 		value=STRING
 	'}' 'on-condition' condition=Expression

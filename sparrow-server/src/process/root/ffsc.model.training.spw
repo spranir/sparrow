@@ -1,25 +1,86 @@
-process "ffsc.copydata.betweendb"
+process "ffsc.model.training"
 {
 	try
-	{
-		copydata as "copydata" with-url "" header-key "" header-value "" using
-		{"
-			mvn clean package assembly:single -f /home/anu/eclipse-workspace/mahout-naive-bayes-example/;
-			java -cp /home/anu/eclipse-workspace/mahout-naive-bayes-example/target/twitter-naive-bayes-example-1.0-jar-with-dependencies.jar com.chimpler.example.bayes.TweetTSVToSeq /home/anu/eclipse-workspace/FFSC/output-onlinetsvtools.tsv /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq;
-			hadoop fs -put /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq;
-			mahout seq2sparse -i /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-seq -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-vectors;
-			mahout split -i /home/anu/eclipse-workspace//mahout-naive-bayes-example/tweets_damoen-vectors/tfidf-vectors --trainingOutput train-vectors --testOutput test-vectors --randomSelectionPct 40 --overwrite --sequenceFiles -xm sequential;
-			mahout trainnb -i train-vectors -el -li /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/model -ow -c;
-			mahout testnb -i train-vectors -m /home/anu/eclipse-workspace/mahout-naive-bayes-example/model -l /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex -ow -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets-testing -c;
-			mahout testnb -i test-vectors -m /home/anu/eclipse-workspace/mahout-naive-bayes-example/model -l /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex -ow -o /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets-testing -c;
-			hadoop fs -get /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex /home/anu/eclipse-workspace/mahout-naive-bayes-example/labelindex;
-			hadoop fs -get /home/anu/eclipse-workspace/mahout-naive-bayes-example/model /home/anu/eclipse-workspace/mahout-naive-bayes-example/model;
-			hadoop fs -get /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-vectors/dictionary.file-0 /home/anu/eclipse-workspace/mahout-naive-bayes-example/dictionary.file-0;
-			hadoop fs -getmerge /home/anu/eclipse-workspace/mahout-naive-bayes-example/tweets_damoen-vectors/df-count /home/anu/eclipse-workspace/mahout-naive-bayes-example/df-count
-		"}
-
+	{	
+		mahout as "hadoop namenode" using
+			{
+				"hadoop namenode -Y -format -force"
+			}
+		mahout as "stop server" using
+			{
+				"stop-all.sh"
+			}	
+		mahout as "start server" using
+			{
+				"start-all.sh"
+			}
+		mahout as "compile" using
+			{
+				"mvn clean package assembly:single -f /home/sid/Workspace/ffs/mahout/"
+			}
+		mahout as "train sequence" using
+			{
+				"java -cp /home/sid/Workspace/ffs/mahout/target/twitter-naive-bayes-example-1.0-jar-with-dependencies.jar com.chimpler.example.bayes.TweetTSVToSeq /home/sid/Workspace/ffs/mahout/tweets-train.tsv /home/sid/Workspace/ffs/mahout/tweets-seq"
+			}
+		mahout as "turn off safe mode" using
+			{	
+				"hadoop dfsadmin -safemode leave"
+			}
+		mahout as "remove all hadoop files" using
+			{	
+				"hadoop fs -rmr /user/"
+			}		
+		mahout as "copy sequence to hadoop"  using
+			{
+				"hadoop fs -put /home/sid/Workspace/ffs/mahout/tweets-seq tweets-seq"
+			}
+		mahout as "train vectors"  using
+			{
+				"mahout seq2sparse -i tweets-seq -o tweets-vectors"
+			}
+		mahout as "split train set and test set"  using
+			{
+				"mahout split -i tweets-vectors/tfidf-vectors --trainingOutput train-vectors --testOutput test-vectors --randomSelectionPct 40 --overwrite --sequenceFiles -xm sequential"
+			}
+		mahout as "train model using train set"  using
+			{
+				"mahout trainnb -i train-vectors -el -li labelindex -o model -ow -c"
+			}
+		mahout as "delete labelindex"  using
+			{
+				"rm -rf /home/sid/Workspace/ffs/mahout/labelindex"
+			}	
+		mahout as "get labelindex from hadoop"  using
+			{
+				"hadoop fs -get labelindex /home/sid/Workspace/ffs/mahout/labelindex"
+			}
+		mahout as "delete model"  using
+			{
+				"rm -rf /home/sid/Workspace/ffs/mahout/model"
+			}	
+		mahout as "get model from hadoop"  using
+			{
+				"hadoop fs -get model /home/sid/Workspace/ffs/mahout/model"
+			}
+		mahout as "delete dictionary"  using
+			{
+				"rm -rf /home/sid/Workspace/ffs/mahout/dictionary.file-0"
+			}	
+		mahout as "get dictionary from hadoop"  using
+			{
+				"hadoop fs -get tweets-vectors/dictionary.file-0 /home/sid/Workspace/ffs/mahout/dictionary.file-0"
+			}
+		mahout as "delete df-count"  using
+			{
+				"rm -rf /home/sid/Workspace/ffs/mahout/df-count"
+			}	
+		mahout as "get df-count from hadoop"  using
+			{
+				"hadoop fs -getmerge tweets-vectors/df-count /home/sid/Workspace/ffs/mahout/df-count"
+			}
+		
 	}
-	catch
+	catch	
 	{
 	}
 	finally
