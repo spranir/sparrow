@@ -36,7 +36,7 @@ Catch:
 Action:
 	(Copydata
 	|LoadCsv
-	|WriteCsv
+	|WriteCsvAndTsv
 	|Transform
 	|GooglecalPUT
 	|SlackPUT
@@ -55,6 +55,7 @@ Action:
 	|GooglecontactSelectAll
 	|Abort
 	|SmsLeadSms
+	|Mahout
 	)
 ;
 
